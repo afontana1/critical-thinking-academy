@@ -1,0 +1,1 @@
+# [Systems Thinking](https://en.wikipedia.org/wiki/Category:Systems_thinking)

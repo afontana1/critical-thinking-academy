@@ -1,0 +1,615 @@
+<style>
+/* --- Responsive, dark-friendly table wrapper --- */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;                 /* allows scroll instead of squish */
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  background: rgba(255,255,255,.02);
+}
+
+/* optional: show a subtle “scroll hint” on small screens */
+.table-wrap:after{
+  content: "← scroll →";
+  display: none;
+  font-size: 0.85rem;
+  opacity: .75;
+  padding: 8px 12px;
+}
+@media (max-width: 700px){
+  .table-wrap:after{ display:block; }
+}
+
+.epi-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;              /* prevents chaos; obeys column widths */
+  min-width: 980px;                 /* key: stops forced fitting on phones */
+  color: var(--text-color, #fff);
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.epi-table th,
+.epi-table td {
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 12px 14px;
+  vertical-align: top;
+  white-space: normal;              /* normal wrapping */
+  word-break: normal;
+  overflow-wrap: anywhere;          /* breaks only when truly needed */
+}
+
+.epi-table thead th {
+  background: rgba(255,255,255,.07);
+  position: sticky;                 /* keeps header visible while scrolling */
+  top: 0;
+  z-index: 1;
+}
+
+.epi-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,.03);
+}
+
+/* Column sizing: tweak as you like */
+.epi-table col.concept { width: 18%; }
+.epi-table col.what    { width: 32%; }
+.epi-table col.role    { width: 16%; }
+.epi-table col.events  { width: 12%; }
+.epi-table col.change  { width: 22%; }
+
+/* Align just the numeric-ish columns; keep text columns readable */
+.epi-table th:nth-child(3),
+.epi-table th:nth-child(4),
+.epi-table td:nth-child(3),
+.epi-table td:nth-child(4){
+  text-align: right;
+}
+
+/* Make “Concept” labels stand out without huge bold blocks */
+.epi-table td:first-child strong {
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+/* Nice hover on desktop */
+@media (hover:hover){
+  .epi-table tbody tr:hover{ background: rgba(255,255,255,.06); }
+}
+
+
+/* --- Table of contents --- */
+.toc {
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+  padding: 16px 18px;
+  margin: 20px 0 28px;
+}
+
+.toc h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.toc ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.toc li + li {
+  margin-top: 6px;
+}
+
+.toc a {
+  text-decoration: none;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+</style>
+<p>It’s somewhat frustrating when interacting with a religious person as a non-believer. They will often assert “you take things in faith too”. But this fundamentally misunderstands and conflates crucial epistemic concepts. For example, faith in the religious sense is fundamentally distinct from: assumptions, axioms, hinge commitments, philosophical starting points, definitions etc. Faith in the religious sense is often about some factual occurrence happening in the world. These other concepts are distinct in that they need not be tied to some event happening in the world; they are starting points that make reason intelligible. Faith in the religious sense is also tied to testimony, and crucially, hearsay. This is clearly distinct as a mode of inference. It’s also tied to trust and reliability, but extremely distinct from the sense of risk and uncertainty in probabilistic reasoning, in a Bayesian sense, or in a modal logic sense in terms of possibility and impossibility. Some theistic philosophers will claim that belief in god (and by extension, religious faith) is properly basic. But this too can’t be correct; because even more basic metaphysical assumptions are required for certain conceptions of god to even be coherent. So here, I want to completely dissect such a claim, looking into an in depth comparison between the concepts; to show how non-believers do not have faith, and conflating the two actually degrades their religious faith. </p>
+<nav aria-labelledby="table-of-contents-title" class="toc"><h2 id="table-of-contents-title">Table of Contents</h2><ul><li><a href="#faith-vs-other-epistemic-states">Faith vs. Other Epistemic States</a></li><li><a href="#faith-vs-a-few-more-demarcations">Faith vs. A Few More Demarcations</a></li><li><a href="#faith-vs-belief">Faith vs. Belief</a></li><li><a href="#faith-vs-other-mental-states">Faith vs. Other Mental States</a></li><li><a href="#faith-as-a-virtue">Faith as a Virtue</a></li><li><a href="#ordinary-language-use-of-faith">Ordinary Language Use of Faith</a></li><li><a href="#where-the-conflation-occurs">When and Where the Conflation Occurs</a></li><li><a href="#faith-is-a-technology">Faith is a Technology</a></li><li><a href="#when-faith-becomes-a-problem">When Faith Becomes a Problem</a></li></ul></nav><h3 id="faith-vs-other-epistemic-states">Faith vs. Other Epistemic States<a class="headerlink" href="#faith-vs-other-epistemic-states" title="Permanent link">¶</a></h3>
+<p>What’s going on in that “you take things on faith too” move is almost always <strong>equivocation</strong>: sliding between <strong>faith-as-trust / reliance under uncertainty</strong> (ordinary, defeasible, revisable) and <strong>religious faith</strong> (typically: doxastic commitment to <em>specific</em> claims + a distinctive justificatory route and social practice). To understand this distinction, it helps to separate concepts by what kind of thing they are, what epistemic job they do and what could rationally change them. </p><p>First, there is faith as reliance (very thin). This can be observed by people saying things like “I have faith the bridge won’t collapse” or “I have faith my friend will show up to the party.” This is basically practical reliance under uncertainty.</p>
+<ul>
+<li><strong>Object:</strong> a person/system/event <em>in the future</em> (usually).</li>
+<li><strong>Epistemic basis:</strong> track record, mechanisms, social norms, incentives, engineering, etc.</li>
+<li><strong>Attitude:</strong> often closer to <em>high credence + willingness to act</em>.</li>
+<li><strong>Revision:</strong> highly defeasible; new evidence updates your confidence.</li>
+</ul>
+<p>Second, there is religious faith. This is a very thick concept that is inherently connected with a type of tradition. This varies by religion and philosopher, but commonly includes many of these:</p>
+<ul>
+<li><strong>Propositional commitment</strong> to <em>particular</em> historical/metaphysical claims (revelation, miracles, resurrection, divine acts, etc.).</li>
+<li><strong>A distinctive evidential route</strong> (revelation, sacred testimony, ecclesial authority, “inner witness,” tradition, spiritual experience).</li>
+<li><strong>Normative insulation</strong> (faith is praised as a virtue; doubt can be treated as temptation or moral failing).</li>
+<li><strong>Identity/loyalty dimensions</strong> (faith as fidelity/commitment to a community and a way of life).</li>
+<li><strong>Often:</strong> acceptance despite counterevidence; or a posture that <em>reinterprets</em> counterevidence rather than updating.</li>
+</ul>
+<p>So when someone says “you have faith too,” the key question is: <strong>Which faith?</strong> If they mean A, it’s a trivial point. If they mean B, it’s substantive—and they need to show the parallel. Below is taxonomy showing assumptions, axioms, hinges, starting points, and definitions that make the differences pop:</p>
+<div aria-label="Epistemic concepts table" class="table-wrap" role="region" tabindex="0">
+<table class="epi-table">
+<colgroup>
+<col class="concept"/>
+<col class="what"/>
+<col class="role"/>
+<col class="events"/>
+<col class="change"/>
+</colgroup>
+<thead>
+<tr>
+<th>Concept</th>
+<th>What it is</th>
+<th>Epistemic role</th>
+<th>Tied to world-events?</th>
+<th>What would rationally change it?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>a meaning-fixing stipulation or analysis</td>
+<td>makes claims precise</td>
+<td>no</td>
+<td>improved utility/clarity, conceptual revision</td>
+</tr>
+<tr>
+<td><strong>Axiom (formal)</strong></td>
+<td>rule/starting statement inside a system</td>
+<td>generates theorems</td>
+<td>no (not by itself)</td>
+<td>choice of framework, consistency, fruitfulness</td>
+</tr>
+<tr>
+<td><strong>Assumption (methodological)</strong></td>
+<td>a working posit for inquiry</td>
+<td>enables inference/modeling</td>
+<td>maybe, but not required</td>
+<td>predictive failure, better models</td>
+</tr>
+<tr>
+<td><strong>Philosophical starting point</strong></td>
+<td>a meta-level stance (e.g., realism, empiricism)</td>
+<td>sets standards of evidence</td>
+<td>not necessarily</td>
+<td>reflective equilibrium, explanatory power</td>
+</tr>
+<tr>
+<td><strong>Hinge commitment</strong></td>
+<td>a “bedrock” certainty that isn’t ordinarily inferred (e.g., “there is an external world”)</td>
+<td>makes doubt/inquiry possible</td>
+<td>not specifically</td>
+<td>usually not “updated”; more like a condition of discourse</td>
+</tr>
+<tr>
+<td><strong>Bayesian prior / credal starting point</strong></td>
+<td>initial probability distribution</td>
+<td>enables probabilistic updating</td>
+<td>can be about anything</td>
+<td>evidence (updates posterior), coherence constraints</td>
+</tr>
+<tr>
+<td><strong>Testimony</strong></td>
+<td>evidence from someone’s report</td>
+<td>transmits knowledge</td>
+<td>yes (often)</td>
+<td>credibility, corroboration, defeaters</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Notice that many of these are need <strong>not even</strong> be claims about <em>what happened in history or what is the case</em>. They’re enabling conditions, frameworks, or semantic tools. Religious faith (in the thick sense) very often <em>is</em> commitment to <strong>substantive world-claims</strong>, frequently including <strong>historical claims</strong>. That’s a different category. This distinction helps us make sense of assertions like “But atheists have assumptions too”. It’s true that everyone relies on background commitments. But the attempted parity typically fails unless they can show the same epistemic structure. A good way to expose the mismatch is to ask: is your “faith” a <strong>framework</strong> or a <strong>world-claim</strong>? “The external world exists” (a hinge commitment) is not the same type of thing as “A particular miracle occurred” (historical world-claim). Frameworks are usually <strong>preconditions for inquiry</strong>; miracles are <strong>objects of inquiry that take for granted a set of epistemic primitives</strong>. </p><p>Does the “faith” function like a <strong>revisable credence</strong> or like a <strong>protected commitment</strong>? Methodological trust in perception/science is typically graded (degrees of confidence), corrigible, and responsive to error-correction institutions. Religious faith is often socially/virtue-coded to be stable, identity-anchored, and designed to be resistant to disconfirmation. Even if a religious person <i>says </i>their faith is revisable, you can then ask whether that’s actually how it operates in the tradition and in practice. What are the <strong>defeaters</strong>? Here is a clean discriminator; for ordinary reliance, “What evidence would lower your confidence?” usually means people usually have a list in mind. For thick religious faith: often the answer is “nothing could,” or defeaters get re-described (mystery, divine reasons, human sin, etc.). If there are no live defeaters, you’re not talking about a Bayesian-ish posture; you’re talking about a <strong>commitment mechanism</strong>. </p><p>Often, the religious will assert “we all depend on testimony” in some sense. But again, there is a distinction between testimony vs hearsay vs tradition. <strong>Testimony</strong> can be excellent evidence when it’s <strong>proximate, cross-checkable, and embedded in reliability practices</strong> (independent witnesses, adversarial testing, incentives to be accurate, records, etc.). This is very often not what “faith” reduces to in the religious sense. Instead, it depends on <strong>Hearsay / long-chain tradition</strong> which degrades reliability because transmission chains add opportunities for distortion, independence is hard to establish, selection effects (survivorship, canonization) skew what persists, and incentives can favor edifying narratives over accuracy. So “faith” that leans heavily on ancient testimony + tradition is epistemically different from “trusting my eyesight” or “trusting physics.” That’s not automatically a refutation—but it is a clear difference in inferential architecture. The religious claim needs to argue why this architecture is reliable enough for the weight it bears.</p>
+<p>At this point, some theists will claim their faith is a properly basic belief; meaning that some beliefs are rational without being inferred from other beliefs (perception, memory, other minds). Belief in God can be in that class if produced by a reliable faculty in the right conditions (often “sensus divinitatis”), argued by the theist. Justification can be externalist,  you don’t need an argument, you need proper functioning + absence of defeaters. But “Basic” ≠ “immune” ≠ “true”. Even if a belief can be non-inferentially warranted, it can still be mistaken, culturally variable, or defeated by counterevidence. So “properly basic” is not a free pass; it’s a thesis about structure of warrant, not an automatic endorsement. Many incompatible religious beliefs are also claimed as basic and “proper-function” delivered. If the mechanism is supposed to be reliable, it should not yield divergent gods, divergent revelations, mutually exclusive doctrines, and strong dependence on upbringing. This normally results in <strong>special pleading</strong> (“mine is basic, others are corrupted”), or <strong>skepticism</strong> about the mechanism’s reliability, or a retreat to “basic but defeasible,” which re-opens the defeater conversation. </p><p>Also many conceptions of God require hefty background metaphysics (simplicity, timelessness, personhood, omniscience, modality, etc.), which mean they're not properly basic. <strong>Which content is allegedly basic?</strong> A thin “something divine” experience? Or a thick Trinitarian/Incarnational package? The thicker it gets, the less plausible it is as “basic” and the more it looks theory-laden and tradition-mediated; which is always what “faith” means in these contexts. On Plantinga-style accounts, warrant is compatible with strong counterevidence providing defeaters and needing “defeater-defeaters.” But then we must ask, What counts as a defeater for basic theistic belief? Do religious communities treat those as genuine defeaters, or as “temptations” to be resisted? If “defeaters” are socially reclassified as spiritual attacks, you’ve left epistemology and entered a <strong>stability norm</strong>; which again, is always how these “faith” discussions go. </p>
+<p>So, when they say “you take things on faith too,” you can walk them through a short diagnostic:</p>
+<ol>
+<li><strong>Define faith:</strong> “Do you mean ‘reliance under uncertainty’ or ‘commitment to religious claims via revelation/testimony’?”</li>
+<li><strong>Specify the proposition:</strong> “What exactly is the content of your faith—thin (a God exists) or thick (this revelation, these miracles, this church)?”</li>
+<li><strong>Identify the evidential route:</strong> “What is the primary warrant—personal experience, testimony, tradition, argument?”</li>
+<li><strong>Ask for defeaters:</strong> “What evidence would make you less confident? What would change your mind?”</li>
+<li><strong>Compare update rules:</strong> “Does your confidence behave like a credence (responsive to evidence), or like a protected commitment (identity/virtue anchored)?”</li>
+</ol>
+<p>This makes the equivocation very hard to maintain. While yes, everyone starts somewhere, this does not mean that every “starting somewhere” is the same type of thing as affirming that a particular set of divine actions occurred. </p><p>This leads to my next observations. Faith in these contexts, often just means “dogma”. There is a distinction however that must be made:</p>
+<ul>
+<li><strong>Faith</strong> (in the thick religious sense) is mainly an <em>epistemic + practical posture</em>: trusting/committing yourself to a religious outlook (often including propositions), typically via testimony/revelation/experience, and often with a loyalty/identity component. </li>
+<li><strong>Dogma</strong> is mainly a <em>doctrinal status marker</em>: a proposition (or set of propositions) that a community/institution treats as authoritative, settled, and non-negotiable. It is a <em>social-epistemic property</em> of a proposition within a community (how it’s regulated).</li>
+</ul>
+<p>So <strong>dogma is “what must be held”</strong> (content + authority), while <strong>faith is “the stance by which it’s held/lived”</strong> (attitude + commitment). But dogma typically is the content of faith. In many traditions, “having faith” includes assenting to certain claims. Some of those claims are dogmas. So faith often <strong>contains</strong> dogmatic belief, but can also include trust, worship, hope, etc. Dogma tends to come with norms like “doubt is a spiritual danger” or “obedience is good.” Faith is the virtue-label that makes steadfast adherence admirable. Dogma can exist independent of “faith”. You can “believe the creed” in a thin, sociological way (conformity, habit, fear of exclusion) without the trust/relationship dimension that believers call faith. You can also have faith without dogma. Some “spiritual but not religious” postures look like faith-as-trust/hope without fixed doctrinal commitments; also some liberal theologies downplay dogma. But more often than not, faith and dogma overlap significantly. Faith is used to mean <strong>firm assent</strong> to contested propositions, maintained <strong>despite</strong> counterevidence, treated as <strong>morally/identity</strong> loaded, with <strong>few live defeaters</strong> (“nothing could change my mind”), and backed by <strong>authority/tradition</strong>. That package is very close to  dogmatic belief — even if the person prefers the nicer word “faith.” Is the belief treated as revisable? If yes (in principle and practice), it’s less like dogma and more like high confidence or trust. If no—if revision is framed as betrayal, sin, or spiritual failure—then the belief is functioning dogmatically, even if it’s called “faith.” Think of two axes:</p>
+<ul>
+<li><strong>Attitude:</strong> open/defeasible ↔ steadfast/identity-protected</li>
+<li><strong>Content status:</strong> optional/plural ↔ authoritative/non-negotiable (dogma)</li>
+</ul>
+<p>You can land in four spots:</p>
+<ol>
+<li>Open attitude + optional content → exploratory spirituality</li>
+<li>Open attitude + dogmatic content → “I accept the creed but I’m willing to revise” (unstable combo)</li>
+<li>Protected attitude + optional content → identity-first religiosity without creeds</li>
+<li>Protected attitude + dogmatic content → classic dogmatism (where faith and dogma look nearly identical)</li>
+</ol>
+<p>Based on this matrix, we can identify a deep relationship between faith and commitment, contributing to resiliency of faith; not seen in other types of credal starting points. This commitment aspect might have something to do with the object of faith, an entity that can morally condemn you. It also likely has something to do with social relations within faith communities; for example performing faith for social peers. This is different from resilience stemming from propositions not being falsified, or theories not being shown to be weak. Its a type of commitment that is connected to expectations and desired outcomes. We need to separate <strong>belief/credence</strong> from <strong>commitment</strong> and then ask what mechanisms stabilize each.</p>
+<p>A view is epistemically resilient because it keeps winning by its own standards: it predicts well, it integrates evidence, it survives attempts to falsify, or it has good error-correction. This is the normal “my theory hasn’t been shown weak” kind of resilience. A view is resilient in a <i>commitment sense</i> when you’re bound to it by non-epistemic stakes. This includes things like moral stakes (guilt, condemnation), existential stakes (meaning, salvation), social stakes (belonging, reputation), identity stakes (“this is who I am”), practical stakes (marriage, job, community life), and narrative stakes (life story coherence). This resilience can persist even when epistemic support is shaky, because the “update cost” isn’t just intellectual—it’s personal, moral, and social. Religious faith very often has <strong>both</strong>, but the second is distinctive in degree and structure.</p>
+<p>“Commitment faith” behaves differently than credal starting points Hinges, axioms, priors, methodological assumptions tend to be: instrumental (they enable inquiry), impersonal (not about loyalty), non-moralized (you’re not “sinning” by revising a prior), not socially policed (usually), and not tied to a personal relationship with an agent who judges you. Religious faith, in many forms, is more like a <strong>relationship commitment</strong> than a neutral starting point. And relationship commitments have different stability norms: “steadfastness” is a virtue; “wavering” can be betrayal. So the update rule changes: not just “what does the evidence say?” but also “what does changing this say about me, my loyalties, my standing, my salvation?” </p><p>If the object of faith is a <strong>morally authoritative agent</strong> (God) who can condemn you, several things follow. <strong>Doubt can become morally loaded</strong>; not merely an intellectual state but a failure (pride, rebellion, lack of trust). <strong>Defeaters can be reclassified</strong>; counterevidence isn’t “a reason to reduce credence,” but “a temptation,” “a test,” “spiritual attack,” “mystery.” <strong>Self-surveillance increases</strong>; you monitor your own thoughts for disloyalty, which discourages open-ended inquiry. This is structurally unlike, say, a Bayesian prior. A prior doesn’t judge you. A community might judge you for “bad priors,” but the prior itself doesn’t. In many faith communities, faith is not just a private attitude; it’s a <strong>social practice</strong>: profession (“testimony”), rituals, visible conformity (attendance, prayer, moral behaviors), and mutual monitoring (“accountability”). That creates powerful stabilizers:</p>
+<ol>
+<li>Costly signaling / credibility displays: Public acts of faith signal loyalty and belonging. Once you’ve paid costs (time, reputation, self-denial), backing out becomes expensive—psychologically and socially.</li>
+<li>Reputation and trust networks: Communities often allocate trust, marriage prospects, childcare support, friendship, leadership roles, and moral standing based on perceived faithfulness. That makes “updating away” costly.</li>
+<li>Identity fusion: Belief can fuse with identity: “I’m a Christian/Muslim,” not merely “I think proposition P is likely.” Attacking P feels like attacking the self.</li>
+</ol>
+<p>None of this is required for hinges or axioms. You can switch logics without losing your family. Faith is also not a simple epistemic state, it is faith as hope-plus-commitment. A lot of thick faith is future-facing about salvation, ultimate justice, cosmic meaning, reunion, redemption, and providence. This links faith to <strong>desire</strong> in a way ordinary credal starting points aren’t. And once belief is tied to a desired outcome, you get <strong>motivated reasoning</strong> (not as an insult—just the structural fact that losing the belief means losing the hope), <strong>asymmetric skepticism</strong> (friendly scrutiny for threats, lenient scrutiny for supports), and <strong>interpretive elasticity</strong> (reinterpret rather than revise). So the resilience is less “it hasn’t been falsified” and more “it must be true, because the alternative is unbearable / disintegrating / socially catastrophic.” Think of “faith” as a <em>bundle</em> with separable components:</p>
+<ol>
+<li><strong>Credence</strong>: how likely you take propositions to be.</li>
+<li><strong>Trust</strong>: reliance on an agent/source (God, scripture, clergy).</li>
+<li><strong>Commitment</strong>: intention to remain aligned (loyalty over time).</li>
+<li><strong>Identity</strong>: self-concept bound to the stance.</li>
+<li><strong>Practice</strong>: rituals/behaviors that enact belonging.</li>
+<li><strong>Moralization</strong>: revision framed as vice/sin/betrayal.</li>
+<li><strong>Community regulation</strong>: social rewards/punishments around conformity.</li>
+</ol>
+<p>When someone says “you have faith too,” they’re usually pointing to (1) or (2) in some generic way. But religious faith often crucially includes (3)–(7), which makes it <em>behave like</em> a commitment mechanism, not merely a belief state. If a “credal starting point” is epistemic, then revising it in response to evidence is not treated as moral failure, betrayal, or loss of belonging. If “yes,” to any of the following questions, the thing you’re calling “faith” isn’t just an assumption/axiom/hinge. It’s a <strong>norm-governed allegiance</strong>.</p>
+<ul>
+<li>Is doubt a sin (or close)?</li>
+<li>Are there social penalties for changing your mind?</li>
+<li>Are defeaters reclassified as temptations/tests?</li>
+<li>Is the stance sustained by practices that would be costly to stop?</li>
+<li>Does the object of belief morally judge you?</li>
+</ul>
+<h3 id="faith-vs-a-few-more-demarcations">Faith vs. A Few More Demarcations<a class="headerlink" href="#faith-vs-a-few-more-demarcations" title="Permanent link">¶</a></h3>
+<p>Presumptions, presuppositions, and prima facie reasons are three of the most common nearby concepts people slide into when they say “faith,” but they differ along really clean axes: <strong>function in reasoning</strong>, <strong>defeasibility</strong>, <strong>burden of proof</strong>, and whether they’re inherently practical/identity/relational. Below is a detailed breakdown of each, and then a point-by-point contrast with (thick) religious faith.</p>
+<ol>
+<li>
+<p>Presumption: A <strong>presumption</strong> is a <em>default entitlement to treat a proposition as acceptable (often for practical purposes)</em> <strong>until</strong> it’s challenged or defeated. Presumptions are <em>not</em> typically “full belief.” They’re more like: “For now, we proceed as if p, unless you can show otherwise.” Presumptions allocate <strong>burdens of proof</strong> and <strong>burdens of rebuttal</strong>. Presumptions have the following properties: </p>
+<ul>
+<li><strong>Dialectical role:</strong> presumptions are about how conversation/inquiry is <em>organized</em>: who must argue, who must answer objections.</li>
+<li><strong>Burden-shifting:</strong> if p is presumed, the challenger must provide a defeater.</li>
+<li><strong>Defeasible:</strong> presumptions are designed to be overturned by counterevidence or argument.</li>
+<li><strong>Often policy-like:</strong> they can be adopted because they are efficient or fair, not because they are true.</li>
+</ul>
+<p>Both can look like “holding p without proof,” but presumption is fundamentally a <strong>procedural default</strong>, usually justified by <strong>pragmatic norms</strong> (fairness, efficiency, social coordination), and explicitly <strong>rebuttable</strong>.</p>
+</li>
+<li>
+<p>Presupposition: A <strong>presupposition</strong> is background information that a speaker/conversation treats as already in place for an utterance to make sense or be appropriate. There are two main kinds:</p>
+<ul>
+<li>
+<p>(A) Semantic / pragmatic presuppositions (common in philosophy of language). A Classic example: “John stopped smoking” presupposes “John used to smoke.” If the presupposition fails, the sentence becomes odd or infelicitous (and different theories describe the failure differently), but the key idea is: the statement <strong>expects</strong> certain background commitments to be in the common ground.</p>
+</li>
+<li>
+<p>(B) Epistemic / methodological presuppositions: These are “background commitments” for inquiry, like that memory is generally reliable, that there are other minds, or that observation can give evidence. These overlap with “hinges,” but the key difference is: presuppositions are often <strong>what your reasoning is already taking for granted</strong> (sometimes tacitly), rather than a belief you consciously endorse.</p>
+</li>
+</ul>
+<p>Some common properties of presuppositions include:</p>
+<ul>
+<li><strong>Backgrounded, not foreground-asserted.</strong></li>
+<li><strong>Typically not the main claim at issue</strong>, but a condition for the claim’s felicity or intelligibility.</li>
+<li><strong>Often invisible until challenged</strong>, at which point people say “Wait—are we assuming that?”</li>
+<li><strong>Not usually a virtue-term.</strong> People don’t get praised for “having presuppositions”; they get criticized for <em>smuggling</em> them in.</li>
+</ul>
+<p>Because faith often comes with a large “background framework.” But presuppositions are usually <strong>structural conditions of discourse/inquiry</strong>, not inherently <strong>trust/commitment/identity</strong> states, and not normally <strong>performed</strong> or <strong>praised</strong> as steadfastness.</p>
+</li>
+<li>
+<p>Prima facie reasons: A <strong>prima facie reason</strong> is a reason that <em>counts in favor</em> of a conclusion <strong>unless</strong> it’s overridden or defeated by other reasons. It’s a staple in moral philosophy (e.g., “promise-keeping is a prima facie duty”) but the structure generalizes to epistemic reasons too:  “It looks red” is a prima facie reason to believe “it is red,” unless you learn you’re under red lighting. Some of the Core properties include: </p>
+<ul>
+<li><strong>Pro tanto / contributory:</strong> it adds weight but may not settle the matter.</li>
+<li><strong>Defeasible:</strong> can be overridden by stronger reasons or undercut by defeaters.</li>
+<li><strong>Comparative:</strong> you weigh reasons against each other.</li>
+<li><strong>Not a stance:</strong> a prima facie reason is an <em>input</em> into rational deliberation, not the output.</li>
+</ul>
+<p>Because someone may say “I have faith because of my experiences,” and those experiences might be better described as <strong>prima facie reasons</strong> (seeming, testimony, perceived providence). But prima facie reasons do not license “hold regardless,” do not inherently generate commitment/identity norms, and are <strong>meant</strong> to be balanced against countervailing reasons.</p>
+</li>
+</ol>
+<p>Presumption is a default rule in a reasoning game. The goal is to coordinate inquiry fairly/efficiently with a key feature of burden shifting and rebuttability. Faith is a stance of allegiance/trust that can be normatively insulated. Presumption invites: “Show me a defeater and I’ll drop it.” while Faith often invites: “Even if it looks bad, trust remains appropriate.” So even if both can involve “holding without proof,” presumption is structurally <strong>anti-dogmatic</strong> (built to be overturned), whereas faith in many contexts is praise-linked to persistence.</p>
+<p>Presuppositions are background conditions of sense-making. The term denotes what must already be in the conversational common ground or inquiry background. Faith is a foregroundable commitment and practice. Faith can include many presuppositions, but it isn’t merely one. Presuppositions are usually discovered (“Oh, we were assuming that!”) while Faith is usually cultivated (“Keep/strengthen/renew your faith”).</p>
+<p>Prima facie reasons are an input to rational weighing. In reasoning, its what counts in favor unless defeated and is marked by responsiveness—if defeated, you should reduce confidence or change conclusion. Faith is often a policy that changes how weighing works. Faith can be based on reasons, but it often adds a trust-based <strong>priority ordering</strong> of sources, a commitment-based <strong>resilience norm</strong>, and a community-based <strong>interpretive lens</strong>. Prima facie reasons are essentially: “This supports p a bit.” Faith is often: “I will live oriented to p (or to God) through uncertainty.” In other words: a prima facie reason is <em>evidential weight</em>; faith is often <em>life-orientation</em>.</p>
+<ul>
+<li><strong>Presumption licenses</strong>: “Proceed as if p (procedurally), until rebutted.”</li>
+<li><strong>Presupposition licenses</strong>: “Use this utterance/inference without constantly re-arguing background conditions.”</li>
+<li><strong>Prima facie reason licenses</strong>: “Increase support for p (defeasibly), pending overall balance.”</li>
+<li><strong>Faith licenses</strong> (in thick religious usage): “Entrust yourself / remain loyal / continue practice / reinterpret adversity under a sacred frame.”</li>
+</ul>
+<h3 id="faith-vs-belief">Faith vs. Belief<a class="headerlink" href="#faith-vs-belief" title="Permanent link">¶</a></h3>
+<p>Often, Christians will say “you just have to believe” and in another breath “you just have to have faith”; at a very high level these might be partially equivalent but on further inspection they don't seem to be. Philosophers often talk about propositional attitudes, within doxastic logic. At first glance, it seems like faith might be equivalent to belief, or simply a particular propositional attitude. But when digging a bit deeper, faith doesn't seem to <i>just </i>be assent to a specific proposition, as we alluded to earlier; because it contains other elements such as trust and identity relevant cognition. Beliefs themselves might not be simple propositions; but systems of interrelated propositions, attitudes, and experiences. To believe X isn't as simple as “assenting to X” without the proper systemic structure to solidify that belief.  A good way to unpack it is to treat <strong>belief</strong> as a <em>doxastic attitude</em> toward a proposition, and <strong>faith</strong> as (usually) a <strong>package state</strong> that <em>includes</em> some doxastic attitude(s) but also includes <strong>non-doxastic</strong> elements (trust, commitment, identity, practices, social embedding).</p>
+<p>In the doxastic-logic neighborhood, belief is typically: an attitude toward a proposition <em>p</em> (call it <strong>B(p)</strong>), governed by (some) norms of <strong>formation</strong> and <strong>revision</strong> (evidence, coherence, memory, perception, testimony, etc.), primarily <strong>mind-to-world</strong> (beliefs aim to fit reality). Even if people form beliefs badly, belief is still the kind of thing that <em>purports</em> to track truth. “Faith” often behaves like a <strong>self-sealing composite</strong>:</p>
+<ul>
+<li><strong>Propositional element:</strong> believing (or at least <em>leaning toward</em>) claims like “God exists,” “God is good,” “Christ rose,” etc.</li>
+<li><strong>Trust element:</strong> not only “that p,” but <strong>trust in</strong> an agent/source (“God,” scripture, the church).</li>
+<li><strong>Commitment element:</strong> a resolve to <strong>stay aligned</strong> and continue practices (prayer, worship, obedience), often even through doubt.</li>
+<li><strong>Identity element:</strong> faith as part of self-concept and group membership.</li>
+<li><strong>Affective/volitional element:</strong> hope, gratitude, love, fear, repentance, etc.</li>
+<li><strong>Social element:</strong> faith as publicly intelligible within a community (testimony, belonging, accountability).</li>
+</ul>
+<p>There’s a “faith that p” sense that can look close to <strong>belief</strong>, but much religious faith is closer to a <strong>stance</strong>, not a single doxastic attitude. The “Faith that p” vs “faith in X” distinction alone explains a ton of conversational confusion. <strong>Faith that p</strong> looks like a propositional attitude (belief/credence/acceptance that p). while <strong>Faith in X</strong> looks relational (trust/loyalty toward a person/agent), and can persist even if “that p” is unstable. Christians often slide between these: “Have faith” = <em>entrust yourself to God</em> (faith-in) and “Believe” = <em>assent to the gospel claims</em> (faith-that). They’re linked, but not identical; something alluded to earlier with regards to the dogma vs faith distinction. </p>
+<p>Even within “doxastic attitudes,” belief is not the only option. There is <strong>credence</strong>, which is graded confidence (0–1 style). Then there is <strong>Belief</strong>, which is often treated as more categorical. There is also <strong>acceptance</strong>,  treating p as a premise for action/inquiry <strong>without</strong> fully believing it. Religious faith often looks like: <strong>high-ish credence</strong> in some propositions, plus <strong>acceptance</strong> of them as practical premises, plus <strong>commitment</strong> to sustain that acceptance, plus <strong>trust</strong> in a person/source. So if someone says “just believe,” what they might practically be asking is closer to: <strong>accept + commit + participate</strong>, not merely “form B(p).”</p>
+<p>Faith also does not operate within the common channels of belief formation/revision (again, alluded to earlier). Belief is typically answerable (at least in principle) to evidential and coherence pressures. Even irrational belief is the kind of state we criticize as a failure to respond properly to evidence. Faith, in many communities, comes with <strong>norms about how to handle evidence</strong>, not just evidence itself: doubt is morally loaded, defeaters can be reclassified (temptation/test/mystery), and inquiry can be guided toward reaffirmation rather than risk-taking exploration. So faith often includes a <strong>policy about doxastic management</strong>: not just what you think, but how you will (and won’t) let thinking move you. That’s a big disanalogy with ordinary credal starting points (priors/hinges), which generally aren’t upheld via moralized loyalty norms. A theistic community often supplies interpretive schemas (what suffering “means,” what prayer “does,” why evil occurs), scripts for doubt and counterevidence, standards for “good sources” and “bad sources,” and social rewards for testimony and consistency. In that setting, “faith” can function less like “I believe one proposition” and more like <strong>being enrolled in a whole explanatory framework</strong> that organizes experience and regulates inference. That’s also why “believing X” is rarely just assenting to X: it’s being able to use X inside a network—draw inferences, feel the right emotions, explain events, justify norms, participate in practices.</p>
+<p>Another annoying thing about “just believe” statements is that it fundamentally misunderstands belief systems: why assent to a single proposition isn’t sufficient for belief. Beliefs primarily are not atomistic. For many claims, to “believe p” robustly involves having supporting beliefs nearby, having dispositions to infer, explain, and act, integrating p into memory and expectation, and treating certain experiences as evidence for/against p. When someone says “just believe,” I respond with “I can say the sentence, but belief isn’t under direct voluntary control; it’s a state that emerges from how my reasons, evidence, and background model fit together.” Faith-talk often tries to bypass that by treating assent/commitment as something you can choose directly. This often arises when theists say “atheists just choose not to believe”. It also explains religious switching dynamics I discussed in my “How to Create a Christian” post. </p>
+<p>If you want something quasi-formal (but still intuitive), you can treat faith as:</p>
+<p><strong>Faith(p)</strong> ≈</p>
+<ol>
+<li>(Belief(p) <strong>or</strong> sufficiently high credence in p <strong>or</strong> acceptance of p as a practical premise) <strong>AND</strong></li>
+<li>commitment to maintain orientation toward p (resilience) <strong>AND</strong></li>
+<li>trust in a person/source tied to p <strong>AND</strong></li>
+<li>identity/practice embedding that stabilizes 1–3</li>
+</ol>
+<p>On this model faith is <em>not</em> reducible to B(p), but it typically <em>contains</em> some doxastic element aimed at p (or at least acceptance-as-if-p), and its distinctive “feel” comes from the commitment + trust + identity machinery.</p>
+<h3 id="faith-vs-other-mental-states">Faith vs. Other Mental States<a class="headerlink" href="#faith-vs-other-mental-states" title="Permanent link">¶</a></h3>
+<p>Faith (in the thick religious sense) is usually a <em>package state</em> that includes some doxastic element (belief/credence/acceptance) plus <strong>trust + commitment + identity/practice</strong>. Doubt, desire, hope, and acceptance each interact with <em>different components</em> of that package.</p>
+<ol>
+<li>
+<p>Faith and Doubt: There are two relevant types of doubt. First, there is <strong>epistemic doubt</strong> (reduced confidence, suspended judgment, awareness of underdetermination) which is just an unavoidable feature of the human condition. But there is also <strong>Moralized doubt</strong> (common in many religious contexts), which is doubt framed as temptation, disloyalty, pride, spiritual weakness, or sin. Faith doesn’t merely “coexist” with doubt; it often includes a <strong>norm for handling doubt</strong>. For example, permitted doubt: “questions are okay; keep seeking” and threatening doubt: “don’t entertain it; it endangers salvation/relationship/community”. Faith is also a commitment under uncertainty; <strong>a commitment to continue</strong> <i>despite </i>doxastic instability. You can have faith-in (trust/loyalty) while your faith-that (propositional confidence) wobbles. That’s exactly what makes faith look unlike ordinary belief: it can prescribe staying aligned even while the credence drops. In ordinary inquiry: doubt → revise credences and maybe beliefs. In many faith settings: doubt → activate the second order “defeater-defeaters”: divine mystery, tests, spiritual warfare, human fallenness, “lean not on your own understanding,” etc.</p>
+</li>
+<li>
+<p>Faith and Desire: Desire is often the hidden engine of faith’s stability. There’s a spectrum here to be sure. Desire motivates practice and attention (“I want to be good; I seek God”) but it can be epistemically risky; the desire can shape belief formation (“I need this to be true, so I’ll treat it as true”). The key difference is whether desire is allowed to <strong>set the evidential standard</strong>. Many religious propositions are not just descriptive; they answer deep desires: meaning, moral order, ultimate justice, forgiveness, belonging, immortality, and cosmic care. So faith isn’t just “believing p.” It’s often <em>wanting a world where p is true</em> and living accordingly. When a belief protects what you deeply want, you often see harsher standards for disconfirming evidence (or reclassification as “tests”) and softer standards for confirming signs (“God winked at me”). That’s a structural tie between desire and faith, which is absent in non-faith based beliefs. </p>
+</li>
+<li>
+<p>Faith and Hope: Hope is usually closer to faith than people admit, but they’re still distinct. Hope is about <em>valuing</em> an outcome <em>seeing it as possible</em> and <em>orienting yourself toward it</em>. Faith often <em>includes</em> hope, but typically adds something stronger trust in an agent (God) to bring about the hopeful state, commitment/loyalty, and often higher confidence that the hoped-for outcome will occur. Faith often upgrades hope into assurance. In many Christian settings, “faith” is treated as confidence in God’s promises and assurance of salvation. So hope becomes not just “I want this and it’s possible,” but “I trust <em>who</em> guarantees it.” Hope is also a psychological stabilizer, making the costs of doubt bearable. It keeps the narrative intact, makes suffering interpretable (“this is for a purpose”), and encourages perseverance. This is part of why faith can remain resilient even when evidence is ambiguous: hope supplies motivational glue. This is also why theists cannot understand how non-theists can live without constant existential dread absent a divine motivator.</p>
+</li>
+<li>
+<p>Faith and Acceptance: This is the most philosophically useful distinction. <strong>Acceptance</strong> is treating p as a premise for action/practice, often voluntarily, sometimes despite uncertainty. Religious life often requires <strong>acceptance</strong> even when belief is incomplete: “live as if God is real”, “pray even when you don’t feel it”, and “act on the promises”. So faith often looks like acceptance-as-policy + commitment + trust, with belief sometimes following (or sometimes never fully arriving). This is why faith can sometimes be seen as a struggle. “Just have faith” often means “accept and commit”. When someone says “just believe,” they may be asking for <strong>B(p)</strong>. When they say “just have faith,” they’re frequently asking for <strong>acceptance + allegiance</strong> (and to stop revisiting the question) That’s why it can feel like a category mistake to an atheist: it’s not an evidential request, it’s a <strong>volitional/social</strong> request.</p>
+</li>
+</ol>
+<h3 id="faith-as-a-virtue">Faith as a Virtue<a class="headerlink" href="#faith-as-a-virtue" title="Permanent link">¶</a></h3>
+<p>Contrasted with other types of primitive epistemic stances mentioned at the beginning, no one is considered “virtuous” for having a strong prior, or a specific assumption. Moral praise is completely inapplicable in these scenarios. Further, in <a href="https://plato.stanford.edu/entries/faith/">SEP article</a> “Faith will not, however, be a virtue as such, if it is accepted that faith can be misplaced or, even, ‘demonic’, directed upon a ‘false ultimate’ (Tillich 1957 [2001, 21]). To be virtuous, faith must be faith in a worthy object: it is faith in God that is the theological virtue. More generally, faith is virtuous only when it is faith to which one is entitled. An account of the conditions under which faith is permissible is thus the key to an ethics of faith.” </p><p>So faith is virtuous when it’s directed at something worth having faith in. This is another interesting distinction. It also ties back into the dogma section, faith is virtuous relative to a specific set of dogma. There also seems to be a performative aspect to faith as a virtue; indicating your commitment to the community by renewal or something; it is outward oriented. It’s also something continually worked on or reinforced; this obviously contrasts with things like hinge commitments and assumptions. Calling faith a <strong>virtue</strong> doesn’t just add praise—it changes what faith <em>is supposed to be</em> (a cultivated excellence of the person), and that’s why it diverges so sharply from priors, axioms, hinges, and other primitive stances.</p>
+<p>Virtues are traits of <em>persons</em>, not properties of <em>propositions</em>. A virtue (courage, honesty, humility) is a <strong>stable disposition</strong> that guides action, attention, and perception over time, is subject to praise/blame, and typically involves <em>cultivation</em> (habituation, formation), not merely “being in a cognitive state.” By contrast a <strong>prior</strong> is a parameter in a model, an <strong>axiom</strong> is a starting point in a formal system, a <strong>hinge commitment</strong> is a background certainty that makes inquiry possible, and a <strong>definition</strong> is meaning-fixing or conceptual engineering. None of these are naturally targets of <em>moral</em> appraisal (“virtuous prior”) because they aren’t <em>character excellences</em>; they’re tools, constraints, or enabling conditions. Virtue attributions normally presuppose something like the trait is <strong>up to you</strong> in some extended sense (developed, reinforced, protected) and you can be <strong>responsible</strong> for how you manage it. Christian (and more broadly theological) virtue-talk about faith often treats faith as something you <em>can</em> (and should) <strong>practice</strong>, <strong>renew</strong>, <strong>protect</strong>, and <strong>display</strong>—which is precisely why praise/blame attaches. This is one reason faith-as-virtue doesn’t behave like “mere assent.”</p>
+<p>The SEP passage quoted above is doing something structurally important: it denies that “faith” is automatically good, because faith can be “misplaced” or even “demonic,” directed at a “false ultimate”. So, to treat faith as a virtue, you need <strong>object-dependence</strong>; Faith is good only if it is faith in the right kind of thing / directed at the good. That’s a hallmark of virtue-ethics style evaluation: courage is not always good (a bank robber can be courageous); it must be courage <em>in the service of the right ends</em>. The SEP entry is applying that template to faith: virtue-status requires (i) a worthy object, and (ii) some notion of <em>entitlement/permissibility</em>—conditions under which faith is appropriate. This object-dependence is <em>exactly</em> what makes faith diverge further from hinges and priors. Hinges/priors aren’t typically evaluated by “worthiness of their object,” they’re evaluated by <strong>epistemic role</strong> (coherence, explanatory utility, predictive success, indispensability to inquiry).</p>
+<p>Virtue-talk about faith is typically <strong>indexed to dogma</strong> (or at least to doctrinal boundaries). Dogma does two key things for “faith as virtue”:</p>
+<ol>
+<li><strong>Fixes content</strong>: what counts as genuine faith (not just “spiritual openness,” but commitment to <em>these</em> claims).</li>
+<li><strong>Fixes the object as worthy</strong>: the community’s theology identifies God as the ultimate good, so faith directed to God counts as rightly ordered.</li>
+</ol>
+<p>That’s why the SEP line “it is faith in God that is the theological virtue” reads naturally within a tradition that has already settled (dogmatically, or quasi-dogmatically) who/what God is and why God is worthy. Virtue-faith often isn’t “faith simpliciter,” but “faith <em>as governed by</em> (orthodox) dogma.”</p>
+<p>Once faith is treated as a virtue, it tends to become <strong>practice-shaped and socially legible</strong>. Communities need ways to tell the difference between someone who merely <em>utters propositions</em>, and someone who has the <em>virtue</em> of faith (trusting, steadfast, obedient, loyal). So faith becomes tied to professions (“testimony”), rituals (worship, sacraments), behavioral markers (prayer, obedience, service), and endurance under trial. These are not incidental add-ons; they are <em>how a community tracks the trait</em>. When the community affirms the individual as practicing the correct faith, this strengthens the connection. So faith often acts as commitment signaling. It is a performance that can signal a public reaffirmation of belonging, a costly signal of loyalty, and a means of mutual assurance (“we are the kind of people who stand by this”). This is obviously structurally different from hinges/assumptions: you don’t “renew” your hinge commitment that there’s an external world and you don’t ritually reaffirm your Bayesian prior to show loyalty. The performative dimension is a tell: faith here is operating as <strong>an allegiance-trait</strong>, not merely a doxastic attitude.</p>
+<p>In the classical Christian picture (e.g., Aquinas), faith is grouped with hope and charity as <strong>theological virtues</strong>—traits oriented to God and ultimately to salvation/beatitude. That framing does two things. It makes faith <strong>teleological</strong>: it’s for a final end (union with God), not merely for truth-tracking in the ordinary epistemic sense. It also makes faith <strong>normatively protected</strong>: steadfastness becomes praiseworthy because it’s part of living toward that end. Priors/hinges don’t have that built-in “highest good” orientation. This is also one of the most dangerous aspects of faith, which I will elaborate on later. </p>
+<p>The SEP line “faith is virtuous only when it is faith to which one is entitled” pushes toward an “ethics of faith”: when is faith permissible, blameworthy, courageous, irresponsible, etc. This is where faith differs <em>even from ordinary belief</em>. Ordinary belief is typically evaluated primarily by <strong>epistemic rationality</strong> (evidence, coherence, reliability). Virtue-faith is evaluated by a hybrid standard: epistemic (is it responsible?), moral (is it rightly ordered?), and  communal (does it embody fidelity?). That hybrid standard is why faith can be praised <em>even when evidence is ambiguous</em>, because the praiseworthiness is often located in <strong>fidelity/steadfastness</strong> rather than in evidential responsiveness.</p>
+<p><strong>Hinges / assumptions / priors / axioms</strong> are usually <em>constitutive of inquiry</em> or <em>tools of inference</em>. They aren’t “worked on,” “renewed,” or morally praised; they’re assessed by how they function in cognition or method. <strong>Faith-as-virtue</strong> is a <em>person-level excellence</em> (a cultivated, socially legible, norm-governed allegiance) whose goodness depends on (i) <strong>the object</strong>, and (ii) <strong>entitlement/permissibility</strong> conditions. So the very fact that faith is treated as a virtue is evidence that the relevant notion of “faith” is <strong>not</strong> just “believing a proposition”—it’s a <strong>formation project</strong> (trust + commitment + identity + practice), indexed to a theological good and stabilized by communal norms.</p>
+<h3 id="ordinary-language-use-of-faith">Ordinary Language Use of Faith<a class="headerlink" href="#ordinary-language-use-of-faith" title="Permanent link">¶</a></h3>
+<p>A simple ordinary language analysis can help illuminate how the concept is clearly demarcated from these other concepts. Suppose a person is going through a tough time in their life because of some life event. It’s often stated that “their faith helped them through this rough patch”; I think we can extract a lot of content from this. Given this use, alot can be inferred about how the concept functions and how it’s differentiated from these other concepts. Here’s what you can infer from that use, and how it demarcates the concept.</p>
+<ol>
+<li>
+<p>Faith is treated as a <em>personal resource</em> for coping: The grammar frames faith as something that can <strong>help</strong> someone — i.e., a psychological/ethical asset with causal impact on emotional regulation (less despair, more steadiness), perseverance (keep going), interpretation (this isn’t meaningless) and agency (I can act, endure, hope). Hinges are <strong>not the kind of thing that functions as support</strong>.</p>
+</li>
+<li>
+<p>Faith functions as <em>meaning-making under adversity</em>: In this use, “faith” typically supplies a <em>narrative</em> or <em>frame</em>. For example, “This suffering has a purpose”, “This is a test / refining / part of a plan”, “I’m not alone”, “Justice/repair will come eventually”, “Death isn’t the end”, “God can redeem this”. These are not just propositions; they a <strong>life-interpretation system</strong>. It tells you <em>what the event is</em>, not just <em>that it happened</em>. By contrast, an assumption or prior doesn’t usually generate existential meaning; it’s not built to answer “Why is this happening to me?” or “What should I do with this pain?”</p>
+</li>
+<li>
+<p>Faith has a <em>normative/relational object</em> (often an agent): In the typical case, “faith helped them” means trust in a <strong>morally significant agent</strong> (God), reliance on a <strong>promise</strong> (“I will not forsake you”), a sense of <strong>being held / seen / judged / forgiven</strong>. This relational element matters. It makes faith closer to trust in a person, loyalty in a relationship, or attachment that stabilizes the self.</p>
+</li>
+<li>
+<p>Faith is practically <em>action-guiding</em> (not just truth-aiming): “Helped them through” implies faith did something like kept them praying, showing up, not giving up, structured habits and routines (ritual, worship, community support), blocked certain actions (despair, self-destruction, revenge), or enabled others (forgiveness, patience, gratitude). So faith is operating like a <strong>stance</strong> that yields practical directives and supports a way of life.</p>
+</li>
+<li>
+<p>Faith is socially scaffolded (and socially visible): In real life, that sentence often has an unspoken subtext: “their faith community carried them”, “their practices kept them afloat”, or “their identity gave them a place to stand”. So faith here includes communal belonging, shared scripts for suffering, and social reinforcement (“we’re praying for you,” “God is with you”)</p>
+</li>
+</ol>
+<p>When people say “faith helped them,” they don’t mean “their credence levels were well-calibrated. They mean faith supplied resilience, motivation, reassurance, or existential stability. Swapping this faith language with some of the base epistemic stances makes it clear:</p>
+<ul>
+<li>“Their <strong>assumptions</strong> helped them through the rough patch.” (odd; sounds like note-taking)</li>
+<li>“Their <strong>axioms</strong> helped them…” (nonsensical outside metaphor)</li>
+<li>“Their <strong>hinge commitments</strong> helped them…” (doesn’t land in ordinary usage)</li>
+<li>“Their <strong>definitions</strong> helped them…” (only if they did therapy-like reframing, and even then it’s not the standard meaning)</li>
+</ul>
+<p>But “Their <strong>faith</strong> helped them…” sounds perfectly natural.</p>
+<p>That tells you “faith” is categorized in ordinary language as a <strong>supportive orientation</strong> (a coping- and meaning-resource), not as a mere cognitive prerequisite. From this everyday usage alone, faith looks like a <strong>stabilizing stance toward life under uncertainty and suffering</strong>, with four interlocking roles:</p>
+<ol>
+<li><strong>Interpretive role</strong>: renders adversity intelligible (“this fits into a story”)</li>
+<li><strong>Affective role</strong>: regulates fear, grief, guilt; supplies peace/hope</li>
+<li><strong>Volitional role</strong>: sustains commitment, perseverance, self-control</li>
+<li><strong>Social role</strong>: binds you to a community that reinforces the stance</li>
+</ol>
+<p>And that package is exactly why “faith” doesn’t sit in the same conceptual neighborhood as priors/hinges/assumptions. Those are primarily <strong>epistemic-enabling</strong>; faith (in this use) is <strong>existentially enabling</strong>. <strong>Primitive stances</strong> (hinges/priors/assumptions) are conditions for <em>inquiry and inference</em>. <strong>Faith (as in “helped them through”)</strong> is a condition for <em>endurance and orientation</em>—a lived commitment that organizes meaning, emotion, and action, often via trust in a worthy object and via communal practice.</p>
+<p>There are similar nearby phrases we can analyze that illuminate aspects of “faith”. The basic trick is: each idiom carries <strong>presuppositions</strong> about (a) what faith is, (b) what it’s for, and (c) what norms govern it. Those presuppositions sharply demarcate faith from priors/hinges/assumptions.</p>
+<ol>
+<li>
+<p>Keep the faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> something you can <em>retain</em> over time, like loyalty or resolve (not just a momentary belief-state).</li>
+<li><strong>Embedded norms:</strong> steadfastness is admirable; wavering is a kind of failure.</li>
+<li><strong>What it’s for:</strong> endurance, identity continuity, community belonging.<br/>
+<strong>Demarcation:</strong> we don’t say “keep your hinge commitment” because hinges aren’t maintained by resolve; they’re background - conditions, not allegiance-traits.</li>
+</ul>
+</li>
+<li>
+<p>Tested my faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> a trait that can be <em>strained</em> by suffering or counterevidence, like courage.</li>
+<li><strong>Embedded norms:</strong> trials are expected; surviving the test counts as moral/spiritual success.</li>
+<li><strong>What it’s for:</strong> resilience under adversity; maintaining trust/commitment when things go badly.</li>
+<li><strong>Demarcation:</strong> “tested my priors” sounds like model selection; “tested my faith” is existential and evaluative.</li>
+</ul>
+</li>
+<li>
+<p>Lost my faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> something you can <em>lose</em>, like a relationship, hope, or identity orientation.</li>
+<li><strong>Embedded norms:</strong> loss is tragic, destabilizing; often framed as falling away, not merely updating.</li>
+<li><strong>What it’s for:</strong> meaning, security, belonging—its loss threatens the self-narrative.<br/>
+<strong>Demarcation:</strong> you don’t “lose” an axiom the way you lose faith; you revise axioms, switch frameworks, or abandon a - theory—cognitively, not existentially.</li>
+</ul>
+</li>
+<li>
+<p>Faithfulness</p>
+<ul>
+<li><strong>What it implies faith is:</strong> closer to <em>fidelity</em> than to mere assent.</li>
+<li><strong>Embedded norms:</strong> loyalty, constancy, obedience, integrity; it’s openly a virtue-term.</li>
+<li><strong>What it’s for:</strong> sustaining a relationship (with God, community, covenant) and a way of life.<br/>
+<strong>Demarcation:</strong> “faithfulness” has a built-in interpersonal/commitment grammar (like marital faithfulness). Priors don’t have - “faithfulness.”</li>
+</ul>
+</li>
+<li>
+<p>Walk by faith, not by sight</p>
+<ul>
+<li><strong>What it implies faith is:</strong> a rule for action under uncertainty: proceed without (or beyond) direct evidence.<br/>
+<strong>Embedded norms:</strong> privileging trust over visible confirmation is praiseworthy; demanding “sight” can be coded as weak, - prideful, or spiritually immature.</li>
+<li><strong>What it’s for:</strong> obedience, perseverance, long-horizon orientation (promises, salvation, providence).<br/>
+<strong>Demarcation:</strong> this is an <em>epistemic policy</em> and <em>practical policy</em> combined. Hinges aren’t policies you “walk by”; they’re - mostly invisible.</li>
+</ul>
+</li>
+<li>
+<p>Leap of faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> a voluntary commitment that outstrips evidential support (or at least outstrips certainty).</li>
+<li><strong>Embedded norms:</strong> courage/commitment is emphasized; hesitation can be framed as moral/spiritual failure.</li>
+<li><strong>What it’s for:</strong> initiating belonging and transformation (conversion, surrender).<br/>
+<strong>Demarcation:</strong> “leap of assumption” doesn’t land because assumptions aren’t usually framed as courageous existential - commitments; they’re tools.</li>
+</ul>
+</li>
+<li>
+<p>Strengthen your faith / renew your faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> something cultivated via practice—like a muscle.</li>
+<li><strong>Embedded norms:</strong> ongoing maintenance is expected; lapses matter; discipline is valorized.</li>
+<li><strong>What it’s for:</strong> increased trust, decreased doubt, deeper alignment, stable identity.<br/>
+<strong>Demarcation:</strong> you don’t “renew” a hinge commitment; you might “reconsider” a theory, but you don’t do devotionals to keep - your Bayesian prior strong.</li>
+</ul>
+</li>
+<li>
+<p>Crisis of faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> a whole <em>life-orientation</em> that can undergo breakdown, not just a single proposition being questioned.</li>
+<li><strong>Embedded norms:</strong> crisis is spiritual danger; resolution often means re-integration, not mere updating.</li>
+<li><strong>What it’s for:</strong> coherence, meaning, moral grounding, community placement.</li>
+<li><strong>Demarcation:</strong> this is closer to a worldview/identity disturbance than a belief revision episode.</li>
+</ul>
+</li>
+<li>
+<p>Act of faith</p>
+<ul>
+<li><strong>What it implies faith is:</strong> primarily action-guiding and volitional: you <em>do</em> something that expresses trust/commitment.</li>
+<li><strong>Embedded norms:</strong> sincerity and obedience matter; acts have moral-spiritual significance.</li>
+<li><strong>What it’s for:</strong> enacting allegiance, signaling fidelity, aligning behavior with the sacred.</li>
+<li><strong>Demarcation:</strong> “act of hinge commitment” is nonsense because hinges aren’t performed; faith is.</li>
+</ul>
+</li>
+</ol>
+<p>Across the idioms, ordinary language treats faith as:</p>
+<ul>
+<li><strong>A commitment you can be praised/blamed for</strong> (keep, be faithful, renew)</li>
+<li><strong>A trait tested by adversity</strong> (tested, crisis)</li>
+<li><strong>A practical policy for acting without full evidence</strong> (walk not by sight, leap)</li>
+<li><strong>A socially legible stance</strong> (faithfulness is recognizable; “losing faith” changes your standing)</li>
+<li><strong>Object-directed and evaluative</strong> (faith is good when directed at the right object; misdirected faith becomes fanaticism/credulity)</li>
+</ul>
+<p>Priors/hinges/assumptions are epistemic scaffolding for inquiry; faith (in these idioms) is allegiance-shaped, practice-maintained, socially tracked, and existentially stabilizing—hence praise/blame and “virtue.” Let’s zoom in on <strong>“walk by faith, not by sight”</strong> (2 Corinthians 5:7). Even before theology, that idiom encodes a <em>norm</em> about how you’re supposed to manage uncertainty.</p>
+<p>In ordinary Christian use, <strong>“sight”</strong> isn’t just literal vision. It’s shorthand for immediate, accessible, publicly shareable evidence and the <em>current</em> deliverances of perception/circumstance (“what it looks like right now”). So the phrase presupposes: the world you presently see may not align with what you should orient your life around. The idiom is not mainly describing a belief-state; it’s prescribing a policy for action and interpretation; When “sight” is absent or discouraging, continue to live/act as if God’s promise is reliable. A compact way to formalize the norm:</p>
+<ul>
+<li>Let <strong>P</strong> = some promise-laden religious claim (e.g., <em>God is with me; this suffering isn’t pointless; ultimate redemption/justice is real</em>).</li>
+<li>Let <strong>E</strong> = your current “sight” (circumstances that don’t visibly confirm P, maybe even seem to disconfirm it).</li>
+<li>The “walk by faith” rule is roughly faith-as-policy (acceptance) + trust</li>
+</ul>
+<ol>
+<li><strong>Acceptance rule:</strong> <em>Treat P as a practical premise for living</em> (plan, endure, obey, pray) even when E doesn’t settle P.</li>
+<li><strong>Trust rule:</strong> <em>Give special weight to the reliability of the promiser/source</em> (God, scripture, community testimony) over the surface appearance of E.</li>
+<li><strong>Defeater-handling rule:</strong> When E conflicts with P, first search for <strong>reconciliation</strong> (mystery/test/refining/providence) rather than revise P immediately.</li>
+</ol>
+<p>That third clause is the big “epistemic fingerprint”: it bakes in a <strong>priority ordering</strong> of evidences and a <strong>bias toward preservation</strong> of P. Contrast this with probabilistic reasoning. Bayesian epistemology (in the standard story) treats rational belief-change as governed by <strong>conditionalization</strong>: new evidence should produce posterior credences that “fit” your priors + the evidence in a disciplined way. So if we compare update rules, an idealized Bayesian norm would look like: Evidence <strong>E</strong> comes in → you <strong>update</strong> your credence in P accordingly (posterior moves as E demands). Contrasted with the “Walk by faith” norm (as used devotionally): Evidence <strong>E</strong> comes in → you often <strong>do not</strong> let E move your practical orientation much, because your stance is anchored in <strong>trust + commitment</strong> to P (or to God as guarantor of P). You <em>can</em> model “walking by faith” <em>as if</em> it were just an extreme Bayesian prior (very high prior on P). But the idiom usually involves more than “high prior”:</p>
+<ul>
+<li>it treats steadfastness as <strong>morally/practically required</strong>, not merely probabilistically permitted;</li>
+<li>it treats some counterevidence as <strong>non-authoritative</strong> (“mere sight,” limited human perspective);</li>
+<li>it makes “staying aligned” a virtue even under informational stress.</li>
+</ul>
+<p>That’s not how priors work <em>as priors</em>. A prior isn’t praiseworthy, and Bayesianism doesn’t tell you to keep your credence fixed because loyalty is good. Try the substitution test again, now with the deeper structure in view:</p>
+<ul>
+<li>“Walk by <strong>assumptions</strong>, not by sight” (doesn’t parse)</li>
+<li>“Walk by <strong>axioms</strong>, not by sight” (category error)</li>
+<li>“Walk by <strong>priors</strong>, not by sight” (sounds like a joke about statistics)</li>
+</ul>
+<p>Because those other “primitive stances” are primarily about inference and representation. The idiom’s faith is about: <strong>endurance, meaning under adversity, loyalty / fidelity, practical governance of life, community-legible alignment, and trust in a promiser</strong>. That’s why faith can be a virtue: it’s the kind of thing that can be exercised, displayed, praised, demanded, and blamed —and that whole normative profile is missing from priors/hinges/assumptions.</p>
+<h3 id="where-the-conflation-occurs">When and Where the Conflation Occurs<a class="headerlink" href="#where-the-conflation-occurs" title="Permanent link">¶</a></h3>
+<p>These conversations are normally within the context of a non believer claiming that faith is inadequate in some sense, or that claims and beliefs should rest on evidence of some sort. This is where the conflations become very evident; someone might respond with “… your atheistic faith” or “…well you have faith in science”. Both of which are absurd and ridiculous. Based on our conceptual analysis of faith, in this section we will give a detailed explanation of why claims like those aren’t well founded or coherent. When someone says “your atheistic faith” or “you have faith in science,” they’re almost always sliding between two very different meanings:</p>
+<ul>
+<li><strong>Faith (thin)</strong> = ordinary reliance/trust under uncertainty (I trust my brakes; I trust my friend).</li>
+<li><strong>Faith (thick / religious)</strong> = a package state involving <em>trust + commitment + identity + community norms</em>, often directed at a morally authoritative agent and/or tradition, frequently maintained via special “defeater management” and praised as a virtue.</li>
+</ul>
+<p>If they mean <strong>thin faith</strong>, the claim is trivial (“everyone relies on things”). If they mean <strong>thick faith</strong>, the claim is false unless they can show atheism/science functions with the same structure. So the rebuttal begins: <strong>Which sense of faith are you using?</strong> Because the conclusion changes completely. “Atheism” (as a minimal position) is not a faith-stance at all; it’s typically one of lack of belief in gods, or belief that no gods exist (strong atheism). Neither requires the faith-package. Thick faith is typically <strong>faith in</strong>: a personal agent (God) or a sacred authority/tradition. “Atheism” doesn’t posit an agent to trust, obey, or be judged by. So if someone says “atheistic faith,” ask Faith <em>in what</em>, exactly? If the answer is “in no God,” that’s a category mistake: “no God” isn’t an entity you can trust, relate to, or pledge fidelity to.</p>
+<p>Atheism lacks the virtue/loyalty norms that characterize faith. Faith-talk in religion comes with norms like: “keep the faith,” “don’t doubt,” “doubt is dangerous,” or “walk by faith, not by sight.” Atheism (as such) doesn’t come with parallel practices of renewal, ritual reaffirmation, or moralized steadfastness to “atheism.” People can be atheists without ever performing allegiance, without community policing, without a fidelity ideal. So the phrase “atheistic faith” borrows the <strong>normative aura</strong> of religious faith while lacking the concept’s functional profile. A person can be an atheist because they find theistic arguments unconvincing, miracle/testimony claims too weak, divine hiddenness/evil problems weighty, or simply because they haven’t encountered compelling evidence. That is just ordinary belief/credence revision. It’s not faith in the thick sense; it’s doxastic updating.</p>
+<p>“Faith in science” confuses a method with an authority-object. Science isn’t a proposition (“science is true”), and it isn’t a person. It’s a <strong>set of methods and institutions</strong> aimed at producing reliable models and predictions. So “faith in science” is a sloppy phrase that often bundles several different attitudes. Trust in the <em>process</em> is not blind allegiance. A reasonable non-believer’s stance is typically tentative trust of claims that survive good methods: controlled testing, reproducibility, peer scrutiny, error correction. That’s not faith as virtue; it’s <strong>calibrated reliance</strong> on a system with mechanisms for self-correction. Religious faith often treats steadfastness as praiseworthy even when evidence is thin. Scientific trust is (ideally) conditional: “show me better evidence and I’ll update.” Scientific confidence is <em>defeasible and graded</em>. In science, the norm is revise models when new data arrives, quantify uncertainty, and treat any claim as in principle revisable. That’s the opposite of what faith language usually praises: loyalty despite adversity, “not by sight,” remaining committed through doubt. So even if someone uses the word “faith” colloquially (“I have faith in science”), it maps better onto <strong>trust + track record + error correction</strong>, not onto thick faith. Science does not demand identity/loyalty the way religious faith often does. Science doesn’t require confession (“testify that evolution is true”), ritual reaffirmation, moral condemnation for doubt, or salvation stakes. Scientific communities can be tribal in practice, sure—but the <em>epistemic ideal</em> is: criticism is a feature, not a sin. That’s structurally unlike “faith as theological virtue.”</p>
+<p>Here’s the cleanest contrast. Religious faith, including steadfastness norms, usually means that doubt is morally/spiritually charged, counterevidence can be reclassified (test, mystery, temptation), commitment is praised as virtue and the stance is maintained via practice/community. I’ve stressed this plenty, but its worth reiterating. Ordinary evidential belief (including most scientific trust) emphasizes doubt as epistemically ordinary, counterevidence is supposed to move credence, revisability is a virtue (intellectual humility, responsiveness) and absolutely no loyalty ritual is required. So when someone says “you have faith in science,” they’re either using <strong>faith</strong> to mean “I trust a reliable process” (fine but trivial), or claiming you have <strong>faith</strong> in the thick, virtue/loyalty sense (usually false), or just trying to piss you off. </p>
+<h3 id="faith-is-a-technology">Faith is a Technology<a class="headerlink" href="#faith-is-a-technology" title="Permanent link">¶</a></h3>
+<p>Thinking of religion/faith as a <em>technology</em> (a culturally engineered bundle of practices + norms that reliably produces certain psychological and social effects) makes the ordinary-language differences identified earlier very clear. </p>
+<ol>
+<li>
+<p>Credibility Enhancing Displays (CREDs)</p>
+<p>In the cultural evolution / learning literature, <strong>CREDs</strong> are costly actions that make a model’s professed beliefs <em>credible</em> to observers: if you’re willing to pay real costs (time, pain, money, status risk), others infer you’re genuinely committed. Henrich explicitly uses CREDs to explain why costly ritual and sacrifice can stabilize religious belief and cooperation. That maps cleanly onto our earlier conclusions: Faith isn’t just “assent to p.” It’s also <strong>public commitment</strong>—something you <em>do</em>, <em>renew</em>, and <em>display</em> (“faithfulness,” “keep the faith,” “walk by faith not by sight”). Priors/hinges/axioms don’t have this structure because they aren’t designed to be <em>socially transmitted and verified via costly signaling</em>.</p>
+<p>A large related literature treats religious rituals/sacrifices as <strong>hard-to-fake signals</strong> of loyalty and willingness to cooperate—signals that help solve free-rider problems in groups. Sosis &amp; Alcorta make this point explicitly: costly religious behavior can credibly signal commitment to group ideals and increase cooperation/solidarity. So “faith” functions partly as a <strong>membership credential</strong> and a <strong>commitment amplifier</strong>. Again: that’s categorically unlike “having a hinge commitment,” which isn’t performed, policed, rewarded, or used as a loyalty signal.</p>
+</li>
+<li>
+<p>Faith as a coping-and-meaning technology</p>
+<p>In the psychology of religion, a major theme is that religion supplies a <strong>meaning system</strong>: it helps people interpret suffering, loss, trauma, and uncertainty in a way that preserves coherence and agency (e.g., “this has purpose,” “I’m not alone,” “ultimate justice”). Park’s work is a standard reference point here. That’s exactly what you pulled out of the ordinary phrase “their faith helped them through a rough patch”: faith is treated as an <strong>existential resource</strong>, not merely an epistemic stance.</p>
+<p>Pargament’s framework (and later work summarizing it) emphasizes that “religious coping” isn’t uniformly beneficial: <strong>positive religious coping</strong> (secure relationship with God, support, benevolent reappraisal) can be protective, while <strong>negative religious coping / religious struggle</strong> (punitive God reappraisals, spiritual discontent, interpersonal religious conflict) is associated with worse outcomes. So faith-as-technology isn’t just “believe and feel better.” It’s a toolkit that can regulate distress—sometimes effectively, sometimes destructively—depending on how the “God/meaning/community” components are configured.</p>
+<p>Recent meta-analytic work still often finds <strong>a small positive association</strong> between religiosity/spirituality and mental health (at least in some populations), but the effect sizes are not huge and outcomes vary with context and type of religiosity/struggle (moderators).</p>
+</li>
+<li>
+<p>Enforcement and coordination layer: how faith becomes a group-binding commitment device</p>
+<p>Costly signaling theory of religion argues that demanding rituals and constraints can function as hard-to-fake signals of commitment that reduce free-riding and strengthen cooperation/trust within groups. Sosis &amp; Bressler’s commune study is a classic empirical test in this space. Related work frames ritual/taboo cost as a way to advertise commitment and sustain solidarity. Ordinary language that encodes this. The we covered earlier are expressions make sense if faith is partly a <strong>membership-and-loyalty trait</strong>.</p>
+</li>
+<li>
+<p>Identity and practice layer: how faith becomes a stable “stance,” not a single belief</p>
+<p>There are a variety of mechanisms through which this occurs including identity fusion, ritual habituation, narrative self-structure, and public reaffirmation. This is where the idioms we highlighted become diagnostic:</p>
+<ul>
+<li><strong>“Walk by faith, not by sight”</strong> encodes a <em>policy</em>: keep acting in alignment with trust/commitment when accessible evidence (“sight”) is ambiguous or discouraging.</li>
+<li><strong>“Strengthen/renew your faith”</strong> implies faith is cultivated like a trait.</li>
+<li><strong>“Keep the faith”</strong> implies a norm of steadfastness—faith is something you can be praised for maintaining.</li>
+</ul>
+<p>That’s the grammar of <strong>virtue + fidelity</strong>, not the grammar of “belief as a proposition held.” Faith is <em>built</em> to be practice-maintained and socially legible, because those features stabilize the overall system.</p>
+</li>
+</ol>
+<h3 id="when-faith-becomes-a-problem">When Faith Becomes a Problem<a class="headerlink" href="#when-faith-becomes-a-problem" title="Permanent link">¶</a></h3>
+<p>Suppose I have faith in the proposition or assertion P; this means by implication I am committed to whatever is implied by P, some of which may be incredibly anti-intellectual, anti-humanistic, etc. By accepting P on faith, and it not being subject to revision and also being highly motivated and identity laden, I must accept the implications of P despite not having good independent reasons to accept these implications; and this level of commitment will be transferred to the downstream implications. The idea is that P anchors the rest of these bad ideas or bad behaviors; they become entrenched or locked in since they rest on a faith based assent to a proposition rather than a defeasible assent. The type of conviction is transferred on to the derivative claims. We mentioned earlier these claims are often embedded within theological practice, which is why faith is so often conflated with belief: believing P which entails theological system Y, often means rigid dogmatic adherence to Y. This can lead to bad outcomes. </p>
+<p>If faith locks you into <em>P</em>, it tends to lock you into the <strong>implications, authorities, and downstream commitments</strong> of <em>P</em>—often without independent, defeasible support. It’s not just assent to P, it’s “P + a commitment policy”. When someone says they “accept P on faith,” they often mean something closer to:</p>
+<ul>
+<li><strong>P is anchored by a privileged source</strong> (God / scripture / church / tradition / revelation), and</li>
+<li><strong>P is not to be treated like ordinary defeasible hypotheses</strong>, and</li>
+<li><strong>steadfastness is a virtue</strong> (faithfulness, “walk by faith not by sight”), especially under challenge.</li>
+</ul>
+<p>That last bit is crucial: faith isn’t only a belief; it’s a <strong>rule for how belief should behave under pressure</strong>. Ordinary empirical beliefs are supposed to be responsive to defeaters; thick faith often includes norms for <em>absorbing</em> or <em>reframing</em> defeaters. So the hazard is not merely “believing P without evidence.” It is <strong>Believing/accepting P under a commitment regime that systematically resists revision.</strong> This creates <strong>doctrinal entrenchment</strong>: once P has protected status, lots of Q’s can be imported because they’re <em>implied by</em>, <em>authorized by</em>, or <em>integrated with</em> P.</p>
+<p>In real theological life, “P” rarely stands alone. It sits in a structured package:</p>
+<ul>
+<li><strong>Authority claims</strong> (scripture is inerrant; church teaching is binding; revelation is decisive),</li>
+<li><strong>Core metaphysics</strong> (God’s nature, providence),</li>
+<li><strong>Moral frameworks</strong> (sexual ethics, gender roles, family structure, punishment/forgiveness),</li>
+<li><strong>Identity and community norms</strong> (what a faithful person does, who counts as “in/out”).</li>
+</ul>
+<p>When P is held under a non-defeasible policy, the <em>system</em> gains a kind of inertial stability. If you can’t revise P in response to evidence, then it becomes rational (within the system) <b>to preserve P</b> by reinterpreting evidence, narrowing acceptable sources, or treating dissent as moral/spiritual failure. This is exactly the kind of structure that produces “anti-intellectual” effects in practice: not because believers can’t reason, but because the <strong>highest-order commitment</strong> determines which reasons can count.</p>
+<p>There’s strong research showing people’s reasoning often serves identity and belonging goals, not just accuracy goals.</p>
+<ul>
+<li><strong>Motivated reasoning</strong>: people who want a conclusion tend to recruit cognitive strategies that make that conclusion feel justified (Kunda’s classic review).</li>
+<li><strong>Identity-protective cognition</strong>: when beliefs are tied to group identity, information processing tends to defend group-congruent “facts” over the best available evidence (Kahan et al.).</li>
+</ul>
+<p>This matters because thick faith is <em>often designed</em> to be identity- and community-loaded (faithfulness, testimony, public reaffirmation, etc.). When “being faithful” is socially and morally valuable, the mind has a lot of incentive to protect P and its system Y—especially under threat (because Y either supports P or is entailed by P). So the practical effect is predictable: counterevidence is discounted, dissenting sources are distrusted, and apologetics becomes a tool for <em>defense</em> rather than open-ended inquiry.</p>
+<p>When faith is treated as sacred, it can become insensitive to trade-offs and “evidence bargaining”. A related line of work on <strong>sacred values</strong> finds that some commitments (often involving God/divine law/nation) become <strong>insensitive to material trade-offs</strong> and are defended in ways unlike ordinary preferences. You don’t need the extreme cases for the conceptual point: once P is treated as sacred/ultimate, it stops behaving like an ordinary hypothesis. It becomes a <strong>non-negotiable anchor</strong> that structures what counts as a reason. A faith-anchored P can “infect” downstream beliefs and behaviors with this non-defeasibility.</p>
+<p>Philosophically, there <em>are</em> distinctions here. <strong>Fideism</strong> (in SEP’s framing) is often characterized as privileging faith over reason, sometimes disparaging reason, especially in religious matters. Many believers want to say: “I’m not a fideist; my faith is reasonable.” Conceptually, “reasonable faith” could mean faith supported by evidence/arguments, faith as <em>trust</em> based on perceived reliability, or faith as a practical commitment under uncertainty. But <strong>in practice</strong>, the “reasonable/blind” distinction often doesn’t change how the system behaves when challenged. Here are two obvious examples of this inelasticity:</p>
+<ol>
+<li>Institutional non-negotiables (“statements of faith”) reveal the protected-status structure: Many Christian institutions explicitly require assent to doctrinal packages and sometimes <strong>annual reaffirmation</strong> by faculty/board—regardless of evolving evidence. For example, Dallas Theological Seminary notes faculty/board annually affirm their full doctrinal statement. Similarly, seminaries and schools publish “statements of faith” that define the boundary of acceptable belief. That’s not “blind” in the sense of “no arguments exist.” But it <em>is</em> a structure where certain propositions are treated as <strong>non-defeasible commitments</strong> required for belonging/authority.</li>
+<li>In practice, apologetics often plays defense-counsel, not neutral inquiry: Motivated reasoning research predicts that when the conclusion is identity-protective, people will generate sophisticated-sounding justifications that function mainly to preserve the conclusion. So the “reasonable faith” label can become a <strong>rationalization posture</strong>: the arguments are there to protect P, not to expose P to real risk of revision.</li>
+</ol>
+<p>That’s why the distinction can feel “theoretically present but practically thin”: the lived norms are still “keep/renew/defend the faith.” (Important nuance: this isn’t universal. Some religious communities genuinely encourage revisability and treat theology as fallible. The point is that the <em>common</em> “faith-as-virtue + boundary maintenance” package predictably pushes the other way.) As with every statement about a group, there are exceptions. So, when a non-believer says “faith is bad,” the believer hears (often) an attack on their identity, their community, their moral worth, and their existential coping system.</p>
+<p>Identity threat reliably triggers identity-protective cognition. The tu quoque “you have faith too” move is a near-perfect defensive maneuver; it lowers shame (“everyone does it”), shifts the burden (“prove your starting points!”), and and avoids engaging the unique lock-in features of thick faith. So the conflation isn’t just confusion; it’s a <strong>strategic reframing</strong> that protects P’s privileged status. Stating the argument cleanly:</p>
+<ol>
+<li>Thick faith often isn’t merely “trust under uncertainty.” It is <strong>trust + commitment + identity + community norms</strong> that privilege certain propositions/sources.</li>
+<li>When P is accepted under that regime, P becomes a <strong>protected anchor</strong>, and the believer is normatively pushed to accept Y (implications + authorized add-ons) without independent defeasible support.</li>
+<li>Psychological mechanisms (motivated reasoning, identity-protective cognition) and sociological mechanisms (boundary enforcement, statements of faith, public reaffirmation) predict and sustain this entrenchment.</li>
+<li>“Reasonable faith” vs “blind faith” often functions as an ad hoc label unless the community actually permits real defeaters and revisability in practice—something many doctrinal structures explicitly resist.</li>
+</ol>
+<p>So to recap, if P is held by a stance that is identity-laden, motivationally protected, and normatively insulated from revision, then P becomes an “anchor,” and many implications of P (call them Y) become entrenched without independent defeasible support. Usually P is not isolated. It sits in a network like authority claims (who gets to settle questions), hermeneutic rules (how evidence/text is interpreted), moral doctrines (who is virtuous/sinful; permissible/forbidden), and social norms (in-group/out-group boundaries; who is trustworthy). Once P has protected status, Y inherits protection. When Y is inherited uncritically, this predictably produces anti-intellectual outcomes in other contexts; making dialogue sometimes impossible. Criticizing any implications within the set of propositions Y, entails the possibility that someone will feel threatened, leading to suboptimal conversations. If there are no possible defeaters, no possibility of revision, or tightly coupled institutional incentives, then faith is functionally indistinguishable from identity protective commitment. </p>
+<p>So the critique isn’t “religious people are dumb” or “all faith is evil.” It’s:</p>
+<ul>
+<li>Thick faith is a commitment technology—often identity-laden and community-reinforced (sometimes via explicit doctrinal boundary mechanisms).</li>
+<li>That structure predictably amplifies motivated and identity-protective reasoning, and it can sacralize commitments so they become resistant to ordinary revision.</li>
+<li>Therefore, when P is accepted “on faith,” Y can become entrenched even when its implications are anti-intellectual or anti-humanistic—because P is not being treated as defeasible in the way ordinary beliefs are.</li>
+</ul>
+<h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">¶</a></h4>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S1090513809000245">“The evolution of costly displays, cooperation and religion”</a></li>
+<li><a href="https://www-personal.umich.edu/~satran/PoliSci%2006/Wk%203-2%20Religion%20A-General%20Sosis%20%26%20Alcorta.pdf">“Signaling, Solidarity, and the Sacred: The Evolution of …”</a></li>
+<li><a href="https://spssi.onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-4560.2005.00428.x">“Religion as a Meaning‐Making Framework in Coping with Life …”</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4580713/">“The Role of Meaning in Life Within the Relations of Religious …”</a></li>
+<li><a href="https://link.springer.com/article/10.1007/s10943-025-02406-3">“Religiosity, Spirituality and Mental Health: Meta-analysis of …”</a></li>
+<li><a href="https://www.cognitionandculture.net/wp-content/uploads/Sosis_2003_CommuneLongevity.pdf">“Cooperation and Commune Longevity: A Test of the Costly …”</a> </li>
+<li><a href="https://spssi.onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-4560.2005.00428.x">“Religion as a Meaning‐Making Framework in Coping with Life …”</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4985721/">“Pargament’s Theory of Religious Coping: Implications … - NIH”</a></li>
+<li><a href="https://plato.stanford.edu/entries/faith/">“Faith - Stanford Encyclopedia of Philosophy”</a></li>
+<li><a href="https://fbaum.unc.edu/teaching/articles/Psych-Bulletin-1990-Kunda.pdf">“The Case for Motivated Reasoning”</a></li>
+<li><a href="https://ndg.asc.upenn.edu/wp-content/uploads/2017/08/Ideology-motivated-reasoning.pdf">“Ideology, motivated reasoning, and cognitive reflection”</a></li>
+<li><a href="https://royalsocietypublishing.org/rsos/article/6/6/181585/94892/Neuroimaging-will-to-fight-for-sacred-values-an">“Neuroimaging ‘will to fight’ for sacred values: an empirical …”</a></li>
+<li><a href="https://plato.stanford.edu/entries/fideism/">“Fideism - Stanford Encyclopedia of Philosophy”</a></li>
+<li><a href="https://www.dts.edu/about/doctrinal-statement/">“Doctrinal Statement”</a></li>
+<li><a href="https://www.tiu.edu/divinity/about/statement-of-faith/">“Statement of Faith - Trinity Evangelical Divinity School …”</a></li>
+<li><a href="https://www.journals.uchicago.edu/doi/full/10.1086/685495">“The Devoted Actor Unconditional Commitment and Intractable Conflict across Cultures”</a></li>
+</ul>
