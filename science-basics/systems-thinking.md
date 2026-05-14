@@ -562,7 +562,7 @@ This is one reason complex systems often produce surprises. Decision-makers focu
 
 ---
 
-# 21. Unintended Consequences and Side Effects
+# 21. Unintended Consequences, Side Effects, and Structural Effects
 
 Unintended consequences are outcomes that were not anticipated or intended by the designers of an intervention.
 
@@ -909,3 +909,44 @@ The deepest lessons are these:
 The moment you intervene in a complex system, you become part of the system itself.
 
 Systems thinking does not guarantee control. It offers something more realistic and more valuable: a way to see more clearly, act more wisely, and respect the complexity of the world we are trying to change.
+
+# Appendix
+
+## Core Systems Concepts
+
+| Aspect               | Meaning                   | Traffic Example             |
+| -------------------- | ------------------------- | --------------------------- |
+| Stocks               | Accumulations             | Cars on roads               |
+| Flows                | Rates changing stocks     | Cars entering/leaving       |
+| Delays               | Time lags                 | Slow road construction      |
+| Reinforcing feedback | Amplifying loops          | Induced demand              |
+| Balancing feedback   | Stabilizing loops         | Drivers avoiding congestion |
+| Nonlinearity         | Disproportionate effects  | Sudden gridlock             |
+| Emergence            | Whole > parts             | Traffic jams                |
+| Self-organization    | Spontaneous order         | Commuting patterns          |
+| Adaptation           | System learns             | Route switching             |
+| Path dependence      | History constrains future | Car-centric cities          |
+| Information flows    | Distribution of knowledge | GPS routing                 |
+| Paradigms            | Deep assumptions          | “Cars = freedom”            |
+| Leverage points      | High-impact interventions | Congestion pricing          |
+| Resilience           | Capacity to absorb shocks | Multi-modal transit         |
+| Oscillation          | Cyclic behavior           | Repeated congestion cycles  |
+| Archetypes           | Recurring structures      | “Fixes that fail”           |
+| Interdependence      | Mutual influence          | Housing ↔ traffic           |
+
+## Core Intervention Concepts
+
+| Type                  | Meaning                               | Traffic Example           |
+| --------------------- | ------------------------------------- | ------------------------- |
+| First-order effect    | Immediate direct outcome              | Faster traffic initially  |
+| Second-order effect   | Effects of effects                    | More people drive         |
+| Third-order effect    | Cascading structural shifts           | Urban sprawl              |
+| Side effect           | Ancillary consequence                 | More pollution            |
+| Compensating feedback | System pushes back                    | Congestion returns        |
+| Policy resistance     | System undermines intervention        | Induced demand            |
+| Perverse incentive    | Metric distorts behavior              | Optimizing car throughput |
+| Shifting the burden   | Symptom treatment replaces root cause | Endless road expansion    |
+| Cascading failure     | Effects propagate through networks    | Infrastructure overload   |
+| Fragility             | Optimization reduces resilience       | Single accident gridlock  |
+| Adaptation            | Agents change behavior                | Route-switching drivers   |
+| Emergence             | New macro behavior appears            | Sprawl culture            |
