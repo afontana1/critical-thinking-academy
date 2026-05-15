@@ -293,9 +293,7 @@ Suppose a model predicts that certain students are at risk of dropping out. That
 
 ## Models and uncertainty
 
-Models do not eliminate uncertainty. They organize it.
-
-This is another common misunderstanding. A model may produce a number, a line, a probability, a projection, or a ranking. The output can look clean and precise. But beneath that output may be many layers of uncertainty.
+Models do not eliminate uncertainty. They organize it. This is another common misunderstanding. A model may produce a number, a line, a probability, a projection, or a ranking. The output can look clean and precise. But beneath that output may be many layers of uncertainty.
 
 There may be measurement uncertainty. The data going into the model may be noisy, incomplete, biased, or imprecise. A thermometer has limits. A survey has sampling error. A diagnostic test may produce false positives or false negatives. Administrative records may reflect human decisions and institutional habits, not just the phenomenon of interest.
 
@@ -313,9 +311,7 @@ For non-experts, uncertainty can be frustrating. It may sound like weakness. But
 
 ## Multiple models and model pluralism
 
-For complex phenomena, scientists often use more than one model. This is not necessarily a sign of failure. It may be the responsible thing to do.
-
-Different models can represent different aspects of the same system. A simple model may reveal a core mechanism. A more complex model may include additional realism. A statistical model may estimate relationships from data. A causal model may clarify assumptions about intervention. A simulation may explore how interactions unfold over time.
+For complex phenomena, scientists often use more than one model. This is not necessarily a sign of failure. It may be the responsible thing to do. Different models can represent different aspects of the same system. A simple model may reveal a core mechanism. A more complex model may include additional realism. A statistical model may estimate relationships from data. A causal model may clarify assumptions about intervention. A simulation may explore how interactions unfold over time.
 
 Climate science, epidemiology, economics, ecology, neuroscience, and social science all use multiple models. This is partly because the systems are complex and partly because no single representation captures everything worth knowing.
 
@@ -329,9 +325,7 @@ This does not mean “anything goes.” Some models are better than others. Some
 
 ## How non-experts can read scientific models critically
 
-Most people do not need to know how to build every model they encounter. But they do need to know how to ask better questions about models.
-
-When a scientific claim depends on a model, the first question is: What is being represented? Is the model representing a physical system, a biological process, a social pattern, a causal relationship, a risk, a trend, a decision, or something else?
+Most people do not need to know how to build every model they encounter. But they do need to know how to ask better questions about models. When a scientific claim depends on a model, the first question is: What is being represented? Is the model representing a physical system, a biological process, a social pattern, a causal relationship, a risk, a trend, a decision, or something else?
 
 The second question is: What is the model for? A model built for prediction should not automatically be treated as an explanation. A model built to explore possibilities should not be treated as a precise forecast. A model built for one population may not apply to another.
 
@@ -351,26 +345,16 @@ These questions do not require advanced mathematics. They require understanding 
 
 ## From models to simulations
 
-This brings us naturally to simulation.
-
-If a model is a representation of a system, a simulation is what happens when we let that representation run.
+This brings us naturally to simulation. If a model is a representation of a system, a simulation is what happens when we let that representation run.
 
 A simulation takes assumptions, rules, equations, parameters, or programmed agents and explores what follows from them over time or across repeated trials. It can show how a disease might spread, how traffic might form, how galaxies might evolve, how molecules might interact, how an ecosystem might respond to change, or how individual decisions might produce large-scale social patterns.
 
 But a simulation is not magic. It is not reality unfolding inside a computer. It is a model in motion. Its value depends on the quality of the representation, the reasonableness of the assumptions, the reliability of the data, and the appropriateness of the model for the question being asked.
 
-This is why scientific representation must come before simulation. Before we ask what a simulation shows, we need to ask what it represents. Before we trust its output, we need to understand its assumptions. Before we treat its projection as evidence, we need to know the model behind it.
+This is why scientific representation must come before simulation. Before we ask what a simulation shows, we need to ask what it represents. Before we trust its output, we need to understand its assumptions. Before we treat its projection as evidence, we need to know the model behind it. Simulation can be one of the most powerful tools in science. But like every scientific tool, it works through representation.
 
-Simulation can be one of the most powerful tools in science. But like every scientific tool, it works through representation.
+## Closing Thoughts
 
-## The central lesson
+Scientific models are not failed copies of reality. They are selective representations built for particular purposes. They simplify, abstract, idealize, and organize. They help us explain, predict, estimate, compare, and explore. They can reveal patterns we would not otherwise see and consequences we could not easily reason through on our own.
 
-Scientific models are not failed copies of reality. They are selective representations built for particular purposes.
-
-They simplify, abstract, idealize, and organize. They help us explain, predict, estimate, compare, and explore. They can reveal patterns we would not otherwise see and consequences we could not easily reason through on our own.
-
-But models can also mislead when their assumptions are hidden, their limits are ignored, their uncertainty is understated, or their outputs are mistaken for reality itself.
-
-The question is not whether a model includes everything. No model does. The question is whether it represents the right things, in the right way, for the purpose at hand.
-
-That is the habit of mind scientific literacy requires: not blind trust in models, and not cynical dismissal of them, but careful attention to what they represent, how they simplify, where they apply, and what they allow us to understand.
+But models can also mislead when their assumptions are hidden, their limits are ignored, their uncertainty is understated, or their outputs are mistaken for reality itself. The question is not whether a model includes everything. No model does. The question is whether it represents the right things, in the right way, for the purpose at hand. That is the habit of mind scientific literacy requires: not blind trust in models, and not cynical dismissal of them, but careful attention to what they represent, how they simplify, where they apply, and what they allow us to understand.

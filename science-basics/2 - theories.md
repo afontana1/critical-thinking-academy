@@ -58,7 +58,7 @@ That is, a theory is more than just a verbal narrative: it's the background of a
 - [Models Are Stupid, and We Need More of Them](https://smaldino.com/wp/wp-content/uploads/2017/01/Smaldino2017-ModelsAreStupid.pdf)
 - [Better methods can’t make up for mediocre theory](https://www.nature.com/articles/d41586-019-03350-5)
 
-# Theoretical Virtues
+## Theoretical Virtues
 
 What counts as a "good" theory? How do we compare two theories explaining the same data? Why is simplicity considered desirable? Theoretical virtues are the criteria by which we compare competing theories. In addition to simplicity, there are other common virtues such as elegance (symmetry), explanatory power (unifying phenomena under one framework), fruitfulness (good at generating testable predictions), and coherence (with itself and other theories). Scientists often invoke these when deciding between theories that fit data equally well. 
 

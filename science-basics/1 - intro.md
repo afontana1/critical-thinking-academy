@@ -2,11 +2,23 @@
 
 There is a lot of confusion, propagated by various media sources, around fundamental scientific concepts and terminology. Colloquial uses of terms such as "theory" or "hypothesis" tend to distort the scientific usage of these terms. Scientific concepts can become trivialized as well; "your 'theory' is just as good as my 'theory'".  I want to clarify some of this terminology because constant misuse simply confuses everyone, making it harder to distinguish between competing sources of information on social media platforms. 
 
-What follows is a multi-post series with terms I think to be crucial for understanding what you're talking about when referring to science. Below is the table of contents:
+What follows is a multi-post series with concepts I think to be crucial for understanding what you're talking about when referring to science. Below is the table of contents:
 
-1. 
+1. Theory
+2. Evidence
+3. Measurement
+4. Data
+5. Hypothesis
+6. Models
+7. Causality
+8. Big Data
+9. Simulation
+10. Systems Thinking
+11. Objectivity
+12. Pseudoscience
+13. Scientism
 
-I've always found Feynman to be an excellent science communicator. So to kick this off, lets have a look at his famous lecture on the scientific method:
+I've always found Feynman to be an excellent science communicator. So to kick this off, lets have a look at his famous lecture on the scientific method. I think this monologue pretty much encapsulates much of what is meant by "science":
 
 ## Richard Feynman on Scientific Method (1964):
 

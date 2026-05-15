@@ -1,8 +1,8 @@
 # Data, Statistics, and Uncertainty
 
-## 1. From Measurement to Data
+## From Measurement to Data
 
-### 1.1. Bridging from the previous section
+### Bridging from the previous section
 
 So far, we have treated measurement as the disciplined act of assigning values to features of the world. We have asked what is being measured, how it is being measured, what instruments and units are involved, and how metrology gives measurement its structure. Those questions are essential because measurement is where scientific evidence first begins to take form. But a measurement by itself is rarely the final object of scientific reasoning. Most scientific claims are not built from a single reading, a single observation, or a single classification. They are built from collections of measurements assembled into what we call data.
 
@@ -10,7 +10,7 @@ This shift from measurement to data can seem simple: take many measurements, arr
 
 This matters because every later statistical result inherits the consequences of those earlier choices. A mean, a regression coefficient, a confidence interval, or a model prediction can only summarize the data that were actually produced. If the data were shaped by narrow definitions, inaccessible populations, inconsistent measurements, or undocumented cleaning decisions, then the statistical conclusions will reflect those limitations. Statistics begins long before calculation. It begins when we decide how the world will be allowed to appear in our data.
 
-### 1.2. Records, variables, and units of analysis
+### Records, variables, and units of analysis
 
 A dataset usually has an internal grammar. At its most familiar, this grammar is tabular: rows and columns. Each row is a record, and each column is a variable. But this simple structure hides an important conceptual question: what does each row represent?
 
@@ -22,7 +22,7 @@ Suppose a researcher wants to study households, but the available dataset record
 
 Similar problems arise in many domains. A hospital dataset may record visits rather than patients, so one person can appear multiple times. A school dataset may record classrooms rather than students. A biological dataset may record samples rather than organisms. A platform dataset may record posts rather than users. None of these choices is automatically wrong, but each one changes what the data can legitimately support. Before asking what a dataset shows, we need to ask what its rows are.
 
-### 1.3. Scoping a dataset in terms of a scientific problem
+### Scoping a dataset in terms of a scientific problem
 
 A dataset should be scoped around a scientific problem, not merely assembled because information is available. The question should guide the design. What are the appropriate units? What variables need to be measured on each unit? What time window matters? What geographic or institutional boundaries define the setting? What contextual information is necessary for interpretation?
 
@@ -32,9 +32,9 @@ We also need to define the time window. Are we studying one heat wave, one summe
 
 These decisions happen before any formal statistical analysis. They are part of conceptual design. A dataset is useful only to the extent that its structure matches the scientific problem. If the data are poorly scoped, later statistical sophistication can create the appearance of rigor without actually answering the intended question.
 
-## 2. Populations, Samples, and the Scope of Claims
+## Populations, Samples, and the Scope of Claims
 
-### 2.1. Defining a population conceptually
+### Defining a population conceptually
 
 Most scientific studies observe less than everything they care about. A researcher rarely measures every human, every mouse of a particular strain, every galaxy of a certain type, every social media post on a topic, or every ecosystem in a biome. Instead, researchers observe some units and then use those observations to reason about a larger set. This larger set is the population.
 
@@ -44,7 +44,7 @@ The accessible population is the subset of the target population that can realis
 
 The sample is the set of units actually observed. It is the concrete data-bearing subset. Inference is the bridge from sample to population. Every inferential claim therefore depends on how sturdy that bridge is. If the sample resembles the target population in relevant ways, the bridge may be strong. If the sample differs systematically from the target population, the bridge becomes fragile. Statistical tools can estimate some forms of uncertainty in crossing from sample to population, but they cannot magically erase a mismatch between the people, organisms, places, or events observed and the ones we ultimately want to understand.
 
-### 2.2. Units, aggregation, and level problems
+### Units, aggregation, and level problems
 
 Population claims also depend on the level at which data are measured and analyzed. Individual-level data describe individual units: persons, cells, animals, transactions, or events. Group-level data describe aggregates: schools, neighborhoods, countries, laboratories, companies, tissues, or populations. Both levels are valuable, but they answer different questions.
 
@@ -54,7 +54,7 @@ The reverse danger is sometimes called the atomistic fallacy: drawing conclusion
 
 The level of analysis changes what the population is. If rows are people, the population may be people. If rows are schools, the population may be schools. If rows are region-years, the population may be region-years. Confusion about level can lead to overclaiming. A dataset of hospital visits is not automatically a dataset of people. A dataset of countries is not automatically evidence about citizens. A dataset of cells in culture is not automatically evidence about whole organisms. The statistical unit and the scientific claim must be aligned.
 
-### 2.3. Framing the scope of conclusions
+### Framing the scope of conclusions
 
 A responsible analysis states not only what it found but also where, when, and for whom the finding is meant to hold. The question is: for which population and time period do my conclusions apply?
 
@@ -64,9 +64,9 @@ Broader claims require stronger justification. To move from “students at this 
 
 This is why scope statements are part of statistical reasoning. They define the boundaries of inference. Without them, results float free of their conditions of production and are easily misused. A precise estimate for a narrow sample may be less useful for broad policy than a less precise estimate from a representative design. Conversely, a small, carefully defined experiment may reveal a mechanism that is scientifically important even if it does not immediately estimate population prevalence. The right scope depends on the question.
 
-## 3. How Data Are Obtained: Sampling as a Generative Act
+## How Data Are Obtained
 
-### 3.1. Sampling frames and access to the population
+### Sampling frames and access to the population
 
 Sampling is often described as selecting units from a population. But in practice, researchers usually do not sample directly from an abstract population. They sample from a sampling frame: the list, system, map, registry, platform, or mechanism through which units can be selected.
 
@@ -78,7 +78,7 @@ Overcoverage occurs when the frame includes units that are not part of the targe
 
 The sampling frame silently defines the doorway into the dataset. Units outside that doorway cannot be observed, no matter how large the eventual sample is. This is one of the most important reasons that “more data” does not automatically mean “better data.” A huge dataset drawn from a distorted frame can produce extremely precise estimates of the wrong population.
 
-### 3.2. Probability sampling: the basic idea
+### Probability sampling: the basic idea
 
 Probability sampling refers to designs in which units are selected according to known or specifiable probabilities. The technical details can become sophisticated, but the central idea is simple: the selection process is deliberately structured so that sampling uncertainty can be understood.
 
@@ -90,7 +90,7 @@ In cluster sampling, groups are sampled first, and then units within those group
 
 Randomization in sampling is not magic. It does not ensure that every sample is representative in every respect. Rather, it gives us a principled way to control selection bias and quantify sampling variability. Because the selection process is known, we can ask how much estimates would vary across imaginary repetitions of the same design.
 
-### 3.3. Non-probability sampling and found data
+### Non-probability sampling and found data
 
 Many datasets are not produced by probability sampling. Convenience samples include units that are easy to reach: students in a laboratory class, patients at a nearby clinic, volunteers responding to an online advertisement, or organisms collected from accessible field sites. Snowball samples recruit through networks: one participant refers another, who refers another. Administrative and platform data arise because institutions or systems record activity for operational reasons: hospital records, tax files, app logs, purchase histories, web scrapes, learning management systems, and social media archives.
 
@@ -100,7 +100,7 @@ The problem is not that non-probability data are useless. The problem is that po
 
 Big data can make this problem harder to see. A dataset with millions of records can feel authoritative. But size does not guarantee representativeness. A social media dataset may contain millions of posts while excluding people who do not use the platform, people who only read but do not post, people whose posts were deleted, or people whose language is not captured by the search terms. A hospital dataset may contain millions of encounters while excluding people who could not access care. The question is always: large relative to what population, and generated by what process?
 
-### 3.4. Sources of sampling bias
+### Sources of sampling bias
 
 Sampling bias arises when the observed units differ systematically from the population about which we want to make claims. Several forms are especially important.
 
@@ -112,9 +112,9 @@ Nonresponse bias occurs when units are invited or eligible but do not respond, a
 
 These biases are not merely random noise. Random sampling error may make an estimate fluctuate around a target. Systematic sampling bias can move the target itself. A large biased sample can produce a result that is stable, precise, and wrong. This is why sampling is a generative act: it helps create the dataset and shapes the uncertainty attached to every later claim.
 
-## 4. Data Collection as a Process, Not an Event
+## Data Collection as a Process, Not an Event
 
-### 4.1. Study designs and their implications for data
+### Study designs and their implications for data
 
 Data collection is not a single moment when facts are gathered. It is a process organized by a study design. The design determines what comparisons are possible, what temporal relationships can be observed, and what causal claims are plausible.
 
@@ -126,7 +126,7 @@ Cross-sectional designs measure units at one point in time or over a short inter
 
 In biomedical contexts, case-control studies begin with outcome status: researchers compare units with a condition to units without it and look backward for exposures or risk factors. Case series describe a set of cases, often useful for identifying new phenomena, rare conditions, or clinical patterns. Each design produces a different kind of evidence. The statistical analysis must respect the design rather than pretending all datasets are interchangeable tables.
 
-### 4.2. Protocols, standardization, and field or lab practice
+### Protocols, standardization, and field or lab practice
 
 A protocol defines how data should be collected. It specifies when measurements are taken, where they are taken, who takes them, which instruments are used, how those instruments are calibrated, how specimens are handled, how observers are trained, how questions are asked, and how deviations are documented. Protocols are an attempt to make data collection stable enough that observations can be compared.
 
@@ -136,7 +136,7 @@ But reality is messier than protocols. Field sites are inaccessible. Instruments
 
 These deviations are not always catastrophic. Science routinely operates under imperfect conditions. The problem arises when deviations are invisible. If we do not know that one batch of samples was processed differently, one interviewer paraphrased questions, one sensor was miscalibrated, or one site changed its procedure midway through the study, we may interpret procedural artifacts as scientific findings. Documentation is therefore not administrative overhead. It is part of the evidential structure of the data.
 
-### 4.3. From events to data entries: coding, classification, and judgment
+### From events to data entries: coding, classification, and judgment
 
 Many data do not begin as numbers. They begin as events, behaviors, symptoms, images, narratives, specimens, or traces. Turning these into data often requires coding and classification.
 
@@ -148,7 +148,7 @@ These decisions should be visible in metadata. Metadata are data about the data:
 
 The act of coding is part of the data-generating process. It is where concepts become columns.
 
-### 4.4. Data cleaning as part of the generative story
+### Data cleaning as part of the generative story
 
 Data cleaning is often described as the unglamorous work that happens before “real analysis.” That description is misleading. Cleaning is not merely janitorial. It actively shapes the dataset and therefore the conclusions drawn from it.
 
@@ -160,9 +160,9 @@ Cleaning decisions can change estimates, associations, and uncertainty. Excludin
 
 The key is not to avoid cleaning. Uncleaned data can be unusable. The key is to treat cleaning as part of the generative story and document it accordingly. A final dataset is not simply collected; it is produced.
 
-## 5. Conceptualizing Data-Generating Processes Without Heavy Math
+## Conceptualizing Data-Generating Processes Without Heavy Math
 
-### 5.1. The data-generating process as a narrative
+### The data-generating process as a narrative
 
 A data-generating process, or DGP, is a story about how the world produces the data we observe. In formal statistics, DGPs can be expressed mathematically. But before equations, they can be understood narratively.
 
@@ -176,7 +176,7 @@ Finally, there are processes that record, code, store, clean, and transform the 
 
 Thinking through the DGP helps us ask better questions before fitting any model. What must have happened for this row to appear? What must have happened for this value to be missing? What selection processes are invisible? What measurement processes introduce error? What coding decisions turned reality into this column? A DGP narrative keeps statistics connected to the conditions that produced the data.
 
-### 5.2. Aleatory and epistemic uncertainty
+### Aleatory and epistemic uncertainty
 
 Uncertainty is not all of one kind. A useful distinction separates aleatory uncertainty from epistemic uncertainty.
 
@@ -188,7 +188,7 @@ A simple way to express the distinction is this: aleatory uncertainty is variati
 
 More data may reduce epistemic uncertainty, especially when the data are relevant and well measured. But more data cannot eliminate aleatory variability. Better design, better theory, better measurement, and better documentation may reduce epistemic uncertainty in ways that mere sample size cannot.
 
-### 5.3. Imaginary repetitions and sampling variability
+### Imaginary repetitions and sampling variability
 
 One of the central ideas in statistics is that the dataset we have is only one of many datasets we might have obtained under the same design. Imagine repeating the same study many times: drawing new samples from the same population, measuring them with the same instruments, applying the same protocol, and calculating the same summary each time. The results would not be identical. They would vary.
 
@@ -198,9 +198,9 @@ Confidence intervals, p-values, error bars, standard errors, and related tools a
 
 This is why uncertainty is not a sign that a study failed. Uncertainty is a normal feature of learning from samples. The goal is not to pretend it is absent, but to characterize it honestly.
 
-## 6. Data Quality and the Anatomy of Uncertainty
+## Data Quality and the Anatomy of Uncertainty
 
-### 6.1. Types of error
+### Types of error
 
 Data quality is not a single property. A dataset can be excellent in one respect and weak in another. To understand quality, it helps to distinguish types of error.
 
@@ -212,7 +212,7 @@ Processing error occurs after measurement, during data entry, linkage, coding, s
 
 Each error type can be random or systematic. Random errors tend to increase variability and reduce precision. Systematic errors can shift conclusions in a particular direction. The distinction matters because different errors require different remedies. Repeating measurements may reduce random measurement noise, but it will not fix a systematically biased instrument. Increasing sample size may reduce sampling variability, but it will not correct coverage bias. More sophisticated modeling may account for some processing errors, but it cannot recover information that was destroyed by undocumented transformations.
 
-### 6.2. Bias versus variability
+### Bias versus variability
 
 Bias and variability are two different ways results can be uncertain or wrong.
 
@@ -224,7 +224,7 @@ Consider two bathroom scales. One scale gives slightly different readings each t
 
 Scientific results can fail in either way. A small randomized study may be relatively unbiased but noisy. A massive convenience sample may produce extremely precise estimates that are systematically off. Good statistical reasoning asks both questions: how variable are the results, and are they aimed at the right target?
 
-### 6.3. Missing data as structured uncertainty
+### Missing data as structured uncertainty
 
 Missing data are often treated as a nuisance, but missingness is itself informative about the data-generating process. A blank cell is not just absence; it is the result of something that happened or failed to happen.
 
@@ -236,7 +236,7 @@ The most difficult cases occur when missingness is related to variables we do no
 
 Missingness can change the effective population represented by the sample. If the people who remain in a dataset differ from those who are missing, then the analysis may describe the reachable, recorded, complete-case population rather than the intended target population. Treating missingness as part of the DGP helps us ask: who is missing, why are they missing, and how might their absence alter the conclusions?
 
-### 6.4. Descriptive summaries as tools for uncertainty awareness
+### Descriptive summaries as tools for uncertainty awareness
 
 Descriptive statistics are often introduced as simple ways to summarize data: means, medians, ranges, quantiles, histograms, standard deviations. But they are more than tidy summaries. They are instruments for inspecting uncertainty, variation, and data quality.
 
@@ -250,9 +250,9 @@ Confusing the two leads to conceptual mistakes. A population can have high indiv
 
 Descriptive summaries should be used early and often, not as a mechanical prelude but as a way of learning what kind of uncertainty the data contain. They can reveal implausible values, unexpected clusters, missingness patterns, subgroup differences, and distributions that challenge later modeling assumptions.
 
-## 7. Statistics as Organized Reasoning from Samples
+## Statistics as Organized Reasoning from Samples
 
-### 7.1. Descriptive versus inferential statistics
+### Descriptive versus inferential statistics
 
 Descriptive statistics characterize the data in hand. They tell us what is present in the sample: the average age of participants, the distribution of incomes, the proportion of records with missing values, the range of temperatures observed, the difference between treatment groups in the collected data. Descriptive statistics do not require a leap beyond the observed dataset, though they still depend on how the data were generated and cleaned.
 
@@ -262,7 +262,7 @@ The movement from description to inference is the movement from “what did we o
 
 This is why descriptive and inferential statistics should not be treated as merely two chapters in a textbook. They represent different kinds of claims. A descriptive claim can be true of the sample and still fail as a population claim. A sample may contain 60% women, but that does not mean the target population is 60% women unless the sampling process supports that inference. Inference requires a bridge, and the bridge is built from design plus assumptions.
 
-### 7.2. Frequentist and Bayesian lenses
+### Frequentist and Bayesian lenses
 
 Two major traditions offer different ways to organize statistical uncertainty: frequentist and Bayesian reasoning. At this stage, the distinction can be introduced lightly.
 
@@ -274,7 +274,7 @@ In a Bayesian lens, probability represents degrees of belief or uncertainty abou
 
 Both approaches are ways of reasoning from samples to broader claims. They differ in interpretation, workflow, and philosophical grounding, but both require assumptions. Both can be used well or poorly. Both can express uncertainty. The important point here is not to choose a side prematurely, but to see that statistical frameworks are organized languages for uncertainty.
 
-### 7.3. The role of assumptions
+### The role of assumptions
 
 No inference happens without assumptions. Some assumptions are explicit, such as a model stating that errors are normally distributed or that observations are independent. Others are implicit, such as assuming that nonrespondents resemble respondents after adjustment, that a measurement instrument behaves the same across groups, or that a relationship observed in one setting applies to another.
 
@@ -284,9 +284,9 @@ Design can make assumptions more or less plausible. Random sampling supports cer
 
 A mature statistical analysis does not hide assumptions. It names them, motivates them, checks them where possible, and asks how conclusions might change if they fail. Assumptions are not embarrassing. They are the scaffolding of inference.
 
-## 8. Introducing Statistical Models as Golems
+## Introducing Statistical Models as Golems
 
-### 8.1. What a statistical model is in this narrative
+### What a statistical model is in this narrative
 
 A statistical model is a formalized version of a data-generating story. It encodes ideas about which variables matter, how they are related, where randomness enters, and what patterns we expect to see across possible datasets.
 
@@ -296,7 +296,7 @@ This connection to the DGP is crucial. A model does not only describe the one da
 
 Models can summarize, estimate, predict, explain, and simulate. But they always simplify. They leave things out. They impose structure. They translate messy reality into a system that can be reasoned with. That simplification is both their power and their danger.
 
-### 8.2. Models as golems
+### Models as golems
 
 Richard McElreath’s metaphor of statistical models as golems is useful because it captures their strange combination of power and mindlessness. In folklore, a golem is a creature animated to perform tasks. It can be strong and useful, but it does not understand the world in the way a person does. It follows instructions.
 
@@ -306,7 +306,7 @@ Models are built from assumptions rather than clay. If the assumptions are thoug
 
 This metaphor prepares us for later questions: how do we design models, fit them, check them, compare them, criticize them, and refine them? A model should not be worshipped as an oracle. It should be treated as a constructed tool whose behavior must be understood.
 
-### 8.3. How modeling connects back to sampling and data collection
+### How modeling connects back to sampling and data collection
 
 A model cannot fully repair a broken data-generating process. It cannot make an inaccessible population appear in the data. It cannot remove severe sampling bias by mathematical elegance alone. It cannot turn poor measurements into good measurements without additional information. It cannot recover distinctions erased by coding, or reconstruct undocumented cleaning decisions with certainty.
 
@@ -316,9 +316,7 @@ But modeling always inherits the conditions of data collection. A model fitted t
 
 “Garbage in, garbage out” understates the danger. In statistics, the risk is sometimes “garbage in, gospel out”: poor inputs transformed into polished, precise, authoritative-looking conclusions. The more sophisticated the model, the more tempting it can be to trust the output. That is why the earlier questions about measurement, sampling, protocols, metadata, and cleaning remain central even when the analysis becomes mathematically advanced.
 
-## 9. Trust, Context, and Looking Ahead
-
-### 9.1. Why knowing where the data came from is statistical
+## Trust, Context, and Looking Ahead
 
 Knowing where data came from is not a side issue. It is statistical. Provenance and metadata tell us how to interpret uncertainty, bias, scope, and evidence.
 
@@ -329,4 +327,3 @@ These details matter because uncertainty is not attached only to final estimates
 Trustworthy statistical reasoning therefore begins by asking where the data came from. What population was accessible? What sample was observed? What measurements were taken? What protocols governed them? What coding decisions were made? What values are missing, and why? What transformations occurred between collection and analysis? What assumptions connect the observed data to the claim being made?
 
 This prepares us for the next stage: treating data not only as tables but as documented, contextualized, historically produced objects. Metadata, provenance, and modeling are not separate concerns. They are different parts of the same problem: how to reason responsibly from partial, constructed evidence about a variable world.
-

@@ -280,7 +280,7 @@ Interference and spillovers occur when one unit’s treatment affects another un
 
 These advanced topics show that causal inference becomes more difficult as the world becomes more interconnected. But the central question remains the same: what would happen if conditions were different?
 
-## Final Reflection
+## Closing Reflections
 
 Causal inference begins with a simple frustration: we want to know what caused what, but reality only unfolds once. We cannot rerun the world under different conditions while holding everything else fixed. We cannot directly observe the alternatives that causal claims require.
 
