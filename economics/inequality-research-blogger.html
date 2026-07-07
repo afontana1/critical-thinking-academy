@@ -1,0 +1,1295 @@
+<style>
+  /* Scoped styles for Blogger dark themes. Keeps backgrounds transparent. */
+  .ep-post {
+    color: inherit;
+    background: transparent;
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif;
+    line-height: 1.65;
+    font-size: 1rem;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .ep-post * {
+    box-sizing: border-box;
+  }
+
+  .ep-post h1,
+  .ep-post h2,
+  .ep-post h3,
+  .ep-post h4 {
+    line-height: 1.25;
+    margin: 1.8em 0 0.65em;
+    color: inherit;
+    scroll-margin-top: 1.25rem;
+  }
+
+  .ep-post h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+    padding-bottom: 0.35em;
+  }
+
+  .ep-post h2 {
+    font-size: 1.45rem;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    padding-bottom: 0.25em;
+  }
+
+  .ep-post h3 {
+    font-size: 1.15rem;
+  }
+
+  .ep-post p {
+    margin: 0.75em 0;
+  }
+
+  .ep-post ul,
+  .ep-post ol {
+    margin: 0.65em 0 0.9em 1.35em;
+    padding: 0;
+  }
+
+  .ep-post li {
+    margin: 0.22em 0;
+  }
+
+  .ep-post a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+  }
+
+  .ep-post strong {
+    font-weight: 700;
+  }
+
+  .ep-post code {
+    background: color-mix(in srgb, currentColor 10%, transparent);
+    color: inherit;
+    border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    border-radius: 0.25rem;
+    padding: 0.08em 0.28em;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+      monospace;
+    font-size: 0.92em;
+  }
+
+  .ep-post pre {
+    background: color-mix(in srgb, currentColor 7%, transparent);
+    color: inherit;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 0.6rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .ep-post pre code {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  .ep-post blockquote {
+    margin: 1em 0;
+    padding: 0.2em 0 0.2em 1em;
+    border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+    color: color-mix(in srgb, currentColor 88%, transparent);
+  }
+
+  .ep-post .ep-toc {
+    margin: 1.25em 0 1.75em;
+    padding: 1em 1.1em;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, currentColor 4%, transparent);
+  }
+
+  .ep-post .ep-toc h2 {
+    margin: 0 0 0.55em;
+    padding: 0;
+    border: 0;
+    font-size: 1.05rem;
+  }
+
+  .ep-post .ep-toc ol {
+    margin-bottom: 0;
+  }
+
+  .ep-post .ep-toc a {
+    text-decoration-thickness: 1px;
+  }
+
+  /* Readable Blogger tables: transparent, scrollable, and dark-theme friendly. */
+  .ep-post .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 1.15em 0;
+    border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+    border-radius: 0.65rem;
+    background: transparent !important;
+  }
+
+  .ep-post table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 1.15em 0;
+    font-size: 0.9em;
+    line-height: 1.45;
+    color: inherit;
+    background: transparent !important;
+  }
+
+  .ep-post .table-wrap table {
+    margin: 0;
+  }
+
+  .ep-post table.wide-table {
+    min-width: 760px;
+  }
+
+  .ep-post table.extra-wide-table {
+    min-width: 920px;
+  }
+
+  .ep-post table.long-table {
+    font-size: 0.86em;
+  }
+
+  .ep-post thead,
+  .ep-post tbody,
+  .ep-post tr,
+  .ep-post th,
+  .ep-post td {
+    background: transparent !important;
+    color: inherit;
+  }
+
+  .ep-post th,
+  .ep-post td {
+    border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+    padding: 0.48em 0.6em;
+    vertical-align: top;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+  }
+
+  .ep-post th {
+    font-weight: 700;
+    text-align: left;
+    background: color-mix(in srgb, currentColor 9%, transparent) !important;
+  }
+
+  .ep-post tr:nth-child(even) td {
+    background: color-mix(in srgb, currentColor 4%, transparent) !important;
+  }
+
+  .ep-post table:not(.extra-wide-table) th:first-child,
+  .ep-post table:not(.extra-wide-table) td:first-child {
+    width: 22%;
+  }
+
+  .ep-post table.two-col th:first-child,
+  .ep-post table.two-col td:first-child {
+    width: 28%;
+  }
+
+  .ep-post table.two-col th:nth-child(2),
+  .ep-post table.two-col td:nth-child(2) {
+    width: 72%;
+  }
+
+  .ep-post table.three-col th:first-child,
+  .ep-post table.three-col td:first-child {
+    width: 22%;
+  }
+
+  .ep-post table.three-col th:nth-child(2),
+  .ep-post table.three-col td:nth-child(2) {
+    width: 43%;
+  }
+
+  .ep-post table.three-col th:nth-child(3),
+  .ep-post table.three-col td:nth-child(3) {
+    width: 35%;
+  }
+
+  .ep-post th.short,
+  .ep-post td.short,
+  .ep-post th.date,
+  .ep-post td.date,
+  .ep-post th.number,
+  .ep-post td.number {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .ep-post th.long,
+  .ep-post td.long,
+  .ep-post th.description,
+  .ep-post td.description,
+  .ep-post th.notes,
+  .ep-post td.notes {
+    min-width: 14rem;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .ep-post table.dense th,
+  .ep-post table.dense td {
+    padding: 0.38em 0.5em;
+    font-size: 0.96em;
+    line-height: 1.42;
+  }
+
+  .ep-post .mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+  }
+
+  .ep-post .math-block {
+    margin: 1em 0;
+    overflow-x: auto;
+  }
+
+  @supports not (color: color-mix(in srgb, white 50%, black)) {
+    .ep-post h1,
+    .ep-post h2 {
+      border-bottom-color: rgba(128, 128, 128, 0.35);
+    }
+
+    .ep-post .ep-toc,
+    .ep-post .table-wrap {
+      border-color: rgba(128, 128, 128, 0.25);
+      background: rgba(128, 128, 128, 0.06);
+    }
+
+    .ep-post th,
+    .ep-post td {
+      border-color: rgba(128, 128, 128, 0.35);
+    }
+
+    .ep-post th {
+      background: rgba(128, 128, 128, 0.12) !important;
+    }
+
+    .ep-post tr:nth-child(even) td {
+      background: rgba(128, 128, 128, 0.06) !important;
+    }
+
+    .ep-post code,
+    .ep-post pre {
+      background: rgba(128, 128, 128, 0.12);
+      border-color: rgba(128, 128, 128, 0.25);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ep-post {
+      font-size: 0.98rem;
+    }
+
+    .ep-post h1 {
+      font-size: 1.65rem;
+    }
+
+    .ep-post h2 {
+      font-size: 1.28rem;
+    }
+
+    .ep-post .ep-toc {
+      padding: 0.85em 0.95em;
+    }
+
+    .ep-post .table-wrap {
+      overflow-x: visible;
+      border: 0;
+      border-radius: 0;
+      margin: 1.1em 0;
+    }
+
+    .ep-post table,
+    .ep-post table.wide-table,
+    .ep-post table.extra-wide-table,
+    .ep-post table.long-table {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+      font-size: 0.92em;
+      border: 0;
+    }
+
+    .ep-post thead {
+      display: none;
+    }
+
+    .ep-post tbody,
+    .ep-post tr,
+    .ep-post td {
+      display: block;
+      width: 100% !important;
+    }
+
+    .ep-post tr {
+      margin: 0 0 0.9em;
+      border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+      border-radius: 0.65rem;
+      overflow: hidden;
+      background: color-mix(in srgb, currentColor 3%, transparent) !important;
+    }
+
+    .ep-post td {
+      border: 0;
+      border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      padding: 0.55em 0.7em;
+      line-height: 1.5;
+    }
+
+    .ep-post td:last-child {
+      border-bottom: 0;
+    }
+
+    .ep-post td::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 0.18em;
+      font-size: 0.78em;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: color-mix(in srgb, currentColor 72%, transparent);
+    }
+  }
+</style>
+
+<article class="ep-post">
+<nav class="ep-toc" aria-label="Table of contents">
+<h2>Table of contents</h2>
+<ol>
+  <li><a href="#i-why-the-standard-efficiency-frame-is-insufficient">I. Why the Standard Efficiency Frame Is Insufficient</a></li>
+  <li><a href="#ii-use-non-functional-requirements-to-analyze-inequality">II. Use Non-Functional Requirements to Analyze Inequality</a></li>
+  <li><a href="#iii-study-inequality-through-repeated-games-and-evolutionary-dynamics">III. Study Inequality Through Repeated Games and Evolutionary Dynamics</a></li>
+  <li><a href="#iv-understand-the-standard-economic-approaches-before-extending-them">IV. Understand the Standard Economic Approaches Before Extending Them</a></li>
+  <li><a href="#v-a-practical-how-to-method-for-deep-systems-analysis-of-inequality">V. A Practical How-To Method for Deep Systems Analysis of Inequality</a></li>
+  <li><a href="#vi-core-questions-for-the-systems-oriented-inequality-analyst">VI. Core Questions for the Systems-Oriented Inequality Analyst</a></li>
+  <li><a href="#vii-how-this-differs-from-a-standard-inequality-analysis">VII. How This Differs from a Standard Inequality analysis</a></li>
+</ol>
+</nav>
+<h2 id="core-thesis">Core Thesis</h2>
+<p>Economic inequality should not be studied only as a moral problem, a statistical pattern, or a post-market outcome. It should be studied as a <strong>structural state variable</strong> in a complex adaptive economic system.</p>
+<p>Distribution determines who can participate, who can learn, who can absorb shocks, who can invest, who can bargain, who can form networks, and who can shape future rules of the game.</p>
+<p>From this perspective, inequality is not merely an output of economic activity. It is also an input into future economic dynamics.</p>
+<p>The central question becomes:</p>
+<blockquote>
+<p>How does the distribution of wealth, income, capabilities, information, and network position affect the long-run performance, resilience, adaptability, and legitimacy of the economic system?</p>
+</blockquote>
+<hr />
+<h1 id="i-why-the-standard-efficiency-frame-is-insufficient">I. Why the Standard Efficiency Frame Is Insufficient</h1>
+<h2 id="1-the-conventional-economic-starting-point">1. The conventional economic starting point</h2>
+<p>Economists often begin with questions of efficiency:</p>
+<ul>
+<li>Are resources allocated to their highest-valued uses?</li>
+<li>Are markets clearing?</li>
+<li>Are incentives aligned?</li>
+<li>Are prices transmitting information?</li>
+<li>Is output being maximized subject to constraints?</li>
+<li>Are there deadweight losses?</li>
+<li>Are there distortions caused by taxes, regulation, monopoly, externalities, or information asymmetry?</li>
+</ul>
+<p>This is important. Efficiency is a real systems concept. A system that wastes resources, misallocates labor, suppresses innovation, or distorts signals performs poorly.</p>
+<p>But the problem is that efficiency analysis often assumes the structure of the system rather than interrogating it.</p>
+<p>It asks:</p>
+<blockquote>
+<p>Given this distribution of rights, wealth, endowments, bargaining power, and institutions, how efficiently does the system allocate resources?</p>
+</blockquote>
+<p>A deeper systems approach asks:</p>
+<blockquote>
+<p>How did this distribution arise, how does it reproduce itself, and how does it affect the future behavior of the system?</p>
+</blockquote>
+<h2 id="2-distribution-as-system-state">2. Distribution as system state</h2>
+<p>Distribution should be treated as part of the state of the economic system.</p>
+<p>At any given time, the system has distributions of:</p>
+<ul>
+<li>wealth,</li>
+<li>income,</li>
+<li>debt,</li>
+<li>land,</li>
+<li>productive capital,</li>
+<li>education,</li>
+<li>health,</li>
+<li>political influence,</li>
+<li>institutional access,</li>
+<li>information,</li>
+<li>risk exposure,</li>
+<li>bargaining power,</li>
+<li>network centrality,</li>
+<li>geographic opportunity,</li>
+<li>and technological capability.</li>
+</ul>
+<p>These distributions determine the next round of economic interaction.</p>
+<p>The economy is therefore not:</p>
+<blockquote>
+<p>production → exchange → distribution</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p>distribution → feasible strategies → production/exchange → payoffs → new distribution → next round</p>
+</blockquote>
+<p>This is the first major conceptual shift.</p>
+<h2 id="3-distribution-and-system-longevity">3. Distribution and system longevity</h2>
+<p>A system can be efficient in the short run while degrading its own future viability.</p>
+<p>For example, an economy may produce high aggregate output while also generating:</p>
+<ul>
+<li>extreme wealth concentration,</li>
+<li>household financial fragility,</li>
+<li>regional decline,</li>
+<li>monopoly power,</li>
+<li>low trust,</li>
+<li>political instability,</li>
+<li>suppressed mobility,</li>
+<li>and weakened human development.</li>
+</ul>
+<p>From a systems perspective, these are not peripheral issues. They are signs that the system may be consuming its own future operating conditions.</p>
+<p>Distributional analysis helps answer:</p>
+<blockquote>
+<p>Can this system reproduce itself over time without accumulating destabilizing imbalances?</p>
+</blockquote>
+<h2 id="4-distribution-and-growth">4. Distribution and growth</h2>
+<p>Growth is not only a function of capital accumulation or productivity. It also depends on whether a society develops and deploys its full stock of human, institutional, technological, and organizational capability.</p>
+<p>Inequality can suppress growth when it limits:</p>
+<ul>
+<li>education,</li>
+<li>health,</li>
+<li>entrepreneurship,</li>
+<li>labor mobility,</li>
+<li>risk-taking,</li>
+<li>invention,</li>
+<li>skill formation,</li>
+<li>local development,</li>
+<li>and demand formation.</li>
+</ul>
+<p>The systems question is not merely:</p>
+<blockquote>
+<p>Does inequality reduce current welfare?</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p>Does inequality prevent the system from discovering and developing its own future capabilities?</p>
+</blockquote>
+<h2 id="5-distribution-and-resilience">5. Distribution and resilience</h2>
+<p>A resilient economy absorbs shocks without cascading failure.</p>
+<p>Distributional analysis reveals whether resilience is broadly distributed or narrowly concentrated.</p>
+<p>A society with widespread savings, accessible healthcare, stable housing, broad education, and diversified local economies has more shock absorbers. A society where large portions of the population live near failure thresholds has less resilience.</p>
+<p>Ask:</p>
+<ul>
+<li>Who can survive income interruption?</li>
+<li>Who can absorb medical shocks?</li>
+<li>Which firms have buffers?</li>
+<li>Which regions have adaptive capacity?</li>
+<li>Which institutions can respond under stress?</li>
+<li>Where are the weakest links?</li>
+</ul>
+<p>Distribution reveals the system’s shock-absorption architecture.</p>
+<h2 id="6-distribution-and-volatility">6. Distribution and volatility</h2>
+<p>Highly unequal systems may exhibit unstable oscillations.</p>
+<p>Concentration can generate compensating mechanisms:</p>
+<ul>
+<li>debt replaces wage growth,</li>
+<li>asset inflation replaces broad prosperity,</li>
+<li>transfers replace labor-market inclusion,</li>
+<li>cheap imports replace purchasing power,</li>
+<li>speculation replaces productive investment,</li>
+<li>political polarization replaces institutional trust.</li>
+</ul>
+<p>These compensations may stabilize the system temporarily, but they also create volatility.</p>
+<p>The systems question becomes:</p>
+<blockquote>
+<p>Is inequality creating hidden instability that later appears as financial crises, political shocks, demand collapses, or institutional breakdowns?</p>
+</blockquote>
+<h2 id="7-distribution-and-price-signals">7. Distribution and price signals</h2>
+<p>Economists often interpret prices and consumer choices as information about preferences.</p>
+<p>But distribution affects what choices are feasible.</p>
+<p>If consumers buy cheap goods because they are trapped by low wages, debt, poor mobility, weak alternatives, and limited bargaining power, then observed demand does not necessarily reveal true welfare-maximizing preference.</p>
+<p>It may reveal adaptation to constraint.</p>
+<p>So distributional analysis asks:</p>
+<ul>
+<li>Are prices reflecting genuine preference or constrained survival behavior?</li>
+<li>Are market choices shaped by unequal outside options?</li>
+<li>Are consumers in an absorbing low-resource state?</li>
+<li>Does the system appear allocatively efficient only because prior distributions narrowed the feasible choice set?</li>
+</ul>
+<p>This is a major systems critique of narrow allocative-efficiency analysis.</p>
+<h2 id="8-distribution-and-network-topology">8. Distribution and network topology</h2>
+<p>Economic systems are networks.</p>
+<p>People, firms, banks, platforms, schools, cities, regulators, and suppliers are connected through relationships of exchange, credit, employment, knowledge, infrastructure, and power.</p>
+<p>Inequality can indicate network structure.</p>
+<p>For example:</p>
+<ul>
+<li>concentrated wealth may reveal hub dominance,</li>
+<li>low mobility may reveal closed network clusters,</li>
+<li>regional inequality may reveal weak connectivity,</li>
+<li>monopoly profits may reveal gatekeeping nodes,</li>
+<li>financial fragility may reveal dangerous leverage chains.</li>
+</ul>
+<p>Distributional analysis therefore asks:</p>
+<blockquote>
+<p>What kind of network topology is this economy evolving?</p>
+</blockquote>
+<p>Is it open, porous, adaptive, and decentralized?</p>
+<p>Or is it closed, clustered, hierarchical, and extractive?</p>
+<h2 id="9-distribution-and-interfaces">9. Distribution and interfaces</h2>
+<p>Economic systems contain interfaces between subsystems:</p>
+<ul>
+<li>households and labor markets,</li>
+<li>workers and firms,</li>
+<li>firms and credit markets,</li>
+<li>students and education systems,</li>
+<li>patients and healthcare systems,</li>
+<li>citizens and public institutions,</li>
+<li>entrepreneurs and capital providers,</li>
+<li>consumers and platforms.</li>
+</ul>
+<p>Inequality often reveals broken interfaces.</p>
+<p>For example, if low-income households cannot access credit except through predatory lending, that is not merely an income issue. It is an interface failure between households and the financial system.</p>
+<p>Ask:</p>
+<ul>
+<li>Which groups face high transaction costs?</li>
+<li>Which interfaces are opaque?</li>
+<li>Which subsystems are difficult to enter?</li>
+<li>Where does information fail to flow?</li>
+<li>Where are people formally included but practically excluded?</li>
+</ul>
+<p>Distribution is often evidence of poor system usability.</p>
+<h2 id="10-distribution-and-scalability">10. Distribution and scalability</h2>
+<p>Some economic arrangements scale output while also scaling fragility.</p>
+<p>A platform economy, for example, may scale convenience, logistics, and consumer access while concentrating power, weakening suppliers, reducing labor security, and creating infrastructure dependence.</p>
+<p>A scalable system is not merely one that gets bigger. It is one that maintains desirable properties as it grows.</p>
+<p>Distributional analysis asks:</p>
+<ul>
+<li>Does growth broaden capability or concentrate dependency?</li>
+<li>Does scale create redundancy or single points of failure?</li>
+<li>Does the system become more inclusive or more extractive as it expands?</li>
+<li>Are benefits and burdens scaling symmetrically?</li>
+</ul>
+<hr />
+<h1 id="ii-use-non-functional-requirements-to-analyze-inequality">II. Use Non-Functional Requirements to Analyze Inequality</h1>
+<p>A useful bridge from systems engineering to economics is the concept of <strong>non-functional requirements</strong>.</p>
+<p>Functional requirements describe what a system does.</p>
+<p>Non-functional requirements describe how well the system performs under real-world conditions.</p>
+<p>An economy may function in the narrow sense — goods are produced, wages are paid, markets clear, prices form — while failing badly on non-functional dimensions.</p>
+<h2 id="1-functional-versus-non-functional-economic-analysis">1. Functional versus non-functional economic analysis</h2>
+<p>Functional economic questions:</p>
+<ul>
+<li>Does the labor market match workers and firms?</li>
+<li>Do prices allocate goods?</li>
+<li>Does capital flow to investment opportunities?</li>
+<li>Do firms produce output?</li>
+<li>Do households consume?</li>
+<li>Do banks provide credit?</li>
+</ul>
+<p>Non-functional economic questions:</p>
+<ul>
+<li>Is the system resilient?</li>
+<li>Is it robust?</li>
+<li>Is it transparent?</li>
+<li>Is it recoverable after shocks?</li>
+<li>Is it scalable?</li>
+<li>Is it inclusive enough to remain legitimate?</li>
+<li>Is it durable over generations?</li>
+<li>Does it maintain performance under stress?</li>
+<li>Does it distribute risk in survivable ways?</li>
+</ul>
+<p>This framework says inequality is central because distributional patterns often reveal non-functional system failures.</p>
+<h2 id="2-distribution-as-diagnostic-instrumentation">2. Distribution as diagnostic instrumentation</h2>
+<p>Distributional metrics are like system telemetry.</p>
+<p>They reveal:</p>
+<ul>
+<li>load concentration,</li>
+<li>bottlenecks,</li>
+<li>hidden fragility,</li>
+<li>suppressed capacity,</li>
+<li>failure-prone nodes,</li>
+<li>closed networks,</li>
+<li>extraction points,</li>
+<li>degraded interfaces,</li>
+<li>and unstable feedback loops.</li>
+</ul>
+<p>In this sense, inequality metrics are not just moral statistics. They are diagnostic instruments.</p>
+<h2 id="3-disaster-recovery">3. Disaster recovery</h2>
+<p>Disaster recovery asks:</p>
+<blockquote>
+<p>After a major shock, can the system return to acceptable functionality?</p>
+</blockquote>
+<p>Distribution matters because recovery capacity depends on the spread of buffers.</p>
+<p>Relevant questions:</p>
+<ul>
+<li>Do households have savings?</li>
+<li>Do firms have reserves?</li>
+<li>Can workers retrain?</li>
+<li>Can regions attract new investment?</li>
+<li>Can public institutions respond?</li>
+<li>Is healthcare access maintained during unemployment?</li>
+<li>Can credit continue flowing after a shock?</li>
+</ul>
+<p>A highly unequal system may have high aggregate wealth but poor distributed recoverability.</p>
+<p>This means the system is rich but brittle.</p>
+<h2 id="4-fault-tolerance">4. Fault tolerance</h2>
+<p>Fault tolerance asks:</p>
+<blockquote>
+<p>Can parts of the system fail without causing the whole system to fail?</p>
+</blockquote>
+<p>Inequality weakens fault tolerance when many actors operate near survival thresholds.</p>
+<p>Examples:</p>
+<ul>
+<li>one missed paycheck causes eviction,</li>
+<li>one illness causes bankruptcy,</li>
+<li>one supply disruption closes a small business,</li>
+<li>one interest-rate shock triggers default,</li>
+<li>one regional employer collapse destroys a local economy.</li>
+</ul>
+<p>Distributional analysis shows whether failures are buffered or amplified.</p>
+<h2 id="5-robustness">5. Robustness</h2>
+<p>Robustness asks:</p>
+<blockquote>
+<p>Can the system maintain function across a range of conditions?</p>
+</blockquote>
+<p>An economy with broadly distributed wealth, skills, infrastructure, and institutional access is more robust because it has many adaptive agents.</p>
+<p>An economy with concentrated capability is less robust because it depends on fewer actors, fewer hubs, and fewer decision centers.</p>
+<p>Ask:</p>
+<ul>
+<li>Is productive capacity widely distributed?</li>
+<li>Are households robust to shocks?</li>
+<li>Are local economies diversified?</li>
+<li>Is knowledge concentrated or diffused?</li>
+<li>Are decision-making structures plural or centralized?</li>
+</ul>
+<h2 id="6-response-time">6. Response time</h2>
+<p>Response time asks:</p>
+<blockquote>
+<p>How quickly can the system adapt when conditions change?</p>
+</blockquote>
+<p>Inequality can increase system latency.</p>
+<p>Low-resource actors often cannot respond quickly because they lack:</p>
+<ul>
+<li>savings,</li>
+<li>time,</li>
+<li>mobility,</li>
+<li>information,</li>
+<li>credentials,</li>
+<li>social capital,</li>
+<li>and risk tolerance.</li>
+</ul>
+<p>High-resource actors may respond quickly, but if adaptation is limited to elites, the whole system’s learning capacity is narrowed.</p>
+<p>A systems analyst should ask:</p>
+<ul>
+<li>How quickly can displaced workers transition?</li>
+<li>How quickly can new firms enter?</li>
+<li>How quickly can capital reach neglected communities?</li>
+<li>How quickly do institutions respond to distress signals?</li>
+<li>How quickly can households recover from shocks?</li>
+</ul>
+<h2 id="7-throughput-and-performance">7. Throughput and performance</h2>
+<p>Performance is not only aggregate output.</p>
+<p>A systems perspective distinguishes:</p>
+<ul>
+<li>peak throughput,</li>
+<li>sustained throughput,</li>
+<li>degraded-state performance,</li>
+<li>congestion,</li>
+<li>bottlenecks,</li>
+<li>latency,</li>
+<li>error rates,</li>
+<li>and recovery cost.</li>
+</ul>
+<p>Inequality may reduce throughput by creating internal bottlenecks:</p>
+<ul>
+<li>unaffordable housing reduces labor mobility,</li>
+<li>unequal education reduces talent utilization,</li>
+<li>weak healthcare reduces labor participation,</li>
+<li>debt burdens reduce consumption flexibility,</li>
+<li>monopoly power reduces competitive experimentation.</li>
+</ul>
+<p>Distributional analysis helps locate where the system is losing productive capacity.</p>
+<h2 id="8-transparency-and-observability">8. Transparency and observability</h2>
+<p>An economy cannot be governed well if its internal state is opaque.</p>
+<p>Inequality can reduce transparency when wealth, risk, influence, and leverage become hidden in complex institutional structures.</p>
+<p>Ask:</p>
+<ul>
+<li>Can policymakers observe household fragility?</li>
+<li>Can regulators see financial leverage?</li>
+<li>Can workers understand compensation structures?</li>
+<li>Can consumers understand true costs?</li>
+<li>Can citizens see how influence operates?</li>
+<li>Do aggregate indicators hide localized collapse?</li>
+</ul>
+<p>Distributional analysis improves observability by decomposing averages.</p>
+<h2 id="9-availability">9. Availability</h2>
+<p>Availability asks:</p>
+<blockquote>
+<p>Are system services actually accessible when needed?</p>
+</blockquote>
+<p>Markets may formally exist while being unavailable in practice.</p>
+<p>Examples:</p>
+<ul>
+<li>healthcare exists but is unaffordable,</li>
+<li>education exists but is unequal,</li>
+<li>credit exists but is predatory or inaccessible,</li>
+<li>housing exists but is geographically exclusionary,</li>
+<li>legal rights exist but are costly to enforce.</li>
+</ul>
+<p>Distributional analysis distinguishes formal availability from effective availability.</p>
+<h2 id="10-durability">10. Durability</h2>
+<p>Durability asks:</p>
+<blockquote>
+<p>Can the system maintain desirable function across generations?</p>
+</blockquote>
+<p>Inequality may undermine durability by degrading:</p>
+<ul>
+<li>human capital,</li>
+<li>social trust,</li>
+<li>institutional legitimacy,</li>
+<li>demographic stability,</li>
+<li>environmental stewardship,</li>
+<li>public goods,</li>
+<li>democratic responsiveness.</li>
+</ul>
+<p>A durable economic system must reproduce the conditions that allow future generations to participate productively.</p>
+<p>Distributional analysis asks whether the system is investing in its future base or extracting from it.</p>
+<h2 id="11-hidden-state-variables">11. Hidden state variables</h2>
+<p>Distribution often reveals latent structural conditions.</p>
+<p>For example:</p>
+<ul>
+<li>rising household debt may reveal weak wage growth,</li>
+<li>rising asset concentration may reveal rent extraction,</li>
+<li>falling mobility may reveal network closure,</li>
+<li>regional divergence may reveal infrastructure decay,</li>
+<li>labor precarity may reveal bargaining asymmetry,</li>
+<li>top-heavy income growth may reveal monopoly or financialization.</li>
+</ul>
+<p>The important move is inferential:</p>
+<blockquote>
+<p>Do not treat inequality measures as mere outcomes. Treat them as symptoms of hidden system architecture.</p>
+</blockquote>
+<hr />
+<h1 id="iii-study-inequality-through-repeated-games-and-evolutionary-dynamics">III. Study Inequality Through Repeated Games and Evolutionary Dynamics</h1>
+<p>This is the dynamic core of the framework.</p>
+<p>Economic life is not a one-shot game. It is a sequence of games where outcomes from earlier rounds become starting conditions for later rounds.</p>
+<h2 id="1-the-basic-repeated-game-structure">1. The basic repeated-game structure</h2>
+<p>A simple model:</p>
+<blockquote>
+<p>Initial distribution → strategic interaction → payoff distribution → updated endowments → altered strategy space → next interaction</p>
+</blockquote>
+<p>In each round, actors bring different levels of:</p>
+<ul>
+<li>wealth,</li>
+<li>income,</li>
+<li>debt,</li>
+<li>knowledge,</li>
+<li>bargaining power,</li>
+<li>institutional access,</li>
+<li>social capital,</li>
+<li>network position,</li>
+<li>risk tolerance,</li>
+<li>and political influence.</li>
+</ul>
+<p>After each round, these variables are updated.</p>
+<p>Therefore, distribution is endogenous.</p>
+<p>It is produced by the game and then feeds back into the next game.</p>
+<h2 id="2-distribution-as-an-endogenous-state-variable">2. Distribution as an endogenous state variable</h2>
+<p>In many simplified models, distribution is treated as an initial condition, background assumption, or welfare outcome.</p>
+<p>This framework treats it as a state variable within the system’s transition function.</p>
+<p>That means distribution affects:</p>
+<ul>
+<li>the feasible strategy set,</li>
+<li>the payoff structure,</li>
+<li>bargaining relations,</li>
+<li>entry and exit,</li>
+<li>learning capacity,</li>
+<li>coalition formation,</li>
+<li>network topology,</li>
+<li>institutional evolution,</li>
+<li>and long-run stability.</li>
+</ul>
+<p>The core analytical question becomes:</p>
+<blockquote>
+<p>How does the distribution at time t shape the economic game at time t + 1?</p>
+</blockquote>
+<h2 id="3-evolutionary-game-perspective">3. Evolutionary-game perspective</h2>
+<p>In evolutionary games, strategies replicate based on payoffs and fitness.</p>
+<p>Distribution matters because it shapes the selection environment.</p>
+<p>If wealth and power concentrate, the system may select for strategies such as:</p>
+<ul>
+<li>rent extraction,</li>
+<li>regulatory capture,</li>
+<li>monopoly formation,</li>
+<li>predatory lending,</li>
+<li>labor suppression,</li>
+<li>information control,</li>
+<li>defensive incumbency,</li>
+<li>short-term financial engineering.</li>
+</ul>
+<p>Meanwhile, strategies that may be socially valuable can be selected against:</p>
+<ul>
+<li>cooperative production,</li>
+<li>local entrepreneurship,</li>
+<li>long-term investment,</li>
+<li>worker training,</li>
+<li>community development,</li>
+<li>open innovation,</li>
+<li>broad-based experimentation.</li>
+</ul>
+<p>So inequality does not merely produce unequal outcomes. It can change which strategies survive.</p>
+<h2 id="4-repeated-games-and-bargaining-power">4. Repeated games and bargaining power</h2>
+<p>In repeated games, accumulated payoffs affect future bargaining power.</p>
+<p>A player with greater wealth can:</p>
+<ul>
+<li>absorb losses,</li>
+<li>wait longer,</li>
+<li>take more risk,</li>
+<li>buy competitors,</li>
+<li>influence institutions,</li>
+<li>shape public narratives,</li>
+<li>control infrastructure,</li>
+<li>capture talent,</li>
+<li>and set the terms of exchange.</li>
+</ul>
+<p>This means that repeated interaction can transform unequal payoffs into unequal rule-making power.</p>
+<p>The game evolves from unequal outcomes to unequal control over future games.</p>
+<h2 id="5-network-formation-and-entrenchment">5. Network formation and entrenchment</h2>
+<p>Economic networks evolve through cumulative advantage.</p>
+<p>Early advantages can become durable because advantaged nodes attract more links.</p>
+<p>The dynamic is:</p>
+<blockquote>
+<p>initial advantage → better connections → more information → better opportunities → higher returns → greater advantage</p>
+</blockquote>
+<p>Over time, this can produce:</p>
+<ul>
+<li>hubs,</li>
+<li>gatekeepers,</li>
+<li>closed communities,</li>
+<li>insider networks,</li>
+<li>regional divergence,</li>
+<li>platform dominance,</li>
+<li>elite institutional clustering,</li>
+<li>and reduced mobility.</li>
+</ul>
+<p>Distributional analysis helps determine whether the network remains open or becomes entrenched.</p>
+<h2 id="6-learning-and-capability-formation">6. Learning and capability formation</h2>
+<p>Learning is not evenly distributed.</p>
+<p>Actors with resources can experiment, fail, update, and try again.</p>
+<p>Actors under constraint are often forced into short-horizon survival strategies.</p>
+<p>This has system-wide consequences.</p>
+<p>High inequality can reduce:</p>
+<ul>
+<li>experimentation,</li>
+<li>innovation diversity,</li>
+<li>skill formation,</li>
+<li>entrepreneurial entry,</li>
+<li>adaptive learning,</li>
+<li>and discovery of alternative arrangements.</li>
+</ul>
+<p>The system may overlearn from dominant actors and underlearn from suppressed actors.</p>
+<p>That produces a narrow, biased evolutionary process.</p>
+<h2 id="7-instability-and-absorbing-states">7. Instability and absorbing states</h2>
+<p>A distribution can become dynamically unstable even if it appears compatible with short-run equilibrium.</p>
+<p>Possible instability channels:</p>
+<ul>
+<li>demand weakness,</li>
+<li>household debt accumulation,</li>
+<li>low mobility,</li>
+<li>distrust,</li>
+<li>monopoly power,</li>
+<li>political backlash,</li>
+<li>regional abandonment,</li>
+<li>labor-market exit,</li>
+<li>institutional capture,</li>
+<li>declining legitimacy.</li>
+</ul>
+<p>An absorbing state occurs when actors become trapped in a low-capability equilibrium.</p>
+<p>For example, consumers may appear to prefer low-cost goods, but only because income constraints, debt, housing costs, and weak alternatives prevent them from expressing higher-quality preferences.</p>
+<p>The systems question is:</p>
+<blockquote>
+<p>Is the observed equilibrium genuinely welfare-enhancing, or is it an artifact of constrained distributional conditions?</p>
+</blockquote>
+<hr />
+<h1 id="iv-understand-the-standard-economic-approaches-before-extending-them">IV. Understand the Standard Economic Approaches Before Extending Them</h1>
+<p>A strong systems analysis should understand orthodox inequality research before critiquing or extending it.</p>
+<h2 id="1-descriptive-inequality-economics">1. Descriptive inequality economics</h2>
+<p>This approach asks:</p>
+<ul>
+<li>How unequal is the distribution?</li>
+<li>Is inequality rising or falling?</li>
+<li>Where in the distribution are changes occurring?</li>
+<li>Are top shares rising?</li>
+<li>Is the middle shrinking?</li>
+<li>Is wealth more concentrated than income?</li>
+<li>Is mobility declining?</li>
+</ul>
+<p>Common tools:</p>
+<ul>
+<li>Gini coefficient,</li>
+<li>Lorenz curve,</li>
+<li>income percentiles,</li>
+<li>wealth shares,</li>
+<li>top 1% and top 0.1% shares,</li>
+<li>intergenerational mobility measures,</li>
+<li>percentile ratios,</li>
+<li>poverty rates,</li>
+<li>regional inequality metrics.</li>
+</ul>
+<p>This is essential because systems analysis needs empirical grounding.</p>
+<p>But description alone does not explain system dynamics.</p>
+<h2 id="2-traditional-neoclassical-approaches">2. Traditional neoclassical approaches</h2>
+<p>Traditional models often explain inequality through:</p>
+<ul>
+<li>productivity differences,</li>
+<li>human capital,</li>
+<li>skill-biased technological change,</li>
+<li>labor-market sorting,</li>
+<li>capital accumulation,</li>
+<li>marginal productivity,</li>
+<li>incentives,</li>
+<li>preferences,</li>
+<li>and market frictions.</li>
+</ul>
+<p>Typical questions:</p>
+<ul>
+<li>Why do some workers earn more than others?</li>
+<li>What is the return to education?</li>
+<li>How does technology affect wage dispersion?</li>
+<li>How does globalization affect labor income?</li>
+<li>How do taxes affect work incentives?</li>
+<li>How do savings rates affect wealth accumulation?</li>
+</ul>
+<p>These are useful questions, but often too narrow if they ignore structural feedback.</p>
+<h2 id="3-welfare-economics">3. Welfare economics</h2>
+<p>Welfare economics asks:</p>
+<ul>
+<li>How should society evaluate unequal outcomes?</li>
+<li>What redistribution maximizes social welfare?</li>
+<li>How progressive should taxation be?</li>
+<li>How much inequality is incentive-compatible?</li>
+<li>What is the tradeoff between equality and efficiency?</li>
+</ul>
+<p>This approach is powerful because it formalizes normative evaluation.</p>
+<p>But this framework shifts the emphasis.</p>
+<p>The question is not only:</p>
+<blockquote>
+<p>How much inequality is fair?</p>
+</blockquote>
+<p>It is also:</p>
+<blockquote>
+<p>What distributions allow the system to remain adaptive, resilient, innovative, and sustainable?</p>
+</blockquote>
+<h2 id="4-macroeconomic-inequality-research">4. Macroeconomic inequality research</h2>
+<p>Macroeconomists increasingly study inequality as relevant to aggregate dynamics.</p>
+<p>Questions include:</p>
+<ul>
+<li>Does inequality reduce aggregate demand?</li>
+<li>Does wealth concentration increase savings gluts?</li>
+<li>Does inequality contribute to household debt?</li>
+<li>Does inequality increase financial fragility?</li>
+<li>Does inequality affect investment?</li>
+<li>Does inequality reduce growth?</li>
+<li>Does inequality interact with monetary policy?</li>
+<li>Does inequality affect political support for macroeconomic institutions?</li>
+</ul>
+<p>This is closer to a systems view because it recognizes feedback from distribution to aggregate performance.</p>
+<h2 id="5-complexity-and-network-economics">5. Complexity and network economics</h2>
+<p>Complexity economics treats the economy as an adaptive, decentralized, evolving system.</p>
+<p>Relevant questions:</p>
+<ul>
+<li>How do local interactions generate macro patterns?</li>
+<li>How do networks transmit shocks?</li>
+<li>How do distributions emerge from feedback loops?</li>
+<li>How do agents learn?</li>
+<li>How do institutions co-evolve?</li>
+<li>How do path-dependent processes generate lock-in?</li>
+<li>How do nonlinear dynamics produce instability?</li>
+</ul>
+<p>This is the closest existing neighborhood for the systems-oriented perspective.</p>
+<p>The distinctive contribution is to connect complexity economics with non-functional system requirements and systems-engineering diagnostics.</p>
+<hr />
+<h1 id="v-a-practical-how-to-method-for-deep-systems-analysis-of-inequality">V. A Practical How-To Method for Deep Systems Analysis of Inequality</h1>
+<p>This section is the methodological center of the guide.</p>
+<h2 id="step-1-define-the-economic-system-boundary">Step 1: Define the economic system boundary</h2>
+<p>Do not begin with inequality in the abstract.</p>
+<p>Define the system.</p>
+<p>Examples:</p>
+<ul>
+<li>national economy,</li>
+<li>regional labor market,</li>
+<li>housing market,</li>
+<li>healthcare system,</li>
+<li>financial system,</li>
+<li>platform economy,</li>
+<li>education-to-labor pipeline,</li>
+<li>supply chain,</li>
+<li>entrepreneurial ecosystem.</li>
+</ul>
+<p>Ask:</p>
+<ul>
+<li>What are the relevant actors?</li>
+<li>What are the relevant institutions?</li>
+<li>What are the system boundaries?</li>
+<li>What flows through the system?</li>
+<li>What are the major feedback loops?</li>
+<li>What counts as system performance?</li>
+</ul>
+<h2 id="step-2-identify-the-relevant-distributions">Step 2: Identify the relevant distributions</h2>
+<p>Do not reduce inequality to income alone.</p>
+<p>Map distributions of:</p>
+<ul>
+<li>income flows,</li>
+<li>wealth stocks,</li>
+<li>productive assets,</li>
+<li>debt,</li>
+<li>liquidity,</li>
+<li>education,</li>
+<li>health,</li>
+<li>legal access,</li>
+<li>political influence,</li>
+<li>information,</li>
+<li>geographic opportunity,</li>
+<li>network position,</li>
+<li>technological access,</li>
+<li>risk exposure,</li>
+<li>time,</li>
+<li>and bargaining power.</li>
+</ul>
+<p>Different distributions reveal different system properties.</p>
+<p>Income shows flow. Wealth shows accumulated command over future options. Debt shows fragility. Network position shows access. Capabilities show future potential.</p>
+<h2 id="step-3-distinguish-stocks-flows-and-capabilities">Step 3: Distinguish stocks, flows, and capabilities</h2>
+<p>A rigorous analysis separates:</p>
+<p><strong>Stocks:</strong> accumulated resources such as wealth, land, housing, capital, credentials, social capital.</p>
+<p><strong>Flows:</strong> income, wages, profits, rents, transfers, credit, interest payments, consumption flows.</p>
+<p><strong>Capabilities:</strong> what actors can actually do given their resources, constraints, skills, health, and institutional access.</p>
+<p>This matters because two households with the same income may have very different system positions if one has wealth, family support, health, and network access while the other has debt and instability.</p>
+<h2 id="step-4-map-the-feedback-loops">Step 4: Map the feedback loops</h2>
+<p>Ask how current distributions feed back into future distributions.</p>
+<p>Examples:</p>
+<ul>
+<li>wealth generates capital income,</li>
+<li>income supports education,</li>
+<li>education increases earnings,</li>
+<li>earnings affect neighborhood choice,</li>
+<li>neighborhood affects school quality,</li>
+<li>school quality affects future income,</li>
+<li>wealth affects political influence,</li>
+<li>political influence affects rules,</li>
+<li>rules affect future wealth accumulation.</li>
+</ul>
+<p>The key is to identify cumulative causation.</p>
+<p>Systems analysis begins when you stop treating inequality as static and start mapping reinforcement loops.</p>
+<h2 id="step-5-analyze-strategy-space-distortion">Step 5: Analyze strategy-space distortion</h2>
+<p>Ask how inequality changes what actors can realistically do.</p>
+<p>Relevant questions:</p>
+<ul>
+<li>Who can take risks?</li>
+<li>Who can wait?</li>
+<li>Who can exit bad arrangements?</li>
+<li>Who can invest in training?</li>
+<li>Who can start a firm?</li>
+<li>Who can refuse exploitative terms?</li>
+<li>Who can survive failure?</li>
+<li>Who can access legal enforcement?</li>
+<li>Who can shape rules?</li>
+</ul>
+<p>This connects inequality to repeated games.</p>
+<p>Distribution affects the feasible strategy set.</p>
+<h2 id="step-6-analyze-network-topology">Step 6: Analyze network topology</h2>
+<p>Map whether the system is becoming open or closed.</p>
+<p>Ask:</p>
+<ul>
+<li>Where are the hubs?</li>
+<li>Who controls access?</li>
+<li>Which nodes are peripheral?</li>
+<li>Are communities porous?</li>
+<li>Are there bridges across class, region, race, sector, or institution?</li>
+<li>Are new entrants able to connect?</li>
+<li>Are returns driven by productive contribution or positional advantage?</li>
+<li>Are there cascading-failure risks?</li>
+</ul>
+<p>Network analysis turns inequality from a scalar into a structure.</p>
+<h2 id="step-7-evaluate-non-functional-requirements">Step 7: Evaluate non-functional requirements</h2>
+<p>For each system, ask how inequality affects:</p>
+<ul>
+<li>robustness,</li>
+<li>resilience,</li>
+<li>disaster recovery,</li>
+<li>fault tolerance,</li>
+<li>transparency,</li>
+<li>availability,</li>
+<li>durability,</li>
+<li>response time,</li>
+<li>scalability,</li>
+<li>integrability,</li>
+<li>throughput,</li>
+<li>and maintainability.</li>
+</ul>
+<p>This is where the systems contribution becomes distinctive.</p>
+<p>You are not merely asking whether inequality is high.</p>
+<p>You are asking what inequality reveals about the operating quality of the economic architecture.</p>
+<h2 id="step-8-identify-failure-modes">Step 8: Identify failure modes</h2>
+<p>Common inequality-related failure modes include:</p>
+<ul>
+<li>demand fragility,</li>
+<li>debt dependence,</li>
+<li>low mobility,</li>
+<li>talent suppression,</li>
+<li>regional abandonment,</li>
+<li>monopoly entrenchment,</li>
+<li>political capture,</li>
+<li>institutional distrust,</li>
+<li>brittle households,</li>
+<li>fragmented public goods,</li>
+<li>financial instability,</li>
+<li>social unrest,</li>
+<li>legitimacy breakdown.</li>
+</ul>
+<p>The methodological question:</p>
+<blockquote>
+<p>What kind of failure is this distribution making more likely?</p>
+</blockquote>
+<h2 id="step-9-distinguish-local-efficiency-from-global-system-performance">Step 9: Distinguish local efficiency from global system performance</h2>
+<p>A market arrangement may be locally efficient but globally damaging.</p>
+<p>For example:</p>
+<ul>
+<li>low wages may reduce firm costs but suppress demand and human development,</li>
+<li>cheap goods may satisfy constrained consumers but reinforce low-wage equilibria,</li>
+<li>financial innovation may improve liquidity but increase opacity and systemic risk,</li>
+<li>platform scale may improve convenience but concentrate infrastructure power,</li>
+<li>elite education may produce high returns but reduce broad capability formation.</li>
+</ul>
+<p>Ask:</p>
+<blockquote>
+<p>Efficient for whom, over what time horizon, under what constraints, and with what feedback effects?</p>
+</blockquote>
+<h2 id="step-10-analyze-policy-as-system-redesign">Step 10: Analyze policy as system redesign</h2>
+<p>Policy should not be viewed only as redistribution after the fact.</p>
+<p>Policy changes system architecture.</p>
+<p>Examples:</p>
+<ul>
+<li>progressive taxation changes accumulation dynamics,</li>
+<li>public education changes capability distribution,</li>
+<li>antitrust changes network topology,</li>
+<li>universal healthcare changes labor-market risk,</li>
+<li>housing policy changes geographic mobility,</li>
+<li>labor law changes bargaining power,</li>
+<li>public banking changes credit access,</li>
+<li>infrastructure changes regional connectivity,</li>
+<li>campaign finance reform changes political feedback loops.</li>
+</ul>
+<p>The systems question is:</p>
+<blockquote>
+<p>Which intervention changes the feedback structure producing the distribution?</p>
+</blockquote>
+<hr />
+<h1 id="vi-core-questions-for-the-systems-oriented-inequality-analyst">VI. Core Questions for the Systems-Oriented Inequality Analyst</h1>
+<p>A useful blog section could present these as a checklist.</p>
+<h2 id="distribution-as-state">Distribution as state</h2>
+<ul>
+<li>What is the current distribution of stocks, flows, capabilities, and network positions?</li>
+<li>Which distributions matter most for this system?</li>
+<li>Which variables are hidden by averages?</li>
+</ul>
+<h2 id="distribution-as-feedback">Distribution as feedback</h2>
+<ul>
+<li>How does today’s distribution shape tomorrow’s feasible strategies?</li>
+<li>Which loops are reinforcing inequality?</li>
+<li>Which loops are balancing inequality?</li>
+<li>Where are path dependencies forming?</li>
+</ul>
+<h2 id="distribution-as-architecture">Distribution as architecture</h2>
+<ul>
+<li>What does the distribution reveal about system structure?</li>
+<li>Are there hubs, bottlenecks, gatekeepers, or closed clusters?</li>
+<li>Is the system porous or entrenched?</li>
+</ul>
+<h2 id="distribution-as-performance-signal">Distribution as performance signal</h2>
+<ul>
+<li>What does inequality reveal about resilience?</li>
+<li>What does it reveal about fault tolerance?</li>
+<li>What does it reveal about recovery capacity?</li>
+<li>What does it reveal about system latency?</li>
+<li>What does it reveal about durability?</li>
+</ul>
+<h2 id="distribution-as-evolutionary-condition">Distribution as evolutionary condition</h2>
+<ul>
+<li>Which strategies does this distribution reward?</li>
+<li>Which strategies does it suppress?</li>
+<li>What kinds of firms, workers, institutions, and technologies does it select for?</li>
+<li>Is the system evolving toward adaptability or extraction?</li>
+</ul>
+<h2 id="distribution-as-legitimacy-condition">Distribution as legitimacy condition</h2>
+<ul>
+<li>Does the distribution support social trust?</li>
+<li>Does it preserve meaningful participation?</li>
+<li>Does it allow citizens to experience the system as navigable?</li>
+<li>Does it maintain political stability?</li>
+</ul>
+<hr />
+<h1 id="vii-how-this-differs-from-a-standard-inequality-analysis">VII. How This Differs from a Standard Inequality analysis</h1>
+<p>A standard post might say:</p>
+<blockquote>
+<p>Inequality is bad because it is unfair, reduces opportunity, and harms growth.</p>
+</blockquote>
+<p>This guide says something deeper:</p>
+<blockquote>
+<p>Inequality matters because distribution is part of the operating architecture of an economic system. It shapes future games, learning dynamics, network formation, resilience, system performance, and long-run viability. Therefore, inequality analysis should be treated as a core component of economic systems analysis, not merely as an ethical supplement to efficiency analysis.</p>
+</blockquote>
+<p>That is the distinctive contribution.</p>
+<hr />
+<h2 id="conclusion-inequality-as-economic-systems-analysis">Conclusion: Inequality as economic systems analysis</h2>
+<p>Studying inequality is not optional for serious economic analysis. If an economy is a complex adaptive system, then distributional analysis is necessary for understanding its structure, performance, resilience, and future evolution.</p>
+<blockquote>
+<p>Inequality is often treated as a question about fairness after the economic system has done its work. But in a dynamic economy, distribution is part of the work the system does. It determines who can act, who can learn, who can invest, who can absorb shocks, who can form networks, and who can shape the next round of rules. Distribution is therefore not external to efficiency, growth, resilience, or innovation. It is one of the structural conditions that makes those things possible or impossible. To study inequality seriously is to study the architecture of the economic system itself.</p>
+</blockquote>
+
+</article>
+
+<script>
+  // Adds mobile labels to table cells inside this post only.
+  (function () {
+    var root = document.currentScript.previousElementSibling;
+    while (root && !root.classList.contains('ep-post')) {
+      root = root.previousElementSibling;
+    }
+    if (!root) return;
+    root.querySelectorAll('table').forEach(function (table) {
+      if (!table.parentElement.classList.contains('table-wrap')) {
+        var wrap = document.createElement('div');
+        wrap.className = 'table-wrap';
+        table.parentNode.insertBefore(wrap, table);
+        wrap.appendChild(table);
+      }
+      var headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function (th) {
+        return th.textContent.trim();
+      });
+      table.querySelectorAll('tbody tr').forEach(function (row) {
+        Array.prototype.forEach.call(row.children, function (cell, index) {
+          if (headers[index]) cell.setAttribute('data-label', headers[index]);
+        });
+      });
+    });
+  })();
+</script>
