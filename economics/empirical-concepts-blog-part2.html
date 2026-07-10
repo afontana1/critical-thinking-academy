@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Core Concepts in Empirical Economics and Causal Inference, Part 2</title>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Core Concepts in Empirical Economics and Causal Inference, Part 2</title>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -401,11 +402,10 @@
         },
       };
     </script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  </head>
-  <body>
-    <main class="ep-post">
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="ep-post">
 <h1 id="core-concepts-in-empirical-economics-and-causal-inference-part-2">Core Concepts in Empirical Economics and Causal Inference, Part 2</h1>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -422,7 +422,7 @@
 <p>Given that causal effects require credible counterfactuals, what empirical designs can help us construct them?</p>
 </blockquote>
 <p>The first and most important benchmark design is the randomized controlled trial. Randomized controlled trials are not the only valid approach to causal inference, and they are not always feasible or sufficient. But they provide the cleanest conceptual model for understanding what a credible causal comparison requires. An RCT shows, in its simplest form, what empirical researchers are usually trying to approximate: a treated group and a control group that differ systematically only in treatment status.</p>
-<hr/>
+
 <h1 id="randomized-controlled-trials-or-rcts">7. Randomized Controlled Trials, or RCTs</h1>
 <h2 id="why-randomized-controlled-trials-matter">7.1 Why randomized controlled trials matter</h2>
 <p>A randomized controlled trial, or RCT, is a research design in which units are randomly assigned to treatment or control. The units may be individuals, households, classrooms, schools, firms, villages, hospitals, neighborhoods, or other entities. The purpose of random assignment is to solve the central problem of causal inference: the missing counterfactual. For each unit <span class="math inline">\(i\)</span>, define two potential outcomes: <span class="math inline">\(Y_i(1)\)</span> and <span class="math inline">\(Y_i(0)\)</span> where:</p>
@@ -516,23 +516,23 @@
 <h2 id="types-of-noncompliance">7.9 Types of noncompliance</h2>
 <p>Noncompliance can take several forms.</p>
 <ul>
-<li><strong>One-sided noncompliance.</strong> One-sided noncompliance occurs when control units cannot receive treatment, but some assigned treatment units fail to take it up. Example:</li>
-<li>Workers assigned to treatment are offered training.</li>
-<li>Some do not attend.</li>
-<li>Workers assigned to control have no access to training.</li>
+<li><strong>One-sided noncompliance.</strong> One-sided noncompliance occurs when control units cannot receive treatment, but some assigned treatment units fail to take it up. Example:<ul class="sub-list"><li>Workers assigned to treatment are offered training.</li><li>Some do not attend.</li><li>Workers assigned to control have no access to training.</li></ul></li>
+
+
+
 </ul>
 <p>In this case: <span class="math inline">\(D_i=0 \quad \text{for all units with } Z_i=0\)</span> but some units with <span class="math inline">\(Z_i=1\)</span> also have <span class="math inline">\(D_i=0\)</span>.</p>
 <ul>
-<li><strong>Two-sided noncompliance.</strong> Two-sided noncompliance occurs when some assigned treatment units do not receive treatment and some assigned control units do receive treatment. Example:</li>
-<li>Some treatment workers do not attend the program.</li>
-<li>Some control workers find a similar program elsewhere.</li>
+<li><strong>Two-sided noncompliance.</strong> Two-sided noncompliance occurs when some assigned treatment units do not receive treatment and some assigned control units do receive treatment. Example:<ul class="sub-list"><li>Some treatment workers do not attend the program.</li><li>Some control workers find a similar program elsewhere.</li></ul></li>
+
+
 </ul>
 <p>This is common in social programs, education interventions, and health settings.</p>
 <ul>
-<li><strong>Partial compliance.</strong> Sometimes treatment is not binary. Units may receive different amounts of treatment. Example:</li>
-<li>Some students attend all tutoring sessions.</li>
-<li>Some attend only half.</li>
-<li>Some attend none.</li>
+<li><strong>Partial compliance.</strong> Sometimes treatment is not binary. Units may receive different amounts of treatment. Example:<ul class="sub-list"><li>Some students attend all tutoring sessions.</li><li>Some attend only half.</li><li>Some attend none.</li></ul></li>
+
+
+
 </ul>
 <p>In such cases, researchers must distinguish assignment, eligibility, take-up, attendance, dosage, and exposure. The more complex compliance becomes, the more carefully the estimand must be defined.</p>
 <h2 id="attrition">7.10 Attrition</h2>
@@ -823,7 +823,7 @@
 <li>treatment group: offered training,</li>
 <li>control group: not offered training immediately.</li>
 </ul>
-<p>Let <span class="math inline">\(Z_i=1\)</span> if worker <span class="math inline">\(i\)</span> is offered training and <span class="math inline">\(Z_i=0\)</span> otherwise. Let <span class="math inline">\(Y_i\)</span> be annual earnings one year later. The ITT is: <span class="math inline">\(ITT = \mathbb{E}[Y_i \mid Z_i=1] - \mathbb{E}[Y_i \mid Z_i=0]\)</span> Suppose <span class="math inline">\(\mathbb{E}[Y_i \mid Z_i=1] = 34{,}000\)</span> and <span class="math inline">\(\mathbb{E}[Y_i \mid Z_i=0] = 31{,}000\)</span> Then: <span class="math inline">\(ITT = 34{,}000 - 31{,}000 = 3{,}000\)</span> The offer of training increased annual earnings by $3,000 on average. But suppose only 75% of those offered training actually attend, and nobody in the control group attends. Then the first stage is: <span class="math inline">\(\mathbb{E}[D_i \mid Z_i=1] - \mathbb{E}[D_i \mid Z_i=0] = 0.75 - 0 = 0.75\)</span> A simple IV estimate of the effect of attending training for compliers is: <span class="math inline">\(\frac{3{,}000}{0.75}=4{,}000\)</span> This suggests that attending training increased earnings by $4,000 for workers who attended because they were offered the program. However, this interpretation requires assumptions. The offer must affect earnings only through training attendance, and the offer must not discourage anyone from attending. The study should also check:</p>
+<p>Let <span class="math inline">\(Z_i=1\)</span> if worker <span class="math inline">\(i\)</span> is offered training and <span class="math inline">\(Z_i=0\)</span> otherwise. Let <span class="math inline">\(Y_i\)</span> be annual earnings one year later. The ITT is: <span class="math inline">\(ITT = \mathbb{E}[Y_i \mid Z_i=1] - \mathbb{E}[Y_i \mid Z_i=0]\)</span> Suppose <span class="math inline">\(\mathbb{E}[Y_i \mid Z_i=1] = 34{,}000\)</span> and <span class="math inline">\(\mathbb{E}[Y_i \mid Z_i=0] = 31{,}000\)</span> Then: <span class="math inline">\(ITT = 34{,}000 - 31{,}000 = 3{,}000\)</span> The offer of training increased annual earnings by \$3,000 on average. But suppose only 75% of those offered training actually attend, and nobody in the control group attends. Then the first stage is: <span class="math inline">\(\mathbb{E}[D_i \mid Z_i=1] - \mathbb{E}[D_i \mid Z_i=0] = 0.75 - 0 = 0.75\)</span> A simple IV estimate of the effect of attending training for compliers is: <span class="math inline">\(\frac{3{,}000}{0.75}=4{,}000\)</span> This suggests that attending training increased earnings by \$4,000 for workers who attended because they were offered the program. However, this interpretation requires assumptions. The offer must affect earnings only through training attendance, and the offer must not discourage anyone from attending. The study should also check:</p>
 <ul>
 <li>whether randomization was implemented correctly,</li>
 <li>whether baseline characteristics are balanced,</li>
@@ -987,41 +987,41 @@
 <p>Causal inference requires a treatment that can be connected to a real or hypothetical intervention.</p>
 <ul>
 <li><strong>A credible comparison group.</strong> The comparison group must approximate the missing counterfactual. If a state raises its minimum wage, the untreated comparison states should represent what would have happened to the treated state in the absence of the policy. If students just below a scholarship cutoff receive aid, students just above the cutoff should represent what would have happened to treated students without aid. The comparison does not need to be perfect in every respect. It must be credible for the specific counterfactual claim required by the design.</li>
-<li><strong>A source of plausibly exogenous variation.</strong> The treatment variation should come from a source that is not chosen in response to the potential outcomes. Examples include:</li>
-<li>random lotteries,</li>
-<li>administrative cutoffs,</li>
-<li>unexpected policy changes,</li>
-<li>weather shocks,</li>
-<li>institutional assignment rules,</li>
-<li>staggered policy rollouts,</li>
-<li>eligibility thresholds,</li>
-<li>geographic borders,</li>
-<li>judge or examiner assignment,</li>
-<li>cohort-based rules.</li>
+<li><strong>A source of plausibly exogenous variation.</strong> The treatment variation should come from a source that is not chosen in response to the potential outcomes. Examples include:<ul class="sub-list"><li>random lotteries,</li><li>administrative cutoffs,</li><li>unexpected policy changes,</li><li>weather shocks,</li><li>institutional assignment rules,</li><li>staggered policy rollouts,</li><li>eligibility thresholds,</li><li>geographic borders,</li><li>judge or examiner assignment,</li><li>cohort-based rules.</li></ul></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>The word “exogenous” does not mean magical or automatically valid. It means external to the unobserved determinants of the outcome in the model being used. A researcher must explain why the variation is plausibly unrelated to the error term, potential outcomes, or untreated counterfactual trend.</p>
 <ul>
-<li><strong>A transparent identifying assumption.</strong> Every natural experiment depends on an assumption. Examples:</li>
-<li>Difference-in-differences requires parallel trends.</li>
-<li>Regression discontinuity requires continuity of potential outcomes at the cutoff.</li>
-<li>Instrumental variables require relevance and exclusion.</li>
-<li>Synthetic control requires that a weighted combination of control units approximates the treated unit’s untreated counterfactual.</li>
-<li>Matching requires no unobserved confounding conditional on observed covariates.</li>
+<li><strong>A transparent identifying assumption.</strong> Every natural experiment depends on an assumption. Examples:<ul class="sub-list"><li>Difference-in-differences requires parallel trends.</li><li>Regression discontinuity requires continuity of potential outcomes at the cutoff.</li><li>Instrumental variables require relevance and exclusion.</li><li>Synthetic control requires that a weighted combination of control units approximates the treated unit’s untreated counterfactual.</li><li>Matching requires no unobserved confounding conditional on observed covariates.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>The assumption should be stated explicitly. A study is more credible when the reader can clearly see what must be true for the estimate to be causal.</p>
 <ul>
-<li><strong>Evidence supporting the assumption.</strong> The identifying assumption is often not directly testable. However, researchers can provide indirect evidence. Examples:</li>
-<li>balance tests,</li>
-<li>pre-trend tests,</li>
-<li>placebo outcomes,</li>
-<li>placebo treatment dates,</li>
-<li>density tests around cutoffs,</li>
-<li>institutional detail,</li>
-<li>robustness to alternative specifications,</li>
-<li>sensitivity analysis,</li>
-<li>falsification tests,</li>
-<li>checks for manipulation,</li>
-<li>checks for spillovers.</li>
+<li><strong>Evidence supporting the assumption.</strong> The identifying assumption is often not directly testable. However, researchers can provide indirect evidence. Examples:<ul class="sub-list"><li>balance tests,</li><li>pre-trend tests,</li><li>placebo outcomes,</li><li>placebo treatment dates,</li><li>density tests around cutoffs,</li><li>institutional detail,</li><li>robustness to alternative specifications,</li><li>sensitivity analysis,</li><li>falsification tests,</li><li>checks for manipulation,</li><li>checks for spillovers.</li></ul></li>
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>None of these tests proves the design is valid. But together they can make the identifying assumption more or less plausible.</p>
 <h2 id="as-good-as-random-variation">8.5 As-good-as-random variation</h2>
@@ -1041,61 +1041,61 @@
 <h2 id="common-sources-of-natural-experimental-variation">8.6 Common sources of natural-experimental variation</h2>
 <p>Natural experiments arise from many sources. The most important thing is not the label attached to the source, but whether the source creates credible treatment variation.</p>
 <ul>
-<li><strong>Lotteries.</strong> Lotteries are among the cleanest natural experiments because they resemble explicit random assignment. Examples:</li>
-<li>military draft lotteries,</li>
-<li>school admission lotteries,</li>
-<li>housing voucher lotteries,</li>
-<li>visa lotteries,</li>
-<li>oversubscribed program lotteries,</li>
-<li>lottery-based allocation of public resources.</li>
+<li><strong>Lotteries.</strong> Lotteries are among the cleanest natural experiments because they resemble explicit random assignment. Examples:<ul class="sub-list"><li>military draft lotteries,</li><li>school admission lotteries,</li><li>housing voucher lotteries,</li><li>visa lotteries,</li><li>oversubscribed program lotteries,</li><li>lottery-based allocation of public resources.</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>If lottery assignment is truly random and affects treatment, it can be used to estimate causal effects. However, even lottery designs require care. A lottery may assign eligibility or an offer, not actual treatment. Some people who win may not take up the treatment, and some who lose may obtain treatment elsewhere. In that case, the lottery may identify an intent-to-treat effect or serve as an instrument for actual treatment. Let <span class="math inline">\(Z_i\)</span> denote winning a lottery and <span class="math inline">\(D_i\)</span> denote actual treatment. The effect of winning the lottery on the outcome is: <span class="math inline">\(ITT = \mathbb{E}[Y_i \mid Z_i=1]-\mathbb{E}[Y_i \mid Z_i=0].\)</span> If winning the lottery affects actual treatment, <span class="math inline">\(Z_i\)</span> may be used as an instrument for <span class="math inline">\(D_i\)</span>.</p>
 <ul>
-<li><strong>Administrative cutoffs.</strong> Many policies use thresholds or cutoffs. Examples:</li>
-<li>income thresholds for benefits,</li>
-<li>age cutoffs for school entry,</li>
-<li>test-score cutoffs for scholarships,</li>
-<li>population thresholds for regulations,</li>
-<li>poverty thresholds for program eligibility,</li>
-<li>credit-score thresholds for loan approval.</li>
+<li><strong>Administrative cutoffs.</strong> Many policies use thresholds or cutoffs. Examples:<ul class="sub-list"><li>income thresholds for benefits,</li><li>age cutoffs for school entry,</li><li>test-score cutoffs for scholarships,</li><li>population thresholds for regulations,</li><li>poverty thresholds for program eligibility,</li><li>credit-score thresholds for loan approval.</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>If treatment changes discontinuously at a cutoff, researchers may use regression discontinuity. The key idea is that units just below and just above the cutoff may be similar except for treatment eligibility. For a cutoff <span class="math inline">\(c\)</span> and running variable <span class="math inline">\(R_i\)</span>, treatment may be assigned as: <span class="math inline">\(D_i = 1\{R_i \geq c\}.\)</span> The RD design estimates the jump in outcomes at the cutoff: <span class="math inline">\(\tau_{RD} = \lim_{r \downarrow c} \mathbb{E}[Y_i \mid R_i=r] - \lim_{r \uparrow c} \mathbb{E}[Y_i \mid R_i=r].\)</span> This design is credible when potential outcomes would have evolved smoothly through the cutoff in the absence of treatment.</p>
 <ul>
-<li><strong>Staggered policy rollouts.</strong> Policies are often introduced in different places at different times. Examples:</li>
-<li>states adopt minimum wage laws in different years,</li>
-<li>countries expand health insurance at different times,</li>
-<li>cities introduce policing reforms sequentially,</li>
-<li>school districts adopt curricula in different years,</li>
-<li>regions receive infrastructure programs in phases.</li>
+<li><strong>Staggered policy rollouts.</strong> Policies are often introduced in different places at different times. Examples:<ul class="sub-list"><li>states adopt minimum wage laws in different years,</li><li>countries expand health insurance at different times,</li><li>cities introduce policing reforms sequentially,</li><li>school districts adopt curricula in different years,</li><li>regions receive infrastructure programs in phases.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>Staggered rollout can support difference-in-differences designs if untreated or not-yet-treated units provide a credible counterfactual for treated units. The key identifying assumption is usually a version of parallel trends: <span class="math inline">\(\mathbb{E}[Y_{it}(0)-Y_{i,t-1}(0) \mid D_i=1] = \mathbb{E}[Y_{it}(0)-Y_{i,t-1}(0) \mid D_i=0].\)</span> In words, treated and control units would have had the same average untreated change in outcomes. Staggered adoption requires special care when treatment effects vary over time or across cohorts. Traditional two-way fixed effects estimators can mix comparisons in problematic ways. Modern difference-in-differences methods often compare treated units to not-yet-treated or never-treated units and estimate cohort-time-specific effects.</p>
 <ul>
-<li><strong>Geographic borders.</strong> Policy rules often change at borders. Examples:</li>
-<li>minimum wages differ across state borders,</li>
-<li>tax rates differ across jurisdictions,</li>
-<li>school policies differ across district boundaries,</li>
-<li>environmental regulations differ across counties,</li>
-<li>healthcare access differs across administrative boundaries.</li>
+<li><strong>Geographic borders.</strong> Policy rules often change at borders. Examples:<ul class="sub-list"><li>minimum wages differ across state borders,</li><li>tax rates differ across jurisdictions,</li><li>school policies differ across district boundaries,</li><li>environmental regulations differ across counties,</li><li>healthcare access differs across administrative boundaries.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>Border designs compare units close to opposite sides of a boundary. The idea is that nearby units may share similar economic, social, geographic, and demographic conditions, while facing different policies. The credibility of a border design depends on whether units near the border are comparable and whether other policies also change at the border. A simple border comparison can be written as: <span class="math inline">\(Y_i = \alpha + \tau D_i + f(Location_i) + u_i,\)</span> where <span class="math inline">\(D_i\)</span> indicates the policy side of the border and <span class="math inline">\(f(Location_i)\)</span> controls flexibly for geography. Potential threats include sorting, multiple policy differences at the same boundary, spillovers across the border, and local economic integration.</p>
 <ul>
-<li><strong>Weather and environmental shocks.</strong> Weather is often used as a source of plausibly exogenous variation. Examples:</li>
-<li>rainfall shocks and agricultural output,</li>
-<li>temperature shocks and labor productivity,</li>
-<li>drought and migration,</li>
-<li>hurricanes and local economic activity,</li>
-<li>heat exposure and health outcomes,</li>
-<li>snowstorms and transportation disruptions.</li>
+<li><strong>Weather and environmental shocks.</strong> Weather is often used as a source of plausibly exogenous variation. Examples:<ul class="sub-list"><li>rainfall shocks and agricultural output,</li><li>temperature shocks and labor productivity,</li><li>drought and migration,</li><li>hurricanes and local economic activity,</li><li>heat exposure and health outcomes,</li><li>snowstorms and transportation disruptions.</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>The appeal is that weather is typically not chosen by individuals, firms, or governments. However, weather is not automatically exogenous for every question. For example, richer households may live in areas less exposed to flooding, farmers may adapt through irrigation, and governments may invest in protective infrastructure in high-risk areas. Long-run climate exposure may be correlated with settlement patterns, income, institutions, or adaptation. A weather shock is most credible when it represents unexpected short-run variation around local norms. Researchers often estimate models like: <span class="math inline">\(Y_{it} = \alpha_i + \lambda_t + \beta WeatherShock_{it} + u_{it},\)</span> where <span class="math inline">\(\alpha_i\)</span> are unit fixed effects and <span class="math inline">\(\lambda_t\)</span> are time fixed effects. The unit fixed effects compare each place to itself, and time fixed effects absorb shocks common to all places in a period.</p>
 <ul>
-<li><strong>Institutional assignment rules.</strong> Some institutions assign people to decision-makers or treatment environments in ways that appear quasi-random. Examples:</li>
-<li>judges assigned to cases,</li>
-<li>examiners assigned to disability claims,</li>
-<li>caseworkers assigned to welfare recipients,</li>
-<li>teachers assigned to classrooms,</li>
-<li>doctors assigned to patients,</li>
-<li>loan officers assigned to applicants.</li>
+<li><strong>Institutional assignment rules.</strong> Some institutions assign people to decision-makers or treatment environments in ways that appear quasi-random. Examples:<ul class="sub-list"><li>judges assigned to cases,</li><li>examiners assigned to disability claims,</li><li>caseworkers assigned to welfare recipients,</li><li>teachers assigned to classrooms,</li><li>doctors assigned to patients,</li><li>loan officers assigned to applicants.</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>If assignment is plausibly random or conditionally random, variation in decision-maker tendencies can be used for causal inference. For example, some judges may be more likely to impose incarceration than others. If defendants are quasi-randomly assigned to judges, judge harshness can be used as an instrument for incarceration. Let <span class="math inline">\(Z_i\)</span> be the tendency of assigned judge <span class="math inline">\(j\)</span> to impose incarceration. Let <span class="math inline">\(D_i\)</span> be whether defendant <span class="math inline">\(i\)</span> is incarcerated. Let <span class="math inline">\(Y_i\)</span> be a later outcome, such as employment or reoffending. A judge IV design requires:</p>
 <ol type="1">
@@ -1271,12 +1271,12 @@
 <li><strong>Placebo outcomes.</strong> A placebo outcome is an outcome that should not be affected by the treatment. For example, if a job training program supposedly affects earnings, it should not affect workers’ pre-treatment earnings. If it appears to affect pre-treatment earnings, that suggests treated and control units differed before treatment.</li>
 <li><strong>Placebo treatment dates.</strong> A placebo treatment date assigns treatment to a time before the actual intervention. If the estimated effect appears before treatment occurred, the design may be capturing trends or shocks rather than treatment.</li>
 <li><strong>Manipulation tests.</strong> In RD designs, manipulation tests check whether units sort around the cutoff. If many units appear just on the favorable side of the threshold, the running variable may have been manipulated.</li>
-<li><strong>Sensitivity analysis.</strong> Sensitivity analysis asks how strong violations of assumptions would need to be to change the conclusion. For example:</li>
-<li>How large would unobserved confounding need to be?</li>
-<li>How sensitive are results to alternative control groups?</li>
-<li>How sensitive are results to bandwidth choice?</li>
-<li>How sensitive are results to functional form?</li>
-<li>How sensitive are results to excluding certain units or periods?</li>
+<li><strong>Sensitivity analysis.</strong> Sensitivity analysis asks how strong violations of assumptions would need to be to change the conclusion. For example:<ul class="sub-list"><li>How large would unobserved confounding need to be?</li><li>How sensitive are results to alternative control groups?</li><li>How sensitive are results to bandwidth choice?</li><li>How sensitive are results to functional form?</li><li>How sensitive are results to excluding certain units or periods?</li></ul></li>
+
+
+
+
+
 </ul>
 <p>A result is more credible when it is not driven by one fragile specification.</p>
 <h2 id="common-threats-to-quasi-experimental-validity">8.18 Common threats to quasi-experimental validity</h2>
@@ -1284,28 +1284,28 @@
 <ul>
 <li><strong>Endogenous treatment timing.</strong> Treatment timing is endogenous when units receive treatment because of expected or ongoing changes in outcomes. For example, a city may adopt a policing reform because crime is already rising. A state may raise the minimum wage during a strong labor market. A school may adopt tutoring because test scores are falling. If treatment timing responds to outcome trends, before-after or DiD comparisons may be biased.</li>
 <li><strong>Differential trends.</strong> Treated and control units may have different underlying trends even without treatment. For example, urban and rural areas may have different employment trends. States adopting certain policies may already be on different trajectories. Firms adopting technology may already be growing faster. Differential trends are a major threat to DiD and event-study designs.</li>
-<li><strong>Anticipation effects.</strong> Units may change behavior before treatment begins if they anticipate it. Examples:</li>
-<li>firms adjust hiring before a minimum wage increase,</li>
-<li>households buy goods before a tax increase,</li>
-<li>students change effort before a scholarship cutoff,</li>
-<li>investors respond before a regulation takes effect.</li>
+<li><strong>Anticipation effects.</strong> Units may change behavior before treatment begins if they anticipate it. Examples:<ul class="sub-list"><li>firms adjust hiring before a minimum wage increase,</li><li>households buy goods before a tax increase,</li><li>students change effort before a scholarship cutoff,</li><li>investors respond before a regulation takes effect.</li></ul></li>
+
+
+
+
 </ul>
 <p>Anticipation makes it difficult to define the pre-treatment period.</p>
 <ul>
-<li><strong>Spillovers.</strong> Treatment may affect untreated units. Examples:</li>
-<li>job training participants may compete with nonparticipants for jobs,</li>
-<li>policing in one neighborhood may shift crime elsewhere,</li>
-<li>vaccination protects unvaccinated people,</li>
-<li>school reforms affect peer networks,</li>
-<li>regional policies affect neighboring labor markets.</li>
+<li><strong>Spillovers.</strong> Treatment may affect untreated units. Examples:<ul class="sub-list"><li>job training participants may compete with nonparticipants for jobs,</li><li>policing in one neighborhood may shift crime elsewhere,</li><li>vaccination protects unvaccinated people,</li><li>school reforms affect peer networks,</li><li>regional policies affect neighboring labor markets.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>Spillovers violate the assumption that the control group represents the untreated counterfactual.</p>
 <ul>
-<li><strong>Sorting and manipulation.</strong> People may sort into treatment status. Examples:</li>
-<li>families move across school district boundaries,</li>
-<li>firms adjust size to avoid regulation,</li>
-<li>students retake exams to cross scholarship cutoffs,</li>
-<li>households alter reported income to qualify for benefits.</li>
+<li><strong>Sorting and manipulation.</strong> People may sort into treatment status. Examples:<ul class="sub-list"><li>families move across school district boundaries,</li><li>firms adjust size to avoid regulation,</li><li>students retake exams to cross scholarship cutoffs,</li><li>households alter reported income to qualify for benefits.</li></ul></li>
+
+
+
+
 </ul>
 <p>Sorting undermines designs based on cutoffs, borders, or eligibility rules.</p>
 <ul>
@@ -1316,31 +1316,31 @@
 <h2 id="identification-estimation-and-inference-in-quasi-experiments">8.19 Identification, estimation, and inference in quasi-experiments</h2>
 <p>It is useful to distinguish three tasks.</p>
 <ul>
-<li><strong>Identification.</strong> Identification asks whether the causal effect can be recovered from observed data under assumptions. For example:</li>
-<li>DiD identifies the effect if parallel trends holds.</li>
-<li>RD identifies the local effect if potential outcomes are continuous at the cutoff.</li>
-<li>IV identifies LATE if relevance, independence, exclusion, and monotonicity hold.</li>
+<li><strong>Identification.</strong> Identification asks whether the causal effect can be recovered from observed data under assumptions. For example:<ul class="sub-list"><li>DiD identifies the effect if parallel trends holds.</li><li>RD identifies the local effect if potential outcomes are continuous at the cutoff.</li><li>IV identifies LATE if relevance, independence, exclusion, and monotonicity hold.</li></ul></li>
+
+
+
 </ul>
 <p>Identification is about the logic of the design.</p>
 <ul>
-<li><strong>Estimation.</strong> Estimation is the statistical procedure used to calculate the effect from data. Examples:</li>
-<li>OLS with fixed effects,</li>
-<li>local linear regression,</li>
-<li>two-stage least squares,</li>
-<li>weighted least squares,</li>
-<li>matching estimators,</li>
-<li>synthetic control weights.</li>
+<li><strong>Estimation.</strong> Estimation is the statistical procedure used to calculate the effect from data. Examples:<ul class="sub-list"><li>OLS with fixed effects,</li><li>local linear regression,</li><li>two-stage least squares,</li><li>weighted least squares,</li><li>matching estimators,</li><li>synthetic control weights.</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>A sophisticated estimator cannot rescue a weak identification strategy. The estimator implements the design; it does not create exogeneity by itself.</p>
 <ul>
-<li><strong>Inference.</strong> Inference asks how uncertain the estimate is. Important issues include:</li>
-<li>clustering standard errors,</li>
-<li>serial correlation,</li>
-<li>small numbers of treated units,</li>
-<li>randomization inference,</li>
-<li>bootstrap methods,</li>
-<li>multiple testing,</li>
-<li>spatial correlation.</li>
+<li><strong>Inference.</strong> Inference asks how uncertain the estimate is. Important issues include:<ul class="sub-list"><li>clustering standard errors,</li><li>serial correlation,</li><li>small numbers of treated units,</li><li>randomization inference,</li><li>bootstrap methods,</li><li>multiple testing,</li><li>spatial correlation.</li></ul></li>
+
+
+
+
+
+
+
 </ul>
 <p>A quasi-experimental estimate can be biased even if standard errors are tiny. Conversely, a credible design may produce wide confidence intervals if the data are limited. Credible empirical work requires all three: identification, estimation, and inference.</p>
 <h2 id="practical-example-compulsory-schooling-laws">8.20 Practical example: compulsory schooling laws</h2>
@@ -1429,9 +1429,7 @@
 <p>When reading an empirical paper that claims to use a natural experiment, ask the following questions.</p>
 <ol type="1">
 <li><strong>What is the causal question?</strong> What treatment effect is the paper trying to estimate? Is the treatment clearly defined? Is the outcome clearly defined?</li>
-<li><strong>What is the source of treatment variation?</strong> Where does the variation come from? Examples:</li>
-</ol>
-<ul>
+<li><strong>What is the source of treatment variation?</strong> Where does the variation come from? Examples:<ul class="sub-list">
 <li>lottery,</li>
 <li>cutoff,</li>
 <li>policy timing,</li>
@@ -1439,13 +1437,13 @@
 <li>weather shock,</li>
 <li>border,</li>
 <li>eligibility rule.</li>
-</ul>
+</ul></li>
+</ol>
+
 <ol start="3" type="1">
 <li><strong>Why is the variation plausibly exogenous?</strong> What is the argument that treatment variation is unrelated to potential outcomes? Is the argument institutional, statistical, graphical, or theoretical?</li>
 <li><strong>What is the comparison group?</strong> Who or what provides the missing counterfactual? Are they comparable to the treated units?</li>
-<li><strong>What is the identifying assumption?</strong> Every design has one. Examples:</li>
-</ol>
-<ul>
+<li><strong>What is the identifying assumption?</strong> Every design has one. Examples:<ul class="sub-list">
 <li>random assignment,</li>
 <li>parallel trends,</li>
 <li>continuity,</li>
@@ -1453,11 +1451,11 @@
 <li>no unobserved confounding,</li>
 <li>no manipulation,</li>
 <li>no spillovers.</li>
-</ul>
-<ol start="6" type="1">
-<li><strong>What evidence supports the assumption?</strong> Look for:</li>
+</ul></li>
 </ol>
-<ul>
+
+<ol start="6" type="1">
+<li><strong>What evidence supports the assumption?</strong> Look for:<ul class="sub-list">
 <li>pre-trends,</li>
 <li>balance tests,</li>
 <li>placebo tests,</li>
@@ -1465,7 +1463,9 @@
 <li>sensitivity analysis,</li>
 <li>institutional detail,</li>
 <li>graphical diagnostics.</li>
-</ul>
+</ul></li>
+</ol>
+
 <ol start="7" type="1">
 <li><strong>What effect is identified?</strong> Is it ATE, ATT, LATE, a local cutoff effect, a cohort-specific effect, or a short-run policy effect? For whom does it apply?</li>
 <li><strong>What are the main threats?</strong> Could there be sorting, spillovers, anticipation, other simultaneous policies, measurement changes, or endogenous timing?</li>
@@ -1550,9 +1550,9 @@
 <p>What variation in the data is being used to estimate the causal effect, and why is that variation plausibly unrelated to other causes of the outcome?</p>
 </blockquote>
 <p>This question should guide the entire empirical analysis.</p>
-<hr/>
+
 <h2 id="identification-versus-estimation">9.2 Identification versus estimation</h2>
-<p>A key distinction is the difference between identification and estimation. An <strong>estimand</strong> is the target quantity we want to learn. An <strong>estimator</strong> is the statistical procedure used to estimate that quantity. An <strong>estimate</strong> is the numerical value produced by applying the estimator to data. For example, the estimand may be the average treatment effect: <span class="math inline">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> An estimator might be the difference in sample means: <span class="math inline">\(\hat{\tau} = \frac{1}{N_1}\sum_{i:D_i=1}Y_i - \frac{1}{N_0}\sum_{i:D_i=0}Y_i\)</span> The estimate might be: <span class="math inline">\(\hat{\tau}=2{,}500\)</span> meaning the treated group earned $2,500 more than the untreated group on average. But whether this estimate identifies the causal ATE depends on assumptions. If treatment was randomly assigned, then the difference in means may identify the ATE. If treatment was self-selected, then the difference in means may combine the causal effect with selection bias. So the same estimator can be causal in one design and non-causal in another. This is why identification comes before estimation. Identification asks:</p>
+<p>A key distinction is the difference between identification and estimation. An <strong>estimand</strong> is the target quantity we want to learn. An <strong>estimator</strong> is the statistical procedure used to estimate that quantity. An <strong>estimate</strong> is the numerical value produced by applying the estimator to data. For example, the estimand may be the average treatment effect: <span class="math inline">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> An estimator might be the difference in sample means: <span class="math inline">\(\hat{\tau} = \frac{1}{N_1}\sum_{i:D_i=1}Y_i - \frac{1}{N_0}\sum_{i:D_i=0}Y_i\)</span> The estimate might be: <span class="math inline">\(\hat{\tau}=2{,}500\)</span> meaning the treated group earned \$2,500 more than the untreated group on average. But whether this estimate identifies the causal ATE depends on assumptions. If treatment was randomly assigned, then the difference in means may identify the ATE. If treatment was self-selected, then the difference in means may combine the causal effect with selection bias. So the same estimator can be causal in one design and non-causal in another. This is why identification comes before estimation. Identification asks:</p>
 <blockquote>
 <p>Does this empirical comparison correspond to the causal quantity we want?</p>
 </blockquote>
@@ -1565,19 +1565,19 @@
 <p>Standard errors measure uncertainty about estimation. Identification concerns whether the coefficient means what we claim it means.</p>
 </blockquote>
 <p>Both matter, but they are different problems.</p>
-<hr/>
+
 <h2 id="three-meanings-of-identification">9.3 Three meanings of identification</h2>
 <p>The word identification is used in several related ways.</p>
 <ul>
 <li><strong>Statistical identification.</strong> A parameter is statistically identified if it can be uniquely recovered from the population distribution of observed data under the model. Suppose a model implies that the joint distribution of observed variables <span class="math inline">\((Y,X)\)</span> depends on a parameter <span class="math inline">\(\theta\)</span>. If two different values of <span class="math inline">\(\theta\)</span> generate the same observable distribution, then <span class="math inline">\(\theta\)</span> is not identified. Formally, let <span class="math inline">\(P_\theta(Y,X)\)</span> be the distribution of observed data implied by parameter <span class="math inline">\(\theta\)</span>. The parameter is identified if: <span class="math inline">\(P_{\theta_1}(Y,X)=P_{\theta_2}(Y,X) \implies \theta_1=\theta_2\)</span> In words: if the observable distribution is the same under two parameter values, then those parameter values must be the same. If different parameters generate the same observed data distribution, the data cannot distinguish between them. Statistical identification is especially important in structural models, latent-variable models, simultaneous-equation models, and models with missing data.</li>
 <li><strong>Causal identification.</strong> A causal effect is identified if it can be expressed in terms of observed data under stated assumptions. For example, the ATE is: <span class="math inline">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> This is defined using potential outcomes, not directly observed outcomes. If treatment is randomly assigned, then <span class="math inline">\(D_i \perp (Y_i(1),Y_i(0))\)</span> Under this assumption: <span class="math inline">\(\mathbb{E}[Y_i(1)] = \mathbb{E}[Y_i \mid D_i=1]\)</span> and <span class="math inline">\(\mathbb{E}[Y_i(0)] = \mathbb{E}[Y_i \mid D_i=0]\)</span> Therefore: <span class="math inline">\(ATE = \mathbb{E}[Y_i \mid D_i=1] - \mathbb{E}[Y_i \mid D_i=0]\)</span> The causal effect has been rewritten in terms of observable conditional means. That is causal identification.</li>
-<li><strong>Empirical identification strategy.</strong> In applied economics, an identification strategy is the design-based argument for why an estimate can be interpreted causally. It answers questions such as:</li>
-<li>What source of variation is being used?</li>
-<li>Why is that variation plausibly exogenous?</li>
-<li>What comparison group provides the counterfactual?</li>
-<li>What assumptions are required?</li>
-<li>What threats could invalidate the design?</li>
-<li>What evidence supports the assumptions?</li>
+<li><strong>Empirical identification strategy.</strong> In applied economics, an identification strategy is the design-based argument for why an estimate can be interpreted causally. It answers questions such as:<ul class="sub-list"><li>What source of variation is being used?</li><li>Why is that variation plausibly exogenous?</li><li>What comparison group provides the counterfactual?</li><li>What assumptions are required?</li><li>What threats could invalidate the design?</li><li>What evidence supports the assumptions?</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>For example, a weak empirical claim is:</p>
 <blockquote>
@@ -1588,7 +1588,7 @@
 <p>A compulsory schooling reform changed educational attainment for some cohorts but not others. We compare affected and unaffected cohorts across regions and birth years, controlling for region and cohort effects. The identifying assumption is that, absent the reform, affected and unaffected cohorts would have followed comparable earnings trajectories.</p>
 </blockquote>
 <p>The second statement explains the source of variation and the assumptions required for a causal interpretation.</p>
-<hr/>
+
 <h2 id="the-anatomy-of-an-identification-strategy">9.4 The anatomy of an identification strategy</h2>
 <p>A good identification strategy has several components.</p>
 <ul>
@@ -1617,27 +1617,27 @@
 <p>Different research designs may identify different estimands.</p>
 <p>An RCT with full compliance may identify the ATE for the experimental sample. An IV design may identify a LATE for compliers. An RD design may identify a local effect at the cutoff. A DiD design may identify an average treatment effect for treated units over a particular post-treatment period. A study should not simply say it estimates “the effect.” It should say what effect, for whom, and under what variation.</p>
 <ul>
-<li><strong>A source of identifying variation.</strong> The researcher must explain what variation in treatment is being used. Examples:</li>
-<li>random assignment,</li>
-<li>lottery assignment,</li>
-<li>policy timing,</li>
-<li>eligibility cutoffs,</li>
-<li>geographic borders,</li>
-<li>judge assignment,</li>
-<li>weather shocks,</li>
-<li>cohort exposure,</li>
-<li>administrative rules,</li>
-<li>instrument-induced variation,</li>
-<li>within-unit changes over time.</li>
+<li><strong>A source of identifying variation.</strong> The researcher must explain what variation in treatment is being used. Examples:<ul class="sub-list"><li>random assignment,</li><li>lottery assignment,</li><li>policy timing,</li><li>eligibility cutoffs,</li><li>geographic borders,</li><li>judge assignment,</li><li>weather shocks,</li><li>cohort exposure,</li><li>administrative rules,</li><li>instrument-induced variation,</li><li>within-unit changes over time.</li></ul></li>
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>Not all variation is equally useful. If workers choose whether to attend training, variation in training participation may reflect motivation, ability, desperation, or private information. If a lottery assigns training slots, variation in training offers may be plausibly unrelated to those characteristics. The identification strategy should identify which part of the variation is credible.</p>
 <ul>
-<li><strong>A counterfactual comparison.</strong> The researcher must state what observed group or pattern represents the missing counterfactual. For example:</li>
-<li>In an RCT, the control group represents what would have happened to the treated group without treatment.</li>
-<li>In DiD, the control group’s trend represents the treated group’s counterfactual trend.</li>
-<li>In RD, units just below the cutoff represent the counterfactual for units just above the cutoff, or vice versa.</li>
-<li>In IV, compliers under one instrument state represent the counterfactual for compliers under another instrument state.</li>
-<li>In fixed effects, the same unit at other times helps form the comparison.</li>
+<li><strong>A counterfactual comparison.</strong> The researcher must state what observed group or pattern represents the missing counterfactual. For example:<ul class="sub-list"><li>In an RCT, the control group represents what would have happened to the treated group without treatment.</li><li>In DiD, the control group’s trend represents the treated group’s counterfactual trend.</li><li>In RD, units just below the cutoff represent the counterfactual for units just above the cutoff, or vice versa.</li><li>In IV, compliers under one instrument state represent the counterfactual for compliers under another instrument state.</li><li>In fixed effects, the same unit at other times helps form the comparison.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>The comparison group is not automatically valid. It must be justified.</p>
 <ul>
@@ -1687,40 +1687,40 @@
 </table></div>
 <p>These assumptions are usually not fully testable. But researchers can provide evidence that makes them more or less plausible.</p>
 <ul>
-<li><strong>Threats to identification.</strong> A credible study must discuss how the identifying assumptions might fail. Examples:</li>
-<li>selection into treatment,</li>
-<li>omitted variable bias,</li>
-<li>reverse causality,</li>
-<li>anticipation effects,</li>
-<li>spillovers,</li>
-<li>attrition,</li>
-<li>manipulation around a cutoff,</li>
-<li>weak instruments,</li>
-<li>differential pre-trends,</li>
-<li>measurement error,</li>
-<li>simultaneous policy changes,</li>
-<li>composition changes,</li>
-<li>treatment effect heterogeneity.</li>
+<li><strong>Threats to identification.</strong> A credible study must discuss how the identifying assumptions might fail. Examples:<ul class="sub-list"><li>selection into treatment,</li><li>omitted variable bias,</li><li>reverse causality,</li><li>anticipation effects,</li><li>spillovers,</li><li>attrition,</li><li>manipulation around a cutoff,</li><li>weak instruments,</li><li>differential pre-trends,</li><li>measurement error,</li><li>simultaneous policy changes,</li><li>composition changes,</li><li>treatment effect heterogeneity.</li></ul></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>A strong empirical paper does not hide threats. It explains them and evaluates their importance.</p>
 <ul>
-<li><strong>Evidence supporting the assumptions.</strong> Researchers use several tools to support identification strategies:</li>
-<li>institutional details,</li>
-<li>randomization checks,</li>
-<li>balance tests,</li>
-<li>pre-trend tests,</li>
-<li>placebo tests,</li>
-<li>falsification tests,</li>
-<li>sensitivity analysis,</li>
-<li>robustness checks,</li>
-<li>alternative control groups,</li>
-<li>density tests near cutoffs,</li>
-<li>first-stage tests for IV,</li>
-<li>graphical evidence,</li>
-<li>qualitative knowledge of assignment rules.</li>
+<li><strong>Evidence supporting the assumptions.</strong> Researchers use several tools to support identification strategies:<ul class="sub-list"><li>institutional details,</li><li>randomization checks,</li><li>balance tests,</li><li>pre-trend tests,</li><li>placebo tests,</li><li>falsification tests,</li><li>sensitivity analysis,</li><li>robustness checks,</li><li>alternative control groups,</li><li>density tests near cutoffs,</li><li>first-stage tests for IV,</li><li>graphical evidence,</li><li>qualitative knowledge of assignment rules.</li></ul></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>These tools do not prove assumptions with certainty. They discipline the causal argument.</p>
-<hr/>
+
 <h2 id="a-simple-example-job-training-and-earnings">9.5 A simple example: job training and earnings</h2>
 <p>Suppose we want to estimate the effect of job training on annual earnings. Let: <span class="math inline">\(D_i=1\)</span> if worker <span class="math inline">\(i\)</span> receives job training, and: <span class="math inline">\(D_i=0\)</span> otherwise. Let: <span class="math inline">\(Y_i(1)\)</span> be earnings if worker <span class="math inline">\(i\)</span> receives training, and: <span class="math inline">\(Y_i(0)\)</span> be earnings if worker <span class="math inline">\(i\)</span> does not receive training. The ATT is: <span class="math inline">\(ATT = \mathbb{E}[Y_i(1)-Y_i(0) \mid D_i=1]\)</span> The observed treated-control difference is: <span class="math inline">\(\mathbb{E}[Y_i \mid D_i=1] - \mathbb{E}[Y_i \mid D_i=0]\)</span> Using potential outcomes, this is: <span class="math inline">\(\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=0]\)</span> But the ATT requires: <span class="math inline">\(\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=1]\)</span> The missing counterfactual is: <span class="math inline">\(\mathbb{E}[Y_i(0) \mid D_i=1]\)</span> The identification problem is to recover this missing term. Different identification strategies recover it differently. - <strong>Randomized controlled trial.</strong> If training slots are randomly assigned among eligible workers, then: <span class="math inline">\(D_i \perp (Y_i(1),Y_i(0))\)</span> The control group identifies what would have happened to the treated group without training.</p>
 <ul>
@@ -1729,11 +1729,11 @@
 <li><strong>Instrumental variables.</strong> If workers are randomly encouraged to attend training, encouragement can be used as an instrument for participation, provided encouragement affects earnings only through training.</li>
 <li><strong>Matching.</strong> If workers select into training based only on observed characteristics, then comparing trained and untrained workers with similar observed covariates may identify the effect. The key point is that each strategy answers the same counterfactual problem differently.</li>
 </ul>
-<hr/>
+
 <h2 id="identification-as-a-mapping-from-causal-quantities-to-observed-data">9.6 Identification as a mapping from causal quantities to observed data</h2>
 <p>Formally, identification means expressing a causal quantity in terms of the observed data distribution. The observed data might include: <span class="math inline">\((Y_i,D_i,X_i)\)</span> where: <span class="math inline">\(Y_i\)</span> is the observed outcome, - <span class="math inline">\(D_i\)</span> is treatment status, - <span class="math inline">\(X_i\)</span> is a vector of observed covariates. The causal quantities involve potential outcomes: <span class="math inline">\(Y_i(1),Y_i(0)\)</span> But we do not observe both potential outcomes for each unit. Identification requires assumptions that allow us to write causal objects using observable objects. For example, suppose we assume unconfoundedness: <span class="math inline">\((Y_i(1),Y_i(0)) \perp D_i \mid X_i\)</span> and overlap: <span class="math inline">\(0&lt;P(D_i=1 \mid X_i=x)&lt;1\)</span> for relevant <span class="math inline">\(x\)</span>. Then: <span class="math inline">\(\mathbb{E}[Y_i(1) \mid X_i=x] = \mathbb{E}[Y_i \mid D_i=1,X_i=x]\)</span> and: <span class="math inline">\(\mathbb{E}[Y_i(0) \mid X_i=x] = \mathbb{E}[Y_i \mid D_i=0,X_i=x]\)</span> Therefore: <span class="math inline">\(ATE = \mathbb{E}_X\left[ \mathbb{E}[Y_i \mid D_i=1,X_i] - \mathbb{E}[Y_i \mid D_i=0,X_i] \right]\)</span> This formula identifies the ATE under conditional independence and overlap.</p>
 <p>The formula itself is not a research design. The credibility depends on whether the assumptions are believable.</p>
-<hr/>
+
 <h2 id="the-role-of-assumptions">9.7 The role of assumptions</h2>
 <p>All causal identification depends on assumptions. There is no assumption-free causal inference. Even randomized experiments require assumptions:</p>
 <ul>
@@ -1771,7 +1771,7 @@
 <li>Conduct inference about sampling uncertainty.</li>
 </ol>
 <p>Skipping step 2 is one of the most common mistakes in applied work.</p>
-<hr/>
+
 <h2 id="exogenous-variation">9.8 Exogenous variation</h2>
 <p>Empirical economists often say they are looking for exogenous variation. Exogenous variation is variation in treatment that is unrelated to unobserved determinants of the outcome. In a regression model: <span class="math inline">\(Y_i = \alpha + \beta D_i + u_i\)</span> we need: <span class="math inline">\(\mathbb{E}[u_i \mid D_i]=0\)</span> or at least: <span class="math inline">\(\operatorname{Cov}(D_i,u_i)=0\)</span> for <span class="math inline">\(\beta\)</span> to have a causal interpretation in the simplest linear model. In potential outcomes language, exogenous treatment assignment often means: <span class="math inline">\(D_i \perp (Y_i(1),Y_i(0))\)</span> or conditionally: <span class="math inline">\(D_i \perp (Y_i(1),Y_i(0)) \mid X_i\)</span> But in applied economics, treatment is often chosen by people, firms, governments, or institutions. That means variation in treatment may reflect unobserved factors.</p>
 <p>Examples:</p>
@@ -1792,7 +1792,7 @@
 <li>Draft lotteries create variation in military service.</li>
 </ul>
 <p>The key is not whether the treatment itself is generally endogenous. The key is whether the particular variation used for identification is plausibly exogenous.</p>
-<hr/>
+
 <h2 id="identifying-variation-versus-control-variation">9.9 Identifying variation versus control variation</h2>
 <p>Not all variation used in a regression identifies the causal effect. Consider: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+u_{it}\)</span> where:</p>
 <ul>
@@ -1812,7 +1812,7 @@
 <blockquote>
 <p>What comparison identifies the estimate?</p>
 </blockquote>
-<hr/>
+
 <h2 id="identification-in-randomized-experiments">9.10 Identification in randomized experiments</h2>
 <p>Randomized experiments provide the cleanest identification strategy because treatment assignment is controlled by the researcher. Let <span class="math inline">\(D_i\)</span> be randomly assigned. Then: <span class="math inline">\(D_i \perp (Y_i(1),Y_i(0))\)</span> This implies: <span class="math inline">\(\mathbb{E}[Y_i(0) \mid D_i=1] = \mathbb{E}[Y_i(0) \mid D_i=0]\)</span> and: <span class="math inline">\(\mathbb{E}[Y_i(1) \mid D_i=1] = \mathbb{E}[Y_i(1) \mid D_i=0]\)</span> The observed control group identifies the treated group’s missing untreated counterfactual. The difference in means identifies the ATE: <span class="math inline">\(ATE = \mathbb{E}[Y_i \mid D_i=1] - \mathbb{E}[Y_i \mid D_i=0]\)</span> under full compliance and no spillovers.</p>
 <p>However, the identification strategy still needs to address implementation problems. Possible threats include:</p>
@@ -1829,7 +1829,7 @@
 <li>limited external validity.</li>
 </ul>
 <p>Randomization is powerful because it directly addresses confounding. But it does not eliminate the need for careful design and interpretation.</p>
-<hr/>
+
 <h2 id="identification-in-difference-in-differences">9.11 Identification in difference-in-differences</h2>
 <p>Difference-in-differences uses changes over time in treated and control groups. Suppose there are two groups and two periods. The treated group receives treatment after the first period. The control group does not. The DiD estimand is: <span class="math inline">\(\left(\mathbb{E}[Y_{T,after}]-\mathbb{E}[Y_{T,before}]\right) - \left(\mathbb{E}[Y_{C,after}]-\mathbb{E}[Y_{C,before}]\right)\)</span> The identifying assumption is parallel trends: &gt; In the absence of treatment, the treated and control groups would have experienced the same average change in outcomes. In potential outcomes notation: <span class="math inline">\(\mathbb{E}[Y_{T,after}(0)-Y_{T,before}(0)] = \mathbb{E}[Y_{C,after}(0)-Y_{C,before}(0)]\)</span> This assumption allows the control group’s change to stand in for the treated group’s missing counterfactual change. The treated group’s observed change is: <span class="math inline">\(\mathbb{E}[Y_{T,after}(1)-Y_{T,before}(0)]\)</span> The missing counterfactual is: <span class="math inline">\(\mathbb{E}[Y_{T,after}(0)]\)</span> DiD identifies the effect if the control group provides a credible estimate of what would have happened to the treated group after treatment absent the policy.</p>
 <p>Threats include:</p>
@@ -1851,7 +1851,7 @@
 <li>covariate balance over time,</li>
 <li>institutional explanation for policy timing.</li>
 </ul>
-<hr/>
+
 <h2 id="identification-in-regression-discontinuity">9.12 Identification in regression discontinuity</h2>
 <p>Regression discontinuity uses a cutoff rule that changes treatment assignment. Let <span class="math inline">\(R_i\)</span> be a running variable and <span class="math inline">\(c\)</span> be a cutoff. In a sharp RD: <span class="math inline">\(D_i = 1(R_i \geq c)\)</span> or: <span class="math inline">\(D_i = 1(R_i &lt; c)\)</span> The RD estimand is the discontinuous jump in the outcome at the cutoff: <span class="math inline">\(\tau_{RD} = \lim_{r \downarrow c}\mathbb{E}[Y_i \mid R_i=r] - \lim_{r \uparrow c}\mathbb{E}[Y_i \mid R_i=r]\)</span> with the direction depending on which side receives treatment. The identifying assumption is that potential outcomes are continuous at the cutoff: <span class="math inline">\(\lim_{r \downarrow c}\mathbb{E}[Y_i(0) \mid R_i=r] = \lim_{r \uparrow c}\mathbb{E}[Y_i(0) \mid R_i=r]\)</span> and similarly for <span class="math inline">\(Y_i(1)\)</span> when relevant.</p>
 <p>In words:</p>
@@ -1877,7 +1877,7 @@
 <li>institutional details about the assignment rule.</li>
 </ul>
 <p>RD identifies a local effect near the cutoff. It may not generalize to units far from the cutoff.</p>
-<hr/>
+
 <h2 id="identification-in-instrumental-variables">9.13 Identification in instrumental variables</h2>
 <p>Instrumental variables are used when treatment is endogenous. Suppose: <span class="math inline">\(Y_i = \alpha + \beta D_i + u_i\)</span> and: <span class="math inline">\(\operatorname{Cov}(D_i,u_i) \neq 0\)</span> An instrument <span class="math inline">\(Z_i\)</span> provides variation in <span class="math inline">\(D_i\)</span> that is plausibly unrelated to <span class="math inline">\(u_i\)</span>. The core IV assumptions are: <strong>Relevance.</strong> The instrument affects treatment: <span class="math inline">\(\operatorname{Cov}(Z_i,D_i) \neq 0\)</span><strong>Independence.</strong> The instrument is as-good-as-random with respect to potential outcomes: <span class="math inline">\(Z_i \perp (Y_i(1),Y_i(0))\)</span> or conditionally independent given covariates. <strong>Exclusion restriction.</strong> The instrument affects the outcome only through treatment. In causal graph terms: <span class="math inline">\(Z_i \rightarrow D_i \rightarrow Y_i\)</span> but no direct path: <span class="math inline">\(Z_i \rightarrow Y_i\)</span> except through <span class="math inline">\(D_i\)</span>. - <strong>Monotonicity.</strong> The instrument moves treatment in the same direction for all units. It rules out defiers. Under these assumptions, IV identifies a local average treatment effect for compliers: <span class="math inline">\(LATE = \mathbb{E}[Y_i(1)-Y_i(0) \mid \text{compliers}]\)</span> The Wald estimand for a binary instrument and binary treatment is: <span class="math inline">\(\tau_{IV} = \frac{\mathbb{E}[Y_i \mid Z_i=1]-\mathbb{E}[Y_i \mid Z_i=0]} {\mathbb{E}[D_i \mid Z_i=1]-\mathbb{E}[D_i \mid Z_i=0]}\)</span> The numerator is the reduced-form effect of the instrument on the outcome.</p>
 <p>The denominator is the first-stage effect of the instrument on treatment. Threats include:</p>
@@ -1890,7 +1890,7 @@
 <li>violations of monotonicity.</li>
 </ul>
 <p>The hardest part of IV is usually not estimation. It is defending the exclusion restriction.</p>
-<hr/>
+
 <h2 id="identification-in-fixed-effects-designs">9.14 Identification in fixed effects designs</h2>
 <p>Fixed effects use repeated observations to control for stable unobserved differences across units. A common model is: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+u_{it}\)</span> where:</p>
 <ul>
@@ -1911,7 +1911,7 @@
 <li>limited within-unit variation.</li>
 </ul>
 <p>Fixed effects are useful, but they are not magic.</p>
-<hr/>
+
 <h2 id="identification-in-matching-and-weighting">9.15 Identification in matching and weighting</h2>
 <p>Matching and weighting try to construct comparable treated and untreated groups using observed covariates. The key identifying assumption is unconfoundedness: <span class="math inline">\((Y_i(1),Y_i(0)) \perp D_i \mid X_i\)</span> This says that conditional on observed characteristics <span class="math inline">\(X_i\)</span>, treatment assignment is independent of potential outcomes. The second key assumption is overlap: <span class="math inline">\(0&lt;P(D_i=1 \mid X_i=x)&lt;1\)</span> for relevant <span class="math inline">\(x\)</span>.</p>
 <p>Under these assumptions, we can compare treated and untreated units with the same covariates. Matching directly pairs or groups similar units. Weighting reweights observations to make covariate distributions comparable. For example, inverse probability weighting uses the propensity score: <span class="math inline">\(e(X_i)=P(D_i=1 \mid X_i)\)</span> A common weighting expression for the ATE is: <span class="math inline">\(\mathbb{E}\left[\frac{D_iY_i}{e(X_i)} - \frac{(1-D_i)Y_i}{1-e(X_i)}\right]\)</span> Matching and weighting can be powerful when selection occurs on observed variables.</p>
@@ -1926,7 +1926,7 @@
 <li>extreme weights.</li>
 </ul>
 <p>Matching and weighting improve comparability on measured variables. They do not create randomization unless the unconfoundedness assumption is credible.</p>
-<hr/>
+
 <h2 id="identification-in-synthetic-control-designs">9.16 Identification in synthetic control designs</h2>
 <p>Synthetic control is often used for case studies with one or a small number of treated units. Example:</p>
 <ul>
@@ -1953,12 +1953,12 @@
 <li>extrapolation beyond available controls.</li>
 </ul>
 <p>Synthetic control makes the counterfactual visible: the weighted comparison path is the estimated no-treatment path.</p>
-<hr/>
+
 <h2 id="identification-and-dags">9.17 Identification and DAGs</h2>
 <p>DAGs help clarify identification by showing which paths create causal and non-causal associations. Suppose the causal graph is: <span class="math inline">\(Ability \rightarrow Education \rightarrow Wage\)</span> and: <span class="math inline">\(Ability \rightarrow Wage\)</span> The causal path of interest is: <span class="math inline">\(Education \rightarrow Wage\)</span> The backdoor path is: <span class="math inline">\(Education \leftarrow Ability \rightarrow Wage\)</span> If ability is unobserved and not controlled, the effect of education is confounded.</p>
 <p>A valid adjustment set blocks all non-causal backdoor paths without blocking the causal path or opening collider paths. If ability were observed, controlling for ability could identify the causal effect under suitable assumptions. But suppose we instead control for occupation: <span class="math inline">\(Education \rightarrow Occupation \rightarrow Wage\)</span> Occupation is a mediator. Controlling for it blocks part of the causal effect of education. Or suppose we control for admission to an elite program: <span class="math inline">\(Talent \rightarrow Admission \leftarrow Luck\)</span> Conditioning on admission may create collider bias.</p>
 <p>DAGs do not identify effects by themselves. They represent assumptions about causal structure. Given those assumptions, they help determine whether a causal effect is identifiable and what variables should or should not be controlled. DAGs are useful because they make identification assumptions explicit.</p>
-<hr/>
+
 <h2 id="identification-and-bad-controls">9.18 Identification and bad controls</h2>
 <p>A common mistake is to think that adding more control variables always improves identification. This is false. Controls help only when they block non-causal sources of association without blocking causal effects or opening new biasing paths. Bad controls include:</p>
 <ol type="1">
@@ -1971,22 +1971,22 @@
 </ol>
 <p>For example, suppose: <span class="math inline">\(Education \rightarrow Occupation \rightarrow Wage\)</span> If the goal is the total effect of education on wages, controlling for occupation is bad because occupation is part of the mechanism. Suppose: <span class="math inline">\(Treatment \rightarrow Health \leftarrow Baseline\ Risk\)</span> If health is affected by treatment and by baseline risk, conditioning on health can create a non-causal association between treatment and baseline risk. Suppose: <span class="math inline">\(Treatment \rightarrow Employment \rightarrow Income\)</span> If we control for employment when estimating the effect of treatment on income, we may remove part of the effect.</p>
 <p>The right control set depends on the estimand. If the goal is the total effect, do not control for mediators. If the goal is a direct effect, controlling for mediators may be appropriate, but the interpretation changes and additional assumptions are needed. Identification is not about maximizing the number of controls. It is about choosing controls based on causal logic.</p>
-<hr/>
+
 <h2 id="local-versus-global-identification">9.19 Local versus global identification</h2>
 <p>Many research designs identify local effects. A local effect applies to a specific subset of units, margin, place, time, or source of variation. Examples:</p>
 <ul>
 <li><strong>Regression discontinuity.</strong> RD identifies the effect for units near the cutoff. A scholarship RD at GPA 3.5 identifies the effect for students near 3.5, not necessarily for students with GPA 2.0 or 4.0.</li>
 <li><strong>Instrumental variables.</strong> IV often identifies the effect for compliers. If distance to college is an instrument for college attendance, the estimate applies to people whose college attendance changes because of distance. It may not apply to people who would always attend or never attend regardless of distance.</li>
 <li><strong>Difference-in-differences.</strong> DiD often identifies effects for treated units affected by the policy change during the studied period. The estimate may not apply to other places or later scale-ups.</li>
-<li><strong>RCTs.</strong> An RCT identifies the effect for the experimental sample under the implemented version of treatment. Generalizing beyond that sample requires external validity assumptions. A rigorous interpretation should therefore state:</li>
-<li>whose effect is identified,</li>
-<li>what margin of treatment variation identifies it,</li>
-<li>what time horizon it covers,</li>
-<li>what population it may generalize to,</li>
-<li>what population it may not generalize to.</li>
+<li><strong>RCTs.</strong> An RCT identifies the effect for the experimental sample under the implemented version of treatment. Generalizing beyond that sample requires external validity assumptions. A rigorous interpretation should therefore state:<ul class="sub-list"><li>whose effect is identified,</li><li>what margin of treatment variation identifies it,</li><li>what time horizon it covers,</li><li>what population it may generalize to,</li><li>what population it may not generalize to.</li></ul></li>
+
+
+
+
+
 </ul>
 <p>A common error is to estimate a local effect and then describe it as a universal effect.</p>
-<hr/>
+
 <h2 id="identification-and-heterogeneity">9.20 Identification and heterogeneity</h2>
 <p>Treatment effects are often heterogeneous. That means: <span class="math inline">\(Y_i(1)-Y_i(0)\)</span> may differ across units.</p>
 <p>When treatment effects are heterogeneous, the source of identifying variation matters because different designs weight units differently. For example, an IV estimate weights compliers affected by the instrument. An RD estimate focuses on units near the cutoff. A DiD estimate may weight groups and time periods in complicated ways, especially with staggered adoption and heterogeneous effects. An RCT estimate may represent the average effect for the experimental sample, but not necessarily for the target population. Therefore, when effects are heterogeneous, identification requires asking:</p>
@@ -1994,7 +1994,7 @@
 <p>Which treatment effects are being averaged, and with what weights?</p>
 </blockquote>
 <p>This is not a minor detail. It can change the substantive interpretation. For example, a job training program may have large effects for young displaced workers and small effects for older workers. An estimate based mostly on young compliers should not be interpreted as the effect for all unemployed workers. Heterogeneity connects identification to external validity and policy relevance.</p>
-<hr/>
+
 <h2 id="identification-and-external-validity">9.21 Identification and external validity</h2>
 <p>Internal validity asks whether the study identifies a causal effect in the study setting. External validity asks whether that effect generalizes to other settings. A study may be internally valid but externally limited. For example:</p>
 <ul>
@@ -2017,56 +2017,56 @@
 <li>Are treatment effects heterogeneous across relevant groups?</li>
 </ol>
 <p>Identification of the original effect does not guarantee transportability.</p>
-<hr/>
+
 <h2 id="how-researchers-defend-identification-strategies">9.22 How researchers defend identification strategies</h2>
 <p>Researchers defend identification strategies using several forms of evidence.</p>
 <ul>
-<li><strong>Institutional knowledge.</strong> Institutional details explain how treatment was assigned. Examples:</li>
-<li>Was a lottery actually random?</li>
-<li>How was a cutoff enforced?</li>
-<li>Why did some regions adopt a policy earlier?</li>
-<li>How were judges assigned to cases?</li>
-<li>Who controlled program eligibility?</li>
+<li><strong>Institutional knowledge.</strong> Institutional details explain how treatment was assigned. Examples:<ul class="sub-list"><li>Was a lottery actually random?</li><li>How was a cutoff enforced?</li><li>Why did some regions adopt a policy earlier?</li><li>How were judges assigned to cases?</li><li>Who controlled program eligibility?</li></ul></li>
+
+
+
+
+
 </ul>
 <p>Institutional knowledge often matters more than statistical complexity.</p>
 <ul>
 <li><strong>Balance tests.</strong> Balance tests compare pre-treatment characteristics across treated and control groups. In an RCT, balance tests check whether randomization produced similar groups. In RD, covariate balance near the cutoff supports the claim that units near the threshold are comparable. In IV, balance across instrument values supports independence. Balance tests cannot prove identification, especially for unobserved variables. But imbalance can reveal problems.</li>
 <li><strong>Pre-trend tests.</strong> Pre-trend tests are especially important in DiD and event studies. They ask whether treated and control groups followed similar trends before treatment. If they diverged before treatment, parallel trends is less plausible. However, passing a pre-trend test does not prove future parallel trends. It only provides supporting evidence.</li>
-<li><strong>Placebo tests.</strong> A placebo test applies the design where no effect should be found. Examples:</li>
-<li>use a fake treatment date before the actual policy,</li>
-<li>test outcomes that should not be affected,</li>
-<li>apply the method to groups not exposed to treatment,</li>
-<li>test cutoffs where no policy exists.</li>
+<li><strong>Placebo tests.</strong> A placebo test applies the design where no effect should be found. Examples:<ul class="sub-list"><li>use a fake treatment date before the actual policy,</li><li>test outcomes that should not be affected,</li><li>apply the method to groups not exposed to treatment,</li><li>test cutoffs where no policy exists.</li></ul></li>
+
+
+
+
 </ul>
 <p>If the design finds effects where none should exist, the identification strategy is suspect.</p>
 <ul>
-<li><strong>Falsification tests.</strong> Falsification tests examine implications of the identifying assumptions. For example:</li>
-<li>In RD, covariates should not jump at the cutoff.</li>
-<li>In IV, the instrument should not predict pre-treatment outcomes.</li>
-<li>In DiD, treatment should not affect outcomes before treatment occurs.</li>
+<li><strong>Falsification tests.</strong> Falsification tests examine implications of the identifying assumptions. For example:<ul class="sub-list"><li>In RD, covariates should not jump at the cutoff.</li><li>In IV, the instrument should not predict pre-treatment outcomes.</li><li>In DiD, treatment should not affect outcomes before treatment occurs.</li></ul></li>
+
+
+
 </ul>
 <p>Falsification tests do not prove assumptions, but they can reveal violations.</p>
 <ul>
-<li><strong>Robustness checks.</strong> Robustness checks ask whether results persist under reasonable alternative specifications. Examples:</li>
-<li>alternative control groups,</li>
-<li>alternative bandwidths,</li>
-<li>alternative functional forms,</li>
-<li>alternative time windows,</li>
-<li>alternative covariate sets,</li>
-<li>alternative outcome definitions,</li>
-<li>alternative clustering choices,</li>
-<li>excluding influential observations.</li>
+<li><strong>Robustness checks.</strong> Robustness checks ask whether results persist under reasonable alternative specifications. Examples:<ul class="sub-list"><li>alternative control groups,</li><li>alternative bandwidths,</li><li>alternative functional forms,</li><li>alternative time windows,</li><li>alternative covariate sets,</li><li>alternative outcome definitions,</li><li>alternative clustering choices,</li><li>excluding influential observations.</li></ul></li>
+
+
+
+
+
+
+
+
 </ul>
 <p>Robustness is not a substitute for identification. But a result that disappears under minor reasonable changes may be less credible.</p>
 <ul>
-<li><strong>Sensitivity analysis.</strong> Sensitivity analysis asks how strong a violation of assumptions would need to be to change the conclusion. For example:</li>
-<li>How strong would an unobserved confounder need to be to explain the estimate?</li>
-<li>How much differential attrition would overturn the result?</li>
-<li>How large would spillovers need to be?</li>
-<li>How sensitive is the estimate to weak instruments?</li>
+<li><strong>Sensitivity analysis.</strong> Sensitivity analysis asks how strong a violation of assumptions would need to be to change the conclusion. For example:<ul class="sub-list"><li>How strong would an unobserved confounder need to be to explain the estimate?</li><li>How much differential attrition would overturn the result?</li><li>How large would spillovers need to be?</li><li>How sensitive is the estimate to weak instruments?</li></ul></li>
+
+
+
+
 </ul>
 <p>Sensitivity analysis is useful because identifying assumptions are rarely certain.</p>
-<hr/>
+
 <h2 id="what-identification-cannot-do">9.23 What identification cannot do</h2>
 <p>Identification is powerful, but it has limits.</p>
 <ul>
@@ -2074,14 +2074,14 @@
 <li><strong>Identification does not guarantee external validity.</strong> A well-identified local effect may not generalize.</li>
 <li><strong>Identification does not guarantee policy relevance.</strong> A causal effect may be too small, too costly, too delayed, or too narrowly targeted to matter for policy.</li>
 <li><strong>Identification does not fix bad measurement.</strong> If the treatment or outcome is poorly measured, identification may be undermined.</li>
-<li><strong>Identification does not make assumptions true.</strong> A research design depends on assumptions. Naming a method does not guarantee those assumptions hold. For example:</li>
-<li>Calling a study DiD does not prove parallel trends.</li>
-<li>Calling a variable an instrument does not prove exclusion.</li>
-<li>Calling a design RD does not prove no manipulation.</li>
-<li>Including fixed effects does not eliminate time-varying confounding.</li>
+<li><strong>Identification does not make assumptions true.</strong> A research design depends on assumptions. Naming a method does not guarantee those assumptions hold. For example:<ul class="sub-list"><li>Calling a study DiD does not prove parallel trends.</li><li>Calling a variable an instrument does not prove exclusion.</li><li>Calling a design RD does not prove no manipulation.</li><li>Including fixed effects does not eliminate time-varying confounding.</li></ul></li>
+
+
+
+
 </ul>
 <p>Methods are only as credible as their assumptions.</p>
-<hr/>
+
 <p><strong>9.24 Common mistakes about identification.</strong></p>
 <ol type="1">
 <li><strong>Equating regression with identification.</strong> Regression is an estimation tool. It is not an identification strategy by itself. The question is what variation in the regression identifies the coefficient and whether that variation is plausibly causal.</li>
@@ -2093,7 +2093,7 @@
 <li><strong>Treating robustness checks as proof.</strong> Robustness checks can support a design, but they do not prove identifying assumptions.</li>
 <li><strong>Hiding assumptions.</strong> Every causal estimate depends on assumptions. The best empirical work states them clearly.</li>
 </ol>
-<hr/>
+
 <p><strong>9.25 Application checklist.</strong></p>
 <p>When evaluating or designing an empirical study, use the following checklist.</p>
 <ol type="1">
@@ -2102,9 +2102,7 @@
 <li><strong>Identify the missing counterfactual.</strong> For the treated group, what untreated outcome is missing? For the untreated group, what treated outcome is missing?</li>
 <li><strong>Identify the source of variation.</strong> What variation in treatment is being used? Is it random assignment, policy timing, cutoff-based variation, instrument-induced variation, within-unit variation, or selection on observables?</li>
 <li><strong>Explain why the variation is credible.</strong> Why is this variation plausibly unrelated to other determinants of the outcome? What institutional details support this claim?</li>
-<li><strong>State the identifying assumptions.</strong> Examples:</li>
-</ol>
-<ul>
+<li><strong>State the identifying assumptions.</strong> Examples:<ul class="sub-list">
 <li>random assignment,</li>
 <li>parallel trends,</li>
 <li>exclusion restriction,</li>
@@ -2113,14 +2111,16 @@
 <li>overlap,</li>
 <li>no time-varying confounding,</li>
 <li>no interference.</li>
-</ul>
+</ul></li>
+</ol>
+
 <ol start="7" type="1">
 <li><strong>Assess threats.</strong> Could the assumptions fail because of selection, omitted variables, reverse causality, spillovers, anticipation, attrition, manipulation, measurement error, or simultaneous shocks?</li>
 <li><strong>Provide supporting evidence.</strong> Use balance tests, pre-trends, placebo tests, falsification tests, robustness checks, graphical analysis, and institutional details.</li>
 <li><strong>Interpret the estimate carefully.</strong> What effect was identified? For whom? Using what variation? Over what time horizon? Under what assumptions?</li>
 <li><strong>Discuss external validity.</strong> Would the effect generalize to other populations, places, times, policy versions, or scales?</li>
 </ol>
-<hr/>
+
 <h2 id="summary-2">9.26 Summary</h2>
 <p>Identification is the logic that connects a causal question to observed data. A causal estimand, such as: <span class="math inline">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> is defined in terms of potential outcomes. But potential outcomes are not all observed. Identification asks whether the missing counterfactuals can be recovered from observed data under credible assumptions.</p>
 <p>The central question is:</p>
@@ -2148,12 +2148,12 @@
 <p>For example, suppose we estimate the effect of education on wages: <span class="math inline">\(Wage_i = \alpha + \beta Education_i + u_i\)</span> Education may be endogenous because people with more education may differ from people with less education in ability, family background, motivation, school quality, parental networks, local labor markets, and expectations. If these factors affect wages and are not fully observed, then they enter <span class="math inline">\(u_i\)</span> and may be correlated with <span class="math inline">\(Education_i\)</span>.</p>
 <p>In that case: <span class="math inline">\(\operatorname{Cov}(Education_i,u_i) \neq 0\)</span> OLS may estimate a relationship between education and wages, but that relationship may not equal the causal return to education.</p>
 <p>Instrumental variables provide a possible solution. The idea is to find a variable <span class="math inline">\(Z_i\)</span> that changes <span class="math inline">\(X_i\)</span> but is otherwise unrelated to the unobserved determinants of <span class="math inline">\(Y_i\)</span>. An instrument creates a source of variation in treatment that is more plausibly exogenous than the treatment itself. The goal is not to use all variation in <span class="math inline">\(X_i\)</span>. The goal is to isolate the part of <span class="math inline">\(X_i\)</span> that is caused by <span class="math inline">\(Z_i\)</span> and use only that variation to estimate the effect of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y_i\)</span>.</p>
-<hr/>
+
 <h2 id="the-basic-iv-idea">10.2 The basic IV idea</h2>
 <p>Suppose we want the causal effect of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y_i\)</span>: <span class="math inline">\(Y_i = \alpha + \beta X_i + u_i\)</span> but <span class="math inline">\(X_i\)</span> is endogenous: <span class="math inline">\(\operatorname{Cov}(X_i,u_i) \neq 0\)</span> An instrument <span class="math inline">\(Z_i\)</span> is a variable that satisfies two core conditions: 1. <strong>Relevance</strong>: <span class="math inline">\(Z_i\)</span> affects <span class="math inline">\(X_i\)</span>. 2. <strong>Exclusion</strong>: <span class="math inline">\(Z_i\)</span> affects <span class="math inline">\(Y_i\)</span> only through <span class="math inline">\(X_i\)</span>. Relevance means: <span class="math inline">\(\operatorname{Cov}(Z_i,X_i) \neq 0\)</span> Exclusion means that <span class="math inline">\(Z_i\)</span> has no direct effect on <span class="math inline">\(Y_i\)</span> except through <span class="math inline">\(X_i\)</span>. A simple DAG for a valid instrument is: <span class="math inline">\(Z \rightarrow X \rightarrow Y\)</span> There should be no direct arrow: <span class="math inline">\(Z \rightarrow Y\)</span> and no open backdoor path connecting <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> through omitted causes.</p>
 <p>The instrument gives us a piece of variation in <span class="math inline">\(X\)</span> that can be interpreted as exogenous. We then ask whether the part of <span class="math inline">\(X\)</span> shifted by <span class="math inline">\(Z\)</span> affects <span class="math inline">\(Y\)</span>. For example, suppose we want to estimate the effect of college attendance on earnings. College attendance is endogenous because students who attend college may differ from those who do not. An instrument might be distance to the nearest college, if living closer to a college makes attendance more likely but does not affect earnings through any channel other than college attendance. The proposed causal chain is: <span class="math inline">\(Distance\ to\ College \rightarrow College\ Attendance \rightarrow Earnings\)</span> This instrument is relevant if distance to college actually affects college attendance.</p>
 <p>It satisfies exclusion only if distance to college affects earnings solely through college attendance. That is a strong assumption. It may fail if people who live near colleges differ systematically from people who live far away in labor markets, family background, urbanization, school quality, or local economic opportunity. This example illustrates the central feature of IV: relevance can often be tested, but exclusion usually must be defended using theory, institutional knowledge, and indirect evidence.</p>
-<hr/>
+
 <h2 id="iv-as-a-solution-to-omitted-variable-bias">10.3 IV as a solution to omitted variable bias</h2>
 <p>Consider the true model: <span class="math inline">\(Y_i = \alpha + \beta X_i + \gamma A_i + \varepsilon_i\)</span> where <span class="math inline">\(A_i\)</span> is an omitted variable such as ability. Suppose we estimate: <span class="math inline">\(Y_i = \alpha + \beta X_i + u_i\)</span> where: <span class="math inline">\(u_i = \gamma A_i + \varepsilon_i\)</span> If <span class="math inline">\(A_i\)</span> is correlated with <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(X_i\)</span> is endogenous: <span class="math inline">\(\operatorname{Cov}(X_i,u_i) \neq 0\)</span> An instrument <span class="math inline">\(Z_i\)</span> can help if it shifts <span class="math inline">\(X_i\)</span> but is unrelated to <span class="math inline">\(A_i\)</span> and <span class="math inline">\(\varepsilon_i\)</span>.</p>
 <p>The structure is:</p>
@@ -2162,13 +2162,13 @@
 <p><span class="math display">\[A_i \rightarrow X_i\]</span></p>
 <p><span class="math display">\[A_i \rightarrow Y_i\]</span></p>
 <p>The instrument must not be connected to <span class="math inline">\(A_i\)</span>: <span class="math inline">\(Z_i \perp A_i\)</span> at least in the relevant causal sense. For education and wages, a compulsory schooling law may serve as an instrument if it increases schooling for some individuals but is otherwise unrelated to their ability, motivation, or family background. The idea is that the law creates variation in schooling that is not chosen by individuals. That law-induced variation may be more credible for causal inference than ordinary differences in schooling. The IV estimate then uses only the schooling variation generated by the compulsory schooling law, not all schooling variation. This is both the strength and limitation of IV. It can isolate plausibly exogenous variation, but the resulting estimate may apply only to the people whose behavior was changed by the instrument.</p>
-<hr/>
+
 <h2 id="the-two-core-iv-assumptions">10.4 The two core IV assumptions</h2>
 <ul>
 <li><strong>Relevance.</strong> The instrument must affect the endogenous treatment or explanatory variable. Formally: <span class="math inline">\(\operatorname{Cov}(Z_i,X_i) \neq 0\)</span> In a regression framework, the first-stage relationship is: <span class="math inline">\(X_i = \pi_0 + \pi_1 Z_i + v_i\)</span> Relevance requires: <span class="math inline">\(\pi_1 \neq 0\)</span> If <span class="math inline">\(Z_i\)</span> does not predict <span class="math inline">\(X_i\)</span>, then <span class="math inline">\(Z_i\)</span> cannot be used to isolate variation in <span class="math inline">\(X_i\)</span>. Examples of relevance: Examples/considerations: A compulsory schooling law must actually increase years of schooling; A randomly assigned encouragement must actually increase program participation; Eligibility at a cutoff must actually increase treatment receipt; Distance to a college must actually affect college attendance; Judge assignment must actually affect sentencing severity. Relevance is empirically testable because both <span class="math inline">\(Z_i\)</span> and <span class="math inline">\(X_i\)</span> are observed. Researchers usually report the first-stage coefficient and first-stage strength. A weak first stage creates weak instrument problems, discussed later in this section.</li>
 <li><strong>Exclusion restriction.</strong> The exclusion restriction says that the instrument affects the outcome only through the treatment. In a DAG, the valid path is: <span class="math inline">\(Z \rightarrow X \rightarrow Y\)</span> There should be no direct causal path: <span class="math inline">\(Z \rightarrow Y\)</span> and no indirect path from <span class="math inline">\(Z\)</span> to <span class="math inline">\(Y\)</span> except through <span class="math inline">\(X\)</span>. For example, suppose distance to college is used as an instrument for college attendance. The exclusion restriction says that distance to college affects earnings only because it affects college attendance. This may fail if distance to college also captures: Examples/considerations: urban versus rural location,; local labor market quality,; parental education,; neighborhood income,; school quality,; access to professional networks,; migration opportunities. If any of these affect earnings, then distance to college may have a path to earnings not mediated by college attendance. The exclusion restriction is usually the most controversial IV assumption. It cannot generally be tested directly because it is a claim about unobserved counterfactual pathways. Researchers defend the exclusion restriction using: Examples/considerations: institutional details,; historical context,; balance tests,; placebo outcomes,; robustness checks,; alternative instruments,; falsification tests,; sensitivity analysis,; clear discussion of possible violations. A strong first stage is not enough. An instrument can strongly predict treatment and still be invalid if it affects the outcome through other channels.</li>
 </ul>
-<hr/>
+
 <h2 id="additional-iv-assumptions">10.5 Additional IV assumptions</h2>
 <p>The two-assumption summary of IV as relevance plus exclusion is useful, but rigorous causal interpretation usually requires additional assumptions.</p>
 <ul>
@@ -2176,7 +2176,7 @@
 <li><strong>Monotonicity.</strong> Monotonicity is important for interpreting IV as a Local Average Treatment Effect. For a binary instrument <span class="math inline">\(Z_i \in \{0,1\}\)</span> and binary treatment <span class="math inline">\(D_i \in \{0,1\}\)</span>, define potential treatment statuses: <span class="math inline">\(D_i(1)\)</span> and <span class="math inline">\(D_i(0)\)</span> where: Examples/considerations: <span class="math inline">\(D_i(1)\)</span> is whether unit <span class="math inline">\(i\)</span> receives treatment when <span class="math inline">\(Z_i=1\)</span>,; <span class="math inline">\(D_i(0)\)</span> is whether unit <span class="math inline">\(i\)</span> receives treatment when <span class="math inline">\(Z_i=0\)</span>. Monotonicity requires: <span class="math inline">\(D_i(1) \geq D_i(0)\)</span> for every unit, or the reverse inequality for every unit depending on the direction of the instrument. In words: “The instrument moves treatment in one direction for everyone.” It rules out defiers. If <span class="math inline">\(Z_i\)</span> is an encouragement to participate in job training, monotonicity says the encouragement may cause some people to participate who otherwise would not, but it does not cause anyone to avoid training who otherwise would have participated. This is plausible in many encouragement designs but not automatic.</li>
 <li><strong>Stable unit treatment value and no interference.</strong> As with other causal designs, IV usually requires some version of SUTVA. The treatment must be well defined, and one unit’s instrument or treatment should not affect another unit’s outcome unless the analysis explicitly models spillovers. This may fail in general equilibrium settings. For example, a job training instrument may increase employment for treated workers but reduce job opportunities for untreated workers if jobs are scarce. In that case, untreated workers’ outcomes may be affected by others’ treatment status.</li>
 </ul>
-<hr/>
+
 <h2 id="reduced-form-first-stage-and-iv-estimand">10.6 Reduced form, first stage, and IV estimand</h2>
 <p>A useful way to understand IV is to break it into three relationships:</p>
 <ol type="1">
@@ -2188,8 +2188,8 @@
 <blockquote>
 <p>How much did the outcome change because of the instrument, divided by how much the treatment changed because of the instrument?</p>
 </blockquote>
-<p>If the instrument affects the outcome only by changing treatment, then the reduced-form effect should operate through the first-stage effect. For example, suppose a randomized training encouragement increases training participation by 20 percentage points and increases average earnings by $800. The IV estimate is: <span class="math inline">\(\frac{800}{0.20}=4{,}000\)</span> This suggests that the effect of training for those induced into training by the encouragement is $4,000. The reduced form is policy-relevant by itself because it estimates the effect of the instrument or offer. The IV ratio rescales that effect into the effect of actual treatment among compliers.</p>
-<hr/>
+<p>If the instrument affects the outcome only by changing treatment, then the reduced-form effect should operate through the first-stage effect. For example, suppose a randomized training encouragement increases training participation by 20 percentage points and increases average earnings by \$800. The IV estimate is: <span class="math inline">\(\frac{800}{0.20}=4{,}000\)</span> This suggests that the effect of training for those induced into training by the encouragement is \$4,000. The reduced form is policy-relevant by itself because it estimates the effect of the instrument or offer. The IV ratio rescales that effect into the effect of actual treatment among compliers.</p>
+
 <h2 id="two-stage-least-squares">10.7 Two-stage least squares</h2>
 <p>The most common regression implementation of IV is <strong>two-stage least squares</strong>, abbreviated <strong>2SLS</strong>. Suppose the structural equation is: <span class="math inline">\(Y_i = \alpha + \beta X_i + u_i\)</span> where <span class="math inline">\(X_i\)</span> is endogenous. Let <span class="math inline">\(Z_i\)</span> be an instrument.</p>
 <ul>
@@ -2197,7 +2197,7 @@
 <li><strong>Second stage.</strong> The second stage regresses the outcome on the predicted treatment: <span class="math inline">\(Y_i = \alpha + \beta \widehat{X}_i + e_i\)</span> The resulting coefficient estimates the effect of the instrument-induced component of <span class="math inline">\(X_i\)</span> on <span class="math inline">\(Y_i\)</span>. The intuition is that <span class="math inline">\(X_i\)</span> contains both endogenous and exogenous variation. The first stage extracts the variation in <span class="math inline">\(X_i\)</span> that comes from <span class="math inline">\(Z_i\)</span>. If <span class="math inline">\(Z_i\)</span> is valid, that part of <span class="math inline">\(X_i\)</span> is exogenous. In practice, researchers do not literally run two independent regressions and use ordinary second-stage standard errors. Standard errors must account for the generated regressor <span class="math inline">\(\widehat{X}_i\)</span>. Statistical software’s IV or 2SLS commands handle this.</li>
 <li><strong>Including controls.</strong> Often the model includes controls <span class="math inline">\(W_i\)</span>: First stage: <span class="math inline">\(X_i = \pi_0 + \pi_1 Z_i + W_i'\pi_2 + v_i\)</span> Second stage: <span class="math inline">\(Y_i = \alpha + \beta \widehat{X}_i + W_i'\delta + e_i\)</span> The instrument must be relevant conditional on controls: <span class="math inline">\(\operatorname{Cov}(Z_i,X_i \mid W_i) \neq 0\)</span> and valid conditional on controls. Controls can help if they block backdoor paths between the instrument and the outcome. But controls can also hurt if they are bad controls, such as variables affected by the instrument or treatment. As always, the correct controls depend on the causal structure.</li>
 </ul>
-<hr/>
+
 <h2 id="late-local-average-treatment-effect">10.8 LATE: Local Average Treatment Effect</h2>
 <p>Instrumental variables often identify a <strong>Local Average Treatment Effect</strong>, or <strong>LATE</strong>. This is one of the most important and often misunderstood features of IV. For a binary instrument and binary treatment, units can be grouped according to how their treatment status responds to the instrument. Let: <span class="math inline">\(D_i(1)\)</span> be treatment status if <span class="math inline">\(Z_i=1\)</span>, and <span class="math inline">\(D_i(0)\)</span> be treatment status if <span class="math inline">\(Z_i=0\)</span>. There are four types of units.</p>
 <div class="table-wrap"><table class="extra-wide-table">
@@ -2254,7 +2254,7 @@
 <blockquote>
 <p>Under the IV assumptions, the instrument-induced increase in college attendance raises earnings by <span class="math inline">\(\beta\)</span> for individuals whose college attendance was changed by the instrument.</p>
 </blockquote>
-<hr/>
+
 <h2 id="compliance-types-and-policy-interpretation">10.9 Compliance types and policy interpretation</h2>
 <p>The LATE framework clarifies why IV estimates are often local. Consider a job training program with randomized encouragement. Some workers participate even without encouragement. They are always-takers. Some workers do not participate even with encouragement. They are never-takers. Some workers participate only if encouraged. They are compliers. The IV estimate reflects the effect for compliers. This may be exactly the policy-relevant group if the policy being considered is an encouragement or outreach program. But it may not answer broader questions such as:</p>
 <ul>
@@ -2264,7 +2264,7 @@
 <li>What is the effect for people least likely to participate?</li>
 </ul>
 <p>The instrument defines the margin of variation. Different instruments can identify different LATEs. For education, a compulsory schooling law may identify the effect of education for students induced to stay in school by the law. A college proximity instrument may identify the effect for students whose attendance depends on distance. A tuition subsidy may identify the effect for students whose attendance depends on price. These may be different populations with different treatment effects. Therefore, IV estimates should be interpreted in relation to the instrument that generated them.</p>
-<hr/>
+
 <h2 id="weak-instruments">10.10 Weak instruments</h2>
 <p>A weak instrument is an instrument that has only a weak relationship with the endogenous variable. In the first stage: <span class="math inline">\(X_i = \pi_0 + \pi_1 Z_i + v_i\)</span> weak instruments occur when <span class="math inline">\(\pi_1\)</span> is close to zero. Weak instruments are dangerous because they can produce:</p>
 <ul>
@@ -2285,7 +2285,7 @@
 <li>robustness to alternative specifications.</li>
 </ul>
 <p>A statistically significant first stage is not enough. The first stage should be strong enough to support reliable inference.</p>
-<hr/>
+
 <h2 id="invalid-instruments">10.11 Invalid instruments</h2>
 <p>An instrument can fail for many reasons.</p>
 <ul>
@@ -2296,7 +2296,7 @@
 <li><strong>Spillovers and general equilibrium effects.</strong> The instrument may affect outcomes for units whose own treatment status does not change. Example: a training program may improve job prospects for participants while reducing job prospects for nonparticipants competing in the same labor market.</li>
 <li><strong>Multiple channels.</strong> The instrument may bundle several treatments. Example: eligibility for a program may provide job training, counseling, transportation assistance, and employer referrals. If the treatment is defined as training only, the instrument affects the outcome through other channels too. The key lesson is: “A good instrument is not merely a variable that predicts treatment. It must generate treatment variation that is plausibly unrelated to all other determinants of the outcome.”</li>
 </ul>
-<hr/>
+
 <h2 id="measurement-error-and-iv">10.12 Measurement error and IV</h2>
 <p>Instrumental variables can sometimes address measurement error. Suppose the true model is: <span class="math inline">\(Y_i = \alpha + \beta X_i^* + u_i\)</span> where <span class="math inline">\(X_i^*\)</span> is the true variable of interest. But we observe <span class="math inline">\(X_i\)</span> with measurement error: <span class="math inline">\(X_i = X_i^* + e_i\)</span> If the measurement error <span class="math inline">\(e_i\)</span> is classical, OLS estimates of <span class="math inline">\(\beta\)</span> are biased toward zero. This is called attenuation bias.</p>
 <p>An instrument <span class="math inline">\(Z_i\)</span> for <span class="math inline">\(X_i^*\)</span> can help if:</p>
@@ -2306,11 +2306,11 @@
 <li><span class="math inline">\(Z_i\)</span> affects <span class="math inline">\(Y_i\)</span> only through <span class="math inline">\(X_i^*\)</span>.</li>
 </ol>
 <p>For example, suppose income is measured with error in survey data. Administrative income records or repeated measures may sometimes be used as instruments for measured survey income, depending on the setting. However, IV does not automatically solve measurement error. The instrument must still satisfy relevance and exclusion.</p>
-<hr/>
+
 <h2 id="iv-with-multiple-instruments-and-overidentification">10.13 IV with multiple instruments and overidentification</h2>
 <p>Sometimes researchers have more instruments than endogenous variables. For example, suppose <span class="math inline">\(X_i\)</span> is endogenous and there are two instruments, <span class="math inline">\(Z_{1i}\)</span> and <span class="math inline">\(Z_{2i}\)</span>. The first stage is: <span class="math inline">\(X_i = \pi_0 + \pi_1 Z_{1i} + \pi_2 Z_{2i} + v_i\)</span> If both instruments are valid, they can improve precision by providing more exogenous variation.</p>
 <p>When there are more instruments than endogenous variables, the model is overidentified. Researchers can conduct overidentification tests, such as a Sargan or Hansen test, to examine whether the instruments appear mutually consistent. However, overidentification tests have limits. They do not prove that instruments are valid. They only test whether the instruments produce statistically consistent estimates under certain assumptions. If all instruments are invalid in similar ways, the test may not detect the problem. Overidentification tests should be viewed as diagnostics, not proof of validity. A credible IV design still requires substantive defense of each instrument.</p>
-<hr/>
+
 <h2 id="dag-intuition-for-instrumental-variables">10.14 DAG intuition for instrumental variables</h2>
 <p>DAGs help clarify IV assumptions. A valid instrument has this structure:</p>
 <p><span class="math display">\[Z \rightarrow X \rightarrow Y\]</span></p>
@@ -2329,10 +2329,10 @@
 <p>or:</p>
 <p><span class="math display">\[Z \rightarrow M \rightarrow Y\]</span></p>
 <p>where <span class="math inline">\(M\)</span> is some non-treatment channel. DAGs also show why controlling for the wrong variables can damage an IV design. For example, controlling for a mediator between <span class="math inline">\(Z\)</span> and <span class="math inline">\(X\)</span> can weaken or eliminate the first stage. Controlling for a collider affected by <span class="math inline">\(Z\)</span> and unobserved determinants of <span class="math inline">\(Y\)</span> can create bias. As always, controls should be chosen using causal reasoning, not mechanically.</p>
-<hr/>
+
 <h2 id="iv-versus-ordinary-regression-controls">10.15 IV versus ordinary regression controls</h2>
 <p>Regression controls try to solve endogeneity by adjusting for observed confounders. IV tries to solve endogeneity by finding exogenous variation in treatment. Suppose education is endogenous because of ability. A regression-control strategy might estimate: <span class="math inline">\(Wage_i = \alpha + \beta Education_i + \delta AbilityProxy_i + u_i\)</span> This works only if the ability proxy adequately captures the relevant confounding. An IV strategy might use compulsory schooling laws as an instrument: <span class="math inline">\(Education_i = \pi_0 + \pi_1 CompulsoryLaw_i + v_i\)</span> The IV strategy does not require measuring ability perfectly. Instead, it requires that the law-induced variation in education is unrelated to ability and affects wages only through education. Neither approach is automatically better. Each depends on assumptions. Controls are credible when confounders are observed and measured well. IV is credible when a valid source of exogenous treatment variation exists. A weak regression with many controls is not necessarily credible. A clever instrument with an implausible exclusion restriction is not credible either. The quality of the design depends on the quality of the identifying assumptions.</p>
-<hr/>
+
 <h2 id="iv-versus-randomized-controlled-trials">10.16 IV versus randomized controlled trials</h2>
 <p>An RCT randomly assigns treatment or treatment offer. IV often appears inside RCTs when assignment and actual treatment differ. Suppose individuals are randomly assigned to be offered a program: <span class="math inline">\(Z_i \in \{0,1\}\)</span> where <span class="math inline">\(Z_i=1\)</span> means offered treatment. Actual participation is: <span class="math inline">\(D_i \in \{0,1\}\)</span> Some people offered treatment do not participate. Some people not offered treatment may access treatment elsewhere. The intent-to-treat effect is: <span class="math inline">\(ITT = \mathbb{E}[Y_i \mid Z_i=1] - \mathbb{E}[Y_i \mid Z_i=0]\)</span> This is the effect of being offered treatment. If we want the effect of actually receiving treatment, we may use assignment <span class="math inline">\(Z_i\)</span> as an instrument for participation <span class="math inline">\(D_i\)</span>. The IV estimate is: <span class="math inline">\(\frac{\mathbb{E}[Y_i \mid Z_i=1] - \mathbb{E}[Y_i \mid Z_i=0]} {\mathbb{E}[D_i \mid Z_i=1] - \mathbb{E}[D_i \mid Z_i=0]}\)</span> This estimates the treatment effect for compliers: people whose participation status was changed by the offer. This is why RCTs with imperfect compliance often report both:</p>
 <ul>
@@ -2340,7 +2340,7 @@
 <li>IV/TOT/LATE: effect of treatment for compliers.</li>
 </ul>
 <p>The ITT is often more policy-relevant if the real policy is to offer a program. The IV estimate is more relevant if the question concerns actual participation.</p>
-<hr/>
+
 <h2 id="common-empirical-examples">10.17 Common empirical examples</h2>
 <ul>
 <li><strong>Education and earnings.</strong> Question: “What is the causal effect of schooling on earnings?” Problem: Education is endogenous because of ability, family background, motivation, and selection. Possible instruments: Examples/considerations: compulsory schooling laws,; school entry age rules,; distance to college,; quarter of birth in some institutional settings,; tuition changes,; lottery-based school admissions. Main concerns: Examples/considerations: Does the instrument strongly affect schooling?; Does it affect earnings through channels other than schooling?; Who are the compliers?; Is the estimate local to marginal students affected by the instrument?.</li>
@@ -2348,7 +2348,7 @@
 <li><strong>Incarceration and labor market outcomes.</strong> Question: “What is the effect of incarceration on later employment?” Problem: People who are incarcerated differ from those who are not in many unobserved ways. Possible instrument: Examples/considerations: random assignment to stricter versus more lenient judges. Relevance: Judge assignment affects probability or length of incarceration. Exclusion concern: Judge assignment should affect later employment only through incarceration, not through other sentencing conditions, court experiences, fines, probation terms, or stigma channels independent of incarceration.</li>
 <li><strong>Health insurance and healthcare use.</strong> Question: “What is the effect of insurance coverage on healthcare use?” Problem: People with insurance differ from people without insurance. Possible instruments: Examples/considerations: eligibility thresholds,; policy expansions,; randomized insurance lotteries,; employer mandates. Concerns: Eligibility may affect outcomes through income, labor supply, or program interactions. Policy changes may coincide with other changes.</li>
 </ul>
-<hr/>
+
 <p><strong>10.18 What to report in an IV study.</strong></p>
 <p>A credible IV analysis should report more than the second-stage coefficient. At minimum, researchers should report:</p>
 <ol type="1">
@@ -2370,7 +2370,7 @@
 <li>external validity limitations.</li>
 </ol>
 <p>The reduced form should not be hidden. It is often the most transparent estimate because it shows the effect of the instrument itself on the outcome. The first stage should also be interpreted substantively, not merely statistically. For example, saying that an instrument increases schooling by 0.03 years may suggest a very small first stage, even if statistically significant in a large sample.</p>
-<hr/>
+
 <p><strong>10.19 Common mistakes with IV.</strong></p>
 <div class="table-wrap"><table class="two-col">
 <colgroup>
@@ -2495,8 +2495,8 @@
 </blockquote>
 <p>DiD is useful because treated and control groups may differ in levels before treatment. The treated group may start richer, poorer, healthier, less employed, more educated, more urban, or more productive than the control group. A simple post-treatment comparison may therefore be misleading. DiD removes two kinds of differences:</p>
 <ol type="1">
-<li><strong>Permanent differences between treated and control groups</strong>, such as stable differences in geography, institutions, culture, baseline productivity, or demographics. 2. <strong>Common time shocks affecting both groups</strong>, such as national recessions, inflation, federal policy changes, technological trends, or macroeconomic cycles. What remains is the difference in changes. For example, suppose one state raises its minimum wage and another state does not. Employment may be lower in the treated state even before the policy. A post-policy comparison of employment levels would confuse the policy effect with pre-existing differences. DiD instead asks:</li>
-</ol>
+<li><strong>Permanent differences between treated and control groups</strong>, such as stable differences in geography, institutions, culture, baseline productivity, or demographics.</li>
+<li><strong>Common time shocks affecting both groups</strong>, such as national recessions, inflation, federal policy changes, technological trends, or macroeconomic cycles.</li></ol><p>What remains is the difference in changes. For example, suppose one state raises its minimum wage and another state does not. Employment may be lower in the treated state even before the policy. A post-policy comparison of employment levels would confuse the policy effect with pre-existing differences. DiD instead asks:</p>
 <blockquote>
 <p>Did employment change more in the treated state than in the control state after the policy?</p>
 </blockquote>
@@ -2516,7 +2516,7 @@
 <li>infrastructure programs.</li>
 </ul>
 <p>The power of DiD comes from its counterfactual logic. The danger of DiD comes from the fact that this logic depends on a strong assumption: <strong>parallel trends</strong>.</p>
-<hr/>
+
 <h2 id="the-basic-two-group-two-period-setup">11.2 The basic two-group, two-period setup</h2>
 <p>The simplest DiD design has two groups and two time periods. There is:</p>
 <ul>
@@ -2557,7 +2557,7 @@
 </tbody>
 </table></div>
 <p>The DiD estimator is: <span class="math inline">\(\widehat{\tau}_{DiD} = (\bar{Y}_{T,After}-\bar{Y}_{T,Before}) - (\bar{Y}_{C,After}-\bar{Y}_{C,Before})\)</span> This is the change in the treated group minus the change in the control group. That is why the method is called Difference-in-Differences.</p>
-<hr/>
+
 <h2 id="numerical-example">11.3 Numerical example</h2>
 <p>Suppose we want to study the effect of a minimum wage increase on employment. One state raises the minimum wage. Another similar state does not.</p>
 <div class="table-wrap"><table class="extra-wide-table">
@@ -2589,7 +2589,7 @@
 <p>Employment in the treated state fell by 3 more units than it would have if it had followed the same trend as the control state.</p>
 </blockquote>
 <p>The phrase <strong>if it had followed the same trend as the control state</strong> is crucial. DiD does not simply compare treated before to treated after. It uses the control group to estimate the counterfactual trend for the treated group. The before-after estimate for the treated group alone is: <span class="math inline">\(95-100=-5\)</span> But this may overstate the policy effect if employment would have fallen anyway because of a recession or seasonal downturn. The control group fell by 2 units, suggesting that some of the decline may have occurred even without the policy. DiD subtracts that common decline.</p>
-<hr/>
+
 <h2 id="the-counterfactual-logic-of-did">11.4 The counterfactual logic of DiD</h2>
 <p>DiD is a method for constructing a missing counterfactual. For the treated group after treatment, we observe the treated potential outcome: <span class="math inline">\(Y_{it}(1)\)</span> But we do not observe what the treated group would have experienced after treatment in the absence of treatment: <span class="math inline">\(Y_{it}(0)\)</span> The missing object is: <span class="math inline">\(\mathbb{E}[Y_{it}(0) \mid G_i=1, Post_t=1]\)</span> This means:</p>
 <blockquote>
@@ -2600,7 +2600,7 @@
 <p>How far is the treated group’s post-treatment outcome from where it would have been if it had changed like the control group?</p>
 </blockquote>
 <p>That is the essence of the design.</p>
-<hr/>
+
 <h2 id="the-parallel-trends-assumption">11.5 The parallel trends assumption</h2>
 <p>The core identifying assumption in DiD is the parallel trends assumption. In the two-group, two-period case, parallel trends says: <span class="math inline">\(\mathbb{E}[Y_{After}(0)-Y_{Before}(0) \mid G=1] = \mathbb{E}[Y_{After}(0)-Y_{Before}(0) \mid G=0]\)</span> In words:</p>
 <blockquote>
@@ -2611,7 +2611,7 @@
 <p>The control group tells us how the treated group would have changed over time if treatment had not occurred.</p>
 </blockquote>
 <p>If that statement is credible, DiD may be credible. If that statement is not credible, DiD may be biased.</p>
-<hr/>
+
 <h2 id="why-did-can-work-even-when-groups-differ-in-levels">11.6 Why DiD can work even when groups differ in levels</h2>
 <p>Suppose the treated group has a permanently higher outcome than the control group. For example, treated cities may have higher baseline crime than control cities because they are larger and more urban. Let the untreated outcome be: <span class="math inline">\(Y_{it}(0)=\alpha_i+\lambda_t+u_{it}\)</span> where:</p>
 <ul>
@@ -2620,7 +2620,7 @@
 <li><span class="math inline">\(u_{it}\)</span> is an idiosyncratic shock.</li>
 </ul>
 <p>If treated and control units differ in <span class="math inline">\(\alpha_i\)</span>, they differ in levels. But if <span class="math inline">\(\alpha_i\)</span> is constant over time, differencing removes it. The treated group’s change is: <span class="math inline">\(Y_{i,After}(0)-Y_{i,Before}(0) = (\lambda_{After}-\lambda_{Before})+(u_{i,After}-u_{i,Before})\)</span> The permanent component <span class="math inline">\(\alpha_i\)</span> drops out. Similarly, if <span class="math inline">\(\lambda_t\)</span> is a common time shock affecting both groups, subtracting the control group’s change removes it. This is why DiD is powerful. It can handle permanent group differences and common time shocks. But it cannot handle untreated trends that differ systematically between treated and control groups. If the treated group would have been rising faster or falling faster even without treatment, then DiD will attribute that differential trend to the treatment.</p>
-<hr/>
+
 <h2 id="regression-form-of-the-basic-did-model">11.7 Regression form of the basic DiD model</h2>
 <p>The two-group, two-period DiD estimator can be written as a regression: <span class="math inline">\(Y_{it}=\alpha+\delta G_i+\lambda Post_t+\beta(G_i \times Post_t)+u_{it}\)</span> where:</p>
 <ul>
@@ -2630,7 +2630,7 @@
 <li><span class="math inline">\(\beta\)</span> is the DiD estimate.</li>
 </ul>
 <p>The coefficient <span class="math inline">\(\delta\)</span> captures baseline differences between treated and control groups. The coefficient <span class="math inline">\(\lambda\)</span> captures common changes over time. The coefficient <span class="math inline">\(\beta\)</span> captures the extra post-treatment change in the treated group relative to the control group. In the simple two-by-two case: <span class="math inline">\(\hat{\beta}=\widehat{\tau}_{DiD}\)</span> The regression form is useful because it allows researchers to add covariates, fixed effects, clustered standard errors, multiple time periods, and multiple groups.</p>
-<hr/>
+
 <h2 id="did-with-unit-and-time-fixed-effects">11.8 DiD with unit and time fixed effects</h2>
 <p>With panel data, the common DiD specification is: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+u_{it}\)</span> where:</p>
 <ul>
@@ -2644,7 +2644,7 @@
 <p>In the absence of treatment, treated and comparison units would have followed similar trends after accounting for unit and time fixed effects.</p>
 </blockquote>
 <p>Fixed effects do not guarantee parallel trends. They only remove certain types of confounding.</p>
-<hr/>
+
 <h2 id="what-fixed-effects-remove-and-what-they-do-not-remove">11.9 What fixed effects remove and what they do not remove</h2>
 <p>Unit fixed effects remove time-invariant confounders. Examples include:</p>
 <ul>
@@ -2677,7 +2677,7 @@
 <blockquote>
 <p>Is treatment timing plausibly unrelated to untreated outcome trends?</p>
 </blockquote>
-<hr/>
+
 <h2 id="did-with-covariates">11.10 DiD with covariates</h2>
 <p>Researchers often estimate DiD models with additional covariates: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+X_{it}'\gamma+u_{it}\)</span> where <span class="math inline">\(X_{it}\)</span> is a vector of observed controls. Covariates can improve precision and adjust for observed time-varying differences, but they must be chosen carefully. Good controls are usually pre-treatment variables or time-varying variables that are not themselves affected by treatment. Bad controls include:</p>
 <ul>
@@ -2688,7 +2688,7 @@
 <li>variables that proxy for treatment effects.</li>
 </ul>
 <p>For example, suppose a job training program affects employment, and employment affects later earnings: <span class="math inline">\(Training \rightarrow Employment \rightarrow Earnings\)</span> If the outcome is earnings and we control for employment after training, we may block part of the treatment effect. Similarly, if a minimum wage increase affects firm closures, and we control for the number of surviving firms, we may condition on a post-treatment variable and distort the effect. Covariates do not rescue a DiD design if parallel trends is implausible. They can help only if they address specific, credible sources of imbalance without creating post-treatment bias.</p>
-<hr/>
+
 <h2 id="visualizing-did">11.11 Visualizing DiD</h2>
 <p>A good DiD analysis usually begins with a graph. The graph should show average outcomes over time for treated and control groups. A credible DiD graph often has this pattern:</p>
 <ol type="1">
@@ -2706,7 +2706,7 @@
 <li>control group discontinuities unrelated to treatment.</li>
 </ul>
 <p>Visual evidence should be combined with institutional knowledge, statistical tests, placebo exercises, robustness checks, and sensitivity analysis.</p>
-<hr/>
+
 <h2 id="event-studies-1">11.12 Event studies</h2>
 <p>An event study extends DiD by estimating treatment effects at multiple times before and after treatment. Instead of estimating one average post-treatment effect, an event study estimates dynamic effects relative to the treatment date. A common event-study specification is: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+ \sum_{k \neq -1}\beta_k \mathbf{1}\{t-T_i=k\}+u_{it}\)</span> where:</p>
 <ul>
@@ -2716,7 +2716,7 @@
 <li><span class="math inline">\(\beta_k\)</span> measures the difference between treated and comparison units <span class="math inline">\(k\)</span> periods from treatment.</li>
 </ul>
 <p>The coefficients for <span class="math inline">\(k&lt;0\)</span> are called leads. They estimate pre-treatment differences relative to the reference period. The coefficients for <span class="math inline">\(k&gt;0\)</span> are called lags. They estimate post-treatment effects. Event studies serve two major purposes. First, they help evaluate pre-trends. If the design is credible, pre-treatment coefficients should generally be close to zero: <span class="math inline">\(\beta_k \approx 0 \quad \text{for } k&lt;0\)</span> Large pre-treatment effects suggest that treated and comparison units were already evolving differently before treatment. Second, event studies show dynamics. Treatment effects may appear immediately, grow over time, fade out, or emerge only after a delay. For example, a schooling reform may not affect earnings until students enter the labor market years later. A tax change may affect firm behavior quickly. A health intervention may have both short-run and long-run effects. Event studies are useful because they make the timing of effects visible.</p>
-<hr/>
+
 <h2 id="interpreting-pre-trend-tests">11.13 Interpreting pre-trend tests</h2>
 <p>Pre-trend tests are common in DiD, but they require careful interpretation. A typical test asks whether the pre-treatment event-study coefficients are jointly equal to zero: <span class="math inline">\(H_0: \beta_k=0 \quad \text{for all } k&lt;0\)</span> Failing to reject this null does not prove parallel trends. It may simply mean the test has low power. For example, if the sample is small or outcomes are noisy, large violations of parallel trends may be difficult to detect statistically. Rejecting the null is stronger evidence of a problem, but even then researchers should examine the magnitude and pattern of the pre-trends, not only the p-value. Important questions include:</p>
 <ul>
@@ -2727,7 +2727,7 @@
 <li>Are pre-trends visible graphically?</li>
 </ul>
 <p>Pre-trend tests are diagnostic tools. They are not automatic validators.</p>
-<hr/>
+
 <h2 id="anticipation-effects">11.14 Anticipation effects</h2>
 <p>DiD can fail if units change behavior before treatment officially begins. Anticipation effects occur when people, firms, or governments respond to expected treatment before it is implemented. Examples:</p>
 <ul>
@@ -2750,7 +2750,7 @@
 <p>When did the treatment begin affecting behavior?</p>
 </blockquote>
 <p>The answer may differ from the formal implementation date.</p>
-<hr/>
+
 <h2 id="spillovers-and-contamination">11.15 Spillovers and contamination</h2>
 <p>DiD assumes that the control group represents what would have happened to the treated group without treatment. This can fail if treatment affects the control group. Spillovers occur when treatment of one unit affects outcomes for other units. Examples:</p>
 <ul>
@@ -2769,7 +2769,7 @@
 <li>Does the estimand include or exclude spillover effects?</li>
 </ul>
 <p>Spillovers are not merely a nuisance. They often change the policy interpretation.</p>
-<hr/>
+
 <h2 id="composition-changes">11.16 Composition changes</h2>
 <p>DiD can also fail if the composition of treated or control groups changes over time in ways related to treatment. For example:</p>
 <ul>
@@ -2789,7 +2789,7 @@
 <li>whether treatment affects measurement or reporting.</li>
 </ul>
 <p>A DiD design is strongest when the population being compared is stable or when changes in composition can be measured and addressed.</p>
-<hr/>
+
 <h2 id="treatment-timing-and-endogenous-adoption">11.17 Treatment timing and endogenous adoption</h2>
 <p>Policies are often not adopted randomly. Governments, firms, schools, and individuals choose when to adopt treatments. Treatment timing is endogenous if units adopt treatment in response to expected or current outcome trends. Examples:</p>
 <ul>
@@ -2808,7 +2808,7 @@
 <li>Were control units truly comparable?</li>
 </ul>
 <p>A credible DiD design often requires a policy or shock whose timing is plausibly unrelated to untreated outcome trends.</p>
-<hr/>
+
 <h2 id="staggered-adoption">11.18 Staggered adoption</h2>
 <p>Many real-world DiD settings involve staggered adoption. Different units adopt treatment at different times. For example:</p>
 <ul>
@@ -2823,7 +2823,7 @@
 <p>In staggered adoption settings, a single two-way fixed effects coefficient may not equal a clean average of meaningful treatment effects.</p>
 </blockquote>
 <p>Modern DiD methods often estimate group-time average treatment effects and compare treated units only to valid comparison groups, such as never-treated or not-yet-treated units.</p>
-<hr/>
+
 <h2 id="group-time-average-treatment-effects">11.19 Group-time average treatment effects</h2>
 <p>In staggered adoption designs, it is useful to define treatment effects by group and time. Let <span class="math inline">\(g\)</span> denote the period when a group first receives treatment. Let <span class="math inline">\(t\)</span> denote calendar time. A group-time average treatment effect can be written as: <span class="math inline">\(ATT(g,t)=\mathbb{E}[Y_t(1)-Y_t(0) \mid G_i=g]\)</span> for periods <span class="math inline">\(t \geq g\)</span>. This asks:</p>
 <blockquote>
@@ -2845,7 +2845,7 @@
 <li>into an overall average treatment effect on treated units.</li>
 </ul>
 <p>The advantage is interpretability. Rather than relying on a single opaque two-way fixed effects coefficient, the researcher can show which comparisons identify which effects.</p>
-<hr/>
+
 <h2 id="never-treated-and-not-yet-treated-controls">11.20 Never-treated and not-yet-treated controls</h2>
 <p>In staggered DiD, comparison groups matter. A <strong>never-treated</strong> control group consists of units that never receive treatment during the sample period. A <strong>not-yet-treated</strong> control group consists of units that have not yet received treatment by a given time, even if they receive treatment later. Using not-yet-treated controls can be reasonable if future treatment timing is not driven by current untreated outcome trends. However, if future-treated units are already on different trajectories before treatment, they may not be valid controls. For example, states that will adopt a minimum wage increase next year may already have strengthening labor markets this year. Using them as controls for earlier adopters may create bias. The choice of comparison group should be justified substantively, not mechanically. Researchers should ask:</p>
 <ul>
@@ -2856,7 +2856,7 @@
 <li>Does the design rely on comparisons with already-treated units?</li>
 </ul>
 <p>Good DiD practice makes the comparison group explicit.</p>
-<hr/>
+
 <h2 id="unit-specific-trends">11.21 Unit-specific trends</h2>
 <p>Sometimes researchers include unit-specific linear trends: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\theta_i t+\beta D_{it}+u_{it}\)</span> where <span class="math inline">\(\theta_i t\)</span> allows each unit to have its own linear trend. This can address the concern that treated and control units were trending differently before treatment. However, unit-specific trends must be used carefully. They can help if untreated trends are approximately linear and differ across units. But they can also create problems:</p>
 <ul>
@@ -2866,7 +2866,7 @@
 <li>They may hide meaningful pre-trend violations rather than solve them.</li>
 </ul>
 <p>For example, if treatment effects grow gradually after adoption, a unit-specific trend may treat part of that growth as continuation of the pre-treatment trend rather than as treatment effect. Unit-specific trends are not a substitute for a credible design. They are a modeling choice that should be justified and tested.</p>
-<hr/>
+
 <h2 id="standard-errors-and-clustering">11.22 Standard errors and clustering</h2>
 <p>DiD designs often use panel data, where observations are correlated within units over time. For example, state-level employment outcomes are likely serially correlated. A shock to employment in one year may persist into later years. If standard errors ignore this correlation, they may be too small, leading to false statistical significance. A common practice is to cluster standard errors at the level of treatment assignment. If treatment varies at the state level, standard errors should usually be clustered by state. If treatment varies at the school level, cluster by school. If treatment varies at the firm level, cluster by firm. The idea is that treatment assignment creates correlated errors within treated units over time. With few clusters, conventional clustered standard errors may still be unreliable. Researchers may need methods such as:</p>
 <ul>
@@ -2877,7 +2877,7 @@
 <li>conservative inference procedures.</li>
 </ul>
 <p>Correct inference is not a technical afterthought. In DiD, serial correlation and clustering can strongly affect conclusions.</p>
-<hr/>
+
 <h2 id="did-with-repeated-cross-sections">11.23 DiD with repeated cross-sections</h2>
 <p>DiD does not always require observing the same units over time. Sometimes researchers use repeated cross-sections. For example, a labor force survey may sample different individuals each year, but the researcher observes people in treated and control states before and after a policy. A repeated cross-section DiD might estimate: <span class="math inline">\(Y_{ist}=\alpha_s+\lambda_t+\beta D_{st}+X_{ist}'\gamma+u_{ist}\)</span> where:</p>
 <ul>
@@ -2896,7 +2896,7 @@
 <li>using administrative data when possible.</li>
 </ul>
 <p>The parallel trends assumption still concerns untreated potential outcomes for the relevant populations.</p>
-<hr/>
+
 <h2 id="difference-in-difference-in-differences">11.24 Difference-in-difference-in-differences</h2>
 <p>Difference-in-difference-in-differences, often called triple differences or DDD, adds another comparison dimension. Suppose a policy affects one group within treated states but not another group. For example, a minimum wage increase may affect low-wage workers more than high-wage workers. A DDD design compares:</p>
 <ol type="1">
@@ -2909,7 +2909,7 @@
 <p>In the absence of treatment, the difference between affected and unaffected groups would have evolved similarly in treated and control units.</p>
 </blockquote>
 <p>Adding another difference does not eliminate the need for assumptions. It changes the identifying assumption.</p>
-<hr/>
+
 <h2 id="did-and-dag-intuition">11.25 DiD and DAG intuition</h2>
 <p>A simple DiD design can be represented using causal logic. Suppose treatment is adopted by some units after a policy date:</p>
 <p><span class="math display">\[G_i \rightarrow D_{it}\]</span></p>
@@ -2924,7 +2924,7 @@
 <p><span class="math display">\[W_{it} \rightarrow D_{it}\]</span></p>
 <p><span class="math display">\[W_{it} \rightarrow Y_{it}\]</span></p>
 <p>For example, if rising crime causes a city to adopt policing reform and also affects future crime, then <span class="math inline">\(W_{it}\)</span> creates a time-varying backdoor path. DiD is credible when the remaining untreated outcome trends are comparable after accounting for fixed group differences and common time shocks.</p>
-<hr/>
+
 <h2 id="example-minimum-wage-and-employment">11.26 Example: minimum wage and employment</h2>
 <p>Suppose State A raises its minimum wage in 2025. State B does not. The outcome is restaurant employment. A naive before-after comparison in State A asks: <span class="math inline">\(\bar{Y}_{A,2026}-\bar{Y}_{A,2024}\)</span> But this may capture many other changes between 2024 and 2026. A DiD design estimates: <span class="math inline">\((\bar{Y}_{A,2026}-\bar{Y}_{A,2024}) - (\bar{Y}_{B,2026}-\bar{Y}_{B,2024})\)</span> The control state adjusts for changes that would have happened even without the minimum wage increase. The identifying assumption is:</p>
 <blockquote>
@@ -2940,7 +2940,7 @@
 <li>The control state was affected by spillovers.</li>
 </ul>
 <p>A strong study would show pre-treatment trends, justify the control group, check robustness to alternative controls, examine anticipation, and cluster standard errors at the state level.</p>
-<hr/>
+
 <h2 id="example-healthcare-expansion-and-insurance-coverage">11.27 Example: healthcare expansion and insurance coverage</h2>
 <p>Suppose some states expand a public health insurance program while others do not. The outcome is insurance coverage. A DiD model might be: <span class="math inline">\(Coverage_{st}=\alpha_s+\lambda_t+\beta Expansion_{st}+u_{st}\)</span> where:</p>
 <ul>
@@ -2962,7 +2962,7 @@
 <li>migration changed the composition of state populations.</li>
 </ul>
 <p>The study should examine pre-trends and possibly estimate event-study effects around expansion.</p>
-<hr/>
+
 <h2 id="example-education-reform-and-test-scores">11.28 Example: education reform and test scores</h2>
 <p>Suppose a school district introduces a new curriculum in some schools but not others. The outcome is student test scores. A DiD design compares test score changes in reform schools to test score changes in non-reform schools. A possible model is: <span class="math inline">\(Score_{ist}=\alpha_s+\lambda_t+\beta Reform_{st}+X_{ist}'\gamma+u_{ist}\)</span> where:</p>
 <ul>
@@ -2985,7 +2985,7 @@
 <li>other school policies changed at the same time.</li>
 </ul>
 <p>This example shows why DiD must consider selection into treatment and composition changes.</p>
-<hr/>
+
 <p><strong>11.29 Common mistakes in DiD.</strong></p>
 <ol type="1">
 <li><strong>Treating DiD as automatically causal.</strong> DiD is not automatically causal. It depends on parallel trends and other assumptions. Including unit and time fixed effects does not guarantee identification.</li>
@@ -2997,7 +2997,7 @@
 <li><strong>Clustering at the wrong level.</strong> Standard errors should usually be clustered at the level of treatment assignment. Failure to account for serial correlation can produce misleading statistical significance.</li>
 <li><strong>Ignoring spillovers.</strong> If treatment affects control units, the comparison group may be contaminated. This is especially important in spatial, labor market, peer, and general equilibrium settings.</li>
 </ol>
-<hr/>
+
 <p><strong>11.30 Application checklist.</strong></p>
 <p>When evaluating or conducting a DiD study, use the following checklist.</p>
 <ol type="1">
@@ -3016,7 +3016,7 @@
 <li><strong>Conduct robustness checks.</strong> Try alternative control groups, time windows, specifications, and outcome definitions. Use placebo treatments or placebo outcomes when possible.</li>
 <li><strong>Interpret the result carefully.</strong> What comparison identifies the estimate? For whom is the effect estimated? Does it generalize beyond the sample and time period?</li>
 </ol>
-<hr/>
+
 <h2 id="summary-4">11.31 Summary</h2>
 <p>Difference-in-Differences estimates causal effects by comparing changes over time in treated and control groups. The basic estimator is: <span class="math inline">\(\widehat{\tau}_{DiD} = (\bar{Y}_{T,After}-\bar{Y}_{T,Before}) - (\bar{Y}_{C,After}-\bar{Y}_{C,Before})\)</span> The regression form in a two-group, two-period setting is: <span class="math inline">\(Y_{it}=\alpha+\delta G_i+\lambda Post_t+\beta(G_i \times Post_t)+u_{it}\)</span> With panel data, the common fixed effects version is: <span class="math inline">\(Y_{it}=\alpha_i+\lambda_t+\beta D_{it}+u_{it}\)</span> The central identifying assumption is parallel trends: <span class="math inline">\(\mathbb{E}[Y_{After}(0)-Y_{Before}(0) \mid G=1] = \mathbb{E}[Y_{After}(0)-Y_{Before}(0) \mid G=0]\)</span> In words, the treated and control groups would have followed the same trend in the absence of treatment. DiD can handle permanent differences between groups and common time shocks. But it can fail because of differential pre-trends, endogenous treatment timing, anticipation, spillovers, composition changes, simultaneous policies, staggered adoption problems, and incorrect inference. Event studies help examine pre-trends and treatment dynamics, but they do not prove the identifying assumption. Staggered adoption designs require special care because traditional two-way fixed effects estimates may be difficult to interpret under heterogeneous treatment effects. The central lesson is:</p>
 <blockquote>
@@ -3438,7 +3438,6 @@
 <blockquote>
 <p>Regression discontinuity estimates causal effects by comparing units just on either side of a treatment threshold. Its credibility comes from the idea that potential outcomes would have been smooth through the cutoff if treatment had not changed discontinuously there.</p>
 </blockquote>
-
-    </main>
-  </body>
+</main>
+</body>
 </html>

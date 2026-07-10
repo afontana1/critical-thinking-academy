@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Core Concepts in Empirical Economics and Causal Inference</title>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Core Concepts in Empirical Economics and Causal Inference</title>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -401,10 +402,10 @@
         },
       };
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body>
-    <main class="ep-post">
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="ep-post">
 <h1 id="core-concepts-in-empirical-economics-and-causal-inference">Core Concepts in Empirical Economics and Causal Inference</h1>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -474,7 +475,7 @@
 <p>Data alone do not identify causal effects. Causal inference requires data, theory, research design, institutional knowledge, and assumptions.</p>
 </blockquote>
 <p>The rest of this document develops the main concepts needed to understand and conduct empirical economic research.</p>
-<hr/>
+
 <h1 id="1-correlation-association-and-causation">1. Correlation, Association, and Causation</h1>
 <h2 id="11-the-basic-problem">1.1 The basic problem</h2>
 <p>One of the first lessons in empirical economics is that correlation is not causation.</p>
@@ -729,7 +730,7 @@ For whom? Over what time horizon? Under what conditions? Does it represent an av
 <blockquote>
 <p>If this patient had not received treatment, their health outcome would have been worse.</p>
 </blockquote>
-<p>These statements are not directly observed facts. They refer to alternative possible states of the world. The worker either received job training or did not. The city either increased patrols or did not. The student either attended college or did not. The patient either received treatment or did not. The central difficulty is that causal effects compare what actually happened to what would have happened under a different action. That is why causal inference is harder than description. Description uses observed outcomes. Causation requires reasoning about missing outcomes. Suppose a worker participates in a job training program and later earns $35,000. The observed fact is: $Observed\ Earnings = 35{,}000$ But to know whether the program helped, we need to know what that same worker would have earned without the program. If they would have earned $30,000 without training, the program helped by $5,000. If they would have earned $35,000 anyway, the program had no effect. If they would have earned $40,000 without training, the program harmed them by $5,000. The causal effect cannot be read from the observed outcome alone. It depends on a comparison between the observed outcome and the counterfactual outcome. This idea is the foundation of modern causal inference.</p>
+<p>These statements are not directly observed facts. They refer to alternative possible states of the world. The worker either received job training or did not. The city either increased patrols or did not. The student either attended college or did not. The patient either received treatment or did not. The central difficulty is that causal effects compare what actually happened to what would have happened under a different action. That is why causal inference is harder than description. Description uses observed outcomes. Causation requires reasoning about missing outcomes. Suppose a worker participates in a job training program and later earns \$35,000. The observed fact is: $Observed\ Earnings = 35{,}000$ But to know whether the program helped, we need to know what that same worker would have earned without the program. If they would have earned \$30,000 without training, the program helped by \$5,000. If they would have earned \$35,000 anyway, the program had no effect. If they would have earned \$40,000 without training, the program harmed them by \$5,000. The causal effect cannot be read from the observed outcome alone. It depends on a comparison between the observed outcome and the counterfactual outcome. This idea is the foundation of modern causal inference.</p>
 <h2 id="22-factual-outcomes-and-counterfactual-outcomes">2.2 Factual outcomes and counterfactual outcomes</h2>
 <p>For each unit of analysis, there are outcomes that are observed and outcomes that are not observed.</p>
 <p>A unit may be a person, worker, firm, school, hospital, neighborhood, city, state, country, or time period. The treatment may be a policy, program, exposure, price change, law, educational intervention, medical treatment, or economic shock. Consider a binary treatment: $D_i \in \{0,1\}$ where:</p>
@@ -814,44 +815,44 @@ $$</div>
 <ul>
 <li><p><strong>2.8.1 Consistency.</strong> Consistency means that the observed outcome equals the potential outcome corresponding to the treatment actually received.
 If $D_i=1$, then: $Y_i = Y_i(1)$ If $D_i=0$, then: $Y_i = Y_i(0)$ This may sound obvious, but it requires that the treatment be well defined. For example, suppose the treatment is "job training." What exactly does that mean?</p>
-</li>
-<li><p>A one-week online course?</p>
-</li>
-<li><p>A six-month classroom program?</p>
-</li>
-<li><p>Apprenticeship with an employer?</p>
-</li>
-<li><p>Resume coaching?</p>
-</li>
-<li><p>Technical certification?</p>
-</li>
-<li><p>Mandatory or voluntary attendance?</p>
-</li>
+<ul class="sub-list"><li><p>A one-week online course?</p>
+</li><li><p>A six-month classroom program?</p>
+</li><li><p>Apprenticeship with an employer?</p>
+</li><li><p>Resume coaching?</p>
+</li><li><p>Technical certification?</p>
+</li><li><p>Mandatory or voluntary attendance?</p>
+</li></ul></li>
+
+
+
+
+
+
 </ul>
 <p>If different people receive very different versions of "job training," then $Y_i(1)$ may not be well defined. The potential outcome under treatment depends on which version of treatment is received. Consistency requires that treatment categories correspond to meaningful, well-defined interventions.</p>
 <ul>
 <li><p><strong>2.8.2 No interference.</strong> No interference means one unit's treatment does not affect another unit's outcome.
 Formally, unit $i$'s potential outcomes depend only on unit $i$'s treatment, not on the treatment status of other units. Under no interference, we can write: $Y_i(D_i)$ rather than: $Y_i(D_1,D_2,\dots,D_n)$ This assumption can fail in many economic settings. For example:</p>
-</li>
-<li><p>A job training program may help participants get jobs, but if jobs are limited, it may reduce employment opportunities for nonparticipants.</p>
-</li>
-<li><p>Vaccination affects not only vaccinated individuals but also others through herd immunity.</p>
-</li>
-<li><p>Tutoring one student may affect classmates through peer effects.</p>
-</li>
-<li><p>A policing intervention in one neighborhood may displace crime to nearby neighborhoods.</p>
-</li>
-<li><p>A minimum wage increase in one city may affect nearby labor markets.</p>
-</li>
+<ul class="sub-list"><li><p>A job training program may help participants get jobs, but if jobs are limited, it may reduce employment opportunities for nonparticipants.</p>
+</li><li><p>Vaccination affects not only vaccinated individuals but also others through herd immunity.</p>
+</li><li><p>Tutoring one student may affect classmates through peer effects.</p>
+</li><li><p>A policing intervention in one neighborhood may displace crime to nearby neighborhoods.</p>
+</li><li><p>A minimum wage increase in one city may affect nearby labor markets.</p>
+</li></ul></li>
+
+
+
+
+
 </ul>
 <p>When interference is present, the causal effect of treatment depends on who else is treated. The simple two-potential-outcome framework becomes incomplete.</p>
 <ul>
-<li><strong>2.8.3 SUTVA.</strong> SUTVA stands for the Stable Unit Treatment Value Assumption. It usually combines two ideas:</li>
-</ul>
-<ol>
+<li><strong>2.8.3 SUTVA.</strong> SUTVA stands for the Stable Unit Treatment Value Assumption. It usually combines two ideas:<ol class="sub-list">
 <li>no interference between units,</li>
 <li>no hidden versions of treatment.</li>
-</ol>
+</ol></li>
+</ul>
+
 <p>No hidden versions of treatment means that treatment is sufficiently well defined. If two units are both labeled treated, they should be receiving the same relevant treatment for purposes of the analysis. SUTVA is often stated casually, but it is substantively important. Many policy interventions have multiple versions, variable intensity, imperfect implementation, or spillovers. In such cases, researchers must be clear about what treatment means. For example, "access to healthcare" could mean insurance coverage, physical proximity to clinics, lower prices, appointment availability, quality of care, or actual treatment received. These are not the same intervention. A vague treatment definition leads to vague causal interpretation.</p>
 <ul>
 <li><strong>2.8.4 Ignorability or unconfoundedness.</strong> In observational studies, researchers often rely on an assumption called ignorability, unconfoundedness, or selection on observables.
@@ -1081,7 +1082,7 @@ Examples:</li>
 <p>External validity is itself a counterfactual problem. It asks what would happen if the same or similar treatment were implemented in a different setting. Generalizing a causal effect requires assumptions about mechanisms, populations, institutions, implementation, and equilibrium responses. For example, a small job training program may help participants because employers value the credential and the program places workers into available jobs. But if the program is scaled nationally, the labor market may become saturated with credentialed workers, and the effect may change. The question is not simply whether the original estimate was internally valid. The question is whether the counterfactual conditions in the new setting are sufficiently similar.</p>
 <h2 id="218-practical-example-job-training-and-earnings">2.18 Practical example: job training and earnings</h2>
 <p>Consider a voluntary job training program for unemployed workers.</p>
-<p>Let: $D_i=1$ if worker $i$ participates in training, and: $D_i=0$ if worker $i$ does not participate. Let: $Y_i(1)$ be worker $i$'s earnings one year later if they participate, and: $Y_i(0)$ be worker $i$'s earnings one year later if they do not participate. The individual treatment effect is: $\tau_i = Y_i(1)-Y_i(0)$ Suppose the observed data show: $\mathbb{E}[Y_i \mid D_i=1] = 36{,}000$ and: $\mathbb{E}[Y_i \mid D_i=0] = 32{,}000$ The naive difference is: $36{,}000 - 32{,}000 = 4{,}000$ Can we conclude that training raises earnings by $4,000? Not necessarily. The naive difference is: $\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=0]$ But the ATT is: $\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=1]$ The missing counterfactual is: $\mathbb{E}[Y_i(0) \mid D_i=1]$ What would participants have earned without training? If participants were more motivated than nonparticipants, they might have earned $34,000 even without training. Then: $ATT = 36{,}000 - 34{,}000 = 2{,}000$ The naive estimate overstates the effect. If participants were more disadvantaged and would have earned only $28,000 without training, then: $ATT = 36{,}000 - 28{,}000 = 8{,}000$ The naive estimate understates the effect. If participants would have earned $32,000 without training, then the naive estimate equals the ATT: $ATT = 36{,}000 - 32{,}000 = 4{,}000$ The empirical challenge is to determine which counterfactual is credible. Possible research designs:</p>
+<p>Let: $D_i=1$ if worker $i$ participates in training, and: $D_i=0$ if worker $i$ does not participate. Let: $Y_i(1)$ be worker $i$'s earnings one year later if they participate, and: $Y_i(0)$ be worker $i$'s earnings one year later if they do not participate. The individual treatment effect is: $\tau_i = Y_i(1)-Y_i(0)$ Suppose the observed data show: $\mathbb{E}[Y_i \mid D_i=1] = 36{,}000$ and: $\mathbb{E}[Y_i \mid D_i=0] = 32{,}000$ The naive difference is: $36{,}000 - 32{,}000 = 4{,}000$ Can we conclude that training raises earnings by \$4,000? Not necessarily. The naive difference is: $\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=0]$ But the ATT is: $\mathbb{E}[Y_i(1) \mid D_i=1] - \mathbb{E}[Y_i(0) \mid D_i=1]$ The missing counterfactual is: $\mathbb{E}[Y_i(0) \mid D_i=1]$ What would participants have earned without training? If participants were more motivated than nonparticipants, they might have earned \$34,000 even without training. Then: $ATT = 36{,}000 - 34{,}000 = 2{,}000$ The naive estimate overstates the effect. If participants were more disadvantaged and would have earned only \$28,000 without training, then: $ATT = 36{,}000 - 28{,}000 = 8{,}000$ The naive estimate understates the effect. If participants would have earned \$32,000 without training, then the naive estimate equals the ATT: $ATT = 36{,}000 - 32{,}000 = 4{,}000$ The empirical challenge is to determine which counterfactual is credible. Possible research designs:</p>
 <ul>
 <li>Randomly offer training to eligible workers.</li>
 <li>Use a lottery when program slots are limited.</li>
@@ -1166,9 +1167,7 @@ Examples:</p>
 </ul>
 <ol start="9">
 <li><strong>Assess the assumption.</strong> Can the assumption be tested directly?
-If not, what indirect evidence supports it? Examples:</li>
-</ol>
-<ul>
+If not, what indirect evidence supports it? Examples:<ul class="sub-list">
 <li>balance tests,</li>
 <li>pre-trend tests,</li>
 <li>placebo tests,</li>
@@ -1176,11 +1175,13 @@ If not, what indirect evidence supports it? Examples:</li>
 <li>institutional details,</li>
 <li>robustness checks,</li>
 <li>sensitivity analysis.</li>
-</ul>
-<ol start="10">
+</ul><ol class="sub-list" start="10">
 <li><strong>Interpret the result.</strong> What causal effect was estimated?
 For whom? Under what conditions? What assumptions are required? What are the main threats? Does the result generalize?</li>
+</ol></li>
 </ol>
+
+
 <h2 id="222-summary">2.22 Summary</h2>
 <p>Counterfactual thinking is the foundation of causal inference.</p>
 <p>For each unit, potential outcomes describe what would happen under different treatment states. With binary treatment, these are: $Y_i(1)$ and: $Y_i(0)$ The individual causal effect is: $\tau_i = Y_i(1)-Y_i(0)$ But only one potential outcome is observed for each unit. This is the fundamental problem of causation. The observed outcome is: $Y_i = D_iY_i(1) + (1-D_i)Y_i(0)$ Causal inference is therefore about finding credible substitutes for missing potential outcomes. Naive treated-control comparisons are causal only under strong assumptions. In general: $Observed\ Difference = Causal\ Effect + Selection\ Bias$ Research designs such as RCTs, difference-in-differences, regression discontinuity, instrumental variables, fixed effects, matching, and weighting are different strategies for constructing credible counterfactuals. The most important question in empirical work is not simply what the data show. It is:</p>
@@ -1578,7 +1579,7 @@ What assumptions are required?</p>
 <p>Exogeneity is what allows a regression coefficient to have a causal interpretation.</p>
 </blockquote>
 <p>Endogeneity is what breaks that interpretation.</p>
-<hr/>
+
 <h2 id="42-exogeneity-is-relative-to-a-model">4.2 Exogeneity is relative to a model</h2>
 <p>A common mistake is to treat variables as intrinsically exogenous or endogenous.</p>
 <p>This is not quite right. Exogeneity is not a permanent property of a variable. It is a property of a variable <strong>relative to a particular model, causal question, population, and source of variation</strong>. For example, weather is often treated as exogenous in economic studies. If a researcher studies the effect of rainfall on agricultural output, rainfall may be plausibly outside farmers' control: $Rainfall \rightarrow Crop\ Yield$ In that setting, rainfall may provide useful exogenous variation. But even rainfall is not automatically exogenous in every research design. Suppose richer farmers live in regions with better irrigation, better soil, and different long-run rainfall patterns. If rainfall exposure is measured using location, and location is related to wealth, infrastructure, crop choice, and technology, then rainfall may be entangled with other determinants of output. Similarly, price is often endogenous in demand estimation because price is determined by supply and demand together. But in some settings, a price may be exogenously changed by a randomized subsidy, a tax rule, an administrative formula, or a supply shock unrelated to demand. Thus, the same variable can be endogenous in one design and exogenous in another. Examples:</p>
@@ -1596,7 +1597,7 @@ What assumptions are required?</p>
 <blockquote>
 <p>Is the variation in $X$ used by this research design plausibly unrelated to the unobserved determinants of $Y$ for the causal effect being estimated?</p>
 </blockquote>
-<hr/>
+
 <h2 id="43-the-regression-error-term-as-unobserved-causes">4.3 The regression error term as unobserved causes</h2>
 <p>In regression, the error term is not just random noise. For causal interpretation, it is useful to think of the error term as containing all determinants of the outcome that are not explicitly included in the model.</p>
 <p>Suppose the outcome is wages: $Wage_i = \alpha + \beta Education_i + u_i$ The error term $u_i$ may contain:</p>
@@ -1616,7 +1617,7 @@ What assumptions are required?</p>
 <li>luck.</li>
 </ul>
 <p>If these unobserved determinants are unrelated to education, then education may be exogenous. But if people with more education also tend to have higher ability, stronger family support, better schools, or better networks, then: $\mathbb{E}[u_i \mid Education_i] \neq 0$ or equivalently: $\operatorname{Cov}(Education_i,u_i) \neq 0$ In that case, education is endogenous. The coefficient $\beta$ no longer isolates the causal effect of education. It captures both the effect of education and the influence of omitted factors correlated with education. This is why the error term is conceptually important. Endogeneity means the explanatory variable is partly standing in for omitted causes.</p>
-<hr/>
+
 <h2 id="44-conditional-mean-independence">4.4 Conditional mean independence</h2>
 <p>The most common exogeneity condition for cross-sectional regression is <strong>conditional mean independence</strong>: $\mathbb{E}[u_i \mid X_i] = 0$
 This means the expected value of the error term is zero at every value of $X_i$.</p>
@@ -1625,12 +1626,12 @@ This means the expected value of the error term is zero at every value of $X_i$.
 <p>Among units with the same controls $W_i$, variation in $X_i$ is as good as random.</p>
 </blockquote>
 <p>For example, suppose we estimate the effect of job training on earnings: $Earnings_i = \alpha + \beta Training_i + \gamma'W_i + u_i$ where $W_i$ includes age, education, prior earnings, prior employment, location, and industry. The coefficient $\beta$ can be interpreted causally only if, after comparing workers with the same values of $W_i$, training participation is unrelated to unobserved determinants of earnings. That means there must be no remaining unobserved motivation, ability, private information, caseworker selection, health, family constraint, or employer connection that affects both training participation and earnings. This is a strong assumption. Adding controls does not automatically solve endogeneity. It solves endogeneity only if the controls are sufficient to make the remaining variation in treatment conditionally exogenous.</p>
-<hr/>
+
 <h2 id="45-covariance-form-of-exogeneity">4.5 Covariance form of exogeneity</h2>
 <p>A weaker-looking condition often used in regression is: $\operatorname{Cov}(X_i,u_i)=0$
 This says the explanatory variable is uncorrelated with the error term.</p>
 <p>For simple ordinary least squares, if: $Y_i = \alpha + \beta X_i + u_i$ then the OLS estimator is centered on the true slope when: $\operatorname{Cov}(X_i,u_i)=0$ If instead: $\operatorname{Cov}(X_i,u_i) \neq 0$ then OLS is biased or inconsistent for the causal parameter. The conditional mean assumption: $\mathbb{E}[u_i \mid X_i]=0$ implies: $\operatorname{Cov}(X_i,u_i)=0$ but the reverse is not always true. Conditional mean independence is stronger because it requires the average error to be zero at each value of $X_i$, not merely that the linear covariance be zero. For causal inference, the conditional version is usually more meaningful because it says that unobserved determinants of the outcome are not systematically related to treatment status.</p>
-<hr/>
+
 <h2 id="46-exogeneity-in-potential-outcomes-language">4.6 Exogeneity in potential outcomes language</h2>
 <p>In the potential outcomes framework, exogeneity is often stated as an independence condition.</p>
 <p>For a binary treatment $D_i$, define potential outcomes: $Y_i(1)$ and: $Y_i(0)$ where $Y_i(1)$ is the outcome under treatment and $Y_i(0)$ is the outcome without treatment. A strong exogeneity condition is random assignment: $D_i \perp \big(Y_i(1),Y_i(0)\big)$ This means treatment assignment is independent of both potential outcomes. Under random assignment: $\mathbb{E}[Y_i(1) \mid D_i=1] = \mathbb{E}[Y_i(1) \mid D_i=0]$ and: $\mathbb{E}[Y_i(0) \mid D_i=1] = \mathbb{E}[Y_i(0) \mid D_i=0]$ Therefore, the untreated group can serve as a credible counterfactual for the treated group, and the treated group can serve as a credible counterfactual for the untreated group. In observational studies, researchers often invoke conditional independence: $D_i \perp \big(Y_i(1),Y_i(0)\big) \mid X_i$ This means treatment is independent of potential outcomes after conditioning on observed covariates $X_i$. In plain English:</p>
@@ -1645,7 +1646,7 @@ This says the explanatory variable is uncorrelated with the error term.</p>
 <li>conditional exchangeability.</li>
 </ul>
 <p>It is the potential-outcomes version of saying that, conditional on controls, treatment is exogenous.</p>
-<hr/>
+
 <h2 id="47-exogeneity-in-dag-language">4.7 Exogeneity in DAG language</h2>
 <p>In causal graphs, endogeneity often appears as an open backdoor path between treatment and outcome.</p>
 <p>Suppose we want the effect of education on wages: $Education \rightarrow Wage$ But ability affects both education and wages: $Ability \rightarrow Education$ $Ability \rightarrow Wage$ The full structure is: $Education \leftarrow Ability \rightarrow Wage$ and: $Education \rightarrow Wage$ The path: $Education \leftarrow Ability \rightarrow Wage$ is a backdoor path. It creates association between education and wages that is not caused by education. If ability is unobserved and omitted from the model, then ability is part of the error term: $u_i = \text{unobserved determinants of } Wage_i$ Because ability affects education, education is correlated with the error term: $\operatorname{Cov}(Education_i,u_i) \neq 0$ This is endogeneity. In DAG terms, exogeneity requires that the research design block non-causal paths from treatment to outcome while leaving the causal path of interest open. This can be achieved by:</p>
@@ -1659,7 +1660,7 @@ This says the explanatory variable is uncorrelated with the error term.</p>
 <li>using other credible designs.</li>
 </ul>
 <p>The important point is that exogeneity is not a purely statistical property. It is a causal claim about how treatment is assigned relative to potential outcomes and unobserved causes.</p>
-<hr/>
+
 <h2 id="48-strict-exogeneity-in-panel-data">4.8 Strict exogeneity in panel data</h2>
 <p>Panel data observe the same units over time. In panel models, economists often use stronger exogeneity conditions.</p>
 <p>A basic panel model is: $Y_{it} = \alpha_i + \beta X_{it} + u_{it}$ where:</p>
@@ -1679,7 +1680,7 @@ This says the explanatory variable is uncorrelated with the error term.</p>
 <li>A patient begins treatment after symptoms worsen.</li>
 </ul>
 <p>Fixed effects remove time-invariant confounding. They do not automatically solve time-varying endogeneity.</p>
-<hr/>
+
 <h2 id="49-sequential-exogeneity">4.9 Sequential exogeneity</h2>
 <p>In dynamic settings, researchers sometimes rely on <strong>sequential exogeneity</strong> rather than strict exogeneity.</p>
 <p>Sequential exogeneity allows treatment at time $t$ to depend on past observed history, but not on future unobserved shocks. A simplified version is: $\mathbb{E}[u_{it} \mid X_{i1},\dots,X_{it},Y_{i1},\dots,Y_{i,t-1},W_{i1},\dots,W_{it}] = 0$ This means that after conditioning on observed history, the current treatment is not related to current unobserved determinants of the outcome. Sequential exogeneity is common in longitudinal causal inference. Example: Suppose patients receive treatment over time based on past health. If researchers observe the full health history used to assign treatment, then treatment may be conditionally exogenous given that history. But if treatment depends on unobserved symptoms or private information not in the data, sequential exogeneity fails. Sequential exogeneity is especially important when treatments and confounders change over time. It underlies methods such as:</p>
@@ -1693,7 +1694,7 @@ This says the explanatory variable is uncorrelated with the error term.</p>
 <blockquote>
 <p>In panel settings, one must ask not only whether treated and untreated units differ, but whether changes in treatment timing are responses to unobserved shocks.</p>
 </blockquote>
-<hr/>
+
 <h2 id="410-main-sources-of-endogeneity">4.10 Main sources of endogeneity</h2>
 <p>Endogeneity can arise from several sources. The most common are:</p>
 <ol>
@@ -1707,7 +1708,7 @@ This says the explanatory variable is uncorrelated with the error term.</p>
 <li>model misspecification.</li>
 </ol>
 <p>Each source creates a relationship between the explanatory variable and the error term. Formally, endogeneity means: $\mathbb{E}[u_i \mid X_i] \neq 0$ or: $\operatorname{Cov}(X_i,u_i) \neq 0$ Conceptually, endogeneity means the observed variation in $X_i$ is not clean causal variation. The following subsections explain each source in detail.</p>
-<hr/>
+
 <h2 id="411-omitted-variable-bias">4.11 Omitted variable bias</h2>
 <p>Omitted variable bias occurs when an excluded variable affects the outcome and is correlated with an included explanatory variable.</p>
 <p>Suppose the true model is: $Y_i = \alpha + \beta X_i + \gamma Z_i + \varepsilon_i$ but we estimate: $Y_i = \alpha + \tilde{\beta}X_i + u_i$ The omitted variable $Z_i$ becomes part of the error term: $u_i = \gamma Z_i + \varepsilon_i$ If $Z_i$ is correlated with $X_i$, then $X_i$ is correlated with the error term: $\operatorname{Cov}(X_i,u_i) = \operatorname{Cov}(X_i,\gamma Z_i + \varepsilon_i)$ If: $\operatorname{Cov}(X_i,Z_i) \neq 0$ and: $\gamma \neq 0$ then omitted variable bias occurs. In the simple case, the bias is:</p>
@@ -1728,7 +1729,7 @@ $$</div>
 <li>$Z_i = Ability_i$.</li>
 </ul>
 <p>If ability raises wages, then: $\gamma &gt; 0$ If ability is positively correlated with education, then: $\operatorname{Cov}(Education_i,Ability_i)&gt;0$ Therefore, the bias is positive: $\operatorname{Bias}(\tilde{\beta})&gt;0$ The estimated return to education overstates the causal effect. Omitted variable bias is the classic form of endogeneity.</p>
-<hr/>
+
 <h2 id="412-reverse-causality">4.12 Reverse causality</h2>
 <p>Reverse causality occurs when the outcome affects the explanatory variable.</p>
 <p>Suppose we estimate: $Crime_c = \alpha + \beta Police_c + u_c$ A positive estimate of $\beta$ might seem to suggest that police increase crime. But cities with high crime may hire more police. Then the causal direction runs from crime to police: $Crime \rightarrow Police$ In that case, police presence is not randomly assigned. It responds to crime conditions, including some that may be unobserved by the researcher. If unobserved crime risk affects police deployment, then: $\operatorname{Cov}(Police_c,u_c) \neq 0$ The regression coefficient does not isolate the effect of police on crime. Other examples:</p>
@@ -1745,7 +1746,7 @@ $$</div>
 <p>Could the outcome or expected outcome influence the treatment variable?</p>
 </blockquote>
 <p>If yes, endogeneity is likely.</p>
-<hr/>
+
 <h2 id="413-simultaneity-and-equilibrium-determination">4.13 Simultaneity and equilibrium determination</h2>
 <p>Simultaneity occurs when $X$ and $Y$ are jointly determined.</p>
 <p>This is central in economics because many variables are equilibrium outcomes. Consider demand and supply: $Q^d = a - bP + \varepsilon^d$ $Q^s = c + dP + \varepsilon^s$ In equilibrium: $Q^d = Q^s = Q$ Price $P$ and quantity $Q$ are determined together. A regression of quantity on price: $Q_i = \alpha + \beta P_i + u_i$ does not automatically estimate the demand curve. If demand shocks raise both price and quantity, observed data may show a positive relationship between price and quantity even though demand slopes downward. The problem is that price is endogenous. It reflects both demand shocks and supply shocks. To identify demand, researchers need variation in price caused by supply factors that are unrelated to demand. To identify supply, researchers need variation in price caused by demand factors that are unrelated to supply. Simultaneity appears in many settings:</p>
@@ -1762,7 +1763,7 @@ $$</div>
 <blockquote>
 <p>When variables are determined together in equilibrium, ordinary regression may describe equilibrium correlations rather than causal effects.</p>
 </blockquote>
-<hr/>
+
 <h2 id="414-selection-bias">4.14 Selection bias</h2>
 <p>Selection bias arises when treatment status or sample inclusion is related to potential outcomes.</p>
 <p>Suppose treatment is voluntary. People who choose treatment may differ from people who do not. Example: job training. Workers who enroll in training may be more motivated, better informed, more available, more desperate, or more connected than workers who do not enroll. The naive comparison is: $\mathbb{E}[Y_i \mid D_i=1] - \mathbb{E}[Y_i \mid D_i=0]$ This equals:</p>
@@ -1796,7 +1797,7 @@ $$</div>
 <li>selective compliance.</li>
 </ul>
 <p>A central task of empirical design is to make treated and untreated units comparable with respect to their counterfactual outcomes.</p>
-<hr/>
+
 <h2 id="415-measurement-error">4.15 Measurement error</h2>
 <p>Measurement error is another source of endogeneity.</p>
 <p>Suppose the true model is: $Y_i = \alpha + \beta X_i^* + u_i$ where $X_i^*$ is the true explanatory variable. But researchers observe a mismeasured version: $X_i = X_i^* + e_i$ where $e_i$ is measurement error. If we regress $Y_i$ on the observed $X_i$, then the regression error contains the difference between true and measured $X$. In the classical measurement error case, where $e_i$ is random noise independent of $X_i^*$ and $u_i$, the OLS coefficient is biased toward zero. This is called <strong>attenuation bias</strong>. The intuition is simple: measurement error adds noise to the explanatory variable. If observed education, income, pollution, or treatment exposure is measured with error, then the estimated relationship between the measured variable and the outcome may be weaker than the true relationship. Examples:</p>
@@ -1809,7 +1810,7 @@ $$</div>
 <li>Health status may be measured with survey error.</li>
 </ul>
 <p>Measurement error can be more complicated than simple attenuation. If measurement error is correlated with the outcome, treatment, or other covariates, the direction of bias may be unpredictable. For example, if high-income people underreport income differently from low-income people, measurement error is not classical. If pollution monitors are placed in certain neighborhoods, measured pollution may be systematically related to neighborhood characteristics. Measurement quality is therefore not a minor technical issue. It affects identification and interpretation.</p>
-<hr/>
+
 <h2 id="416-dynamic-feedback">4.16 Dynamic feedback</h2>
 <p>Dynamic feedback occurs when past outcomes influence future treatments or exposures.</p>
 <p>Example: job training. A worker's earnings fall in year $t$: $Earnings_{it} \downarrow$ The worker responds by enrolling in training in year $t+1$: $Training_{i,t+1}=1$ If the original earnings decline was partly due to unobserved factors, then future training is related to past unobserved shocks. This creates endogeneity in panel data. Dynamic feedback is common in economics because agents respond to past outcomes. Examples:</p>
@@ -1828,7 +1829,7 @@ $$</div>
 <li>outcome changes causing treatment,</li>
 <li>both being driven by earlier shocks.</li>
 </ul>
-<hr/>
+
 <h2 id="417-bad-controls-as-a-source-of-endogeneity">4.17 Bad controls as a source of endogeneity</h2>
 <p>Controls are not automatically good. Some controls can create bias.</p>
 <p>A <strong>bad control</strong> is a variable that should not be conditioned on for the causal question being asked. Common bad controls include:</p>
@@ -1860,7 +1861,7 @@ If employment is the outcome and health is affected by treatment, controlling fo
 <p>Choose controls based on causal structure, not on whether they improve predictive fit.</p>
 </blockquote>
 <p>A control variable can reduce omitted variable bias, do nothing, or make bias worse.</p>
-<hr/>
+
 <h2 id="418-model-misspecification">4.18 Model misspecification</h2>
 <p>Model misspecification can also create misleading estimates.</p>
 <p>A model may be misspecified if:</p>
@@ -1875,7 +1876,7 @@ If employment is the outcome and health is affected by treatment, controlling fo
 <li>the level of aggregation is inappropriate.</li>
 </ul>
 <p>Example: Suppose the true relationship between class size and learning is nonlinear. Reducing class size from 40 to 30 may have a large effect, while reducing it from 20 to 10 may have a smaller effect. A linear model may average these effects in a misleading way. Another example: Suppose a minimum wage affects teen workers differently from adult workers. A single average coefficient may hide important heterogeneity. Misspecification does not always fit neatly into the simple formula: $\operatorname{Cov}(X_i,u_i) \neq 0$ but it can still undermine causal interpretation by making the estimated coefficient correspond to an unclear or irrelevant estimand. The solution is not merely to make models more complex. The solution is to align the model with the causal question, theory, data structure, and research design.</p>
-<hr/>
+
 <h2 id="419-how-research-designs-create-exogenous-variation">4.19 How research designs create exogenous variation</h2>
 <p>Because endogeneity is common, empirical economists look for research designs that generate or isolate exogenous variation.</p>
 <p>The goal is to find variation in treatment that is unrelated to potential outcomes except through treatment. Different designs do this in different ways.</p>
@@ -1902,7 +1903,7 @@ They help when endogeneity comes from stable unobserved traits, but they do not 
 <blockquote>
 <p>Exogeneity comes from the research design, not from the regression command.</p>
 </blockquote>
-<hr/>
+
 <h2 id="420-diagnosing-endogeneity">4.20 Diagnosing endogeneity</h2>
 <p>Endogeneity cannot usually be proven or disproven with a single statistical test. It is a causal concern that requires theory, institutional knowledge, and empirical evidence.</p>
 <p>Still, researchers can look for warning signs.</p>
@@ -1931,14 +1932,14 @@ Useful diagnostic tools include:</li>
 <li>first-stage diagnostics in IV.</li>
 </ul>
 <p>Diagnostics do not mechanically prove exogeneity. They build or weaken the credibility of the identifying assumptions.</p>
-<hr/>
+
 <h2 id="421-exogeneity-prediction-and-causation">4.21 Exogeneity, prediction, and causation</h2>
 <p>A variable can be useful for prediction even if it is endogenous.</p>
 <p>For example, hospital admission predicts poor health. But that does not mean hospital admission causes poor health. Sick people are more likely to be admitted. Similarly, police presence may predict crime, but police presence may be high because crime risk is high. Prediction asks: $\mathbb{E}[Y \mid X=x]$ Causation asks: $\mathbb{E}[Y \mid do(X=x)]$ Endogeneity is not necessarily a problem for prediction. If the goal is only to forecast $Y$, an endogenous variable may be highly useful. But endogeneity is a major problem for causal inference. If the goal is to know what would happen if $X$ changed, then the source of variation in $X$ matters. Example: Suppose a model predicts that people taking medication have worse health outcomes. This may be useful for risk prediction. But it would be wrong to conclude that medication causes worse health if sicker people are more likely to take medication. The lesson is:</p>
 <blockquote>
 <p>Predictive usefulness does not imply causal validity.</p>
 </blockquote>
-<hr/>
+
 <h2 id="422-practical-example-education-and-wages">4.22 Practical example: education and wages</h2>
 <p>Suppose we estimate: $\log(Wage_i) = \alpha + \beta Education_i + u_i$
 A positive $\beta$ means that workers with more education earn more, on average.</p>
@@ -1964,7 +1965,7 @@ A positive $\beta$ means that workers with more education earn more, on average.
 <li>regression discontinuity around admission thresholds.</li>
 </ul>
 <p>Each design attempts to isolate variation in education that is less related to unobserved determinants of wages. The key question is not whether education predicts wages. It clearly does. The key causal question is whether the variation in education used by the study is exogenous.</p>
-<hr/>
+
 <h2 id="423-practical-example-police-and-crime">4.23 Practical example: police and crime</h2>
 <p>Suppose we estimate: $Crime_{ct} = \alpha + \beta Police_{ct} + u_{ct}$
 where $c$ indexes cities and $t$ indexes time.</p>
@@ -1993,7 +1994,7 @@ where $c$ indexes cities and $t$ indexes time.</p>
 <p>What would crime have been if police presence had been different?</p>
 </blockquote>
 <p>A credible answer requires exogenous variation in police presence.</p>
-<hr/>
+
 <h2 id="424-practical-example-price-and-demand">4.24 Practical example: price and demand</h2>
 <p>Suppose a firm wants to estimate demand: $Quantity_i = \alpha + \beta Price_i + u_i$
 The firm expects $\beta&lt;0$: higher prices reduce quantity demanded.</p>
@@ -2008,7 +2009,7 @@ The firm expects $\beta&lt;0$: higher prices reduce quantity demanded.</p>
 <li>instruments that shift price but not demand directly.</li>
 </ul>
 <p>The key idea is to find price variation not caused by demand shocks. This example shows why endogeneity is not just a statistical concern. It is tied to economic behavior and equilibrium.</p>
-<hr/>
+
 <h2 id="425-practical-example-healthcare-and-health-outcomes">4.25 Practical example: healthcare and health outcomes</h2>
 <p>Suppose we estimate: $Health_i = \alpha + \beta MedicalCare_i + u_i$
 A naive regression may show that people receiving more medical care have worse health outcomes.</p>
@@ -2022,7 +2023,7 @@ A naive regression may show that people receiving more medical care have worse h
 <li>regression discontinuities in eligibility rules.</li>
 </ul>
 <p>The key question is not whether people who receive more care are healthier or sicker. The key question is what would have happened to their health if they had received a different amount or type of care.</p>
-<hr/>
+
 <h2 id="426-application-checklist">4.26 Application checklist</h2>
 <p>When evaluating whether a variable is exogenous or endogenous, use the following checklist.</p>
 <ol>
@@ -2083,7 +2084,7 @@ What tests, diagnostics, institutional facts, or robustness checks are available
 If exogeneity is not credible, interpret $\beta$ as an association.</p>
 </li>
 </ol>
-<hr/>
+
 <h2 id="427-common-mistakes">4.27 Common mistakes</h2>
 <ol>
 <li><p><strong>Mistake 1: Saying a variable is simply exogenous or endogenous.</strong> A variable is exogenous or endogenous relative to a model and source of variation.
@@ -2106,7 +2107,7 @@ Who decided treatment? Based on what information? At what time? In response to w
 <li><p><strong>Mistake 8: Believing statistical significance proves exogeneity.</strong> A statistically significant coefficient may be precisely biased. Statistical significance does not solve identification.</p>
 </li>
 </ol>
-<hr/>
+
 <h2 id="428-summary">4.28 Summary</h2>
 <p>Exogeneity and endogeneity describe whether the variation in an explanatory variable is suitable for causal inference.</p>
 <p>In a regression: $Y_i = \alpha + \beta X_i + u_i$ $X_i$ is exogenous if the unobserved determinants of $Y_i$ contained in $u_i$ are unrelated to $X_i$: $\mathbb{E}[u_i \mid X_i]=0$ or, in a weaker linear form: $\operatorname{Cov}(X_i,u_i)=0$ $X_i$ is endogenous if this condition fails: $\mathbb{E}[u_i \mid X_i]\neq 0$ or: $\operatorname{Cov}(X_i,u_i)\neq 0$ Endogeneity can arise from omitted variables, reverse causality, simultaneity, selection bias, measurement error, dynamic feedback, bad controls, and model misspecification. In potential outcomes language, exogeneity means treatment assignment is independent of potential outcomes, either unconditionally: $D_i \perp \big(Y_i(1),Y_i(0)\big)$ or conditionally: $D_i \perp \big(Y_i(1),Y_i(0)\big) \mid X_i$ In DAG language, endogeneity appears when non-causal paths between treatment and outcome remain open. The central lesson is:</p>
@@ -2288,21 +2289,21 @@ where $c$ indexes cities or neighborhoods.</p>
 <ul>
 <li><p><strong>Good controls.</strong> Suppose we want the effect of education on wages and family background affects both education and wages: $FamilyBackground \rightarrow Education$
 $FamilyBackground \rightarrow Wages$ Controlling for family background may help block the backdoor path: $Education \leftarrow FamilyBackground \rightarrow Wages$ Good controls are typically:</p>
-</li>
-<li><p>determined before treatment,</p>
-</li>
-<li><p>causes of treatment,</p>
-</li>
-<li><p>causes of outcome,</p>
-</li>
-<li><p>not themselves caused by treatment,</p>
-</li>
-<li><p>not colliders,</p>
-</li>
-<li><p>not descendants of colliders,</p>
-</li>
-<li><p>measured well enough to adjust for confounding.</p>
-</li>
+<ul class="sub-list"><li><p>determined before treatment,</p>
+</li><li><p>causes of treatment,</p>
+</li><li><p>causes of outcome,</p>
+</li><li><p>not themselves caused by treatment,</p>
+</li><li><p>not colliders,</p>
+</li><li><p>not descendants of colliders,</p>
+</li><li><p>measured well enough to adjust for confounding.</p>
+</li></ul></li>
+
+
+
+
+
+
+
 <li><p><strong>Bad control: mediator.</strong> Suppose: $Education \rightarrow Occupation \rightarrow Wages$
 If we control for occupation, we block part of the effect of education on wages. This may be appropriate if we want the direct effect of education holding occupation fixed, but it is not appropriate if we want the total effect of education.</p>
 </li>
@@ -2480,9 +2481,7 @@ In DAG form: $Z \rightarrow X \rightarrow Y$ and there must be no direct path: $
 <p>When evaluating a study, ask these questions.</p>
 <ol>
 <li><strong>What is the treatment?.</strong> Is the treatment clearly defined?
-Examples:</li>
-</ol>
-<ul>
+Examples:<ul class="sub-list">
 <li>years of education,</li>
 <li>college attendance,</li>
 <li>job training participation,</li>
@@ -2490,12 +2489,9 @@ Examples:</li>
 <li>pollution exposure,</li>
 <li>police presence,</li>
 <li>health insurance coverage.</li>
-</ul>
-<ol start="2">
+</ul><ol class="sub-list" start="2">
 <li><strong>What is the outcome?.</strong> Is the outcome clearly measured?
-Examples:</li>
-</ol>
-<ul>
+Examples:<ul class="sub-list">
 <li>wages,</li>
 <li>employment,</li>
 <li>test scores,</li>
@@ -2503,19 +2499,24 @@ Examples:</li>
 <li>mortality,</li>
 <li>firm productivity,</li>
 <li>household consumption.</li>
-</ul>
-<ol start="3">
+</ul><ol class="sub-list" start="3">
 <li><strong>What omitted variables might affect both treatment and outcome?.</strong> List possible confounders.
-For education and wages:</li>
-</ol>
-<ul>
+For education and wages:<ul class="sub-list">
 <li>ability,</li>
 <li>family background,</li>
 <li>school quality,</li>
 <li>neighborhood,</li>
 <li>motivation,</li>
 <li>networks.</li>
-</ul>
+</ul></li>
+</ol></li>
+</ol></li>
+</ol>
+
+
+
+
+
 <p>For training and earnings:</p>
 <ul>
 <li>motivation,</li>
@@ -2527,13 +2528,13 @@ For education and wages:</li>
 </ul>
 <ol start="4">
 <li><p><strong>What direction would each omitted variable bias the estimate?.</strong> For each omitted variable, ask:</p>
-</li>
-<li><p>Does it increase or decrease the outcome?</p>
-</li>
-<li><p>Is it positively or negatively related to treatment?</p>
-</li>
-<li><p>Does it push the estimate upward or downward?</p>
-</li>
+<ul class="sub-list"><li><p>Does it increase or decrease the outcome?</p>
+</li><li><p>Is it positively or negatively related to treatment?</p>
+</li><li><p>Does it push the estimate upward or downward?</p>
+</li></ul></li>
+
+
+
 <li><p><strong>Are the controls pre-treatment?.</strong> Controls should usually be determined before treatment. Post-treatment controls can create bias or change the estimand.</p>
 </li>
 <li><p><strong>Are any controls mediators?.</strong> If a variable lies on the causal path from treatment to outcome, controlling for it may block part of the effect.</p>
@@ -2732,7 +2733,7 @@ $$</div>
 <blockquote>
 <p>Selection bias arises when the process determining who is observed, treated, retained, or compared is related to the outcome we want to study.</p>
 </blockquote>
-<hr/>
+
 <h2 id="62-selection-bias-as-a-counterfactual-problem">6.2 Selection bias as a counterfactual problem</h2>
 <p>Causal inference requires comparing observed outcomes to missing counterfactual outcomes.</p>
 <p>For a binary treatment, let: $D_i \in \{0,1\}$ where $D_i=1$ means unit $i$ is treated and $D_i=0$ means unit $i$ is untreated. Let the potential outcomes be: $Y_i(1)$ and: $Y_i(0)$ where:</p>
@@ -2745,7 +2746,7 @@ $$</div>
 <p>Treated and untreated units would have had different outcomes even if neither group had been treated.</p>
 </blockquote>
 <p>That is the essence of selection bias in causal inference.</p>
-<hr/>
+
 <h2 id="63-decomposing-the-naive-treated-control-difference">6.3 Decomposing the naive treated-control difference</h2>
 <p>The naive treated-control difference can be decomposed into a causal effect plus selection bias.</p>
 <p>Start with the observed difference:</p>
@@ -2799,7 +2800,7 @@ $$</div>
 \mathbb{E}[Y_i(0) \mid D_i=0]
 $$</div>
 <p>That condition says treated and untreated units would have had the same average untreated outcome. This is not a statistical detail. It is the core identifying assumption behind naive comparisons.</p>
-<hr/>
+
 <h2 id="64-positive-and-negative-selection">6.4 Positive and negative selection</h2>
 <p>Selection bias can go in either direction.</p>
 <ul>
@@ -2811,7 +2812,7 @@ Formally:</li>
 &gt;
 \mathbb{E}[Y_i(0) \mid D_i=0]
 $$</div>
-<p>Example: a voluntary job training program attracts highly motivated workers. Even without training, these workers would have searched harder, networked more, and earned more than nonparticipants. In this case, the naive comparison overstates the effect of training. Suppose: $\mathbb{E}[Y_i(1) \mid D_i=1] = 40{,}000$ $\mathbb{E}[Y_i(0) \mid D_i=0] = 32{,}000$ The naive difference is: $40{,}000 - 32{,}000 = 8{,}000$ But if participants would have earned $36{,}000$ without training, then: $ATT = 40{,}000 - 36{,}000 = 4{,}000$ The naive comparison overstates the causal effect by $4{,}000$.</p>
+<p>Example: a voluntary job training program attracts highly motivated workers. Even without training, these workers would have searched harder, networked more, and earned more than nonparticipants. In this case, the naive comparison overstates the effect of training. Suppose: $\mathbb{E}[Y_i(1) \mid D_i=1] = 40{,}000$ $\mathbb{E}[Y_i(0) \mid D_i=0] = 32{,}000$ The naive difference is: $40{,}000 - 32{,}000 = 8{,}000$ But if participants would have earned \$36,000 without training, then: $ATT = 40{,}000 - 36{,}000 = 4{,}000$ The naive comparison overstates the causal effect by \$4,000.</p>
 <ul>
 <li><strong>Negative selection.</strong> Negative selection occurs when treated units would have had worse outcomes than untreated units even without treatment.
 Formally:</li>
@@ -2821,8 +2822,8 @@ Formally:</li>
 &lt;
 \mathbb{E}[Y_i(0) \mid D_i=0]
 $$</div>
-<p>Example: a job training program targets workers who are especially disadvantaged. Even without training, participants would have earned less than nonparticipants. In this case, the naive comparison understates the effect of training. Suppose: $\mathbb{E}[Y_i(1) \mid D_i=1] = 34{,}000$ $\mathbb{E}[Y_i(0) \mid D_i=0] = 32{,}000$ The naive difference is: $34{,}000 - 32{,}000 = 2{,}000$ But if participants would have earned only $26{,}000$ without training, then: $ATT = 34{,}000 - 26{,}000 = 8{,}000$ The naive comparison understates the causal effect. Selection bias is therefore not always upward or downward. Its direction depends on how selected units differ in their untreated potential outcomes.</p>
-<hr/>
+<p>Example: a job training program targets workers who are especially disadvantaged. Even without training, participants would have earned less than nonparticipants. In this case, the naive comparison understates the effect of training. Suppose: $\mathbb{E}[Y_i(1) \mid D_i=1] = 34{,}000$ $\mathbb{E}[Y_i(0) \mid D_i=0] = 32{,}000$ The naive difference is: $34{,}000 - 32{,}000 = 2{,}000$ But if participants would have earned only \$26,000 without training, then: $ATT = 34{,}000 - 26{,}000 = 8{,}000$ The naive comparison understates the causal effect. Selection bias is therefore not always upward or downward. Its direction depends on how selected units differ in their untreated potential outcomes.</p>
+
 <h2 id="65-selection-into-treatment">6.5 Selection into treatment</h2>
 <p>Selection into treatment occurs when units receive treatment because of characteristics related to their potential outcomes.</p>
 <p>This is common in economics because treatment is often chosen by individuals, firms, institutions, or policymakers. Examples:</p>
@@ -2880,7 +2881,7 @@ $$</div>
 <li><strong>Example: medical treatment.</strong> Suppose patients receiving intensive treatment have worse outcomes than patients receiving standard treatment.
 This does not necessarily mean intensive treatment is harmful. Sicker patients may be more likely to receive intensive treatment. This is negative selection into treatment. Treated patients have worse baseline prognosis. Without careful adjustment or design, the treatment may appear ineffective or harmful even if it improves outcomes relative to what would have happened otherwise.</li>
 </ul>
-<hr/>
+
 <h2 id="66-selection-on-observables-and-selection-on-unobservables">6.6 Selection on observables and selection on unobservables</h2>
 <p>Selection bias is often classified by whether the variables driving selection are observed.</p>
 <ul>
@@ -2905,27 +2906,27 @@ Let $X_i$ be observed covariates, such as age, education, prior earnings, baseli
 <ul>
 <li><p><strong>Selection on unobservables.</strong> Selection on unobservables means treatment assignment depends on variables the researcher does not observe.
 Examples include:</p>
-</li>
-<li><p>motivation,</p>
-</li>
-<li><p>ability,</p>
-</li>
-<li><p>ambition,</p>
-</li>
-<li><p>family support,</p>
-</li>
-<li><p>private health information,</p>
-</li>
-<li><p>risk tolerance,</p>
-</li>
-<li><p>managerial quality,</p>
-</li>
-<li><p>political pressure,</p>
-</li>
-<li><p>informal networks,</p>
-</li>
-<li><p>expectations about future earnings.</p>
-</li>
+<ul class="sub-list"><li><p>motivation,</p>
+</li><li><p>ability,</p>
+</li><li><p>ambition,</p>
+</li><li><p>family support,</p>
+</li><li><p>private health information,</p>
+</li><li><p>risk tolerance,</p>
+</li><li><p>managerial quality,</p>
+</li><li><p>political pressure,</p>
+</li><li><p>informal networks,</p>
+</li><li><p>expectations about future earnings.</p>
+</li></ul></li>
+
+
+
+
+
+
+
+
+
+
 </ul>
 <p>If these unobserved factors affect both treatment and outcomes, then conditioning on observed variables is not enough. Formally, even after controlling for $X_i$: $(Y_i(1),Y_i(0)) \not\perp D_i \mid X_i$ In that case, regression controls, matching, and weighting may remain biased. Selection on unobservables often motivates stronger research designs, such as:</p>
 <ul>
@@ -2939,7 +2940,7 @@ Examples include:</p>
 <li>structural modeling.</li>
 </ul>
 <p>The distinction between selection on observables and selection on unobservables is central to applied empirical work.</p>
-<hr/>
+
 <h2 id="67-selection-bias-as-a-sampling-problem">6.7 Selection bias as a sampling problem</h2>
 <p>Selection bias is not only about treatment assignment. It can also arise from how the sample is constructed.</p>
 <p>A sample is selected if inclusion in the data is related to the outcome or to variables that affect the outcome.</p>
@@ -2956,23 +2957,23 @@ $$</div>
 <ul>
 <li><p><strong>Example: estimating wages using employed workers.</strong> Suppose we estimate the relationship between education and wages using only employed workers.
 Wages are observed only for people who work. But employment itself is selected. People who are employed may differ from non-employed people in:</p>
-</li>
-<li><p>health,</p>
-</li>
-<li><p>skills,</p>
-</li>
-<li><p>preferences,</p>
-</li>
-<li><p>family responsibilities,</p>
-</li>
-<li><p>local labor market opportunities,</p>
-</li>
-<li><p>reservation wages,</p>
-</li>
-<li><p>access to childcare,</p>
-</li>
-<li><p>discrimination.</p>
-</li>
+<ul class="sub-list"><li><p>health,</p>
+</li><li><p>skills,</p>
+</li><li><p>preferences,</p>
+</li><li><p>family responsibilities,</p>
+</li><li><p>local labor market opportunities,</p>
+</li><li><p>reservation wages,</p>
+</li><li><p>access to childcare,</p>
+</li><li><p>discrimination.</p>
+</li></ul></li>
+
+
+
+
+
+
+
+
 </ul>
 <p>If the selection into employment is related to wages, then estimates based only on employed workers may not generalize to the full working-age population. This is a classic sample selection problem.</p>
 <ul>
@@ -2985,7 +2986,7 @@ If weak firms exit before the data are collected, the sample contains surviving 
 \mathbb{E}[Y_i]
 $$</div>
 <p>where $S_i=1$ indicates that unit $i$ is selected into the observed sample. A sample selection problem becomes a causal problem when the selection process distorts the comparison needed to estimate a causal effect.</p>
-<hr/>
+
 <h2 id="68-nonresponse-and-attrition">6.8 Nonresponse and attrition</h2>
 <p>Selection bias can arise after a study begins if some units are not observed in later periods.</p>
 <ul>
@@ -3009,29 +3010,29 @@ For example, suppose researchers evaluate a job training program and follow part
 $$</div>
 <p>This may differ from the treatment effect in the original sample if attrition is related to potential outcomes. For example, if struggling treated workers are more likely to drop out of the survey, then observed treated workers will look unusually successful.</p>
 <ul>
-<li><strong>Diagnosing attrition.</strong> Researchers often examine:</li>
-</ul>
-<ol>
+<li><strong>Diagnosing attrition.</strong> Researchers often examine:<ol class="sub-list">
 <li>overall attrition rates,</li>
 <li>attrition rates by treatment status,</li>
 <li>whether baseline covariates predict attrition,</li>
 <li>whether treatment affects attrition,</li>
 <li>whether results are robust to assumptions about missing outcomes.</li>
-</ol>
-<ul>
-<li><strong>Responses to attrition.</strong> Possible responses include:</li>
-<li>intensive tracking,</li>
-<li>administrative data linkage,</li>
-<li>inverse probability weighting,</li>
-<li>imputation,</li>
-<li>bounding exercises,</li>
-<li>Lee bounds,</li>
-<li>sensitivity analysis,</li>
-<li>intent-to-treat analysis,</li>
-<li>transparent reporting of missing data.</li>
+</ol><ul class="sub-list">
+<li><strong>Responses to attrition.</strong> Possible responses include:<ul class="sub-list"><li>intensive tracking,</li><li>administrative data linkage,</li><li>inverse probability weighting,</li><li>imputation,</li><li>bounding exercises,</li><li>Lee bounds,</li><li>sensitivity analysis,</li><li>intent-to-treat analysis,</li><li>transparent reporting of missing data.</li></ul></li>
+
+
+
+
+
+
+
+
+
+</ul></li>
 </ul>
+
+
 <p>Attrition cannot be fixed simply by ignoring missing observations. If missingness is systematically related to outcomes, complete-case analysis may be biased.</p>
-<hr/>
+
 <h2 id="69-survivorship-bias">6.9 Survivorship bias</h2>
 <p>Survivorship bias occurs when analysis focuses only on units that survived some selection process.</p>
 <p>The classic structure is:</p>
@@ -3063,7 +3064,7 @@ The general problem is:</p>
 \mathbb{E}[Y_i]
 $$</div>
 <p>If survival is related to the outcome, then analyzing survivors alone can produce misleading conclusions. Survivorship bias is common in business, finance, labor economics, education, health, and historical research.</p>
-<hr/>
+
 <h2 id="610-selection-from-conditioning-on-a-collider">6.10 Selection from conditioning on a collider</h2>
 <p>Selection bias can also arise from conditioning on a variable that is caused by two other variables. Such a variable is called a collider.</p>
 <p>Suppose: $X \rightarrow S \leftarrow Y$ Here $S$ is a collider because both $X$ and $Y$ cause $S$. If we condition on $S$, we can create an association between $X$ and $Y$ even if no causal relationship exists between them.</p>
@@ -3084,7 +3085,7 @@ Among published papers, low-quality studies may need more surprising results to 
 <blockquote>
 <p>Conditioning on selected samples can create associations that do not exist in the broader population.</p>
 </blockquote>
-<hr/>
+
 <h2 id="611-policy-targeting-and-endogenous-treatment-assignment">6.11 Policy targeting and endogenous treatment assignment</h2>
 <p>Selection bias is especially important in policy evaluation because policies are often targeted.</p>
 <p>Governments rarely assign policies randomly. They may target programs to people or places with the greatest need, the strongest political support, or the highest expected returns.</p>
@@ -3105,7 +3106,7 @@ A naive regression might suggest: $TestScores_i = \alpha + \beta Funding_i + u_i
 The common structure is: $Baseline\ Need \rightarrow Treatment$ and: $Baseline\ Need \rightarrow Outcome$ Baseline need is a confounder. If it is not adequately addressed, estimates of policy effects may be biased. Policy targeting often creates negative selection: treated units are worse off at baseline. In such cases, naive comparisons may understate beneficial effects or make helpful policies look harmful.</p>
 </li>
 </ul>
-<hr/>
+
 <h2 id="612-dynamic-selection">6.12 Dynamic selection</h2>
 <p>Selection can change over time.</p>
 <p>In panel and longitudinal settings, treatment may depend on past outcomes, and future outcomes may depend on past treatment. Example: $Y_{i,t-1} \rightarrow D_{it} \rightarrow Y_{it}$ If units receive treatment because of prior outcomes, treatment is dynamically selected.</p>
@@ -3119,17 +3120,17 @@ If prior health is not properly accounted for, treatment may appear harmful beca
 </li>
 <li><p><strong>Example: firm investment.</strong> Firms may invest in new technology after productivity falls or after demand rises.
 If investment responds to past shocks, estimating its effect requires careful timing and controls. Dynamic selection creates challenges because:</p>
-</li>
-<li><p>past outcomes may confound current treatment,</p>
-</li>
-<li><p>treatment may affect future confounders,</p>
-</li>
-<li><p>controlling for time-varying variables can block causal pathways,</p>
-</li>
-<li><p>lagged outcomes may introduce bias in short panels,</p>
-</li>
-<li><p>anticipation and feedback may be present.</p>
-</li>
+<ul class="sub-list"><li><p>past outcomes may confound current treatment,</p>
+</li><li><p>treatment may affect future confounders,</p>
+</li><li><p>controlling for time-varying variables can block causal pathways,</p>
+</li><li><p>lagged outcomes may introduce bias in short panels,</p>
+</li><li><p>anticipation and feedback may be present.</p>
+</li></ul></li>
+
+
+
+
+
 </ul>
 <p>Methods for dynamic selection include:</p>
 <ul>
@@ -3142,7 +3143,7 @@ If investment responds to past shocks, estimating its effect requires careful ti
 <li>structural models,</li>
 <li>careful timing restrictions.</li>
 </ul>
-<hr/>
+
 <h2 id="613-selection-bias-and-regression">6.13 Selection bias and regression</h2>
 <p>Selection bias often appears in regression through correlation between the explanatory variable and the error term.</p>
 <p>Consider: $Y_i = \alpha + \beta D_i + u_i$ where $D_i$ is treatment. The coefficient $\beta$ can be interpreted causally only if: $\mathbb{E}[u_i \mid D_i] = 0$ This means unobserved determinants of $Y_i$ are not systematically related to treatment status. Selection bias violates this condition. Suppose: $u_i = Ability_i + Motivation_i + FamilyBackground_i + \varepsilon_i$ If ability, motivation, or family background affect both treatment and outcomes, then:</p>
@@ -3152,25 +3153,25 @@ If investment responds to past shocks, estimating its effect requires careful ti
 \mathbb{E}[u_i \mid D_i=0]
 $$</div>
 <p>Equivalently: $\operatorname{Cov}(D_i,u_i) \neq 0$ In that case, ordinary least squares estimates a mixture of the treatment effect and selection differences. Adding controls may help if the controls capture the selection process. But adding controls does not automatically solve selection bias. If selection occurs through unobserved variables, the regression remains endogenous. Regression is a tool for adjustment. It is not, by itself, a research design.</p>
-<hr/>
+
 <h2 id="614-methods-for-addressing-selection-bias">6.14 Methods for addressing selection bias</h2>
 <p>There is no universal solution to selection bias. The appropriate method depends on the source of selection and the available data.</p>
 <ul>
 <li><p><strong>Randomization.</strong> Random assignment solves selection into treatment in expectation.
 If treatment is randomly assigned: $D_i \perp (Y_i(1),Y_i(0))$ Then treated and control groups are comparable in expectation, and a difference in means can identify the causal effect. Randomization is powerful because it addresses both observed and unobserved selection. However, RCTs may still suffer from:</p>
-</li>
-<li><p>noncompliance,</p>
-</li>
-<li><p>attrition,</p>
-</li>
-<li><p>spillovers,</p>
-</li>
-<li><p>measurement error,</p>
-</li>
-<li><p>implementation failure,</p>
-</li>
-<li><p>external validity limitations.</p>
-</li>
+<ul class="sub-list"><li><p>noncompliance,</p>
+</li><li><p>attrition,</p>
+</li><li><p>spillovers,</p>
+</li><li><p>measurement error,</p>
+</li><li><p>implementation failure,</p>
+</li><li><p>external validity limitations.</p>
+</li></ul></li>
+
+
+
+
+
+
 <li><p><strong>Regression controls.</strong> Regression adjustment can address selection on observables.
 A controlled regression might be: $Y_i = \alpha + \beta D_i + X_i'\gamma + u_i$ This can identify a causal effect if: $(Y_i(1),Y_i(0)) \perp D_i \mid X_i$ The problem is that this assumption fails if important unobserved confounders remain.</p>
 </li>
@@ -3215,14 +3216,14 @@ An instrument $Z_i$ must satisfy:</p>
 <li><strong>Bounds and sensitivity analysis.</strong> Sometimes selection bias cannot be eliminated convincingly. In that case, researchers may ask how large selection bias would need to be to overturn the result.
 Sensitivity analysis examines whether conclusions are robust to plausible violations of assumptions. Bounding methods estimate a range of possible treatment effects under weaker assumptions. This is often more honest than pretending selection bias has been fully solved.</li>
 </ul>
-<hr/>
+
 <h2 id="615-heckman-selection-models">6.15 Heckman selection models</h2>
 <p>A classic econometric response to sample selection is the Heckman selection model.</p>
 <p>This model is often used when the outcome is observed only for a selected sample. Example: wages are observed only for people who are employed. Let the outcome equation be: $Y_i = X_i'\beta + u_i$ But $Y_i$ is observed only if: $S_i=1$ where selection is determined by a latent index: $S_i^* = Z_i'\gamma + v_i$ and: $S_i = 1 \quad \text{if} \quad S_i^*&gt;0$ The selection problem arises if: $\operatorname{Cov}(u_i,v_i) \neq 0$ That means unobserved factors affecting selection also affect the outcome. The Heckman model corrects for selection under distributional and functional form assumptions, often using an inverse Mills ratio. The method is useful, but it is not magic. It relies heavily on assumptions. It is most credible when there is an exclusion restriction: a variable that affects selection into the sample but does not directly affect the outcome. For example, in a wage equation, the number of young children might affect labor force participation but may not directly affect offered wages, conditional on other characteristics. Whether this is credible depends on the context. The broader lesson is:</p>
 <blockquote>
 <p>Sample selection models require assumptions just like design-based methods do. Modeling selection is not the same as eliminating it.</p>
 </blockquote>
-<hr/>
+
 <h2 id="616-diagnosing-selection-bias">6.16 Diagnosing selection bias</h2>
 <p>Selection bias cannot always be tested directly because it involves missing counterfactuals. But researchers can look for warning signs.</p>
 <p>Useful diagnostic questions include:</p>
@@ -3257,7 +3258,7 @@ Sensitivity analysis examines whether conclusions are robust to plausible violat
 <li>institutional investigation of assignment rules.</li>
 </ul>
 <p>None of these diagnostics automatically proves that selection bias is absent. But they help evaluate whether the identifying assumptions are plausible.</p>
-<hr/>
+
 <h2 id="617-practical-example-voluntary-job-training">6.17 Practical example: voluntary job training</h2>
 <p>Suppose a city offers a voluntary job training program to unemployed workers.</p>
 <p>The researcher observes: $\mathbb{E}[Earnings_i \mid D_i=1] = 38{,}000$ and: $\mathbb{E}[Earnings_i \mid D_i=0] = 34{,}000$ The naive estimate is: $38{,}000 - 34{,}000 = 4{,}000$ Can we interpret this as the causal effect of training? Only if:</p>
@@ -3288,20 +3289,20 @@ Then:</li>
 $$</div>
 <p>The naive estimate understates the effect.</p>
 <ul>
-<li><strong>Possible research designs.</strong> A stronger design might use:</li>
-<li>a lottery if program slots are limited,</li>
-<li>random encouragement to participate,</li>
-<li>an eligibility cutoff,</li>
-<li>difference-in-differences with comparable nonparticipants,</li>
-<li>worker fixed effects with panel data,</li>
-<li>matching on rich pre-program characteristics,</li>
-<li>administrative data to reduce attrition.</li>
+<li><strong>Possible research designs.</strong> A stronger design might use:<ul class="sub-list"><li>a lottery if program slots are limited,</li><li>random encouragement to participate,</li><li>an eligibility cutoff,</li><li>difference-in-differences with comparable nonparticipants,</li><li>worker fixed effects with panel data,</li><li>matching on rich pre-program characteristics,</li><li>administrative data to reduce attrition.</li></ul></li>
+
+
+
+
+
+
+
 </ul>
 <p>The key question is not whether participants earned more. The key question is:</p>
 <blockquote>
 <p>What would participants have earned without training?</p>
 </blockquote>
-<hr/>
+
 <h2 id="618-practical-example-online-reviews">6.18 Practical example: online reviews</h2>
 <p>Selection bias is not limited to formal policy analysis. It also appears in everyday data.</p>
 <p>Suppose a product has an average online rating of 4.8 stars. Does that mean the average customer experience is 4.8 stars? Not necessarily. The observed average is: $\mathbb{E}[Rating_i \mid Review_i=1]$ But the desired average customer experience may be: $\mathbb{E}[Rating_i]$ These are equal only if reviewers are representative of all customers. That may fail because people who leave reviews are often:</p>
@@ -3324,7 +3325,7 @@ $$</div>
 <blockquote>
 <p>Observed data often come from people who chose to be observed.</p>
 </blockquote>
-<hr/>
+
 <h2 id="619-practical-example-college-earnings-comparisons">6.19 Practical example: college earnings comparisons</h2>
 <p>Suppose we compare average earnings of graduates from elite colleges to average earnings of graduates from non-elite colleges.</p>
 <p>The observed difference may be large. But students are selected into elite colleges. They may differ before college in:</p>
@@ -3360,7 +3361,7 @@ $$</div>
 <li>using sibling comparisons where appropriate.</li>
 </ul>
 <p>Each strategy has assumptions. None automatically solves selection.</p>
-<hr/>
+
 <h2 id="620-common-mistakes">6.20 Common mistakes</h2>
 <ol>
 <li><p><strong>Mistake 1: Assuming large samples eliminate selection bias.</strong> Large samples reduce sampling error. They do not eliminate selection bias.
@@ -3381,9 +3382,7 @@ A researcher should ask:</p>
 </blockquote>
 <p>The answer often reveals the main selection problem.</p>
 <ol start="5">
-<li><strong>Mistake 5: Conditioning on selected samples without recognizing it.</strong> Many analyses implicitly condition on selection:</li>
-</ol>
-<ul>
+<li><strong>Mistake 5: Conditioning on selected samples without recognizing it.</strong> Many analyses implicitly condition on selection:<ul class="sub-list">
 <li>employed workers,</li>
 <li>admitted students,</li>
 <li>surviving firms,</li>
@@ -3391,19 +3390,19 @@ A researcher should ask:</p>
 <li>published studies,</li>
 <li>survey respondents,</li>
 <li>program participants.</li>
-</ul>
+</ul></li>
+</ol>
+
 <p>The conclusions may apply only to that selected group, and even within that group, conditioning may create bias.</p>
 <ol start="6">
 <li><strong>Mistake 6: Confusing representativeness with causal validity.</strong> A representative sample is useful for describing a population. But representativeness alone does not identify causal effects.
 A nonrepresentative sample can sometimes identify a causal effect internally if treatment is randomized within the sample. A representative sample can fail to identify a causal effect if treatment is selected. Sampling validity and causal identification are related but distinct.</li>
 </ol>
-<hr/>
+
 <h2 id="621-application-checklist">6.21 Application checklist</h2>
 <p>When evaluating possible selection bias, use the following checklist.</p>
 <ol>
-<li><strong>Define the target quantity.</strong> Are you trying to estimate:</li>
-</ol>
-<ul>
+<li><strong>Define the target quantity.</strong> Are you trying to estimate:<ul class="sub-list">
 <li>a population mean,</li>
 <li>a descriptive relationship,</li>
 <li>ATE,</li>
@@ -3412,7 +3411,9 @@ A nonrepresentative sample can sometimes identify a causal effect internally if 
 <li>CATE,</li>
 <li>LATE,</li>
 <li>a policy-relevant effect for a specific group?</li>
-</ul>
+</ul></li>
+</ol>
+
 <p>Selection bias depends on the target.</p>
 <ol start="2">
 <li><p><strong>Identify the selection process.</strong> Who is included in the sample?
@@ -3452,7 +3453,7 @@ Do results change with different comparison groups? Do placebo tests fail or pas
 <li>a selected subgroup?</li>
 </ul>
 <p>State the scope explicitly.</p>
-<hr/>
+
 <h2 id="622-summary">6.22 Summary</h2>
 <p>Selection bias occurs when the process determining who is treated, untreated, observed, retained, or analyzed is systematically related to outcomes or potential outcomes.</p>
 <p>In causal inference, the key condition for a naive treated-control comparison to identify the ATT is:</p>
@@ -3485,7 +3486,6 @@ $$</div>
 <p>Why is the observed comparison a credible substitute for the missing counterfactual?</p>
 </blockquote>
 <p>A rigorous empirical analysis does not merely report differences between selected groups. It explains the selection process, states the assumptions required to overcome it, and evaluates whether those assumptions are plausible.</p>
-
-    </main>
-  </body>
+</main>
+</body>
 </html>

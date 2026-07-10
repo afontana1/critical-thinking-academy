@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Core Concepts in Empirical Economics and Causal Inference, Part 3</title>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Core Concepts in Empirical Economics and Causal Inference, Part 3</title>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -395,10 +396,10 @@
         },
       };
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body>
-    <main class="ep-post">
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="ep-post">
 <h1 id="core-concepts-in-empirical-economics-and-causal-inference-part-3">Core Concepts in Empirical Economics and Causal Inference, Part 3</h1>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -412,7 +413,7 @@
 </ul>
 <h2 id="introduction-to-part-3">Introduction to Part 3</h2>
 <p>This document continues the empirical concepts series. Part 1 introduced the foundations of causal inference: correlation versus causation, counterfactual reasoning, causal graphs, exogeneity, omitted variable bias, and selection bias. Part 2 developed the major design-based tools used to estimate causal effects, including randomized controlled trials, natural experiments, identification strategies, instrumental variables, difference-in-differences, and regression discontinuity. Part 3 turns to data structure, longitudinal reasoning, and interpretation. The same causal questions remain central, but the form of the data changes what can be learned. In particular, panel and longitudinal data allow researchers to observe the same units over time. This creates powerful opportunities for causal inference, but it also introduces new threats: dynamic feedback, anticipation, attrition, serial correlation, changing composition, treatment timing, and time-varying confounding. The goal of this part is to explain how economists use repeated observations over time, what problems those data solve, what problems they create, and how concepts such as fixed effects, random effects, internal validity, external validity, heterogeneous treatment effects, uncertainty, and cost-benefit analysis fit into a rigorous empirical workflow.</p>
-<hr/>
+
 <h1 id="13-panel-data-cross-sectional-data-and-longitudinal-research-design">13. Panel Data, Cross-Sectional Data, and Longitudinal Research Design</h1>
 <h2 id="13-1-why-data-structure-matters">13.1 Why data structure matters</h2>
 <p>Empirical economics is not only about which variables are measured. It is also about how the data are organized. The same variables can support very different kinds of empirical analysis depending on whether they are observed once, repeatedly over time, across groups, across locations, or across treatment regimes. For example, suppose we want to study the relationship between education and wages. We might have:</p>
@@ -1097,7 +1098,7 @@ When using or evaluating panel data, ask the following questions.</p>
 <span class="math">\(Productivity_i = \alpha + \beta Technology_i + u_i\)</span> The problem is that <span class="math">\(u_i\)</span> may contain unobserved firm quality. If high-quality firms are more likely to adopt technology, then:
 <span class="math">\(\operatorname{Cov}(Technology_i,u_i) \neq 0\)</span>
 In that case, the coefficient <span class="math">\(\beta\)</span> does not isolate the causal effect of technology. It combines the effect of technology with pre-existing differences between firms. Panel data help because they observe the same units over time. Instead of comparing different firms to each other, we can compare the same firm before and after technology adoption. Fixed effects and random effects are two major ways to model persistent differences across units. The central problem is unobserved heterogeneity: stable differences across units that affect the outcome and may be related to treatment or regressors.</p>
-<hr/>
+
 <h2 id="14-2-the-basic-panel-data-model">14.2 The basic panel data model</h2>
 <p>A common starting point is:
 <span class="math">\(Y_{it} = \alpha + \beta X_{it} + a_i + u_{it}\)</span> where:</p>
@@ -1113,7 +1114,7 @@ In that case, the coefficient <span class="math">\(\beta\)</span> does not isola
 <span class="math">\(\operatorname{Cov}(a_i,X_{it}) = 0\)</span> then the unobserved unit effect is unrelated to the explanatory variable. In that case, random effects may be appropriate. If:
 <span class="math">\(\operatorname{Cov}(a_i,X_{it}) \neq 0\)</span>
 then the unobserved unit effect is related to the explanatory variable. In that case, fixed effects are usually safer for causal inference. This distinction is the core difference between fixed effects and random effects.</p>
-<hr/>
+
 <h2 id="14-3-fixed-effects-the-basic-idea">14.3 Fixed effects: the basic idea</h2>
 <p>Fixed effects allow each unit to have its own intercept. The fixed effects model is:
 <span class="math">\(Y_{it} = \alpha_i + \beta X_{it} + u_{it}\)</span> where <span class="math">\(\alpha_i\)</span> is a separate intercept for each unit. The term <span class="math">\(\alpha_i\)</span> absorbs all time-invariant characteristics of unit <span class="math">\(i\)</span>, whether observed or unobserved. The intuition is:</p>
@@ -1133,7 +1134,7 @@ then the unobserved unit effect is related to the explanatory variable. In that 
 <p>When the same state changes regulation, do pollution outcomes change?</p>
 </blockquote>
 <p>This is powerful because many confounders are stable over time. If they are stable, fixed effects remove them.</p>
-<hr/>
+
 <h2 id="14-4-what-fixed-effects-remove">14.4 What fixed effects remove</h2>
 <p>Fixed effects remove time-invariant unit-level confounders. Suppose the true model is:
 <span class="math">\(Y_{it} = \alpha + \beta X_{it} + \gamma A_i + u_{it}\)</span>
@@ -1152,7 +1153,7 @@ where <span class="math">\(A_i\)</span> is an unobserved characteristic that doe
 <li>permanent industry classification</li>
 </ul>
 <p>For example, suppose more able workers are more likely to seek training and also earn higher wages. A cross-sectional regression may overstate the effect of training. Worker fixed effects remove any stable component of ability, because each worker is compared to themselves. The fixed effects model uses within-unit variation, not between-unit variation.</p>
-<hr/>
+
 <h2 id="14-5-the-within-transformation">14.5 The within transformation</h2>
 <p>Fixed effects can be understood through the within transformation. Start with:
 <span class="math">\(Y_{it} = \alpha_i + \beta X_{it} + u_{it}\)</span> Take the average over time for each unit:
@@ -1162,7 +1163,7 @@ where <span class="math">\(A_i\)</span> is an unobserved characteristic that doe
 <span class="math">\(Y_{it} - \bar{Y}_i = \beta (X_{it}-\bar{X}_i) + (u_{it}-\bar{u}_i)\)</span> The fixed effect <span class="math">\(\alpha_i\)</span> disappears because it is constant over time:
 <span class="math">\(\alpha_i - \alpha_i = 0\)</span>
 This transformed equation estimates <span class="math">\(\beta\)</span> using deviations from each unit's own average. That is why fixed effects are also called within estimators. The coefficient <span class="math">\(\beta\)</span> is identified only by changes in <span class="math">\(X_{it}\)</span> within units over time. Units whose <span class="math">\(X_{it}\)</span> never changes do not contribute to the estimation of <span class="math">\(\beta\)</span>. For example, if the treatment is college completion and some people are always college graduates while others are never college graduates, person fixed effects cannot estimate the effect of college completion unless some people change status over time in a meaningful way. Fixed effects require within-unit variation in the treatment.</p>
-<hr/>
+
 <h2 id="14-6-fixed-effects-with-two-time-periods-first-differences">14.6 Fixed effects with two time periods: first differences</h2>
 <p>When there are only two periods, fixed effects are closely related to first differencing. Suppose:
 <span class="math">\(Y_{i1} = \alpha_i + \beta X_{i1} + u_{i1}\)</span> and:
@@ -1173,7 +1174,7 @@ This transformed equation estimates <span class="math">\(\beta\)</span> using de
 <span class="math">\(\Delta Y_i = \beta \Delta X_i + \Delta u_i\)</span> This shows that fixed effects with two periods estimate whether changes in <span class="math">\(X\)</span> are associated with changes in <span class="math">\(Y\)</span> within the same unit. The causal interpretation still requires an assumption:
 <span class="math">\(\mathbb{E}[\Delta u_i \mid \Delta X_i]=0\)</span>
 In words: changes in the explanatory variable must be unrelated to changes in unobserved determinants of the outcome. Fixed effects remove stable confounders, but they do not remove time-varying confounders.</p>
-<hr/>
+
 <h2 id="14-7-what-fixed-effects-do-not-remove">14.7 What fixed effects do not remove</h2>
 <p>Fixed effects are powerful, but they are not magic. They do not solve all endogeneity problems. Fixed effects do not remove confounders that change over time within units. Suppose firms adopt new technology when demand for their products is rising. Demand shocks may increase productivity and also cause technology adoption. Firm fixed effects remove stable firm quality, but they do not remove the time-varying demand shock. The model is:
 <span class="math">\(Productivity_{it} = \alpha_i + \beta Technology_{it} + DemandShock_{it} + u_{it}\)</span> If <span class="math">\(DemandShock_{it}\)</span> is omitted and correlated with <span class="math">\(Technology_{it}\)</span>, then:
@@ -1202,7 +1203,7 @@ In words: changes in the explanatory variable must be unrelated to changes in un
 <blockquote>
 <p>Fixed effects remove time-invariant unit-level confounding. They do not remove time-varying confounding.</p>
 </blockquote>
-<hr/>
+
 <h2 id="14-8-two-way-fixed-effects">14.8 Two-way fixed effects</h2>
 <p>A common panel data model includes both unit fixed effects and time fixed effects:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \beta X_{it} + u_{it}\)</span> where:</p>
@@ -1225,7 +1226,7 @@ In words: changes in the explanatory variable must be unrelated to changes in un
 <p>Two-way fixed effects are widely used in policy evaluation. However, the causal interpretation still requires that policy changes are not correlated with unobserved state-specific time-varying shocks. The identifying assumption is not simply that fixed effects were included. The key assumption is closer to:
 <span class="math">\(\mathbb{E}[u_{it} \mid X_{i1}, X_{i2}, \dots, X_{iT}, \alpha_i, \lambda_t] = 0\)</span>
 In words: after accounting for unit and time fixed effects, the timing and intensity of treatment must be as-good-as-random with respect to remaining unobserved shocks.</p>
-<hr/>
+
 <h2 id="14-9-fixed-effects-and-difference-in-differences">14.9 Fixed effects and difference-in-differences</h2>
 <p>Difference-in-differences is closely related to fixed effects. A standard DiD regression is:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \beta D_{it} + u_{it}\)</span> where <span class="math">\(D_{it}\)</span> equals 1 when unit <span class="math">\(i\)</span> is treated at time <span class="math">\(t\)</span>. This is a two-way fixed effects model. The causal interpretation depends on a parallel trends assumption:</p>
@@ -1236,12 +1237,12 @@ In words: after accounting for unit and time fixed effects, the timing and inten
 <blockquote>
 <p>Fixed effects are a statistical adjustment. Difference-in-differences is a research design. The design requires a credible counterfactual trend, not merely fixed effects in a regression.</p>
 </blockquote>
-<hr/>
+
 <h2 id="14-10-unit-specific-trends">14.10 Unit-specific trends</h2>
 <p>Sometimes researchers add unit-specific trends:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \theta_i t + \beta X_{it} + u_{it}\)</span>
 where <span class="math">\(\theta_i t\)</span> allows each unit to have its own linear trend. This can help when units have different underlying trajectories. For example, if some states have steadily rising employment and others have steadily falling employment, state-specific trends may absorb those differences. But unit-specific trends should be used carefully. They can reduce bias if untreated potential outcomes truly follow different smooth trends. But they can also absorb part of the treatment effect if the treatment effect grows gradually over time. For example, suppose a policy has a slowly increasing effect. A unit-specific trend may mistakenly treat part of that effect as a continuation of the prior trend. The decision to include unit-specific trends should be motivated by the causal setting, pre-treatment data, and robustness checks, not by a mechanical desire to add more controls.</p>
-<hr/>
+
 <h2 id="14-11-time-varying-controls">14.11 Time-varying controls</h2>
 <p>Fixed effects models often include time-varying controls:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \beta X_{it} + \gamma W_{it} + u_{it}\)</span>
@@ -1251,7 +1252,7 @@ Then <span class="math">\(W_{it}\)</span> is a mediator. Controlling for it bloc
 <blockquote>
 <p>Do not control for a variable just because it is available. Control variables must be justified by the causal structure and timing.</p>
 </blockquote>
-<hr/>
+
 <h2 id="14-12-random-effects-the-basic-idea">14.12 Random effects: the basic idea</h2>
 <p>Random effects also model unit-level heterogeneity, but they do so differently. The random effects model is:
 <span class="math">\(Y_{it} = \alpha + \beta X_{it} + a_i + u_{it}\)</span> where:
@@ -1261,7 +1262,7 @@ Then <span class="math">\(W_{it}\)</span> is a mediator. Controlling for it bloc
 <p>The unobserved unit-specific effect is uncorrelated with the explanatory variables in every period.</p>
 </blockquote>
 <p>If this assumption holds, random effects can be more efficient than fixed effects because it uses both within-unit and between-unit variation. If the assumption fails, random effects are biased for causal interpretation. For example, if high-ability workers obtain more training and also earn higher wages, then worker ability is part of <span class="math">\(a_i\)</span> and is correlated with training. Random effects would generally be biased. Fixed effects are often preferred for causal inference because they allow <span class="math">\(a_i\)</span> to be correlated with <span class="math">\(X_{it}\)</span>.</p>
-<hr/>
+
 <h2 id="14-13-fixed-effects-versus-random-effects">14.13 Fixed effects versus random effects</h2>
 <p>The core contrast is:</p>
 <ul>
@@ -1272,7 +1273,7 @@ Then <span class="math">\(W_{it}\)</span> is a mediator. Controlling for it bloc
 <span class="math">\(Y_{it} = \alpha_i + \beta X_{it} + u_{it}\)</span> In random effects, the unit effect is treated as part of the error structure:
 <span class="math">\(Y_{it} = \alpha + \beta X_{it} + a_i + u_{it}\)</span>
 The difference is not merely technical. It changes what variation is used. Fixed effects estimate <span class="math">\(\beta\)</span> using within-unit variation. Random effects use both within-unit and between-unit variation. Between-unit variation can be informative for prediction. But for causal inference, between-unit variation may be contaminated by unobserved differences across units. For example, suppose better-managed firms are both more productive and more likely to adopt technology. Random effects may attribute some of the productivity advantage of better-managed firms to technology. Fixed effects remove stable management quality by comparing firms to themselves.</p>
-<hr/>
+
 <h2 id="14-14-the-random-effects-assumption">14.14 The random effects assumption</h2>
 <p>The random effects assumption can be written as:
 <span class="math">\(\mathbb{E}[a_i \mid X_{i1},X_{i2},\dots,X_{iT}] = 0\)</span> This says the unobserved unit effect is mean independent of the entire history of regressors. This is a strong assumption in many economic settings. It may be plausible when:</p>
@@ -1292,7 +1293,7 @@ The difference is not merely technical. It changes what variation is used. Fixed
 <li>neighborhoods receive interventions based on persistent disadvantage</li>
 </ul>
 <p>In applied causal work, this assumption must be defended substantively. It should not be accepted because software labels a model as random effects.</p>
-<hr/>
+
 <h2 id="14-15-random-effects-and-partial-pooling">14.15 Random effects and partial pooling</h2>
 <p>Random effects are especially important in hierarchical or multilevel modeling. Suppose students are nested in schools:
 <span class="math">\(Score_{ij} = \alpha + \beta X_{ij} + a_j + u_{ij}\)</span> where:</p>
@@ -1304,7 +1305,7 @@ The difference is not merely technical. It changes what variation is used. Fixed
 <p>The model assumes school effects are drawn from a common distribution:
 <span class="math">\(a_j \sim N(0,\sigma_a^2)\)</span>
 This allows partial pooling. Partial pooling means estimates for small schools are pulled toward the overall mean more than estimates for large schools. This can improve prediction and stabilize noisy estimates. For example, if a small school has only five observed students, its raw average test score may be very noisy. A random effects model uses information from the broader distribution of schools to produce a more stable estimate of that school's effect. This is useful for prediction, ranking, forecasting, and modeling hierarchical structure. But partial pooling is not automatically a causal solution. If school-level unobserved quality is correlated with treatment, causal interpretation still requires assumptions.</p>
-<hr/>
+
 <h2 id="14-16-the-hausman-test-intuition">14.16 The Hausman test intuition</h2>
 <p>The Hausman test is often used to compare fixed effects and random effects. The intuition is simple. If the random effects assumption is true, both fixed effects and random effects are consistent, but random effects are more efficient. If the random effects assumption is false, fixed effects may remain consistent, while random effects are inconsistent. So the test compares the fixed effects estimate and the random effects estimate. If they differ substantially, that suggests the random effects assumption may be violated. Formally, the null hypothesis is that random effects are consistent:
 <span class="math">\(H_0: \operatorname{Cov}(a_i,X_{it}) = 0\)</span> The alternative is:
@@ -1313,7 +1314,7 @@ A rejection suggests that random effects may be inappropriate. However, the Haus
 <blockquote>
 <p>Is it credible that unobserved unit traits are unrelated to the regressors?</p>
 </blockquote>
-<hr/>
+
 <h2 id="14-17-fixed-effects-and-variables-that-do-not-change-over-time">14.17 Fixed effects and variables that do not change over time</h2>
 <p>A limitation of fixed effects is that they cannot estimate the effects of variables that are constant within units over time. Suppose we estimate:
 <span class="math">\(Y_{it} = \alpha_i + \beta X_{it} + \gamma Z_i + u_{it}\)</span>
@@ -1328,13 +1329,13 @@ where <span class="math">\(Z_i\)</span> does not vary over time. Because <span c
 <li>permanent group membership</li>
 </ul>
 <p>Fixed effects absorb these variables. This is not a flaw if those variables are confounders that need to be controlled for. But it means fixed effects cannot estimate their coefficients directly. If the research question concerns a time-invariant variable, fixed effects may not be the right estimator unless the design uses interactions, cohort variation, policy changes, or other sources of within-unit change.</p>
-<hr/>
+
 <h2 id="14-18-fixed-effects-and-measurement-error">14.18 Fixed effects and measurement error</h2>
 <p>Fixed effects can worsen measurement error problems. Suppose:
 <span class="math">\(X_{it}^{obs} = X_{it}^{true} + e_{it}\)</span> where <span class="math">\(e_{it}\)</span> is measurement error. Fixed effects rely on within-unit changes:
 <span class="math">\(X_{it}^{obs} - \bar{X}_i\)</span>
 If the true variable changes little over time but measurement error varies from period to period, then a large share of the within-unit variation may be noise. This can attenuate estimates toward zero. For example, annual income is noisy. If we use worker fixed effects to estimate the effect of income on consumption, year-to-year measurement error in income may be large relative to true persistent changes. The fixed effects estimate may be severely attenuated. This is one reason fixed effects estimates can differ from cross-sectional estimates. A smaller fixed effects estimate may mean cross-sectional estimates were confounded. But it may also mean the within estimator suffers from measurement error, limited variation, or different causal variation. Interpretation requires care.</p>
-<hr/>
+
 <h2 id="14-19-fixed-effects-and-dynamic-outcomes">14.19 Fixed effects and dynamic outcomes</h2>
 <p>Many outcomes are persistent over time. For example:</p>
 <ul>
@@ -1348,7 +1349,7 @@ If the true variable changes little over time but measurement error varies from 
 <p>A dynamic model might be:
 <span class="math">\(Y_{it} = \rho Y_{i,t-1} + \beta X_{it} + \alpha_i + u_{it}\)</span>
 Including lagged outcomes in fixed effects models can create complications, especially when the number of time periods is small. This is known as dynamic panel bias or Nickell bias. The lagged outcome <span class="math">\(Y_{i,t-1}\)</span> is mechanically related to the transformed error term after demeaning. Dynamic panel methods, such as Arellano-Bond estimators, are sometimes used in these settings. But they require additional assumptions and instruments. The key lesson is that fixed effects do not automatically solve dynamic causal problems. When outcomes are persistent and treatment responds to past outcomes, careful modeling of timing and feedback is necessary.</p>
-<hr/>
+
 <h2 id="14-20-fixed-effects-and-staggered-treatment-timing">14.20 Fixed effects and staggered treatment timing</h2>
 <p>Many policies are adopted at different times by different units. For example, states may adopt minimum wage changes, tax reforms, environmental laws, or healthcare expansions in different years. A traditional two-way fixed effects model is:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \beta D_{it} + u_{it}\)</span>
@@ -1356,7 +1357,7 @@ where <span class="math">\(D_{it}\)</span> equals 1 after unit <span class="math
 <blockquote>
 <p>In staggered adoption settings, a two-way fixed effects coefficient may not equal a simple average treatment effect unless treatment effects and timing assumptions are appropriate.</p>
 </blockquote>
-<hr/>
+
 <h2 id="14-21-example-worker-training-and-wages">14.21 Example: worker training and wages</h2>
 <p>Suppose we want to estimate the effect of job training on wages using worker panel data. A pooled regression is:
 <span class="math">\(Wage_{it} = \alpha + \beta Training_{it} + u_{it}\)</span>
@@ -1372,13 +1373,13 @@ This compares each worker's wages in periods with training to that same worker's
 <li>an instrument for training participation</li>
 </ul>
 <p>Fixed effects help, but the causal design still matters.</p>
-<hr/>
+
 <h2 id="14-22-example-firm-technology-adoption-and-productivity">14.22 Example: firm technology adoption and productivity</h2>
 <p>Suppose we study whether adopting a new technology raises firm productivity. A cross-sectional model is:
 <span class="math">\(Productivity_{it} = \alpha + \beta Technology_{it} + u_{it}\)</span> This may be biased because better-managed firms adopt technology earlier and are also more productive. A firm fixed effects model is:
 <span class="math">\(Productivity_{it} = \alpha_i + \lambda_t + \beta Technology_{it} + u_{it}\)</span>
 This controls for stable firm quality and common year shocks. The estimate comes from changes in technology adoption within firms. However, if firms adopt technology when demand is rising, or when they hire new managers, or after receiving investment, then adoption is still endogenous. A credible study might examine whether productivity changes after adoption relative to pre-adoption trends and relative to similar non-adopting firms. It might also use an instrument, such as variation in broadband rollout or technology subsidies, if the assumptions are credible. Again, fixed effects address stable heterogeneity but not all selection into adoption.</p>
-<hr/>
+
 <h2 id="14-23-example-state-policies-and-outcomes">14.23 Example: state policies and outcomes</h2>
 <p>Suppose we estimate the effect of a state policy on employment. A common model is:
 <span class="math">\(Employment_{st} = \alpha_s + \lambda_t + \beta Policy_{st} + u_{st}\)</span> where:</p>
@@ -1403,7 +1404,7 @@ This controls for stable firm quality and common year shocks. The estimate comes
 <li><strong>Treating two-way fixed effects as always valid DiD:</strong> Two-way fixed effects models can be problematic in staggered adoption settings with heterogeneous treatment effects.</li>
 <li><strong>Ignoring standard errors:</strong> Panel data often have serial correlation within units. Standard errors should often be clustered at the unit level or at the level of treatment assignment.</li>
 </ol>
-<hr/>
+
 <p><strong>Application checklist.</strong>
 When using fixed effects or random effects, ask the following questions.</p>
 <ol>
@@ -1481,20 +1482,20 @@ Measurement error occurs when treatment, outcome, or controls are measured with 
 <li><strong>Attrition.</strong>
 Attrition occurs when units leave the sample over time. Attrition threatens internal validity if dropout is related to treatment and potential outcomes. Example: a job training program tracks participants for two years, but low-earning participants are more likely to disappear from the survey. The remaining sample may overstate program success. Attrition is especially important in experiments, panel studies, long-term follow-ups, and program evaluations.</li>
 <li><strong>Noncompliance.</strong>
-Noncompliance occurs when assigned treatment differs from actual treatment received. In an RCT, some people assigned to treatment may not take it up, and some assigned to control may access treatment elsewhere. This creates a distinction between:</li>
-<li>the effect of being assigned treatment</li>
-<li>the effect of actually receiving treatment</li>
+Noncompliance occurs when assigned treatment differs from actual treatment received. In an RCT, some people assigned to treatment may not take it up, and some assigned to control may access treatment elsewhere. This creates a distinction between:<ul class="sub-list"><li>the effect of being assigned treatment</li><li>the effect of actually receiving treatment</li></ul></li>
+
+
 </ul>
 <p>The intent-to-treat effect is often internally valid under random assignment, but it may not equal the effect of actual treatment receipt.</p>
 <ul>
 <li><strong>Spillovers and interference.</strong>
 Spillovers occur when treatment assigned to one unit affects outcomes for other units. In potential outcomes language, this violates no interference. Instead of writing:
 <span class="math">\(Y_i(D_i),\)</span> we may need:
-<span class="math">\(Y_i(D_1,D_2,\dots,D_n).\)</span> Examples:</li>
-<li>job training may help participants compete for jobs, reducing opportunities for nonparticipants</li>
-<li>vaccination protects untreated people through herd immunity</li>
-<li>policing in one neighborhood may displace crime to another</li>
-<li>tutoring one student may affect classmates through peer effects</li>
+<span class="math">\(Y_i(D_1,D_2,\dots,D_n).\)</span> Examples:<ul class="sub-list"><li>job training may help participants compete for jobs, reducing opportunities for nonparticipants</li><li>vaccination protects untreated people through herd immunity</li><li>policing in one neighborhood may displace crime to another</li><li>tutoring one student may affect classmates through peer effects</li></ul></li>
+
+
+
+
 </ul>
 <p>If spillovers contaminate the control group, the estimated treatment effect may be biased.</p>
 <ul>
@@ -2012,7 +2013,7 @@ When evaluating validity, use the following checklist.</p>
 <p>For whom does it work, by how much, under what conditions, and at what cost?</p>
 </blockquote>
 <p>Heterogeneous treatment effects matter for at least five reasons. First, they affect interpretation. An average effect can hide large gains for some groups and losses for others. Second, they affect policy targeting. A program may be worth expanding for one population but not another. Third, they affect external validity. A result from one setting may not generalize if the new setting has a different population mix. Fourth, they affect equity. A policy may improve average outcomes while worsening outcomes for disadvantaged groups, or vice versa. Fifth, they affect welfare analysis. Cost-benefit conclusions can change when effects vary across groups with different needs, costs, or social weights. A rigorous empirical analysis should therefore distinguish between the average effect being estimated and the distribution of effects behind that average.</p>
-<hr/>
+
 <h2 id="16-2-individual-treatment-effects">16.2 Individual treatment effects</h2>
 <p>In the potential outcomes framework, each unit has two potential outcomes under binary treatment:
 <span class="math">\(Y_i(1)\)</span> and:
@@ -2057,7 +2058,7 @@ When evaluating validity, use the following checklist.</p>
 </tbody>
 </table></div>
 <p>The program helps some workers, has no effect on one worker, and harms another worker. The average effect may be positive, but the average does not describe everyone. The fundamental problem is that individual treatment effects are usually not observed. For each unit, we observe only one potential outcome. A treated worker reveals <span class="math">\(Y_i(1)\)</span> but not <span class="math">\(Y_i(0)\)</span>. An untreated worker reveals <span class="math">\(Y_i(0)\)</span> but not <span class="math">\(Y_i(1)\)</span>. Therefore, empirical work usually estimates average treatment effects rather than individual treatment effects.</p>
-<hr/>
+
 <h2 id="16-3-average-treatment-effect-or-ate">16.3 Average Treatment Effect, or ATE</h2>
 <p>The average treatment effect, or ATE, is:
 <span class="math">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> Using linearity of expectation:
@@ -2098,7 +2099,7 @@ When evaluating validity, use the following checklist.</p>
 <p>The ATE is:
 <span class="math">\(ATE = 0.5(4{,}000) + 0.5(-1{,}000) = 1{,}500\)</span>
 The average effect is positive, but the program helps one group and harms another. A policy decision based only on the ATE would miss this distributional structure. The ATE is useful, but it is not always sufficient.</p>
-<hr/>
+
 <h2 id="16-4-average-treatment-effect-on-the-treated-or-att">16.4 Average Treatment Effect on the Treated, or ATT</h2>
 <p>The average treatment effect on the treated, or ATT, is:
 <span class="math">\(ATT = \mathbb{E}[Y_i(1)-Y_i(0) \mid D_i=1]\)</span> The ATT answers:</p>
@@ -2121,7 +2122,7 @@ The average effect is positive, but the program helps one group and harms anothe
 <span class="math">\(ATT &gt; ATE\)</span> But if the program targets the most disadvantaged workers, who face many barriers even after training, then:
 <span class="math">\(ATT &lt; ATE\)</span>
 The ATT is often the most relevant estimand for evaluating an existing program. If a program has already been implemented for a specific group, policymakers may first want to know whether it helped that group. But the ATT does not automatically answer whether the program should be expanded. The effect for current participants may differ from the effect for nonparticipants.</p>
-<hr/>
+
 <h2 id="16-5-average-treatment-effect-on-the-untreated-or-atu">16.5 Average Treatment Effect on the Untreated, or ATU</h2>
 <p>The average treatment effect on the untreated, or ATU, is:
 <span class="math">\(ATU = \mathbb{E}[Y_i(1)-Y_i(0) \mid D_i=0]\)</span> The ATU answers:</p>
@@ -2132,7 +2133,7 @@ The ATT is often the most relevant estimand for evaluating an existing program. 
 <span class="math">\(ATT = \mathbb{E}[Y_i(1)-Y_i(0) \mid D_i=1]\)</span> but also:
 <span class="math">\(ATU = \mathbb{E}[Y_i(1)-Y_i(0) \mid D_i=0]\)</span>
 The ATU can be larger or smaller than the ATT. It may be larger if untreated units have more room to improve. It may be smaller if untreated units face barriers that make the treatment less effective. The distinction between ATT and ATU is crucial for scaling policy. A program that works well for current participants may not work equally well for people who did not originally participate.</p>
-<hr/>
+
 <h2 id="16-6-conditional-average-treatment-effects-or-cates">16.6 Conditional Average Treatment Effects, or CATEs</h2>
 <p>The conditional average treatment effect, or CATE, is:
 <span class="math">\(CATE(x) = \mathbb{E}[Y_i(1)-Y_i(0) \mid X_i=x]\)</span> The CATE answers:</p>
@@ -2187,18 +2188,18 @@ is the average effect for students with low baseline test scores. CATEs are cent
 <li>treatment intensity</li>
 </ul>
 <p>CATEs are useful for targeting, but they must be estimated carefully. Searching across many subgroups can produce false discoveries. Subgroup analysis should be guided by theory, pre-specified hypotheses, and appropriate multiple-testing adjustments when necessary.</p>
-<hr/>
+
 <h2 id="16-7-local-average-treatment-effect-or-late">16.7 Local Average Treatment Effect, or LATE</h2>
 <p>The local average treatment effect, or LATE, appears most often in instrumental variables research. Suppose treatment <span class="math">\(D_i\)</span> is endogenous, and an instrument <span class="math">\(Z_i\)</span> shifts the probability of treatment. Under the standard IV assumptions, including relevance, independence, exclusion, and monotonicity, IV identifies the average treatment effect for compliers. Compliers are units whose treatment status changes because of the instrument. The LATE is:
 <span class="math">\(LATE = \mathbb{E}[Y_i(1)-Y_i(0) \mid \text{complier}]\)</span>
 For example, suppose distance to college is used as an instrument for college attendance. The instrument compares people who attend college because they live near a college with people who would not attend if they lived farther away. The IV estimate does not necessarily identify the effect of college for everyone. It identifies the effect for people whose college attendance is changed by distance. These people are compliers. Similarly, if a draft lottery is used as an instrument for military service, the IV estimate identifies the effect of military service for people whose service status was changed by the lottery. The LATE can differ from the ATE, ATT, and ATU. This is not a flaw by itself. A local effect can be highly valuable if the complier group is policy-relevant. But researchers must be clear about what group the estimate applies to. A common mistake is to interpret an IV estimate as the average effect for everyone. Unless treatment effects are homogeneous, this is usually not justified.</p>
-<hr/>
+
 <h2 id="16-8-treatment-effect-heterogeneity-and-selection-into-treatment">16.8 Treatment effect heterogeneity and selection into treatment</h2>
 <p>Selection into treatment and treatment effect heterogeneity are closely related. People may select into treatment partly because they expect to benefit from it. For example, workers may enroll in job training if they believe it will improve their employment prospects. Students may apply to college if they expect a high return. Firms may adopt technology if they expect productivity gains. Patients may choose a treatment if they expect it to work for their condition. This means treatment status may be related not only to potential outcome levels but also to treatment effects. Formally, selection into treatment may depend on:
 <span class="math">\(Y_i(1)-Y_i(0)\)</span> If individuals select into treatment based on expected gains, then treated units may have larger treatment effects than untreated units:
 <span class="math">\(ATT &gt; ATU\)</span>
 This is sometimes called selection on gains. For example, suppose college attendance is voluntary. Students who expect high returns to college may be more likely to attend. In that case, the average return to college among college attendees may be larger than the average return among non-attendees. Alternatively, treatment may be targeted toward those with the greatest need but not necessarily the highest gains. For example, a remedial education program may target students with low baseline performance. If those students face many barriers, their treatment effects may be smaller or larger depending on the intervention. Selection on gains matters because it affects external validity and policy expansion. If those who choose treatment are those who benefit most, expanding treatment to nonparticipants may yield smaller effects.</p>
-<hr/>
+
 <h2 id="16-9-heterogeneous-effects-and-regression-models">16.9 Heterogeneous effects and regression models</h2>
 <p>A standard linear regression often estimates an average relationship:
 <span class="math">\(Y_i = \alpha + \beta D_i + u_i\)</span>
@@ -2217,7 +2218,7 @@ where <span class="math">\(\tau_i\)</span> varies across units. A regression tha
 <span class="math">\(\beta\)</span> If <span class="math">\(Young_i=1\)</span>, the effect of training is:
 <span class="math">\(\beta + \delta\)</span>
 The interaction coefficient <span class="math">\(\delta\)</span> measures whether the treatment effect differs for young workers relative to older workers. Interactions are useful, but they must be interpreted carefully. A statistically insignificant interaction does not prove effects are homogeneous. The study may simply lack power to detect heterogeneity.</p>
-<hr/>
+
 <h2 id="16-10-subgroup-analysis">16.10 Subgroup analysis</h2>
 <p>Subgroup analysis estimates treatment effects separately for different groups. For example, a researcher might estimate the effect of tutoring separately for:</p>
 <ul>
@@ -2243,7 +2244,7 @@ The interaction coefficient <span class="math">\(\delta\)</span> measures whethe
 <li>humility about exploratory findings.</li>
 </ol>
 <p>Exploratory subgroup analysis can generate hypotheses, but confirmatory claims require stronger evidence.</p>
-<hr/>
+
 <h2 id="16-11-distributional-treatment-effects">16.11 Distributional treatment effects</h2>
 <p>Average effects summarize mean changes. But policies may affect the entire distribution of outcomes. For example, a minimum wage increase may have little effect on average earnings but large effects at the bottom of the wage distribution. A tutoring program may raise low-performing students more than high-performing students. A tax credit may affect low-income households differently from middle-income households. Distributional effects ask how treatment changes the distribution of <span class="math">\(Y\)</span>, not just its mean. One object of interest is the cumulative distribution function under treatment:
 <span class="math">\(F_1(y) = P(Y_i(1) \leq y)\)</span> and without treatment:
@@ -2287,7 +2288,7 @@ The interaction coefficient <span class="math">\(\delta\)</span> measures whethe
 </tbody>
 </table></div>
 <p>The mean effect is the same, but the policy implications differ sharply.</p>
-<hr/>
+
 <h2 id="16-12-dynamic-treatment-effects">16.12 Dynamic treatment effects</h2>
 <p>Treatment effects may vary over time. A program may have small short-run effects and large long-run effects. Another intervention may have immediate effects that fade. Some policies may generate anticipation effects before treatment formally begins. Let <span class="math">\(t\)</span> index time relative to treatment. A dynamic treatment effect can be written as:
 <span class="math">\(\tau_t = \mathbb{E}[Y_{i,t}(1)-Y_{i,t}(0)]\)</span> where <span class="math">\(t=0\)</span> might be the treatment period, <span class="math">\(t=1\)</span> one period after treatment, and so on. Examples:</p>
@@ -2307,7 +2308,7 @@ The interaction coefficient <span class="math">\(\delta\)</span> measures whethe
 <li>whether anticipation effects are possible.</li>
 </ol>
 <p>Event-study designs are often used to study dynamic treatment effects.</p>
-<hr/>
+
 <h2 id="16-13-mechanisms-and-heterogeneous-effects">16.13 Mechanisms and heterogeneous effects</h2>
 <p>Treatment effects may vary because mechanisms differ across groups. For example, job training may affect earnings through several channels:
 <span class="math">\(Training \rightarrow Skills \rightarrow Earnings\)</span>
@@ -2316,7 +2317,7 @@ The interaction coefficient <span class="math">\(\delta\)</span> measures whethe
 Different workers may benefit through different mechanisms. Young workers may benefit because they acquire basic skills. Experienced workers may benefit less from basic training but more from credentialing. Workers in strong labor markets may benefit from job placement, while workers in weak labor markets may not. Understanding mechanisms helps explain heterogeneity. However, mechanism analysis requires caution. If a researcher controls for a mediator, the estimated treatment effect changes meaning. Suppose:
 <span class="math">\(D \rightarrow M \rightarrow Y\)</span>
 where <span class="math">\(D\)</span> is treatment, <span class="math">\(M\)</span> is a mediator, and <span class="math">\(Y\)</span> is the outcome. A regression that controls for <span class="math">\(M\)</span> may estimate a direct effect of <span class="math">\(D\)</span> holding <span class="math">\(M\)</span> fixed, not the total effect of <span class="math">\(D\)</span>. If the goal is to estimate the total effect, controlling for mediators can be a bad control problem. Mechanisms are useful for interpreting heterogeneity, but they should be analyzed with a clear causal model.</p>
-<hr/>
+
 <h2 id="16-14-heterogeneity-and-external-validity">16.14 Heterogeneity and external validity</h2>
 <p>External validity depends heavily on treatment effect heterogeneity. Suppose a tutoring program is tested in one city and produces an average effect of 0.25 standard deviations. Whether that effect generalizes to another city depends on whether the new city has similar students, teachers, schools, implementation quality, baseline achievement, and institutional conditions. If treatment effects are homogeneous, generalization is easier. But if treatment effects vary by context, then the original estimate may not transport directly. Let the effect in setting <span class="math">\(s\)</span> be:
 <span class="math">\(\tau_s = \mathbb{E}[Y_i(1)-Y_i(0) \mid S_i=s]\)</span> An estimate from setting <span class="math">\(s=1\)</span> may not equal the effect in setting <span class="math">\(s=2\)</span>:
@@ -2346,7 +2347,7 @@ where <span class="math">\(D\)</span> is treatment, <span class="math">\(M\)</sp
 <li>Would scaling alter behavior or equilibrium conditions?</li>
 </ol>
 <p>Heterogeneous treatment effects are the bridge between internal validity and external validity.</p>
-<hr/>
+
 <h2 id="16-15-heterogeneity-and-policy-targeting">16.15 Heterogeneity and policy targeting</h2>
 <p>If treatment effects vary, policymakers may want to target treatment toward groups with the largest benefits. Suppose a program costs $2,000 per participant. Estimated treatment effects differ by group:</p>
 <div class="table-wrap"><table class="wide-table">
@@ -2390,7 +2391,7 @@ A student with low predicted achievement may have a large treatment effect if tu
 <blockquote>
 <p>A good prediction model is not automatically a good causal model.</p>
 </blockquote>
-<hr/>
+
 <h2 id="16-17-machine-learning-and-heterogeneous-treatment-effects">16.17 Machine learning and heterogeneous treatment effects</h2>
 <p>Modern empirical work increasingly uses machine learning to estimate heterogeneous treatment effects. Methods include:</p>
 <ul>
@@ -2415,7 +2416,7 @@ These methods can be useful when there are many covariates and complex interacti
 <li>caution about exploratory findings.</li>
 </ol>
 <p>Machine learning can improve estimation of heterogeneity, but it does not replace research design.</p>
-<hr/>
+
 <h2 id="16-18-heterogeneity-in-common-research-designs">16.18 Heterogeneity in common research designs</h2>
 <p>Different research designs estimate different kinds of treatment effects when effects are heterogeneous.</p>
 <ul>
@@ -2436,7 +2437,7 @@ Matching and weighting may estimate ATE, ATT, or ATU depending on how weights ar
 <blockquote>
 <p>When treatment effects are heterogeneous, the research design determines not only whether an estimate is causal but also whose effect it estimates.</p>
 </blockquote>
-<hr/>
+
 <p><strong>Common mistakes.</strong></p>
 <ol>
 <li><strong>Saying “the effect” without specifying the estimand:</strong> A study should state whether it estimates ATE, ATT, ATU, CATE, LATE, a quantile effect, or another estimand. Different estimands answer different questions.</li>
@@ -2447,7 +2448,7 @@ Matching and weighting may estimate ATE, ATT, or ATU depending on how weights ar
 <li><strong>Using post-treatment variables to define subgroups:</strong> Subgroups should usually be defined using pre-treatment variables. If subgroup membership is affected by treatment, subgroup analysis can introduce post-treatment bias.</li>
 <li><strong>Forgetting costs:</strong> The group with the largest treatment effect may not be the group with the largest net benefit if costs differ across groups. Policy targeting should consider both benefits and costs.</li>
 </ol>
-<hr/>
+
 <p><strong>Application checklist.</strong>
 When analyzing heterogeneous treatment effects, ask the following questions.</p>
 <ol>
@@ -2463,7 +2464,7 @@ When analyzing heterogeneous treatment effects, ask the following questions.</p>
 <li><strong>Connect heterogeneity to policy:</strong> Which groups benefit most? Which groups are harmed? How do costs vary? Would targeting improve welfare? Are there equity concerns?</li>
 <li><strong>Assess external validity:</strong> Would the same effects appear in another population, setting, or scale? Are the relevant effect modifiers similar?</li>
 </ol>
-<hr/>
+
 <h2 id="16-19-summary">16.19 Summary</h2>
 <p>Treatment effects are heterogeneous when the effect of treatment differs across units, groups, contexts, or time. The individual treatment effect is:
 <span class="math">\(\tau_i = Y_i(1)-Y_i(0)\)</span> Because individual treatment effects are usually unobserved, researchers estimate average effects. Important estimands include:
@@ -2509,7 +2510,7 @@ These estimands answer different questions. ATE describes the average effect in 
 <p>Statistical significance tells us whether an estimate is distinguishable from a benchmark under a statistical model. Effect size tells us whether the estimate matters.</p>
 </blockquote>
 <p>Both are necessary. Neither is sufficient alone.</p>
-<hr/>
+
 <h2 id="17-2-point-estimates">17.2 Point estimates</h2>
 <p>A point estimate is a single numerical estimate of a parameter. Suppose the causal estimand is the average treatment effect:
 <span class="math">\(ATE = \mathbb{E}[Y_i(1)-Y_i(0)]\)</span> An estimator produces a sample-based estimate:
@@ -2521,7 +2522,7 @@ then the estimated effect is a $2,000 increase in annual earnings. A point estim
 <span class="math">\(\widehat{ATE} = 2{,}000\)</span> with a 95 percent confidence interval:
 <span class="math">\([-3{,}000,\ 7{,}000]\)</span>
 This is a much less precise estimate. The data are consistent with a negative effect, a small positive effect, or a large positive effect. The point estimate is the same in both examples, but the evidence is much stronger in the first. A point estimate should almost never be interpreted without its uncertainty.</p>
-<hr/>
+
 <h2 id="17-3-units-of-measurement">17.3 Units of measurement</h2>
 <p>Effect size depends on the units in which the outcome and treatment are measured. Suppose a coefficient is:
 <span class="math">\(\hat{\beta}=0.05\)</span> This number is meaningless until we know the units. It could mean:</p>
@@ -2548,7 +2549,7 @@ If <span class="math">\(Wage_i\)</span> is measured in dollars per hour and <spa
 <span class="math">\(100\beta\)</span> is approximately the percent change in wages. Thus, if:
 <span class="math">\(\hat{\beta}=0.08\)</span>
 then one additional year of education is associated with approximately an <span class="math">\(8\%\)</span> increase in wages, assuming the estimate is causal. The phrase "assuming the estimate is causal" matters. A coefficient can have a clear unit interpretation without having a causal interpretation.</p>
-<hr/>
+
 <h2 id="17-4-levels-percentages-percentage-points-and-logs">17.4 Levels, percentages, percentage points, and logs</h2>
 <p>Empirical interpretation often goes wrong because people confuse levels, percentages, percentage points, and logs.</p>
 <ul>
@@ -2572,7 +2573,7 @@ Log outcomes are common in economics, especially for wages, income, prices, firm
 <span class="math">\(\hat{\beta}=0.20\)</span> then the approximate percent change is <span class="math">\(20\%\)</span>, but the exact percent change is:
 <span class="math">\(100(e^{0.20}-1)\approx 22.1\%\)</span> For small coefficients, the approximation is close. For larger coefficients, the exact transformation is better.</li>
 </ul>
-<hr/>
+
 <h2 id="17-5-elasticities-and-semi-elasticities">17.5 Elasticities and semi-elasticities</h2>
 <p>Elasticities are common in applied economics because they express effects in proportional terms. An elasticity measures the percent change in <span class="math">\(Y\)</span> associated with a one percent change in <span class="math">\(X\)</span>. Formally:
 <span class="math">\(Elasticity = \frac{\partial Y}{\partial X}\frac{X}{Y}\)</span> In a log-log regression:
@@ -2587,7 +2588,7 @@ in a regression of log quantity demanded on log price, then a <span class="math"
 <span class="math">\(Y_i=\alpha+\beta \log(X_i)+u_i\)</span> then a <span class="math">\(1\%\)</span> increase in <span class="math">\(X\)</span> is associated with an approximate change of:
 <span class="math">\(\frac{\beta}{100}\)</span>
 units of <span class="math">\(Y\)</span>. Elasticities are useful because they are scale-free. They allow comparison across contexts where variables have different units or baseline levels. However, elasticities can hide absolute magnitudes. A large elasticity applied to a small baseline may imply a small absolute effect. A small elasticity applied to a huge baseline may imply a large absolute effect.</p>
-<hr/>
+
 <h2 id="17-6-standardized-effect-sizes">17.6 Standardized effect sizes</h2>
 <p>Some outcomes do not have intuitive natural units. For example:</p>
 <ul>
@@ -2605,7 +2606,7 @@ units of <span class="math">\(Y\)</span>. Elasticities are useful because they a
 <span class="math">\(\frac{\widehat{ATE}}{s_Y}\)</span> For example, if a tutoring program increases test scores by <span class="math">\(8\)</span> points and the standard deviation of test scores is <span class="math">\(40\)</span> points, then the standardized effect is:
 <span class="math">\(\frac{8}{40}=0.20\)</span>
 The effect is <span class="math">\(0.20\)</span> standard deviations. Standardized effects are useful for comparing effects across studies and outcomes. But they also have limitations. First, standard deviations depend on the population. A <span class="math">\(0.20\)</span> standard deviation effect may correspond to different raw score gains in different samples. Second, standardized effects may be less intuitive for policy audiences. Saying a tutoring program raises test scores by <span class="math">\(0.20\)</span> standard deviations may be statistically convenient, but policymakers may also want to know what that means in points, grade levels, graduation rates, or earnings. Third, a standardized effect can look small but still be important if the outcome is consequential and the intervention is cheap. Fourth, standardized effects can look large if the outcome has little variation in the sample. Whenever possible, report both natural units and standardized units.</p>
-<hr/>
+
 <h2 id="17-7-statistical-significance">17.7 Statistical significance</h2>
 <p>Statistical significance asks whether an estimate is sufficiently far from a null hypothesis relative to its estimated sampling uncertainty. A common null hypothesis is:
 <span class="math">\(H_0:\theta=0\)</span> where <span class="math">\(\theta\)</span> is the parameter of interest. Suppose we estimate:
@@ -2624,7 +2625,7 @@ If the absolute value of <span class="math">\(t\)</span> is large enough, we rej
 <li>the policy is worth implementing</li>
 </ul>
 <p>A biased estimate can be statistically significant. A trivial effect can be statistically significant. A non-causal association can be statistically significant. Statistical significance is about precision relative to a benchmark. It is not a substitute for research design, interpretation, or judgment.</p>
-<hr/>
+
 <h2 id="17-8-economic-significance-and-practical-significance">17.8 Economic significance and practical significance</h2>
 <p>Economic significance asks whether an effect is meaningful in economic or policy terms. Practical significance asks whether an effect matters in the real world. These concepts are related but not identical. An effect can be statistically significant but economically small. Example: A massive dataset estimates that a policy increases annual earnings by:
 <span class="math">\(\hat{\theta}=12\)</span>
@@ -2646,7 +2647,7 @@ The estimate may not be statistically significant at the <span class="math">\(5\
 <blockquote>
 <p>Statistical significance is not policy significance.</p>
 </blockquote>
-<hr/>
+
 <h2 id="17-9-standard-errors">17.9 Standard errors</h2>
 <p>A standard error measures the sampling variability of an estimator. If we repeatedly drew samples from the same population and estimated the same parameter, the estimate would vary across samples. The standard error measures the typical size of that variation. For an estimator <span class="math">\(\hat{\theta}\)</span>, the standard error is:
 <span class="math">\(SE(\hat{\theta})\)</span> A smaller standard error means the estimate is more precise. A larger standard error means the estimate is less precise. Standard errors depend on:</p>
@@ -2683,7 +2684,7 @@ SE(\bar{Y}_1-\bar{Y}_0)
 <li><span class="math">\(n_0\)</span> is the number of control observations</li>
 </ul>
 <p>The standard error falls as sample size increases, but it rises when outcomes are more variable. In applied economics, correct standard errors are often as important as point estimates. Incorrect standard errors can make an estimate appear more precise than it really is.</p>
-<hr/>
+
 <h2 id="17-10-confidence-intervals">17.10 Confidence intervals</h2>
 <p>A confidence interval gives a range of parameter values that are compatible with the data under a statistical procedure. A common approximate 95 percent confidence interval is:
 <span class="math">\(\hat{\theta} \pm 1.96 \cdot SE(\hat{\theta})\)</span> For example, suppose:
@@ -2699,7 +2700,7 @@ This interval suggests that the data are consistent with effects between about $
 <blockquote>
 <p>What range of effect sizes is plausible?</p>
 </blockquote>
-<hr/>
+
 <h2 id="17-11-p-values">17.11 P-values</h2>
 <p>A p-value is the probability, under the null hypothesis and statistical model, of obtaining a test statistic at least as extreme as the one observed. If the null hypothesis is:
 <span class="math">\(H_0:\theta=0\)</span> then the p-value measures how surprising the estimate is if the true effect were zero. A small p-value means the estimate would be unlikely under the null hypothesis. But a p-value is often misinterpreted. A p-value is not:</p>
@@ -2712,7 +2713,7 @@ This interval suggests that the data are consistent with effects between about $
 <li>a measure of policy importance</li>
 </ul>
 <p>A p-value depends on both effect size and precision. With a huge sample, a tiny effect can produce a small p-value. With a small sample, a large effect can produce a large p-value. For policy analysis, p-values should be interpreted alongside effect sizes, confidence intervals, design credibility, prior evidence, costs, and decision risks.</p>
-<hr/>
+
 <h2 id="17-12-precision-versus-bias">17.12 Precision versus bias</h2>
 <p>A precise estimate is not necessarily a correct estimate. Precision refers to sampling variability. Bias refers to systematic error. An estimator is biased if, on average, it does not equal the target parameter:
 <span class="math">\(Bias(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta\)</span> An estimate can be:</p>
@@ -2727,7 +2728,7 @@ This interval suggests that the data are consistent with effects between about $
 <p>Standard errors quantify uncertainty from sampling. They do not quantify all uncertainty from identification failure, bad measurement, invalid assumptions, or poor research design.</p>
 </blockquote>
 <p>Researchers often report robustness checks and sensitivity analyses to address uncertainty beyond sampling variability.</p>
-<hr/>
+
 <h2 id="17-13-sampling-uncertainty-versus-design-uncertainty">17.13 Sampling uncertainty versus design uncertainty</h2>
 <p>Statistical uncertainty is usually reported through standard errors and confidence intervals. But empirical economics also involves design uncertainty. Sampling uncertainty asks:</p>
 <blockquote>
@@ -2751,7 +2752,7 @@ This interval suggests that the data are consistent with effects between about $
 <li>triangulation across designs</li>
 </ul>
 <p>A good empirical paper does not only report standard errors. It also argues that the design identifies the intended causal effect.</p>
-<hr/>
+
 <h2 id="17-14-clustering-and-dependence">17.14 Clustering and dependence</h2>
 <p>Many datasets contain observations that are not independent. Examples:</p>
 <ul>
@@ -2771,7 +2772,7 @@ If treatment varies at the unit level over time, researchers may cluster by unit
 <p>Standard errors should reflect the level at which treatment varies and the dependence structure in the data.</p>
 </blockquote>
 <p>Clustering is not only a technical detail. It can change whether estimates appear precise or uncertain.</p>
-<hr/>
+
 <h2 id="17-15-serial-correlation">17.15 Serial correlation</h2>
 <p>Serial correlation occurs when errors are correlated over time. In panel or time-series settings, outcomes often persist. A county with high unemployment this year is likely to have high unemployment next year. A firm with high productivity this year is likely to have high productivity next year. If errors are serially correlated, naive standard errors may be too small. Consider:
 <span class="math">\(Y_{it} = \alpha_i + \lambda_t + \beta D_{it} + u_{it}\)</span> Serial correlation means:
@@ -2786,7 +2787,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 <li>conducting placebo policy timing tests</li>
 </ul>
 <p>The main idea is that repeated observations over time are not automatically independent.</p>
-<hr/>
+
 <h2 id="17-16-power-and-minimum-detectable-effects">17.16 Power and minimum detectable effects</h2>
 <p>Statistical power is the probability of detecting an effect if the effect truly exists. If <span class="math">\(\beta\)</span> denotes the probability of a Type 2 error, then power is:
 <span class="math">\(1-\beta\)</span> A study with low power may fail to detect meaningful effects. Power depends on:</p>
@@ -2807,7 +2808,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 <p>What effect sizes can this study rule out?</p>
 </blockquote>
 <p>If a confidence interval is narrow around zero, the study may rule out large effects. If the confidence interval is wide, the study may be inconclusive.</p>
-<hr/>
+
 <h2 id="17-17-multiple-testing-and-false-discoveries">17.17 Multiple testing and false discoveries</h2>
 <p>When researchers test many hypotheses, some statistically significant results will appear by chance. Suppose a program has no true effect on any outcome, but researchers test <span class="math">\(100\)</span> independent outcomes at the <span class="math">\(5\%\)</span> significance level. Even if all null hypotheses are true, we expect about:
 <span class="math">\(100 \times 0.05 = 5\)</span> statistically significant results by chance. Multiple testing arises when researchers examine:</p>
@@ -2834,7 +2835,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 <li>replication in independent samples</li>
 </ul>
 <p>The issue is not that exploratory analysis is forbidden. Exploration can be valuable. But readers should know whether a result was predicted in advance or discovered after searching through many possible results. A finding discovered through extensive specification search is less credible than the same finding predicted before seeing the data.</p>
-<hr/>
+
 <h2 id="17-18-robustness-and-sensitivity-analysis">17.18 Robustness and sensitivity analysis</h2>
 <p>Robustness analysis asks whether results change under reasonable alternative choices. Examples include changing:</p>
 <ul>
@@ -2863,7 +2864,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 <blockquote>
 <p>What would make this estimate wrong?</p>
 </blockquote>
-<hr/>
+
 <h2 id="17-19-interpreting-zero-and-near-zero-effects">17.19 Interpreting zero and near-zero effects</h2>
 <p>A near-zero estimate can mean several things. It may mean:</p>
 <ol>
@@ -2888,7 +2889,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 - Is the research design credible?
 - Is the sample large enough?</p>
 <p>"Not statistically significant" does not automatically mean "no effect."</p>
-<hr/>
+
 <h2 id="17-20-interpreting-large-effects">17.20 Interpreting large effects</h2>
 <p>Large estimated effects also require scrutiny. A very large estimate may reflect a genuinely large effect. But it may also indicate:</p>
 <ul>
@@ -2916,7 +2917,7 @@ for different time periods <span class="math">\(t\)</span> and <span class="math
 <li>historical evidence</li>
 </ul>
 <p>An estimate should be large enough to matter but not so large that it is mechanically implausible without explanation.</p>
-<hr/>
+
 <h2 id="17-21-effect-sizes-in-common-empirical-designs">17.21 Effect sizes in common empirical designs</h2>
 <p>Different research designs produce effect sizes with different interpretations.</p>
 <ul>
@@ -2959,7 +2960,7 @@ Fixed effects estimates are identified from within-unit changes:
 <blockquote>
 <p>The numerical magnitude of an estimate cannot be interpreted separately from the estimand and the source of identifying variation.</p>
 </blockquote>
-<hr/>
+
 <h2 id="17-22-communicating-effect-sizes">17.22 Communicating effect sizes</h2>
 <p>Good empirical writing translates estimates into meaningful language. Instead of writing only:</p>
 <blockquote>
@@ -3001,7 +3002,7 @@ Fixed effects estimates are identified from within-unit changes:
 <p>The estimated effect of the training offer on annual earnings is $1,200, with a 95 percent confidence interval from $300 to $2,100. Relative to the control-group mean of $30,000, this is a <span class="math">\(4\%\)</span> increase. Because the program costs $900 per participant, the earnings gain is economically meaningful if it persists for more than one year.</p>
 </blockquote>
 <p>This kind of interpretation connects statistical output to substantive meaning.</p>
-<hr/>
+
 <h2 id="17-23-practical-example-tutoring-and-test-scores">17.23 Practical example: tutoring and test scores</h2>
 <p>Suppose a randomized tutoring program estimates:
 <span class="math">\(\widehat{ATE}=0.20\)</span> standard deviations on a math test, with standard error:
@@ -3014,7 +3015,7 @@ This suggests the effect is likely positive and between about <span class="math"
 <span class="math">\(\frac{10}{300}=0.033\)</span> or about <span class="math">\(3.3\%\)</span> of the baseline mean. If the achievement gap between low-income and high-income students is <span class="math">\(40\)</span> points, then the effect closes:
 <span class="math">\(\frac{10}{40}=0.25\)</span>
 or <span class="math">\(25\%\)</span> of the gap. If the tutoring program costs $500 per student, the policy interpretation depends on whether a 10-point gain is worth that cost compared with alternatives. The full interpretation requires effect size, uncertainty, baseline context, distributional context, and cost.</p>
-<hr/>
+
 <h2 id="17-24-practical-example-minimum-wage-and-employment">17.24 Practical example: minimum wage and employment</h2>
 <p>Suppose a difference-in-differences study estimates that a minimum wage increase changes employment by:
 <span class="math">\(\hat{\beta}=-0.015\)</span> where employment is measured as a share of the working-age population. This is a <span class="math">\(1.5\)</span> percentage point decline. If the baseline employment rate is <span class="math">\(60\%\)</span>, the relative decline is:
@@ -3031,7 +3032,7 @@ or <span class="math">\(25\%\)</span> of the gap. If the tutoring program costs 
 <p>The estimate is negative but imprecise. The confidence interval includes economically meaningful employment losses as well as small positive effects. The study does not provide strong evidence of a precise effect in either direction.</p>
 </blockquote>
 <p>Then one would evaluate whether the DiD design is credible: Are pre-trends parallel? Was there anticipation? Were there other simultaneous policy changes? Are standard errors clustered appropriately? Are effects heterogeneous by sector or worker group?</p>
-<hr/>
+
 <h2 id="17-25-practical-example-job-training-and-earnings">17.25 Practical example: job training and earnings</h2>
 <p>Suppose an RCT estimates that a job training program increases annual earnings by:
 <span class="math">\(\widehat{ITT}=1{,}000\)</span> with standard error:
@@ -3042,7 +3043,7 @@ The result is not statistically significant at the <span class="math">\(5\%\)</s
 <span class="math">\(\widehat{TOT} = \frac{\widehat{ITT}}{0.50}\)</span> or:
 <span class="math">\(\widehat{TOT}=2{,}000\)</span>
 This estimate applies to the effect of participation under assumptions similar to IV. It may be more relevant for understanding the program's effect on compliers, but it will also be less precise. The interpretation depends on the estimand.</p>
-<hr/>
+
 <p><strong>Common mistakes.</strong></p>
 <ol>
 <li><strong>Equating statistical significance with importance:</strong> A result can be statistically significant and practically irrelevant. Always ask whether the magnitude matters.</li>
@@ -3057,7 +3058,7 @@ This estimate applies to the effect of participation under assumptions similar t
 <li><strong>Comparing estimates with different estimands:</strong> An RCT estimate of ATE, an IV estimate of LATE, an RD estimate at a cutoff, and a DiD estimate for treated units may not be directly comparable.</li>
 <li><strong>Ignoring multiple testing:</strong> If many outcomes or subgroups were tested, significant findings may be false positives.</li>
 </ol>
-<hr/>
+
 <p><strong>Application checklist.</strong>
 When interpreting an empirical estimate, use the following checklist.</p>
 <ol>
@@ -3084,7 +3085,7 @@ When interpreting an empirical estimate, use the following checklist.</p>
 <li><strong>Consider multiple testing:</strong> Were many outcomes, groups, or specifications tested? Were primary hypotheses specified in advance?</li>
 <li><strong>Interpret in context:</strong> How does the effect compare with other studies? Is the mechanism plausible? Does the estimate generalize? What are the main limitations?</li>
 </ol>
-<hr/>
+
 <h2 id="17-26-summary">17.26 Summary</h2>
 <p>Effect size is about magnitude. It tells us how large an estimated relationship or causal effect is. Statistical significance is about whether an estimate is large relative to its sampling uncertainty. Economic significance is about whether the effect matters in real-world or policy terms. Uncertainty is about the range of values compatible with the data and design. A complete empirical interpretation requires all of these. A point estimate should be interpreted alongside:</p>
 <ul>
@@ -3127,7 +3128,7 @@ When interpreting an empirical estimate, use the following checklist.</p>
 <span class="math">\(H_1: \beta \neq 0\)</span> or one-sided:
 <span class="math">\(H_1: \beta &gt; 0\)</span>
 A two-sided alternative asks whether the effect is different from zero in either direction. A one-sided alternative asks whether the effect is positive. The researcher then uses an estimate <span class="math">\(\hat{\beta}\)</span> and its standard error to decide whether the data are sufficiently inconsistent with the null hypothesis. This decision can be wrong in two main ways: a Type 1 error or a Type 2 error.</p>
-<hr/>
+
 <h2 id="18-2-the-null-hypothesis-and-alternative-hypothesis">18.2 The null hypothesis and alternative hypothesis</h2>
 <p>A hypothesis test begins by defining two competing claims. The <strong>null hypothesis</strong>, denoted <span class="math">\(H_0\)</span>, is the benchmark claim being tested. In empirical economics, it often says there is no effect:
 <span class="math">\(H_0: \beta = 0\)</span> The <strong>alternative hypothesis</strong>, denoted <span class="math">\(H_1\)</span> or <span class="math">\(H_A\)</span>, is the claim considered if the null is rejected:
@@ -3148,7 +3149,7 @@ Null hypothesis:
 <span class="math">\(H_1: \text{Pollution exposure affects respiratory illness.}\)</span>
 The null hypothesis is not necessarily what the researcher believes. It is a reference point for evaluating statistical evidence. A failure to reject the null does not prove the null is true. It only means the data did not provide enough evidence to reject it under the chosen test.</li>
 </ul>
-<hr/>
+
 <h2 id="18-3-type-1-error-false-positive">18.3 Type 1 error: false positive</h2>
 <p>A <strong>Type 1 error</strong> occurs when the researcher rejects the null hypothesis even though the null hypothesis is true. In plain language, it is a false positive. For example:</p>
 <ul>
@@ -3164,7 +3165,7 @@ The null hypothesis is not necessarily what the researcher believes. It is a ref
 <span class="math">\(\alpha = 0.05\)</span>
 <span class="math">\(\alpha = 0.01\)</span>
 The most common convention is <span class="math">\(\alpha = 0.05\)</span>. This means that if the null hypothesis is true and the test is repeated many times under the same conditions, the researcher would incorrectly reject the null about 5 percent of the time. It does <strong>not</strong> mean there is a 5 percent probability that the null hypothesis is true. That is a common misunderstanding. The significance level controls the long-run probability of false rejection under the null. It does not directly give the posterior probability that the hypothesis is true or false.</p>
-<hr/>
+
 <h2 id="18-4-type-2-error-false-negative">18.4 Type 2 error: false negative</h2>
 <p>A <strong>Type 2 error</strong> occurs when the researcher fails to reject the null hypothesis even though the null hypothesis is false. In plain language, it is a false negative. For example:</p>
 <ul>
@@ -3178,7 +3179,7 @@ The most common convention is <span class="math">\(\alpha = 0.05\)</span>. This 
 The probability of a Type 2 error is usually denoted by <span class="math">\(\beta_{II}\)</span> or simply <span class="math">\(\beta\)</span> in hypothesis testing contexts. Because <span class="math">\(\beta\)</span> is also commonly used as a regression coefficient, it is useful to be clear from context. The probability of correctly rejecting a false null is called <strong>statistical power</strong>:
 <span class="math">\(Power = 1 - \beta_{II}\)</span>
 Power is the probability that a test detects an effect if the effect truly exists. A low-powered study may fail to find statistically significant effects even when effects are substantively important. This is crucial in empirical economics. A statistically insignificant estimate does not necessarily mean there is no effect. It may mean the study lacks enough information to distinguish the effect from noise.</p>
-<hr/>
+
 <h2 id="18-5-the-hypothesis-testing-decision-table">18.5 The hypothesis testing decision table</h2>
 <p>The two types of errors can be summarized in a decision table.</p>
 <div class="table-wrap"><table class="three-col">
@@ -3227,20 +3228,20 @@ Power is the probability that a test detects an effect if the effect truly exist
 <p>This table makes clear that statistical testing is not about proving truth with certainty. It is about using a rule that has known error properties under repeated sampling. Both types of errors matter. Which error is more costly depends on the context.</p>
 <ul>
 <li><strong>When Type 1 errors are especially costly.</strong>
-Type 1 errors are especially costly when false positives lead to harmful actions. Examples:</li>
-<li>Implementing an expensive policy that does not work</li>
-<li>Approving a treatment that has no benefit and possible side effects</li>
-<li>Scaling an education program that wastes scarce public funds</li>
-<li>Concluding that a company discriminated when the evidence is actually noise</li>
+Type 1 errors are especially costly when false positives lead to harmful actions. Examples:<ul class="sub-list"><li>Implementing an expensive policy that does not work</li><li>Approving a treatment that has no benefit and possible side effects</li><li>Scaling an education program that wastes scarce public funds</li><li>Concluding that a company discriminated when the evidence is actually noise</li></ul></li>
+
+
+
+
 <li><strong>When Type 2 errors are especially costly.</strong>
-Type 2 errors are especially costly when false negatives prevent beneficial action. Examples:</li>
-<li>Failing to adopt a program that genuinely reduces mortality</li>
-<li>Ignoring a harmful pollutant because the study was underpowered</li>
-<li>Rejecting a tutoring intervention that helps disadvantaged students</li>
-<li>Missing early evidence of a financial risk</li>
+Type 2 errors are especially costly when false negatives prevent beneficial action. Examples:<ul class="sub-list"><li>Failing to adopt a program that genuinely reduces mortality</li><li>Ignoring a harmful pollutant because the study was underpowered</li><li>Rejecting a tutoring intervention that helps disadvantaged students</li><li>Missing early evidence of a financial risk</li></ul></li>
+
+
+
+
 </ul>
 <p>There is often a tradeoff. Lowering the probability of Type 1 errors can increase the probability of Type 2 errors, unless the sample size or information quality increases.</p>
-<hr/>
+
 <h2 id="18-6-significance-levels-and-critical-values">18.6 Significance levels and critical values</h2>
 <p>A hypothesis test requires a decision rule. For a two-sided test of:
 <span class="math">\(H_0: \beta = 0\)</span> we often compute a test statistic:
@@ -3251,7 +3252,7 @@ where <span class="math">\(SE(\hat{\beta})\)</span> is the standard error of the
 <span class="math">\(2.58\)</span> At the 10 percent level, it is approximately:
 <span class="math">\(1.64\)</span>
 These thresholds are conventions. They are not laws of nature. A result with <span class="math">\(p=0.049\)</span> is not fundamentally different from a result with <span class="math">\(p=0.051\)</span>. Treating one as a discovery and the other as no evidence is often misleading. Good empirical interpretation should consider the estimate, standard error, confidence interval, research design, prior evidence, and practical importance, not only whether the p-value crosses a threshold.</p>
-<hr/>
+
 <h2 id="18-7-p-values">18.7 P-values</h2>
 <p>A <strong>p-value</strong> is the probability, under the null hypothesis, of obtaining a test statistic at least as extreme as the one observed. For a two-sided test, the p-value is:
 <span class="math">\(p = P(|T| \geq |t_{obs}| \mid H_0)\)</span>
@@ -3277,7 +3278,7 @@ where <span class="math">\(t_{obs}\)</span> is the observed test statistic. A sm
 <li>ignoring the number of tests conducted.</li>
 </ol>
 <p>A p-value is one piece of evidence. It should not be the entire empirical argument.</p>
-<hr/>
+
 <h2 id="18-8-confidence-intervals-and-hypothesis-tests">18.8 Confidence intervals and hypothesis tests</h2>
 <p>Confidence intervals and hypothesis tests are closely related. A 95 percent confidence interval for <span class="math">\(\beta\)</span> is often written as:
 <span class="math">\(\hat{\beta} \pm 1.96 \times SE(\hat{\beta})\)</span> in large samples. If the 95 percent confidence interval excludes zero, then a two-sided test of:
@@ -3293,7 +3294,7 @@ where <span class="math">\(t_{obs}\)</span> is the observed test statistic. A sm
 <span class="math">\(500 \pm 784\)</span>
 <span class="math">\([-284, 1284]\)</span>
 This interval includes zero, so the estimate is not statistically significant at the 5 percent level. But notice that the point estimate is the same in both cases. The difference is uncertainty. This is why confidence intervals are often more informative than binary significant/not-significant labels. They show the range of effect sizes compatible with the data and model.</p>
-<hr/>
+
 <h2 id="18-9-statistical-power">18.9 Statistical power</h2>
 <p>Statistical power is the probability that a test rejects the null hypothesis when the alternative is true. Formally:
 <span class="math">\(Power = P(\text{Reject } H_0 \mid H_1 \text{ is true})\)</span> If <span class="math">\(\beta_{II}\)</span> is the probability of a Type 2 error, then:
@@ -3313,14 +3314,14 @@ Some designs are less statistically powerful than others. Cluster randomized tri
 <li><strong>6. Significance threshold.</strong>
 A stricter significance threshold lowers Type 1 errors but also lowers power. For example, requiring <span class="math">\(p &lt; 0.01\)</span> instead of <span class="math">\(p &lt; 0.05\)</span> makes it harder to reject the null.</li>
 </ul>
-<hr/>
+
 <h2 id="18-10-minimum-detectable-effects">18.10 Minimum detectable effects</h2>
 <p>The <strong>minimum detectable effect</strong>, or MDE, is the smallest true effect that a study is likely to detect with a given level of power. Power calculations often ask:</p>
 <blockquote>
 <p>Given the sample size, outcome variability, and research design, how large must the true effect be for the study to detect it with high probability?</p>
 </blockquote>
 <p>For example, a study might have 80 percent power to detect an earnings effect of $2,000, but only 30 percent power to detect an effect of $500. If the study finds no statistically significant effect, interpretation depends on the MDE. If the study had enough power to detect even small meaningful effects, then non-significance is more informative. If the study only had enough power to detect very large effects, then non-significance tells us little about moderate or small effects. This distinction matters for policy. A small program evaluation with noisy outcomes might fail to reject the null even if the program is beneficial. Policymakers should not interpret that as proof that the program does not work. A well-powered study with tight confidence intervals around zero provides stronger evidence that large effects are unlikely.</p>
-<hr/>
+
 <h2 id="18-11-low-power-and-exaggerated-significant-findings">18.11 Low power and exaggerated significant findings</h2>
 <p>Low power does not only increase false negatives. It can also make significant estimates unstable and exaggerated. Suppose the true effect is small and the study is noisy. Only estimates that happen to be large in magnitude will cross the statistical significance threshold. As a result, statistically significant estimates from low-powered studies may overstate the true effect. This is sometimes called the <strong>winner's curse</strong> or <strong>exaggeration bias</strong>. For example, suppose a training program truly increases earnings by $500, but the study has large standard errors. Many samples will produce insignificant estimates. The samples that do produce significant estimates may show effects like $2,000 or $3,000 simply because random noise pushed the estimate upward. Therefore, when a small noisy study reports a large significant effect, researchers should ask:</p>
 <ul>
@@ -3331,7 +3332,7 @@ A stricter significance threshold lowers Type 1 errors but also lowers power. Fo
 <li>Were many outcomes or subgroups tested?</li>
 </ul>
 <p>Statistical significance alone is not enough.</p>
-<hr/>
+
 <h2 id="18-12-multiple-testing">18.12 Multiple testing</h2>
 <p>Multiple testing occurs when researchers conduct many hypothesis tests. For example, a researcher may test whether a program affects:</p>
 <ul>
@@ -3360,7 +3361,7 @@ A stricter significance threshold lowers Type 1 errors but also lowers power. Fo
 <li>samples</li>
 </ul>
 <p>The problem becomes especially severe when researchers report only significant results.</p>
-<hr/>
+
 <h2 id="18-13-family-wise-error-rate-and-bonferroni-correction">18.13 Family-wise error rate and Bonferroni correction</h2>
 <p>The <strong>family-wise error rate</strong>, or FWER, is the probability of making at least one Type 1 error within a family of tests. If we conduct <span class="math">\(m\)</span> tests, and each test has significance level <span class="math">\(\alpha\)</span>, the probability of at least one false positive can become much larger than <span class="math">\(\alpha\)</span>. A simple correction is the Bonferroni correction. If the desired family-wise error rate is <span class="math">\(\alpha\)</span>, test each individual hypothesis at:
 <span class="math">\(\frac{\alpha}{m}\)</span> For example, if:
@@ -3368,7 +3369,7 @@ A stricter significance threshold lowers Type 1 errors but also lowers power. Fo
 <span class="math">\(m = 10\)</span> then each test is conducted at:
 <span class="math">\(\frac{0.05}{10} = 0.005\)</span>
 The Bonferroni correction is simple and conservative. It reduces false positives but can increase false negatives, especially when many tests are conducted. This illustrates a general tradeoff: controlling false discoveries more aggressively often reduces power.</p>
-<hr/>
+
 <h2 id="18-14-false-discovery-rate">18.14 False discovery rate</h2>
 <p>The <strong>false discovery rate</strong>, or FDR, is the expected share of rejected hypotheses that are false positives. In plain language:</p>
 <blockquote>
@@ -3382,7 +3383,7 @@ The Bonferroni correction is simple and conservative. It reduces false positives
 <li>adjusting for multiple testing when appropriate</li>
 <li>interpreting exploratory results cautiously</li>
 </ul>
-<hr/>
+
 <h2 id="18-15-p-hacking-and-specification-searching">18.15 P-hacking and specification searching</h2>
 <p><strong>P-hacking</strong> occurs when researchers search across many analyses until they find statistically significant results. This can happen intentionally or unintentionally. Examples include trying many:</p>
 <ul>
@@ -3407,7 +3408,7 @@ The Bonferroni correction is simple and conservative. It reduces false positives
 <li>replication on new data</li>
 </ul>
 <p>P-hacking is not merely a statistical issue. It is a research design and credibility issue.</p>
-<hr/>
+
 <h2 id="18-16-pre-analysis-plans-and-preregistration">18.16 Pre-analysis plans and preregistration</h2>
 <p>A <strong>pre-analysis plan</strong> specifies the main hypotheses, outcomes, sample, empirical strategy, and statistical tests before the researcher analyzes the data. Preregistration records this plan in advance, often in a public or time-stamped registry. Pre-analysis plans are especially common in randomized controlled trials, but the logic can also apply to quasi-experimental studies. A pre-analysis plan may specify:</p>
 <ol>
@@ -3430,7 +3431,7 @@ The Bonferroni correction is simple and conservative. It reduces false positives
 - sample sizes are limited
 - publication incentives favor significant results</p>
 <p>They are less useful when research is genuinely exploratory or when the empirical strategy must respond to complex institutional details. Even then, transparency about analytic choices remains important.</p>
-<hr/>
+
 <h2 id="18-17-the-base-rate-problem-and-false-positives">18.17 The base rate problem and false positives</h2>
 <p>A test with a low Type 1 error rate can still produce many false discoveries if true effects are rare. This is called the base rate problem. Suppose researchers test 1,000 hypotheses. Assume only 100 hypotheses have true effects, and 900 have no true effect. Suppose the test has:
 <span class="math">\(\alpha = 0.05\)</span> and:
@@ -3440,7 +3441,7 @@ The Bonferroni correction is simple and conservative. It reduces false positives
 <span class="math">\(80 + 45 = 125\)</span> The share of significant findings that are false positives is:
 <span class="math">\(\frac{45}{125} = 0.36\)</span>
 So even with a 5 percent significance level and 80 percent power, about 36 percent of significant findings may be false in this example. This happens because true effects are relatively rare. The implication is important: the credibility of a significant result depends not only on its p-value, but also on prior plausibility, study design, power, multiple testing, and replication.</p>
-<hr/>
+
 <h2 id="18-18-statistical-significance-versus-substantive-importance">18.18 Statistical significance versus substantive importance</h2>
 <p>A result can be statistically significant but economically unimportant. For example, suppose a policy increases annual income by:
 <span class="math">\(\hat{\beta} = 12\)</span> with a very small standard error:
@@ -3460,7 +3461,7 @@ This is statistically significant. But a $12 annual income increase may be econo
 <li>How likely are false positives or false negatives?</li>
 </ol>
 <p>Statistical significance is not the same as economic significance.</p>
-<hr/>
+
 <h2 id="18-19-decision-theory-errors-have-costs">18.19 Decision theory: errors have costs</h2>
 <p>Hypothesis testing often treats Type 1 and Type 2 errors symmetrically in form, but their costs may differ greatly. A decision-theoretic approach asks:</p>
 <blockquote>
@@ -3478,7 +3479,7 @@ This is statistically significant. But a $12 annual income increase may be econo
 <li>opportunity costs</li>
 </ul>
 <p>This means that the same p-value may justify different decisions in different contexts. Statistical testing provides evidence. Decision-making requires values, costs, and institutional judgment.</p>
-<hr/>
+
 <h2 id="18-20-bayesian-thinking">18.20 Bayesian thinking</h2>
 <p>Classical hypothesis testing asks:</p>
 <blockquote>
@@ -3506,7 +3507,7 @@ P(\theta \mid Data)
 <li>external data</li>
 </ul>
 <p>A surprising estimate from a weak design may not change beliefs much. A similar estimate from a strong design may change beliefs substantially. Bayesian reasoning also highlights why a p-value is not the probability that the null hypothesis is true. To evaluate that probability, one needs prior beliefs and a model of how likely the data are under competing hypotheses.</p>
-<hr/>
+
 <h2 id="18-21-bayes-factors">18.21 Bayes factors</h2>
 <p>A <strong>Bayes factor</strong> compares how well two hypotheses predict the observed data. For hypotheses <span class="math">\(H_0\)</span> and <span class="math">\(H_1\)</span>, the Bayes factor is:</p>
 <div class="math-block">\[
@@ -3519,7 +3520,7 @@ BF_{10}
 <span class="math">\(BF_{10} &lt; 1\)</span> then the data are more likely under <span class="math">\(H_0\)</span> than under <span class="math">\(H_1\)</span>. For example, if:
 <span class="math">\(BF_{10}=5\)</span>
 then the data are five times as likely under <span class="math">\(H_1\)</span> as under <span class="math">\(H_0\)</span>. Bayes factors are different from p-values. A p-value asks how extreme the data are under the null. A Bayes factor compares the predictive performance of two hypotheses. Bayesian approaches can be especially useful when combining evidence across studies, evaluating policy decisions, or incorporating prior knowledge. However, they require explicit choices about priors and models, which can be controversial. The advantage is transparency: assumptions about prior beliefs are stated directly rather than hidden.</p>
-<hr/>
+
 <h2 id="18-22-frequentist-and-bayesian-approaches-as-complements">18.22 Frequentist and Bayesian approaches as complements</h2>
 <p>Frequentist and Bayesian approaches answer different questions. Frequentist inference emphasizes repeated-sampling properties:</p>
 <ul>
@@ -3547,7 +3548,7 @@ then the data are five times as likely under <span class="math">\(H_1\)</span> a
 <p>This estimate is only marginally significant, but it comes from a well-powered randomized trial, matches prior evidence, and has a plausible mechanism, so it is fairly persuasive.</p>
 </blockquote>
 <p>Again, the interpretation combines statistical evidence, design credibility, and prior beliefs. Good empirical judgment rarely comes from a single number.</p>
-<hr/>
+
 <h2 id="18-23-hypothesis-testing-in-causal-inference">18.23 Hypothesis testing in causal inference</h2>
 <p>Hypothesis testing is useful only after the causal estimand is identified or plausibly identified. A statistically significant coefficient is not necessarily a causal effect. Suppose we estimate:
 <span class="math">\(Wage_i = \alpha + \beta Education_i + u_i\)</span> and find:
@@ -3570,14 +3571,14 @@ This means education is statistically associated with wages, conditional on the 
 - model misspecification
 - external validity concerns</p>
 <p>Therefore, a result can be precisely estimated and still not credible.</p>
-<hr/>
+
 <h2 id="18-24-one-sided-versus-two-sided-tests">18.24 One-sided versus two-sided tests</h2>
 <p>A two-sided test considers effects in both directions:
 <span class="math">\(H_1: \beta \neq 0\)</span> A one-sided test considers effects in one direction:
 <span class="math">\(H_1: \beta &gt; 0\)</span> or:
 <span class="math">\(H_1: \beta &lt; 0\)</span>
 One-sided tests have more power to detect effects in the specified direction, but they ignore effects in the opposite direction. A one-sided test may be appropriate when effects in the opposite direction are impossible or irrelevant. But in many empirical economics settings, effects in both directions are plausible. For example, a job training program might increase earnings by improving skills, but it might reduce earnings in the short run if participants spend less time working. A minimum wage increase might reduce employment, have no effect, or increase employment under some market conditions. Using a one-sided test after seeing the sign of the estimate is inappropriate. The direction must be specified before looking at the data. When in doubt, two-sided tests are usually more transparent.</p>
-<hr/>
+
 <h2 id="18-25-equivalence-testing-and-non-inferiority">18.25 Equivalence testing and non-inferiority</h2>
 <p>Standard hypothesis testing often uses a null of no effect:
 <span class="math">\(H_0: \beta = 0\)</span> But sometimes researchers want to test whether an effect is small enough to be practically unimportant. For example, a policymaker may ask:</p>
@@ -3589,7 +3590,7 @@ One-sided tests have more power to detect effects in the specified direction, bu
 where <span class="math">\(\Delta\)</span> is the smallest effect size that would matter. The goal is to show that the effect lies within this range. Equivalence testing is useful when researchers want to argue that effects are small, not merely statistically insignificant. A non-significant result does not prove the effect is zero. But a sufficiently tight confidence interval around zero can rule out effects large enough to matter. For example, if a minimum wage study estimates:
 <span class="math">\(\hat{\beta} = -0.001\)</span> with confidence interval:
 <span class="math">\([-0.003, 0.002]\)</span> then the study may rule out large employment effects. But if the confidence interval is:
-<span class="math">\([-0.20, 0.18]\)</span> then non-significance tells us little. Equivalence testing forces researchers to define what counts as a meaningful effect.</h2>
+<span class="math">\([-0.20, 0.18]\)</span> then non-significance tells us little. Equivalence testing forces researchers to define what counts as a meaningful effect.
 <h2 id="18-26-application-example-tutoring-program">18.26 Application example: tutoring program</h2>
 <p>Suppose a school district evaluates a tutoring program. The estimated effect on standardized test scores is:
 <span class="math">\(\hat{\beta} = 0.08\)</span> standard deviations, with:
@@ -3616,7 +3617,7 @@ where <span class="math">\(\Delta\)</span> is the smallest effect size that woul
 <span class="math">\(0.08 \pm 0.0784\)</span>
 <span class="math">\([0.0016, 0.1584]\)</span>
 This interval barely excludes zero and includes effects ranging from nearly zero to moderately meaningful. The result is suggestive, but interpretation depends on design quality, multiple testing, prior evidence, and cost-effectiveness.</p>
-<hr/>
+
 <h2 id="18-27-application-example-job-training-program-with-low-power">18.27 Application example: job training program with low power</h2>
 <p>Suppose a job training evaluation estimates:
 <span class="math">\(\hat{\beta} = 1{,}500\)</span> with:
@@ -3633,7 +3634,7 @@ This interval barely excludes zero and includes effects ranging from nearly zero
 <p>The estimate is positive but imprecise. The data do not provide strong evidence of an effect, but they also do not rule out economically important gains.</p>
 </blockquote>
 <p>This distinction is essential. Failure to reject the null is not proof that the null is true.</p>
-<hr/>
+
 <h2 id="18-28-application-example-multiple-outcomes-in-a-policy-evaluation">18.28 Application example: multiple outcomes in a policy evaluation</h2>
 <p>Suppose a researcher evaluates a youth employment program and tests effects on 20 outcomes. The program appears to significantly reduce one outcome: reported anxiety. If anxiety was the only pre-specified primary outcome, this may be meaningful. But if the researcher tested 20 outcomes and only anxiety was significant, the result may be a false positive. At a 5 percent significance level, even if the program has no effect on any outcome, the expected number of significant findings is:
 <span class="math">\(20 \times 0.05 = 1\)</span> So one significant result among 20 tests is not surprising under the global null. The researcher should report:</p>
@@ -3646,7 +3647,7 @@ This interval barely excludes zero and includes effects ranging from nearly zero
 <li>whether the effect replicates in other samples</li>
 </ul>
 <p>Patterns are more persuasive than isolated significant coefficients.</p>
-<hr/>
+
 <p><strong>Common mistakes.</strong></p>
 <ol>
 <li><strong>Saying insignificant means no effect:</strong> A statistically insignificant result means the study did not reject the null. It does not prove the effect is zero. Always inspect the confidence interval.</li>
@@ -3660,7 +3661,7 @@ This interval barely excludes zero and includes effects ranging from nearly zero
 <li><strong>Confusing confidence intervals with probability statements:</strong> A frequentist 95 percent confidence interval does not literally mean there is a 95 percent probability that the true parameter lies in that specific interval. It means that the procedure would cover the true parameter 95 percent of the time over repeated samples under the model assumptions.</li>
 <li><strong>Forgetting decision costs:</strong> The same evidence may justify different decisions depending on the costs of false positives and false negatives.</li>
 </ol>
-<hr/>
+
 <p><strong>Application checklist.</strong>
 When interpreting statistical evidence, ask the following questions.</p>
 <ol>
@@ -3677,7 +3678,7 @@ When interpreting statistical evidence, ask the following questions.</p>
 <li><strong>How does the result fit prior evidence?</strong> Is the result consistent with theory, previous studies, and mechanisms? Is replication available?</li>
 <li><strong>What conclusion is justified?</strong> Avoid binary claims like "works" or "does not work" when uncertainty is substantial. State what the evidence suggests, what it rules out, and what remains uncertain.</li>
 </ol>
-<hr/>
+
 <h2 id="18-29-summary">18.29 Summary</h2>
 <p>Type 1 and Type 2 errors describe two ways empirical conclusions can be wrong. A Type 1 error is a false positive:
 <span class="math">\(\text{Reject } H_0 \text{ when } H_0 \text{ is true.}\)</span> A Type 2 error is a false negative:
@@ -3732,7 +3733,7 @@ P-values measure how surprising the data are under the null hypothesis. They do 
 <p>A policy should be evaluated relative to what would happen without it and relative to other possible uses of the same resources.</p>
 </blockquote>
 <p>Cost-benefit analysis is the framework for making that comparison explicit.</p>
-<hr/>
+
 <h2 id="19-2-the-basic-cost-benefit-framework">19.2 The basic cost-benefit framework</h2>
 <p>The simplest cost-benefit calculation compares total benefits and total costs:
 <span class="math">\(Net\ Benefit = Total\ Benefits - Total\ Costs\)</span> A policy has positive net benefits if:
@@ -3757,7 +3758,7 @@ This suggests the program creates $3,000 of net value per participant. But this 
 <p>The counterfactual remains central. A policy's benefit is not the outcome after the policy. It is the difference between the outcome with the policy and the outcome without the policy. In potential-outcomes language, the benefit of a policy for outcome <span class="math">\(Y\)</span> is based on:
 <span class="math">\(Y_i(1) - Y_i(0)\)</span>
 where <span class="math">\(Y_i(1)\)</span> is the outcome with the policy and <span class="math">\(Y_i(0)\)</span> is the outcome without the policy. Cost-benefit analysis therefore depends on causal inference. If the estimated treatment effect is biased, the benefit calculation will also be biased.</p>
-<hr/>
+
 <h2 id="19-3-benefits-costs-and-the-policy-counterfactual">19.3 Benefits, costs, and the policy counterfactual</h2>
 <p>A benefit is a gain caused by the intervention relative to the counterfactual. A cost is a resource use, loss, or burden caused by the intervention relative to the counterfactual. This means benefits and costs must be measured against the same baseline. Suppose a city implements a tutoring program. After the program, test scores rise. The benefit is not simply the final test score level. The benefit is the improvement relative to what test scores would have been without tutoring. If average test scores rise by 8 points after tutoring, but would have risen by 5 points anyway, the causal gain is:
 <span class="math">\(8 - 5 = 3\)</span>
@@ -3772,39 +3773,39 @@ The benefit calculation should be based on the 3-point causal increase, not the 
 <p>Is this policy better than the counterfactual use of resources?</p>
 </blockquote>
 <p>The counterfactual may be doing nothing, continuing the current policy, implementing a smaller version, implementing a different program, or spending the money elsewhere.</p>
-<hr/>
+
 <h2 id="19-4-private-benefits-fiscal-benefits-and-social-benefits">19.4 Private benefits, fiscal benefits, and social benefits</h2>
 <p>One common mistake is to confuse private benefits, fiscal benefits, and social benefits.</p>
 <ul>
 <li><strong>Private benefits.</strong>
-Private benefits are gains to individuals or firms directly affected by the policy. Examples:</li>
-<li>higher earnings for workers</li>
-<li>higher test scores for students</li>
-<li>better health for patients</li>
-<li>lower energy bills for households</li>
-<li>higher profits for firms</li>
+Private benefits are gains to individuals or firms directly affected by the policy. Examples:<ul class="sub-list"><li>higher earnings for workers</li><li>higher test scores for students</li><li>better health for patients</li><li>lower energy bills for households</li><li>higher profits for firms</li></ul></li>
+
+
+
+
+
 </ul>
 <p>If a job training program increases a participant's annual earnings by $1,000, that is a private benefit to the participant.</p>
 <ul>
 <li><strong>Fiscal benefits.</strong>
-Fiscal benefits are gains to the government budget. Examples:</li>
-<li>higher tax revenue</li>
-<li>lower unemployment insurance payments</li>
-<li>lower Medicaid spending</li>
-<li>lower incarceration costs</li>
-<li>reduced administrative costs</li>
+Fiscal benefits are gains to the government budget. Examples:<ul class="sub-list"><li>higher tax revenue</li><li>lower unemployment insurance payments</li><li>lower Medicaid spending</li><li>lower incarceration costs</li><li>reduced administrative costs</li></ul></li>
+
+
+
+
+
 </ul>
 <p>If higher earnings increase income tax revenue by $200, that is a fiscal benefit to the government.</p>
 <ul>
 <li><strong>Social benefits.</strong>
-Social benefits include all benefits to society, regardless of whether they appear in private income or government budgets. Examples:</li>
-<li>improved health</li>
-<li>reduced crime victimization</li>
-<li>lower pollution exposure</li>
-<li>increased productivity</li>
-<li>reduced inequality</li>
-<li>improved child well-being</li>
-<li>spillover benefits to peers or neighborhoods</li>
+Social benefits include all benefits to society, regardless of whether they appear in private income or government budgets. Examples:<ul class="sub-list"><li>improved health</li><li>reduced crime victimization</li><li>lower pollution exposure</li><li>increased productivity</li><li>reduced inequality</li><li>improved child well-being</li><li>spillover benefits to peers or neighborhoods</li></ul></li>
+
+
+
+
+
+
+
 </ul>
 <p>A policy can have positive social benefits even if fiscal benefits are small. For example, a health intervention may improve quality of life substantially without saving much government money. A policy can also have positive private benefits but limited social benefits if gains are mostly transfers rather than new value creation. For example, if a training program helps participants get jobs by displacing nonparticipants, the private benefits to participants may overstate the social benefits. The analyst must be explicit about the perspective of the analysis. Common perspectives include:</p>
 <ol>
@@ -3815,7 +3816,7 @@ Social benefits include all benefits to society, regardless of whether they appe
 <li>national social welfare perspective.</li>
 </ol>
 <p>The same policy can look different from each perspective.</p>
-<hr/>
+
 <h2 id="19-5-transfers-versus-real-resource-costs">19.5 Transfers versus real resource costs</h2>
 <p>A transfer moves resources from one group to another. A real resource cost uses up resources that could have been used elsewhere. This distinction matters because not every dollar paid is a social cost. For example, suppose the government gives a $1,000 cash transfer to a household. From the government's budget perspective, the payment is a cost. From the household's perspective, it is a benefit. From a social perspective, the transfer itself is not necessarily a net resource cost because money moved from taxpayers to the household. However, transfers can still matter for social welfare because society may value dollars differently depending on who receives them. A dollar transferred to a low-income household may have higher social value than a dollar taken from a high-income taxpayer. This is a distributional issue. Real resource costs include:</p>
 <ul>
@@ -3841,7 +3842,7 @@ Social benefits include all benefits to society, regardless of whether they appe
 <p>Transfers are not irrelevant. They matter for budgets, incentives, and distribution. But analysts should not automatically treat every transfer as a net social cost. For example, consider an unemployment benefit program. Government payments to recipients are fiscal costs, but they are private benefits to recipients. The social cost includes administrative costs, financing distortions, and behavioral responses, while the social benefit includes consumption smoothing, reduced hardship, and insurance value. A rigorous cost-benefit analysis separates:</p>
 <span class="math">\(Fiscal\ Cost\)</span> from:
 <span class="math">\(Social\ Resource\ Cost\)</span> and from:
-<span class="math">\(Distributional\ Transfer\)</span></h2>
+<span class="math">\(Distributional\ Transfer\)</span>
 <h2 id="19-6-opportunity-cost">19.6 Opportunity cost</h2>
 <p>Opportunity cost is the value of the best alternative use of a resource. A policy does not only cost the dollars spent on it. It also costs the value of what those dollars, workers, buildings, or time could have produced elsewhere. For example, if a government spends $100 million on a job training program, the opportunity cost is not merely $100 million. It is the value of the best alternative use of that $100 million, such as:</p>
 <ul>
@@ -3863,7 +3864,7 @@ Ignoring participant time can make programs look more cost-effective than they r
 <blockquote>
 <p>Choose the feasible policy or portfolio of policies with the highest net social value, subject to constraints.</p>
 </blockquote>
-<hr/>
+
 <h2 id="19-7-discounting-and-present-value">19.7 Discounting and present value</h2>
 <p>Many policies have costs and benefits that occur at different times. For example:</p>
 <ul>
@@ -3899,7 +3900,7 @@ PV(Benefits)
 <p>This equals approximately $2,598. The net present value is approximately:
 <span class="math">\(NPV = 2{,}598 - 2{,}000 = 598\)</span>
 Under these assumptions, the program has positive net present value. But if the benefits last only two years, the present value is much smaller. If the discount rate is higher, future benefits count less. If the earnings gain is uncertain, the expected value may be lower. Discounting forces the analyst to be explicit about timing.</p>
-<hr/>
+
 <h2 id="19-8-choosing-a-discount-rate">19.8 Choosing a discount rate</h2>
 <p>The discount rate can strongly affect policy conclusions, especially for policies with long-term benefits. A higher discount rate places less value on future benefits. A lower discount rate places more value on future benefits. This matters for policies such as:</p>
 <ul>
@@ -3919,7 +3920,7 @@ Under these assumptions, the program has positive net present value. But if the 
 The same future benefit looks much smaller under a higher discount rate. There is no purely mechanical answer to the correct discount rate. The choice depends on theory, opportunity cost of capital, social time preference, risk, intergenerational ethics, and institutional guidance. Because conclusions may be sensitive to the discount rate, good cost-benefit analysis reports results under multiple rates. For example:
 <span class="math">\(NPV(r=0.02), \quad NPV(r=0.03), \quad NPV(r=0.05), \quad NPV(r=0.07)\)</span>
 This is a form of sensitivity analysis. The analyst should not hide the role of discounting. If a policy is valuable only under very low discount rates, that should be made clear. If it remains valuable under a wide range of rates, that strengthens the policy case.</p>
-<hr/>
+
 <h2 id="19-9-benefit-cost-ratio-and-internal-rate-of-return">19.9 Benefit-cost ratio and internal rate of return</h2>
 <p>Two common summary measures are the benefit-cost ratio and the internal rate of return. The benefit-cost ratio is:
 <span class="math">\(BCR = \frac{PV(Benefits)}{PV(Costs)}\)</span> If:
@@ -3941,7 +3942,7 @@ A project with a high benefit-cost ratio may be small and produce little total v
 <li>distribution of benefits and costs,</li>
 <li>uncertainty around all estimates.</li>
 </ol>
-<hr/>
+
 <h2 id="19-10-cost-effectiveness-analysis">19.10 Cost-effectiveness analysis</h2>
 <p>Sometimes benefits are difficult or inappropriate to monetize. In those cases, analysts may use cost-effectiveness analysis rather than full cost-benefit analysis. Cost-effectiveness analysis asks:</p>
 <blockquote>
@@ -3973,7 +3974,7 @@ Cost\ per\ Additional\ Passing\ Student
 \frac{Cost_C}{Graduates_C}
 \]</div>
 <p>The lowest cost per additional graduate may be the most efficient option, assuming the graduates are comparable and the effects are causal. However, cost-effectiveness analysis does not answer whether the outcome is worth its cost in monetary terms. It helps rank alternatives but does not always determine whether any of them should be implemented.</p>
-<hr/>
+
 <h2 id="19-11-valuing-non-market-benefits">19.11 Valuing non-market benefits</h2>
 <p>Many policy benefits are not naturally measured in dollars. Examples include:</p>
 <ul>
@@ -4013,7 +4014,7 @@ The value of a statistical life, or VSL, is used to value small reductions in mo
 <span class="math">\(1{,}000{,}000 \times \frac{1}{100{,}000} = 10\)</span> If the VSL is $10 million, the mortality benefit is:
 <span class="math">\(10 \times 10{,}000{,}000 = 100{,}000{,}000\)</span> These valuation choices can have large effects on conclusions, so they should be transparent and tested for sensitivity.</li>
 </ul>
-<hr/>
+
 <h2 id="19-12-spillovers-and-externalities">19.12 Spillovers and externalities</h2>
 <p>A policy may affect people who are not directly treated. These indirect effects are called spillovers or externalities. Examples:</p>
 <ul>
@@ -4036,7 +4037,7 @@ If spillovers are positive, direct effects understate total benefits. If spillov
 <li>Do effects change when the policy scales up?</li>
 <li>Are equilibrium responses likely?</li>
 </ol>
-<hr/>
+
 <h2 id="19-13-general-equilibrium-and-scale-up-effects">19.13 General equilibrium and scale-up effects</h2>
 <p>Small-scale program effects may differ from large-scale policy effects. This is especially important in economics because markets adjust. A small job training program may increase participants' employment because trained workers become more attractive to employers. But if the program is expanded to all workers, the relative advantage of training may decline. Wages, vacancies, credentials, and employer expectations may adjust. A small housing voucher program may help recipients move to better neighborhoods. But a large program may raise rents if housing supply is limited. A local minimum wage increase may have different effects from a national minimum wage increase because firms, workers, and consumers can adjust across locations. A small education intervention may improve outcomes when implemented by highly motivated teachers. At scale, implementation quality may fall. These are scale-up concerns. A treatment effect estimated in one setting is often a partial-equilibrium effect. It holds fixed many background conditions. A scaled policy may change those background conditions. We can distinguish:
 <span class="math">\(Small\ Scale\ Effect\)</span> from:
@@ -4057,7 +4058,7 @@ If spillovers are positive, direct effects understate total benefits. If spillov
 <blockquote>
 <p>Would the estimated effect survive implementation at the relevant scale?</p>
 </blockquote>
-<hr/>
+
 <h2 id="19-14-distributional-analysis">19.14 Distributional analysis</h2>
 <p>Total net benefits are not the only thing policymakers care about. Distribution matters. A policy with positive total net benefits may hurt disadvantaged groups. A policy with modest aggregate benefits may be attractive if it strongly helps people with low income, poor health, or limited opportunities. Cost-benefit analysis can incorporate distribution in several ways.</p>
 <ul>
@@ -4117,7 +4118,7 @@ Distributional analysis also requires knowing whether treatment effects differ a
 <blockquote>
 <p>Who gains, who loses, and by how much?</p>
 </blockquote>
-<hr/>
+
 <h2 id="19-15-uncertainty-in-cost-benefit-analysis">19.15 Uncertainty in cost-benefit analysis</h2>
 <p>Cost-benefit analysis often depends on uncertain inputs:</p>
 <ul>
@@ -4151,7 +4152,7 @@ Break-even analysis asks how large the effect must be for benefits to equal cost
 If the estimated effect exceeds <span class="math">\(\tau^{*}\)</span>, the program may pass the cost-benefit test. For example, if a program costs $2,000 and each additional employed worker-year is valued at $10,000, the break-even effect is:
 <span class="math">\(\tau^{*} = \frac{2{,}000}{10{,}000} = 0.20\)</span> The program must increase employment by at least 0.20 worker-years per participant to break even. Break-even analysis is useful when benefits are uncertain or difficult to value precisely.</li>
 </ul>
-<hr/>
+
 <h2 id="19-16-sensitivity-analysis">19.16 Sensitivity analysis</h2>
 <p>Sensitivity analysis asks whether conclusions change when assumptions change. This is essential because cost-benefit analysis often requires assumptions that are not directly testable. Common sensitivity checks include varying:</p>
 <ul>
@@ -4204,7 +4205,7 @@ If the estimated effect exceeds <span class="math">\(\tau^{*}\)</span>, the prog
 </tbody>
 </table></div>
 <p>The purpose is not to create complexity for its own sake. The purpose is to reveal which assumptions drive the conclusion. A strong cost-benefit case is robust across plausible assumptions. A fragile cost-benefit case depends on optimistic assumptions.</p>
-<hr/>
+
 <h2 id="19-17-program-evaluation-as-a-complete-framework">19.17 Program evaluation as a complete framework</h2>
 <p>Cost-benefit analysis is one part of broader program evaluation. A complete program evaluation usually asks several linked questions.</p>
 <ul>
@@ -4227,14 +4228,14 @@ Earnings
 <p>The theory of change helps identify what should be measured.</p>
 <ul>
 <li><strong>3. Implementation analysis.</strong>
-Was the program delivered as intended? Common implementation questions include:</li>
-<li>Did eligible people know about the program?</li>
-<li>Did they enroll?</li>
-<li>Did they complete it?</li>
-<li>Was quality consistent?</li>
-<li>Were services delivered on time?</li>
-<li>Did staff have adequate training?</li>
-<li>Were there bottlenecks?</li>
+Was the program delivered as intended? Common implementation questions include:<ul class="sub-list"><li>Did eligible people know about the program?</li><li>Did they enroll?</li><li>Did they complete it?</li><li>Was quality consistent?</li><li>Were services delivered on time?</li><li>Did staff have adequate training?</li><li>Were there bottlenecks?</li></ul></li>
+
+
+
+
+
+
+
 </ul>
 <p>A program may fail because the theory was wrong or because implementation failed.</p>
 <ul>
@@ -4249,7 +4250,7 @@ Who benefited? Who paid? Were disadvantaged groups helped? Did inequality rise o
 <li><strong>8. Scalability analysis.</strong>
 Would the program work at larger scale? Would costs rise? Would effects shrink? Would general equilibrium responses appear? A strong evaluation does not only estimate an effect. It explains what happened, why it happened, for whom, at what cost, and whether the policy should be continued, expanded, redesigned, or ended.</li>
 </ul>
-<hr/>
+
 <h2 id="19-18-example-job-training-program">19.18 Example: job training program</h2>
 <p>Suppose a government evaluates a job training program for unemployed workers. An impact evaluation estimates that the program increases annual earnings by:
 <span class="math">\(\hat{\tau} = 1{,}200\)</span> per participant for three years. The program costs:
@@ -4299,7 +4300,7 @@ The program may have larger effects for workers without high school degrees and 
 <p>The program should not be expanded universally, but it may be cost-effective for specific groups with high estimated gains and low opportunity costs.</p>
 </blockquote>
 <p>This example shows why cost-benefit analysis must go beyond multiplying a treatment effect by a dollar value.</p>
-<hr/>
+
 <h2 id="19-19-example-early-childhood-education">19.19 Example: early childhood education</h2>
 <p>Early childhood education programs often have costs today and benefits far in the future. Potential benefits include:</p>
 <ul>
@@ -4331,7 +4332,7 @@ The program may have larger effects for workers without high school degrees and 
 <blockquote>
 <p>Long-run cost-benefit analysis requires both credible causal estimates and credible assumptions about how short-run effects translate into long-run outcomes.</p>
 </blockquote>
-<hr/>
+
 <h2 id="19-20-example-environmental-regulation">19.20 Example: environmental regulation</h2>
 <p>Suppose a regulation reduces air pollution. Costs may include:</p>
 <ul>
@@ -4365,7 +4366,7 @@ The program may have larger effects for workers without high school degrees and 
 <li>long-run technological adaptation</li>
 </ul>
 <p>Environmental policy evaluation often highlights the importance of non-market valuation, long horizons, uncertainty, and distributional justice.</p>
-<hr/>
+
 <p><strong>Common mistakes in cost-benefit analysis.</strong></p>
 <ol>
 <li><strong>Treating causal effects as benefits without monetization or context:</strong> An effect estimate is not yet a benefit estimate. A test-score gain, crime reduction, employment increase, or health improvement must be interpreted, valued, and compared to costs.</li>
@@ -4379,7 +4380,7 @@ The program may have larger effects for workers without high school degrees and 
 <li><strong>Double-counting benefits:</strong> Some benefits overlap. For example, higher earnings, higher tax revenue, and reduced welfare use are related. Counting all incorrectly can overstate benefits.</li>
 <li><strong>Ignoring uncertainty in causal estimates:</strong> If the treatment effect is uncertain, the benefits are uncertain. Cost-benefit analysis should reflect that uncertainty.</li>
 </ol>
-<hr/>
+
 <p><strong>Application checklist.</strong>
 When evaluating a policy using cost-benefit analysis, use the following checklist.</p>
 <ol>
@@ -4437,7 +4438,7 @@ When evaluating a policy using cost-benefit analysis, use the following checklis
 </blockquote>
 </li>
 </ol>
-<hr/>
+
 <h2 id="19-21-summary">19.21 Summary</h2>
 <p>Causal inference estimates what happens when we intervene. Cost-benefit analysis asks whether the intervention is worth doing. The basic framework is:
 <span class="math">\(Net\ Benefit = Total\ Benefits - Total\ Costs\)</span> When benefits and costs occur over time, analysts use present values:
@@ -4456,7 +4457,6 @@ A policy is attractive if it generates positive net benefits relative to feasibl
 <blockquote>
 <p>A credible causal estimate tells us what a policy changes. A credible cost-benefit analysis tells us whether those changes justify the resources used, relative to the best alternative.</p>
 </blockquote>
-
-    </main>
-  </body>
+</main>
+</body>
 </html>
