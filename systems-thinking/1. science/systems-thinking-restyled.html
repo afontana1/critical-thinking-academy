@@ -1,49 +1,546 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Systems Science</title>
 <style>
-.table-of-contents {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0 2rem;
-  background: #fafafa;
-}
-.table-of-contents h2 {
-  margin-top: 0;
-}
-.table-of-contents ul {
-  margin-bottom: 0;
-}
-.image-placeholder {
-  border: 2px dashed #aaa;
-  border-radius: 8px;
-  padding: 1rem;
-  margin: 1.25rem 0;
-  background: #f8f8f8;
-  font-style: italic;
-}
-math[display="block"] {
-  display: block;
-  overflow-x: auto;
-  margin: 1rem 0;
-}
-pre, code {
-  white-space: pre-wrap;
-}
-blockquote {
-  border-left: 4px solid #ddd;
-  margin-left: 0;
-  padding-left: 1rem;
-}
-</style>
-</head>
-<body>
-<article class="blog-post">
+/* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
 
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+      /* Article-specific refinements */
+      .ep-post {
+        --ep-line: color-mix(in srgb, currentColor 18%, transparent);
+        --ep-soft: color-mix(in srgb, currentColor 6%, transparent);
+        --ep-soft-strong: color-mix(in srgb, currentColor 10%, transparent);
+      }
+
+      .ep-post > p:first-child {
+        font-size: 1.08em;
+        line-height: 1.75;
+        margin-top: 0;
+      }
+
+      .ep-post .table-of-contents {
+        margin: 1.75em 0 2.25em;
+        padding: 1.1em 1.25em;
+        border: 1px solid var(--ep-line);
+        border-radius: 0.8rem;
+        background: var(--ep-soft);
+      }
+
+      .ep-post .table-of-contents h2 {
+        margin: 0 0 0.7em;
+        padding: 0;
+        border: 0;
+        font-size: 1.05rem;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+      }
+
+      .ep-post .table-of-contents ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        gap: 0.4em 1.4em;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .ep-post .table-of-contents li {
+        margin: 0;
+      }
+
+      .ep-post .table-of-contents a {
+        display: block;
+        padding: 0.28em 0;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+
+      .ep-post .table-of-contents a:hover {
+        border-bottom-color: currentColor;
+      }
+
+      .ep-post figure {
+        margin: 1.5em auto 2em;
+        width: 100%;
+        max-width: 760px;
+      }
+
+      .ep-post .image-placeholder {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        font-style: normal;
+        overflow: hidden;
+      }
+
+      .ep-post .image-placeholder .separator,
+      .ep-post figure a {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        justify-content: center;
+      }
+
+      .ep-post figure img {
+        display: block;
+        width: auto !important;
+        max-width: 88%;
+        height: auto !important;
+        margin: 0 auto;
+        border-radius: 0;
+        object-fit: contain;
+      }
+
+      .ep-post .image-placeholder br {
+        display: none;
+      }
+
+      .ep-post figcaption {
+        margin-top: 0.6em;
+        font-size: 0.88em;
+        text-align: center;
+        opacity: 0.78;
+      }
+
+      .ep-post h2[id],
+      .ep-post h3[id],
+      .ep-post h4[id] {
+        scroll-margin-top: 1.5rem;
+      }
+
+      .ep-post hr {
+        border: 0;
+        border-top: 1px solid var(--ep-line);
+        margin: 2em 0;
+      }
+
+      .ep-post math[display="block"],
+      .ep-post .math-block {
+        display: block;
+        overflow-x: auto;
+        margin: 1em 0;
+        padding: 0.7em 0;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post {
+          --ep-line: rgba(128, 128, 128, 0.28);
+          --ep-soft: rgba(128, 128, 128, 0.07);
+          --ep-soft-strong: rgba(128, 128, 128, 0.12);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .ep-post .table-of-contents ul {
+          grid-template-columns: 1fr;
+        }
+
+        .ep-post .image-placeholder {
+          padding: 0;
+          border-radius: 0;
+        }
+
+        .ep-post figure img {
+          max-width: 96%;
+        }
+      }
+
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<div class="ep-post">
 <p>When asking ourselves “What is Systems Thinking”, we may naturally wonder “what is a system?” That is a good starting point. We need a clear understanding of what a system is before exploring how to “think” in systems. Luckily, in George Mobus’s “Systems Science: Theory, Analysis, Modeling, and Design”, he provides a formal definition that I find extremely useful, that can be used to establish a starting point for understanding all kinds of systems. “Systems Science” is the attempt at forming a meta-science; establishing principles and methods that apply to all sub-domains of science. The idea is that this definition can catpure every aspect of a system from biological, social, physical, socio-technical, or engineered.</p>
 <nav aria-label="Table of contents" class="table-of-contents"><h2>Table of Contents</h2><ul><li><a href="#principles">Principles</a></li><li><a href="#systems-ontology">Systems Ontology</a></li><li><a href="#system-definition">System Definition</a></li><li><a href="#summary">Summary</a></li></ul></nav><h2 id="principles">Principles</h2>
 <p>In order to understand systems in nature and engineered systems, you need to understand the principles that underlie all systems. Each principle can be activated at different times or for different systems. Mobus identifies 12 principles that are basic and apply variously across all systems.</p>
@@ -63,8 +560,7 @@ blockquote {
 </ol>
 <p>We will explore each of these in depth. Below is a diagram representing how the principles relate:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="principles" data-image-src="principles.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>principles — principles.png</span></div>
-<figcaption aria-hidden="true">principles</figcaption>
+<div class="image-placeholder" data-image-alt="principles" data-image-src="principles.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgwXL3xWWFunvZRrGUBxNang7VQbsca8t9Xh0LHTOHRinpwdcSWdoy9aJdz531_uVyl0x71gLN-bsxtZUSIG_iemORvPaFd1N5Jq4Cjl_eEdiOK3Jzs2YbrnffWIpmKCpScL3eVqunOFla4b1up-j2XA-F3QXb7OU-YrDJLyES2SO96QgRL6i9Kp2B8N-sS" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="480" data-original-width="647" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEgwXL3xWWFunvZRrGUBxNang7VQbsca8t9Xh0LHTOHRinpwdcSWdoy9aJdz531_uVyl0x71gLN-bsxtZUSIG_iemORvPaFd1N5Jq4Cjl_eEdiOK3Jzs2YbrnffWIpmKCpScL3eVqunOFla4b1up-j2XA-F3QXb7OU-YrDJLyES2SO96QgRL6i9Kp2B8N-sS=w400-h297"/></a></div></div>
 </figure>
 <p>In Principles of Systems Science, Mobus applies these principles to the case of drug resistant TB. It’s a great example because it shows that its a multi-faceted issue where multiple perspectives need to interesct to solve the problem. It spans multiple systems (biological, social, economic, health), and is therefore in the interest of researchers in each of these domains. I’ll provide descriptions of this case in the sections below:</p>
 <h3 id="principle-1-systemness">Principle 1: Systemness</h3>
@@ -73,26 +569,22 @@ blockquote {
 <h3 id="principle-2-systems-are-processes-organized-in-structural-and-functional-hierarchies">Principle 2: Systems Are Processes Organized in Structural and Functional Hierarchies</h3>
 <p>Mobus pushes a strong claim: system and process are “essentially synonymous” because components and interactions only exist as activities unfolding in time. He then emphasizes hierarchy as a near-universal architecture for managing complexity: lower levels contain many simpler, faster-changing components; higher levels are made of subsystems with stronger internal interactions and some kind of boundary. Functional hierarchies track the same architecture: “work” gets organized across layers. An example of this recursive hierarchy can be seen in the image below:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="hierarchy" data-image-src="hierarchy.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>hierarchy — hierarchy.png</span></div>
-<figcaption aria-hidden="true">hierarchy</figcaption>
+<div class="image-placeholder" data-image-alt="hierarchy" data-image-src="hierarchy.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiJDgVUh_L2nYtZj_1aFm4VvI_rKGX3-mKNFPvi_43quAyF1RFF3tSnP5kODIPADPO_n7Cdh0T73AMPk6L_BdbYVJiGAki__uko82l6Q26wYQHTxpHOiycOo8l3tMilIUsoQLlRXyhE_RPOoSThpoy-bO7ZznnITT3FiJTjU0C_bhwMvMQylci7QsP_9pD9" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="666" data-original-width="1000" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEiJDgVUh_L2nYtZj_1aFm4VvI_rKGX3-mKNFPvi_43quAyF1RFF3tSnP5kODIPADPO_n7Cdh0T73AMPk6L_BdbYVJiGAki__uko82l6Q26wYQHTxpHOiycOo8l3tMilIUsoQLlRXyhE_RPOoSThpoy-bO7ZznnITT3FiJTjU0C_bhwMvMQylci7QsP_9pD9=w418-h278"/></a></div></div>
 </figure>
 <p>In this example, the “health system” can be decomposed into functional sub-units that, when combined and organized in various ways, yield the behaviors we associate with “the health system”. Another example below is of a “complex adaptive system”:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="nested" data-image-src="cas-nested-hierarchy.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>nested — cas-nested-hierarchy.png</span></div>
-<figcaption aria-hidden="true">nested</figcaption>
+<div class="image-placeholder" data-image-alt="nested" data-image-src="cas-nested-hierarchy.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhQbQSMRpgtSQGXRw5xpN-qkK5jo-7wwXri_BpqEeCrm4LPqF8hQy5arkStnmxotdj-IRMLZNqyT-y6XkTMdYxO_PCm0QOiF5VILE83sKiribTiC4xWSVJh9V497lopq4uNJkmkybP9Iv08ZWt72ZARelyxHM8gNwfkPsQ5Eq1fKRA1gE3W80f7VdXHSum7" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="868" data-original-width="850" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEhQbQSMRpgtSQGXRw5xpN-qkK5jo-7wwXri_BpqEeCrm4LPqF8hQy5arkStnmxotdj-IRMLZNqyT-y6XkTMdYxO_PCm0QOiF5VILE83sKiribTiC4xWSVJh9V497lopq4uNJkmkybP9Iv08ZWt72ZARelyxHM8gNwfkPsQ5Eq1fKRA1gE3W80f7VdXHSum7=w322-h329"/></a></div><br/></div>
 </figure>
-<p>A complex adaptive system has a nested hierarchical network structure, which emerges from the bottom-up selforganisation of many interacting agents, endowed with indeterminate dynamics and adaptability. <a href="https://www.researchgate.net/publication/369971412_The_evolution_and_impacts_of_'complexity_notions'_in_landscape_architecture">source</a></p>
+<p>A complex adaptive system has a nested hierarchical network structure, which emerges from the bottom-up selforganisation of many interacting agents, endowed with indeterminate dynamics and adaptability. <a href="https://www.researchgate.net/publication/369971412_The_evolution_and_impacts_of_'complexity_notions'_in_landscape_architecture" rel="noopener noreferrer">source</a></p>
 <p>Mobus pushes you to view TB not just as an “enemy microbe,” but as something embedded in the <em>process hierarchies</em> of living systems. At the biological level he emphasizes that humans are already ecosystems of microbes; antibiotics disrupt multiple processes (e.g., gut bacteria), reframing “side effects” as consequences of intervening in a process-network. Then he climbs the hierarchy: TB’s meaning changes when you shift from microbes/metabolism to persons-in-families-in-communities, where communicability reshapes everyday contact, fear, and social dynamics. He uses this to motivate questions about immune-system “discernment,” training (resistance), vaccination, and how social conditions shape treatment completion and resistance.</p>
 <h3 id="principle-3-systems-are-networks-of-relations-among-components-and-can-be-represented-abstractly-as-such-networks-of-relations">Principle 3: Systems Are Networks of Relations Among Components and Can Be Represented Abstractly as Such Networks of Relations</h3>
 <p>This was obviously alluded to in the last principle. A system is a network: components linked by relations/flows. Mobus highlights that network representations (graph theory, flow networks, etc.) give formal tools for revealing properties that casual observation misses. This principle also bridges to modeling (#9/#11): you can represent systems with other systems (mental or abstract) partly because networks are representable. Mobus provides two examples of network/graphical representations. The first is a network with a hub:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="hub" data-image-src="hub.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>hub — hub.png</span></div>
-<figcaption aria-hidden="true">hub</figcaption>
+<div class="image-placeholder" data-image-alt="hub" data-image-src="hub.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgR7-zQ3-RSbL6-hvf9Bv-IrzNSJj0qivgXmApWdA_pn2B1GumuGPWhAwI1GNrygeQabGR1VbX-rOzVYE4XQBIstow9IWykX1Xsk1obr8kOl4gU2a6hJfZWwhS2OAQNo8zM436yyBYEzZBzY1eQ9Y2JKaYTn85r84vXXQLDQ9hEocHA4gQPe6UPs8-6WY98" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="412" data-original-width="577" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEgR7-zQ3-RSbL6-hvf9Bv-IrzNSJj0qivgXmApWdA_pn2B1GumuGPWhAwI1GNrygeQabGR1VbX-rOzVYE4XQBIstow9IWykX1Xsk1obr8kOl4gU2a6hJfZWwhS2OAQNo8zM436yyBYEzZBzY1eQ9Y2JKaYTn85r84vXXQLDQ9hEocHA4gQPe6UPs8-6WY98=w381-h272"/></a></div></div>
 </figure>
 <p>This simply represents the structure of a graph. Think of a “hub” like an airport; it acts as a transportation bridge for air travel. In the second image, the same graph is represented as a “flow network”:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="flow" data-image-src="flow.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>flow — flow.png</span></div>
-<figcaption aria-hidden="true">flow</figcaption>
+<div class="image-placeholder" data-image-alt="flow" data-image-src="flow.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEghv5Wxx_GWG9lJQmH7cBuA1sIoFiflBGXv-dAz5IRLJjDwMfU_4nh4H9K6dwsw9KSZ8fNdhVpdWV0UH_G0cUYj3PsnBH_O2e5wDPnSDGqdLSVr3fZQj6APM8y34XhnRjSVgYuDWAt7W5uVQsBSADn3dgcOhpnsLshTgWvZG_sKFshKP-GC6Auxd6QnZzxq" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="357" data-original-width="572" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEghv5Wxx_GWG9lJQmH7cBuA1sIoFiflBGXv-dAz5IRLJjDwMfU_4nh4H9K6dwsw9KSZ8fNdhVpdWV0UH_G0cUYj3PsnBH_O2e5wDPnSDGqdLSVr3fZQj6APM8y34XhnRjSVgYuDWAt7W5uVQsBSADn3dgcOhpnsLshTgWvZG_sKFshKP-GC6Auxd6QnZzxq=w413-h258"/></a></div></div>
 </figure>
 <p>Flow networks allow you to understand an analyze how energy and information flow from nodes through edges in a graph. A simple example is blood in your veins flowing to organs. Another example is communication in a social network being sent through communication channels from an influencer.</p>
 <p>This applies directly to the drug-resistant TB case. The network lens, for Mobus, is the antidote to simplistic “A causes B causes C” stories. In complex systems, effects are typically multi-causal and causes multi-effect; therefore interventions reliably produce “unintended consequences” unless you reason in terms of <em>webs of linkage</em>. He illustrates this with medicine: drugs have many effects in the body’s network, and multi-drug interactions amplify unpredictability—an analogy for why TB policy also needs network thinking to anticipate knock-on effects across medical, social, economic, and institutional linkages.</p>
@@ -102,8 +594,7 @@ blockquote {
 <h3 id="principle-5-systems-exhibit-various-kinds-and-levels-of-complexity">Principle 5: Systems Exhibit Various Kinds and Levels of Complexity</h3>
 <p>Mobus treats complexity as deeply tied to systemness, but important enough to make explicit: complexity helps explain why systems behave unexpectedly or fail. He leans on a Simon-style view: complexity derives from multiple structural attributes of hierarchically organized networks of strongly interacting modules—so complexity isn’t just “many parts,” but organized multiplicity, nested modules, and interaction structure. In “Principles of System Science”, he distinguishes between different types of complexity:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="complexity" data-image-src="complexity.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>complexity — complexity.png</span></div>
-<figcaption aria-hidden="true">complexity</figcaption>
+<div class="image-placeholder" data-image-alt="complexity" data-image-src="complexity.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgNbhBN210Nq9E4arJGOxtHN9UU2peedaWxutRSzQPHmN1BuhytvwigpOnvWzBI8dVIKgi3IgqeC2RuZxHeIr9EAp4DTHvWDq4Nmctug0j6wpzvfW6vflZWJ-OE2UbGkv4AmJhPT_-YgHW7e1VgJyyAwa8a5brGYSvqlkWJnTIxafWuz5hqFZ5Rz78M4M-M" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="473" data-original-width="586" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEgNbhBN210Nq9E4arJGOxtHN9UU2peedaWxutRSzQPHmN1BuhytvwigpOnvWzBI8dVIKgi3IgqeC2RuZxHeIr9EAp4DTHvWDq4Nmctug0j6wpzvfW6vflZWJ-OE2UbGkv4AmJhPT_-YgHW7e1VgJyyAwa8a5brGYSvqlkWJnTIxafWuz5hqFZ5Rz78M4M-M=w385-h311"/></a></div><br/></div>
 </figure>
 <p>Here, he distinguishes between relational, compositional, and structural complexity. Each of these are aspects of complexity. And in his more recent book, he tells us “Ultimately the complexity of any identified system is based on the total number of components, number of kinds of components, and the attributes of networks within a level and between levels (i.e., the degree of modularization).” These “complexities” can lead to unexpected behavior of the system, chaotic dynamics, and non-linearities.</p>
 <p>In the TB case, he argues that calling TB “a health problem” barely narrows anything, because the problem spans layered complexities: bacterial internal organization; disease-course complexity; contagion intertwined with social contact networks; and then an even different order of complexity when you move to human psychological, social, economic, political, and cultural systems—plus the emergent “whole” when those domains interact. This is why specialization is necessary but insufficient: no single domain can “add up” to the holistic dynamics driving drug resistance.</p>
@@ -130,10 +621,10 @@ blockquote {
 <p>“Improvement” is inherently perspectival and therefore about trade-offs across levels/groups. Using antibiotics as the intuitive “improvement,” he shows the systemic downside: curing disease can increase reproduction/survival and thus increase population pressures and resource consumption; meanwhile antibiotic use creates selective pressure for resistance, threatening the very improvement. So engineering responses (new incentives for R&amp;D, regulatory design, public health interventions, education to change medication-use models, etc.) have to be treated as interventions in a coupled system—where gains in one place can produce costs and risks elsewhere.</p>
 <h2 id="systems-ontology">Systems Ontology</h2>
 <p>In a philosophical sense of the term, an Ontology is a description of the most fundamental categories that exist. It is not a truth claim, but a committment to a set of categories and relations, treating this description as complete and internally consistent. Technically, philosophical ontology is the “study of being”, the features all entities have in common, and how we can divide this into “categories of being”. That is the “categorical” aspect of the discipline I was referring to earlier.</p>
-<p>Everything kind of began with Aristotle’s theory of categories. In <a href="https://en.wikipedia.org/wiki/Categories_(Aristotle)">The Categories</a>, he enumerates all possible kinds of things that can be the subject or predicate of a proposition; the two being linked by a inheritance-type relation. Any given subject/being can inherent from multiple categories. His ten basic categories include: Substance (primary, irreducible), Quantity (how much), Quality (description), Relative (relatedness towards other subjects), Where (place), When (time), Relative position (posture or attitude), Having (an entities state or condition), Doing (action), Being affected (affection). If you have read any Aristotle, you’ll notice that his subsequent philosophy depends on his fundamental categories. Aristotle’s categories are “out there” in the world; it is a realist position.</p>
+<p>Everything kind of began with Aristotle’s theory of categories. In <a href="https://en.wikipedia.org/wiki/Categories_(Aristotle)" rel="noopener noreferrer">The Categories</a>, he enumerates all possible kinds of things that can be the subject or predicate of a proposition; the two being linked by a inheritance-type relation. Any given subject/being can inherent from multiple categories. His ten basic categories include: Substance (primary, irreducible), Quantity (how much), Quality (description), Relative (relatedness towards other subjects), Where (place), When (time), Relative position (posture or attitude), Having (an entities state or condition), Doing (action), Being affected (affection). If you have read any Aristotle, you’ll notice that his subsequent philosophy depends on his fundamental categories. Aristotle’s categories are “out there” in the world; it is a realist position.</p>
 <p>Other philosophers have proposed systems of categories as well. In Critique of Pure Reason, Immanual Kant argues that categories are part of our own mental structure, consisting of a set of a-priori concepts through which we interpret the world around us. Kant is anti-realist about the categories as structures of mind-independent being, but not anti-realist about their objective validity within possible experience. Aristotle, by contrast, is much closer to a realist about categories as articulations of reality itself. Kant introduces the “Forms of Judgement”, basic patterns of reasoning that allow us to understand anything at all. These “judgements” map on to the fundamental categories; categories are derived or “found out” because of these “sense making” faculties. The same faculty that makes judgments also structures experience. Therefore, if we can identify the basic logical forms of judgment, we can identify the basic pure concepts needed to think objects. So for example, hypothetical judgements such as “If A, then B” correspond to the general ontological category “cause and effect”. Or consider modality; An apodictic judgement might be something like “A may be B,” “A is B,” “A must be B”. This form of judgement maps on to general categories like possibility, existence, and necessity. Therfore, the categories are derived from the forms of judgment, which are the basic functions of the understanding.</p>
 <p>The philosophical sense of an ontology can be contrasted with ontology from information science. In the latter, an ontology “encompasses a representation, formal naming, and definitions of the categories, properties, and relations between the concepts, data, or entities, that pertain to one, many, or all domains of discourse.” In plain terms, an ontology is a description or model of some subject area, providing rules for how the subjects relate. In philosophy and information science, they’re both attempts to represent entities, objects, and events, their properties and relations, according to a system of categories. There are different types of ontologies in information science: top, mid, and domain specific. Top-level, mid-level, and domain ontologies differ mainly in scope and specificity. A top-level ontology describes very general concepts that apply across almost any field, such as object, event, process, time, space, quality, and relation. A mid-level ontology sits between broad theory and practical application, organizing concepts that are reusable across several related areas, such as organizations, roles, measurements, documents, or transactions. A domain ontology is the most specific: it models the concepts, relationships, and rules of one particular field, such as medicine, law, finance, or cybersecurity. Top-level ontologies provide the broadest foundation, mid-level ontologies provide reusable structure for families of domains, and domain ontologies provide detailed vocabulary for a specific area.</p>
-<p>Systems Ontology, is the attempt to construct an ontology for all systems. This is required for establishing a common language that will form the basis for subsequent activities like analysis and design. In the book, Mobus claims the system ontology to be somewhere between the philosophical and information science senses. In a footnote, he notes that a reviewer of the book suggested using an upper ontology, the <a href="https://en.wikipedia.org/wiki/General_formal_ontology">General Formal Ontology (GFO)</a>. Mobus notes the similarities between the systems ontology he constructs and the GFO, but says the systems ontology is less formalized, deliberately. Based on this, I think the best analogue of the systems ontology would be a top level ontology. There are other top level ontologies like <a href="https://en.wikipedia.org/wiki/Basic_Formal_Ontology">Basic Formal Ontology (BFO)</a>, which could also be analagous. If this analogy holds, the systems ontology, as a top level ontology, would be the most general categorization of systems across all disciplines. From this, you could derive mid-level and domain specific ontologies for individual disciplines like economics.</p>
+<p>Systems Ontology, is the attempt to construct an ontology for all systems. This is required for establishing a common language that will form the basis for subsequent activities like analysis and design. In the book, Mobus claims the system ontology to be somewhere between the philosophical and information science senses. In a footnote, he notes that a reviewer of the book suggested using an upper ontology, the <a href="https://en.wikipedia.org/wiki/General_formal_ontology" rel="noopener noreferrer">General Formal Ontology (GFO)</a>. Mobus notes the similarities between the systems ontology he constructs and the GFO, but says the systems ontology is less formalized, deliberately. Based on this, I think the best analogue of the systems ontology would be a top level ontology. There are other top level ontologies like <a href="https://en.wikipedia.org/wiki/Basic_Formal_Ontology" rel="noopener noreferrer">Basic Formal Ontology (BFO)</a>, which could also be analagous. If this analogy holds, the systems ontology, as a top level ontology, would be the most general categorization of systems across all disciplines. From this, you could derive mid-level and domain specific ontologies for individual disciplines like economics.</p>
 <p>So the flow goes like this: principles, then the ontology, then a formalized generic definition of a system.</p>
 <h3 id="ontogenesis">Ontogenesis</h3>
 <p>Mobus dedicates a significant amount of time to explain ontogenesis: <strong>the process of auto-organization, emergence, and selection</strong>. He is concerned not just with the system ontology, but how systems come about. All systems can be decomposed into subsystems until we reach the most fundamental particle level. Ontogenesis is the process by which we work upwards to further levels of complexity. The “ontogenic cycle” is the process where by “things” existing at a specific level of organization interact with one another, to form more complex systems having emergent capabilities that the lower levels did not possess. Ontogenesis for Mobus is therefore the <strong>origin and development (complexification)</strong> of systems and systems-of-systems—i.e., why the universe seems to generate increasing organization over time. His ontogenesis idea is essentially two interlocking pieces:</p>
@@ -156,20 +647,17 @@ blockquote {
 </ol>
 <p>That last point is how ontogenesis ties directly into Mobus’s emphasis on <strong>hierarchical cybernetics / governance</strong> as complexity rises. An example of this process applied to human social systems is provided below:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="ontogenesis" data-image-src="ontogenesis.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>ontogenesis — ontogenesis.png</span></div>
-<figcaption aria-hidden="true">ontogenesis</figcaption>
+<div class="image-placeholder" data-image-alt="ontogenesis" data-image-src="ontogenesis.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEiSu4SfbozcTe9fLhWTqTDnSD-02irNSevPsl87fTHF_b7QfyC23DvDeLsmKT_jhUmGs1g0TTiew8zJVIukWgGM549dtUy16KYz6aD_rNJUAI5GKsokCKT8Wpihopk4CzKZ9OtXnt7C_wqbPhUCjoa6gaWMdSpSEnSEQNtVl3IOx4UV_FbeYRF2fIz9Inui" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="421" data-original-width="615" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEiSu4SfbozcTe9fLhWTqTDnSD-02irNSevPsl87fTHF_b7QfyC23DvDeLsmKT_jhUmGs1g0TTiew8zJVIukWgGM549dtUy16KYz6aD_rNJUAI5GKsokCKT8Wpihopk4CzKZ9OtXnt7C_wqbPhUCjoa6gaWMdSpSEnSEQNtVl3IOx4UV_FbeYRF2fIz9Inui=w377-h258"/></a></div></div>
 </figure>
 <p>This forms from a lower level of ontogenesis:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="ontogenesis-2" data-image-src="ontogenesis-2.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>ontogenesis-2 — ontogenesis-2.png</span></div>
-<figcaption aria-hidden="true">ontogenesis-2</figcaption>
+<div class="image-placeholder" data-image-alt="ontogenesis-2" data-image-src="ontogenesis-2.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEg6SNSmESuWZkdO1OqKo8EOn9NGbfo__rZN_2tCQvMlyCcNI3S6MEv_eopYbjPxk6WX4yIOjUwNyn7uKLYhRmzxJcl4DQ-Xi179cxN6-j92Lu8axMTM41dBDurKAdXnJuEcm8FjNGJPFR9Ewm6wzIG7yfj6Z7HmqBLuDY88NvYbVJ_mOk2c08aM8muGTbNn" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="458" data-original-width="605" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEg6SNSmESuWZkdO1OqKo8EOn9NGbfo__rZN_2tCQvMlyCcNI3S6MEv_eopYbjPxk6WX4yIOjUwNyn7uKLYhRmzxJcl4DQ-Xi179cxN6-j92Lu8axMTM41dBDurKAdXnJuEcm8FjNGJPFR9Ewm6wzIG7yfj6Z7HmqBLuDY88NvYbVJ_mOk2c08aM8muGTbNn=w356-h270"/></a></div></div>
 </figure>
 <p>The process upwards through these levels of organization are the product of auto-organization, emergence, and selection.</p>
 <h3 id="the-ontological-framework">The Ontological Framework</h3>
 <p>What follows is an <strong>ontological framework for systems analysis</strong>: a way to identify the <em>elements that must be present</em> when we describe any <strong>system of interest (SOI)</strong>—whether the system is physical, biological, social, or an abstract model instantiated in some medium. The framework is not a taxonomy of “things in the world” so much as a disciplined set of <strong>commitments</strong> about what we have to specify to talk coherently about <em>systemness</em> across domains.</p>
 <figure>
-<div class="image-placeholder" data-image-alt="ontology-framework" data-image-src="ontology-framework.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>ontology-framework — ontology-framework.png</span></div>
-<figcaption aria-hidden="true">ontology-framework</figcaption>
+<div class="image-placeholder" data-image-alt="ontology-framework" data-image-src="ontology-framework.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjdRMVCd72-tSdqYmZKLlmRi9-dKZXYeRwAEBkCbGCQF2nCrWhb6DNeBFGzjDVSTFDyEulPcodLj2tphpp261PU-H_OLjJfuMtMNIn5KHbZg5d8K34zvd8ZmkVEy5UVz6TgB9AsT0-fz5RBTOPue3hVUVTb-h5IOdW3zVFMd6gl0bfM2dDrNPf2Mj0oUT7I" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="526" data-original-width="570" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEjdRMVCd72-tSdqYmZKLlmRi9-dKZXYeRwAEBkCbGCQF2nCrWhb6DNeBFGzjDVSTFDyEulPcodLj2tphpp261PU-H_OLjJfuMtMNIn5KHbZg5d8K34zvd8ZmkVEy5UVz6TgB9AsT0-fz5RBTOPue3hVUVTb-h5IOdW3zVFMd6gl0bfM2dDrNPf2Mj0oUT7I=w336-h310"/></a></div></div>
 </figure>
 <p>Mobus organizes the framework as a <strong>three-level structure</strong>. The SOI sits at <strong>Level 0</strong>, its enclosing <strong>environment</strong> is <strong>Level −1</strong>, and the SOI’s <strong>components</strong> are at <strong>Level +1</strong>. The point of the level structure is practical: it forces us to state what we are treating as “inside,” what we are treating as “outside,” and how we will move up and down the hierarchy during analysis and deconstruction.</p>
 <h4 id="level-1-environment-the-teleonomy-frame">Level −1: Environment (the teleonomy frame)</h4>
@@ -355,7 +843,7 @@ H_{i,l},
 <p>This introduces an important distinction between <strong>fuzziness</strong> and <strong>probability</strong>. Probability concerns whether an event occurs or does not occur. Fuzziness concerns the degree to which something occurs or belongs. A component’s membership in a system may sometimes be uncertain in a probabilistic sense, but in other cases the issue is not uncertainty about an either-or event. Instead, the component may genuinely belong to multiple systems, partially or intermittently.</p>
 <p>Mobus also allows <strong>multisets</strong> within <code>C</code>. A multiset represents many instances of the same type of component. For example, rather than representing every individual water molecule in a cell, the model may represent them collectively as a multiset. This allows the system model to include large populations of similar components without listing every instance separately.</p>
 <p>Components may also be <strong>subsystems</strong>. If a component has enough internal complexity to justify further decomposition, it can be treated as a system in its own right:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>.</mi><mi>j</mi><mo>,</mo><mi>l</mi></mrow></msub><mo>=</mo><mrow><mo form="prefix" stretchy="true">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>S</mi><mrow><mi>i</mi><mi>.</mi><mi>j</mi><mo>,</mo><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">if the component is complex</mtext></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left"><msub><mi>c</mi><mi>a</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left"><mtext mathvariant="normal">if the component is atomic</mtext></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>i</mi><mi>.</mi><mi>j</mi><mo>,</mo><mi>l</mi></mrow></msub><mo>=</mo><mrow><mo form="prefix" stretchy="true">{</mo><mtable><mtr><mtd columnalign="left" style="text-align: left;"><msub><mi>S</mi><mrow><mi>i</mi><mi>.</mi><mi>j</mi><mo>,</mo><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left;"><mtext mathvariant="normal">if the component is complex</mtext></mtd></mtr><mtr><mtd columnalign="left" style="text-align: left;"><msub><mi>c</mi><mi>a</mi></msub><mo>,</mo></mtd><mtd columnalign="left" style="text-align: left;"><mtext mathvariant="normal">if the component is atomic</mtext></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
 c_{i.j,l} =
 \begin{cases}
 S_{i.j,l+1}, &amp; \text{if the component is complex} \\
@@ -365,8 +853,7 @@ c_a, &amp; \text{if the component is atomic}
 <p>This recursive structure produces a system hierarchy. The original system of interest sits at level <code>0</code>; its components appear at level <code>1</code>; their components appear at level <code>2</code>; and so on. The dotted index records the path through this hierarchy, while the level index <code>l</code> makes the level of organization explicit.</p>
 <p>The recursive decomposition cannot continue indefinitely. Eventually, the analysis reaches components that are treated as <strong>atomic</strong> for the purposes of the model. Mobus gives several stopping conditions for this decomposition. One semi-formal stopping condition is the <strong>simplest process rule</strong>. A component may be treated as atomic when it performs a simple work process that does not require further internal decomposition. These atomic processes include combining two inputs into one output, splitting one input into two outputs, impeding a flow, propelling a flow, or acting as a passive buffer or stock.</p>
 <figure>
-<div class="image-placeholder" data-image-alt="decomposition" data-image-src="decomposition.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>decomposition — decomposition.png</span></div>
-<figcaption aria-hidden="true">decomposition</figcaption>
+<div class="image-placeholder" data-image-alt="decomposition" data-image-src="decomposition.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEhKbweep-n3ehmAox4mVoYf6zjX65s8gnc5jtrwOaPYgc4s3gqZB9Mvo0yPGarTkVjSazVYGg02-o1RD1hW54NEsgTp1Vd5Vkrz9NIzDaIKqh89UQjk1mT-tA1qFzfr_56wTTNfc38DoX_iHMnttDru4Q0UO70ajZkQW2rVwYrlRK6M92Pqp97rnR_A_tYQ" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="468" data-original-width="712" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEhKbweep-n3ehmAox4mVoYf6zjX65s8gnc5jtrwOaPYgc4s3gqZB9Mvo0yPGarTkVjSazVYGg02-o1RD1hW54NEsgTp1Vd5Vkrz9NIzDaIKqh89UQjk1mT-tA1qFzfr_56wTTNfc38DoX_iHMnttDru4Q0UO70ajZkQW2rVwYrlRK6M92Pqp97rnR_A_tYQ"/></a></div></div>
 </figure>
 <p>Other stopping conditions are more pragmatic. A modeler may stop decomposing a component when its internal workings are already well understood or specified outside the current system model. For example, a transistor in an electronic system, an ATP molecule in a biochemical system, or an organic molecule in a biophysical model may be treated as atomic if its internal structure is not relevant to the system being modeled.</p>
 <p>In this sense, <code>Cᵢ,ₗ</code> defines the <strong>structural skeleton</strong> of the system. It identifies what the system is made of, how those components are typed, how strongly or conditionally they belong, and whether each component should be treated as an atomic part or as a subsystem requiring further analysis. This component structure is the basis for the system’s hierarchical organization.</p>
@@ -439,8 +926,7 @@ F_{i,l}
 <p>Mobus treats boundedness as a real feature of systems, not merely as a modeling convenience. This differs from some approaches to system modeling, where the boundary is often treated as something chosen by the analyst in order to make the model tractable. In simulation modeling, this may be a reasonable move: the modeler may draw a boundary around only the part of a larger system that is relevant to the question being studied. But Mobus’s point is stronger. He argues that systems themselves exhibit forms of boundedness, even when those boundaries are not sharp physical walls.</p>
 <p>Some systems have obvious physical boundaries. A cell membrane, skin, a plant cell wall, or the wall of a building clearly separates an inside from an outside. Other systems have boundaries that are more diffuse. An ecosystem, for example, may not have a hard edge, but it still has boundary conditions that help maintain an internal milieu suitable for the organisms that live there. Such a boundary may be porous, fuzzy, and difficult to locate precisely, but it still helps distinguish the system from its surroundings.</p>
 <figure>
-<div class="image-placeholder" data-image-alt="boundary" data-image-src="boundary.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>boundary — boundary.png</span></div>
-<figcaption aria-hidden="true">boundary</figcaption>
+<div class="image-placeholder" data-image-alt="boundary" data-image-src="boundary.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEh8H12bD-YFNT7jivJwDaTyjCU5p1Rq93x1kjKvG1Iz6GCUgNg_rzj-VuKGfQCzzWPySR2wRvae9FcbT647TMf7Nig-FDtl-8zxkdWPYiCSR9ojaQ5NxzvhBVfs13ANM0pjW_HGyxkN-QGDuPQwTnE3BaX2lDoY9eWhekf9YS6jv_vxFJlzVbOny19USCoQ" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="468" data-original-width="707" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEh8H12bD-YFNT7jivJwDaTyjCU5p1Rq93x1kjKvG1Iz6GCUgNg_rzj-VuKGfQCzzWPySR2wRvae9FcbT647TMf7Nig-FDtl-8zxkdWPYiCSR9ojaQ5NxzvhBVfs13ANM0pjW_HGyxkN-QGDuPQwTnE3BaX2lDoY9eWhekf9YS6jv_vxFJlzVbOny19USCoQ=w414-h274"/></a></div><br/></div>
 </figure>
 <p>Mobus therefore treats the boundary as an explicit part of the formal system definition:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mi>i</mi><mo>,</mo><mi>l</mi></mrow></msub><mo>=</mo><mo form="prefix" stretchy="false">⟨</mo><msub><mi>P</mi><mrow><mi>i</mi><mo>,</mo><mi>l</mi></mrow></msub><mo>,</mo><msub><mi>I</mi><mrow><mi>i</mi><mo>,</mo><mi>l</mi></mrow></msub><mo form="postfix" stretchy="false">⟩</mo></mrow><annotation encoding="application/x-tex">
@@ -461,8 +947,7 @@ r_{i,l} = S_{i,l+1}(\varphi)
 <p>For example, a receiving dock in a manufacturing company functions as an interface. It receives packages, checks the manifest, verifies the material, and passes the accepted material into the inventory subsystem. The dock does not normally transform the material into a new product; it regulates the conditions under which the material may enter the system.</p>
 <p>Information can pass through the system boundary as well, with the help of special subsystems called encoders/decoders. Mobus has a chapter dedicated to information flow between and within systems. The generalized information exchange process can be seen below. Notice how information must flow through the system boundary and interact with the system inferface:</p>
 <figure>
-<div class="image-placeholder" data-image-alt="information" data-image-src="information.png"><strong>[IMAGE PLACEHOLDER]</strong> <span>information — information.png</span></div>
-<figcaption aria-hidden="true">information</figcaption>
+<div class="image-placeholder" data-image-alt="information" data-image-src="information.png"><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgHMXKVrNRV7t_5_FwmDxe9K8od2eP0N8ah4YBawIiRD6QQuL1z_tZM_E0BxaYdTAGMp4yGuxLJfM0uOrC4jg6_0w9hnLxR44o8erlljSKfY6LVruzZthkgFE6M0Yu8nRPU0ZwquFDpedS-v4W8ARxZIxE3-UGR5pL9J8hFYayWzHxrM6qdT4XihB-RsCft" rel="noopener noreferrer" style="margin-left: 1em; margin-right: 1em;"><img alt="" data-original-height="228" data-original-width="482" decoding="async" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEgHMXKVrNRV7t_5_FwmDxe9K8od2eP0N8ah4YBawIiRD6QQuL1z_tZM_E0BxaYdTAGMp4yGuxLJfM0uOrC4jg6_0w9hnLxR44o8erlljSKfY6LVruzZthkgFE6M0Yu8nRPU0ZwquFDpedS-v4W8ARxZIxE3-UGR5pL9J8hFYayWzHxrM6qdT4XihB-RsCft=w407-h192"/></a></div><br/></div>
 </figure>
 <p>A biological example is a neuron’s postsynaptic membrane. It allows ions to pass into or out of the cell through specialized pores, but only under the right conditions, such as the presence of a neurotransmitter. In this case, the interface involves both a physical passage mechanism and a message-processing or control mechanism.</p>
 <p>Some interfaces may include filter protocols. A filter allows desirable flows to pass while impeding undesirable ones. In such cases, the interface may alter the composition of what crosses the boundary, not by transforming inputs into products in the ordinary process sense, but by selectively permitting or blocking passage.</p>
@@ -539,6 +1024,4 @@ t = 0, 1, 2, 3, \ldots
 <p>Informally, a system is a <strong>bounded, unified, internally organized whole</strong> made of <strong>heterogeneous parts</strong> that may nest into subsystems and remain coupled to an environment through structured flows.</p>
 <p>Formally, a system can be represented as a package of <strong>components, relations, environmental sources and sinks, flow graphs, boundaries, interfaces, transformation dynamics, memory, and time scales</strong>, situated within a recursive hierarchy of systems and subsystems.</p>
 
-</article>
-</body>
-</html>
+</div>
