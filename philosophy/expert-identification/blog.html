@@ -1,0 +1,1687 @@
+Recently I've been reading&nbsp;<a href="https://objectionable.net/"
+  >C. Thi Nguyen</a
+>, along with&nbsp;<a
+  href="https://plato.stanford.edu/entries/epistemology-social/"
+  >social epistemology</a
+>
+more broadly, and have come across what's referred to as the expert
+identification problem. Here is the main idea: there is a difficulty of
+determining who genuinely qualifies as an expert in a given domain, especially
+when non-experts lack the knowledge or skills to make such a determination. This
+creates an epistemic asymmetry, there is an inherent epistemic gap between
+experts and non-experts. If non-experts had the expertise needed to evaluate an
+expert, they would, in a sense, be experts themselves. This creates a circular
+problem: non-experts are asked to identify who the experts are, but they lack
+the knowledge to do so effectively.
+<div><br /></div>
+<div>
+  I see this problem as three fold. We must first define critical aspects of
+  "expertise", second we must identify the entities to which that label could
+  possibly refer, and third we must establish criteria/heuristics/rules of thumb
+  that allow us to minimize our error rate. This is essentially a
+  <a href="https://en.wikipedia.org/wiki/Category:Search_algorithms">search</a>
+  and
+  <a href="https://en.wikipedia.org/wiki/Decision_problem">decision</a> problem
+  with the added complexity that there might not be a unique solution and we
+  must <a href="https://en.wikipedia.org/wiki/Satisficing">satisfice</a>. You
+  could also think of it as a
+  <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem"
+    >constraint satisfaction problem</a
+  >; we must identify a set of candidates that satisfy multiple criteria.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  The first and third dimensions of the problem seem related; after all,
+  shouldn't the methodology just be establishing whether the definition has been
+  satisfied for any given example? I do not think we should think of "expertise"
+  as a binary category. Rather, we should think of it as a graded concept that
+  denotes a&nbsp;<a href="https://en.wikipedia.org/wiki/Family_resemblance"
+    >family resemblance</a
+  >&nbsp;consistent with the notion of categorization illustrated with
+  <a href="https://en.wikipedia.org/wiki/Prototype_theory">prototype theory</a>.
+  This is why I qualified the first dimension; I do not wish to conclusively
+  define "expertise" with sharp boundaries. Rather, I think there are various
+  attributes of a candidate "expert" that should be identified with a sufficient
+  degree of certainty, using some methodology, before tentatively applying the
+  label. This is a defeasible process subject to revision in light of new
+  information. This also implies the existence of a relative ranking system; for
+  any two candidates A and B, A might jointly satisfy more properties with a
+  higher degree of certainty than B. There will be a minimal threshold that must
+  be crossed before adding some new entity C to the set of potential
+  candidates.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  In the above scenario, why are we saying that B is preferred to A, rather than
+  classifying A as a non-expert? This is because the notion of "expertise" is
+  intimately connected to the idea of "trust". By rank ordering potential
+  experts, we can weight our credence towards conclusions held by more
+  preferable candidates. This establishes a system for forming conclusions in
+  the event experts disagree. Suppose you have some proposition P. Expert A and
+  expert B disagree about whether P is more probably true or more probably
+  false. If we have ranked A above B, we would prefer their conclusion over B.
+  Now suppose some third candidate C enters, who has equivalent standing to B,
+  and also thinks P is more probably false than true. If the combined expertise
+  of B and C outrank A, we can update our beliefs.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  I think so far I am getting ahead of myself. We should first loosely define
+  the problem statement.&nbsp; Suppose we have a situation in which an expert is
+  required for some inferential task including, but not limited to: diagnosis,
+  prediction, evaluation, recommendation, explanation, or guidance. This is
+  normally in service of achieving some pragmatic goal in relation to some
+  decision. The non-expert needs to establish whether some candidate expert
+  satisfies minimal criteria to some degree of certainty. The candidate could be
+  presented to the non-expert through some intermediary or the candidate could
+  have been discovered through their own line of inquiry. There comes a point
+  where the non-expert must:
+</div>
+<div>
+  <ol style="text-align: left">
+    <li>
+      Have a working conceptualization of "expertise" that has been critically
+      analyzed
+    </li>
+    <li>
+      Decide whether the predicate "is an expert" is applicable to this
+      candidate
+    </li>
+    <li>
+      Consult a collection of criteria that can help establish whether the
+      candidate is an "expert"
+    </li>
+  </ol>
+  <div>
+    This process should take into consideration the problem of&nbsp;Evolving
+    Knowledge: Expertise is not static; knowledge in most fields evolves over
+    time. An individual who was an expert a decade ago may not be up-to-date on
+    the latest developments. In other words, expert identification is a
+    continual process that must be reapplied after some interval of time.&nbsp;
+  </div>
+</div>
+<div><br /></div>
+<div>
+  I think some tools from argumentation theory can help. These obviously don't
+  completely solve the problem. For example, they have nothing to say about the
+  social processes, norms, and power structures that shape who is seen as
+  credible and how epistemic authority is maintained or challenged. This is key
+  to the problem of expert identification because the credibility of experts is
+  not just based on their knowledge, but also on how society perceives and
+  legitimizes them. It also does not address collective knowledge.&nbsp;In many
+  cases, we do not just rely on individual experts but on institutions or groups
+  (such as scientific organizations or universities) to provide reliable
+  knowledge. Social epistemology analyzes how these institutions function and
+  how they can either promote or hinder collective knowledge production. This
+  helps address how non-experts can assess not just individual experts but the
+  credibility of institutions as a whole. I am not going to tackle this issue
+  here. I am also not going to touch on the role of&nbsp; media and
+  communication. In contemporary society, the media play a huge role in shaping
+  public understanding of who is an expert. Social epistemology analyzes the
+  ways in which media representations of expertise and authority can influence
+  public perception, often leading to the amplification of certain voices over
+  others, regardless of their true level of expertise. These are massive
+  endeavors. All I wish to do is relay some concepts from argumentation theory
+  that I think could help localized instances of expert identification, under
+  tractable conditions.
+</div>
+<div><br /></div>
+<div>
+  I'll begin by asserting that authority and expert are relatively synonymous.
+  Typically we take an expert to exercise a fair degree of authority from within
+  a domain of inquiry. By authority, I take it to mean an individual who holds
+  some sort of ability to influence decision making power, conflict resolution,
+  or ambiguity dissolution by reference to a body of knowledge relevant to a
+  particular question. Authorities in this sense, have access to some relevant
+  knowledge, and are somehow distinct from non-members. In other words, a
+  property of expertise is authority. We can infer expertise given authority.
+  Obviously, this rule does not hold in general. Many authority figures hold
+  decision making power by virtue of institutional legitimacy. This diagram
+  below visualizes a hierarchy of authority, where we can see that authority is
+  equivalent to expertise depending on the type of argument being presented (<a
+    href="https://www.researchgate.net/publication/303793872_Arguments_from_authority_and_expert_opinion_in_computational_argumentation_systems"
+    >Arguments from authority and expert opinion in computational argumentation
+    systems</a
+  >):
+</div>
+<div><br /></div>
+<div><br /></div>
+<div>
+  <div class="separator" style="clear: both; text-align: center">
+    <a
+      href="https://blogger.googleusercontent.com/img/a/AVvXsEhJAp7U--NR4GOFkca8uuXXb7PoItrs9EMcGxeXra9jusQMEKdFhh1R4_MRJwiy-qfo_TMs-E4IYBeB1Ku02QLv1LBTbUTB_94Of2IVv7EeIrR5EL0iRnk5tBpztkpWKFtR5hTS_zP3DboBvajxsTnlfRJF0bVM3JjdNedzXb6-kz9ndfoQ-QA60Z4HQDUI"
+      style="margin-left: 1em; margin-right: 1em"
+      ><img
+        alt=""
+        data-original-height="625"
+        data-original-width="850"
+        height="343"
+        src="https://blogger.googleusercontent.com/img/a/AVvXsEhJAp7U--NR4GOFkca8uuXXb7PoItrs9EMcGxeXra9jusQMEKdFhh1R4_MRJwiy-qfo_TMs-E4IYBeB1Ku02QLv1LBTbUTB_94Of2IVv7EeIrR5EL0iRnk5tBpztkpWKFtR5hTS_zP3DboBvajxsTnlfRJF0bVM3JjdNedzXb6-kz9ndfoQ-QA60Z4HQDUI=w467-h343"
+        width="467"
+    /></a>
+  </div>
+  <div><br /></div>
+  <div><br /></div>
+  We are obviously concerned with the left side of the tree. The right side of
+  the tree concerns authority within the domain of reasoning that involves
+  obligation, duty, forbidden, or what is permissible. This concerns the type of
+  authority capable of explicitly invoking or enabling action based on a set of
+  agreed upon societal regularities such as law. On the other hand, epistemic
+  arguments involved propositions capable of being more or less probable,
+  provable, supportable, demonstrable, or knowable. According to this
+  classification, arguments from expert opinion will inherit the methods for
+  assessing arguments from authority more broadly.&nbsp;<br /><br />The above
+  classification is provided by scholars from the field of Argumentation Theory.
+  This is a rich discipline that studies patterns of reasoning. One particular
+  concept, that we will be invoking here to assess expertise, is the
+  argumentation schematic. From
+  <a href="https://arg.tech/people/chris/publications/2017/flap2017.pdf"
+    >Argumentation Schemes: History, Classifications, and Computational
+    Applications</a
+  >, it is defined as:
+</div>
+<div>
+  <div></div>
+  <blockquote>
+    <div>
+      ... stereotypical patterns of inference, combining semantic-ontological
+      relations with types of reasoning and logical axioms and representing the
+      abstract structure of the most common types of natural arguments [Macagno
+      and Walton, 2015]. The argumentation schemes provided in [Walton et al.,
+      2008] describe the patterns of the most typical arguments, without drawing
+      distinctions between material relations (namely relations between concepts
+      expressed by the warrant of an argument), types of reasoning (such as
+      induction, deduction, abduction), and logical rules of inference
+      characterizing the various types of reasoning (such as modus ponens, modus
+      tollens, etc.). For this reason, argumentation schemes fall into distinct
+      patterns of reasoning such as abductive, analogical, or inductive ones,
+      and ones from classification or cause to effect.
+    </div>
+  </blockquote>
+  <div></div>
+  In other words, the schemes are like patterns or archetypes, that consistently
+  occur within many domains of inquiry or dialogue. One particular pattern is
+  the "Argument from Authority" or "Argument from Expert Opinion". These occur
+  when someone needs to offload the process of justification onto a third party
+  who presumably has done the work. In premise form, the argument looks like
+  this (Walton, Appeal to Expert Opinion):
+</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>
+        Conditional Premise: If Source E is an expert in subject domain S
+        containing proposition A, and E asserts that proposition A is true
+        (false) then A is true (false).
+      </li>
+      <li>
+        Major Premise: Source E is an expert in subject domain S containing
+        proposition A.
+      </li>
+      <li>Minor Premise: E asserts that proposition A is true (false).</li>
+      <li>Conclusion: A is true (false).</li>
+    </ul>
+  </div>
+</div>
+<div>
+  You might notice that this scheme assumes an expert has already been
+  identified. You would be correct. Once identified, you can form a conclusion
+  about whether some claim relevant to your situation is true or false. The
+  question remains: is this person an expert? This is where the critical
+  questions play a role. Argumentation theorists provide us with a set of
+  critical questions associated with the specific scheme that probe an arguments
+  relative strength. I think these can be used to assess whether a person is an
+  expert or not. You can think of them as criteria that assess whether the major
+  premise is justifiable. These serve as heuristics that allow us to determine
+  if some candidate is an expert. The reason I've set up the problem this way,
+  is due to the fact that determining "expertise" tends to take place under
+  pragmatic considerations related to decision problems under lack of knowledge.
+  We hardly ever sit idly and carve out an exhaustive set of experts from the
+  domain of all possible experts. On the contrary, we are almost always asking
+  this question, in a relevant context within some dialogue. Argumentation
+  theory provides us with a categorization of common dialogues, see below (<a
+    href="https://www.researchgate.net/publication/239616212_Meaning_Negotiation_in_Multiple_Agent_System_an_Automated_Reasoning_Approach"
+    >Meaning Negotiation in Multiple Agent System: an Automated Reasoning
+    Approach</a
+  >):
+</div>
+<div><br /></div>
+<div>
+  <div class="separator" style="clear: both; text-align: center">
+    <a
+      href="https://blogger.googleusercontent.com/img/a/AVvXsEibn5DaqjM-wBDXg6tZt2kgDg_lib7ppHsN3xz876kjz-P84m30hkDz6cw6rZtC40rv9Rv_8ePR3I_tXMQGYBdDRtdsp-Gf4b9HJbO2MPldioGannJyHJ2sVfegM-qHpiQ3L4JdCc7P7-k0Jg0wtW5gWZvt-2AxRpmphrffwYIg8uX4HyT3h6_hrsoN6JWi"
+      style="margin-left: 1em; margin-right: 1em"
+      ><img
+        alt=""
+        data-original-height="944"
+        data-original-width="850"
+        height="622"
+        src="https://blogger.googleusercontent.com/img/a/AVvXsEibn5DaqjM-wBDXg6tZt2kgDg_lib7ppHsN3xz876kjz-P84m30hkDz6cw6rZtC40rv9Rv_8ePR3I_tXMQGYBdDRtdsp-Gf4b9HJbO2MPldioGannJyHJ2sVfegM-qHpiQ3L4JdCc7P7-k0Jg0wtW5gWZvt-2AxRpmphrffwYIg8uX4HyT3h6_hrsoN6JWi=w561-h622"
+        width="561"
+    /></a>
+  </div>
+  <br />You can imagine that argument from authority can occur at any stage
+  within these types of dialogues. The crucial point is that "expert
+  identification" occurs within a circumstance constrained by pragmatic
+  considerations where our knowledge is defeasible. We typically hear an
+  argument from authority, and then must determine whether that person is indeed
+  an authority, before accepting the conclusion of the interlocutor. Below are
+  six basic critical questions of arguments from authority:
+</div>
+<div>
+  <ul style="text-align: left">
+    <li>Expertise Question: How credible is E as an expert source?</li>
+    <li>Field Question: Is E an expert in the field F that A is in?</li>
+    <li>Opinion Question: What did E assert that implies A?</li>
+    <li>Trustworthiness Question: Is E personally reliable as a source?</li>
+    <li>
+      Consistency Question: Is A consistent with what other experts assert?
+    </li>
+    <li>Backup Evidence Question: Is E’s assertion based on evidence?</li>
+  </ul>
+</div>
+<div>
+  <div>
+    <blockquote>
+      The first question concerns the depth of knowledge the expert supposedly
+      has. Is the expert a master or only a beginner, even though he or she is
+      qualified? This factor corresponds to the perceived expertise of the
+      source, cited as one of the two most factors by Gilbert et al. (1998). The
+      second question asks whether the field of the expert matches the field
+      into which the proposition A falls. The third question probes into the
+      exact wording of what the expert said (whether quoted or paraphrased). The
+      fourth question raises doubts whether the expert is personally reliable as
+      a source, for example, if she is biased, or has something to gain by
+      making the statement. This factor corresponds to the trustworthiness of
+      the source cited as the other of the two most important factors cited by
+      Gilbert et al. (1998). The fifth question asks what kind of evidence the
+      expert’s pronouncement is assumed to be based on. If asked what evidence
+      the pronouncement is based on, an expert should be willing to&nbsp;
+      provide such evidence, and if she does not, the argument based on her
+      expert opinion defaults.
+    </blockquote>
+  </div>
+</div>
+<div>
+  These can be expanded upon in great detail. We can also add more questions to
+  the list. Notice that, given pragmatic considerations, we might not be able to
+  pose questions indefinitely. I suppose we could remain agnostic, but at some
+  point we must reach a threshold, and decide whether "expertise" applies to the
+  subject under consideration.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  Lets expound upon these one by one. The first question prompts us to assess
+  credibility. But what is credibility? It's hardly a binary category. Once
+  again, Argumentation Theory provides us with tools for conceptualizing the
+  notion of credibility. In
+  <a href="https://core.ac.uk/download/72794572.pdf"
+    >An Argumentation Interface for Expert Opinion Evidence</a
+  >, Walton references common legal practices to form a baseline, by
+  referencing&nbsp;&nbsp;<a
+    href="https://www.law.cornell.edu/rules/fre/rule_702"
+    >Rule 702</a
+  >, Testimony by Expert Witnesses within the Federal Rules of Evidence:
+</div>
+<div>
+  <div></div>
+  <blockquote>
+    <div>
+      A witness who is qualified as an expert by knowledge, skill, experience,
+      training, or education may testify in the form of an opinion or otherwise
+      if the proponent demonstrates to the court that it is more likely than not
+      that:
+    </div>
+    <div><br /></div>
+    <div>
+      (a) the expert’s scientific, technical, or other specialized knowledge
+      will help the trier of fact to understand the evidence or to determine a
+      fact in issue;
+    </div>
+    <div>(b) the testimony is based on sufficient facts or data;</div>
+    <div>
+      (c) the testimony is the product of reliable principles and methods; and
+    </div>
+    <div>
+      (d) the expert's opinion reflects a reliable application of the principles
+      and methods to the facts of the case.
+    </div>
+  </blockquote>
+  <div></div>
+</div>
+<div>
+  This is known as the Daubert standard, based on the ruling within that
+  particular case referenced in the paper.
+  <a
+    href="https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=1003&amp;context=crrarpub"
+    >More specifically</a
+  >, the standards are:
+</div>
+<div>
+  <div>
+    <ol style="text-align: left">
+      <li>
+        Testability: “whether it [the evidence, theory or technique] can be (and
+        has been) tested”
+      </li>
+      <li>Error Rate: “the known or potential rate of error”</li>
+      <li>
+        Peer Review: “whether the theory or technique has been subjected to peer
+        review and publication”
+      </li>
+      <li>
+        General Acceptance: the “explicit identification of a relevant
+        scientific community and an express
+      </li>
+      <li>
+        determination of a particular degree of acceptance within that
+        community”. (Daubert at 594)
+      </li>
+      <li>
+        Control Standards: whether its operation has been subjected to
+        appropriate standards of control&nbsp;
+      </li>
+    </ol>
+  </div>
+</div>
+<div>The notes also consider the following criteria:</div>
+<div>
+  <div>
+    <ol style="text-align: left">
+      <li>
+        Whether experts are “proposing to testify about matters growing
+        naturally and directly out of research they have conducted independent
+        to the litigation, or whether they have developed their opinions
+        expressly for the purposes of testifying” [Daubert at 1317].
+      </li>
+      <li>
+        Whether the expert has unjustifiably extrapolated from an accepted
+        premise to an unfounded conclusion [with reference to Joiner at 146].
+      </li>
+      <li>
+        Whether the expert has adequately accounted for obvious alternative
+        explanations [with reference to Claar v Burlington13].
+      </li>
+      <li>
+        Whether the expert “is being as careful as he would be in his regular
+        professional work outside his paid litigation consulting” [Sheehan v
+        Daily Racing Form Inc. 14 at 942].
+      </li>
+      <li>
+        Whether the field of expertise claimed by the expert is known to reach
+        reliable results for the type of opinion the expert would give [with
+        reference to Kumho at 1175]. (FRE, Rule 702, notes; see also Owen 2002,
+        361–2)
+      </li>
+      <li>
+        “the technique’s relationship to other techniques established to be
+        reliable”
+      </li>
+      <li>
+        “the non-litigation-related uses to which the method has been put”
+      </li>
+      <li>
+        “whether he [the expert] has sufficiently connected his testimony with
+        the facts of the case.” (Ibid.)
+      </li>
+    </ol>
+  </div>
+</div>
+<div>
+  The Daubert factors are not intended to be universal, exhaustive, or
+  individually sufficient or necessarily decisive. Rather, they are to be
+  thought of as general guidelines, that are to be used where appropriate, along
+  with other relevant and useful criteria. Collectively, the criteria contribute
+  to the assessment of the reliability and relevance of testimony offered as
+  expert knowledge. They help to
+</div>
+<div>
+  determine the admissibility of the testimony in a court and analogously,
+  whether an individual ought to "admit" an experts testimony into their own
+  personal decision making. Their application is also generally left to the
+  discretion of the individual.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  Application of these principles is not that straight forward. Walton notes the
+  problem with the application of these criteria within the paper. This is
+  relevant to our understanding of "expert identification", since the criteria
+  used by "lay people" must be actionable or useful, given pragmatic
+  constraints. Later he mentions that there is a possibility the legal criteria
+  might not even be the criteria used to determine admissibility, but rather
+  they are used during the cross-examination period at the trial itself. Whether
+  this is true, this is important, because it highlights the fact that expert
+  identification is a defeasible process taking place within a dialogue,
+  something Walton will expand upon with his general dialectical model for
+  arguments involving expert opinion:
+</div>
+<div>
+  <div>
+    <blockquote>
+      In short, the standard of reliability is not free of difficulties as a
+      method for assessing expertise in real cases. Fact-finders are normally
+      not experts in the scientific fields in which testimony is now so often
+      offered as evidence in court. Then how are fact-finders to understand and
+      assess expertise in the courtroom? An answer to this question will be
+      given and defended in the following sections using an argumentation model
+      of transmission of expert opinion evidence from a scientific inquiry to a
+      different procedural setting, that of a legal trial.
+    </blockquote>
+  </div>
+  I think his main point is to show that the critical questioning approach can
+  subsume the Rule 702, because some of the critical questions are relatively
+  similar to the legal criteria, and they both occur within a context of
+  back-and-forth deliberation. Both critical questions and admissibility
+  criteria resemble each other in terms of content and function. Walton asks us
+  to consider how source credibility within the courtroom might work. The main
+  idea being that competence and motives of the candidate might be insufficient
+  for assessing source credibility. All of these additional factors and
+  questions must be considered:
+</div>
+<div>
+  <div>
+    <blockquote>
+      In answering this “trust” question, fact-finders have to consider more
+      questions from internal and external aspects. The internal question
+      concerns scientific validity and reliability of evidence itself.
+      Scientific validity, which depends on scientific principles and methods,
+      aims at answering the question: does the principle support what it
+      purports to show? Reliability aims at answering the question: does
+      application of the principle produce consistent results?
+    </blockquote>
+  </div>
+  <br />According to Walton, courtroom fact finders can reference a decision
+  tree like the one below:
+</div>
+<div><br /></div>
+<div>
+  <div class="separator" style="clear: both; text-align: center">
+    <a
+      href="https://blogger.googleusercontent.com/img/a/AVvXsEgGqaBP_i3EhFEmDkPad81VomTlKqc4T7x2hZSUyS1kRyLmpgSeqpUWJfUytE7aPEwIgN_rns3OWfkIsSJgeJH5h42a7UKrmO18RD304PYH8tkTwRGxCCv5HeVN1WgU3_0Rh7st4-BQaEh9wmIg-2bsQl-XD5roOHI3t0udTmwR4mJU4cUDo_FhEVBaypCB"
+      style="margin-left: 1em; margin-right: 1em"
+      ><img
+        alt=""
+        data-original-height="505"
+        data-original-width="805"
+        height="349"
+        src="https://blogger.googleusercontent.com/img/a/AVvXsEgGqaBP_i3EhFEmDkPad81VomTlKqc4T7x2hZSUyS1kRyLmpgSeqpUWJfUytE7aPEwIgN_rns3OWfkIsSJgeJH5h42a7UKrmO18RD304PYH8tkTwRGxCCv5HeVN1WgU3_0Rh7st4-BQaEh9wmIg-2bsQl-XD5roOHI3t0udTmwR4mJU4cUDo_FhEVBaypCB=w556-h349"
+        width="556"
+    /></a>
+  </div>
+  <br />For internal validity of scientific research, we can assess the
+  credibility of an expert when evaluating their claims, using the internal
+  credibility criteria provided by Rule 702 and the critical questions (seen
+  below) provided by Walton. For external credibility however, it is a bit more
+  difficult. According to Walton, "Schum (2001, 103) identifies three factors
+  that need to be taken into account in assessing the credibility of a witness:
+  veracity, objectivity, and observational sensitivity", but the problem is that
+  expert bias can still arise due to personal and financial interest. There tend
+  to be strong benefits when affiliated with powerful interest groups, such that
+  it might be impossible to disentangle these motivations from the credibility
+  of their claims. Affiliation with organizations like these tend to enhance
+  their expertise in the eyes of the public as well, making it even more
+  challenging to differentiate between the institutional bias that might alter
+  expert opinions and unfiltered opinions. The External Credibility branch is
+  generally not addressed by Rule 702. There are no rules that explicitly
+  account for this form of credibility. I don't think Walton's critical
+  questions directly address this issue either. As I mentioned above, I don't
+  want to address this problem here since it's way too broad to tackle.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  One of Waltons main conclusions is that admissibility factors are best seen as
+  having the status of critical questions related to the argumentation scheme
+  for expert opinion. The admissibility stage is seen as a sub-stage within the
+  larger dialogue. I take this stage to be roughly equivalent to the problem of
+  expert identification within social epistemology. Deciding whether someone is
+  an expert is a presumptive or plausibilistic task, not something we can be
+  certain of. The decision takes place within a dialogue, in changing
+  circumstances, subject to new information characterized by defeasibility. The
+  main idea is that, when the conditions of the dialogue are satisfied (when the
+  critical questions are sufficiently answered), we plausibly admit candidate
+  expert testimony.
+</div>
+<div><br /></div>
+<div>
+  Below is the full set of critical questions for assessing admissibility:
+</div>
+<div><br /></div>
+<div>Expertise Question: How credible is E as an expert source?</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>
+        1.1 What is E’s name, job or official capacity, location, and employer?
+      </li>
+      <li>
+        1.2 What degrees, professional qualifications or certification by
+        licensing agencies does E hold?
+      </li>
+      <li>
+        1.3 Can testimony of peer experts in the same field be given to support
+        E’s competence?
+      </li>
+      <li>
+        1.4 What is E’s record of experience, or other indications of practiced
+        skill in S?
+      </li>
+      <li>1.5 What is E’s record&nbsp;</li>
+    </ul>
+    <div>Field Question: Is E an expert in the field that A is in?</div>
+  </div>
+</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>
+        2.1 Is the field of expertise cited in the appeal a genuine area of
+        knowledge, or area of technical skill that supports a claim to
+        knowledge?
+      </li>
+      <li>
+        2.2 If E is an expert in a field closely related to the field cited in
+        the appeal, how close is the relationship between the expertise in the
+        two fields?
+      </li>
+      <li>
+        2.3 Is the issue one where expert knowledge in any field is directly
+        relevant to deciding the issue?
+      </li>
+      <li>
+        2.4 Is the field of expertise cited an area where there are changes in
+        techniques or rapid developments in new knowledge, and if so, is the
+        expert up-to-date in these developments?
+      </li>
+    </ul>
+  </div>
+</div>
+<div>Opinion Question: What did E assert that implies A?</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>
+        3.1 Was E quoted in asserting A? Was a reference to the source of the
+        quote given, and can it be verified that E actually said A?
+      </li>
+      <li>
+        3.2 If E did not say A exactly, then what did E assert, and how was A
+        inferred?
+      </li>
+      <li>
+        3.3 If the inference to A was based on more than one premise, could one
+        premise have come from E and the other from a different expert? If so,
+        is there evidence of disagreement between what the two experts
+        (separately) asserted?
+      </li>
+      <li>
+        3.4 Is what E asserted clear? If not, was the process of interpretation
+        of what E said by the respondent who used E’s opinion justified? Are
+        other interpretations plausible? Could important qualifications be left
+        out?
+      </li>
+    </ul>
+  </div>
+</div>
+<div>Trustworthiness Question: Is E personally reliable as a source?</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>4.1 Is E biased?</li>
+      <li>4.2 Is E honest?</li>
+      <li>4.3 Is E conscientious?</li>
+    </ul>
+  </div>
+</div>
+<div>Consistency Question: Is A consistent with what other experts assert?</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>5.1 Does A have general acceptance in S?</li>
+      <li>
+        5.2 If not, can E explain why not, and give reasons why there is good
+        evidence for A?
+      </li>
+    </ul>
+  </div>
+</div>
+<div>Backup Evidence Question: Is E’s assertion based on evidence?</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>
+        6.1 What is the internal evidence the expert used herself to arrive at
+        this opinion as her conclusion?
+      </li>
+      <li>
+        6.2 If there is external evidence, e.g. physical evidence reported
+        independently of the expert, can the expert deal with this adequately?
+      </li>
+      <li>
+        6.3 Can it be shown that the opinion given is not one that is
+        scientifically unverifiable?
+      </li>
+    </ul>
+  </div>
+</div>
+<div>Walton summarizes by saying:</div>
+<div></div>
+<blockquote>
+  <div>
+    "It might be said that these critical questions codify some of the
+    background information that is assumed by (or implicit in) the argument from
+    expert opinion. As questions, they function to request the background
+    information on which the success of the argument depends. As objections,
+    they challenge the acceptability of the original argument until the
+    additional information is found to be favorable (to the initial argument).
+    As such, the central feature of critical questions is that, when they are
+    posed, they act as undercutting defeaters (Pollock 1995) for the original
+    argumentation. Until the questions are satisfactorily answered, the original
+    argument is defective and unacceptable. Moreover, there is no burden of
+    proof associated with posing these critical questions. The questions
+    themselves do not have to be supported with reasons, or evidence that their
+    answers are unfavorable to the proponent of the argument from expert
+    opinion. Instead, it is up to the proponent to demonstrate that they can be
+    answered. In effect then, while the argumentative result of a presumptive
+    argument is to shift the burden of proof to an objector, the argumentative
+    result of posing a critical question is to shift the burden of proof back to
+    the proponent of the argument."
+  </div>
+</blockquote>
+<div>
+  Much of "expert identification" involves assessing a potential candidate using
+  these sorts of critical questions. It also involves carefully explicating your
+  own assumptions and reasoning process, along with the reasoning process of the
+  candidate (which we will touch more on later). For example, you might ask
+  yourself "why do I think this person is an expert?" and "is their reasoning
+  aligned with established norms for credibility?" or "Which critical questions
+  apply to this particular candidate? (in the situation where expertise is skill
+  based)". If the candidate expert satisfies these critical questions to a
+  sufficient degree based on contextual requirements, then someone can readily
+  accept this person as an expert, much like how courts need to establish
+  whether to admit expert testimony into the proceedings for a given case.
+  Waltons Argumentation Theory approach prompts us to consider that arguments
+  from expert opinion normally take place within some dialectical context in
+  which a decision must be made. This contrasts with the open ended inquiry
+  characterizing science. In addition, legal contexts are very frequently
+  adversarial. This also contrasts with ideal scientific discourse. I see the
+  critical questions as heuristics that can be used for practical use for
+  individuals assessing experts in day-to-day life, without having to submerge
+  themselves within the open ended inquiry characterized by scientific
+  research.&nbsp;
+</div>
+<div>
+  <br />The legal criteria and critical questions can be seen as a checklist
+  ,where the person asking the questions determines if the criteria is
+  applicable, and if the candidate has satisfied the criteria. Walton provides
+  three scenarios of possible responses when a criteria is applied:
+</div>
+<div>
+  <ul style="text-align: left">
+    <li>
+      (i) the proponent shows that the criterion has been satisfied (direct
+      answer).&nbsp;
+    </li>
+    <li>
+      (ii) the proponent shows that the criterion is not relevant (indirect
+      answer).&nbsp;
+    </li>
+    <li>
+      (iii) the proponent shows that the criterion is not significant (indirect
+      answer).
+    </li>
+  </ul>
+</div>
+<div>
+  I want to move away briefly, from Waltons approach, and consider alternative
+  approaches. In
+  <a href="https://www.mdpi.com/2226-471X/7/3/207"
+    >Challenging Authority with Argumentation: The Pragmatics of Arguments from
+    and to Authority</a
+  >, the author describes a paradox in argumentation theory, something I take to
+  be very similar to the "expert identification problem":
+</div>
+<div>
+  <div></div>
+  <blockquote>
+    <div>
+      The first of the paradoxes is well-recognized within argumentation theory
+      (Bachman 1995; Goldman 2001; Goodwin 1998; Jackson 2008; Willard 1990). On
+      the one hand, the argument from authority becomes the fallacious
+      argumentum ad verecundiam, as it stifles the independent examination of
+      reasons, thus endangering one of the basic principles of rationality.
+      Indeed, if autonomous, unfettered, and unbiased weighing of reasons is
+      what rationality consists of, then reliance on external authority with its
+      prêt-à-porter judgements undercuts reason. Blind obedience to religious
+      authority of any creed and epoch is a specimen of the grave offence to
+      reason committed by appeals to authority.14 On the other hand, in the
+      complex world we live in, there is only so much we can learn via direct,
+      first-hand perceptual experience and individual reflection. A vast
+      majority of our knowledge is second-hand knowledge, derived from the
+      testimony of others in the position to know—i.e., eyewitnesses, experts,
+      educators, public authorities, etc. (Lackey 2008). We simply cannot reason
+      without arguments from epistemic authority, be them arguments from expert
+      opinion, from testimony, or otherwise from the position to know. Hence the
+      first paradox: authority both appears to be an unreasonable form of
+      argumentation and its very condition of possibility.
+    </div>
+    <div></div>
+  </blockquote>
+  <div>
+    Here he provides Goldmans list of critical questions that novices can use to
+    evaluate experts:
+  </div>
+  <div>
+    <div>
+      <ul style="text-align: left">
+        <li>
+          (A) Arguments presented by the contending experts to support their own
+          views and critique their rivals’ views. (Cf. consistency and backup
+          evidence question)
+        </li>
+        <li>
+          (B) Agreement from additional putative experts on one side or the
+          other of the subject in question. (Cf. consistency and expertise
+          questions)
+        </li>
+        <li>
+          (C) Appraisals by “meta-experts” of the experts’ expertise (including
+          appraisals reflected in formal credentials earned by the experts).
+          (Cf. field and expertise questions)
+        </li>
+        <li>
+          (D) Evidence of the experts’ interests and biases vis-à-vis the
+          question at issue. (Cf. trustworthiness question)
+        </li>
+        <li>
+          (E) Evidence of the experts’ past “track-records” (Cf. backup evidence
+          and expertise question)
+        </li>
+      </ul>
+    </div>
+  </div>
+  I think this is relatively similar to Walton's set of questions, so we don't
+  need to linger. It's just important to note that they can be rephrased while
+  retaining their content.
+</div>
+<div><br /></div>
+<div>
+  Another useful approach by David Schum (mentioned earlier), fuses witness and
+  expert testimony:
+</div>
+<div><br /></div>
+<div>
+  <div class="separator" style="clear: both; text-align: center">
+    <a
+      href="https://blogger.googleusercontent.com/img/a/AVvXsEjaYOyP7n1iOkeFNXJp3Jdw_nQt80yLsPi03IrY04QJdGG9iWjE39siN7PXKhZk5MpS_8Xn7cZHcdoOz2avleByRL-bpVwvaZ2ZyCZTK_0CVnTDgWgSmTPvYWYk4P1SOIXXhVhSH8jwzaBUBI75UrL1Q4okRm23wxZYAzCXyENgbCxaZg-YTnF1o8RkH6aV"
+      style="margin-left: 1em; margin-right: 1em"
+      ><img
+        alt=""
+        data-original-height="447"
+        data-original-width="802"
+        height="280"
+        src="https://blogger.googleusercontent.com/img/a/AVvXsEjaYOyP7n1iOkeFNXJp3Jdw_nQt80yLsPi03IrY04QJdGG9iWjE39siN7PXKhZk5MpS_8Xn7cZHcdoOz2avleByRL-bpVwvaZ2ZyCZTK_0CVnTDgWgSmTPvYWYk4P1SOIXXhVhSH8jwzaBUBI75UrL1Q4okRm23wxZYAzCXyENgbCxaZg-YTnF1o8RkH6aV=w503-h280"
+        width="503"
+    /></a>
+  </div>
+  <br /><br />If part of "expert identification" relies on individual judgement,
+  this implies better or worse modes of reasoning underlying any given
+  assessment. For example, if we find ourselves motivated to classify someone as
+  an expert, solely motivated by political partisanship, we should be aware of
+  this confirmation bias and reassess if feasible. If we are motivated by
+  "winning" rather than exploration of truth, if we cannot possibly conceive of
+  the option that we might be wrong, then identification of genuine expertise
+  will be distorted. This obviously implies we consult our own motivations and
+  reasons for classifying a candidate as an expert. Are we simply using this
+  person as leverage in an argument to defeat an interlocutor? This requires
+  self reflection, something I take to be a necessary condition for the
+  efficient application of the criteria we have been discussing so far. It also
+  implies that we don't just assume that our interlocutor is motivated by
+  pernicious reasons. All too often, people explain away expert opinion by
+  reference to a global conspiracy. This is antithetical to critical thinking
+  and should be avoided at all costs.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  So far, we have identified a set of criteria used to assess a candidate if
+  they are an expert, by means of critical questioning within a dialogue. Once
+  this person is identified, we still need a method of generally assessing their
+  conclusions. This can be thought of as second-order verification. Think about
+  it this way; if a candidate passes all of the relevant criteria in the initial
+  stage, we still need criteria to gauge whether it was a true positive. This is
+  a multistage test. If the second stage is validated, we can form stronger
+  convictions that this candidate is indeed an expert.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  Many times, experts are providing an explanation of some occurrence and
+  providing a subsequent recommendation based on their reasoning. More times
+  than not, these explanations can be assessed without having to understand
+  granular details about their particular domain knowledge. Think of an
+  executive decision maker who oversees multiple international business
+  segments. They cannot possibly know the details of every aspect of the
+  business. They cannot possibly have the subject matter expertise of someone
+  within some department they manage who has years of experience. They cannot
+  possibly have a comprehensive model describing the entire enterprise that can
+  answer all conceivable questions. This decision maker must rely on heuristics
+  to assess and synthesize the absurd amount of information presented to them.
+  Many times they are also dealing with people who are highly motivated to favor
+  one conclusion over another. We see this many times within large
+  organizations. Sub-domains might hyper-inflate the necessity of their domain
+  in order to gain more funding. The decision maker must consider all of this.
+  For example, an executive might have no idea have a particular business
+  process works; they must rely on the expertise of a floor manager to
+  communicate this information up the chain of decision makers. They must rely
+  on the synthesis of information presented by someone who is an expert in a
+  sub-domain, in order to steer the entire enterprise in the right direction. In
+  this scenario, if the lower level person cannot synthesize information into a
+  communicable form, the higher level person might conclude that the lower level
+  person does not actually genuinely understand the segment of the business they
+  are overseeing. This form of interaction occurs in many aspects of life.
+  Someone needs to understand how something works, but can only interface with
+  that thing at a very high level where details have been abstracted away. An
+  expert is someone who is supposed to aid our decision making. But if we can't
+  properly interface with them, our confidence in their reliability diminishes.
+  This is a general problem of interfacing with a black box that you rely upon
+  for some practical purpose. The expert is the black box you are relying upon
+  for something.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  I find this situation to be highly analogous to the situation normal people
+  find themselves in when trying to assess expert explanations. But like the
+  executive decision maker, we have tools that can be used to gauge the validity
+  of an expert explanation. I think there are general explanatory criteria that
+  can be used to assess any explanation. If a candidate expert fails to satisfy
+  these criteria, the second order verification test, then we can potentially
+  retract our categorization of them as an expert, or lose confidence in the
+  validity of their conclusions. Here are just a few explanatory criteria I
+  think are relevant:
+</div>
+<div>
+  <ul style="text-align: left">
+    <li>
+      Logical Consistency: The explanation must be logically coherent and free
+      from contradictions.
+    </li>
+    <li>
+      Causal Adequacy: The explanation should properly account for the causal
+      relationships that produce the phenomenon in question.
+    </li>
+    <li>
+      Scope: The explanation should account for a wide range of phenomena, not
+      just a single occurrence or a small set of cases.
+    </li>
+    <li>
+      Simplicity: Sometimes referred to as "parsimony," the explanation should
+      not be more complex than necessary.
+    </li>
+    <li>
+      Unification: The explanation should unify different observations or facts
+      under a single framework or theory.
+    </li>
+    <li>
+      Falsifiability: The explanation should be testable and potentially
+      refutable by empirical evidence.
+    </li>
+  </ul>
+</div>
+<div>
+  These do not require subject matter knowledge of a specific domain. They can
+  help us evaluate the claims made by an expert. This places a requirement on
+  the individual to assess expert explanation without having expert insight into
+  the particular questions. Just because we are not experts ourselves, does not
+  mean we can gain insight into the experts reasoning process, to assess whether
+  they have determined their conclusion by reliable mechanisms. This might
+  require consulting the basics of their discipline to broadly grasp how they
+  come to their conclusions. What I am suggesting requires a generally educated
+  population that understands the basic mechanisms of technical reasoning. This
+  does not require expertise itself.&nbsp;
+</div>
+<div><br /></div>
+<div>
+  In many cases, experts are providing an inference to the best explanation
+  (abductive reasoning) about something. The argument generally has this form:
+</div>
+<div>
+  <div>
+    <ul style="text-align: left">
+      <li>Observation: There is a set of observed facts or evidence (E).</li>
+      <li>
+        Hypotheses: There are multiple competing hypotheses (H1, H2, H3, …, Hn)
+        that could explain these facts.
+      </li>
+      <li>
+        Comparison: Each hypothesis is evaluated against a set of criteria
+        (coherence, scope, simplicity, etc.).
+      </li>
+      <li>
+        Selection: The hypothesis that best meets these criteria is inferred to
+        be the most likely explanation.
+      </li>
+    </ul>
+  </div>
+</div>
+<div>And can be assessed with the following criteria:</div>
+<div><br /></div>
+<div>
+  <p>
+    <strong>Is the explanation that is proposed genuinely explanatory?</strong>
+  </p>
+  <ul>
+    <li>
+      Does the hypothesis offer a meaningful explanation for the observed data
+      or evidence?
+    </li>
+    <li>
+      Does it merely describe the evidence, or does it provide an underlying
+      mechanism or cause?
+    </li>
+  </ul>
+</div>
+<div>
+  <p><strong>Is the explanation coherent and logically consistent?</strong></p>
+  <ul>
+    <li>Does the explanation avoid internal contradictions?</li>
+    <li>Does it align with established facts and other accepted theories?</li>
+  </ul>
+  <div>
+    <p>
+      <strong
+        >Does the explanation adequately account for all the relevant
+        evidence?</strong
+      >
+    </p>
+    <ul>
+      <li>Does the explanation cover all the data or phenomena in question?</li>
+      <li>
+        Are there any significant pieces of evidence that the explanation fails
+        to address?
+      </li>
+    </ul>
+    <div>
+      <p>
+        <strong>Is the explanation more plausible than its competitors?</strong>
+      </p>
+      <ul>
+        <li>
+          Does the explanation make fewer assumptions than alternative
+          explanations?
+        </li>
+        <li>Does it rely on reasonable and likely premises?</li>
+        <li>
+          How does it compare to other plausible explanations in terms of
+          simplicity, scope, and power?
+        </li>
+      </ul>
+      <div>
+        <p>
+          <strong
+            >Is the explanation empirically testable or falsifiable?</strong
+          >
+        </p>
+        <ul>
+          <li>Can the explanation be empirically tested or verified?</li>
+          <li>
+            Are there predictions that could, in principle, disprove the
+            explanation if they turn out to be false?
+          </li>
+        </ul>
+        <div>
+          <p>
+            <strong
+              >Is the explanation specific and detailed rather than vague or
+              overly general?</strong
+            >
+          </p>
+          <ul>
+            <li>
+              Does the explanation provide a clear, specific account of the
+              phenomenon?
+            </li>
+            <li>Are the mechanisms it posits well-defined?</li>
+          </ul>
+          <div>
+            <p>
+              <strong>Does the explanation avoid ad hoc hypotheses?</strong>
+            </p>
+            <ul>
+              <li>
+                Does the explanation introduce new, unsupported assumptions to
+                save itself from being discredited?
+              </li>
+              <li>
+                Are there arbitrary additions to the explanation that make it
+                less likely?
+              </li>
+            </ul>
+            <div>
+              <p>
+                <strong
+                  >Does the explanation fit well with background
+                  knowledge?</strong
+                >
+              </p>
+              <ul>
+                <li>
+                  Is the explanation consistent with what is already known about
+                  the world?
+                </li>
+                <li>
+                  Does it contradict well-established scientific theories or
+                  empirical data?
+                </li>
+                <li>
+                  Is the hypothesis consistent with well-established theories,
+                  principles, or facts?
+                </li>
+                <li>
+                  Does it contradict what is already known, and if so, does it
+                  provide a compelling reason for such a contradiction?
+                </li>
+              </ul>
+              <div>
+                <p>
+                  <strong>Does the explanation have predictive power?</strong>
+                </p>
+                <ul>
+                  <li>
+                    Does the explanation allow for accurate predictions of
+                    future events or phenomena?
+                  </li>
+                  <li>
+                    Can it explain other related phenomena that were not
+                    originally considered?
+                  </li>
+                </ul>
+                <div>
+                  <p>
+                    <strong
+                      >Does the explanation have explanatory depth and
+                      breadth?</strong
+                    >
+                  </p>
+                  <ul>
+                    <li>
+                      Does it not only explain the current evidence but also
+                      provide insight into other related phenomena?
+                    </li>
+                    <li>
+                      Does it have the potential to unify disparate observations
+                      under a common framework?
+                    </li>
+                  </ul>
+                  <div>
+                    <p><strong>Is the explanation conservative?</strong></p>
+                    <ul>
+                      <li>
+                        Does the explanation fit well with our prior knowledge
+                        and does it not require a radical revision of our
+                        understanding?
+                      </li>
+                    </ul>
+                    <div>
+                      <p>
+                        <strong
+                          >Is the explanation simple and parsimonious?</strong
+                        >
+                      </p>
+                      <ul>
+                        <li>
+                          Does the explanation avoid unnecessary complexity and
+                          assumptions?
+                        </li>
+                        <li>
+                          Is it the simplest explanation that accounts for all
+                          the evidence?
+                        </li>
+                      </ul>
+                      <div>
+                        <p>
+                          <strong
+                            >Is the explanation testable or falsifiable?</strong
+                          >
+                        </p>
+                        <ul>
+                          <li>
+                            Can the hypothesis be subjected to empirical testing
+                            or verification?
+                          </li>
+                          <li>
+                            Is it possible to identify evidence that could, in
+                            principle, falsify the hypothesis?
+                          </li>
+                        </ul>
+                        <div>
+                          <p>
+                            <strong
+                              >Is the explanation robust across different
+                              contexts or evidence?</strong
+                            >
+                          </p>
+                          <ul>
+                            <li>
+                              Does the hypothesis hold up well under different
+                              conditions or when new evidence is presented?
+                            </li>
+                            <li>
+                              Does it remain plausible when subjected to
+                              scrutiny from multiple perspectives?
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    Walton formulates the critical questions in a relatively similar way:
+  </div>
+  <div><br /></div>
+  <div>
+    <li><strong>F is a set of facts or observations.</strong></li>
+    <li>
+      <strong
+        >E is an explanation (or hypothesis) that, if true, would explain
+        F.</strong
+      >
+    </li>
+    <li>
+      <strong
+        >No alternative explanation provides a better explanation of F than
+        E.</strong
+      >
+    </li>
+    <li><b>Therefore, E is plausible (or is the best explanation).</b></li>
+  </div>
+  <div>
+    <p><strong>CQ1: How satisfactory is E as an explanation of F?</strong></p>
+    <ul>
+      <li>
+        This question evaluates how well the hypothesis explains the observed
+        facts. It questions whether the hypothesis is actually a good fit for
+        the evidence.
+      </li>
+    </ul>
+    <div>
+      <p>
+        <strong
+          >CQ2: How much better an explanation is E than the
+          alternatives?</strong
+        >
+      </p>
+      <ul>
+        <li>
+          This checks whether other possible explanations have been considered
+          and whether the current explanation is truly superior.
+        </li>
+      </ul>
+      <div>
+        <p>
+          <strong
+            >CQ3: How thorough is the search for alternative
+            explanations?</strong
+          >
+        </p>
+        <ul>
+          <li>
+            This question challenges whether a wide enough range of potential
+            explanations has been considered. If alternative hypotheses have
+            been overlooked, the conclusion might be premature.
+          </li>
+        </ul>
+        <div>
+          <p>
+            <strong
+              >CQ4: How likely is it that E is true, as opposed to other
+              possible explanations?</strong
+            >
+          </p>
+          <ul>
+            <li>
+              This critical question deals with the probability or plausibility
+              of the explanation being true, relative to other explanations.
+            </li>
+          </ul>
+          <div>
+            <p>
+              <strong
+                >CQ5: Could F be explained by a combination of multiple
+                factors?</strong
+              >
+            </p>
+            <ul>
+              <li>
+                This question examines whether the facts could be explained by
+                more than one cause or factor rather than a single explanation.
+                This would challenge the sufficiency of the current hypothesis.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div><br /></div>
+  <div>
+    When an expert provides an abductive argument, evaluating it critically is
+    crucial to ensure that their conclusion is reliable, well-founded, and not
+    subject to cognitive biases or errors in reasoning. Although experts
+    typically have specialized knowledge and experience, their arguments still
+    need to be assessed using a systematic approach to prevent overreliance on
+    authority. Here are some considerations:
+  </div>
+  <div>
+    <h4 style="text-align: left">
+      1. <strong>Clarify the Evidence and Observation</strong>
+    </h4>
+    <ul>
+      <li>
+        <p>
+          <strong>What is the evidence the expert is explaining?</strong
+          ><br />Start by identifying the specific observations or data that the
+          expert is trying to explain. This helps to anchor the argument and
+          makes it easier to assess whether the proposed explanation is truly
+          the best.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Does the expert provide a clear account of the facts?</strong
+          ><br />Ensure that the evidence being discussed is presented
+          accurately, clearly, and comprehensively. Are they using all the
+          relevant evidence, or is some important data being overlooked or
+          ignored?
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4 style="text-align: left">
+      2. <strong>Check the Explanation’s Coherence and Plausibility</strong>
+    </h4>
+    <ul>
+      <li>
+        <p>
+          <strong
+            >Is the expert’s explanation coherent and logically sound?</strong
+          ><br />A good abductive argument should be internally consistent. Does
+          the expert's explanation make sense, or are there contradictions
+          within their reasoning?
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Does the explanation fit with what we already know?</strong
+          ><br />The explanation should be consistent with existing theories,
+          knowledge, or data unless there’s strong evidence to challenge the
+          established framework. Is the expert proposing something that goes
+          against well-established facts without sufficient justification?
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div>
+  <h4 style="text-align: left">
+    3. <strong>Evaluate Competing Hypotheses</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Has the expert considered alternative explanations?</strong
+        ><br />Even though an expert may be focused on one explanation, good
+        abductive reasoning involves comparing multiple hypotheses. Did the
+        expert consider alternative possibilities, and if so, why were those
+        alternatives rejected? Is the reasoning for rejecting them sound?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Is the proposed explanation the best among alternatives?</strong
+        ><br />Just because an explanation fits the data does not mean it is the
+        best explanation. Is the expert's explanation superior to other
+        hypotheses in terms of simplicity, explanatory scope, or fit with the
+        evidence?
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h4 style="text-align: left">
+    4. <strong>Check for Testability and Predictive Power</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Can the expert’s explanation be empirically tested?</strong
+        ><br />One of the hallmarks of a strong explanation is its ability to be
+        tested or falsified. Ask whether the expert's hypothesis allows for
+        empirical verification or whether it makes predictions that can be
+        tested against future evidence.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Does the explanation make new predictions?</strong><br />A
+        strong abductive explanation will often predict new facts or phenomena.
+        Does the expert’s explanation lead to any new insights or predictions
+        that can be verified?
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h4 style="text-align: left">
+    5. <strong>Assess Simplicity and Parsimony</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Is the expert’s explanation unnecessarily complex?</strong
+        ><br />According to Occam’s Razor, a simpler explanation that accounts
+        for all the evidence is preferable to a more complicated one. Is the
+        expert introducing unnecessary complexity, or is their explanation
+        concise and to the point?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Are there ad hoc assumptions?</strong><br />Check whether the
+        expert is introducing arbitrary or unsupported assumptions to make the
+        explanation fit. An ad hoc adjustment can weaken an abductive argument,
+        suggesting the hypothesis might not be as strong as it first appears.
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h4 style="text-align: left">
+    6. <strong>Consider the Expert’s Bias and Motivations</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Could the expert be biased in their reasoning?</strong
+        ><br />Experts, like anyone else, can be subject to confirmation bias or
+        other cognitive biases. Are there any indications that the expert is
+        favoring a particular explanation due to personal biases, institutional
+        pressures, or vested interests?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Is there over-reliance on authority?</strong><br />Just because
+        an expert endorses a particular explanation doesn't mean it should be
+        accepted without scrutiny. Are they appealing to their authority rather
+        than making a well-reasoned argument supported by evidence?
+      </p>
+    </li>
+  </ul>
+  <div>
+    <h4 style="text-align: left">
+      7. <strong>Review the Scope and Breadth of the Explanation</strong>
+    </h4>
+    <ul>
+      <li>
+        <p>
+          <strong
+            >Does the explanation account for all the relevant data?</strong
+          ><br />Ensure that the expert’s argument covers all the known facts.
+          Are there any key pieces of evidence that are being ignored or
+          downplayed because they do not fit the proposed hypothesis?
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Does the explanation unify disparate observations?</strong
+          ><br />A good abductive explanation often has the power to unify
+          various observations or phenomena under a common framework. Does the
+          expert’s explanation provide a broader understanding that could
+          explain other related facts or situations?
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+<div>
+  <h4 style="text-align: left">
+    8. <strong>Examine the Explanatory Power</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>How well does the explanation clarify the evidence?</strong
+        ><br />An abductive argument should help clarify the evidence or make it
+        more understandable. Does the expert's explanation provide a deeper
+        understanding of the phenomenon, or does it leave key aspects
+        unexplained?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Does the explanation resolve anomalies?</strong><br />If there
+        are anomalies or unexpected findings, does the expert’s explanation
+        satisfactorily address them? Strong abductive arguments often explain
+        surprising or puzzling data better than alternatives.
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h4 style="text-align: left">
+    9. <strong>Consider the Domain-Specific Expertise</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Is the expert working within their field of expertise?</strong
+        ><br />Ensure the expert’s abductive argument falls within their domain
+        of expertise. Even experts can make errors when reasoning outside their
+        field, and expertise in one area does not necessarily translate to
+        others.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Do they use technical knowledge appropriately?</strong
+        ><br />Evaluate whether the expert is applying their technical knowledge
+        correctly. Are the scientific or technical concepts being used
+        accurately, or are there misunderstandings or misapplications?
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  <h4 style="text-align: left">
+    10. <strong>Evaluate the Strength of the Evidence</strong>
+  </h4>
+  <ul>
+    <li>
+      <p>
+        <strong>Is the evidence reliable and sufficient?</strong><br />A strong
+        abductive argument depends on solid, well-supported evidence. Is the
+        expert relying on high-quality data, or is the evidence weak, anecdotal,
+        or incomplete?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Are there any unstated assumptions or missing evidence?</strong
+        ><br />Scrutinize whether the expert is making any unstated assumptions
+        that could undermine the argument. Also, consider whether there is
+        missing evidence that, if known, might alter the conclusion.
+      </p>
+    </li>
+  </ul>
+</div>
+<div>
+  Recommendations are closely related to <strong>explanations</strong> because a
+  recommendation often requires reasoning that explains <em>why</em> a
+  particular choice or action is preferable in a given context. In essence, a
+  recommendation typically involves an underlying explanation that justifies why
+  the suggested course of action is better than alternatives. The Relationship
+  Between Recommendations and Explanations between them can be understood as
+  follows:
+</div>
+<div>
+  <ol>
+    <li>
+      <strong>Explanations Justify Recommendations</strong>: When someone makes
+      a recommendation, they are often implicitly or explicitly providing
+      reasons or explanations for their suggestion. For instance, a doctor might
+      recommend a specific treatment because of its effectiveness, explaining
+      that it has fewer side effects than alternatives. A strong recommendation
+      is grounded in an explanation that makes clear why it is better suited to
+      a person’s needs, preferences, or situation.
+    </li>
+    <li>
+      <strong>Evaluating Recommendations Involves Examining Explanations</strong
+      >: To assess the quality of a recommendation, one must examine the
+      explanation behind it. This includes evaluating the logic, evidence, and
+      assumptions that support the recommendation.
+    </li>
+  </ol>
+  <div style="text-align: left">
+    To evaluate a recommendation effectively, we can focus on several key areas:
+  </div>
+  <ol>
+    <li>
+      <p>
+        <strong>Clarity and Logic of the Explanation</strong>:&nbsp;<strong
+          >Does the recommendation come with a clear explanation?</strong
+        >
+        Is the reasoning behind the recommendation sound and logical? For
+        instance, if someone recommends a particular investment strategy, does
+        their explanation lay out the financial benefits, risks, and long-term
+        expectations in a coherent way?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Evidence and Supporting Information</strong>:&nbsp;<strong
+          >Is there sufficient evidence or data to support the
+          recommendation?</strong
+        >
+        Are the explanations based on reliable facts, studies, or expert
+        opinions, or do they rely on anecdotal information? A doctor
+        recommending a treatment should be able to cite clinical trials, medical
+        research, or case studies to support their recommendation.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Consideration of Alternatives</strong>:&nbsp;<strong
+          >Does the recommendation consider alternatives and explain why they
+          were not chosen?</strong
+        >
+        A strong recommendation should show an awareness of other options and
+        explain why the proposed course of action is superior. If someone
+        recommends a particular university, do they also discuss why other
+        universities might be less suitable based on factors like location,
+        cost, or academic offerings?
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Context Appropriateness</strong>:&nbsp;<strong
+          >Does the recommendation fit the specific context and needs of the
+          individual?</strong
+        >
+        Even a well-reasoned recommendation might not be appropriate if it
+        doesn’t align with the person’s particular circumstances, goals, or
+        values. For example, recommending a high-intensity workout routine to
+        someone with a history of joint problems might not be appropriate, even
+        if it's generally effective for fitness.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Potential Bias or Conflicts of Interest</strong>:&nbsp;<strong
+          >Is there any bias in the recommendation?</strong
+        >
+        Does the person making the recommendation have a vested interest in the
+        outcome? For example, if a financial advisor recommends a particular
+        stock but receives a commission from its sale, this potential conflict
+        of interest could affect the credibility of their recommendation.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Feasibility and Practicality</strong>:&nbsp;<strong
+          >Is the recommendation realistic and practical to implement?</strong
+        >
+        Sometimes a recommendation might be theoretically sound but impractical
+        given the available resources, time, or capabilities of the person
+        receiving it. For instance, recommending an elaborate meal plan for
+        someone with a busy schedule might not be feasible, even if it’s
+        nutritionally ideal.
+      </p>
+    </li>
+    <li>
+      <p>
+        <strong>Track Record and Reputation</strong>:&nbsp;<strong
+          >What is the track record or expertise of the person making the
+          recommendation?</strong
+        >
+        Evaluating their qualifications and previous successes or failures can
+        provide insight into the reliability of the recommendation. An IT
+        consultant with years of experience and a strong reputation might offer
+        more trustworthy recommendations than someone less familiar with the
+        field.
+      </p>
+    </li>
+  </ol>
+</div>
+<div>
+  So after an expert has been identified, we must evaluate the relationship
+  between their recommendations and explanations before making a decision. If
+  the recommendation is unaligned with the explanation provided, then we have
+  reason to be skeptical. If "the experts are recommending this new diet to
+  solve your problems", probe the reasoning behind the recommendation. You might
+  find an incongruity between the proposed recommendation and reasons given. You
+  might even find this person to be a false positive.
+</div>
+<div><br /></div>
+<div>
+  I think this is a good stopping point for now. My main contention is that
+  "expert identification" can at least be partially alleviated by applying tools
+  from Argumentation Theory. I don't think we are completely in the dark. I just
+  do not think this is a "solvable" problem in the sense of identifying a
+  universal set of criteria that could apply to all experts throughout space and
+  time; or finding a unique solution. To me, this is more of a constraint
+  satisfaction and error rate minimization problem. We want our constraints to
+  be exclusive enough to maximize the number of correct classifications. This is
+  also highly defeasible. Knowledge evolves and we constantly operate within
+  dynamic contexts where information updates and has varying degrees of
+  credibility. Also because of the way "expertise" is conceptualized, and partly
+  because there is no consensus as to how the term applies. For example,
+  "Expertise" as applied to a computer engineer is distinct from an "Expert" who
+  is say, a football coach. In the former, there are explicit qualifications and
+  technical know-how we can point to, in the latter what we are really meaning
+  to say is that person has "experience". The former and the latter will be
+  assessed differently. Part of deciding how the term applies is conditional on
+  how we have conceptualized "expertise". This also explains the difficulty of
+  "expert identification"; how we conceive of "expertise" tends to differ from
+  person to person. In other words, the referent of the definition is unstable;
+  it's not that some people cannot recognize an expert, its that their
+  operational definition is unsatisfactory. In many cases it might be far too
+  inclusive. In this circumstance, the conceptual landscape ought to be
+  partitioned so that some of the members are reclassified under some other
+  label. Like in the case above with the football coach. They are "experienced"
+  (the term expert cannot apply in this instance), and so the set of questions
+  we must ask are about whether the experience is relevant, relatable, lacks
+  depth, or is sufficiently versatile. Consider a "military commander" who is
+  decorated with five stars. We would not call this person an expert. Rather,
+  they would use experts to achieve their ends within the battlefield.
+</div>
+<div><br /></div>
+<div>Anyway, I feel like I am beating a dead horse. The End.</div>
