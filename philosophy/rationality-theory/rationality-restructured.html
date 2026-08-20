@@ -1,0 +1,1152 @@
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    </style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<article class="ep-post" id="top">
+  <p>
+    It is tempting to think irrationality is primarily a failure of logic: the
+    irrational person commits fallacies, ignores evidence, or draws invalid
+    conclusions. Conspiracy thinking complicates that picture. A conspiracy
+    theory can contain valid inferences, cite genuine data, and even remain
+    internally coherent while something has still gone badly wrong with the
+    inquiry that produced it.
+  </p>
+
+  <p>
+    That suggests that rationality must consist in more than possessing arguments
+    or updating beliefs consistently. It must also concern the kind of inquiry we
+    are engaged in, the standards governing disagreement, the way evidence is
+    identified and structured, the comparison of rival explanations, the
+    intellectual habits of the inquirer, and the information environment in which
+    inquiry takes place.
+  </p>
+
+  <p>
+    My aim in this post is to assemble those pieces into a working model of the
+    <em>ideal inquirer</em>. I am especially interested in how that model can help
+    us understand conspiracy thinking. Rather than asking only whether a
+    conspiratorial argument is formally valid, I want to ask a thicker set of
+    questions: What is the dialogue trying to accomplish? What makes something
+    evidence? How was that evidence obtained? How should it change our confidence?
+    How does the whole explanatory package compare with its rivals? What virtues
+    does responsible inquiry require? And what happens when our epistemic
+    environment is actively exploiting our cognitive limitations?
+  </p>
+
+  <blockquote>
+    <strong>The basic proposal:</strong> rational inquiry is a layered process.
+    We first identify the goal and rules of the inquiry; compare competing
+    explanatory models; determine how evidence bears on those models; update our
+    confidence where quantification is appropriate; discipline the process with
+    epistemic virtues; and remain alert to environmental forces that can distort
+    every stage.
+  </blockquote>
+
+  <nav aria-label="Table of contents">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#dialogue">What are we trying to do? Rationality has a dialogical context</a></li>
+      <li><a href="#worldviews">What are we evaluating? Compare theories, not stockpiles of arguments</a></li>
+      <li><a href="#evidence">What counts as evidence? Structure it before quantifying it</a></li>
+      <li><a href="#updating">How should belief change? Bayesian updating in its proper role</a></li>
+      <li><a href="#virtues">What must the inquirer be like? Epistemic virtues as quality control</a></li>
+      <li><a href="#environment">What if the environment is adversarial? Rationality is socially situated</a></li>
+      <li><a href="#framework">The ideal inquirer: a unified procedure</a></li>
+      <li><a href="#sources">Sources and further reading</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="dialogue">1. What are we trying to do? Rationality has a dialogical context</h2>
+
+  <p>
+    Before asking whether an argument is valid, we should ask what kind of
+    argumentative activity is taking place. Arguments do not normally appear in
+    a vacuum. They are moves within conversations in which people have different
+    commitments, goals, burdens, and expectations. A move that is perfectly
+    reasonable in one context may be irrelevant or even obstructive in another.
+  </p>
+
+  <p>
+    The pragma-dialectical approach developed by Frans van Eemeren and Rob
+    Grootendorst is helpful here because it treats argumentation as a regulated
+    critical discussion aimed at resolving a difference of opinion. Its ideal
+    model moves through four stages. First, a disagreement becomes explicit. Next,
+    the parties establish common ground, procedural rules, and burdens of proof.
+    Then arguments and criticisms are exchanged. Finally, the discussion reaches
+    a conclusion: a standpoint has either survived the criticism or it has not.
+    The point is not merely to persuade an audience but to create conditions under
+    which a disagreement can be rationally tested.
+  </p>
+
+  <p>
+    This changes how we should think about fallacies. A fallacy is not only an
+    invalid inference in the abstract. It can also be a move that prevents a
+    critical discussion from doing its job. A straw man attacks a position that
+    was never advanced. Burden shifting allows someone to avoid defending their
+    own claim. Ambiguous language prevents the parties from determining what is
+    actually being asserted. Even a formally valid inference can be dialectically
+    defective if it evades commitments or blocks appropriate criticism.
+  </p>
+
+  <h3>Rules of engagement</h3>
+  <p>
+    The full pragma-dialectical model contains ten rules, but for present purposes
+    several are especially important:
+  </p>
+  <div class="table-wrap">
+    <table class="two-col long-table">
+      <thead>
+        <tr><th>Rule</th><th>What it requires</th></tr>
+      </thead>
+      <tbody>
+        <tr><td data-label="Rule"><strong>Freedom rule</strong></td><td data-label="What it requires">No one should be prevented from advancing or challenging a standpoint through silencing, intimidation, or similar obstruction.</td></tr>
+        <tr><td data-label="Rule"><strong>Burden of proof rule</strong></td><td data-label="What it requires">A party who advances a standpoint must defend it when appropriately challenged rather than shifting the burden to the opponent.</td></tr>
+        <tr><td data-label="Rule"><strong>Standpoint rule</strong></td><td data-label="What it requires">Criticism must address the standpoint actually advanced rather than a distorted substitute.</td></tr>
+        <tr><td data-label="Rule"><strong>Relevance rule</strong></td><td data-label="What it requires">A defense should answer the criticism that was actually raised rather than diverting to an unrelated consideration.</td></tr>
+        <tr><td data-label="Rule"><strong>Unexpressed premise rule</strong></td><td data-label="What it requires">When an argument depends on an implicit premise, that premise must be open to clarification and challenge.</td></tr>
+        <tr><td data-label="Rule"><strong>Starting point rule</strong></td><td data-label="What it requires">Participants should not opportunistically deny commitments that were already accepted as common ground.</td></tr>
+        <tr><td data-label="Rule"><strong>Validity rule</strong></td><td data-label="What it requires">Arguments should employ reasoning that meets the appropriate standards of inferential validity.</td></tr>
+        <tr><td data-label="Rule"><strong>Argument scheme rule</strong></td><td data-label="What it requires">Appeals to analogy, authority, causal reasoning, and other schemes must be legitimate and answerable to the appropriate critical questions.</td></tr>
+        <tr><td data-label="Rule"><strong>Closure rule</strong></td><td data-label="What it requires">A successfully defended standpoint should be accepted for the purposes of the discussion; a refuted one should be withdrawn or revised.</td></tr>
+        <tr><td data-label="Rule"><strong>Usage rule</strong></td><td data-label="What it requires">Participants should avoid unclear, ambiguous, or manipulative language that prevents rational resolution.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Douglas Walton extends this contextual insight by distinguishing different
+    <em>types of dialogue</em>. A persuasion dialogue aims to resolve a difference
+    of opinion. An inquiry dialogue aims to establish what is true. Deliberation
+    concerns what should be done. Negotiation seeks an acceptable settlement of
+    conflicting interests. Information-seeking transfers knowledge from someone
+    who has it to someone who needs it. Pedagogical dialogue aims at learning.
+    Eristic dialogue, by contrast, is oriented toward quarrel, emotional release,
+    or victory rather than rational resolution.
+  </p>
+
+  <div class="table-wrap">
+    <table class="three-col wide-table long-table">
+      <thead>
+        <tr><th>Dialogue type</th><th>Primary goal</th><th>Typical rationality constraints</th></tr>
+      </thead>
+      <tbody>
+        <tr><td data-label="Dialogue type"><strong>Persuasion / critical discussion</strong></td><td data-label="Primary goal">Resolve a difference of opinion through reasoned argument.</td><td data-label="Typical rationality constraints">Clear commitments, proper burdens of proof, accurate representation of opposing standpoints, and arguments open to critical questioning.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Inquiry</strong></td><td data-label="Primary goal">Establish what is the case.</td><td data-label="Typical rationality constraints">Gather and weigh evidence impartially, test hypotheses, avoid suppression and cherry-picking, and keep contributions relevant to the inquiry question.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Deliberation</strong></td><td data-label="Primary goal">Choose a prudent course of action.</td><td data-label="Typical rationality constraints">Consider consequences, trade-offs, alternatives, values, and shared goals rather than collapsing the choice into a false dilemma.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Negotiation</strong></td><td data-label="Primary goal">Reach a mutually acceptable settlement of conflicting interests.</td><td data-label="Typical rationality constraints">State positions and concessions honestly, make genuine offers, avoid coercion and deception, and search for feasible compromise.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Information seeking</strong></td><td data-label="Primary goal">Transfer needed knowledge from one party to another.</td><td data-label="Typical rationality constraints">Ask relevant and clear questions; answer accurately, completely, and without evasion.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Pedagogical</strong></td><td data-label="Primary goal">Facilitate learning and understanding.</td><td data-label="Typical rationality constraints">Explanations should suit the learner, questions should be encouraged, misunderstandings corrected, and progress built cumulatively.</td></tr>
+        <tr><td data-label="Dialogue type"><strong>Eristic / quarrel</strong></td><td data-label="Primary goal">Vent, confront, or score points rather than resolve the underlying issue.</td><td data-label="Typical rationality constraints">Even here, turn-taking, relevance, and avoidance of outright deception can distinguish disagreement from sheer incoherence.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    These differences matter. If I treat an inquiry as though it were a quarrel,
+    scoring points may replace truth-seeking. If I treat negotiation as though it
+    were pure inquiry, I may ignore the legitimate role of interests and
+    compromise. Rationality is therefore partly <em>context-sensitive</em>: a
+    participant must understand the purpose of the dialogue and adopt norms that
+    make that purpose possible.
+  </p>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    Rationality is not exhausted by valid inference. It also requires a
+    truth-enabling or resolution-enabling conversational structure: clear goals,
+    appropriate burdens, relevant criticism, fair engagement, and a genuine
+    possibility of revision.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="worldviews">2. What are we evaluating? Compare theories, not stockpiles of arguments</h2>
+
+  <p>
+    Once the purpose and rules of inquiry are clear, a second question appears:
+    what is the proper unit of evaluation? It is tempting to think that rational
+    disagreement proceeds by exchanging isolated arguments for <em>P</em> and
+    <em>not-P</em> until one side accumulates enough victories. Graham Oppy’s work
+    on derivations challenges that picture.
+  </p>
+
+  <p>
+    Consider a dispute between PRO and CON about some contested claim. If PRO
+    derives the claim from premises that CON already accepts, the derivation has
+    genuine dialectical force: it may reveal that CON's commitments jointly lead
+    somewhere CON did not expect. A reductio can be especially powerful because
+    it exposes an inconsistency internal to a position. But if PRO's derivation
+    relies on premises CON simply rejects, then the argument may do little more
+    than restate the disagreement in a longer form.
+  </p>
+
+  <p>
+    In the kinds of deep disputes Oppy has in view, this pushes us away from a
+    fixation on stand-alone derivations and toward <em>theory comparison</em>.
+    Instead of asking only whether one can derive a controversial conclusion,
+    construct the best theory containing the claim and the best rival theory
+    containing its negation. Test each for internal incoherence. If both survive,
+    compare them using broader theoretical virtues: simplicity, explanatory power,
+    fruitfulness, predictive success, fit with the data, and coherence with the
+    rest of what we have reason to accept.
+  </p>
+
+  <p>
+    This is particularly useful for conspiracy thinking. Conspiracy claims rarely
+    live in isolation. They are usually embedded within a broader interpretive
+    framework about institutions, testimony, expertise, secrecy, incentives, and
+    who can be trusted. Refuting one argument may therefore leave the worldview
+    largely untouched; another argument is simply recruited from the stockpile.
+    The deeper question is whether the conspiratorial package explains the total
+    body of evidence better than its strongest non-conspiratorial rival.
+  </p>
+
+  <p>
+    This also helps explain why rational disagreement can persist. People may
+    disagree not because one side has failed to perform a simple inference, but
+    because the plausibility of premises and the interpretation of evidence depend
+    on different background commitments. Rational persuasion then cannot always
+    consist in producing one more argument. It may require comparing the rival
+    frameworks that make those arguments appear plausible in the first place.
+  </p>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    The possession of arguments is not enough. Under deep disagreement, rational
+    assessment often requires comparing entire explanatory packages and asking
+    which one best survives internal criticism while accounting for the total
+    evidence.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="evidence">3. What counts as evidence? Structure it before quantifying it</h2>
+
+  <p>
+    Theory comparison immediately creates another problem. We often say that the
+    better theory is the one best supported by the evidence, but that formula
+    hides an important question: <em>what makes some datum evidence for a
+    hypothesis in the first place?</em>
+  </p>
+
+  <p>
+    Evidence is rarely a raw fact that arrives already labeled with its
+    significance. A fingerprint does not directly state, “this person committed
+    the crime.” It may support a proposition about presence at a scene; that may
+    support a proposition about opportunity; and that may contribute, alongside
+    many other considerations, to a conclusion about guilt. The evidential force
+    comes from a network of intermediate inferences and defeasible
+    generalizations.
+  </p>
+
+  <p>
+    The work of John Henry Wigmore, and later developments in evidence analysis by
+    writers such as William Twining, Terence Anderson, and David Schum, is useful
+    because it makes this structure explicit. A Wigmore-style chart maps an
+    ultimate proposition through intermediate propositions to particular items of
+    evidence. It makes visible which claims support others, where the inferential
+    chain is weak, which sources need credibility assessments, and where an
+    undercutter could break the connection.
+  </p>
+
+  <p>
+    That perspective highlights three features of evidential rationality that are
+    easy to overlook:
+  </p>
+
+  <ol>
+    <li>
+      <strong>Evidence requires interpretation.</strong> Raw observations must be
+      translated into propositions whose relevance to a hypothesis can be argued.
+      Interpretation is therefore epistemically upstream of belief updating.
+    </li>
+    <li>
+      <strong>Evidential support is often indirect and multi-layered.</strong>
+      Evidence can support intermediate claims, which then support larger claims.
+      The strength of the final conclusion depends on the integrity of the chain.
+    </li>
+    <li>
+      <strong>The collection process matters.</strong> Rational belief depends not
+      only on what evidence is present, but on how it entered the evidential record:
+      who gathered it, what was excluded, whether selection was biased, and whether
+      the sources are trustworthy.
+    </li>
+  </ol>
+
+  <p>
+    This matters enormously under deep disagreement because evidence is
+    <em>theory-laden</em>. A scientific consensus, for example, may be interpreted
+    by one person as evidence for a scientific hypothesis and by another as
+    evidence that institutions are corrupt. The datum is the same; the evidential
+    role assigned to it is different because the background theory differs. We
+    therefore cannot always begin with “Here is the evidence.” Sometimes the
+    dispute is precisely over why the datum should count as evidence for one
+    hypothesis rather than another.
+  </p>
+
+  <div class="table-wrap">
+    <table class="two-col">
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Question for the inquirer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Component">Evidential relevance</td>
+          <td data-label="Question for the inquirer">Why should this datum count for or against the claim?</td>
+        </tr>
+        <tr>
+          <td data-label="Component">Evidential structure</td>
+          <td data-label="Question for the inquirer">How do the pieces combine—do they corroborate, conflict, depend on one another, or attack one another?</td>
+        </tr>
+        <tr>
+          <td data-label="Component">Inferential chains</td>
+          <td data-label="Question for the inquirer">What intermediate propositions connect the observation to the final hypothesis?</td>
+        </tr>
+        <tr>
+          <td data-label="Component">Procedural access</td>
+          <td data-label="Question for the inquirer">How was the evidence gathered, filtered, measured, and selected?</td>
+        </tr>
+        <tr>
+          <td data-label="Component">Interpretive frames</td>
+          <td data-label="Question for the inquirer">What background assumptions make this item intelligible as evidence?</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    A rational inquirer does not treat evidence as a pile of inputs. Evidence must
+    be identified, interpreted, connected to hypotheses, and audited for provenance
+    before its force can be responsibly assessed.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="updating">4. How should belief change? Bayesian updating in its proper role</h2>
+
+  <p>
+    Once we have done the interpretive work of establishing what a piece of
+    evidence is and how it relates to a hypothesis, we can ask a more familiar
+    question: how should that evidence change our confidence?
+  </p>
+
+  <p>
+    Bayesian epistemology provides a formal model of belief updating. In its most
+    familiar form, Bayes' theorem is:
+  </p>
+
+  <div class="math-block">
+    \[
+      P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}
+    \]
+  </div>
+
+  <p>
+    Here, <strong>H</strong> is a hypothesis, <strong>E</strong> is evidence,
+    <strong>P(H)</strong> represents prior confidence in the hypothesis, and
+    <strong>P(H | E)</strong> represents confidence after taking the evidence into
+    account. The framework captures something genuinely important about
+    rationality: beliefs should be responsive to new information, and the impact
+    of that information depends both on what we already believe and on how likely
+    the evidence would be under competing hypotheses.
+  </p>
+
+  <p>
+    But Bayesian updating does not by itself solve the problems raised in the
+    previous section. The formalism needs an <em>E</em>, a prior, and likelihoods.
+    Those inputs already reflect judgments about relevance, background knowledge,
+    model structure, and interpretation. If two people assign radically different
+    meanings to the same observation, merely telling them to “update on the
+    evidence” does not resolve the dispute.
+  </p>
+
+  <p>
+    Priors create a related difficulty. They encode an agent's starting
+    commitments, and deep disagreement may partly consist in radically different
+    starting points. A person can also manipulate priors or likelihoods in ways
+    that make a favored conclusion resilient while remaining formally coherent.
+    Formal consistency is therefore a constraint on rationality, but it cannot be
+    the whole of rationality.
+  </p>
+
+  <p>
+    The most useful role for Bayes in the present framework is therefore
+    <em>local rather than total</em>. Where a sub-inference is sufficiently well
+    specified—for example, how a test result should change our confidence given
+    competing assumptions about reliability or contamination—Bayesian reasoning
+    can discipline the update. At the worldview level, however, we still need the
+    broader work of evidential interpretation and theory comparison.
+  </p>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    Rationality requires evidence-responsiveness. Bayesian reasoning is a powerful
+    tool for disciplined updating within a sufficiently specified model, but it
+    cannot by itself determine what counts as evidence, which background model is
+    correct, or whether the starting assumptions were responsibly formed.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="virtues">5. What must the inquirer be like? Epistemic virtues as quality control</h2>
+
+  <p>
+    At this point the emerging picture still leaves something out. A method can be
+    perfectly respectable on paper and badly abused in practice. Someone can build
+    an impressive evidence map from cherry-picked sources. Someone can choose
+    priors that insulate a preferred conclusion. Someone can compare rival
+    worldviews while being systematically unfair to every alternative. The quality
+    of inquiry therefore depends partly on the character and habits of the person
+    conducting it.
+  </p>
+
+  <p>
+    This is where virtue epistemology becomes useful. Reliabilist versions focus
+    on stable faculties or capacities that reliably produce true beliefs.
+    Responsibilist versions emphasize intellectual character traits such as
+    humility, open-mindedness, fairness, courage, attentiveness, and
+    conscientiousness. For my purposes, the important point is shared: rationality
+    is partly <em>process-sensitive</em>. How a belief was formed matters, not only
+    whether a person can later construct a coherent defense of it.
+  </p>
+
+  <p>
+    This insight connects directly with the earlier layers of the model. Oppy's
+    worldview comparison presupposes enough intellectual honesty to acknowledge
+    weaknesses in one's own view and enough fairness to represent rivals at their
+    best. Bayesian reasoning presupposes that priors and likelihoods are not being
+    opportunistically tuned to reach a desired conclusion. Evidence analysis
+    presupposes care in collection, patience in tracing inferential chains, and
+    integrity in refusing to suppress inconvenient data.
+  </p>
+
+  <p>
+    If those virtues are absent, formally respectable techniques can become tools
+    of motivated reasoning. A biased agent can be probabilistically coherent. A
+    selective evidential chart can look rigorous. A theory comparison can be
+    arranged so that one side always receives charitable assumptions while the
+    other is held to impossible standards. The virtues function as a kind of
+    quality-control system for the procedures themselves.
+  </p>
+
+  <p>
+    The following intellectual standards are useful as a reminder of what this
+    process sensitivity looks like in practice:
+  </p>
+
+  <p style="text-align: center">
+    <a href="https://www.researchgate.net/publication/358281070_Student_Evaluation_Using_an_Intellectual_Standards_Rubric_for_Critical_Thinking">
+      <img
+        alt="Intellectual standards rubric for critical thinking"
+        src="https://blogger.googleusercontent.com/img/a/AVvXsEhXyS84dwzxVp-9FkUWolsNf4COFCkUBS81tXEu_vu8x2mRjVYKQIcV1og09_dn8bUQ8Q8q902B-wUn3-Bahue-CUlPhDHQVwr5rHJifIl9XDX_j-z6bbP0K5cqPDyhGGEh7TlfCZbas29oAnVC1uCJC3XvGAc-qQxU1q9M7pneQbsxq6zLz_TOEWTD9e_G=w414-h446"
+        width="414"
+        height="446"
+        style="max-width: 100%; height: auto"
+      />
+    </a>
+  </p>
+
+  <h3>Virtues especially relevant to inquiry</h3>
+  <ul>
+    <li><strong>Intellectual humility:</strong> awareness of one's cognitive limits and the revisability of one's conclusions.</li>
+    <li><strong>Reflective awareness:</strong> monitoring how one's own reasoning, emotions, and incentives may be shaping judgment.</li>
+    <li><strong>Intellectual courage:</strong> willingness to follow evidence or argument where it threatens a preferred belief.</li>
+    <li><strong>Open-mindedness:</strong> serious engagement with plausible alternatives rather than ritual acknowledgment of them.</li>
+    <li><strong>Conscientiousness:</strong> care in searching, checking, collecting, and documenting evidence.</li>
+    <li><strong>Fairness:</strong> applying comparable standards to one's own view and to competing views.</li>
+  </ul>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    Rational procedures need virtuous operators. The inquirer's habits determine
+    whether evidence is gathered honestly, alternatives are treated fairly, and
+    formal tools are used to discover rather than rationalize.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="environment">6. What if the environment is adversarial? Rationality is socially situated</h2>
+
+  <p>
+    Virtue epistemology can make it sound as though epistemic failure is primarily
+    an individual defect: if people were simply more careful, humble, or
+    open-minded, better beliefs would follow. C. Thi Nguyen's work on hostile
+    epistemology complicates that picture. Human beings are finite. We cannot
+    investigate everything ourselves, so we must use heuristics, rely on trust,
+    take cognitive shortcuts, and defer to other people and institutions. These
+    are not optional flaws that can simply be removed. They are conditions of
+    being limited knowers.
+  </p>
+
+  <p>
+    But unavoidable shortcuts create exploitable surfaces. An information
+    environment can be designed—or can evolve—in ways that reward exactly the
+    cues we normally use to navigate complexity. Propagandists, trolls,
+    institutions, media systems, social structures, cultural practices, algorithms,
+    recommendation engines, and metrics can all shape what becomes salient, whom
+    we trust, and when inquiry feels complete.
+  </p>
+
+  <p>
+    This matters for conspiracy thinking because conspiratorial beliefs often
+    develop inside information environments that do more than provide false
+    propositions. They can organize trust and distrust, establish which sources
+    are permitted, provide emotionally compelling interpretive templates, and
+    immunize the worldview against outside correction. The problem is therefore
+    partly structural, not merely a collection of individual mistakes.
+  </p>
+
+  <p>
+    Nguyen's broader category of the epistemic environment therefore includes not
+    only individual speakers but social and technical structures: other people
+    such as propagandists or trolls; echo chambers and polarized communities;
+    cultural practices that gamify attention; institutions such as media,
+    political organizations, and platforms; and technologies such as algorithms,
+    recommendation systems, and metrics. Each can alter what information reaches
+    us and how cognitively expensive it is to resist the default interpretation.
+  </p>
+
+  <div class="table-wrap">
+    <table class="two-col long-table">
+      <thead><tr><th>Exploit pattern</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Exploit pattern"><strong>Clarity as seduction</strong></td><td data-label="Why it matters">Simple, vivid explanations can create a feeling of understanding that outruns the underlying evidence and prematurely terminates inquiry.</td></tr>
+        <tr><td data-label="Exploit pattern"><strong>Trust as vulnerability</strong></td><td data-label="Why it matters">Because we must depend on experts and institutions, credibility can be spoofed through fake expertise, manufactured consensus, or captured trust networks.</td></tr>
+        <tr><td data-label="Exploit pattern"><strong>Transparency traps</strong></td><td data-label="Why it matters">More information is not always more understanding. Radical transparency can produce overwhelming data dumps or force specialists into misleading simplifications for lay audiences.</td></tr>
+        <tr><td data-label="Exploit pattern"><strong>Echo chambers</strong></td><td data-label="Why it matters">Some communities do not merely omit outside information; they actively restructure trust so that external criticism is discounted before it is heard.</td></tr>
+        <tr><td data-label="Exploit pattern"><strong>Quantification and gamification</strong></td><td data-label="Why it matters">Scores, rankings, likes, and KPIs provide hyper-clear signals whose ease of interpretation can exceed their real epistemic value.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>The seductions of clarity</h3>
+  <p>
+    Nguyen's discussion of clarity provides a particularly useful example.
+    Clarity is normally an epistemic virtue: a clear explanation can illuminate
+    structure, expose ambiguity, and make reasoning easier to inspect. But clarity
+    can also be seductive. Some subjects are intrinsically complicated, uncertain,
+    or messy. An explanation can feel satisfying precisely because it removes that
+    complexity rather than because it represents the world accurately.
+  </p>
+
+  <p>
+    Conspiracy narratives are often powerful in this way. They can turn a confusing
+    collection of events into a single coherent story with identifiable agents,
+    motives, and causes. That feeling of suddenly “getting it” can act as a
+    thought-terminating signal. The same vulnerability appears in other forms:
+    scores, rankings, dashboards, metrics, and institutional categories can offer
+    hyper-clear representations whose cognitive appeal exceeds their epistemic
+    value.
+  </p>
+
+  <p>
+    The lesson is not to reject clarity. It is to treat unusually effortless
+    clarity as something that sometimes deserves <em>more</em> scrutiny rather
+    than less. Rational inquiry needs counter-heuristics for moments when a story
+    is too comprehensive, too smooth, or too emotionally satisfying.
+  </p>
+
+  <h3>Trust is another unavoidable vulnerability</h3>
+  <p>
+    We cannot personally verify every claim on which our beliefs depend. We rely
+    on experts, institutions, journalists, technical systems, witnesses, and
+    communities. That dependence makes trust an essential part of rationality,
+    but it also creates an opportunity for manipulation. Fake expertise,
+    manufactured consensus, selective transparency, and echo chambers can all
+    exploit the fact that finite agents must defer somewhere.
+  </p>
+
+  <p>
+    An especially important warning sign is <em>pre-emption</em>: a worldview that
+    explains in advance why every outside source is corrupt, deceived, or hostile.
+    Such a system can convert counter-evidence into confirmation. The more outsiders
+    disagree, the more successfully the conspiracy is supposedly concealing
+    itself. At that point, the worldview is not merely interpreting evidence; it is
+    restructuring the conditions under which anything could ever count against it.
+  </p>
+
+  <h3>Designing trust more defensively</h3>
+  <p>
+    If dependence on others is unavoidable, the answer cannot be radical
+    self-reliance. The better response is to make trust more discriminating and
+    auditable. Several practices follow from the hostile-epistemology perspective:
+  </p>
+  <ul>
+    <li><strong>Independence triangulation:</strong> look for convergence across sources or institutions with genuinely different incentives and information pathways, rather than counting repetition inside one ecosystem as independent confirmation.</li>
+    <li><strong>Pre-emption detection:</strong> notice when a worldview dismisses all external sources in advance and thereby converts possible counter-evidence into further confirmation.</li>
+    <li><strong>Bounded transparency:</strong> prefer auditable methods, data access, documented procedures, and other inspectable artifacts over public-relations simplifications that merely feel transparent.</li>
+    <li><strong>Communicative-facility caution:</strong> remember that people who speak fluently in an institution's preferred simplified language may appear clearer or more expert partly because the system is optimized to recognize that form of communication.</li>
+  </ul>
+
+  <h3>Error metabolism</h3>
+  <p>
+    Because limited agents will inevitably make mistakes, a realistic epistemology
+    should not demand errorlessness. It should value systems that notice and repair
+    errors. Nguyen, drawing on ideas about error management, emphasizes the
+    importance of environments and practices that make correction possible. For an
+    individual or institution, that means creating mechanisms for reopening settled
+    conclusions, recording failed predictions, seeking disconfirmation, running
+    adversarial tests, and distinguishing the ability to <em>detect</em> error from
+    the ability to avoid all error in advance.
+  </p>
+
+  <h3>What this adds to the model</h3>
+  <blockquote>
+    Rationality is situated. A good inquirer must understand not only their own
+    biases but also the architecture of the environment supplying their evidence,
+    shaping their trust, rewarding certain narratives, and determining which
+    mistakes are easy or difficult to correct.
+  </blockquote>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="framework">7. The ideal inquirer: a unified procedure</h2>
+
+  <p>
+    We can now put the pieces together. The goal is not a universal “rationality
+    filter” that mechanically labels beliefs rational or irrational. It is a
+    procedure for conducting inquiry in a way that remains responsive to evidence,
+    alternatives, criticism, and the limitations of real human knowers.
+  </p>
+
+  <div class="table-wrap">
+    <table class="three-col wide-table long-table">
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Core question</th>
+          <th>Failure mode to watch for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Stage"><strong>1. Identify the dialogue</strong></td>
+          <td data-label="Core question">What are we trying to accomplish, and what rules make that goal possible?</td>
+          <td data-label="Failure mode to watch for">Treating inquiry as performance, quarrel, persuasion-at-all-costs, or identity defense.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>2. State rival models</strong></td>
+          <td data-label="Core question">What are the strongest competing explanatory packages, not merely isolated claims?</td>
+          <td data-label="Failure mode to watch for">Stockpiling arguments for one view while neglecting comparative performance.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>3. Map the evidence</strong></td>
+          <td data-label="Core question">How does each datum connect through intermediate propositions to the hypotheses?</td>
+          <td data-label="Failure mode to watch for">Treating data as self-interpreting or ignoring weak inferential links.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>4. Audit provenance</strong></td>
+          <td data-label="Core question">Who produced the evidence, how was it collected, what is missing, and what selection pressures were present?</td>
+          <td data-label="Failure mode to watch for">Cherry-picking, source laundering, filtered datasets, unreliable collection, or selective transparency.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>5. Update locally</strong></td>
+          <td data-label="Core question">Given a sufficiently specified sub-inference, how should this evidence change confidence?</td>
+          <td data-label="Failure mode to watch for">Arbitrary priors, manipulated likelihoods, or using formal coherence as a substitute for substantive justification.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>6. Exercise epistemic virtues</strong></td>
+          <td data-label="Core question">Am I applying the same standards to my view and its rivals, and am I genuinely willing to revise?</td>
+          <td data-label="Failure mode to watch for">Dogmatism, motivated reasoning, overconfidence, negligence, or asymmetrical skepticism.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>7. Audit the environment</strong></td>
+          <td data-label="Core question">How are platforms, institutions, communities, incentives, and trust networks shaping what I see and believe?</td>
+          <td data-label="Failure mode to watch for">Echo chambers, manufactured credibility, clarity traps, gamified attention, or pre-emptive distrust of outsiders.</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><strong>8. Compare and reopen</strong></td>
+          <td data-label="Core question">Which model best handles the total evidence, and what would cause me to revisit this conclusion?</td>
+          <td data-label="Failure mode to watch for">Premature closure or a worldview with no imaginable condition for revision.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>A few operational guardrails</h3>
+  <ul>
+    <li>
+      <strong>Clarity tripwire:</strong> when an explanation suddenly makes
+      everything easy to categorize, increase scrutiny rather than declaring the
+      inquiry finished.
+    </li>
+    <li>
+      <strong>Disconfirmation rule:</strong> state in advance what observations
+      would reduce confidence in the favored view.
+    </li>
+    <li>
+      <strong>Pre-emption audit:</strong> ask whether the theory contains a built-in
+      reason to dismiss every possible outside source.
+    </li>
+    <li>
+      <strong>Independence triangulation:</strong> prefer convergence among sources
+      with genuinely different incentives and information pathways over repetition
+      within one ecosystem.
+    </li>
+    <li>
+      <strong>Provenance log:</strong> record what was searched, what was excluded,
+      what was not found, and how important evidence entered the inquiry.
+    </li>
+    <li>
+      <strong>Rival-model test:</strong> periodically steel-man the strongest
+      alternative and ask which facts it explains more naturally.
+    </li>
+    <li>
+      <strong>Reopening mechanism:</strong> treat major conclusions as revisable and
+      establish conditions under which they should be reconsidered.
+    </li>
+  </ul>
+
+  <h3>The contrast with conspiracy thinking</h3>
+  <p>
+    This framework helps clarify what can go wrong in conspiratorial inquiry
+    without reducing the problem to “bad logic.” A conspiracy theorist may reason
+    validly from their premises. They may update their confidence when new
+    information appears. They may even produce a large body of evidence. The
+    failure may instead occur earlier or elsewhere: the evidential base may be
+    selectively constructed; outside testimony may be pre-emptively discredited;
+    rival explanations may not receive comparable treatment; the theory may convert
+    anomalies into confirmation; a seductive narrative may produce premature
+    closure; or the surrounding community may punish revision while rewarding
+    increasingly elaborate defenses.
+  </p>
+
+  <p>
+    The ideal inquirer is distinguished less by possession of a particular formal
+    technique than by the way these layers interact. They seek a dialogue capable
+    of resolution. They compare whole theories rather than counting arguments.
+    They do not treat evidence as given, but investigate how it was produced and
+    why it is relevant. They update confidence when the inferential structure is
+    sufficiently clear. They cultivate habits that make self-correction possible.
+    And they remain aware that the environment itself can manipulate attention,
+    trust, and the feeling of understanding.
+  </p>
+
+  <p>
+    So this is the theory of rationality I find most useful: not rationality as
+    mere formal validity, and not rationality as the absence of named fallacies,
+    but rationality as a disciplined, socially situated, self-correcting practice
+    of inquiry. Its central demand is not that we become perfectly unbiased or
+    computationally ideal agents. It is that we build procedures, habits, and
+    environments that make error easier to discover, alternatives harder to
+    ignore, and belief revision genuinely possible.
+  </p>
+
+  <p><a href="#top">Back to top</a></p>
+
+  <h2 id="sources">Sources and Further Reading</h2>
+  <ol>
+    <li><a href="https://philpapers.org/rec/VANAPP-2">A Pragma-dialectical Procedure for a Critical Discussion</a></li>
+    <li><a href="https://philarchive.org/rec/WALTOD-2">Types of Dialogue, Dialectical Relevance and Textual Congruity</a></li>
+    <li><a href="https://www.jstor.org/stable/43658390">What Derivations Cannot Do</a></li>
+    <li><a href="https://philarchive.org/rec/OPPGAH">Good Argument</a></li>
+    <li><a href="https://philarchive.org/rec/OPPRAW">Rationality and Worldview</a></li>
+    <li><a href="https://philpapers.org/rec/SCHTEF-3">The Evidential Foundations of Probabilistic Reasoning</a></li>
+    <li><a href="https://plato.stanford.edu/entries/epistemology-bayesian/">Bayesian Epistemology</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Virtue_epistemology">Virtue Epistemology</a></li>
+    <li><a href="https://www.cambridge.org/core/books/analysis-of-evidence/117AD26FB847BF6D3564DC0306838F04">Analysis of Evidence</a></li>
+    <li><a href="https://philarchive.org/rec/NGUHEL">Hostile Epistemology</a></li>
+    <li><a href="https://philarchive.org/rec/NGUTSO-2">The Seductions of Clarity</a></li>
+    <li><a href="https://www.researchgate.net/publication/358281070_Student_Evaluation_Using_an_Intellectual_Standards_Rubric_for_Critical_Thinking">Student Evaluation Using an Intellectual Standards Rubric for Critical Thinking</a></li>
+  </ol>
+
+  <p><a href="#top">Back to top</a></p>
+</article>

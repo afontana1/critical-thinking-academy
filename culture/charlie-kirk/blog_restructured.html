@@ -1,0 +1,2537 @@
+<style>
+ /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+      /* Small additions for the table of contents and collapsible reference material. */
+      .ep-post .ep-toc {
+        margin: 1.4em 0 2em;
+        padding: 0.9em 1.1em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .ep-toc h2 {
+        margin-top: 0;
+        font-size: 1.15rem;
+      }
+
+      .ep-post .ep-toc ol {
+        margin-bottom: 0;
+      }
+
+      .ep-post details {
+        margin: 1em 0 1.35em;
+      }
+
+      .ep-post summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+</style>
+<div class="ep-post">
+ <p>
+  This is something I really don't want to write about. I have no interest in
+  commenting on culture war pundits. Unfortunately, I can't keep my mouth shut.
+  I'm simply disgusted by what's happened after the Charlie Kirk assassination.
+  More so by the government's effective weaponization and response to the
+  murder, but very much by the myth making surrounding who Kirk was. While he
+  was alive, I tried to pay as little attention to him and the alt-right
+  echo-chamber he proliferated in. I saw him as the epitome of degeneracy with
+  respect to political discourse in the United States. This is what I'd like to
+  focus on in this post; just a few thoughts on what this guy actually was and
+  how disappointing this is. Then i'll comment on some of the aftermath.
+ </p>
+ <nav aria-label="Table of contents" class="ep-toc">
+  <h2>
+   Contents
+  </h2>
+  <ol>
+   <li>
+    <a href="#kirk-performer">
+     Kirk the Performer: Debate as Content
+    </a>
+   </li>
+   <li>
+    <a href="#worldview">
+     The Worldview Behind the Performance
+    </a>
+    <ol>
+     <li>
+      <a href="#ideological-formation">
+       Ideological Formation
+      </a>
+     </li>
+    </ol>
+   </li>
+   <li>
+    <a href="#plausible-deniability">
+     Plausible Deniability as a Rhetorical Method
+    </a>
+   </li>
+   <li>
+    <a href="#tpusa-institution">
+     From Kirk to TPUSA: Institutionalizing the Worldview
+    </a>
+    <ol>
+     <li>
+      <a href="#funding-architecture">
+       Funding Architecture
+      </a>
+     </li>
+    </ol>
+   </li>
+   <li>
+    <a href="#broader-network">
+     Kirk in the Broader Reactionary Network
+    </a>
+    <ol>
+     <li>
+      <a href="#network-method">
+       A Network, Not Guilt by Association
+      </a>
+     </li>
+     <li>
+      <a href="#kirk-broker">
+       Kirk's Particular Role
+      </a>
+     </li>
+     <li>
+      <a href="#network-epistemology">
+       The Shared Epistemic Structure
+      </a>
+     </li>
+     <li>
+      <a href="#network-complementarity">
+       How the Pieces Complement One Another
+      </a>
+     </li>
+     <li>
+      <a href="#network-reference">
+       Reference Map: Communities and Functions
+      </a>
+     </li>
+    </ol>
+   </li>
+   <li>
+    <a href="#professor-watchlist">
+     The Professor Watchlist: Free Speech in Practice
+    </a>
+   </li>
+   <li>
+    <a href="#propaganda-ecosystem">
+     The Broader Propaganda Ecosystem
+    </a>
+   </li>
+   <li>
+    <a href="#broader-culture">
+     The Broader Culture He Embodied
+    </a>
+   </li>
+   <li>
+    <a href="#aftermath">
+     Aftermath and Mythmaking
+    </a>
+   </li>
+   <li>
+    <a href="#sources">
+     Additional Sources to Consult
+    </a>
+   </li>
+  </ol>
+ </nav>
+ <h2 id="kirk-performer">
+  Kirk the Performer: Debate as Content
+ </h2>
+ <p>
+  Let's set the record straight on what he was. Charlie Kirk was a conservative
+  influencer. He was a very dogmatic evangelical fundamentalist who was
+  essentially an apologist for Trump. These two sentences should make it
+  evidently clear that he was not a serious thinker by any means.
+ </p>
+ <p>
+  Kirk successfully exploited the concept of "virality". His "debates" were
+  facades; his entire objective was to "own the libs". He went from college to
+  college, debating students far younger than him, then posted these on social
+  media with ridiculous clickbait titles. These videos would then go viral,
+  thanks to algorithmic boosting/amplification and the degenerative nature of
+  incentives built into social media platforms. Content farms would then take
+  clips from his campus interactions, creating a plethora of shit on the
+  internet. You click on one of these videos and an avalanche of related videos
+  with the same outrage attributes would flood your feed. Kirk was well aware of
+  this funneling technique. There are very few instances of him actually
+  engaging in critical discussion with a moderator and debate rules, his entire
+  schtick was dominating the conversation, editing videos favorably to himself,
+  and blasting this on the internet.
+ </p>
+ <p>
+  He approached "debate" as an apologist would: seek
+  dominance, not understanding. I don't use this word "apologist" haphazardly;
+  he started with his conclusion, reasoning (if that's what you could call what
+  he was doing) was just a performance. This is what apologists do. They do not
+  seek discussion and debate as continual progression towards understanding,
+  they see it as something you need to win at all costs. Hence, his ridiculous
+  debate tactics. Even calling his performances a debate degrades the concept.
+  He performed for his followers; he was a performer. He had zero intellectual
+  virtue. But this is the disappointing part of this all; people actually
+  thought what he was doing was debate. I shouldn't be surprised. The president
+  can get up on a stage and say "they are eating the dogs" and people will
+  actually fucking think this constitutes legit inquiry and discussion. This
+  signals such a disgusting decline in American culture, it's hard to even think
+  about. I am not going to waste my time dissecting his performances; plenty of
+  other people have done that. He was pretty much the king of the Gish Gallop,
+  Infodumping, Moving the Goalpost, and categorization (in the political sense
+  of labeling people without arguing anything). I just want to reiterate the
+  fact that apologists do not seek an open discussion. They want to dominate.
+ </p>
+ <p>
+  You can always get a sense of what people actually believe when they're
+  speaking candidly with their in-group. This is very evident with someone like
+  Kirk. Despite his public edge-lord clickbait statements he would make to
+  "trigger the woke", he was even more atrocious on his podcast. He also had a
+  more "formal" public facing persona, in which he would present as "more
+  reasonable" than how he appeared on his podcast or his speaking TPUSA events.
+  This "reasonableness" is simply that, an appearance; a performance. Reason and
+  evidence did not lead him to his conclusions. On the contrary, he started with
+  his conclusion and used bullshit reasons and rhetorical tricks to make it
+  appear his talking points were reasonable. For example, in his
+  <a href="https://youtu.be/9O7y50cNb7c?si=7Nc4eMm5ZfoP35Oy">
+   appearance at Cambridge
+  </a>
+  for a debate, he was trying to make some point about how non-traditional
+  family structures (aka gay marriage), functionally degrades society (it leads
+  to collapse, tears apart society etc.). His interlocutor, an undergraduate in
+  archeology, provided a crisp and forceful counterexample to his assertion. In
+  actual debate, you concede your point when your argument has been undercut.
+  Kirk responded by saying "Okay, I still think it's wrong." Why? Because it was
+  never about the arguments, his arguments were rhetorical wardrobe for his more
+  fundamental dogmatic beliefs. This is not a critical discussion where
+  conclusions are resolved rationally, this is just a performance for his
+  audience. His entire point of going to Cambridge was likely to generate video
+  clips of him "owning Cambridge students" for his audience that is eager to
+  consume such bullshit. From the looks of it, that is precisely what happened.
+  Observing the Kirk echo chamber, clips like that proliferated.
+ </p>
+ <p>
+  I don't think I need to reiterate that these are performances. He functioned
+  as an apologist, not a truth-seeker. He was an evangelist, in his view he had
+  the truth; engaging in discourse was not to identify flaws in his own
+  thinking, it was to shove conservative talking points down his enemies throats
+  until they submitted. This is entirely the opposite of the basic premise of
+  Western intellectual tradition. Kirk, like many others, are simply masters of
+  the
+  <a href="https://youtube.com/playlist?list=PLJA_jUddXvY7v0VkYRbANnTnzkA_HMFtQ&amp;si=qu_MYEmp5DwfG1bv">
+   Alt-Right playbook
+  </a>
+  .
+ </p>
+ <h2 id="worldview">
+  The Worldview Behind the Performance
+ </h2>
+ <p>
+  Kirk was not just on a political pilgrimage, he was on a religious crusade. He
+  fused his political identity with his religious identity, like so many other
+  conservatives. To be a Christian, is to be a conservative. This is crucial to
+  understand, because he was clearly a Christian Nationalist. His rhetoric
+  closely aligned with the "Seven Mountains Mandate". Many people are unfamiliar
+  with this pernicious theology.&nbsp;The &ldquo;Seven Mountains Mandate&rdquo; (or &ldquo;Seven
+  Mountains Dominionism&rdquo;) is a theological and cultural-strategic idea within
+  Christian nationalist circles. It teaches that Christians should seek to gain
+  influence or control over seven key spheres (or &ldquo;mountains&rdquo;) of society:
+  typically government, education, media, arts/entertainment, religion, family,
+  and business. It is associated with dominionist theology and is inherently
+  authoritarian and theocratic. He platformed pastors like
+  <a href="https://dougwilsonbelieves.com/">
+   Doug Wilson
+  </a>
+  at his events, and
+  had serious support from other shit heads like
+  <a href="https://rightresponseministries.com/about/">
+   Joel Webbon
+  </a>
+  (among
+  others). If you have had the fortune to not know who these people are, good
+  for you. But you should be aware of people like this, and Kirk's connections
+  to them. Wilson is literally the pastor of Pete Hegseth. This is not some
+  hypothetical worry.
+ </p>
+ <p>
+  This ties directly back to his dominion theology; some Christians take
+  dominion to mean "shepherd", Kirk and his loyal band of Christian Nationalists
+  seek the other interpretation, "dominance".
+ </p>
+ <h3 id="ideological-formation">
+  Ideological Formation
+ </h3>
+ <p>
+  Taking a look into Kirk's background, Wiki tells us that he "was influenced by
+  writings of Milton Friedman" in his early years. After this, began listening
+  to Rush Limbaugh, before submitting essays to Breitbart news. Kirk was on the
+  radicalized pipeline since he was a young child. It's unfortunate that
+  Friedman has become a beacon in right-wing circles. But this is precisely what
+  the right seeks; academic legitimacy. While simultaneously being dogmatically
+  anti-intellectual, they want their own intellectuals to legitimate their bad
+  ideas. Some of Friedmans writings unfortunately did that. Kirk likely was not
+  reading Friedmans theories of consumption smoothing or anything economic,
+  rather he was probably reading things like "Capitalism and Freedom", something
+  not written for economists but rather for political purposes. This book, among
+  others from Austrian economists, have become standard reading for the
+  right-wing. It represents the fusion of Christianity and economics. Many
+  Christians believe that "capitalism" is somehow "god ordained", and that
+  unadulterated laissez faire capitalism is somehow a prerequisite for any form
+  of freedom. Fucking mind blowing. Talk about never being able to have a
+  nuanced discussion about economic policy. But this is the nature of the
+  right-wing pipeline. This eventually led him to Limbaugh. I really don't think
+  I need to say anything about this. He was one of the first people to
+  radicalize workers to the right-wing during the early stages of talk-shows on
+  radio. I can't imagine what that did to Kirks brain, listening to him as a
+  high-schooler.
+ </p>
+ <h2 id="plausible-deniability">
+  Plausible Deniability as a Rhetorical Method
+ </h2>
+ <p>
+  I don't want to waste my time covering
+  <a href="https://charliequotes.com/">
+   all the ridiculous
+  </a>
+  shit he has said.
+  But I do want to comment on one quote, because I think it represents how he
+  operated. He was less deliberate with his vile. He operated on the principle
+  of dog whistling and plausible deniability. For example, when responding to
+  what I presume to be a liberal Christian, making the claim that Jesus
+  commanded we love all people (including gay people), Kirk responded by
+  accusing her of cherry-picking bible verses to fit a presumably "satanic"
+  theology. He said:
+ </p>
+ <blockquote>
+  <div>
+   "You might want to crack open that Bible of yours. In a lesser referenced
+    part of the same part of scripture, is in Leviticus 18 is that, &lsquo;thou shalt
+    lay with another man shall be stoned to death.&rsquo; Just sayin&rsquo;! So Miss Rachel,
+    you quote Leviticus 19&hellip; the chapter before affirms God&rsquo;s perfect law when it
+    comes to sexual matters."
+  </div>
+  <div>
+  </div>
+ </blockquote>
+ <p>
+  After Kirks death, Stephen King received backlash for claiming Kirk "advocated
+  for the stoning of gay people". He redacted his statement, issuing an apology.
+  I however, do not think he should have redacted that assertion. While he did
+  not explicitly state those words, understanding a bit about his brand of
+  Christianity makes it obviously clear this is what he was implying.&nbsp;If
+  someone like Charlie Kirk quotes or affirms biblical law that prescribes
+  stoning (for example, Leviticus 20:13), and simultaneously professes belief
+  that God&rsquo;s law is perfect and just, then by logical extension, they are indeed
+  affirming the rightness of that punishment. Even if they don&rsquo;t explicitly
+  advocate doing it now, they&rsquo;re still endorsing the moral correctness of the
+  principle, that such a punishment was, in their view, &ldquo;just&rdquo; according to
+  God&rsquo;s will.&nbsp;Deontological belief (common in fundamentalist theology)
+  holds that God&rsquo;s commands are inherently good; not because of their outcomes,
+  but because they come from God.&nbsp;So if one says &ldquo;God&rsquo;s law is perfect&rdquo;
+  while referencing a command to stone gay people, they are implicitly affirming
+  the moral rightness of that law.&nbsp;To deny that implication would mean
+  either rejecting the perfection of that law or rejecting the idea that God&rsquo;s
+  will defines goodness; both of which would contradict the very theology such
+  people claim to hold. The issue isn&rsquo;t whether Kirk &ldquo;literally&rdquo; called for
+  violence, but that his theological endorsement of a command for violence
+  carries its own moral weight. Saying &ldquo;God&rsquo;s law is perfect&rdquo; about a law that
+  prescribes execution for gay people is, in essence, a moral endorsement of
+  that law&rsquo;s justice; even if one hides behind &ldquo;context&rdquo; or &ldquo;historical
+  application.&rdquo;
+ </p>
+ <p>
+  What can Kirk do? He can handwave, and hide behind the "I never said that"
+  defense. This is the same defense he constantly used for Trump. I don't think
+  people realize the implications of holding beliefs like this. It was not that
+  long ago, when state sanctioned castration of homosexuals was commonplace and
+  fervently accepted by establishment conservatives. Believing in a morally
+  perfect being, of which the very existence of concepts like "right" and
+  "wrong" depend, who issues commands in a supposedly
+  <a href="https://en.wikipedia.org/wiki/Biblical_inerrancy">
+   inerrant collection of documents
+  </a>
+  that were directly dictated from this being to humanity, necessarily entails
+  your implicit acceptance of such commands as perfect. On this view (modified
+  divine command theory), something is good
+  <i>
+   because
+  </i>
+  god commanded it.
+  Therefore, when god commands the stoning of gays, anyone holding to MDCT
+  endorses this as correct punishment for the "sin". Which is exactly why,
+  throughout history, we have observed the horrific punishments for this alleged
+  crime.
+ </p>
+ <h2 id="tpusa-institution">
+  From Kirk to TPUSA: Institutionalizing the Worldview
+ </h2>
+ <p>
+  This is where the argument shifts from Kirk as an individual performer to TPUSA as an institution.
+  As mentioned earlier, his rhetoric closely aligned with the Seven Mountains Mandate, and the organization
+  developed operations across the same domains: religion, family, education, government, media, culture,
+  and business.
+ </p>
+ <div class="table-wrap">
+  <table class="three-col wide-table">
+   <thead>
+    <tr>
+     <th>
+      Mountain
+     </th>
+     <th>
+      Primary TPUSA mechanism
+     </th>
+     <th>
+      Role in the larger strategy
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Religion
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      TPUSA Faith, pastor networks, faith conferences
+     </td>
+     <td data-label="Role in the larger strategy">
+      Turns churches into organizing and mobilization infrastructure.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Family
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Parents' rights, traditional-family messaging, youth and women's programming
+     </td>
+     <td data-label="Role in the larger strategy">
+      Supplies a moral and generational frame for the broader culture war.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Education
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Campus chapters, watchlists, leadership summits, alternative-schooling efforts
+     </td>
+     <td data-label="Role in the larger strategy">
+      Builds a youth recruitment pipeline and a model for long-term institutional influence.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Government
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Turning Point Action, Students for Trump, candidate and voter mobilization
+     </td>
+     <td data-label="Role in the larger strategy">
+      Converts grassroots activism into electoral and institutional power.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Media
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Shows, productions, short-form video, influencer amplification
+     </td>
+     <td data-label="Role in the larger strategy">
+      Creates message saturation and a distribution system for the movement's narratives.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Arts / Culture
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Events, influencers, celebrity speakers, merchandising and lifestyle branding
+     </td>
+     <td data-label="Role in the larger strategy">
+      Turns political identity into spectacle, community, and an aspirational cultural brand.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Mountain">
+      <strong>
+       Business
+      </strong>
+     </td>
+     <td data-label="Primary TPUSA mechanism">
+      Major donors, sponsors, merchandise, conferences, anti-ESG/free-market messaging
+     </td>
+     <td data-label="Role in the larger strategy">
+      Finances the infrastructure while linking economic identity to the movement's moral frame.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <details>
+  <summary>
+   Detailed Seven Mountains notes and examples
+  </summary>
+  <div class="table-wrap">
+   <table border="1" cellpadding="8" cellspacing="0" class="three-col wide-table long-table dense">
+    <thead>
+     <tr>
+      <th>
+       Mountain
+      </th>
+      <th>
+       TPUSA &amp; Affiliate Strategies
+      </th>
+      <th>
+       Observations / Notes
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        1. Religion / Church / Faith Institutions
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         Creation of
+         <em>
+          TPUSA Faith
+         </em>
+         as a formal religious arm,
+            explicitly designed to integrate the church into the broader
+            political mission.
+        </li>
+        <li>
+         Strategic partnerships with pastors and church networks (e.g., Rob
+            McCoy, Jack Hibbs, and other Christian nationalist-leaning leaders).
+        </li>
+        <li>
+         Messaging that frames political action as a spiritual duty &mdash; &ldquo;the
+            church must occupy until Christ returns.&rdquo;
+        </li>
+        <li>
+         Pastor Summits and Faith Conferences mobilizing clergy as civic
+            leaders and political influencers.
+        </li>
+        <li>
+         Integration of worship, revival-style gatherings, and policy
+            advocacy to fuse faith and activism.
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Strong.
+       </strong>
+       Religion is both a moral anchor and mobilizing
+        force. TPUSA Faith transforms churches into organizing hubs for
+        political and cultural influence. Pastors trained to integrate civic
+        activism into ministry, echoing Seven Mountains rhetoric of &ldquo;taking
+        territory" against "the enemies of Christ" (aka anyone left of them).
+        "Spiritual Warfare" rhetoric.
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        2. Family
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         Promotion of &ldquo;parents&rsquo; rights&rdquo; movements against perceived
+            government or educational overreach.
+        </li>
+        <li>
+         Consistent defense of traditional family structure &mdash; marriage,
+            motherhood, fatherhood &mdash; as moral foundations of civilization.
+        </li>
+        <li>
+         Opposition to "gender ideology", comprehensive sex education, and
+            LGBTQ+ normalization in schools and media.
+        </li>
+        <li>
+         Programming at women&rsquo;s summits and youth events emphasizing faith,
+            marriage, and procreation as "counter-cultural" virtues.
+        </li>
+        <li>
+         Amplification of narratives that tie national renewal to family
+            restoration and generational legacy.
+        </li>
+        <li>
+         Obsession with "declining birth rates".
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Moderate &rarr; Strong.
+       </strong>
+       While not institutionalized, the
+        family frame underpins all messaging, linking culture war to moral and
+        generational survival.
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        3. Education
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         Massive network of high school and college chapters cultivating a
+            pipeline of ideologically trained youth leaders.
+        </li>
+        <li>
+         Tools like
+         <em>
+          Professor Watchlist
+         </em>
+         and
+         <em>
+          School Board Watchlist
+         </em>
+         weaponize transparency against
+            progressive educators and administrators.
+        </li>
+        <li>
+         Experimentation with alternative K&ndash;12 ventures such as
+         <em>
+          Turning Point Academy
+         </em>
+         , an attempt to institutionalize
+            &ldquo;America First&rdquo; Christian schooling, and connections with PragerU.
+        </li>
+        <li>
+         Training events, Leadership Summits, and student conventions serve
+            as immersive ideological incubators.
+        </li>
+        <li>
+         Promotion of classical education models and homeschooling as
+            defenses against &ldquo;leftist indoctrination.&rdquo;
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Very Strong.
+       </strong>
+       Education remains TPUSA&rsquo;s deepest and most
+        mature domain, forming the backbone of its generational strategy.
+        Prototype for faith-aligned education reform &mdash; a model for scaling
+        influence into the schooling system, under the guise of "School Choice".
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        4. Government / Law / Politics
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         <em>
+          Turning Point Action
+         </em>
+         and
+         <em>
+          Students for Trump
+         </em>
+         as
+            political arms explicitly dedicated to shaping elections and policy
+            outcomes.
+        </li>
+        <li>
+         Infrastructure for recruiting, training, and supporting conservative
+            candidates at local and national levels.
+        </li>
+        <li>
+         Coordination between church-based voter mobilization and secular
+            GOTV operations to maximize influence.
+        </li>
+        <li>
+         Strategic entry into state-level GOP operations (e.g., Mount Vernon
+            Project) to redirect the party&rsquo;s ideological trajectory.
+        </li>
+        <li>
+         Persistent narrative that political engagement is an act of
+            obedience to divine authority.
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Extremely Strong.
+       </strong>
+       Government is treated as the decisive
+        arena. TPUSA operates as a bridge between grassroots zeal and
+        institutional power.
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        5. Media / Information
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         In-house platforms:
+         <em>
+          The Charlie Kirk Show
+         </em>
+         ,
+         <em>
+          Turning Point Live
+         </em>
+         , TPUSA Productions, and daily social
+            content.
+        </li>
+        <li>
+         Strategic use of short-form video, meme warfare, and influencer
+            amplification to dominate youth information spaces.
+        </li>
+        <li>
+         Documentary production (&ldquo;Border Battle,&rdquo; &ldquo;Exposing the Left&rdquo;) to
+            shape national narratives visually and emotionally.
+        </li>
+        <li>
+         Cross-promotion through allied conservative networks (Salem, Real
+            America&rsquo;s Voice, OANN, etc.).
+        </li>
+        <li>
+         Information warfare framing &mdash; defining narrative control as central
+            to spiritual and political victory.
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Strong to Dominant.
+       </strong>
+       Media is both pulpit and
+        battlefield; TPUSA&rsquo;s ecosystem ensures message saturation across
+        platforms.
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        6. Arts / Entertainment / Culture
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         Integration of pop culture aesthetics &mdash; music, lighting, celebrity
+            speakers &mdash; into political events to attract younger demographics.
+        </li>
+        <li>
+         Partnerships with conservative entertainers, influencers, and
+            athletes who reinforce TPUSA&rsquo;s cultural brand.
+        </li>
+        <li>
+         Merchandising and lifestyle branding presenting conservative
+            identity as aspirational and rebellious.
+        </li>
+        <li>
+         Efforts to reclaim entertainment as a vehicle for patriotism and
+            biblical values.
+        </li>
+        <li>
+         Online &ldquo;creator&rdquo; ecosystem mirroring progressive influencer networks
+            but aligned with the movement&rsquo;s ideology.
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Moderate.
+       </strong>
+       Still emerging, but the fusion of activism
+        and spectacle represents a significant cultural foothold. &ldquo;God, Family,
+        Country&rdquo; apparel encapsulates theology, economy, and identity in one
+        commercial ecosystem. By aestheticizing activism &mdash; lights, music,
+        influencers &mdash; TPUSA transforms ideological recruitment into
+        entertainment.
+      </td>
+     </tr>
+     <tr>
+      <td data-label="Mountain">
+       <strong>
+        7. Business / Economy / Commerce
+       </strong>
+      </td>
+      <td data-label="TPUSA &amp; Affiliate Strategies">
+       <ul>
+        <li>
+         Robust fundraising apparatus drawing from major conservative donors,
+            corporate sponsors, and grassroots micro-donations.
+        </li>
+        <li>
+         Entrepreneurial branding (merchandise, conferences, media
+            subscriptions) turning ideology into economic identity.
+        </li>
+        <li>
+         Promotion of free-market, anti-ESG, and anti-regulatory positions as
+            moral economics rooted in freedom and divine order.
+        </li>
+        <li>
+         Linking economic liberty to spiritual liberty &mdash; framing capitalism
+            as both patriotic and biblical.
+        </li>
+        <li>
+         Developing networks of business owners who sponsor events, youth
+            summits, and community-level activism.
+        </li>
+       </ul>
+      </td>
+      <td data-label="Observations / Notes">
+       <strong>
+        Moderate.
+       </strong>
+       Less institutional but deeply integrated
+        through funding, donor ecosystems, and ideological framing of
+        capitalism. Long history outside of the movement.
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+ </details>
+ <p>
+  Kirk had an integrated alignment and strategic cohesion across all these
+  domains. Each &ldquo;mountain&rdquo; functions as both a target and tool; the long-term
+  vision is full-spectrum cultural governance under a shared moral frame. The
+  same personnel, language, and institutions operate across domains &mdash; media,
+  education, and religion function as gateways into political control. Religious
+  rhetoric legitimizes political power; political victories reinforce religious
+  identity. Youth indoctrination through education and culture ensures
+  continuity of worldview across decades. Contrary to the nonsense "he was just
+  someone who had different opinions", he was an institutional mouthpiece for
+  major wealthy conservatives. The entire movement was the epitome of
+  <a href="https://en.wikipedia.org/wiki/Astroturfing">
+   astroturfing
+  </a>
+  . Let's
+  take a look at some of these sources:
+ </p>
+ <h3 id="funding-architecture">
+  Funding Architecture
+ </h3>
+ <p>
+  Turning Point USA operates as a youth-focused influence network financed
+  primarily by a small circle of ultra-wealthy conservative donors and
+  foundations. It provides those backers with a ready-made, high-visibility
+  vehicle to shape culture and politics through media, education, and activism
+  rather than through formal party structures.&nbsp;Billionaire-class funders
+  (Uihlein, Friess, Bradley, Marcus, etc.) supply the capital.&nbsp;TPUSA
+  converts that money into influencer
+  <b>
+   infrastructure
+  </b>
+  : charismatic
+  figureheads, viral media, massive events, campus chapters, and faith-based
+  mobilization.&nbsp;The arrangement gives donors outsized cultural and
+  political leverage without requiring direct public exposure&mdash;hence the reliance
+  on donor-advised funds and &ldquo;dark money&rdquo; conduits. TPUSA is essentially&nbsp;a
+  privately financed influence engine designed to seed long-term ideological
+  control across youth culture, education, religion, and politics, all under the
+  banner of grassroots activism.
+ </p>
+ <p>
+  The financing is easier to see when separated into two questions: where the money comes from, and what
+  organizational scale and political vehicles that money supports.
+ </p>
+ <h3 id="funding-sources">
+  Where the Money Comes From
+ </h3>
+ <div class="table-wrap">
+  <table class="extra-wide-table long-table dense">
+   <thead>
+    <tr>
+     <th>
+      Funding Source / Channel
+     </th>
+     <th>
+      Description / How It Works
+     </th>
+     <th>
+      Indicative Figures / Dates
+     </th>
+     <th>
+      Sources
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Founding &amp; Seed Donors
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Early support from major conservative donors and mentors that provided
+        credibility, startup capital, and initial networks (e.g., Foster Friess;
+        mentorship/support via Bill Montgomery).
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      2012&ndash;2015 (founding phase)
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.aaup.org/sites/default/files/TPUSA_on_Campus.pdf" rel="noopener" target="_blank">
+       AAUP (Friess)
+      </a>
+      <br/>
+      <a href="https://en.wikipedia.org/wiki/Bill_Montgomery_(activist)" rel="noopener" target="_blank">
+       Bill Montgomery
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Conservative &amp; Family Foundations
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Recurring grants from aligned foundations (examples reported over
+        various years): Ed Uihlein Family Foundation (Richard Uihlein), Rauner
+        Family Foundation, Marcus Foundation, Bradley Foundation/Bradley Impact
+        Fund, Foglia Family Foundation.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      Examples: Uihlein ~$275k; Rauner ~$150k (select years reported)
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.influencewatch.org/non-profit/turning-point-usa/" rel="noopener" target="_blank">
+       InfluenceWatch
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Donor-Advised Funds (&ldquo;Dark Money&rdquo;)
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Use of intermediaries like DonorsTrust and Bradley Impact Fund enables
+        large gifts while shielding original donor identity; commonly used
+        across the movement to route major support.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      DonorsTrust ~$906k (2019 example reported)
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.theguardian.com/us-news/2021/oct/23/turning-point-rightwing-youth-group-critics-tactics" rel="noopener" target="_blank">
+       Guardian (2021)
+      </a>
+      <br/>
+      <a href="https://katiecouric.com/news/politics-and-policy/charlie-kirk-turning-point-usa-net-worth/" rel="noopener" target="_blank">
+       Explainer
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Concentration of Large Anonymous Donors
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Reports indicate a significant share of the budget coming from a small
+        set of very large (often anonymous) donors; anonymity preserves
+        strategic flexibility and reduces reputational risk for backers.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      ~Half of funding from ~10 donors (reported)
+     </td>
+     <td data-label="Sources">
+      <a href="https://en.wikipedia.org/wiki/Turning_Point_Action" rel="noopener" target="_blank">
+       Turning Point Action
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Non-Cash Gifts, Securities &amp; Legacy Giving
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Solicits appreciated securities, donor-advised gifts, estate bequests,
+        retirement assets, and life-insurance beneficiary
+        designations&mdash;broadening the pipeline beyond one-time cash.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      Ongoing programs
+     </td>
+     <td data-label="Sources">
+      <a href="https://donate.tpusa.com/" rel="noopener" target="_blank">
+       TPUSA Donate
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Grassroots, Small-Dollar &amp; Merchandise
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Digital fundraising, membership appeals, event ticketing, and branded
+        merchandise; campus chapters and national conferences serve as recurring
+        acquisition funnels for small-dollar donors.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      Scaled via events &amp; media
+     </td>
+     <td data-label="Sources">
+      <a href="https://donate.tpusa.com/" rel="noopener" target="_blank">
+       TPUSA Donate
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Funding Source / Channel">
+      <strong>
+       Crisis &amp; Peak-Attention Fundraising
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      High-salience moments (leadership news, political inflection points)
+        trigger both large-donor pledges and grassroots surges; public examples
+        include seven-figure gifts and rapid campaign spikes.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      2025: reported $1M pledge (Lynn Friess)
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.theguardian.com/us-news/2025/sep/22/turning-point-usa-fundraising-charlie-kirk" rel="noopener" target="_blank">
+       Guardian (2025)
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <h3 id="funding-scale">
+  What That Money Built
+ </h3>
+ <div class="table-wrap">
+  <table class="extra-wide-table long-table dense">
+   <thead>
+    <tr>
+     <th>
+      Scale / Organizational Vehicle
+     </th>
+     <th>
+      Description / How It Works
+     </th>
+     <th>
+      Indicative Figures / Dates
+     </th>
+     <th>
+      Sources
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td data-label="Scale / Organizational Vehicle">
+      <strong>
+       Overall Revenue Growth &amp; Scale
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Rapid scaling from early single-digit millions to a major national
+        budget supporting media, events, staffing, and new verticals (Faith,
+        Academy prototypes, expanded conferences).
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      2019: $28.5M
+      <br/>
+      2021: $55.8M
+      <br/>
+      2024: $85M revenue / $81M expenses
+     </td>
+     <td data-label="Sources">
+      <a href="https://en.wikipedia.org/wiki/Turning_Point_USA" rel="noopener" target="_blank">
+       TPUSA (overview)
+      </a>
+      <br/>
+      <a href="https://projects.propublica.org/nonprofits/organizations/800835023" rel="noopener" target="_blank">
+       ProPublica 990s
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Scale / Organizational Vehicle">
+      <strong>
+       Assets, Liabilities &amp; Financial Position
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Nonprofit filings reflect accumulated assets and operational liabilities
+        consistent with a scaled national organization; accepts non-cash gifts
+        to optimize donor tax strategy.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      2024: ~$26.3M assets / ~$8.37M liabilities
+     </td>
+     <td data-label="Sources">
+      <a href="https://projects.propublica.org/nonprofits/organizations/800835023" rel="noopener" target="_blank">
+       ProPublica 990s
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Scale / Organizational Vehicle">
+      <strong>
+       &ldquo;Investor Prospectus&rdquo; &amp; Expansion Rounds
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Formal fundraising campaigns to underwrite media build-out, events, and
+        new arms (e.g., TPUSA Faith), signaling an aggressive multi-year scaling
+        plan.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      Prospectus target: ~$43M (reported)
+     </td>
+     <td data-label="Sources">
+      <a href="https://en.wikipedia.org/wiki/Turning_Point_USA" rel="noopener" target="_blank">
+       TPUSA (overview)
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Scale / Organizational Vehicle">
+      <strong>
+       Political Arm (501(c)(4)) &amp; PAC
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      <em>
+       Turning Point Action
+      </em>
+      (c4) and
+      <em>
+       Turning Point PAC
+      </em>
+      enable
+        electoral activity and independent expenditures alongside the c3. Shared
+        branding connects fundraising to election-cycle operations.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      FEC fine ~$18k (disclosure case)
+      <br/>
+      2024: 1,000+ large PAC donations
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.citizensforethics.org/news/press-releases/turning-point-action-fined-following-crew-complaint/" rel="noopener" target="_blank">
+       CREW (FEC fine)
+      </a>
+      <br/>
+      <a href="https://www.opensecrets.org/political-action-committees-pacs/turning-point-pac/C00814152/donors/2024" rel="noopener" target="_blank">
+       OpenSecrets PAC
+      </a>
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Scale / Organizational Vehicle">
+      <strong>
+       Outside Spending &amp; Election-Cycle Flows
+      </strong>
+     </td>
+     <td data-label="Description / How It Works">
+      Election-year giving routed via c4/PAC structures; donor disclosure
+        varies by vehicle, with partial or delayed transparency typical for
+        outside spending and issue advocacy.
+     </td>
+     <td data-label="Indicative Figures / Dates">
+      Multiple cycles (2018&ndash;2024)
+     </td>
+     <td data-label="Sources">
+      <a href="https://www.opensecrets.org/outside-spending/detail/2022?cmte=Turning+Point+USA" rel="noopener" target="_blank">
+       OpenSecrets (outside)
+      </a>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <h2 id="broader-network">
+  Kirk in the Broader Reactionary Network
+ </h2>
+ <p>
+  This is where I think looking at Kirk as a single guy actually understates what he was. The broader
+  reactionary right is not just a collection of isolated people who independently arrived at the same
+  bullshit. It is a network. I do not mean that in the conspiratorial sense, as though everyone is
+  sitting in the same room coordinating every talking point. I mean it in the boring network-science
+  sense: people share stages, podcasts, churches, publishers, donors, organizations, audiences,
+  slogans, and political projects. Clusters form. Certain people become important because they connect
+  clusters that would otherwise remain more isolated. Ideas move across those connections.
+ </p>
+ <p>
+  This distinction matters because Kirk was not really an intellectual architect of this movement. He
+  was not Stephen Wolfe sitting down to write a systematic political theology, nor was he Doug Wilson
+  constructing an entire Reformed institutional ecosystem. Kirk's comparative advantage was different:
+  he was a
+  <strong>
+   broker, translator, amplifier, and institution builder
+  </strong>
+  . He could take ideas
+  generated in more obscure theological or reactionary subcultures, strip them down into accessible
+  culture-war language, put them in front of a gigantic audience, and then connect that audience to an
+  organization capable of doing something with it. That is a very different kind of influence, and in
+  many ways it is more consequential than simply writing another book that five thousand already-radical
+  people will read.
+ </p>
+ <h3 id="network-method">
+  A Network, Not Guilt by Association
+ </h3>
+ <p>
+  Before going any further, there is an obvious methodological point. An association is not an identity.
+  If Kirk interviewed somebody, shared a stage with somebody, or brought somebody into a TPUSA event,
+  that does
+  <em>
+   not
+  </em>
+  mean he automatically endorsed every belief that person held. Likewise, two
+  people repeating similar ideas does not prove one caused the other to believe them. I am not interested
+  in drawing a giant spaghetti diagram and pretending every line means the same thing. The edge itself is
+  the evidence, and the type of edge matters.
+ </p>
+ <blockquote>
+  <p>
+   I treat repeated collaboration or a joint project as a strong edge; interviews, platforming, event
+    participation, or direct endorsement as documented edges; shared institutional networks as indirect
+    edges; and ideological resemblance without an actual relationship as context only. The last category
+    is useful for understanding the surrounding culture, but it is not evidence of a personal relationship.
+  </p>
+ </blockquote>
+ <p>
+  This is important because the network is heterogeneous. A Christian nationalist political theorist, a
+  charismatic Seven Mountains preacher, an anti-abortion organizer, a conspiracy broadcaster, an elected
+  Republican, and some racist social-media edgelord are not interchangeable. They can occupy overlapping
+  communities while still disagreeing about theology, tactics, Israel, economics, race, or how explicitly
+  coercive the government should be. What matters here is the
+  <strong>
+   division of labor
+  </strong>
+  and the
+  pathways through which ideas, rhetoric, audiences, and institutional power move.
+ </p>
+ <h3 id="kirk-broker">
+  Kirk's Particular Role: Broker, Translator, Amplifier
+ </h3>
+ <p>
+  Once TPUSA Faith existed, Kirk had a vehicle that could connect conservative youth politics to a much
+  wider Christian-right ecosystem. This was not hypothetical. In April 2024, Kirk brought
+  <a href="https://thecharliekirkshow.com/podcasts/the-charlie-kirk-show/what-is-a-christian-nationalist-anyway" rel="noopener" target="_blank">
+   Doug Wilson onto
+   <em>
+    The Charlie Kirk Show
+   </em>
+  </a>
+  for an episode explicitly asking what a Christian nationalist is. Wilson discussed Christendom, the
+  supposed Christian character of America, and the idea that secularism leads toward tyranny. Kirk did
+  not merely encounter Wilson accidentally at some giant conference; he provided a distribution channel
+  for Wilson's political theology and then TPUSA featured Wilson at its 2024 Believers Summit. That is a
+  direct platforming edge.
+ </p>
+ <p>
+  Lance Wallnau is another revealing connection. Wallnau is one of the major popularizers of Seven
+  Mountains thinking, and in 2023 he appeared on Kirk's show in an episode literally titled
+  <a href="https://podcasts.apple.com/us/podcast/real-christian-nationalism-with-lance-wallnau/id1460600818?i=1000627839604" rel="noopener" target="_blank">
+   <em>
+    Real Christian Nationalism
+   </em>
+  </a>
+  .
+  The discussion included Christian nationalism and the project of retaking institutions understood to
+  have been captured by political enemies. Wallnau also appeared within TPUSA Faith's event ecosystem.
+  Again, the point is not that Kirk and Wallnau were doctrinal clones. The point is that TPUSA functioned
+  as a bridge through which a Seven Mountains strategist could address a much broader conservative
+  audience.
+ </p>
+ <p>
+  Sean Feucht is an even stronger edge because the relationship moved beyond platforming into an actual
+  joint project. In a piece published by TPUSA Faith, Feucht described Kirk as his friend and wrote that
+  <a href="https://tpusa.com/live/there-is-a-war-being-fought-for-the-soul-of-america/" rel="noopener" target="_blank">
+   the two of them brainstormed the Kingdom to the Capitol Tour
+  </a>
+  ,
+  which TPUSA Faith then partnered with as it traveled to state capitols. This is almost a perfect example
+  of how the network works. Kirk supplied political-media infrastructure and organizational reach; Feucht
+  supplied charismatic revival politics, worship spectacle, and a spiritual-warfare frame; TPUSA Faith
+  connected the whole thing to political institutions around the country.
+ </p>
+ <p>
+  David Barton occupies a different role. He is not primarily a revivalist or a social-media bomb thrower;
+  his importance is the historical story he supplies. Barton has spent decades arguing that America is
+  fundamentally a Christian nation whose authentic constitutional order has been distorted by later
+  secularism. TPUSA Faith repeatedly gave that kind of argument institutional space. Barton was a featured
+  speaker at its
+  <a href="https://tpusafaith.com/nashville23/" rel="noopener" target="_blank">
+   2023 Pastors Summit
+  </a>
+  ,
+  an event that also featured Kirk and a large roster of conservative religious and political figures.
+  Barton therefore contributes something different from Wilson, Wallnau, or Feucht: he helps make the
+  political project look like restoration rather than revolution.
+ </p>
+ <p>
+  These are different edges with different strengths. Feucht represents collaboration. Wilson and Wallnau
+  represent direct platforming and repeated movement contact. Barton represents institutional inclusion and
+  legitimation. Other people discussed below are more distant nodes, and I am not claiming direct Kirk
+  relationships where I do not have evidence for them. But even this small sample makes the structure
+  obvious: Kirk's significance was partly his ability to bring different strands of the reactionary right
+  into the same media and organizational ecosystem.
+ </p>
+ <h3 id="network-epistemology">
+  The Shared Epistemic Structure
+ </h3>
+ <p>
+  This also makes the anti-intellectual part of the argument more precise. Calling this ecosystem
+  anti-intellectual does
+  <em>
+   not
+  </em>
+  mean everyone in it is stupid, nobody reads books, or nobody can make
+  a complicated argument. That would be ridiculous. Wolfe writes political theory. Wilson has built
+  schools, a publishing operation, and a whole theological subculture. Barton has spent decades producing
+  historical arguments. There are plenty of educated people in this network. The problem is the
+  <strong>
+   epistemic structure
+  </strong>
+  : how conclusions are formed, protected, and defended.
+ </p>
+ <ul>
+  <li>
+   <strong>
+    Conclusions often precede inquiry.
+   </strong>
+   A theological or ideological commitment establishes
+    what must ultimately be true; evidence is then recruited to defend it.
+  </li>
+  <li>
+   <strong>
+    Some premises are insulated from revision.
+   </strong>
+   If a conclusion is understood as biblical,
+    divinely ordered, or essential to the survival of Western civilization, contrary evidence cannot easily
+    function as a reason to abandon it.
+  </li>
+  <li>
+   <strong>
+    Expertise becomes conditional.
+   </strong>
+   Experts are useful when they legitimate the preferred
+    conclusion; when they do not, the university, media, scientific institution, court, or bureaucracy can
+    simply be redescribed as captured by the enemy.
+  </li>
+  <li>
+   <strong>
+    History becomes a political resource.
+   </strong>
+   Instead of asking what the evidence most strongly
+    supports, history can become a hunt for usable founders, quotations, precedents, and myths that validate
+    the present project.
+  </li>
+  <li>
+   <strong>
+    Disagreement becomes moralized.
+   </strong>
+   An opponent is not merely wrong about tax policy,
+    education, sexuality, or public health; they are a Marxist, globalist, groomer, satanic influence,
+    enemy of Christ, or participant in some civilizational attack.
+  </li>
+  <li>
+   <strong>
+    Failure becomes self-sealing.
+   </strong>
+   If institutions reject the claim, that rejection itself
+    becomes evidence that the institutions are corrupt. The worldview gets harder to falsify precisely
+    because every contradiction can be absorbed into the conspiracy.
+  </li>
+ </ul>
+ <p>
+  This is why Kirk's debate style matters beyond Kirk. His apologetic method was the mass-media expression
+  of the same basic epistemology. Start with the answer. Treat argument as a weapon. Find enough facts,
+  anecdotes, labels, and rhetorical tricks to make the predetermined answer look reasonable. If someone
+  actually undercuts the argument, move to another claim, question the institution producing the evidence,
+  or simply fall back to the underlying moral certainty. "Okay, I still think it's wrong" is not merely
+  one bad debate moment; it is an almost comically pure expression of the structure.
+ </p>
+ <h3 id="network-complementarity">
+  How the Pieces Complement One Another
+ </h3>
+ <p>
+  Looking at the movement this way explains why focusing on one influencer at a time can be misleading.
+  No single person needs to perform every function. One group can produce the theology. Another can provide
+  a usable history. Another can turn institutional conquest into a spiritual strategy. Another can build
+  churches, schools, conferences, or political organizations. Someone like Kirk can package the material
+  into a viral language that a nineteen-year-old who has never read a page of political philosophy can
+  immediately repeat. An elected official can then turn some portion of the agenda into policy. A swarm of
+  smaller influencers can make the rhetoric feel normal through sheer repetition.
+ </p>
+ <p>
+  Put differently:
+  <strong>
+   architects formulate &rarr; legitimizers justify &rarr; organizers institutionalize &rarr;
+  brokers translate &rarr; mobilizers distribute &rarr; amplifiers normalize &rarr; implementers legislate.
+  </strong>
+  These categories overlap, obviously, but that is the basic ecology. Kirk and TPUSA sat in a particularly
+  useful position because they touched several layers simultaneously: mass media, young activists, churches,
+  donors, conferences, electoral politics, and a huge social-media distribution system. He did not have to
+  invent every idea he amplified. His importance was that he could make ideas generated elsewhere travel.
+ </p>
+ <h3 id="network-reference">
+  Reference Map: Communities and Functions
+ </h3>
+ <p>
+  The table below is a reference map, not a claim that every person listed was personally close to Kirk or
+  agreed with every other person in the row. Some have documented direct TPUSA/Kirk edges; others are
+  included because they occupy adjacent communities that help explain the larger ideological ecosystem.
+  That distinction is deliberate.
+ </p>
+ <div class="table-wrap">
+  <table class="extra-wide-table long-table dense">
+   <thead>
+    <tr>
+     <th>
+      Community / Role
+     </th>
+     <th>
+      Representative Figures
+     </th>
+     <th>
+      What They Contribute
+     </th>
+     <th>
+      Kirk / TPUSA Edge in This Discussion
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Post-liberal / Reformed Christian-nationalist architects
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Stephen Wolfe, Doug Wilson, Joel Webbon, Dale Partridge, Joshua Haymes
+     </td>
+     <td data-label="What They Contribute">
+      More systematic arguments for Christian public order, anti-liberalism, patriarchy, confessional government, or biblical political authority.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      <strong>
+       Direct for Wilson:
+      </strong>
+      Kirk interview and TPUSA Believers Summit. The others are broader network/context nodes unless a separate edge is documented.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Seven Mountains / dominion-oriented organizers
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Lance Wallnau, Sean Feucht, Richard Harris
+     </td>
+     <td data-label="What They Contribute">
+      Institutional strategy, spiritual-warfare framing, church mobilization, and the idea that Christians should gain controlling influence across major social domains.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      <strong>
+       Repeated/direct for Wallnau; strong collaboration for Feucht.
+      </strong>
+      Harris is included primarily as a broader institutional node.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Historical / apologetic legitimizers
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      David Barton, Alex McFarland
+     </td>
+     <td data-label="What They Contribute">
+      Narratives portraying conservative Christian political dominance as biblical, constitutional, historically American, or a restoration of an older legitimate order.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      <strong>
+       Documented institutional edge for Barton
+      </strong>
+      through TPUSA Faith events. McFarland is broader context here.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Religious mass mobilizers
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Franklin Graham, Seth Gruber, Sean Feucht, Lance Wallnau
+     </td>
+     <td data-label="What They Contribute">
+      Church networks, rallies, abortion and culture-war mobilization, fundraising, voter activation, and large religious audiences.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      Direct TPUSA event or organizational ties are documented for Feucht, Wallnau, and Gruber; Graham is better treated as part of the larger coalition rather than a Kirk edge asserted here.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Political implementers
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Dusty Deevers, Monty Fritts, Micah Beckwith, Mark Baisley
+     </td>
+     <td data-label="What They Contribute">
+      State power: legislation, executive authority, education policy, abortion restrictions, religiously framed governance, and other attempts to convert movement ideas into law.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      Primarily downstream comparison nodes. I am
+      <strong>
+       not
+      </strong>
+      claiming a direct Kirk relationship merely from ideological overlap.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Conspiratorial / ethnonationalist media
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Harrison Smith, Shane Vaughn
+     </td>
+     <td data-label="What They Contribute">
+      Anti-globalist conspiracy narratives, demographic panic, apocalyptic political framing, distrust of institutions, and exclusionary definitions of the nation.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      Broader media and ideological adjacency. No direct Kirk edge is asserted here without separate evidence.
+     </td>
+    </tr>
+    <tr>
+     <td data-label="Community / Role">
+      <strong>
+       Reactionary cultural amplifiers
+      </strong>
+     </td>
+     <td data-label="Representative Figures">
+      Rebecca Hargraves, Isabella Moody, Lilly Gaddis, Carrie Prejean Boller
+     </td>
+     <td data-label="What They Contribute">
+      Provocation and normalization of racial, anti-feminist, anti-LGBT, anti-immigration, and "trad" rhetoric within online conservative culture.
+     </td>
+     <td data-label="Kirk / TPUSA Edge in This Discussion">
+      Included as surrounding cultural nodes, not as evidence of personal association with Kirk absent a documented edge.
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>
+  The asymmetry in that last column is intentional. A useful network map should probably draw the Wilson,
+  Wallnau, Feucht, and Barton relationships with solid lines of differing thickness while rendering more
+  distant ideological communities with dashed lines&mdash;or not drawing a person-to-Kirk line at all. Otherwise
+  the visualization would imply a degree of coordination that the evidence does not support.
+ </p>
+ <p>
+  The point of all this is not to make the world's most impressive conspiracy corkboard. It is to show how
+  a political culture acquires a division of labor. Kirk occupied a valuable bridge position inside it.
+  TPUSA then gave that bridge money, media infrastructure, conferences, churches, youth chapters, and
+  political access. Once you understand that, some of the organization's other behavior looks less like a
+  series of unrelated culture-war stunts and more like institutional action produced by the same worldview.
+  The Professor Watchlist is a good place to see that in practice.
+ </p>
+ <h2 id="professor-watchlist">
+  The Professor Watchlist: Free Speech in Practice
+ </h2>
+ <p>
+  The Professor Watchlist is where this stops being abstract. TPUSA did not merely circulate a worldview; it built mechanisms that could direct attention toward particular people and institutions.
+ </p>
+ <p>
+  This is what prompted me to write this post in the first place. The fact that
+  there is a "professor watchlist" is fucking absurd. The right wing hates being
+  called fascist, while they're enacting the fascist playbook. This watchlist
+  probably isn't as consequential as the Red Scare McCarthyism back in the good
+  ole days, but it nevertheless has the same effect and is inspired by the same
+  bullshit. I took the liberty of looking at this list, identifying some of the
+  professors. It's quite hilarious; anyone he didn't like was put on this list,
+  and then his mindless followers would harass and even send death threats to
+  these professors. What kind of person embodying "free speech" values would
+  allow such nonsense? Obviously, someone who doesn't give a shit about free
+  speech or the first amendment.
+ </p>
+ <p>
+  I can simply find zero record of Charlie Kirk
+  rebuking the government for cracking down on college protestors who, according
+  to the first amendment, have constitutional rights to express their grievances
+  with the government. Why is that you ask? Well, because they were criticizing
+  Israel. Kirk was not only a Christian Nationalist, but a fervent Christian
+  Zionist. What a great pairing. I can also find zero records of him rebuking
+  the book bans in Florida, or any other example of state sanctioned repression
+  of speech of Kirks political enemies. Why is that? Because he did not actually
+  give a shit about free speech. Someone who is principled, by definition, would
+  defend the principle even when the defense was of your "enemies" rights. He
+  did no such thing, and this is what fucking kills me about the conservatives.
+  I model myself as someone who does take the principle seriously, consistent
+  with how Noam Chomsky practiced it throughout his life. When conservatives cry
+  "free speech" they are literally just fucking bullshitting you.
+ </p>
+ <p>
+  Anyway, lets take a look at some of the people on this list:
+ </p>
+ <ul>
+  <li>
+   <a href="https://en.wikipedia.org/wiki/Deirdre_McCloskey">
+    Deirdre McCloskey
+   </a>
+  </li>
+  <li>
+   <a href="http://umt.edu/african-american-studies/people/default.php?ID=1174">
+    Tobin Miller Shearer
+   </a>
+  </li>
+  <li>
+   <a href="https://vcresearch.berkeley.edu/faculty/keith-feldman">
+    Keith Feldman
+   </a>
+  </li>
+  <li>
+   <a href="https://ung.edu/english/faculty-staff-bio/matthew-boedy.php">
+    Matthew Boedy
+   </a>
+  </li>
+  <li>
+   <a href="https://en.wikipedia.org/wiki/Timothy_Messer-Kruse">
+    Timothy Messer-Kruse
+   </a>
+  </li>
+  <li>
+   <a href="https://en.wikipedia.org/wiki/Kevin_M._Kruse">
+    Kevin M. Kruse
+   </a>
+  </li>
+  <li>
+   <a href="https://www.allysonshortle.com/">
+    Allyson F. Shortle
+   </a>
+  </li>
+  <li>
+   <a href="https://history.rutgers.edu/people/faculty/details/1143-bray-mark">
+    Mark Bray
+   </a>
+  </li>
+ </ul>
+ <p>
+  I was originally pissed off about this when I found out that McCloskey was on
+  the list. For those of you who don't know who she is, she is an OG economist.
+  I studied her as an undergrad, and her books immensely helped me with my
+  technical writing. Why is she on the list? Because she is transgender. Funny
+  enough, I didn't even know that when studying her work. None of the
+  transgender "ideology" was in her work. Just pure academic rigor. I quote
+  "ideology" because this is what fucking right-wing people love to do; call
+  everything they don't like "ideology". This is not an accident, it is
+  deliberate. They have the truth, everything else is ideology. This is why they
+  call it "transgenderism"' the "ism" at the end does heavy lifting. This
+  infuriated me when I found out about this.
+ </p>
+ <p>
+  What finally drove me to write was
+  today, literally, when I found out about Mark Bray. He is a historian who
+  studies Anti-Fascist movements; he is an expert in the Spanish Civil War and
+  the history of radicalization. I found out about him through the
+  <a href="https://www.veteransfightingfascism.org/">
+   Veterans Fighting Fascism
+  </a>
+  , another amazing organization who identifies the problems with American
+  veterans, and their massive susceptibility to fascist ideology.&nbsp;They were
+  reporting on how he was more or less detained at an airport when trying to
+  leave the fucking country that's now targeting people like him, thanks to
+  <a href="https://www.whitehouse.gov/presidential-actions/2025/09/countering-domestic-terrorism-and-organized-political-violence/">
+   NSPM-7
+  </a>
+  ; the government actually outlawing ideas it dislikes.
+ </p>
+ <p>
+  What about some of the other people on this list? Kevin m. Kruse is a great
+  example of what motivates Kirk to put people on the list. He wrote a book,
+  that's literally on my shelf, called "One Nation Under God: How Corporate
+  America Invented Christian America". A fantastic book describing Post-WW2
+  backlash against the New Deal policies; how business infiltrated the church,
+  enabling figures like Billy Graham etc. Who else? Allyson Shortle studies
+  group identity in the context of American political behavior. One of her books
+  "The Everyday Crusade: Christian Nationalism in American Politics", probably
+  doesn't sit well with the Christian Nationalists at TPUSA.
+ </p>
+ <p>
+  Another professor,
+  Matthew Boedy, consistently spoke out against Charlie Kirks bullshit. He also
+  wrote a book "The Seven Mountains Mandate: Exposing the Dangerous Plan to
+  Christianize America and Destroy Democracy"; starting to see a pattern here?
+  Tobin Miller Shearer, a historian of African American history, literally
+  received death threats from Kirks minions. This is most certainly to advance
+  their historical revisionism; as evidenced by Kirks association with PragerU.
+  Another example of whitewashing history is their targeting of Timothy
+  Messer-Kruse. Why is he on the list? Well, when the Ohio government mandated
+  certain curriculum (so much for academic freedom), Kruse persisted in teaching
+  it through a critical lens. Anything resembling "critical theory" is a big no
+  no to conservatives, ergo he goes on the list. Never mind the fact that
+  academic freedom was undercut.
+ </p>
+ <p>
+  What about this Keith Feldman character? Well,
+  wouldn't you know, he is highly critical of US involvement in Israel, and has
+  written extensively into how this relationship has impacted American views on
+  domestic issues. Therefore, he goes on the list.
+ </p>
+ <p>
+  Can we actually conclude, with a serious face, that someone who puts people he
+  disagrees with on lists for his mindless minions to harass, is a free speech
+  advocate? Why not engage with their writings. No, he had no intellectual
+  virtue at all to do something like this.
+ </p>
+ <h2 id="propaganda-ecosystem">
+  The Broader Propaganda Ecosystem
+ </h2>
+ <p>
+  The network model matters here again because Kirk did not need to invent every conspiracy or moral panic he repeated. Amplification is itself a network role: take an idea already circulating in adjacent communities, package it for your audience, and give it another route into the mainstream.
+ </p>
+ <p>
+  This is simply the shit no one talks about. Kirk was an avid conspiracy
+  theorist about covid, spewing tons of nonsense. This sort of bullshit
+  culminates in people like
+  <a href="https://www.pbs.org/newshour/nation/cdc-shooter-believed-covid-vaccine-was-harmful-union-says-misinformation-put-staff-at-risk">
+   Patrick Joseph White
+  </a>
+  shooting up the CDC. Who knows how much of this nonsense he amplified. He
+  propagated the
+  <a href="https://en.wikipedia.org/wiki/Great_Replacement_conspiracy_theory">
+   Great Replacement Theory
+  </a>
+  ,
+  <a href="https://en.wikipedia.org/wiki/Cultural_Marxism_conspiracy_theory">
+   Cultural Marxism conspiracy theories
+  </a>
+  , the
+  <a href="https://en.wikipedia.org/wiki/Great_Reset">
+   Great Reset conspiracy
+  </a>
+  of the World Economic Forum (global elites like Klaus Schwab, "Davos
+  Crowd" orchestrating a New World Order and the restriction of freedom) framed
+  as an eschatological threat end times nonsense (with other bullshit pastors
+  like Jack Hibbs),&nbsp; overt resentment to the civil rights legislation and
+  MLK, spiritual warfare nonsense pandering to Christian Nationalists
+  (anti-wokeism),
+  <a href="https://en.wikipedia.org/wiki/Climate_change_denial">
+   climate change
+  </a>
+  conspiracy theories about "elitists" and "climate alarmism" (while literally
+  taking money from oil companies),&nbsp; and tar-and-feathered academia as
+  left-wing indoctrination facilities,
+  <a href="https://en.wikipedia.org/wiki/Dog_whistle_(politics)">
+   dog whistling
+  </a>
+  to white nationalists while maintaining
+  <a href="https://en.wikipedia.org/wiki/Plausible_deniability">
+   plausible deniability
+  </a>
+  by resorting to more acceptable conservative talking points like "fiscal
+  responsibility" and "strong borders".
+ </p>
+ <p>
+  All of this is presented under the guise
+  of performative victimhood and "censorship" narratives reinforcing the
+  persecution delusion that fuels radicalization. The genesis of his TPUSA began
+  with the obvious bullshit of a "secular approach to politics"; then sure
+  enough the bait-and-switch came and his true colors were revealed. If any
+  conservative ever reads this post, just know this is why no one on the left
+  takes you fucking serious. We understand how the phrase "fiscal
+  responsibility" functions among your constituents. White nationalists and
+  white supremacists literally resonated with the shit Kirk said. Wouldn't that
+  be something you'd want to internally reflect upon? If I were an influencer
+  and fucking fascists resonated with my talking points, I'd have serious
+  reservations if I didn't identify as one of them. Kirk's rhetoric was
+  predicated on massive escalation, he framed everything as "survival" of
+  "western civilization"; suggesting that everyday policy debates are part of
+  cosmic war or existential struggle. He emphasized secrecy, coverups, insider
+  elites, shadowy forces (liberal) as weapons against "conservatives" (whoever
+  he identified as a "true" conservative). Everything was a spiritual battle, he
+  framed political foes as part of monolithic conspiratorial blocs. But here is
+  the crucial point, Kirk rarely overtly said "I am a clown who believes these
+  things". He was clever enough to hide behind the usual conservative talking
+  points, while signaling to his more radical base his true intentions. I simply
+  do not have the patience to dissect everything this shit head said; from his
+  overt parroting or RT (Russian state propaganda) talking points, to defending
+  everything Trump does, there is too much to discuss without throwing my laptop
+  against the wall. Charlie Kirk was one of many right-wing pundits who
+  radicalized a generation of conservatives, backed by spineless pools of
+  conservative dark money. Through Turning Point USA, he normalized fringe
+  ideas&mdash;climate denial, globalist paranoia, demographic moral panics&mdash;into
+  mainstream youth conservatism. He played a significant hand in destroying the
+  conservative party. Rush Limbaugh was looking up from Hell smiling at
+  him.
+ </p>
+ <h2 id="broader-culture">
+  The Broader Culture He Embodied
+ </h2>
+ <p>
+  By anti-intellectualism, I am not talking about whether somebody has read books or can sound sophisticated. I mean a culture in which inquiry is subordinate to identity and predetermined moral conclusions, while contrary expertise is dismissed as proof that the relevant institution has been captured.
+ </p>
+ <p>
+  I simply cannot understand how quickly people can become entrenched in such
+  bullshit like the shit Kirk spewed. I remember years ago, a conversation with
+  my mother, about how a certain influential person seemed legit mainly because
+  of how confident they spoke their bullshit. Charlie Kirk was a great example
+  of this phenomena. He was the absolute epitome of the
+  <a href="https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect">
+   Dunning Kruger effect
+  </a>
+  . He spewed bullshit so confidently that people somehow believed him; because
+  guess what, no one gives a shit about verifiable truth and sound reason, they
+  just want to "own the Libs".
+ </p>
+ <p>
+  The fucking irony of someone like Kirk calling
+  universities indoctrination camps is hilarious. Seriously, could not be a
+  greater example of the
+  <a href="https://en.wikipedia.org/wiki/The_pot_calling_the_kettle_black">
+   pot calling the kettle black
+  </a>
+  . Kirk was a fundamentalist Christian, do I need to say anything more? The
+  sheer propaganda, indoctrination techniques, and identity manipulation carried
+  out by religious institutions and affiliates such as apologetics borders on
+  cult like behavior. I know people who raise kids, who's first words are
+  "Jesus". Christians literally have a phrase called the
+  <a href="https://en.wikipedia.org/wiki/Child_evangelism_movement">
+   "4/14" window
+  </a>
+  , referring to the age range of children between four and fourteen,
+  considered to be a critical period for "spiritual formation", for them to find
+  their "Christian identity". But child evangelism isn't understood as
+  "indoctrination", its just "soul saving". There's even a quote attributes to
+  Jesuit priest St. Ignatius "Give me a child until he is 7 and I will show you
+  the man"; clearly they know what the fuck they are doing. The absurdity of
+  calling a university education indoctrination is beyond me. Especially when
+  you consider something like a Christian University. Kirks wife is currently
+  attending one, apparently for biblical studies (Liberty University). And sure
+  enough, as I fucking suspected, it's an evangelical indoctrination
+  institution. You can always tell whether this is true, by looking at two
+  things; how they teach their science and religion curriculum, and whether
+  faculty is required to make a statement of faith. Let's start with science;
+  creationism all over the curriculum; "teaching the controversy". Now religion,
+  absolutely zero critical scholarship; the bible is taken as the infallible
+  word that must be defended (massive apologetic stance). Lastly, the statement
+  of faith; a theological creed you must announce to keep your job, any
+  deviation of the universities faith statement get's you fired. This is
+  extremely common in "Christian higher education". Fake science skepticism,
+  dogmatic religious teaching, and unassailable creeds faculty must adhere to.
+  At Liberty, faculty isn't even allowed to speak to press without the
+  universities approval. Absurd.
+ </p>
+ <p>
+  Now, what does this tell us? I think it tells
+  us that Kirk was mistaking the behavior of secular universities with his
+  wife's university.
+ </p>
+ <h2 id="aftermath">
+  Aftermath and Mythmaking
+ </h2>
+ <p>
+  That brings this back to what prompted the post in the first place: the aftermath, and the effort to turn
+  Kirk into something more principled and intellectually serious than the record described above.
+ </p>
+ <p>
+  I could go on and on for days about his bullshit. But the real problem is
+  what's occurred in the aftermath. I wonder if the free speech advocate is
+  looking upon this situation, rebuking Trumps bullshit. Most likely not. If
+  this were some other conservative activist, Kirk would probably have been on
+  board with everything Trump is doing, just like how all the other conservative
+  influencer spineless bastards are on board.
+ </p>
+ <h2 id="sources">
+  Additional Sources to Consult
+ </h2>
+ <ol>
+  <li>
+   <a href="https://thecharliekirkshow.com/podcasts/the-charlie-kirk-show/what-is-a-christian-nationalist-anyway" rel="noopener" target="_blank">
+    What IS a Christian Nationalist, Anyway? &mdash; Charlie Kirk with Doug Wilson
+   </a>
+  </li>
+  <li>
+   <a href="https://podcasts.apple.com/us/podcast/real-christian-nationalism-with-lance-wallnau/id1460600818?i=1000627839604" rel="noopener" target="_blank">
+    Real Christian Nationalism &mdash; Charlie Kirk with Lance Wallnau
+   </a>
+  </li>
+  <li>
+   <a href="https://tpusa.com/live/there-is-a-war-being-fought-for-the-soul-of-america/" rel="noopener" target="_blank">
+    There is a War Being Fought for the Soul of America &mdash; Sean Feucht / TPUSA Faith
+   </a>
+  </li>
+  <li>
+   <a href="https://tpusafaith.com/nashville23/" rel="noopener" target="_blank">
+    TPUSA Faith Nashville Pastors Summit 2023
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/9O7y50cNb7c?si=zUjqP9wFv_bqtA5u">
+    Exactly How Charlie Kirk got SCHOOLED by a Cambridge Student
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/GRLV5Is-Pc4?si=XeHe9J3oUuzefjxt">
+    Feminist SPANKS Charlie Kirk With This 1 Ancient Trick
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/xPywOvjLC4k?si=sUMnMCT3sZkCEro_">
+    Charlie Kirk's WORST Debate: How a Calm Cambridge Student EXPOSED His 1
+        Trick
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/Y_qjYK5ugFU?si=i6MCyT1ON3BASfVY">
+    How Charlie Kirk Always "OWNED The Libs" (And How 1 Student EXPOSED His
+        Entire System)
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/oLQRKn1BlcI?si=4rQsOwkBMX9oP_fS">
+    Incognito at Charlie Kirk&rsquo;s Young Women&rsquo;s Leadership Summit | FFRF&rsquo;s
+        Ask An Atheist
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/47MmyHY5n1k?si=TDQgApjK--AK6L3f">
+    Why I Quit Working for Turning Point USA | FFRF&rsquo;s Ask An Atheist
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/GFOMXXDlBTw?si=UWnVMDEupHwf9stR">
+    The Sin Of Empathy | Belief It Or Not
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/cbKt-7GNbDY?si=wUl2SQq_-PoBnH68">
+    I read a book on "godly masculinity" and it was honestly so funny
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/Kh0el8phS_o?si=wcAEYsw57XEXpMZW">
+    The Myth of Charlie Kirk
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/AoAYzkjD3bA?si=m_FN2CPVk8W2zaYF">
+    Christianity&rsquo;s Most Dangerous Idea (And Why It Won&rsquo;t Die)
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/SOgjikDdW90?si=5HvkQylYqbEM_gji">
+    Satanism Expert Reacts to Anti-LGBT &ldquo;Satanic&rdquo; Panic
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/B1rnHGSgFnw?si=UQYjqhmRUekn4wIH">
+    Charlie Kirk Had Some Bad Arguments Against Atheism
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/C46veArJXGs?si=zjxBko7JpjbB8Jsr">
+    Christian Nationalism Takes America
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/ZdgvbCt5ZCc?si=fMeGbcqcGPLEBA8G">
+    RWW News: Nick Fuentes Says Leaked Young Republican Chats Prove
+        'Everyone's A Groyper Now'
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/h92Ad5OQkFM?si=PA1dvGzRiaywmcwt">
+    Sam Harris: Charlie Kirk's Assassination &amp; Ezra Klein's Response
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/RqESHNvmP20?si=mgfMserWvQ2kJXEk">
+    Why did the middle classes support fascism?
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/ZPsbZDkpjv4?si=iujM_R5jXH4TowGb">
+    Why PragerU is Level 10 BRAIN ROT - (ft. Christopher Hitchens)
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/-Z5vGLtRnTw?si=FPglOsV6Kqob_4dN">
+    How Fox News is using lies to enrage Christians
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/srQuoNHXAyI?si=T23QzzUWeWD5dybm">
+    &lsquo;Why don&rsquo;t we strike first and start the war&rsquo; | Inside MAGA sect who
+        thinks the Democrats are demons
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/vp6_njOxYFc?si=R-icNO_YEb2fbSVc">
+    Left vs Right Wing Violence
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/P7sy2ErGNRs?si=R4EZqgcGK9r77Z64">
+    Christopher Hitchens DESTROYS: How Charlie Kirk Turned Ignorance into a
+        Business Model?
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/WSByaApGdKs?si=8_irQczYhvPwPRVC">
+    Why Do Christians Worship Trump?
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/hd0TGbPdUfw?si=HXMI6s1JR-eUMkCx">
+    How Politics Replaced Religion in America&rsquo;s Pews
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/tCU0PtKrY4E?si=TUBtKx8aiI5xUqsZ">
+    A Professor Researched Charlie Kirk for Years... Here's What He
+        Discovered.
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/0zJtaVC8vQ0?si=pmVadauBa6_OTM9C">
+    MAGA and Witchcraft
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/pLXJ453QxCk?si=umBnbadoY81C8edx">
+    Here's How Christian Nationalism Leads to Defending Slavery | The Tim
+        and April Show
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/x4XQZ-OL_BY?si=Mz3xoGxDsEH36CNi">
+    They Lied to You
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/bUJrz61LhI0?si=UISTDu_eH5w0Bbwt">
+    Christian Nationalist linked to Pete Hegseth defends slavery as "not
+        inherently evil"
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/eUb9DzBP2og?si=WOvreHHHiys5-jIS">
+    The Irony of Charlie Kirk shooting: ended by the Rhetoric He
+        Preached
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/i2Y8al_Pkv0?si=ZAkhpS0_KdrTDC3T">
+    Why Arguing About Politics Feels Pointless
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/mvCJPEmTF3c?si=B8APnBUnvFWcKIz8">
+    The Black and White Realities of the American Nazi
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/cbKt-7GNbDY?si=xoYLRe50WW4m06cV">
+    I read a book on "godly masculinity" and it was honestly so funny
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/ValgXGbmCB4?si=tSO5knwxGq66JKAv">
+    They Talk. They Kill.
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/Wb92rcoCOpk?si=C7yK_Y35yPd15nAU">
+    From Propaganda to Psy-Ops: How the Christian Right Hijacked America
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/HTYCjRLw1n8?si=Jgs5gwe_LgMVyCwT">
+    What is Christian nationalism?
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/unXhfSyk9h8?si=S9BEjaEJETtJGse6">
+    Charlie Kirk&rsquo;s Legacy Deserves No Revisions
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/j1t1ZAq0C-k?si=NtRBTRci6QVMAYZs">
+    Claiming the Charlie Kirk Legacy
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/Vdn4uGKktww?si=Jg3oK2e9kXNJlRNH">
+    Charlie Kirk Got Everything He Wanted
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/0vE5XInq-0o?si=fZu4rcCxTnjhTE91">
+    The Plot to Force Evangelical Christianity on Everyone
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/gVHQCfjNoqg?si=5EK3kzbzSqEdOstq">
+    Charlie Kirk WAS Racist
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/pFdO8jYWOeY?si=Ajaxp659zfFRCH1t">
+    Your mind is being altered.
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/S4rwWu1rJ7c?si=1EmYsYdaK6mlNcUb">
+    You've Been Lied to About Charlie Kirk
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/6wN6aBFCrjc?si=phv9pqHO7arM-mS7">
+    Charlie Kirk is using religion to trick young conservatives
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/H3iyz1bl8nQ?si=8IqPhtigsQiWDihC">
+    Charlie Kirk's Death Reveals Dark Truths About Christianity
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/Y6MShHqqZrw?si=9Qyr6ZBy2c8r6C23">
+    Charlie Kirk and the Empathy Paradox
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/dUUgsN3lwlA?si=s1zl0v9OrKYoKobN">
+    Texas Paul EXPOSES MAGA influencer Charlie Kirk&rsquo;s STUNNING ADMISSION
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/j4uKcpm6suM?si=kwieBxPUeHEu3BeS">
+    Charlie Kirk's Harmful Legacy: Disrupting the Religious Trauma
+        Discourse
+   </a>
+  </li>
+  <li>
+   <a href="https://youtu.be/EO0JHs6grDg?si=cpWlbi_YNFThCw8z">
+    Charlie Kirk Never Provided "Civil Debate"
+   </a>
+  </li>
+ </ol>
+</div>
