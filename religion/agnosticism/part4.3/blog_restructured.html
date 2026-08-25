@@ -1,0 +1,1751 @@
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Table of contents */
+      .ep-post .ep-toc {
+        margin: 1.4em 0 2em;
+        padding: 0.25em 1em 0.8em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .ep-toc h2 {
+        margin-top: 0.8em;
+      }
+
+      .ep-post .ep-toc > ol {
+        margin: 0.7em 0 0.35em 1.25em;
+      }
+
+      .ep-post .ep-toc .ep-toc-sub {
+        margin: 0.3em 0 0.55em 1.25em;
+        font-size: 0.94em;
+      }
+
+      .ep-post .ep-toc li {
+        margin: 0.3em 0;
+      }
+
+      .ep-post .ep-toc a {
+        text-decoration-thickness: 1px;
+      }
+
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        scroll-margin-top: 1.25rem;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<article class="ep-post"><h1 id="what-causes-religious-belief-narrative-doubt-and-obedience">What Causes Religious Belief? Narrative, Doubt, and Obedience</h1><p>
+  This is a continuation of the topic "what causes religious belief". So far we
+  have been analyzing mechanisms internal to theistic belief systems that cause
+  them to persist. This is a continuation of that analysis. 
+</p><p>The two mechanisms examined here are best understood together. Narrative can help form and reinforce a worldview by organizing experience into memorable, emotionally compelling causal stories. Once that worldview is established, the moralization of faith, obedience, and doubt can make revision socially and psychologically costly. The central question is therefore not simply why people believe, but how a belief system can acquire its own mechanisms of reinforcement and protection.</p><p>The argument proceeds in two stages: first, from narrative transportation and testimony to the problem of evaluating stories as evidence; second, from the moralization of doubt and obedience to apologetics, social pressure, and other mechanisms that can contain criticism. These mechanisms need not be consciously designed by individual believers or clergy in order to have a retention effect.</p><nav aria-label="Table of contents" class="ep-toc"><h2>Table of Contents</h2><ol><li><a href="#i-narrative-and-belief-formation">I. Narrative and Belief Formation</a><ol class="ep-toc-sub"><li><a href="#storytelling-as-a-mechanism">Storytelling as a Mechanism</a></li><li><a href="#narrative-transportation-what-the-research-shows">Narrative Transportation: What the Research Shows</a></li><li><a href="#from-narrative-persuasion-to-religious-practice">From Narrative Persuasion to Religious Practice</a></li><li><a href="#christian-witnessing-and-testimonial-reinforcement">Christian Witnessing and Testimonial Reinforcement</a></li><li><a href="#the-structure-and-purpose-of-testimony">The Structure and Purpose of Testimony</a></li><li><a href="#testimonial-asymmetry-and-competing-narratives">Testimonial Asymmetry and Competing Narratives</a></li><li><a href="#epistemic-risks-of-story-consistency">Epistemic Risks of Story Consistency</a></li><li><a href="#evaluating-narratives-as-evidence">Evaluating Narratives as Evidence</a></li><li><a href="#interim-conclusion-narrative-is-powerful-not-necessarily-true">Interim Conclusion: Narrative Is Powerful, Not Necessarily True</a></li></ol></li><li><a href="#ii-doubt-faith-and-obedience">II. Doubt, Faith, and Obedience</a><ol class="ep-toc-sub"><li><a href="#the-feedback-loop">The Feedback Loop</a></li><li><a href="#scriptural-models-of-obedience">Scriptural Models of Obedience</a></li><li><a href="#doubt-as-a-closed-loop-protection-mechanism">Doubt as a Closed-Loop Protection Mechanism</a></li><li><a href="#from-divine-obedience-to-social-obedience">From Divine Obedience to Social Obedience</a></li><li><a href="#counterargument-faith-is-not-blind-faith">Counterargument: Faith Is Not Blind Faith</a></li><li><a href="#formation-versus-maintenance-what-apologetics-does">Formation Versus Maintenance: What Apologetics Does</a></li><li><a href="#bounded-doubt-and-pre-canned-answers">Bounded Doubt and Pre-Canned Answers</a></li><li><a href="#case-study-lewiss-trilemma">Case Study: Lewis’s Trilemma</a></li><li><a href="#why-critical-examination-gets-suppressed">Why Critical Examination Gets Suppressed</a></li><li><a href="#faith-trust-and-the-moralization-of-doubt">Faith, Trust, and the Moralization of Doubt</a></li><li><a href="#case-study-pathologizing-doubt-in-os-guinness">Case Study: Pathologizing Doubt in Os Guinness</a></li><li><a href="#doubt-as-an-epistemic-virtue">Doubt as an Epistemic Virtue</a></li></ol></li><li><a href="#conclusion-how-the-mechanisms-interact">Conclusion: How the Mechanisms Interact</a><ol class="ep-toc-sub"></ol></li></ol></nav><h2 id="i-narrative-and-belief-formation">I. Narrative and Belief Formation</h2><h3 id="storytelling-as-a-mechanism">Storytelling as a Mechanism</h3><p>
+  This is somewhat obvious at first, given that scripture is just one big story
+  (hearsay specifically). But it’s a bit deeper than imagined on second glance.
+  Story telling is paramount in religion. It extends directly from the notion of
+  metaphor, because what good is a metaphor without a guiding story that
+  contains temporal ordering, directing the adherent to some end. I don’t just
+  mean stories in the abstract sense; I also mean stories in the form of
+  “testimonials” such as near-death experiences and encounters with “god working
+  in someone’s life”. These minor stories serve to bolster the grander narrative
+  told by scripture. They act as mechanisms supporting the much larger world
+  view, among other story-like literary devices such as allegories and parables.
+</p><h3 id="narrative-transportation-what-the-research-shows">Narrative Transportation: What the Research Shows</h3><p>
+  There are some good papers identifying the effect of narrative on our belief
+  formation. They show that the more transported we are in a narrative, the less
+  likely we are to identify inconsistencies or other errors in the story. We are
+  also much more likely to adopt the narrative, resonating with the characters
+  and seeing the world through that lens, even if there was false information.
+  In addition, there tends to be a sleeper effect, meaning that weeks later
+  there will be a stronger degree of conviction. I’ll post the papers and their
+  abstracts here, then briefly discuss the implications. 
+</p><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Finding</th><th>Why it matters here</th></tr></thead><tbody><tr><td data-label="Finding">Transportation can increase story-consistent beliefs.</td><td data-label="Why it matters here">Absorption in a narrative can influence belief even when the persuasive content is not presented as a formal argument.</td></tr><tr><td data-label="Finding">Transported readers can detect fewer inconsistencies.</td><td data-label="Why it matters here">Narrative immersion can reduce counterarguing and error detection.</td></tr><tr><td data-label="Finding">Narrative effects can persist over time.</td><td data-label="Why it matters here">The influence of a story may outlast the immediate emotional experience.</td></tr><tr><td data-label="Finding">Narrative framing can change attitudes.</td><td data-label="Why it matters here">How events are organized and framed can alter judgments about the same subject matter.</td></tr><tr><td data-label="Finding">Identification and emotion can contribute to persuasion.</td><td data-label="Why it matters here">The persuasive mechanism is partly experiential, not merely propositional.</td></tr><tr><td data-label="Finding">Causal structure can strengthen acceptance.</td><td data-label="Why it matters here">A coherent causal story can feel explanatory even when its individual links still require evidential support.</td></tr></tbody></table></div><h4 id="research-details">Research Details</h4><h4 id="the-role-of-transportation-in-the-persuasiveness-of-public-narratives">
+<a href="https://pubmed.ncbi.nlm.nih.gov/11079236/">The role of transportation in the persuasiveness of public narratives</a>:
+</h4><p class="source-abstract">
+  Transportation was proposed as a mechanism whereby narratives can affect
+  beliefs. Defined as absorption into a story, transportation entails imagery,
+  affect, and attentional focus. A transportation scale was developed and
+  validated. Experiment 1 (N = 97) demonstrated that extent of transportation
+  augmented story-consistent beliefs and favorable evaluations of protagonists.
+  Experiment 2 (N = 69) showed that highly transported readers found fewer false
+  notes in a story than less-transported readers. Experiments 3 (N = 274) and 4
+  (N = 258) again replicated the effects of transportation on beliefs and
+  evaluations; in the latter study, transportation was directly manipulated by
+  using processing instructions. Reduced transportation led to reduced
+  story-consistent beliefs and evaluations. The studies also showed that
+  transportation and corresponding beliefs were generally unaffected by labeling
+  a story as fact or as fiction.
+</p><h4 id="persuasive-effects-of-fictional-narratives-increase-over-time">
+<a href="https://www.researchgate.net/publication/228681145_Persuasive_Effects_of_Fictional_Narratives_Increase_Over_Time">Persuasive Effects of Fictional Narratives Increase Over Time</a>:
+</h4><p class="source-abstract">
+  Fact-related information contained in fictional narratives may induce
+  substantial changes in readers' real-world beliefs. Current models of
+  persuasion through fiction assume that these effects occur because readers are
+  psychologically transported into the fictional world of the narrative.
+  Contrary to general dual-process models of persuasion, models of persuasion
+  through fiction also imply that persuasive effects of fictional narratives are
+  persistent and even increase over time (absolute sleeper effect). In an
+  experiment designed to test this prediction, 81 participants read either a
+  fictional story that contained true as well as false assertions about
+  real-world topics or a control story. There were large short-term persuasive
+  effects of false information, and these effects were even larger for a group
+  with a 2-week assessment delay. Belief certainty was weakened immediately
+  after reading but returned to baseline level after 2 weeks, indicating that
+  beliefs acquired by reading fictional narratives are integrated into
+  real-world knowledge.
+</p><h4 id="the-role-of-religious-narratives-and-religious-orientation-towards-concerns-for-the-natural-environment-and-animal-welfare">
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9371258/">The role of religious narratives and religious orientation towards concerns
+    for the natural environment and animal welfare </a>:
+</h4><p class="source-abstract">
+  Several studies show that religion hinders concerns for the natural
+  environment preservation. Others, however, have found that the belief in God
+  or the identification with a particular religion is not associated with
+  measures for environmental concerns. This study investigates the influence of
+  religious narrative framing and the relation between Allport’s intrinsic
+  personal (IP) and extrinsic social (ES) religious orientation towards general
+  environmental apathy (GEA) and acceptability for harming animals (AIS). This
+  study surveyed 657 teachers and school staff in East Java, Indonesia. Using
+  ANOVA, we find that religious narrative affects participant’s GEA and AIS.
+  Participants in stewardship narrative group have significantly lower GEA and
+  AIS compared to participants in human dominance and the non-narratives control
+  group. Using multiple regression, we also confirm the persistence of religious
+  narrative’s influence towards GEA. In addition, lower GEA and AIS correlate
+  with higher IP and lower ES. Lastly, we identify and discuss significant
+  demographic and other determinants relation to GEA and AIS.
+</p><h4 id="effects-of-narrative-transportation-on-persuasion-a-meta-analysis">
+<a href="ttps://www.researchgate.net/publication/287364520_Effects_of_narrative_transportation_on_persuasion_A_meta-analysis">Effects of narrative transportation on persuasion: A meta-analysis</a>:
+</h4><p class="source-abstract">
+  The impact of narrative transportation on persuasion continues to attract
+  research attention (e.g., Escalas 2004; Escalas 2007; Green and Brock 2000,
+  2002; Slater and Rouner 2002). When consumers lose themselves in a story,
+  their attitudes and intentions change to reflect that story (Green 2008).
+  Since Green and Brock (2000) initiated quantitative transportation research,
+  many studies have investigated narratives, how they transport consumers, and
+  how they change consumers' views. Furthermore, recent developments have
+  enhanced the significance of transportation effects, including interactive
+  video games (Baranowski et al. 2008), narrative advertising (Chang 2009), and
+  reality TV (Hall 2009). Thus, transportation demands theoretical and applied
+  research attention (Singhal and Rogers 2002).
+</p><h4 id="the-persuasive-influence-of-narrative-causality-psychological-mechanism-strength-in-overcoming-resistance-and-persistence-over-time">
+<a href="https://www.researchgate.net/publication/235354230_The_Persuasive_Influence_of_Narrative_Causality_Psychological_Mechanism_Strength_in_Overcoming_Resistance_and_Persistence_Over_Time">The Persuasive Influence of Narrative Causality: Psychological Mechanism,
+    Strength in Overcoming Resistance, and Persistence Over Time</a>:
+</h4><p class="source-abstract">
+  The impact of narrative persuasion depends on the location of its persuasive
+  information relative to the cause-and-effect structure within the narrative,
+  yet, the bounds of this structural influence remain unknown. This study
+  examines the a) underlying psychological mechanism, b) strength in overcoming
+  psychological resistance, and c) persistence over time of narrative causality
+  effects on information acceptance. Results suggest causality effects occur
+  during initial stages of comprehension, which serve to shield the influence
+  from external moderators, such as preexisting worldviews. The effect also
+  remained constant over a two-week delay. Results serve to psychologically
+  explain the narrative causality effect and suggest it remains robust over a
+  wide range of conditions, potentially being useful for persuasion of otherwise
+  resistant audiences.
+</p><h4 id="narrative-versus-nonnarrative-the-role-of-identification-transportation-and-emotion-in-reducing-health-disparities">
+<a href="https://www.researchgate.net/publication/259353499_Narrative_versus_Nonnarrative_The_Role_of_Identification_Transportation_and_Emotion_in_Reducing_Health_Disparities ">Narrative versus Nonnarrative: The Role of Identification, Transportation,
+    and Emotion in Reducing Health Disparities</a>:
+</h4><p class="source-abstract">
+  This research empirically tests whether using a fictional narrative produces a
+  greater impact on health-related knowledge, attitudes, and behavioral
+  intention than presenting the identical information in a more traditional,
+  nonfiction, non-narrative format. European American, Mexican American, and
+  African American women (N = 758) were surveyed before and after viewing either
+  a narrative or non-narrative cervical cancer-related film. The narrative was
+  more effective in increasing cervical cancer-related knowledge and attitudes.
+  Moreover, in response to the narrative featuring Latinas, Mexican Americans
+  were most transported, identified most with the characters, and experienced
+  the strongest emotions. Regressions revealed that transportation,
+  identification with specific characters, and emotion each contributed to
+  shifts in knowledge, attitudes, and behavioral intentions. Thus, narrative
+  formats may provide a valuable tool in reducing health disparities.
+</p><h3 id="from-narrative-persuasion-to-religious-practice">From Narrative Persuasion to Religious Practice</h3><p>
+  All these papers indicate a strong relationship between belief formation and
+  narrativity. The last paper is very interesting because it suggests that
+  narratives can be tailored to achieve optimal goals. However, it can be
+  harmful as in the cases of environmental awareness and marketing. Therefore,
+  it should be no surprise that this is the most common technology religions use
+  to retain adherents. The language of faith is not the language of scientific
+  inquiry. Every week when people come to congregation, they have no intention
+  on critically assessing the content against a systematic set of criteria
+  designed to reduce bias. Quite the contrary, if someone does express critical
+  doubts about the content, they are met with disapproval. This is why I’ve been
+  trying to show that belief formation is completely independent of logical
+  reasoning and evidence. Most Christians are completely unaware of the
+  philosophical roots of the contingency argument for example. They did not come
+  to belief because of the “similarities between DNA and computer code”. This is
+  all after the fact. </p><p>The main source of inspiration comes from these stories.
+  Religion lives in stories, parables, allegories, heroic narratives, and
+  testimonials. </p><p>All of this is told with extreme passion. I’ve experienced this
+  myself. I’ve come across pastors that are very dull and boring, but the ones
+  that are incredibly passionate (like black gospel) are much more inviting.
+  I’ve come across English Anglican priests who have incredible speaking
+  abilities, captivating the audience. Theists are transported by these modes of
+  expression. When transported, many ideas can be inserted into our minds
+  without us knowing and without any resistance. There is no critical
+  questioning. In fact, it’s quite the opposite. I’ve literally seen passionate
+  outbursts of emotion such as crying and anguish when people retell the story
+  of the resurrection. The audience is invited to feel what the apostles
+  allegedly felt. But of course, theists are taught to be hypercritical and
+  detached when hearing the narratives of other religions. 
+</p><p>A necessary qualification is important here: narrative is not inherently epistemically corrupting. The studies above include beneficial uses of narrative, and stories can communicate true information, improve memory, transmit moral lessons, and motivate prosocial behavior. The epistemic problem arises when narrative coherence, emotional transportation, or identification is allowed to substitute for independent evidential support.</p><p>The distinction between effect and intent also matters. A religious practice can function as a retention mechanism without every pastor, parent, or believer consciously intending to manipulate anyone. Practices that make a worldview memorable, emotionally resonant, socially repeatable, and resistant to revision can persist precisely because they are effective at transmission and reinforcement.</p><h3 id="christian-witnessing-and-testimonial-reinforcement">Christian Witnessing and Testimonial Reinforcement</h3><p>
+  Consider “Christian Witnessing”. This involves “testifying” to others about
+  your experience with god. To testify in this context means to share a story
+  about some experience or encounter you had. There will typically be religious
+  significance to the story and people are encouraged in many denominations to
+  share, citing 1 Peter 3:15 as the reason. People in ministry give
+  instructions on how to structure these stories, as seen in this video: <a href="https://www.youtube.com/watch?v=1ZNZr2icHBQ">How to Share Your Personal Testimony</a>. There are workshops
+  <a href="https://gatewaypeople.com/events/11178474/instances/146179949">There are workshops </a>where they train Christians how to profess to others in hopes of converting
+  people to Christianity. There are literal blog posts about the virtue of
+  storytelling, they literally advocate and teach people how to effectively
+  craft narratives: Sharing Our Testimonies:
+  <a href="https://maninthemirror.org/2020/02/24/the-power-of-story-in-your-ministry/ ">The Power of Story in Your Ministry</a>. You can see this everywhere if you’ve ever attended a church, especially in
+  Protestant denominations. Charismatic speakers will share personal experiences
+  of what they think is god. </p><p>One really caught my attention. A pastor once
+  shared their experience about how they, and others from the community, joined
+  together weekly for prayer and singing. This happened in a very poor and
+  violent town in Central California called Fresno. If you are unfamiliar with
+  the Central Valley you should read up a bit because it is notorious for being
+  poor, uneducated, and dangerous; coincidentally also one of the most religious
+  regions in the state. Anyways, as with all these testimonials, there are never
+  any specific details mentioned for the audience to verify. The storyteller
+  always abstracts these away “one time, at this one place, with that one
+  person” because obviously, providing details will potentially falsify the
+  experience. </p><p>Anyways, the pastor described an experience of how simple prayer
+  led to increased economic prospects for the community, and that the rate of
+  violent crimes decreased. This shows how the power of prayer can work in large
+  groups and that the holy spirit works for those who are faithful. I am not
+  quite sure what went through the congregation’s mind, but I did not passively
+  accept this. I am also from the Central Valley region and have studied
+  developmental economics. It’s quite interesting to me that this miracle
+  somehow missed my radar and that massive economic programs are completely
+  irrelevant when it comes to lifting towns out of poverty. Apparently, all you
+  need to do is pray. Obviously, this is bullshit. But the key point here is
+  that unsubstantiated causal claims go unchecked by participants in the
+  congregation very frequently. Stories are not critically assessed. In fact, it
+  would be somewhat rude to question the witness; this tends to be a social
+  convention. I’ve encountered another Christian who originally came from
+  Africa. He was describing a story about the power of Jesus in fighting off
+  evil spirits. There was a far-fetched story about how someone in the village
+  was a witch doctor of some sort who used her powers by summoning demonic
+  forces. She could not control these forces (obviously), so they began running
+  amuck. A “true Christian believer” came to the rescue, calling on the “Word of
+  God”, scaring the demons off and bringing back peace to the village. The other
+  Christians in the room rightly seemed a bit skeptical, but who are they to
+  question the veracity of the story? This is what I mean when I said there’s a
+  social convention around automatically believing the “testimonials” of other
+  believers. This form of on-the-ground storytelling is incredibly powerful
+  because Christians will tend to accept most of these stories
+  uncritically. 
+</p><h3 id="the-structure-and-purpose-of-testimony">The Structure and Purpose of Testimony</h3><p>
+  There is something quite interesting about the structure of these stories. As
+  mentioned above, ministers will train Christians on how to “witness” to
+  others. There is the BC-D-AD model, standing for Before Christ-Decision-After
+  Decision, where you are encouraged to focus on the positive benefits after
+  “making your decision to convert”. I quote this phrase because it’s quite
+  hilarious to think that people are independently deciding to convert without a
+  lifetime of pre-conditions enabling the option.
+  <a href="https://multiplyingdisciples.us/15-second-testimony-examples-ignite-your-faith/">Multiplying Disciples</a> is another website dedicated to providing methods to believers that
+  teach how to convert other people. This includes how to properly share a
+  testimony. It follows a similar template to what we have covered so far: you
+  were in darkness, you found Christ, now you are at peace. It’s interesting
+  because they use methods from sales, marketing, and rhetoric to achieve their
+  goals. Like marketing, these stories also have a purpose. For non-believers
+  it’s to convert them. For believers it’s to retain and reassure them.
+  Testimonials boil down to claiming something miraculous happened when the
+  audience is Christian. When the audience is composed of non-believers, it
+  boils down to “God saved you, God made your life better, and god can do the
+  same for anyone who ‘truly’ accepts him”.
+</p><h3 id="testimonial-asymmetry-and-competing-narratives">Testimonial Asymmetry and Competing Narratives</h3><p>
+  My point with this section is that stories are the propellers that keep
+  religious belief in perpetual motion. We know that stories have an incredible
+  impact on human belief formation. It’s no wonder that religious institutions
+  use this as a prime method in their daily functioning. But there is always an
+  asymmetry. Consider the countless number of religious testimonials a Muslim
+  could generate. Consider also all of the testimonials from non-Christians and
+  ex-Christians who profess the utter absence of god, or who have alternative
+  explanations for the alleged experiences.  A Christian who privileges only in-group testimony may dismiss these. This is what happens when you’re saturated in a
+  dogmatic narrative that cannot handle dissenting testimony. I mean just
+  imagine if on a Sunday I lined up to give my testimony. I am slotted to be
+  next, after the ultra-charismatic person who came before me talks about how
+  Jesus transformed his life. Then I got the microphone….
+</p><h3 id="epistemic-risks-of-story-consistency">Epistemic Risks of Story Consistency</h3><p>
+  Stories have transformative effects, but there is a downside. As mentioned
+  above in the article describing the impact of story on environmental
+  awareness, adopting stories can blind us to reality because we dismiss
+  evidence in favor of story consistency. Biblical stories caused people to see
+  disease as a curse, to see seizures as demons, to believe witches exist
+  (Exodus 22:18) and commanded us to murder them. They cause Christians to see
+  themselves as the persecuted class despite living in a nation with a Christian
+  supermajority. They cause us to see rational deliberation, discussion, and
+  dialogue with interlocutors as threats who are only trying to undermine your
+  faith. They cause us to see people as nothing more than things we need to
+  convert. Paradoxically, they cause us to see people struggling with their
+  faith as “not true Christians” who just want to sin. They cause us to question
+  whether we are fundamentally flawed for not experiencing the pre-canned
+  testimonials experienced by those true Christians. Stories can give you a
+  sense of certainty and direction, but throughout human history our advances in
+  knowledge come when we abandon narratives in favor of rigorous empirical
+  investigation. These discoveries tend to be unfavorable, since there is a
+  reconciliation process needed to incorporate the knowledge into the story,
+  ultimately causing cognitive dissonance if the facts cannot be reconciled by
+  the narrative. 
+</p><h3 id="evaluating-narratives-as-evidence">Evaluating Narratives as Evidence</h3><p>
+  In the section on metaphor, I listed some argumentation schemes and
+  corresponding critical questions that would help identify and challenge the
+  analogy. I’ll do the same here because different schemes tend to be implicit
+  in story structure. I am getting this material from “Arguments, Stories and
+  Evidence: Critical Questions for Fact-finding by “Floris Bex and Bart Verheij.
+  These are used to assess facts and evidence in criminal cases, but I think
+  they extend to other domains as well. They combine two frameworks: the
+  argumentative framework and the narrative framework. In the argumentative
+  framework, facts need to be supported by reasons based on evidence. The
+  narrative approach involves presenting these facts as stories, coherent
+  descriptions of what happened, that causally explain as much of the evidence
+  as possible. Critical questions on this approach revolve around coherence and
+  quality of the story, and how to choose among competing stories (story
+  comparison):
+</p><blockquote>
+<p>
+    “In this paper we will show that a strong analogy can be drawn between
+    reasoning patterns in argumentation, the familiar argumentation schemes
+    (Walton et al. 2008), and patterns in the narrative approach, which we call
+    story schemes (Bex 2009). These story schemes act as a background for
+    particular instantiated stories in the same way as argumentation schemes act
+    as a background for particular instantiated arguments. Furthermore, story
+    schemes give rise to relevant critical questions in the same way as
+    argumentation schemes.”
+  </p>
+<p></p>
+</blockquote><p>
+  Rather than summarizing the paper I’ll just post the hybrid model described by
+  the authors. The idea is that evidential data in a case should be causally
+  explained by hypothetical stories through abductive inference. 
+</p><blockquote>
+<p>
+    “The basic idea of abductive inference (see e.g. Walton 2001) is that if we
+    have a general rule ‘c is a cause for e’ and we observe e, we are allowed to
+    infer c as a possible hypothetical explanation of the effect e. This cause c
+    which is used to explain the effect can be a single state or event, but it
+    can also be a sequence of events, a story.”
+  </p>
+<p></p>
+</blockquote><p>
+  On the narrative approach, we assess story coherence and plausibility based on
+  these abductive inferences, inference to best explanation, and general
+  common-sense knowledge about the causal relations in the world. For example,
+  there must be a coherent chronological arrangement of the alleged events. They
+  must be consistent with the motives, goals, and actions we typically would
+  expect of the characters in the story. The events and transitions between the
+  events must cohere and be somewhat aligned with how things normally work. If
+  parts of the story are missing, this could affect the coherence and
+  plausibility of the explanation. 
+</p><blockquote>
+<p>
+    “Experiments by Pennington and Hastie (1993) suggest that when reasoning
+    with a mass of evidence, people compare the different stories that explain
+    the evidence instead of constructing arguments based on evidence for and
+    against the facts at issue (as is done in the argumentative approach).
+    However, a disadvantage of the more holistic narrative approach is that the
+    individual pieces of evidence do not always have a clear place and the
+    evidence’s relevance with regards to the facts at issue cannot be checked
+    easily. Furthermore, it is not always clear how one should reason about the
+    coherence of a story and how stories should be compared.”
+  </p>
+<p></p>
+</blockquote><p>
+  Hence, the combination of the two approaches. We need to critically assess
+  individual facts anchoring the narrative, while also checking whether the
+  story is consistent and plausible. The anchoring analogy is crucial. If there
+  are no facts anchoring the story, what are we to make of it? The hybrid
+  approach also recognizes that stories aren’t mere collections of facts. They
+  need to be explained. There could be many explanations consistent with the
+  data. From the article:
+</p><div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjBHkTU_yeQbwtD18lOMqdmNmQPhpaOX0fDnJOViROK4QTQhSDQDXV487hl56wm3yZJpAkiWTWUB-OQUa-NepW7j12gD5FgubKgOSHECFuwCqB_8tR6eC2GoXiiRUpmrEb8Q0m46xDFv2f6jKTfLMZIQDNefpBzpFszekPS40rmMnWzxa2dDiu7Jm-MrSOe" style="margin-left: 1em; margin-right: 1em"><img alt="Diagram illustrating a hybrid argumentative and narrative model." data-original-height="906" data-original-width="784" height="596" src="https://blogger.googleusercontent.com/img/a/AVvXsEjBHkTU_yeQbwtD18lOMqdmNmQPhpaOX0fDnJOViROK4QTQhSDQDXV487hl56wm3yZJpAkiWTWUB-OQUa-NepW7j12gD5FgubKgOSHECFuwCqB_8tR6eC2GoXiiRUpmrEb8Q0m46xDFv2f6jKTfLMZIQDNefpBzpFszekPS40rmMnWzxa2dDiu7Jm-MrSOe=w516-h596" width="516"/></a>
+</div><div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiQFHcCyPjLK-u8dbLwbZtWN2qmyeUHnQWZFiR9Gvs-b0dAEhF60hUTJWHHQgViR2ENn0QOD_feMxjbER_ycW9dHRrKVOvYAe-8IngcDNU_xIvvF-jVhhfBxwG6FnUOLFDa8-6KPaGpIoBhFICG2kUW-ZLg3p-D9-4cxR3Fk0L8IG6f5cfmbsteFP1--SAc" style="margin-left: 1em; margin-right: 1em"><img alt="Diagram from the cited narrative-evidence framework." data-original-height="346" data-original-width="790" height="230" src="https://blogger.googleusercontent.com/img/a/AVvXsEiQFHcCyPjLK-u8dbLwbZtWN2qmyeUHnQWZFiR9Gvs-b0dAEhF60hUTJWHHQgViR2ENn0QOD_feMxjbER_ycW9dHRrKVOvYAe-8IngcDNU_xIvvF-jVhhfBxwG6FnUOLFDa8-6KPaGpIoBhFICG2kUW-ZLg3p-D9-4cxR3Fk0L8IG6f5cfmbsteFP1--SAc=w526-h230" width="526"/></a>
+</div><h4 id="the-argument-from-witness-testimony">The Argument from Witness Testimony</h4><ul style="text-align: left">
+<li>Witness w is in a position to know whether a is true or not.</li>
+<li>Witness w asserts that a is true (false).</li>
+<li>Therefore, a may plausibly be taken to be true (false).</li>
+</ul><h4 id="critical-questions">Critical Questions</h4><ul style="text-align: left">
+<li>Was w in a position to know a?</li>
+<li>Is w truthful?</li>
+<li>Is w biased?</li>
+<li>Is w’s statement that a internally consistent?</li>
+<li>How plausible is w’s statement that a?</li>
+<li>Is a consistent with what other witnesses say?</li>
+</ul><h4 id="critical-questions-for-the-story-as-a-whole">Critical Questions for the Story as a Whole</h4><div>
+<div>Now here are some questions coming from the hybrid theory.</div>
+<div><br/></div>
+<div>
+<ul style="text-align: left">
+<li>
+        (CQ1) Are the facts of the case made sufficiently explicit in a story? A
+        case should contain a clearly phrased, sufficiently specified and
+        coherent story detailing “what happened”.
+      </li>
+<li>
+        (CQ2) Does the story conform to the evidence? a. Is the story
+        sufficiently supported by the evidence in the case? b. Is the story
+        contradicted by evidence in the case? In general, not all elements of a
+        story can be supported by evidence. This does not need to be a problem,
+        and is in fact unavoidable as certain story elements must by their
+        nature be indirectly justified. When an element of a story is not
+        supported by a piece of evidence (in a given argument), we speak of an
+        'evidential gap'
+      </li>
+</ul>
+</div>
+</div><blockquote>
+<div>
+    “The existence of evidential gaps, here conceived of as parts of a story for
+    which no direct evidence is available, is one reason why a
+    mixed-argumentative narrative perspective can be useful. The analytical
+    argumentative perspective makes the evidential gaps visible, the narrative
+    perspective shows why the evidential gaps can still be believed in
+    conjunction with other facts. In general, it is a matter of good judgment
+    which elements of a story must be directly supported by evidence and which
+    can be inferred from other facts. This depends in part on the quality of the
+    evidence (a story supported by weak evidence can become stronger by
+    providing evidence for more facts), but also on the nature of the crime and
+    the law. In addition to looking at how much of the story is supported, one
+    should also consider how much of the total evidence in the case supports the
+    story. If, for example, a story is completely supported by 2 witness
+    testimonies but there are 20 more witnesses who state another (incompatible)
+    story, the story does not sufficiently conform to the evidence in the case
+    even though there are no gaps in it. Furthermore, one should also take into
+    account the amount of evidence that directly contradicts a story; instead of
+    giving an alternative story (see CQ5 below), the opposing party may simply
+    deny elements of the main story.”
+  </div>
+<p></p>
+</blockquote><ul style="text-align: left">
+<li>
+    (CQ3) Is the support that the evidence gives to the story sufficiently
+    relevant and strong? a. Are the reasoning steps from evidence to events in
+    the story justified by warranting generalizations and argument schemes that
+    are sufficiently strong and grounded? b. Are there exceptions to the use of
+    the generalizations and schemes that undermine the connection between
+    evidence and fact?  
+  </li>
+<li>
+    (CQ4) Has the story itself been sufficiently critically assessed? a. Is the
+    story sufficiently coherent? Are there required elements missing? Are there
+    implausible events or causal relations? Is the story inconsistent? b. Have
+    story consequences been used to test the story?
+  </li>
+</ul><blockquote>
+<p>
+    “First, the story's coherence must be examined (CQ4a). Here coherence has a
+    specific meaning, namely that the story fits our knowledge and expectations
+    about the world we live in. In other words, a story should be complete (i.e.
+    have all its essential parts) and plausible (i.e. have plausible causal
+    relations). A further way of testing a story is to look for possible reasons
+    against facts that follow from the story (story consequences, CQ4b).”
+  </p>
+<p></p>
+</blockquote><ul style="text-align: left">
+<li>
+    (CQ5) Have alternative stories been sufficiently taken into account? a. Has
+    a sufficient search for alternative explanations been performed, not only in
+    the investigative phase, but also in court? b. Are there good reasons to
+    choose one story over the alternatives? Have the alternatives been
+    sufficiently refuted?
+  </li>
+</ul><blockquote>
+<div>
+    “First a serious search for alternative scenarios is needed. In part, the
+    opposing party in the process will provide alternatives, but a decision
+    maker will also have to actively consider different accounts of what may
+    have happened. These alternatives should not only be actively sought, they
+    should also be adequately refuted: essentially, all the critical questions
+    that can be asked for the main story also have to be asked for the
+    alternatives.”
+  </div>
+<div></div>
+</blockquote><p>
+  This is not as easy as it sounds. Alternative stories might fit the data
+  better than the current story on certain aspects, and worse on other aspects.
+  Essentially, we need to rank the alternatives, identifying which is most
+  likely considering all of the evidence. 
+</p><div>
+<ul style="text-align: left">
+<li>
+      (CQ6) Have all opposing reasons been weighed? Have all considerations that
+      are used to weigh opposing reasons been made explicit? Has this been done
+      both at the level of individual facts and events and at the level of
+      stories?
+    </li>
+</ul>
+</div><div class="table-wrap"><table class="three-col extra-wide-table long-table"><thead><tr><th>Critical question</th><th>Application to a religious testimonial</th><th>What to look for</th></tr></thead><tbody><tr><td data-label="Critical question">CQ1: What exactly happened?</td><td data-label="Application to a religious testimonial">Specify the event instead of accepting an abstract claim such as “God worked in my life.”</td><td data-label="What to look for">Who, where, when, what changed, and what is actually being asserted?</td></tr><tr><td data-label="Critical question">CQ2: Does the story conform to evidence?</td><td data-label="Application to a religious testimonial">Ask what independent evidence supports the testimonial.</td><td data-label="What to look for">Direct support, contradiction, and evidential gaps.</td></tr><tr><td data-label="Critical question">CQ3: Does the evidence justify the inference?</td><td data-label="Application to a religious testimonial">Separate the observed event from the proposed supernatural cause.</td><td data-label="What to look for">Whether the causal step is warranted and whether exceptions undermine it.</td></tr><tr><td data-label="Critical question">CQ4: Is the story coherent and plausible?</td><td data-label="Application to a religious testimonial">Examine missing steps, chronology, motives, and causal transitions.</td><td data-label="What to look for">Internal consistency and fit with background knowledge.</td></tr><tr><td data-label="Critical question">CQ5: What alternative stories fit the same data?</td><td data-label="Application to a religious testimonial">Compare prayer, coincidence, policy changes, memory effects, selection effects, or other explanations.</td><td data-label="What to look for">Whether alternatives were genuinely considered and refuted.</td></tr><tr><td data-label="Critical question">CQ6: Has contrary evidence been weighed?</td><td data-label="Application to a religious testimonial">Include failed prayers, contradictory testimony, and testimony from other religions or ex-believers.</td><td data-label="What to look for">Whether the same evidential standard is applied symmetrically.</td></tr></tbody></table></div><h4 id="anchored-narrative-theory">Anchored Narrative Theory</h4><p>
+  I think we should also note a bit more about anchored narrative theory. The
+  theory was developed by a few psychologists in response to the dangers they
+  identified when people tell stories in a court of law. They found a few
+  nuances affecting believability such as story ordering; two stories could be
+  identical but one presenting the chronology slightly different leads to a
+  different evaluation of the whole story. Anchored narrative theory is inspired
+  by the fact that decision makers have to decide on both the quality of the
+  story and the anchoring of the stories. This means that stories can be quite
+  dangerous in the court of law because how they’re told and how they’re
+  anchored can affect legal outcomes. I posted this diagram above with a
+  specific legal example from the paper, but this is a more general schematic of
+  what an anchored narrative resembles. 
+</p><div>
+<div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEiFdd9sC9KyiZTGrKs6BgiGmDixYMWWRgnF5zc_5SM19VgL1C8QVNdaRLsivYktEvsEGIW_uHFx7tOx2G7_nig5q97z6mrUorK6vhhqUV_RQQ2QDlpwmtejDWTtW_XX-gGvQvjyEmF9Q5177YeQXk7rbMtkh9Yh8xGJD3xVpRqWlm7pxP6l-YbkvbNLURGZ" style="margin-left: 1em; margin-right: 1em"><img alt="General schematic of anchored narrative theory." data-original-height="503" data-original-width="1006" height="290" src="https://blogger.googleusercontent.com/img/a/AVvXsEiFdd9sC9KyiZTGrKs6BgiGmDixYMWWRgnF5zc_5SM19VgL1C8QVNdaRLsivYktEvsEGIW_uHFx7tOx2G7_nig5q97z6mrUorK6vhhqUV_RQQ2QDlpwmtejDWTtW_XX-gGvQvjyEmF9Q5177YeQXk7rbMtkh9Yh8xGJD3xVpRqWlm7pxP6l-YbkvbNLURGZ=w580-h290" width="580"/></a>
+</div>
+<br/>
+</div><p>ANT was used to establish ten ‘universal rules of evidence’ (Anchored narratives, p. 231 et seq.):</p><div>
+<div>
+<ol style="text-align: left">
+<li>The prosecution must present at least one well-shaped narrative.</li>
+<li>
+        The prosecution must present a limited set of well-shaped narratives.
+      </li>
+<li>Essential components of the narrative must be anchored.</li>
+<li>
+        Anchors for different components of the charge should be independent of
+        each other.
+      </li>
+<li>
+        The trier of fact should give reasons for the decision by specifying the
+        narrative and the accompanying anchoring.
+      </li>
+<li>
+        A fact-finder's decision as to the level of analysis of the evidence
+        should be explained.
+      </li>
+<li>Through an articulation of the general beliefs used as anchors.</li>
+<li>
+        There should be no competing story with equally good or better
+        anchoring.
+      </li>
+<li>
+        There should be no falsifications of the indictment's narrative and
+        nested sub-narratives.
+      </li>
+<li>There should be no anchoring onto obviously false beliefs.</li>
+<li>The indictment and the verdict should contain the same narrative.</li>
+</ol>
+</div>
+</div><h3 id="interim-conclusion-narrative-is-powerful-not-necessarily-true">Interim Conclusion: Narrative Is Powerful, Not Necessarily True</h3><p>
+  Tying all this back to the beginning, stories are very problematic and tend to
+  go unscrutinized. I think being aware of how they affect belief formation is
+  the first step to identifying our own vulnerabilities. Religious institutions
+  are aware of the power of story. This explains the emphasis, their complete
+  reliance in fact, on storytelling. You will likely never see a critical
+  analysis of a biblical story in any religious setting outside of biblical
+  criticism. Most people are unaware of this field anyway. This will tie into
+  the next section. 
+</p><p>The central epistemic distinction is therefore between a story that is compelling and a story that is well anchored. Narrative can make a set of claims coherent, memorable, and emotionally persuasive; none of those properties by themselves establish that the underlying claims are true. That distinction becomes especially important when the surrounding community also discourages the very forms of doubt that would expose evidential gaps or competing explanations.</p><h2 id="ii-doubt-faith-and-obedience">II. Doubt, Faith, and Obedience</h2><h3 id="the-feedback-loop">The Feedback Loop</h3><p>
+  One thing that struck me when being exposed to religious subcultures in the
+  United States, was a ubiquitous vilification of doubt and a massive praising,
+  glorification, and elevation of obedience. I grouped these together because
+  they seem to coincide; doubt is somehow conflated with disobedience and
+  expressing unconditional certainty is the greatest form of obedience. These
+  are some of the most important factors for understanding the persistence of
+  Abrahamic religions. Doubt and obedience are inherently tied to their
+  conception of morality. Obedience within the Abrahamic worldview is one of the
+  greatest moral virtues. Doubt is characterized as something demonic,
+  rebellious, or worse. Doubt is seen as disobedient because it entails that
+  someone is “trusting in their own understanding” rather than god’s plan.
+  Obedience could have very well been categorized with the infantilization
+  section. Part of the infantilization process entails unrelenting obedience to
+  authority. I think that is obvious, so I decided to categorize it with doubt
+  because it’s not obvious at first that together they create a multiplier
+  effect that accounts for religious persistence throughout adulthood. 
+</p><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Concept</th><th>Typical role in the mechanism</th></tr></thead><tbody><tr><td data-label="Concept">Faith</td><td data-label="Typical role in the mechanism">Treats continued trust or commitment as morally valuable, making persistence itself feel virtuous.</td></tr><tr><td data-label="Concept">Doubt</td><td data-label="Typical role in the mechanism">Can be reframed as distrust, pride, rebellion, or spiritual danger, raising the psychological cost of questioning.</td></tr><tr><td data-label="Concept">Obedience</td><td data-label="Typical role in the mechanism">Links moral worth to submission and makes dissent easier to interpret as a character failure rather than an evidential disagreement.</td></tr><tr><td data-label="Concept">Community reinforcement</td><td data-label="Typical role in the mechanism">Adds approval, shame, belonging, and ostracism to the incentives surrounding belief.</td></tr></tbody></table></div><h3 id="scriptural-models-of-obedience">Scriptural Models of Obedience</h3><h4 id="the-tower-of-babel">The Tower of Babel</h4><p>
+  This was particularly evident in a religious sermon I recently encountered
+  about the Tower of Babel. On my reading of the passage, like most of the other
+  readings of the Old Testament, I view the God character as incredibly unjust.
+  The core interpretation from the religious perspective is that god was
+  justified in cursing humanity because of “their desire to build the tower was
+  driven by pride and a desire to become divine, pursuing goals that run
+  contrary to god’s plan”. Setting aside the obvious historical, physical, and
+  linguistic inaccuracies of the story (the complex process of linguistic and
+  cultural evolution), I read this as a punishment of ambition and unity, which
+  Imposed an artificial division among humans. The confusion of languages would
+  have led to division and misunderstandings among people, which would have
+  caused more harm than good throughout history. God’s action created barriers
+  to communication and cooperation, fostering conflicts and fragmentation rather
+  than unity and collaboration. </p><p>The moral lesson of the story suggests that it
+  promotes a view of God who demands subservience and punishes those who strive
+  for greatness, self-improvement, and collective achievement. The story
+  discourages human innovation and creativity. Instead of celebrating human
+  ingenuity and cooperation, the narrative seems to punish them. This can be
+  seen as promoting a fear of reaching one's full potential and striving for
+  excellence. </p><p>The story discourages critical thinking: such an emphasis on
+  obedience over critical thinking can lead to a culture where questioning
+  authority is discouraged. This can stifle intellectual growth, creativity, and
+  the pursuit of knowledge, as people may fear repercussions for stepping
+  outside established norms or questioning divine commands. When obedience is
+  enforced through fear of divine retribution, it can create a culture of fear
+  rather than one of respect and mutual understanding. People might comply with
+  authority not because they understand and agree with it, but because they fear
+  punishment. This can lead to a lack of genuine commitment and a superficial
+  adherence to rules. </p><p>Like I mentioned earlier, humans tend to mimic the stories
+  contained in biblical narratives; the stories act as scripts Christians act
+  out as their playbook for life. Consequently, the story can be interpreted
+  as endorsing an authoritarian view of divine-human relationships, where
+  authority must be followed without question. This can translate into human
+  social and political structures, promoting authoritarian governance where
+  dissent and autonomy are suppressed. By promoting a model where divine
+  punishment is used to enforce obedience, the story might justify the use of
+  coercion and division in human societies. This can lead to conflict and
+  fragmentation, as diverse groups and ideas are seen as threats to uniformity
+  and control. I see the story of Babel as something requiring something
+  equivalent to a theodicy. An omniscient god would have foreseen all the
+  conflict later emerging because of persistent misunderstandings between each
+  other. This god would have seen the fragmentation occurring within its very
+  own religion. This is evident by the historical trajectory of Christianity. On
+  its face, the story is ridiculous. But it outlines the very concept I wanted
+  to demonstrate in this section; obedience is the single most important virtue.
+  This is a constantly recurring motif throughout the new and Old Testament.
+  In the context of the religious sermon, the consequences of this alleged
+  disobedience are described as something “we did to ourselves because of our
+  pride” despite the text explicitly stating the god figure purposefully
+  intervened to enact the consequences. The message is unequivocally clear from
+  the religious perspective: think for yourself, have doubts, create your own
+  path, or show the slightest hint of disobedience, and suffer the consequences.
+  Everything becomes conflated with disobedience. Any form of free thought is
+  equated with disobedience. </p><h4 id="abraham-and-obedience">Abraham and Obedience</h4><p>Remember the story of Abraham? Abraham's obedience
+  is considered a virtue. It exemplifies the idea that true faith requires
+  complete submission to God's will, even when it seems incomprehensible or
+  painful. This perspective sees Abraham as a model of faith and obedience for
+  believers. This story is seen as the ultimate test of Abraham's faith and
+  trust in God. His willingness to obey, even to the point of sacrificing his
+  son, is often interpreted as a demonstration of his unwavering faith and
+  absolute trust in God's goodness and promises. These cases exemplify the core
+  tenets of this religion. You are directed, encouraged, and praised to be like
+  Abraham. You are discouraged from being like the Babylonians. These stories
+  tell you exactly what they think about free thinkers. In addition, every
+  religious sermon instructs you to be as fanatical as possible in living out
+  your faith-based Christian life. Faith IS obedience and obedience IS avoiding
+  doubt as much as possible. 
+</p><h3 id="doubt-as-a-closed-loop-protection-mechanism">Doubt as a Closed-Loop Protection Mechanism</h3><p>
+  When adherence to the creed is a paramount factor within the creed, it creates
+  a positive feedback loop, driving the persistence of the creed. Think about it
+  this way; if you are constantly told that disobedience is bad, that doubt is
+  disobedience, and faith is a virtue, you have just created a system that
+  becomes impervious to criticism. You have created a closed loop that becomes
+  extremely difficult to reject and escape from. A quote from Nietzsche
+  illustrates the point:
+</p><blockquote>
+<div>
+    “Doubt as sin. — Christianity has done its utmost to close the circle and
+    declared even doubt to be sin. One is supposed to be cast into belief
+    without reason, by a miracle, and from then on to swim in it as in the
+    brightest and least ambiguous of elements: even a glance towards land, even
+    the thought that one perhaps exists for something else as well as swimming,
+    even the slightest impulse of our amphibious nature — is sin! And notice
+    that all this means that the foundation of belief and all reflection on its
+    origin is likewise excluded as sinful. What is wanted are blindness and
+    intoxication and an eternal song over the waves in which reason has
+    drowned.”
+  </div>
+<div></div>
+</blockquote><h3 id="from-divine-obedience-to-social-obedience">From Divine Obedience to Social Obedience</h3><p>
+  But as I mentioned many times before, no one has ever seen or heard god
+  directly; we are at the mercy of the surrogates who claim to speak on its
+  behalf. In other words, these virtues become transferred on to the religious
+  institutions, upholding them means demonstrating them within the community.
+  </p><p>Social coercion, peer pressure, and the risk of ostracization become
+  incredibly powerful forces maintaining the persistence of the group, with dire
+  consequences. These stories can be misused to justify extreme actions in the
+  name of faith or obedience to perceived divine will. These religious
+  narratives can be interpreted to support harmful behaviors if taken as literal
+  endorsements of blind faith. The infantilized congregation becomes a high-risk
+  target for some zealot who claims to be a man of god. We see this happening
+  time and time again, most recently with obvious examples like the prosperity
+  gospel and other related bigotry. This is the mess we can find ourselves in if
+  we are encouraged to suppress doubts and remain obedient at all costs. This
+  leads me to a point I’d like to make about faith. I once saw a young Christian
+  wearing a shirt saying, “Led by faith, not sight”. Obviously, no one in their
+  right mind would literally apply this principle. Nevertheless, it struck me as
+  pernicious, because here we have a child marketing to the world that they have
+  no interest in becoming a critical thinker. The message implicitly condoned
+  and endorsed by the adults purchasing this shirt is “we too don’t want you
+  becoming a critical thinker”. </p><p>These social dynamics are interesting. This is
+  but one example of many where social feedback mechanisms reinforce the
+  community’s belief that active ignorance is a virtue. You can imagine what
+  scorn the child would experience if they had a shirt saying, “led by my
+  rational faculties, not ignorance”. Not only do we have a pernicious message,
+  but it’s delivered in classic bumper-sticker logic; a platitude regurgitated
+  ad nauseam throughout all corners of Abrahamic belief systems. Being led by
+  your rational faculties is rebellious and sinful. But how do we differentiate
+  between flagrant narcissists and seemingly harmless worship leaders if doubt is
+  disallowed? This is applicable more broadly as well. No one would say that
+  faith in a political doctrine is a virtue, although some have tried. A quote
+  by theramintrees hits it on the head:
+</p><h4 id="faith-versus-earned-trust">Faith Versus Earned Trust</h4><blockquote>
+<div>
+    “So it was that I turned my attention to the concept that had allowed all
+    these contradictions to accumulate; the concept that had anesthetized my
+    enquiring mind: 'Faith is a virtue'. This assertion had come to feel so
+    monolithic and indisputable. But now the simple truth was revealed: No it
+    isn't. The concept of faith tried to arouse and exploit the kind of
+    protective loyalty we might feel towards loved ones. in whose goodness we
+    trusted. But I realized that the trust we invest in loved ones was based on
+    very different principles. Trust in humans was earned. We believed in the
+    goodness of loved ones because we had direct experience of their goodness.
+    Religious faith was not earned — it was simply demanded based on a stack of
+    bold claims that were never substantiated.
+    <b>In fact, bizarrely, if direct evidence was ever offered, faith would
+      become instantly redundant</b>. Faith, by its very nature, was forced to reside in the ambiguous, the
+    circumstantial relying purely on the believers' conviction that their
+    inferences were correct. Faith differed from trust in another key respect:
+    if a loved one was accused of a transgression that contradicted our good
+    opinion we'd want to see evidence — in fact, we would demand it.
+    <b>but with religious faith all contradictory evidence was dismissed as
+      invalid right from the start on the assumption that if you took the time
+      to investigate it properly it would turn out to be false.</b>
+    It was as I contemplated this last point further that I experienced one of
+    the creepiest moments in my exploration —
+    <b>when I realized that what I was looking at here was the perfect system
+      for protecting lies. Faith required that you believe despite an absence of
+      expected evidence or despite the presence of conflicting evidence. But how
+      do we detect lies? Through the absence of expected evidence or the
+      presence of conflicting evidence. The very things that faith demanded we
+      disregard.</b>
+    Any supreme intelligence would know that a system that protected lies so
+    efficiently Would lay humans open to just about any conceivable abuse.
+    People could be manipulated to accept all kinds of deceptions. those who
+    complained about inconsistencies could be silenced by the devastating
+    accusation that their faith wasn't strong enough. No supreme intelligence
+    would entertain such a perverse concept as faith unless that intelligence
+    was itself perverse.”
+  </div>
+<div></div>
+</blockquote><h3 id="counterargument-faith-is-not-blind-faith">Counterargument: Faith Is Not Blind Faith</h3><p>Someone might claim that faith is not the absence of reason and that I am conflating blind faith with regular faith. The strongest version of this objection says that faith is warranted trust grounded in evidence and experience, rather than belief in the absence of evidence. Some might therefore say that I am describing Fideism, not the reasonable faith envisaged by some apologists. My argument does not require treating every use of the word “faith” as Fideism. The narrower point is that religious faith becomes epistemically problematic when continued belief is treated as virtuous despite evidential deficiency, or when contrary evidence is discounted because doubt itself is moralized. That is categorically different from something we might consider to be a basic belief or a statistical inference in the absence of complete information. </p><p>At the strongest end of my own position, I would still contend that religious faith is fideistic in a way ordinary trust, basic belief, or statistical inference is not. But the argument developed here does not depend on that universal formulation. The narrower claim—that faith becomes epistemically problematic when a commitment is insulated from disconfirmation and doubt is treated as a moral failure—is sufficient for the mechanism I am analyzing.</p><p>The sharper version of my original criticism is that some apologetic exchanges are evangelical rather than genuinely open-ended: the conclusion has already been decided and the dialogue supplies a defense for it. In that setting, truth itself may be conceived differently—something “God spoken,” embodied in Jesus, treated almost as a noun, or located in what Paul asserts in the epistles—rather than as a provisional conclusion of rational and empirical investigation. If an argument actually demonstrated the conclusion, the evidential work assigned to faith would become redundant; that tension is part of what I am pointing to when I distinguish demonstration from faith-based commitment.</p><p>As I’ve alluded to throughout this series of posts, religious beliefs commonly do not form primarily as a consequence of philosophical deliberation. Most people are simply unaware of the philosophical arguments for the existence of God, and even more unaware of the many responses to them. Who could blame them? Engaging in philosophical analysis of the concept of God may itself feel blasphemous in a community where questioning produces guilt or shame. </p><p>Besides, if the arguments were sufficient to demonstrate the conclusion, the role assigned to faith would change substantially: one would no longer be appealing to faith in order to bridge the same evidential gap. </p><p>This is why it is useful, when a theist advances something like the Kalam Cosmological Argument, to ask whether the argument is functioning as a tool of discovery or as a post-hoc defense of an already established commitment. Their conception of truth may also differ from an evidential conception of truth: truth can be spoken of as something “God spoken,” embodied in Jesus, or asserted in scripture, rather than something provisionally established through rational and empirical investigation. The beliefs may therefore be pre-established before the philosophical dialogue begins; the argument then functions as a defense or rationalization rather than as the original cause of belief. </p><p>One simple response to the Cosmological Argument should be sufficient: the causal principle is dubious. All things that begin to exist have a material cause, therefore the universe would have a material cause if it came into existence, not creation ex nihilo. There is a very subtle distinction that, when identified, renders the argument simply untenable. Furthermore, the argument is simply special pleading. If we need a first cause to avoid an infinite regress, why do we need to postulate a metaphysical entity that is causally responsible for our physical reality? The reasoning could simply be applied to this metaphysical realm; what is responsible for that level of the hierarchy? The argument can be applied ad infinitum. To jump up one level and call it “god” is just evasive. We would need additional reasons to presume that, in addition to the physical, there is another realm that exists, but we don’t have access to. The causal principle is applicable within the universe; we have no reason to think it applies to the universe. If that were the case, it would be special pleading to suggest that the causal principle ceases to obtain in the metaphysical realm.</p><h3 id="formation-versus-maintenance-what-apologetics-does">Formation Versus Maintenance: What Apologetics Does</h3><p>
+  But you see, if you are committed to some religious doctrine that emphasizes
+  the finitude of the past, then you probably won’t reject the argument despite
+  its weakness. This is the bullshit I am talking about. In many ways, I respect
+  the position of Fideism more than the pseudo-intellectual positions taken by
+  apologists who only set out to affirm their existing dogma. The simple fact is
+  that if an argument is shown to be dubious, it would follow that religious
+  belief should cease. However, this is clearly not the case, given the
+  statements of William Lane Craig. Since beliefs are not established through
+  rational mechanisms, there must be some other mechanisms working. These can be
+  postulated through social scientific explanations as I’ve been alluding to the
+  past few posts. One of the most important factors is the conceptualization of
+  faith as a virtue. 
+</p><p>This distinction between formation and maintenance is important. The argument does not require apologetic reasoning never to persuade an outsider. It is enough to observe that apologetic arguments can also function as maintenance devices: they provide ready-made responses, reduce uncertainty, and allow a believer to preserve a commitment that was acquired through family, identity, testimony, ritual, community, or narrative long before the philosophical defense was encountered.</p><h3 id="bounded-doubt-and-pre-canned-answers">Bounded Doubt and Pre-Canned Answers</h3><p>
+  Some theists might claim they have the freedom to doubt. However, on further
+  inspection, we can see that it’s a form of pseudo-doubt. Theists are allowed
+  to doubt within the confines of a very narrow and specific set of questions
+  that the church has constructed pre-canned responses to. This really is the
+  nature of all apologetic arguments; they produce motivated responses that
+  contain the doubt of the believer. Questions about the quality of the response
+  are simply ignored. One striking example that reveals this is the “Lewis
+  Trilemma”. This one exemplifies that the so-called “arguments” are rhetorical
+  responses to criticism designed to contain the doubts of believers rather than
+  serious analyses used to determine whether a proposition is true. Here is the
+  argument:
+</p><p>That claim should also be stated carefully. Religious communities vary, and some explicitly encourage questioning. The relevant test is not whether questions are permitted in the abstract, but whether the inquiry is genuinely open-ended: can the core conclusion be revised if the evidence or argument fails, or are questions welcomed only so long as they return the believer to a predetermined answer?</p><h3 id="case-study-lewiss-trilemma">Case Study: Lewis’s Trilemma</h3><h4 id="the-argument">The Argument</h4><blockquote>
+<div>
+    "I am trying here to prevent anyone saying the really foolish thing that
+    people often say about Him: I'm ready to accept Jesus as a great moral
+    teacher, but I don't accept his claim to be God. That is the one thing we
+    must not say. A man who was merely a man and said the sort of things Jesus
+    said would not be a great moral teacher. He would either be a lunatic — on
+    the level with the man who says he is a poached egg — or else he would be
+    the Devil of Hell. You must make your choice. Either this man was, and is,
+    the Son of God, or else a madman or something worse. You can shut him up for
+    a fool, you can spit at him and kill him as a demon or you can fall at his
+    feet and call him Lord and God, but let us not come with any patronizing
+    nonsense about his being a great human teacher. He has not left that open to
+    us. He did not intend to. ... Now it seems to me obvious that He was neither
+    a lunatic nor a fiend: and consequently, however strange or terrifying or
+    unlikely it may seem, I have to accept the view that He was and is God."[12]
+  </div>
+<div></div>
+</blockquote><p>
+  Before we begin to analyze the errors, I just want to make a comment. Before
+  coming to discover “Christian Apologetics”, someone posed this trichotomy to
+  me. I was extremely baffled. On its surface it seemed rather presumptuous to
+  think that this is by any means an exhaustive set of possibilities.
+  Furthermore, it was obvious that it assumes A LOT that I would ultimately
+  reject. It reminded me of the argument tactics you learn in rhetoric such as
+  false dichotomy or loaded questions. This was before I was really exposed to
+  all the rhetorical strategies employed by preachers and pastors during their
+  sermons. It seemed to really hinge on emotional appeals; “You can either kill
+  him as a demon”, forcing the interlocutor into accepting the conclusion out of
+  conversational politeness. Ultimately, I began to identify similar
+  strategies used all throughout religious apologetics.
+</p><h4 id="hidden-assumptions">Hidden Assumptions</h4><p>
+  It should be clear that no one comes to Christianity by this process of
+  reasoning. An atheist does not ponder the trichotomy and say to themselves
+  “wow, I guess he is God”. Young children indoctrinated into the belief system
+  might be told this argument before their critical faculties are developed
+  enough to identify flawed reasoning structure and hidden assumptions. This is
+  almost always after a period of childhood priming that leads them to accept
+  the conclusion uncritically. This argument is a prototypical example of the
+  pre-canned responses someone might encounter if they have doubts about their
+  faith. But it is not the cause of their faith. Many assumptions must be taken
+  for granted to even begin to suggest that the conclusion follows. For example:
+</p><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Component</th><th>Question the argument must answer</th></tr></thead><tbody><tr><td data-label="Component">Historical premise</td><td data-label="Question the argument must answer">Did Jesus actually make the statements attributed to him?</td></tr><tr><td data-label="Component">Source reliability</td><td data-label="Question the argument must answer">Are the Gospel accounts sufficiently reliable for this inference?</td></tr><tr><td data-label="Component">Exhaustiveness</td><td data-label="Question the argument must answer">Are “liar, lunatic, or Lord” genuinely the only live possibilities?</td></tr><tr><td data-label="Component">Psychological premise</td><td data-label="Question the argument must answer">Would mistaken supernatural belief imply global irrationality or moral worthlessness?</td></tr><tr><td data-label="Component">Transmission</td><td data-label="Question the argument must answer">Could sayings or interpretations have changed during oral transmission and later composition?</td></tr><tr><td data-label="Component">Alternative agency</td><td data-label="Question the argument must answer">Could followers, editors, or later communities have generated or amplified the divine claim?</td></tr></tbody></table></div><div>
+<ol style="text-align: left">
+<li>The Abrahamic God exists.</li>
+<li>Jesus existed</li>
+<li>The Gospels are an accurate record of Jesus' life and teachings</li>
+<li>
+      Jesus (and people in general) are of homogenous character and cannot
+      contain contradictory or opposing aspects within their person.
+    </li>
+<li>Jesus himself claimed to be God.</li>
+<li>
+      If Jesus existed, it is assumed that all the sayings attributed to him
+      were by him. If the preachings of many men were attributed to Jesus, some
+      may have been mentally unstable and/or liars.
+    </li>
+<li>
+      Any false accounts could have been added to the narrative during the
+      decades of oral transmission before the Gospels were written down.
+    </li>
+<li>
+      Everything about the accounts must be “lies” or “the truth”. There is no
+      room for nuance; there must be a dichotomy. Perhaps some of the sayings
+      are truthful, some are lies, and some are mistakes. 
+    </li>
+<li>
+      There is no contrary material that could call into question the veracity
+      of the claims made in the bible. For example, there is an implicit
+      assumption that Jesus didn’t recant. We know this is possible but given
+      motivational reasons to disregard source material running contrary to the
+      theological assumptions, contrary source material was destroyed in the
+      canonization process. In other words, you must assume the process was
+      unbiased and non-selective. 
+    </li>
+<li>
+      Myths or legends surrounding the events of Jesus couldn’t possibly emerge
+      during the oral transmission of the stories cross culturally and cross
+      generationally. You must assume that the gospels are historical
+      recordings, rather than tales that spread over a social network. This is
+      highly dubious. 
+    </li>
+<li>
+      During the initial spread of the religion, you must assume that there was
+      nothing to gain by claiming the founder of the religion was divine. Some
+      people try and defend this view by pointing out the “Apostles died for the
+      cause”. This is yet another absurd argument that has been addressed
+      elsewhere:
+      <a href="https://www.youtube.com/watch?v=mpA8DqDOSuw&amp;list=LL&amp;index=1">Did the Apostles Die for a Lie? </a>
+</li>
+<li>
+      You must assume that every other story of divinity is myth or legend,
+      despite sharing numerous similarities with the biblical account. You must
+      assume that, all of the other religions are liars.
+    </li>
+<li>
+      You must assume that the bible cannot contain any embellishments or
+      exaggerations. There also can be no such thing as honest mistakes.<br/>
+</li>
+</ol>
+</div><p>
+  Consider number one; if you are agnostic about the existence of any god then
+  this argument wouldn’t make any sense. Furthermore, it presumes supernatural
+  categories that many agnostics would reject such as “Devil of Hell” and
+  “Demon”. It literally presumes a theological agenda; by reference to “Son of
+  God” Lewis is already assuming his specific version of Christianity. It makes
+  sense why this argument is popular in fundamentalist circles because Lewis is
+  essentially arguing that the gospels are somehow literal truth or fraud. It
+  couldn’t possibly be a bit more complex than that. So, at a glance, the
+  assumptions are critical for this to be persuasive. The existence,
+  persistence, and popularity of this argument should be recognized as a
+  pseudo-argument, far more aligned with the speech of rhetoric, formed as
+  consequence of fundamental priming in religious communities who are inclined
+  to black or white thinking, hesitate to question fundamental assumptions, and
+  are already locked into a very specific worldview consisting of supernatural
+  categories and magic. </p><p>Tying this back to the theme of the section, we can see
+  that this is pseudo-doubt. This is carefully designed rhetoric to appear like
+  the orator is being inquisitive but cannot help to accept the conclusion.
+  Lewis even wants to seem like he is reluctantly accepting the conclusion by
+  his choice of language; “However improbable..” etc. We don’t even need to
+  probe into the fundamental assumptions bolstering the argument. All we need to
+  do is introduce a plausible alternative scenario or question the dubious horns
+  of the trilemma to render it obsolete. It’s interesting how an audience of
+  theists cannot conceive of one hypothetical alternative or see the vacuousness
+  of the premises. This leads me to suspect that these aren’t arguments at all
+  but rather rhetorical devices. Consider a few alternatives:
+</p><h4 id="alternative-explanations">Alternative Explanations</h4><div>
+<div>
+<ul style="text-align: left">
+<li>
+        Jesus was honestly mistaken. He was still intelligent, sane, and wise in
+        some cases. For example, Alexander the Great and the Caesars, honestly
+        believed themselves to be divine and we consider them intelligent. Back
+        in the day, people were incredibly superstitious, claiming to have all
+        sorts of alleged connections to the supernatural. Given the cultural
+        context, these claims were by no means considered insane.
+      </li>
+<li>
+        Jesus was politically savvy, proclaiming divinity for political
+        purposes. It was not uncommon for leaders to claim divinity when
+        establishing political or religious movements, similar to how people
+        claim the status of King despite not being institutionally legitimized,
+        to gain a following. 
+      </li>
+<li>
+        Jesus was not lying, but the people recording the events of the gospels
+        were lying. It is universally agreed that we have no direct writings
+        from Jesus. It is completely possible that these people were lying or
+        delusional. They could have also simply been mistaken. Given that the
+        stories were being passed around orally for decades before
+        transcription, it’s possible they misheard, misremembered, or
+        deliberately altered the contents of the story. Furthermore, we know
+        that stories tend to become more embellished over time when repeated
+        orally without any sort of quality assessments. Given the context of
+        Judea, it’s not implausible to suggest that divinity was attributed to
+        Jesus by word of mouth. 
+      </li>
+</ul>
+</div>
+</div><h4 id="the-moral-teacher-premise">The Moral-Teacher Premise</h4><p>
+  We can also consider tackling the main assumption: Jesus was not a profound
+  moral teacher. The simple rules of thumb he advocated for were present in many
+  other cultures, such as the golden rule. Furthermore, when considered in its
+  apocalyptic context, “turning the cheek” can be read as delayed vengeance. It
+  is important to recognize that in this culture of apocalypticism, “Gods
+  judgement” and subsequent wrath was an imminent event over the horizon. Turning
+  the other cheek could be read as “their time will come”. In fact, we can see
+  this in religious communities on internet forums. When people get into heated
+  debates on the internet, many of them end with “you will see that you are
+  wrong when you are burning in hell”. Famous examples are the disgusting twitter
+  threads after atheists like Christopher Hitchens died. We know that this
+  apocalyptic context was absent in other cultures when they derived the rule,
+  leading me to claim that the positive interpretation we attribute to Jesus is
+  simply mistaken. It is easy to read this and many other teachings as
+  vindictive rather than humane. </p><p>This leads me to the main consideration; no
+  great moral teacher would advocate for eternal Hell. Jesus becomes very
+  indignant when people did not listen to his preaching, as in the case of
+  Matthew 23:33, threatening them with eternal torture. Or consider Mark
+  9:43-48, threatening eternal torture for not making Jesus the absolute center
+  of your life. I don’t know how it isn’t obvious to everyone that the concept
+  of hell is fundamentally inhumane. Using it as a threat also seems to be
+  characteristic of abuse, cruelty, and narcissism rather than love and
+  compassion. Another consideration is that of the writings in the book of
+  revelations. You really find a completely different picture of Jesus that many
+  Christians probably turn a blind eye to. Just think about the graphic images
+  given to us in Revelations 14:14-20 and 19:15-21. And then there is the
+  obvious fact that slavery was condoned. Sure seems interesting that something
+  we now find to be universally abhorrent would be absent in the teachings of
+  Jesus. Then there was the story where Jesus cursed a fig tree for not
+  producing fruit despite not being in season? Like I genuinely laughed when I
+  read that story. Or the case when an omnipotent deity cast demons into two
+  thousand pigs, leading to their death. Sure seems like a case of animal
+  cruelty to me. You’re telling me the all-powerful god simply can’t make the
+  demons disappear without destroying the livelihood of that pig farmer? Not to
+  mention that, if the trinity is true, the god of the New Testament inherits
+  all of the baggage from the Old Testament. It’s hard to interpret the old
+  testament as anything but dominionistic theology. Obviously, this is not to
+  say that Jesus didn’t preach positive moral guidelines. It’s just to say that
+  there weren’t many radical innovations that haven’t been observed in other
+  Hellenistic philosophies or Asian cultures. When taken as a whole, there isn’t
+  anything profound in the Bible. 
+</p><h4 id="the-lunatic-horn-and-historical-context">The “Lunatic” Horn and Historical Context</h4><p>
+  Let’s now approach one horn of the trilemma: “Jesus must have been deluded on
+  the same level as a man who says he is a poached egg”. I find this highly
+  controversial, dubious, ignorant of mental health, and ignorant of historical
+  context. Early Christianity was operating within a context where alleged
+  prophets were starting cults just about everywhere. Religious shamans were
+  much more of the norm than they are now. For example, the cult of Mithras was
+  a strong contender as an alternative to Christianity. However, due to its
+  strong similarity between the early Christians, they were eliminated once
+  Christianity seized control over the Roman Empire. So it’s easy to see that
+  religious movements having similar elements to the early Christian movement
+  was somewhat common. Social norms play a key aspect in what we determine to be
+  a mental illness. For example, if we notice an individual starving themselves,
+  we might think they are mentally ill. However, conditioned on the fact they’re
+  partaking in a religious ritual emphasizing fasting, we can see this wouldn’t
+  be classified as some mental disease. So, within the context of Jesus’s life,
+  we see a culture that has a strong mystical and spiritual connection to what
+  they perceive to be as God. Not only that, but they were also literally
+  expecting a Messiah to come very soon. Second Temple Judaism is characterized
+  by its Apocalyptic preaching, people genuinely believed the end was coming.
+  This is why we have seen other failed apocalyptic prophets emerging around the
+  same time and even after Jesus was preaching. In other words, calling yourself
+  “God” was not as crazy as Lewis seems to suggest, only by our modern secular
+  standards. It really is not that extraordinary. Lewis seems to be evoking
+  mental imagery of the brain-fried drug addict pan handling on the corner for
+  money. This metaphor is simply used to distract us from the fact that “calling
+  yourself god” in that context was not really that crazy. The imagery also
+  leads us to think that there is something dysfunctional about the person
+  making said claims. This is also false.  We can even see modern
+  charlatans we could classify as “mad as a poached egg”, like Alex Jones, Kanye
+  West, or Terrence Howard, living a completely functional life outside of their
+  rants, and have gained massive followings. People with bizarre delusions tend
+  to be completely indiscernible from people without those delusions in all
+  other aspects. Jesus did not have to have severe schizophrenia to be making
+  these claims. “Lunatics” can’t gain a substantial following? This is clearly
+  dubious and is based on a misrepresentation about what it means to be a
+  lunatic. Furthermore, embedded in Lewis’s statement is that “people with
+  atypical thinking cannot contribute value”. We know this is bullshit. People
+  with neurodivergent thinking patterns tend to see what other people miss, thus
+  making profound impacts and innovations. Neurodivergent thinking tends to
+  result in challenging the status quo. Is this not what Jesus was doing? People
+  claim that Jesus’s moral teachings and theology were radically different than
+  the status quo. Lewis seems to be implying that “crazy people” can’t identify
+  blind-spots in a community. The basic point is that, even if we assume Jesus
+  was a “psychopath”, there is nothing “crazy” about him gaining a following. We
+  know that the traits of psychopathy tend to overlap with cult leaders. And we
+  know that you can be fully functional depending on the type of traits
+  associated with your psychopathy. Our modern understanding of mental health
+  shows that the dichotomy Lewis is presenting (you are either a lunatic or
+  perfectly sane), simply does not hold. There are a variety of possibilities
+  where you can have mental differences that cause you to occasionally
+  hallucinate, while also functioning just fine and can contribute positively to
+  the moral dialogue.  
+</p><h4 id="what-the-trilemma-does-rhetorically">What the Trilemma Does Rhetorically</h4><p>
+  Looking back to why I even targeted this argument to begin with, I think it is
+  abundantly clear that it’s rather easy to respond critically to something like
+  this. It takes just a few moments to see the structural weakness of the
+  argument and only a few more moments to identify the assumptions necessary to
+  make it seem even remotely plausible. This ought to be classified as a
+  pseudo-argument intended for rhetorical purposes, rather than a serious
+  analysis of anything. </p><p>It serves a dialectical purpose for the believer,
+  reining in their doubts within appropriate boundaries. It also serves as a
+  bit of reassurance to the believer; an apologetic device the believer can
+  equip themselves with when faced with doubt. In fact, this is how these
+  arguments are presented in churches; arguments are conceived of as defense
+  mechanisms rather than tools of discovery. This is but one of many in their
+  arsenal, each one designed to respond to possible objections. There is never
+  any discussion about whether they are any good, or whether they have been
+  defeated by counterargument. That is simply brushed under the rug. Another
+  amazing piece of dog shit, among many others handed to us by C.S. Lewis, is
+  the argument from desire. I’ve heard this used in sermons and casual
+  conversation, under the guise of “genuine doubt”. The “argument” is recited
+  and somehow no one can think of any possible way the argument could be
+  fallacious. This is of course because it’s not a serious analytical tool, just
+  some reassurance that “there is an explanation”. I’m not going to dive into
+  this one since plenty of information about it already exists. I just want to
+  comment that it serves an emotional purpose. When used poetically within a
+  sermon, it plays on the “all humans have a longing to be with god” trope that
+  we hear ad nauseam. 
+</p><h3 id="why-critical-examination-gets-suppressed">Why Critical Examination Gets Suppressed</h3><p>
+  Why are there so many bad arguments? Why is critical examination suppressed?
+  As I mentioned earlier, it’s due to how “doubt” is conceptualized in these
+  communities. Doubt is seen as something dangerous, disloyal, or destructive.
+  Apologetics exists to contain possible doubt, among other social mechanisms
+  such as shame and guilt. </p><p>But this is a very warped view of doubt, which begs
+  the question; who does this serve? Doubt can literally help you identify
+  faults, flaws, and inconsistencies that could have devastating effects if
+  overlooked. Exercising your critical faculties helps you identify instances of
+  manipulation. Doubt is what literally allows us to discern truth from false
+  claims, to see nuance in complex situations, and assess multiple conflicting
+  decisions. </p><p>The religious institutions have it backwards. They see doubt as
+  something that leads you away from the (unsubstantiated) truth they
+  dogmatically assert. They conceive of it as a tool used by the enemy (Satan)
+  that “draws you away from god”. What happens when you are drawn away from god?
+  Divine wrath that will take place in the unsubstantiated afterlife. What
+  happens when you begin to question the veracity of the religious experiences
+  people are allegedly having?  Social ostracization. These are incredibly
+  strong mechanisms that highly disincentivize and discourage the act of
+  doubting, despite its benefits. 
+</p><h3 id="faith-trust-and-the-moralization-of-doubt">Faith, Trust, and the Moralization of Doubt</h3><p>
+  Remember that Faith is the ultimate good. Doubt is typically characterized as
+  the antithesis of Faith. While simultaneously, Faith is synonymous with
+  Obedience. Jesus did say that “to love him is to follow his commands”, meaning
+  you must obey. It’s a very nice play on concepts to retain believers.
+  Disobedience is bad, because it implies you are lacking Faith. Therefore,
+  Doubt is equated with disobedience. The act of thinking critically about the
+  content they are feeding you or the act of approaching the boundaries of the
+  acceptable level of doubt is seen as disobedience, rebelliousness, and pride;
+  Some of the worst things possible in the Christian worldview.  Free
+  thought does not exist, only prideful people who think they know better than
+  God. Critical thinking does not exist, only rebellious people who just don’t
+  want to accept the truth. </p><p>This is a perfect system for retaining believers.
+  Especially if you have family who wholeheartedly believe it. Why would you
+  want to disappoint your parents? How could you possibly have an open dialogue
+  about your doubts when the very act of doubting is sinful? Doubt is something
+  that leads to shame. It is seen as something you need to atone for. Something
+  requiring repentance. “I am sorry my faith is wavering God”. I am not
+  exaggerating either when I say this is what I observe in this odd little
+  culture. </p><p>They will say that “Faith is having Trust in god”, which is
+  equivalent to saying, “doubt is an expression of distrust”. But “how could you
+  doubt GOD, can’t you see he’s so great?! Didn’t you read the bible; he keeps
+  all his promises!!! You’re probably just hurt or mad at god. He has a plan for
+  us all and loves you”. On the “trust” conception of faith, doubt can only be
+  seen as distrust for illegitimate reasons. But what happens when you doubt the
+  very metaphysical framework upon which this god character rests? How can you
+  “distrust” an entity you can’t perceive with any of your sense? “You just have
+  to have faith!!!”. Round and round we go in a circle. 
+</p><h3 id="case-study-pathologizing-doubt-in-os-guinness">Case Study: Pathologizing Doubt in Os Guinness</h3><p>
+  As alluded to in the previous paragraph, most explanations of religious doubt
+  tend to put the blame on the doubter. In the book "God in the Dark: The
+  Assurance of Faith Beyond a Shadow of Doubt" Christian apologist Os Guinness
+  gives us a detailed description of how doubt is entirely the fault of the
+  believer. It has always struck as odd that an omnipotent deity would need
+  constant defense when it could simply cut out the middlemen and tell each of
+  us directly. The Christian religion is literally hearsay. We have a collection
+  of stories and are told me must simply “take their word for it”.
+  Simultaneously, if we are reluctant to accept the absurdity, we are told we
+  are flawed in some fundamental way, and the only way out of the hole we’ve dug
+  ourselves is through the very thing we are unwilling to blindly accept. I’ll
+  list out the contents of the book and briefly describe what’s going on. It
+  will be clear that “doubt bad” and “you doubt because of you” and “you bad
+  because you doubt”. 
+</p><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Recurring framing of doubt</th><th>How the burden is shifted</th></tr></thead><tbody><tr><td data-label="Recurring framing of doubt">Ingratitude / self-sufficiency</td><td data-label="How the burden is shifted">The problem is located in the doubter’s character rather than in the adequacy of the belief.</td></tr><tr><td data-label="Recurring framing of doubt">A faulty view of God</td><td data-label="How the burden is shifted">Counterevidence can be reinterpreted as evidence that the believer is seeing God incorrectly.</td></tr><tr><td data-label="Recurring framing of doubt">Weak foundations</td><td data-label="How the burden is shifted">Doubt is answered by strengthening approved apologetic foundations rather than reopening the conclusion.</td></tr><tr><td data-label="Recurring framing of doubt">Lack of commitment</td><td data-label="How the burden is shifted">Departure can be explained as evidence that the person was never fully committed.</td></tr><tr><td data-label="Recurring framing of doubt">Unruly emotions, hidden conflict, or inquisitiveness</td><td data-label="How the burden is shifted">Psychological motives can be used to explain away the content of the objection itself.</td></tr></tbody></table></div><ol style="text-align: left">
+<li>
+<b>Chapter 3: Forgetting to Remember – Doubt from Ingratitude:</b> The
+    author begins by describing that a Christian understands “What God has done
+    for us” and that faith becomes weakened when you forget this. A striking quote
+    that is quite disgusting, “As we fail to remember our previous situation, a
+    slow and subtle change of heart takes place. What emerges is an attitude of
+    resourcefulness that eventually grows into a mood of self-sufficiency and
+    then into independence”. This is a wonderful admission of the paramount
+    emphasis religious institutions place upon submission and obedience.
+    Self-sufficiency is equated with ingratitude. Another quote confirms this by
+    saying “But the key motif is ingratitude, a moral, spiritual, and emotional
+    carelessness about what we once were and would be now apart from God”, as if
+    it’s impossible to show gratitude if not directed towards a god. Ingratitude
+    is the explanation for suffering in biblical stories, and independence is
+    the chief causal factor initiating sinful behavior. The author exemplifies
+    this by saying “Forgetfulness proves deadly because it strikes deep into the
+    delicate area where conscience registers sin and where each of us is most
+    attuned to the nuances of relationship. With this area desensitized, it is
+    only a matter of time before our faith is also numbed. A spiritual movement
+    of independence gathers force underground and comes out into the open, using
+    doubt as its prime organ of propaganda.” In other words, ingratitude due to
+    doubt and independence interferes with your ability to discern sinful
+    behavior. He gives specific biblical examples where this allegedly was the
+    case. The lesson of this chapter is straightforward; doubt couldn’t
+    possibly arise because you find these legends fictitious or are unconvinced
+    of the existence of a deity, it is because you are “forgetting all that god
+    has done for you” and are blinded by your drive for self-sufficiency.
+    Obviously, showing gratitude is important. But equating doubt with
+    ingratitude or implying free thinkers are incapable of showing grace is just
+    bullshit. It’s important to recognize however that these “explanations” of
+    doubt resonate with many believers, causing them to think there is something
+    wrong with themselves for identifying inconsistencies in the biblical
+    narrative, or by realizing that alternative explanatory frameworks work
+    better for describing the world. I’ll finish off this section with yet
+    another striking quote demonstrating the sheer narcissism of this view:
+    “This first variety of doubt is a rationalization. Contrary to what the
+    doubter says, the problem is not in the belief but in the believer. It is
+    not in the insufficiency of truth but in the ingratitude and
+    self-sufficiency of the truster. In essence, this doubt holds nothing
+    against truth except that it is inconvenient. It may express itself
+    extremely vocally and raise a wide range of objections to the truth, but
+    these are not genuine doubts. They are part of the propaganda exercise of
+    doubt itself. The real bone of contention is that truth is unnecessary and
+    unwelcome rather than untrustworthy.” In other words, it’s not a problem
+    with our unsubstantiated belief, it’s a problem with you. Imagine if science
+    and engineering worked this way. Imagine if I used this as a framework for
+    convincing others. Guilt and Shame work wonders, “look at all we have done
+    for you, such an ungrateful wretch, you deserve nothing but eternal
+    torture”.
+  </li>
+<li>
+<b>Chapter 4: Faith out of Focus – Doubt From a Faulty View of God:</b> We
+    can see again by the title that the doubter simply “can’t understand the
+    true nature of god”. Immediately out of the gate, the possibility of God
+    being what he seems to be at face value reading the Old Testament, must be
+    swept aside. Or the Problem of Evil/suffering must be swept aside. Or the
+    problem of divine hiddenness must be swept aside. All our seemings are
+    simply because we cannot see the god that the author has the fortune of
+    being able to see. The author begins by describing how it’s possible to
+    misunderstand someone based on polluted preconceptions, which manifests as
+    prejudice, thus hindering the relationship. The author claims “Since they do
+    not recognize what they are doing, they blame God rather than their faulty
+    picture, little realizing that God is not like that at all. Unable to see
+    God as he is, they cannot trust him as they should, and doubt is the
+    result.” Presumably, the author means to say that his view of God is not
+    faulty, it is the true conception. The problem should immediately be
+    apparent; this argument can simply be used against itself to claim that the
+    author has a faulty view of god. It is entirely self-defeating, and this
+    inconsistency follows from the author’s first explanation of doubt. He
+    claims that faulty presuppositions can distort the view of god. Well, if
+    “turning to Christianity” is in part a function of the perceived need for
+    salvation, is it not possible that this creates an unjustified
+    presupposition of a god? Does the believer simply impose their conception on
+    to god because of the acute psychological tensions arising from existential
+    dread? There is no reason a priori to accept the theistic view of a personal
+    god, even if we grant the possibility of a Creator. But no, none of this
+    could possibly be considered. Furthermore, the author claims that a lack of
+    “Christian presuppositions” distorts our view of the god conceptualized by
+    Christianity. This is a striking admission of what I’ve alluded to
+    throughout the prior posts. For some of these ridiculous arguments,
+    apologetics, and biblical narratives to even begin to appear plausible, you
+    must be primed and led to them in very particular ways, thus creating
+    “Christian presuppositions”. But there is nothing wrong with questioning
+    these presuppositions. In fact, if they cannot withstand scrutiny, we should
+    be reluctant to accept them as valid. One “presupposition” that is
+    philosophical in nature is substance dualism. Without this, the entirety of
+    Abrahamic Religion becomes obsolete. Another “presupposition” is the view of
+    divine revelation; god chooses to selectively reveal the truth to some
+    people and not others. What if the doubter begins to question the notion of
+    revelatory religion? Another concept that always seems to be overlooked is
+    free will. What if someone identifies the problem of divine foreknowledge
+    and its implications for free will, finding apologetic arguments absolute
+    bullshit and new doctrines like “open theism” implausible? The author is
+    correct in one sense; to be a Christian means to overlook the
+    inconsistencies inherent to the religion. The apologetic tactic implicit in
+    this section is clear: “disagreeing with my conception of god or questioning
+    my conception of god happens because you are flawed, not because I haven’t
+    substantiated any of my claims”, shifting the blame onto the doubter. But
+    the problem is even worse when we really dive into it. The author says “But
+    if our picture of God is wrong, then our whole presupposition of what it is
+    possible for God to be or do is correspondingly altered. When the
+    presuppositions are wrong, the picture is wrong. Faith is out of focus, God
+    is not seen as he is, and in this field of badly focused vision, with its
+    dangerous loss of clarity or completeness doubt easily grows. Such doubts
+    are the direct result of a faulty picture of God. Notice exactly where the
+    problem lies. This type of doubt is not a matter of doubting the right
+    presuppositions but of believing the wrong ones. That is an important
+    difference.” The problem here is that god is traditionally conceptualized is
+    tri-omni, meaning he is capable of anything. This is the view of god we are
+    supposed to have, so when we are facing Divine Silence, while expecting a
+    God who intervenes, experiencing Gratuitous Evil, when told God is
+    all-loving, or when we are identifying inconsistencies in biblical
+    narratives, while being told god’s word is “perfect” (whatever the fuck that
+    means), one could hardly be blamed for experiencing doubt when the
+    manifested state of affairs is inconsistent with what preachers are
+    spouting. The key point in the author’s rambling is that you must presuppose
+    everything points to god, everything is controlled by god, and the Christian
+    dogma is true, to “see the true god”. In other words, you must presuppose
+    Christianity is true, to see that it is true. No substantiation is given to
+    the doubter. This is played out in real life in the Church across the world.
+    Completely meaningless correlations are said to be “god working in our
+    lives”. In fact, Christians are encouraged to interpret arbitrary, mundane,
+    and banal events as “proof of god”, and are told to disbelieve any contrary
+    explanation as “inspired by Satan”. The author goes on by describing two
+    ways our “faulty presuppositions” distort the true picture of god, equating
+    them to a “trojan horse”. The first is allowing “pre-Christian
+    presuppositions” to remain; presumably he means some sort of naturalism. The
+    second is by allowing “alien presuppositions” to enter the mind. So, in so
+    many words, the author is telling us you need to suspend your critical
+    faculties to have a proper view of god, dogmatically accepting Christian
+    presuppositions. In other words, you must indoctrinate yourself. I’ve never
+    experienced a book that pissed me off this much. He continues by saying that
+    the “Christian Student” is bombarded by “relativism on the campus”. This is
+    the fear mongering I’ve referred to in prior blog posts. I think this
+    chapter is a clear extension of the prior chapter. Questioning is bad. End
+    of story. The constant use of pernicious metaphors like “trojan horse”
+    really emphasizes the idea that critical thinking is like a virus. But what
+    happens when you stop people from thinking? You retain devote
+    believers. 
+  </li>
+<li>
+<b>Chapter 5 – No Reason Why Not: Doubt from Weak Foundations:</b> In this
+    chapter the author argues that doubt comes from not having a “rational
+    foundation” for Christianity. I think I’ve belabored the point that silly
+    apologetic arguments are quite far from being considered as a rational
+    foundation, so I’ve not much to say except that it’s a farce to suggest that
+    Christianity encourages you to “examine your faith”. The author pretty much
+    explicitly states this in the prior chapters, and I’ve alluded to this
+    plenty throughout this section and beyond. I experience this every week I
+    attend church. “Truth” is literally just what St. Paul blurts out in
+    Ephesians, based on an alleged revelation from god. They will foolishly say
+    things like “God IS truth”. I’ve addressed this elsewhere, but this is the
+    core of the chapter. “Rational foundations” means memorizing the stock
+    arguments handed to you by apologists who literally approach the question as
+    a defense. They already think they have the truth; the reasons are secondary
+    defense mechanisms. So no, there is no rational foundation. And
+    unsurprisingly, there is no discussion of evidence. But it should be obvious
+    by now what the effect is of a chapter like this. Many people are concerned
+    with holding as many true beliefs as possible. By claiming that “all truth
+    comes from the word of god revealed in the bible”, the author, and many
+    other apologists are suppressing doubt. The believer will say “well, who am
+    I to question the source of truth?”. Imagine if I claimed that all truth
+    comes from me. Anyone disagreeing with me is necessarily false. This is the
+    message these people are projecting. It distorts the concept of truth to
+    preserve the ideology. 
+  </li>
+</ol><h4 id="the-pattern-across-the-later-chapters">The Pattern Across the Later Chapters</h4><p>
+  I’m going to speed through the next chapters because I think the pattern is
+  clearly emerging. It’s always been quite amazing to me that people are able to
+  identify these abusive/manipulative tactics outside the context of religion,
+  but fail to see them at play explicitly within the context of religion. This
+  truly is the powerful effect of ideology. It’s also not a surprise that these
+  tactics are used by high control groups and abusive relationships. Consider
+  the next chapter “An Unsigned Contract: Doubt from Lack of Commitment”; I
+  don’t have any personal experience with this particular situation but there
+  are countless instances of extremely devout Christians who leave the religion
+  and were exemplars of commitment to the cause. Obviously, this is a “No True
+  Christian” argument, serving very particular rhetorical purposes. How else do
+  you explain someone’s “fall from grace” except by claiming they were never
+  committed to begin with? I’m sure it’s quite shocking from the congregation’s
+  perspective to see someone very committed to their religion suddenly “abandon”
+  it. Maybe they were right? No, they couldn’t be. They were never truly
+  committed. Funny enough, this same abusive tactic appears in marriage,
+  typically when one person is fed up with the other’s abuse. They might say
+  “you were never truly committed to the marriage anyway”, completely
+  disregarding the years of commitment leading up to the decision. This leads to
+  chapter 8 “Doubt from Unruly Emotions”. This one is also hilarious because if
+  anything, Christians are encouraged to show the utmost passion for their
+  faith. This is a central tenet of the born again experience; sharing the
+  apparent jubilant feelings. But no, these are the “good” emotions. The “bad”
+  emotions are the ones that cause you to second guess. Or take chapter nine
+  “Doubt from hidden conflicts”. Oh, how I love the classic “you are just mad at
+  god” response. Or the “you are hurt, that’s why you are doubting”. Oh, the
+  gaslighting; “you are the problem, not us”. The author equates doubt with a
+  “lurking shark”, among the other deadly metaphors, while still wanting the
+  reader to think that “examination of faith” is a good thing central to the
+  tenets of Christianity. But the message is quite clear: “you are the problem”.
+  </p><p>This theme is carried on throughout the second part of the book “two torturing
+  questions”. In Chapter 9, the author describes doubt from inquisitiveness,
+  arising from a “lack of trust”. This might be the most pernicious chapter in
+  the book. </p><p>In normal life, when we are inquisitive due to doubts, it’s almost
+  always because we trust the person we are questioning. We trust that they will
+  not lash out at us. We trust that they will try and understand our position.
+  We trust that they will help us resolve our doubts. We trust that they will
+  not blame us and that they will be patient. When we trust someone deeply, we
+  feel we can come to them to resolve inconsistencies. We trust that they will
+  not respond with abuse and emotional blackmail. When people behave in
+  defensive ways, that’s when we suspect something is wrong. When someone
+  dismisses your concerns, blaming you for a lack of trust, they put the blame
+  on you. They are fear mongering, making doubt seem as if it’s dangerous, or
+  that there is something wrong with you for doubting. The danger comes when we
+  stop doubting. Doubt is a critical tool that can help you analyze the
+  foundations of claims, help identify inconsistencies, and help spot
+  manipulation. There is no reason to feel guilty or shamed for wanting to
+  address problems arising from doubt. 
+</p><h3 id="doubt-as-an-epistemic-virtue">Doubt as an Epistemic Virtue</h3><p>The alternative is not universal skepticism. Doubt can itself become pathological if no evidence could ever satisfy it, just as trust is indispensable in ordinary life. The relevant norm is proportionate, defeasible doubt: claims should be open to criticism, standards should be applied symmetrically, and confidence should be revisable when evidence or argument changes. On that understanding, doubt is not an end in itself; it is a quality-control mechanism.</p><p>
+  I always think about how hilarious it would be if we applied this model in
+  other scenarios like scientific research, engineering, or public policy. I
+  will never forget one of the first seminars I attended during graduate school.
+  Some hot shot econometrician from Princeton was applying to our university for
+  a full-time faculty position. He was presenting some of the research completed
+  during his dissertation. Just take a second to consider the “doubt” applied to
+  his research from the PhD committee at Princeton. This is obviously necessary
+  to identify inconsistencies and inaccuracies in his research, along with
+  maintaining the reputation of the school. Was it over after that? Was he able
+  to tell our faculty they simply need to “stop doubting him”? Not at all. I
+  never fully understood the expertise of our graduate faculty, until I saw them
+  completely rip apart this guy’s presentation. Rightfully so. Imagine if they
+  just “took his word for it”. I remember another experience during my first
+  code-review as a very junior data engineer. I’ve never experienced such a high
+  level of scrutiny. The amount of justification needed to demonstrate that my
+  feature was necessary, stable, reliable, and many other properties required
+  for a stable system, was something I had never encountered. But again, can you
+  blame some of the senior developers? Imagine if I pushed a bug into
+  production, resulting in some sort of cascading failure. Imagine if I never
+  had sufficient business justification to do the work, I would have been
+  wasting everyone's time and money. I could have just told them they are
+  “doubting from inquisitiveness coming from a lack of trust in my ability”.
+  Imagine where that would have got me. Another experience I remember was a
+  research seminar presented by a potential employee for an open position at my
+  firm. We grilled them all day. How else are you supposed to determine whether
+  they’re a strong candidate capable of doing the job? In all these situations,
+  the one constant is <b>demonstration</b>; your position must be demonstrable,
+  defensible, and robust to criticism. This is considered virtuous in the real
+  world. This is how we minimize the risk associated with accepting potential
+  bullshit. </p><p>In the context of religion, all of this is out the window. It is
+  considered unvirtuous to apply doubt and skepticism especially in situations
+  where the apologists haven’t worked out a pre-canned response. You can pretty
+  much guarantee the reason for this defensiveness, for these manipulative
+  tactics designed to suppress critical questioning, is that they are defending
+  a house of cards. They know their system of dogma is not buttressed by
+  anything, so they build defense mechanisms to prevent believers from getting
+  to the core of the belief system. This is how the belief persists. Throughout
+  the book, the author wants to reassure readers that "Christianity is the most
+  rational position". This is repeated ad nauseam, but unsurprisingly is
+  completely lacking justification. This is obviously another tactic used by
+  religious institutions; repeat it enough and eventually people will believe it's
+  true. When they start to doubt, suppress the doubt with a gish-gallop of
+  unjustified bogus arguments that are collectively inconsistent. When those are
+  doubted, shame or fear the person into submission. But on this worldview,
+  obedience is a virtue. Throughout the history of dogmatic Abrahamic religions,
+  attaining obedience by any means necessary is morally acceptable, without the
+  need for justification. 
+</p><h2 id="conclusion-how-the-mechanisms-interact">Conclusion: How the Mechanisms Interact</h2><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Mechanism</th><th>Role in persistence</th></tr></thead><tbody><tr><td data-label="Mechanism">Narrative</td><td data-label="Role in persistence">Supplies coherence, causal structure, identity, and emotional transportation.</td></tr><tr><td data-label="Mechanism">Testimony and repetition</td><td data-label="Role in persistence">Make the worldview socially available and continually reinforced.</td></tr><tr><td data-label="Mechanism">Community</td><td data-label="Role in persistence">Adds belonging, approval, shame, and possible ostracism to the epistemic environment.</td></tr><tr><td data-label="Mechanism">Faith</td><td data-label="Role in persistence">Can make continued commitment itself morally valuable.</td></tr><tr><td data-label="Mechanism">Obedience</td><td data-label="Role in persistence">Can transform disagreement with claims into perceived disloyalty or rebellion.</td></tr><tr><td data-label="Mechanism">Apologetics</td><td data-label="Role in persistence">Can provide defensive rationalizations and pre-canned answers after belief is already established.</td></tr><tr><td data-label="Mechanism">Stigmatized doubt</td><td data-label="Role in persistence">Reduces corrective feedback by raising the cost of asking whether the story is actually well anchored.</td></tr></tbody></table></div><p>Taken together, the two halves of the essay describe complementary mechanisms. Stories can help generate and stabilize a worldview; social and moral rules about faith, obedience, and doubt can then protect that worldview from revision. The strongest version of this argument does not require claiming that every religious person is irrational, that every narrative is false, that every act of faith is blind, or that every institution consciously manipulates its members. It requires only the more defensible observation that narrative persuasion and social reinforcement can shape belief, and that a belief system becomes epistemically dangerous when the mechanisms that sustain it also disable or punish the mechanisms by which error would normally be detected.</p><p>That is why the distinction between narrative coherence and evidential anchoring matters so much. A story can be moving, identity-forming, morally useful, and psychologically transformative while still being wrong. The appropriate response is not to abandon stories or trust, but to refuse to let either become exempt from the same critical questions we use elsewhere: What exactly happened? What evidence supports it? What alternatives fit the facts? What would count against the claim? And are we willing to revise the story if another explanation is better anchored?</p></article>

@@ -1,0 +1,1275 @@
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    </style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><article class="ep-post"><h1 id="top">Infantilization, Metaphor, and Religious Reasoning</h1>
+<p>
+  What I wish to do here is continue the analysis presented in the previous post by
+  examining two features that I think are especially pertinent to a naturalistic,
+  agnostic account of religiosity: <strong>infantilization</strong> and
+  <strong>metaphor/analogical reasoning</strong>. The first concerns dependency,
+  authority, and the ways a parent-child relationship can be reproduced in religious
+  concepts and institutions. The second concerns the cognitive and rhetorical means by
+  which religious narratives are mapped onto ordinary experience and used to support
+  claims about reality.
+</p>
+<p>
+  These are explanatory claims, not deductive proofs that no god exists. A naturalistic
+  account can instead ask a narrower question: how much of the emotional force,
+  institutional authority, and intuitive plausibility associated with religious belief
+  can be explained without first assuming a supernatural cause? The two mechanisms
+  discussed below are useful because they operate at different levels while often
+  reinforcing one another.
+</p>
+<div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Mechanism</th><th>Primary question</th><th>Role in the argument</th></tr></thead><tbody><tr><td data-label="Mechanism"><a href="#infantilization"><strong>Infantilization</strong></a></td><td data-label="Primary question">How can dependency and authority become emotionally compelling?</td><td data-label="Role in the argument">Examines innocence, obedience, attachment, pastoral hierarchy, anxiety, fear, and social dependence.</td></tr><tr><td data-label="Mechanism"><a href="#metaphor"><strong>Metaphor and analogy</strong></a></td><td data-label="Primary question">How are religious concepts connected to ordinary experience and evidential claims?</td><td data-label="Role in the argument">Examines father/shepherd/judge metaphors, analogical argument schemes, sermons, the Trinity, design arguments, and DNA/code comparisons.</td></tr><tr><td data-label="Mechanism"><a href="#synthesis"><strong>Synthesis</strong></a></td><td data-label="Primary question">How can these mechanisms reinforce one another?</td><td data-label="Role in the argument">Connects authority and interpretive framing: institutions transmit metaphors, while metaphors can legitimate the institutions that transmit them.</td></tr></tbody></table></div><h2 id="infantilization">I. Infantilization</h2>
+<p>
+  By <strong>infantilization</strong> I mean a pattern in which dependency,
+  submissiveness, inexperience, and deference are preserved or idealized while
+  self-direction and open-ended inquiry are treated as dangerous, corrupting, or
+  disobedient. The claim need not be that every Christian, congregation, or religious
+  tradition operates this way. The more defensible question is whether recurring
+  doctrines, metaphors, rituals, and institutional arrangements can reward this pattern
+  and make it psychologically durable.
+</p>
+<h3 id="eden">Innocence, dependency, and Eden</h3>
+<p>
+  “Worldly” knowledge and experience can be perceived as contaminants to an innocent
+  state: corruptions of the purity of a supposedly “perfect, untouched” self. On this
+  reading, healthy development is displaced by the preservation of vulnerable states—
+  ignorance, incompetence, inexperience, submissiveness, obedience, and dependency.
+  The founding story of Genesis provides an especially vivid example of the pattern.
+  Quoting from a Theramintrees video:
+</p>
+<blockquote>
+  “In many religions; certainly, the Abrahamic ones — infantilization is
+  intrinsically woven into the central divine concept. The god character
+  described in scriptural creation myths designs an immeasurably inferior
+  species called human beings who are prevented from ever attaining the god’s
+  knowledge, skills or understanding. Humans are kept in deliberate ignorance
+  and obliged to obey without comprehension. The Biblical creation myth frames
+  this diminished infantilized state as perfection, purity, innocence. This
+  innocent state is venerated as the pinnacle of human existence. That innocence
+  is then despicably abused. In the creation myth, the god character makes a
+  garden paradise called Eden and creates the first man, Adam, to look after it.
+  He then creates the first woman, Eve, to be Adam’s helper. The pair of them
+  are left to wander round the garden where they’re allowed to eat the fruit of
+  any tree. With a bizarre exception. The god character chooses the garden of
+  Eden as the location for two magic trees: the tree of life and the tree of the
+  knowledge of good and evil. He directs Adam and Eve not to eat from the second
+  of these warning them they’ll die when they do. But everything’s okay. He’s
+  created them innocent — ie, ignorant, inexperienced, and obedient. What could
+  go wrong? Well, just about everything. A talking serpent described variously
+  as subtle, crafty, and cunning tells the innocent Eve she won’t die if she
+  eats the fruit. Instead, she’ll become wise like the god character. She eats —
+  and persuades Adam to eat. And true to the serpent’s word, they don’t die and
+  they gain wisdom. As a sign of their lost innocence, they dress themselves in
+  leaves. The god character then punishes them for disobedience casting them
+  from Eden before they can eat the fruit of the other magic tree — the tree of
+  life, which would give them immortality. This creation myth illustrates why
+  innocence is not something to be venerated. Adam and Eve were presented with
+  conflicting statements which they weren’t equipped to process. When the
+  serpent said they wouldn’t die he meant the mere act of eating the fruit
+  wouldn’t instantly kill them. When the god character said they’d die when they
+  ate from the tree he meant he would personally enforce their eventual death.
+  In fact, it was his deliberately misleading phrasing that caused the whole
+  problem. We can safely call it deliberately misleading because, being an
+  all-knowing deity, he would’ve known how Adam and Eve would misinterpret it.
+  He would’ve known that if he’d simply told them he would cast them out and let
+  them die the serpent’s statement wouldn’t’ve conflicted with his. And of
+  course, he knew they had no capacity to process the conflicting information
+  they were given. They were punished for failing a test they were designed to
+  fail. The failure lies completely with the god character. If he wanted to
+  preserve human innocence it was his job to create an environment where it
+  would never be jeopardized. In Biblical mythology, the omnipotent, omniscient
+  god character was perfectly capable of creating that environment if he’d
+  really wanted to. Having just created an entire universe he could’ve placed
+  his magic trees out of reach on some distant planet. In fact there’s no
+  explanation for why they even had to exist. He could’ve made humans unable to
+  communicate with anyone but him. If he wanted to preserve their ignorance he
+  could’ve created them without curiosity. For an all-knowing all-powerful deity
+  there’d be many simple and obvious measures to avoid jeopardizing human
+  innocence. The fact none of those measures were employed indicates stupidity,
+  incompetence, negligence, or active sadism.”
+</blockquote>
+<p>
+  The point I carry forward from this quotation is narrower than every detail of its
+  interpretation of Genesis. The narrative can be read as pairing innocence with
+  ignorance and obedience, then making the acquisition of knowledge the event that
+  precipitates rupture and punishment. That combination matters because the same
+  innocence/dependency structure reappears in explicitly parental and pastoral
+  religious language.
+</p>
+<h3 id="developmental-model">A developmental model of infantilization</h3>
+<p>
+  Before turning to sermons, submission, and institutional authority, it is useful to
+  establish a proposed psychological mechanism. Otherwise the examples can look like a
+  disconnected inventory of objectionable practices. The developmental account below
+  provides a model that can then be tested against those practices.
+</p>
+<p>
+  There is a book titled “Becoming God’s Children” which lays out a very concise
+  and well-researched naturalistic explanation of the facets of Christian
+  belief. One of the key components of this system is the infantilization
+  process, in fact it might be essential. According to the author 
+</p><blockquote>
+  “—on the final goal of which is to infantilize the participant, to restore him
+  mnemonically and transformationally to an idealized version of his own
+  biological beginnings, to the period in which he was secure in the protective,
+  loving, salvational care of a big one, a parental shepherd after whom he
+  followed like a bleating lamb for several crucial years”.
+</blockquote><p>
+  This infantilized alternative beginning is the one characterizing Adam and Eve
+  in the garden, becoming “born again” is one of the ritualistic rites (among
+  others such as baptism) that believers engage in to be saved from their
+  “corrupt biological body” (Col 3:10) (Mat 18:3).  The author goes on to
+  say “Christianity as religion, in short, is dedicated overwhelmingly, one
+  might even say entirely, to the intellectual, emotional, and psychological
+  infantilization of all those who turn to it, follow it, subscribe to it for
+  what we commonly think of as ‘‘spiritual’’ reasons.” (p.11). In the next few
+  paragraphs I will highlight some of the mechanisms underlying this
+  infantilization process the author has identified. 
+</p><p>At the beginning of Chapter 2, the author claims </p><blockquote>
+  “The religious world in which Christians participate is, in the last analysis,
+  a wishful, utopian response to the daunting realities of our biosocial
+  existence, namely, separation from the maternal matrix, the narcissistic wound
+  of smallness or vulnerability within both nature and culture, and finally, of
+  course, our demise and permanent disappearance from the universe, dust to
+  dust”
+</blockquote><p>
+  The idea is that this infantilization process must be a response to
+  something and a result of some basic human development. The author begins by
+  describing the basic biological context of affection-nurturement during
+  infancy. We are in a constant cycle of crisis-resolution with our parents,
+  which ultimately forms into a strong parent-child relationship that ultimately
+  becomes neurologically configured in our brains. It becomes part of our
+  perceptual foundation to have some sort of caretaker; this is inextricably
+  linked to our concept of “self”. The author claims that 
+</p><blockquote>
+  “For a psychological understanding of Christianity, this is of the utmost
+  importance. The caregiver is taken psychically inside and set up as an
+  internalized presence, or object, that is integrally connected to, indeed that
+  is inseparable from, the emerging self….. When we look within and discover
+  what we take to be the self, our self, we discover not only a relationship, we
+  discover not only a oneness that is ultimately a twoness, but we respond
+  affectively to our inward perception in a manner that mnemonically recalls
+  (among other things, of course) our early interaction with our primary
+  provider…. Thus, we are physiologically, genetically, normally endowed with
+  both a capacity and a predisposition to process current information along
+  neural pathways that harbor our previous experience, including our experience
+  of the basic biological situation, our experience of being a helpless,
+  dependent little one in the care and protection of an all-powerful
+  parent.” 
+</blockquote><p>
+  The point is that when the Christian internally senses this divine spiritual
+  feeling, what they are doing is recontacting these deeply internalized
+  psychological foundations that are established during infancy, the inward
+  caretaker relationship that yields a feeling of life sustaining anxiety
+  relief. Divine contact feels affective because the physiological imprinting
+  itself was the result of an affective relationship with a caretaker; one of
+  constant saving from hunger and distress, and one that responded to their
+  basic emotional and interpersonal needs, ultimately satisfying a basic need of
+  attachment. The author claims
+</p><blockquote>
+   “The ‘‘mystery’’ of the indwelling (or suddenly present) Lord has
+  existed for millennia, and still exists, because individuals are unable to see
+  and to analyze their early, internalizing, neural development as human beings,
+  the originative unconscious aspect of themselves that responds affirmatively,
+  or accedes to, the religious narratives they are offered consciously as the
+  early period gives way to the verbal, symbolic stage of their lives.” 
+</blockquote><p>
+  Religious institutions complexify this basic god concept, but the core idea is
+  that the concept itself can be explained with psychobiological factors and
+  processes. 
+</p>
+<p>
+  This distinction is important: a developmental genealogy of religious experience is
+  not, by itself, a proof that the metaphysical object of the experience does not
+  exist. Its argumentative force is comparative. If feelings interpreted as divine
+  presence can arise through ordinary attachment, memory, affect regulation, and
+  learned narrative, then the experience no longer requires a supernatural explanation
+  merely in order to be psychologically intelligible.
+</p>
+<h3 id="attachment-narrative">Attachment becomes a religious narrative</h3><p>
+  These primal processes are internalized and exploited by Christianity. The
+  author quotes Erik H. Erikson; 
+</p><blockquote>
+  “What begins as hope in the individual infant is in its mature form faith, a
+  sense of superior certainty not essentially dependent upon evidence or reason.
+  ... Christianity has shrewdly played into man’s most child-like needs, not
+  only by offering eternal guarantees for an omniscient power’s benevolence (if
+  properly appeased) but also by magic words and significant gestures, soothing
+  sounds and soporific smells—an infant’s world.”
+</blockquote><p>
+   Christians are taught to see divine significance in trivial events by
+  leveraging this basic psychological need. The author gives an example of a
+  person stuck in a snowstorm, but who ultimately feels the presence of god
+  “delivering” him from this situation. In a crisis, our childlike implicit
+  memories call out to a divine father, to alleviate the state of danger. The
+  person attributes the feeling to something supernatural; but we know these
+  experiences can be fully constituted by these basic psychological structures
+  imprinted during child development. The author states:
+</p><blockquote>
+  “At the center of the spiritual ‘‘narrative’’ to which we are devoting
+  ourselves here resides the image of a loving, care-giving Parent-God Who
+  devotes Himself, among other things, to watching over his vulnerable,
+  dependent children, the human flock he has engendered and for which he is
+  ultimately responsible. A genuine understanding of Christianity resides in the
+  conscious comprehension of the manner in which its ‘‘core narrative’’ or
+  ‘‘core myth’’ is ‘‘wired’’ directly into and emanates directly from the human
+  mind-brain as it unconsciously and wishfully projects the implicit memory of
+  one’s early ‘‘attachment experience’’ into the ‘‘present’’ reality in which
+  one discovers himself. The narrative with the loving Parent-God at its center
+  is the mnemonic retrieval of the early biological pattern of attachment
+  through which one found or tried to find his emotional security and his
+  physical safety in the world. The upshot? Christianity becomes an ongoing
+  attachment narrative designed to enhance one’s inward stability, one’s
+  calmness, one’s happiness, one’s vitality, in one’s always dangerous and
+  always unpredictable surroundings. It serves the straightforward evolutional
+  purpose of ensuring and increasing the effectiveness of one’s interactions
+  with the environment by ensuring and increasing one’s inward psychological
+  equilibrium, in reference particularly to the abhorrence of feeling isolated
+  and alone, ‘‘separate’’ in the psychical sense we discovered in Mahler and
+  others a few pages earlier”
+</blockquote><p>
+  To “know that god loves you” or that “god is watching over you” is to tap into
+  this core psychological aspect of dependency derived at birth and early
+  development. When basic neurological pathways are formed during childhood, it
+  is an experience dependent process. These experiences are associated with
+  strong feelings of relief from despair. When similar experiences occur, the
+  brain “remembers” these experiences and associated feelings. The brain maps
+  this analogy to the religious narrative, attributing the feelings with the
+  theme expressed by the narrative. This explains why religious leaders
+  encourage their congregations to attribute life experiences to the divine
+  figure. That warm feeling you experience is explained by “god is watching over
+  you”. This explanatory mechanism reinforces the basic belief. The author is
+  essentially arguing that infantile amnesia is successfully exploited; the
+  sense of gods presence is the reactivation of neural pathways that induce
+  feelings experienced during infancy. 
+</p><blockquote>
+  “The point is, the two major narratives, or stories, that come to comprise the
+  ‘‘world’’ or the ‘‘universe’’ of the developing person, namely, the familial
+  narrative and the religious narrative, are destined to inherit, to contain, to
+  absorb, and to harbor, precisely the early, preverbal experience that resides
+  at the core of that person’s mind-brain. The affect, the perception, the
+  attachments and longings of the early period as they are steadily internalized
+  during life’s first years, become the human ‘‘stuff’’ out of which the
+  religious realm is fashioned and toward which religious practice is finally
+  directed.”
+</blockquote><p>
+  The Christian narrative targets the ever-looming sense of separation someone
+  feels as they become aware of the basic biological context in which we
+  develop:
+</p><blockquote>
+  “Equally, as the familial narrative takes shape and the young person
+  increasingly apprehends the inevitable psychic (if not physical) separation
+  that looms as its culmination, the Christian narrative begins to assume a
+  central, affective position in the psychic economy of the developing
+  individual. While he must relinquish eventually the actual parent, he can
+  retain forever the mysterious Parent-God, the supernatural surrogate whose
+  attractive power emanates unconsciously from that very mnemonic place from
+  which the attachment to the actual parent initially arose. As he becomes a
+  predominantly verbal, narrative creature as opposed to a ‘‘primitive,’’
+  preverbal creature, lo and behold, there is his religious narrative to greet
+  him, to offer him another loving, protective Parent, another Guide, another
+  Nourisher, another Omnipotent Companion and Ally Whose hand he may clutch as
+  he proceeds upon his increasingly separate way. At the affective, perceptual,
+  synaptic level of his existence the Christian narrative presents itself as
+  another version of and the direct successor to exactly what he has just
+  experienced interactionally as a little one; and it derives its compelling
+  power, its compelling timeless appeal, from precisely the direction of his
+  implicit recollection: he can’t see the realistic, empirical link between the
+  two stages, the two systems; all he can do is feel the connection inside; the
+  unconscious associations impel him to judge the religious narrative as
+  ‘‘true.’’ In other words, the narrative implicitly confirms what he’s just
+  experienced as a person; it returns him to his familiar internalized reality
+  at his emergent verbal level of understanding, and this fills him with the
+  irresistible sensation that he is what he is, that no break exists in his
+  being, that no separation will snatch him away from his inward emotional
+  reality, or world. In the neurobiological terms that recall the early stages
+  of our discussion, the Christian narrative permits him to map his early
+  experience onto his ongoing and increasingly separate life. Reason, needless
+  to say, is not there yet to question the assumptions of his supernatural
+  outlook. He simply projects his way happily to the spiritual universe that is
+  offered to him by his directional elders.  Where the arms of the actual
+  biological caregiver held him in the beginning, the arms of sweet Jesus hold
+  him now. As the fleshly body of the mother recedes, the spiritual body of the
+  Deity appears mentally to take her place. The believer will not be alone. With
+  the help of society’s institutional promptings, and with the assistance of his
+  capacities to imagine, to play, to create substitutes for the treasured
+  caregiver he must gradually relinquish as he grows, his mind-brain will accord
+  him just what his mind-brain requires for his peace of mind.”
+</blockquote><h3 id="social-transfer">From parent-child attachment to religious institutions</h3><p>
+  The author proceeds to argue that this metaphorical relationship eventually
+  becomes socialized. The existence of religious institutions and their
+  hierarchical structures act as substitutes for the family context from which
+  children emerge:
+</p><blockquote>
+  “Because social institutions (religion, education, occupation, marriage, and
+  family) come to replace the ‘‘institution’’ of the early parent-child
+  interaction, because social institutions assume a parental role, we transfer
+  to society the feelings, the energies, the needs, the wishes, the loyalties,
+  the loves (and frequently the hatreds) that motivate us during the early
+  period. The social realm becomes an extension of the inner realm; it draws us,
+  compels us, holds us through the mind-body attachment that comprises the very
+  core of the first relationship. To a significant, even determining degree,
+  then, our relationship with society is a transferential one.”
+</blockquote>
+<p>
+  This dynamic can form a codependent relationship between individuals and the
+  religious community. In the model being described, “the social” and “the religious”
+  become tightly coupled: institutions reproduce elements of the parent-child
+  relationship through hierarchy, pastoral roles, discipline, protection, and the
+  threat of exclusion. That helps explain why ostracism, social pressure, and the loss
+  of communal standing can be so powerful. The institution is not merely a collection
+  of propositions; it can become part of the believer’s attachment environment.
+</p>
+<blockquote>
+  “Accordingly, if our transferential relations with the social order turn out
+  to be hostile or in some manner unhealthy, the social order does to us (or
+  threatens to do to us) precisely what we dreaded early on as we interacted
+  dependently with the parent: it confronts us with ‘‘the dark,’’ with
+  rejection, separation, isolation, even death, the bogeys we discovered as
+  newcomers when parenting was either forestalled or malignant. To lose our
+  place in society can feel like losing our place in the arms of the caregiver,
+  which is why we tend generally to obey the rules, or to rebel in a fashion
+  that will not result in ostracism, in the temporary or permanent loss of
+  everyone and everything. Let’s recall now Professor Durkheim’s contention:
+  ‘‘The power of society over its members’’ is ‘‘what a God is to its
+  worshippers.’’ The social and the religious go together because religious
+  society inherits the first society, or function, as continuation of the
+  initial social bond. The asking and the receiving that we do in Christian
+  prayer is but a small specific instance of the way in which our early
+  biosocial situation moves toward the wide social world, its providential
+  successor.”
+</blockquote><p>
+  So far everything I’ve quoted is from the section describing the basic
+  developmental context in which Christianity thrives. I’ve alluded to some of
+  the specific methods intrinsic to the religion that exploit these basic
+  psychological factors. The author goes into detail describing these features.
+  Some of which include baptism, prayer, the emphasis on obedience (something I
+  will write more about later), and the pastoral-congregation metaphor tracking
+  the parent-god relationship. For the sake of brevity, I want to move on
+  because you could just read the book. The main point is that infantilization
+  is a fundamental feature of Christianity.
+</p><h3 id="authority">Authority, submission, and the father/shepherd hierarchy</h3>
+<p>
+  This framework makes the recurring “Abba” and “Father” terminology more significant,
+  as well as church hierarchies in which pastors, priests, and bishops occupy explicitly
+  paternal roles. The sheep-and-shepherd metaphor points in the same direction: the
+  believer is represented as vulnerable and dependent upon a guide. These metaphors do
+  not prove infantilization by themselves; their relevance depends on how they are
+  instantiated in actual authority relationships.
+</p>
+<p>
+  The concern arises when the metaphor becomes a power structure in which personal
+  growth is subordinated to unquestioned deference. In some Christian settings,
+  submission to authority is presented as a virtue even when the authority itself is
+  not open to reciprocal scrutiny. Asking for justification can then be framed as
+  subversive or ungodly; the story of Job is one obvious theological reference point.
+  I have encountered this logic in a Fourth of July sermon titled “Freedom through
+  submission,” where freedom was effectively conflated with submission to religious
+  authority.
+</p>
+<p>
+  There is an important distinction here. Political philosophers have often argued that
+  people relinquish some freedoms in exchange for the protections and coordination of a
+  stable society. But participation in a political order is not therefore identical to
+  submission to an unchecked, non-participatory institution whose claims cannot be
+  questioned. Compromising on some freedoms can enlarge others when people remain
+  participants in establishing, revising, and challenging the governing norms. That is
+  different from treating obedience itself as the relevant virtue.
+</p>
+<h3 id="childlike-belief">Childlike belief and the suppression of inquiry</h3>
+<p>
+  This is why encouragement to become “childlike in belief” deserves careful analysis.
+  Children’s critical faculties are still developing; they have less experience with
+  evaluating competing truth claims, identifying manipulation, and distinguishing
+  confidence from evidence. When religious authorities direct that posture of trust
+  toward a god whose message is mediated through clergy or “spiritual leaders,” the
+  interpersonal structure can become circular: the pastor speaks as a vessel of God,
+  and questioning the pastor is consequently reframed as questioning God.
+</p>
+<p>
+  The paradox is that another recognizably childlike feature—the willingness to ask
+  questions freely—can be suppressed at the same time. Before social divisions,
+  stereotypes, and ideological filters are fully learned, children can display a broad
+  inquisitiveness that does not yet distinguish between “allowed” and “unallowed”
+  questions. This is why the familiar quotation attributed here to St. Ignatius Loyola,
+  “Give me a child till he is seven years old, and I will show you the man,” is relevant
+  to the argument. I do not want to rehearse every indoctrination tactic; the important
+  point is the logic of insulation: limit alternative frames of reference, preapprove
+  the questions and answers, punish departures from the permitted path, and teach the
+  child that questioning itself signals moral or spiritual defect.
+</p>
+<p>
+  In that arrangement, the most developmentally valuable feature of childhood—open
+  inquiry—can wither while vulnerability, dependence, and obedience are preserved. The
+  result is not childlikeness in every sense; it is a selective preservation of the
+  features most compatible with a subordinate relationship.
+</p><p>
+  At its most restrictive, the sequence is therefore cumulative: isolate the child from
+  alternative explanations; “fill” the available interpretive space with one dogma;
+  narrow the range of permitted questions; make provocative questioning evidence that
+  something is wrong with the questioner; and finally position religious authority as
+  the privileged path to knowledge. In the strongest form of the critique, inward voices
+  or feelings are then granted a status that concrete empirical phenomena are denied.
+</p>
+<h3 id="dependency-anxiety">Dependency, anxiety, and closed remedial systems</h3>
+<p>
+  Infantilization is often disguised as affection or protection. The possibility of
+  self-direction can therefore be interpreted as disrespect, ingratitude, or danger.
+  An infantilizing authority has an interest in remaining superordinate, so independent
+  problem-solving threatens not only a doctrine but also the relationship through which
+  the doctrine is administered.
+</p><p>
+  This is also what I had in mind when I described some totalizing versions of the
+  worldview as nihilistic: they can imply that a person’s own efforts, independent
+  sources of knowledge, and nonreligious forms of relief are ultimately incapable of
+  producing anything genuinely valuable unless they are ratified by the religious
+  framework.
+</p>
+<p>
+  I once witnessed a three-part sermon on coping with anxiety whose message was that
+  there is only one route to genuine peace: God. Pray more; recognize that things could
+  be worse; distrust attempts to resolve the conflict independently because any relief
+  achieved elsewhere is merely transitory and not “true peace.” Whatever the intentions
+  behind that message, it can produce a self-reinforcing structure. If the authorized
+  remedy fails, the believer can be told that they are not doing it correctly. If an
+  alternative remedy succeeds, its success can be discounted as superficial, morally
+  suspect, or not actually effective.
+</p>
+<p>
+  The well is thereby poisoned in advance. A person exploring alternatives may already
+  feel that relying on anything other than God is somehow wrong, which can amplify the
+  very anxiety the system claims uniquely to relieve. The hierarchy then becomes
+  self-reinforcing, self-preserving, and self-authenticating: instead of “here are
+  several possible solutions; investigate them and see what works,” the message becomes
+  “you cannot solve this problem outside our approved framework.”
+</p>
+<p>
+  Some influential church authorities go further and reject psychiatric or psychological
+  treatment in favor of “biblical counseling.” In the <a href="https://medium.com/deconstructing-christianity/challenging-pastor-john-macarthurs-view-on-psychiatry-and-psychology-bc3ff2e91068">example I
+  linked in the original draft</a>, claims are made that PTSD, ADHD, and depression are
+  not genuine clinical conditions but consequences of poor choices, poor coping, or sin,
+  accompanied by suspicion that prescriptions are orchestrated by “Big Pharma.” Whatever one thinks of that
+  particular figure, the pattern matters here because monopolizing the legitimate means
+  of interpreting and treating distress is exactly what preserves the dependency under
+  discussion.
+</p>
+<h3 id="fear-and-exit">Fear, protectiveness, and the cost of exit</h3><p>Another quote from the video encapsulates this mechanism:</p><blockquote>“Targets are trained to fear the outside world. Members of religious organizations are warned that the world is in the grip of evil supernatural entities. Political ideologues are taught to view non-members as either malevolent or enablers of malevolence. Citizens are whipped into divisive paranoia by corrupt governments. Instilling fear is designed to draw targets close with the message ‘I’ll keep you safe’; to encourage the voluntary surrender of freedoms and discourage targets from exploring a world they might find complex, beautiful, and engaging. As a result, members of religious and political groups cloister themselves in likeminded bubbles blocking and shunning dissenting opinions... And children grow up having never known an unsupervised moment or been allowed to develop age-appropriate self-management skills including the ability to deal with conflict without appealing to external authorities to intervene and dispense justice. The persistent diminishing nature of infantilization distinguishes it from authentic protectiveness and concern. Healthy parents don’t diminish their offspring. Healthy partners don’t diminish their mates. They don’t use their loved ones’ failures to shame them or disqualify them from further attempts. They understand that working through failure is how we develop. Healthy groups don’t restrict contact with non-members. They understand that other perspectives, including critical perspectives — can, like failure, be an important source of growth. The abusive nature of infantilizing protectiveness also reveals itself in the actions taken against people who try to opt out of it. Responses of emotional blackmail, smear campaigns, shunning, silencing, even threats of violence make it clear who targets really needed to protect themselves from.”</blockquote>
+<p>
+  This gives a useful criterion for distinguishing protection from infantilization.
+  Healthy protection is supposed to increase a person’s capacity to function without
+  the protector. Infantilizing protection instead makes independence more costly,
+  frightening, or morally suspect. Shunning, emotional blackmail, smear campaigns, and
+  threats are therefore not incidental to the analysis: they reveal what happens when a
+  system organized around dependence confronts a person who attempts to leave it.
+</p>
+<h3 id="infantilization-objections">Objections, qualifications, and the narrower claim</h3><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Objection</th><th>Why it matters</th><th>Response / qualification</th></tr></thead><tbody><tr><td data-label="Objection">“Childlike” can mean humility, trust, or openness rather than ignorance.</td><td data-label="Why it matters">If every child metaphor is treated as abusive, the critique becomes a straw man.</td><td data-label="Response / qualification">Agreed. The relevant issue is not the metaphor alone but whether trust is converted into epistemic deference, restricted questioning, or enduring dependency.</td></tr><tr><td data-label="Objection">Christianity contains major intellectual traditions and many communities encourage education and inquiry.</td><td data-label="Why it matters">A universal claim that Christianity simply suppresses thought is plainly too broad.</td><td data-label="Response / qualification">The argument should therefore target mechanisms and institutional forms that <em>can</em> facilitate infantilization, not assert that every Christian context realizes them to the same degree.</td></tr><tr><td data-label="Objection">A psychological explanation of belief risks the genetic fallacy.</td><td data-label="Why it matters">Explaining where a belief comes from does not by itself show the belief is false.</td><td data-label="Response / qualification">Correct. The developmental account is strongest as an alternative explanation of religious phenomenology and motivation, not as a deductive disproof of God.</td></tr><tr><td data-label="Objection">Parental or pastoral authority can be genuinely protective and developmentally useful.</td><td data-label="Why it matters">Authority is not equivalent to domination.</td><td data-label="Response / qualification">The distinction is whether authority builds competence, tolerates scrutiny, and permits eventual independence—or instead preserves subordination and punishes exit.</td></tr></tbody></table></div>
+<p>
+  With those qualifications in place, the claim becomes both narrower and stronger:
+  infantilization is a recurring mechanism available to religious systems because
+  parental imagery, attachment needs, hierarchical authority, and social dependence can
+  be made to converge. The question is not whether every believer is infantilized; it is
+  how effectively a given institution converts ordinary dependency needs into a durable
+  structure of religious authority.
+</p>
+<h2 id="metaphor">II. The Role of Metaphor and Analogical Reasoning</h2>
+<p>
+  Understanding metaphor in religious instruction is important because many theological
+  concepts are introduced through analogy. God is characterized as a shepherd tending
+  sheep, a father caring for children, and a righteous judge defining good and evil.
+  These governing metaphors do more than decorate doctrine: they can shape moral
+  obligation, expectations about the future, filial piety, authority, and a believer’s
+  sense of place in a community.
+</p>
+<p>
+  But analogy has to be handled carefully. An analogy is not a proof merely because it
+  is vivid or intuitively satisfying. At most, an analogical inference transfers a
+  predicate from one domain to another on the basis of relevant similarities, and that
+  transfer is defeasible. The central question is therefore not whether religious
+  reasoning uses analogy—everyone does—but whether a particular analogy survives the
+  critical questions that legitimate analogical reasoning requires.
+</p>
+<h3 id="analogy-schema">How analogical arguments work</h3><div>
+<div>
+<ul style="text-align: left">
+<li>Similarity Premise: Generally, case C1 is similar to case C2.</li>
+<li>Base Premise: A is true (false) in case C1.</li>
+<li>Conclusion: A is true (false) in case C2.</li>
+</ul>
+</div>
+<div>With critical questions…</div>
+<div>
+<ul style="text-align: left">
+<li>CQ1 Is A true (false) in C1?</li>
+<li>CQ2 Are C1 and C2 similar, in the respects cited?</li>
+<li>
+        CQ3 Are there important differences (dissimilarities) between C1 and C2?
+      </li>
+<li>
+        CQ4 Is there some other case C3 that is also similar to C1 except that A
+        is false (true) in C3?
+      </li>
+<li>
+        CQ5 Is there some target predicate (TP) that is true in C1, but would be
+        absurd in C2?
+      </li>
+</ul>
+</div>
+</div><div>
+<div>
+    The critical questions are crucial because they help identify where the
+    argument fails. Analogical arguments are defeasible, meaning we can
+    tentatively accept them prima facie in the absence of undercutting
+    defeaters. Pragmatically, we can accept an analogical argument if the
+    situation calls for it. There is a second useful schema that might be
+    applied.
+  </div>
+<div>
+<ul style="text-align: left">
+<li>Entities a, b, c, d all have the attributes P and Q.</li>
+<li>a, b, c all have the attribute R.</li>
+<li>Therefore d probably has the attribute R.</li>
+</ul>
+</div>
+<div>Or…</div>
+<div>
+<ul style="text-align: left">
+<li>Entity A has attributes a, b, c and z.</li>
+<li>Entity B has attributes a, b, c.</li>
+<li>Therefore, entity B probably has z also.</li>
+</ul>
+</div>
+</div><div>
+<div>With six counter considerations:</div>
+<div>
+<ul style="text-align: left">
+<li>relevance of the similarities</li>
+<li>number of similarities</li>
+<li>nature and degree of disanalogy</li>
+<li>number of primary analogues, </li>
+<li>diversity among the primary analogues</li>
+<li>specificity of the conclusion</li>
+</ul>
+<div>There are deductive versions as well:</div>
+</div>
+</div><div>
+<div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEi_fosfRZNl7WCMHWK8LaB2AEKaJhW64XRFrUd8L_c7gMzK5JDSXDxgzwQ07Zrx0cm7DCdPqMVyfLHExTx8siqqa3rh-7UKWbA6pagmEoYZ44vqzIwQ6s8VATZYbkL6uAWBbBmZEDmKK0a3ywgh7Ks0F-of7cudEhQ9Ec2ZHoLSVGbpHO8IoETAAHvpj7m0" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="774" data-original-width="714" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEi_fosfRZNl7WCMHWK8LaB2AEKaJhW64XRFrUd8L_c7gMzK5JDSXDxgzwQ07Zrx0cm7DCdPqMVyfLHExTx8siqqa3rh-7UKWbA6pagmEoYZ44vqzIwQ6s8VATZYbkL6uAWBbBmZEDmKK0a3ywgh7Ks0F-of7cudEhQ9Ec2ZHoLSVGbpHO8IoETAAHvpj7m0=w541-h586" style="max-width: 100%; height: auto;"/></a>
+</div>
+  Or Govier’s formulation:
+</div><div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEjVtQe4mcL_E2MTOWR1XSbdXOwhZJAbKBaZ3i0eImE8-YjQsbwVeoTUA6I4VKoJQd0fNlLdxA_25apSTjdYDpxQZDXxwogYjF8Qnn5mf7cJ2kHRYHoWn4SgjBsK8hGr0VtRztlI9dgNBg2Gmxb9_fw-Pr0KyzgArczkaIGsbznEqsPkchGPuyn4CHUbJBrs" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="262" data-original-width="721" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEjVtQe4mcL_E2MTOWR1XSbdXOwhZJAbKBaZ3i0eImE8-YjQsbwVeoTUA6I4VKoJQd0fNlLdxA_25apSTjdYDpxQZDXxwogYjF8Qnn5mf7cJ2kHRYHoWn4SgjBsK8hGr0VtRztlI9dgNBg2Gmxb9_fw-Pr0KyzgArczkaIGsbznEqsPkchGPuyn4CHUbJBrs=w617-h224" style="max-width: 100%; height: auto;"/></a>
+</div>
+<p>
+  The basic form can be stated schematically: if a predicate is established for an
+  analogue, and the analogue is relevantly similar to a target, we may have some reason
+  to project that predicate onto the target. But the conclusion remains presumptive in
+  the absence of counter-considerations. That is exactly why relevance, number of
+  similarities, disanalogies, diversity of comparison cases, and the specificity of the
+  conclusion matter.
+</p>
+<p>
+  This point strengthens rather than weakens the critique that follows. Analogical
+  reasoning is not inherently fallacious. The task is to show where a particular
+  religious analogy transfers a predicate that the cited similarities do not actually
+  support.
+</p>
+<h3 id="sermons">Analogy in sermons and scriptural application</h3>
+<p>
+  Argumentation schemes are often implicit in ordinary reasoning. Following the kind of
+  critical-question framework associated here with Douglas Walton, that matters because
+  a listener can use an argument without consciously representing its formal structure.
+  Sermons are a particularly interesting setting. I have described them elsewhere as a
+  form of epideictic oratory, but they can also contain subtle analogical arguments when
+  priests or pastors explain the contemporary relevance of scripture. Because the
+  material is presented as “God’s Word,” some audiences may approach the mapping with
+  less skepticism than they would bring to an ordinary secular analogy.
+</p><p>
+  A priest can compare Jesus’ crucifixion with a banking or financial transaction, a
+  pastor can interpret the “sexual revolution” through Jezebel, or events in Palestine
+  can be presented as manifestations of biblical prophecy—for example, by invoking
+  Judges. The persuasive move is structurally similar in each case: selected
+  similarities are used to transfer the moral or theological significance of a
+  scriptural analogue to the contemporary target. In that sense, an otherwise mundane
+  event becomes moralized by acquiring biblical significance.
+</p>
+<p>
+  This is not trivial. Once the analogy is accepted, an otherwise mundane event can
+  acquire biblical significance. The critical question is whether the cited
+  similarities are actually relevant to the theological predicate being transferred,
+  and whether important disanalogies have been suppressed.
+</p><p>
+  The original draft pushed this point further by suggesting that weakening analogical
+  links can make scripture feel literally irrelevant to some listeners. An “end times”
+  argument, for example, may depend on treating contemporary disorder as relevantly
+  similar to events described in prophecy. Once the resemblance is recognized as loose
+  or historically repeatable, the inference loses force. I would treat any connection
+  between that process and people leaving churches as a hypothesis rather than an
+  established demographic claim, but it remains a useful explanation of how a formerly
+  compelling scriptural mapping can stop working for an individual believer.
+</p>
+<h3 id="trinity">Case study: the Trinity and the triangle</h3>
+<p>
+  One familiar explanatory analogy says that “the Trinity is like a triangle: three but
+  one.” The comparison may have pedagogical value, but it does not by itself resolve the
+  underlying conceptual problem. A triangle is one polygon with three distinct vertices
+  and three line segments. It belongs to a broader class of objects, is spatially
+  bounded, and admits many different types. If those properties are transferred to the
+  theological target, unwanted implications immediately appear: Are the persons merely
+  parts? Is God an instance of a broader genus? Is the divine nature bounded? Are there
+  multiple kinds of trinities?
+</p>
+<p>
+  The point is not simply to call the analogy ridiculous. It is to show that the
+  similarities doing the persuasive work are accompanied by disanalogies that prevent
+  the triangle from establishing the proposition it is supposed to clarify. The analogy
+  may illustrate a slogan—“three and one”—without explaining how the theological claim
+  is coherent.
+</p>
+<p>
+  More generally, analogy is crucial to religious instruction because it links scripture
+  to experience. If the relevant similarities disappear under scrutiny, the claimed
+  connection can lose much of its force. This is also why apologetic analogies can be
+  psychologically durable: even a weak analogy can leave a residual “what if?” when the
+  listener has not been encouraged to test the mapping systematically.
+</p><p>
+  The original draft stated this much more strongly: strip away the analogies and there
+  is “absolutely nothing at the core” of religion. I would not leave that sentence
+  unqualified. Religious traditions contain rituals, communities, institutions,
+  practices, propositions, and experiences in addition to analogies. The defensible
+  point is narrower but still substantial: strip away the governing analogical mappings
+  and a large amount of the claimed connection between scripture, doctrine, and present
+  reality can become difficult to sustain.
+</p>
+<h3 id="machine-universe">Case study: the universe and a machine</h3>
+<p>
+  Consider a common design-style analogy. The subject of the conclusion is the
+  <strong>Primary Subject (PS)</strong>; the property projected onto it is the
+  <strong>Target Predicate (TP)</strong>; the comparison case is the
+  <strong>Analogue (A)</strong>; and the cited points of resemblance are the
+  <strong>Similarities (S)</strong>.
+</p>
+<ul>
+<li>Premise 1: PS is like A in S1 . . . Sn.</li>
+<li>Premise 2: A has TP.</li>
+<li>Conclusion: therefore PS probably has TP.</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>The universe and a machine are similar in that both contain intricate arrangements of parts and subparts.</li>
+<li>A machine has a maker.</li>
+<li>Therefore, the universe has a maker.</li>
+</ul>
+<p>
+  I found it striking that this appears as a textbook example of a problematic argument
+  from analogy. I was not initially looking for a refutation; I was looking for variants
+  of analogical argument structure. The author comments:
+</p>
+<blockquote>
+<div>
+<div>
+      “If we look at reasoning from example in terms of genus and attributed
+      predicate, we see that the genus is taken for granted, that is, supposed
+      to be known in order for the text to be meaningful. For instance, in the
+      example above, “machine” and “universe” are regarded in this context as
+      belonging to the genus “complex objects.” In this context, the relevant
+      semantic feature of these two terms is “to be a complex object.”
+      <b>The problem is that “to have a maker” is not a (relative or absolute)
+        property belonging only to “complex objects,” nor it is a fundamental
+        semantic feature of them, since “having a maker” is not a kind of
+        explanation of the phenomenon.</b>  Along with this type of irrelevance, the most frequent fallacious
+      move, especially in law, is to suppress, or to overlook, evidence. Th e
+      main feature of reasoning from example is that the genus is presupposed,
+      is taken for granted. The fallaciousness consists in subordinating two
+      facts or objects to the same genus G when the description of one of the
+      facts does not fit G’s fundamental features.  In such a case, the
+      description of the individual facts or objects is apt to suppress aspects
+      fundamental for their classification.”
+    </div>
+</div>
+</blockquote>
+<p>
+  The problem is that complexity does not itself establish the target predicate “has a
+  maker.” We know that machines are designed because we have independent evidence about
+  their causal history: we observe designers, manufacturing processes, plans, tools,
+  institutions, and repeated cases of artifacts being produced. When that independently
+  known predicate is projected onto nature solely because some natural system is also
+  complex, the analogy risks assuming precisely what it is supposed to establish.
+</p>
+<h3 id="dna-code">Case study: DNA and computer code</h3>
+<p>
+  A related apologetic argument substitutes DNA and computer code for the universe and a
+  machine. In simplified form:
+</p>
+<ul>
+<li>DNA is an extremely complex information-bearing system.</li>
+<li>All “code” requires an author.</li>
+<li>The more complex the code, the more intelligent the author.</li>
+<li>Therefore the author of DNA must be extraordinarily intelligent.</li>
+<li>Therefore the author is God.</li>
+</ul>
+<p>
+  The first difficulty is that even the software analogue does not uniquely support a
+  single author. Modern codebases routinely have multiple contributors, depend on
+  libraries written by other communities, run on platforms built by still other teams,
+  and involve specialists in databases, networking, security, middleware, user
+  interfaces, architecture, and systems engineering. A large enterprise such as NASA makes the same point at institutional scale: architects, systems engineers, implementation specialists, and subject-matter experts contribute different pieces of the result. If the software analogy were
+  carried through consistently, it would at least fail to privilege a single designer.
+  That does not establish polytheism; it shows that the analogue does not entail the
+  monotheistic conclusion being drawn from it.
+</p>
+<p>
+  A second difficulty is circularity. We know computer code is intentionally designed
+  because its authorship is independently observable. We do not possess the same kind of
+  independent causal history for nature. Calling the biological target “created code”
+  before establishing a creator simply imports the disputed predicate into the
+  description. The diagram from the original draft makes that inferential gap visible:
+</p>
+<div class="separator" style="clear: both; text-align: center">
+<a href="https://blogger.googleusercontent.com/img/a/AVvXsEi50QZmY3usE-_9SMPSTqnEaANYckOBrnMjqMsPCxOMFRQuSxjSHD7giDxDdjUlId0eYw_TaNFxcQSNc-Up-oAAzcQEsv2NqS0EPJeQgkrMVWiXAhmVtDXH4EdskaetBG38UMia9rYe4C34CEWe6gJhTwNN2kdm3qg2_MSEDwzRCzI2UIqkkJOA3YG-Nkxa" style="margin-left: 1em; margin-right: 1em"><img alt="" data-original-height="409" data-original-width="735" loading="lazy" src="https://blogger.googleusercontent.com/img/a/AVvXsEi50QZmY3usE-_9SMPSTqnEaANYckOBrnMjqMsPCxOMFRQuSxjSHD7giDxDdjUlId0eYw_TaNFxcQSNc-Up-oAAzcQEsv2NqS0EPJeQgkrMVWiXAhmVtDXH4EdskaetBG38UMia9rYe4C34CEWe6gJhTwNN2kdm3qg2_MSEDwzRCzI2UIqkkJOA3YG-Nkxa=w533-h296" style="max-width: 100%; height: auto;"/></a>
+</div>
+<p>
+  Complexity also needs to be handled more carefully than the slogan “more complex means
+  more intelligent.” Software engineering often values simplicity, modularity,
+  separation of concerns, loose coupling, and maintainability. Practices associated
+  with GRASP, SOLID, KISS, and design patterns such as Composite, Singleton, Iterator, and Observer are attempts to manage complexity,
+  not celebrate it for its own sake. At the same time, intelligent engineering can
+  deliberately introduce redundancy, fault tolerance, defensive layers, and other forms
+  of complexity. The stronger conclusion is therefore modest: <strong>complexity alone
+  is not a reliable discriminator between intelligent design and non-intentional
+  processes.</strong>
+</p>
+<p>
+  The word <em>code</em> introduces a further ambiguity. Biology legitimately uses
+  informational language, but similarity in vocabulary does not make DNA and software
+  the same kind of object. The original comparison can be made much clearer as a table:
+</p>
+<div class="table-wrap"><table class="extra-wide-table long-table dense"><thead><tr><th>Dimension</th><th>Biological DNA / gene-expression system</th><th>Computer code</th><th>Why the difference matters</th></tr></thead><tbody><tr><td data-label="Dimension">Representation</td><td data-label="Biological DNA / gene-expression system">Information is embodied in sequences of nucleotides in DNA or RNA.</td><td data-label="Computer code">Instructions and data are represented in source languages, machine code, binary data, and related digital formats.</td><td data-label="Why the difference matters">Both can be described informationally, but the physical realizations and conventions are different.</td></tr><tr><td data-label="Dimension">Interpretation / execution</td><td data-label="Biological DNA / gene-expression system">DNA is transcribed and RNA is translated through cellular machinery including enzymes and ribosomes.</td><td data-label="Computer code">Software is interpreted or compiled and executed by computational hardware and software systems.</td><td data-label="Why the difference matters">The existence of an interpreter in both domains does not establish a common causal origin.</td></tr><tr><td data-label="Dimension">Historical change</td><td data-label="Biological DNA / gene-expression system">Biological sequences change through mutation, selection, drift, recombination, gene flow, and other evolutionary processes.</td><td data-label="Computer code">Software is changed through human development, tooling, automated generation, updates, and maintenance.</td><td data-label="Why the difference matters">The mechanisms that generate and preserve structure differ substantially.</td></tr><tr><td data-label="Dimension">Redundancy</td><td data-label="Biological DNA / gene-expression system">The genetic code is degenerate: multiple codons can specify the same amino acid, and biological systems contain many forms of redundancy.</td><td data-label="Computer code">Programmers often remove needless duplication, but engineered systems can also add redundancy intentionally for reliability and fault tolerance.</td><td data-label="Why the difference matters">Redundancy cannot simply be treated as either proof or disproof of design.</td></tr><tr><td data-label="Dimension">Environmental response</td><td data-label="Biological DNA / gene-expression system">Phenotypes, gene regulation, epigenetic states, and populations can respond to environments through multiple biological mechanisms.</td><td data-label="Computer code">Software can respond to inputs, learn, update state, and in some systems modify behavior; the causal mechanisms remain engineered and computational.</td><td data-label="Why the difference matters">The original claim that software “cannot adapt” is too strong; the useful point is that adaptation occurs by different mechanisms.</td></tr><tr><td data-label="Dimension">Replication / propagation</td><td data-label="Biological DNA / gene-expression system">DNA is replicated by cellular machinery as part of biological reproduction and cell division.</td><td data-label="Computer code">Software can be copied or self-propagate when a system is designed or configured to do so.</td><td data-label="Why the difference matters">This is not a clean disanalogy by itself; both require enabling mechanisms.</td></tr><tr><td data-label="Dimension">Semantics and purpose</td><td data-label="Biological DNA / gene-expression system">Biological “information” is a scientific description of relationships among sequences, cellular machinery, development, and function.</td><td data-label="Computer code">Software symbols are intentionally created within human-defined computational conventions and objectives.</td><td data-label="Why the difference matters">Using the same word “code” does not automatically transfer intentional authorship from software to biology.</td></tr></tbody></table></div>
+<p>
+  So the strongest criticism is not that DNA and computer code share nothing. They do
+  share enough abstract structure for the metaphor to be understandable. The problem is
+  the attempted transfer from <em>information-bearing structure</em> to
+  <em>intentional authorship by a particular kind of mind</em>. That target predicate is
+  independently known in software and precisely what is disputed in biology.
+</p>
+<p>
+  The broader appeal to emergence makes the same point from another direction. Complex
+  systems can exhibit organized patterns that are not centrally specified at the level
+  at which the pattern appears: ecosystems, languages, markets, social networks,
+  weather systems, evolutionary processes, and machine-learning systems all provide
+  examples of higher-level structure arising from many interacting components. A
+  trained machine-learning model is of course produced within a human-built system, so
+  it is not an example of total absence of authorship. What it does show is that
+  <em>organized output need not be explicitly represented in advance by a single
+  authoring act</em>. Natural systems make the stronger point: patterned information or
+  signaling does not, merely by being pattern-like, identify a central programmer.
+</p><p>
+  The same issue appears in signaling. A labor-market candidate can communicate
+  qualifications through conventions that no single participant explicitly authored,
+  and biological signals such as a peacock’s display acquire meaning through evolved
+  interactions rather than through a programmer stipulating a message in advance. If
+  “code” is being used in the very broad sense of a rule-governed system for converting
+  or communicating information over a channel, then the premise “all code must have an
+  author” becomes much less secure: the word has been broadened far beyond the class of
+  human-written software from which the authorship intuition was borrowed.
+</p>
+<h3 id="reductio">Reductio as a test for uncontrolled predicate transfer</h3>
+<p>
+  Another way to expose a weak analogy is a reductio: carry the transfer rule further
+  than the advocate intends and ask whether it begins generating absurd consequences.
+  If software and DNA are similar enough that authorship transfers automatically, why
+  not also transfer other properties of software production? Software has a historically
+  recent human origin; should DNA have one too? Programmers are paid; was God paid to
+  write DNA? Programmers use languages and tools made by others; did God depend on a
+  prior designer of the genetic “language”? One could even choose an obviously
+  irrelevant sociological stereotype—say, that programmers tend toward anarchistic
+  politics—and “infer” that God is probably an anarchist. Complex software is built
+  from preexisting resources; should that count against creation ex nihilo?
+</p>
+<p>
+  These are not offered as serious conclusions. Their function is diagnostic. They show
+  that the analogy contains many possible predicates and therefore needs an independent
+  reason for selecting <em>authorship</em> while refusing all of the others. Reductio is
+  useful here because it forces the advocate to identify which similarities are
+  relevant and why. It does not show that analogical reasoning in general is defective;
+  it shows why an analogy cannot make strong assertions about reality without controls
+  on predicate transfer and additional evidence.
+</p>
+<h3 id="why-persuasive">Why weak analogies can remain persuasive</h3>
+<p>
+  When the critical questions are applied, many of these apologetic analogies become
+  considerably more fragile. Why, then, can they remain convincing? One reason is their
+  case-by-case variability. The surface content changes even when the inferential
+  structure remains the same, so a listener may encounter each analogy as a fresh
+  intuition rather than as another instance of a familiar argument scheme.
+</p>
+<p>
+  Domain knowledge matters as well. It is easier to accept a DNA/software analogy when
+  one knows little about genetics, software engineering, or the many ways in which the
+  two domains diverge. The same is true of historical, political, and scriptural
+  analogies: a vivid resemblance can dominate when the listener lacks the background
+  needed to notice relevant disanalogies.
+</p>
+<p>
+  Finally, metaphor is not merely an isolated premise in an argument. It can function as
+  an explanatory framework that organizes attention. New metaphors orient perception
+  toward some features of reality and away from others; new interpretations of scripture
+  can therefore arise from new mappings between narrative and experience. The capacity
+  to generate such mappings is effectively open-ended, which helps explain why analogies
+  can continue to provide interpretive resources even after particular examples are
+  challenged.
+</p><p>
+  There is also a motivational dimension. Critically questioning a governing metaphor
+  can produce cognitive dissonance because the metaphor may organize much more than one
+  isolated proposition. The original draft also suggested that the same generative
+  flexibility may contribute to fragmentation within Christianity: new groups can
+  emphasize new metaphors or remap old scriptures to different features of reality,
+  creating interpretations that diverge from a prior orthodoxy. I would present that as
+  a plausible mechanism rather than a complete historical explanation of schism, but it
+  follows naturally from the broader argument that metaphors orient attention,
+  perception, and interpretive energy.
+</p>
+<h3 id="analogy-objections">Objections and replies about analogy</h3><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Objection</th><th>Why it matters</th><th>Response / qualification</th></tr></thead><tbody><tr><td data-label="Objection">Analogy is indispensable in science, philosophy, law, and ordinary reasoning.</td><td data-label="Why it matters">A blanket attack on analogy would undermine far more than religious argument.</td><td data-label="Response / qualification">Agreed. The critique concerns unsupported predicate transfer and neglected disanalogies, not analogy as such.</td></tr><tr><td data-label="Objection">Biologists themselves use terms such as “information” and “genetic code.”</td><td data-label="Why it matters">Simply banning informational language would be scientifically unserious.</td><td data-label="Response / qualification">The point is semantic discipline: legitimate informational description does not, without further argument, entail intentional authorship.</td></tr><tr><td data-label="Objection">Some analogies are explanatory rather than evidential.</td><td data-label="Why it matters">A triangle analogy might be intended to illustrate doctrine, not prove it.</td><td data-label="Response / qualification">Then it should be evaluated as an illustration. The problem arises when intuitive clarity supplied by the metaphor is allowed to stand in for an explanation or evidence.</td></tr><tr><td data-label="Objection">A design argument can appeal to more than complexity alone.</td><td data-label="Why it matters">Refuting the slogan “complexity means design” does not refute every possible design argument.</td><td data-label="Response / qualification">Correct. The present analysis targets the machine/code analogies actually discussed here; stronger formulations would need to be evaluated on their own premises.</td></tr></tbody></table></div><h2 id="synthesis">III. Synthesis: Authority and Interpretation as a Reinforcing System</h2>
+<p>
+  The two halves of the discussion now fit together. Infantilization concerns the
+  <strong>social and affective conditions of authority</strong>: who is trusted, who is
+  treated as dependent, what happens when authority is questioned, and how costly it is
+  to become independent. Metaphor and analogy concern the <strong>interpretive machinery
+  of the worldview</strong>: how doctrine is connected to experience, how contemporary
+  events acquire scriptural significance, and how intuitions are converted into
+  presumptive claims about reality.
+</p>
+<p>
+  These mechanisms can reinforce one another. Parent, shepherd, flock, child, judge, and
+  protector metaphors help organize the believer’s relationship to authority. The
+  authority structure then teaches and polices the metaphors through which new
+  experiences are interpreted. If open-ended questioning is discouraged, the critical
+  questions needed to test analogies are less likely to be asked. If an analogy fails,
+  a new mapping can replace it; if an authorized remedy fails, the failure can be
+  reinterpreted inside the same framework. The result can become self-sealing without
+  requiring any single participant to have designed it that way.
+</p>
+<div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Stage</th><th>Infantilization mechanism</th><th>Metaphorical / analogical mechanism</th></tr></thead><tbody><tr><td data-label="Stage">Orientation</td><td data-label="Infantilization mechanism">Believer is positioned as child, sheep, dependent, or protected subject.</td><td data-label="Metaphorical / analogical mechanism">God and clergy are understood through parent, shepherd, judge, and protector mappings.</td></tr><tr><td data-label="Stage">Authority</td><td data-label="Infantilization mechanism">Deference is moralized; questioning may become costly.</td><td data-label="Metaphorical / analogical mechanism">Authoritative interpretations determine which similarities between scripture and experience are salient.</td></tr><tr><td data-label="Stage">Experience</td><td data-label="Infantilization mechanism">Anxiety, uncertainty, separation, and vulnerability increase demand for protection.</td><td data-label="Metaphorical / analogical mechanism">Events are assimilated to familiar narratives through analogy and metaphor.</td></tr><tr><td data-label="Stage">Challenge</td><td data-label="Infantilization mechanism">Alternative authorities or remedies may be distrusted or stigmatized.</td><td data-label="Metaphorical / analogical mechanism">Disanalogies can be ignored, reinterpreted, or replaced by a new analogy.</td></tr><tr><td data-label="Stage">Persistence</td><td data-label="Infantilization mechanism">Social dependence and fear of exclusion raise the cost of exit.</td><td data-label="Metaphorical / analogical mechanism">An open-ended supply of metaphors allows the worldview to remain interpretively flexible.</td></tr></tbody></table></div>
+<p>
+  Framed this way, the argument does not need the strongest universal claims. It is not
+  necessary to say that every church infantilizes, that every analogy is deceptive, or
+  that a psychological explanation of belief logically entails atheism. The more useful
+  thesis is mechanistic: certain religious forms possess recurring psychological,
+  institutional, and rhetorical resources that can generate dependency and continually
+  reinterpret experience in ways that preserve the larger system.
+</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>
+  An agnostic analysis of religiosity can therefore proceed without beginning from the
+  question “Is God real?” and without assuming that every believer is irrational. It can
+  instead ask how the relevant experiences, authority relationships, and inferential
+  habits are produced and sustained. The developmental account explains why a divine
+  parent or protector can feel affectively compelling. The institutional account shows
+  how those relationships can be socialized. The analysis of metaphor and analogy shows
+  how religious narratives are repeatedly connected to new situations and how apparently
+  evidential conclusions can arise from those mappings.
+</p>
+<p>
+  None of this settles every theological question. It does, however, reduce the amount
+  of explanatory work that must be assigned to supernatural causes. If attachment,
+  social transfer, authority, metaphor, analogy, fear, and ordinary cognitive processes
+  can jointly explain much of what appears distinctive about religious experience, then
+  those mechanisms deserve to be examined before the experience itself is treated as
+  evidence for the worldview through which it has been interpreted.
+</p>
+</article>

@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    </style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.ep-post details { margin: 1em 0; padding: .7em .85em; border: 1px solid color-mix(in srgb, currentColor 16%, transparent); border-radius: .6rem; }
+.ep-post summary { cursor: pointer; }
+.ep-post .toc { margin: 1em 0; }
+
+.ep-post .toc {
+  margin: 1em 0 1.5em;
+  padding: 0.9em 1em;
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 0.65rem;
+  background: color-mix(in srgb, currentColor 3%, transparent);
+}
+.ep-post .toc > ol { margin: 0.15em 0 0.15em 1.35em; }
+.ep-post .toc ol ol { margin-top: 0.3em; margin-bottom: 0.55em; }
+.ep-post .toc > ol > li { margin: 0.45em 0; }
+.ep-post .toc a { font-weight: 650; }
+.ep-post .toc ol ol a { font-weight: 400; }
+.ep-post .toc-desc { opacity: 0.82; }
+.ep-post h2[id], .ep-post h3[id], .ep-post h4[id] { scroll-margin-top: 1.25rem; }
+@media (max-width: 720px) {
+  .ep-post .toc { padding: 0.75em 0.8em; }
+  .ep-post .toc-desc { display: block; margin-top: 0.08em; }
+}
+</style>
+</head><body>
+<div class="ep-post">
+<h1>Religious Experience, Miracles, and Revelation</h1>
+<p>I was rereading old posts and realized that I had touched on miracles and religious experience without ever giving them the treatment they deserve. That omission matters because these concepts are not peripheral to religious belief. In ordinary conversations with believers—often more than in formal apologetics—personal experience is one of the most persistent reasons people give for believing, remaining believers, or trying to persuade someone else.</p>
+<p>Miracles, religious experiences, revelation, prophecy, and testimony are deeply related, but they are not interchangeable. A religious experience is an episode interpreted by the subject as involving something sacred, divine, ultimate, or metaphysically significant. A miracle claim adds a causal or theological interpretation to an event. Revelation adds the further claim that something has been disclosed by a divine source, often with content and authority. Prophecy communicates alleged revelation. Testimony then transmits a private or local event to people who did not experience it themselves.</p>
+<p>The argument of this essay is not that people are lying whenever they report these things, nor that an unusual experience cannot have enormous personal significance. The central problem is the sequence of inferences that comes after the experience: from event to perception, perception to interpretation, interpretation to divine attribution, divine attribution to a particular theology, and finally from private conviction to a claim that other people should believe it too. At every transition, additional assumptions enter.</p>
+<p>I also want to explain why those transitions can nevertheless feel compelling. Cognitive biases, cultural expectations, epistemic norms, institutional practices, conversion scripts, and communal validation can make one interpretation of an ambiguous experience feel obvious. This does not by itself prove the interpretation false. It matters epistemically when those same mechanisms provide plausible alternative explanations, reduce the independence of testimony, filter disconfirming evidence, or otherwise weaken the ability of the experience to discriminate between divine and non-divine hypotheses.</p>
+<p>Finally, I will steelman several arguments from religious experience rather than simply dismissing them. The strongest skeptical conclusion is not “religious experiences never justify anything.” It is more precise: <strong>an experience can possess substantial first-person force while providing much weaker public evidence for increasingly specific theological claims.</strong> That distinction will do a lot of work below.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<nav aria-label="Table of contents" class="toc"><ol><li><a href="#part-i-definitions">I. What Are We Talking About?</a><span class="toc-desc"> — Definitions: religious experience, miracle, revelation, prophecy, and testimony.</span><ol><li><a href="#religious-experience">Religious experience</a></li><li><a href="#miracle-revelation-prophecy-testimony">Miracle, revelation, prophecy, and testimony</a></li></ol></li><li><a href="#part-ii-experience-to-claim">II. From Experience to Religious Claim</a><span class="toc-desc"> — The inferential layers that are easily conflated.</span><ol><li><a href="#twenty-common-conflations">Twenty common conflations</a></li></ol></li><li><a href="#part-iii-private-public-evidence">III. Private Experience, Revelation, and Public Evidence</a><span class="toc-desc"> — Dreams, revelation, prophecy, testimony, and the shift from first-person warrant to public evidence.</span><ol><li><a href="#counterargument-testimony">Counterargument: testimony is how we know almost everything</a></li><li><a href="#counterargument-dreams">Counterargument: God could reveal himself through dreams</a></li></ol></li><li><a href="#part-iv-cognitive-social-conditions">IV. Cognitive and Social Conditions of Belief</a><span class="toc-desc"> — Biases, epistemic norms, plausibility structures, framing, habitus, and cultivated interpretation.</span><ol><li><a href="#cognitive-errors-epistemic-norms">Cognitive errors, plausibility structures, and epistemic norms</a></li><li><a href="#sociological-scaffolding">Sociological scaffolding and cultural conditioning</a></li><li><a href="#four-sociological-mechanisms">Four sociological mechanisms, four different jobs</a></li><li><a href="#counterargument-cultural-conditioning">Counterargument: everything is culturally conditioned</a></li><li><a href="#counterargument-sociology-truth">Counterargument: sociological explanation does not imply falsity</a></li></ol></li><li><a href="#part-v-conversion-narratives">V. Conversion Narratives as a Case Study</a><span class="toc-desc"> — How private experience becomes a public performance and epistemic device.</span><ol><li><a href="#bayesian-clarification">Bayesian clarification: persuasion vs. evidential support</a></li></ol></li><li><a href="#part-vi-strongest-arguments">VI. The Strongest Arguments from Religious Experience</a><span class="toc-desc"> — The strongest experiential arguments, their strongest replies, and why those replies remain limited.</span><ol><li><a href="#shared-assumptions">Shared assumptions underwriting all variants</a></li><li><a href="#argument-1-perceptual-analogy">1. Perceptual analogy</a></li><li><a href="#argument-2-testimony">2. Testimony</a></li><li><a href="#argument-3-transformative-effects">3. Transformative effects</a></li><li><a href="#argument-4-abduction">4. Inference to the best explanation</a></li><li><a href="#argument-5-doxastic-practice">5. Doxastic practice reliability</a></li><li><a href="#argument-6-cumulative-bayesian">6. Cumulative-case / Bayesian aggregation</a></li></ol></li><li><a href="#part-vii-conclusion">VII. What Follows—and What Does Not</a><span class="toc-desc"> — The skeptical conclusion, its limits, and what evidential force can remain.</span></li><li><a href="#additional-sources">Additional Sources to Consider</a><span class="toc-desc"> — Further reading and related material.</span></li></ol></nav>
+<h2 id="part-i-definitions">I. What Are We Talking About?</h2>
+<h3 id="religious-experience">Religious experience</h3>
+<div>
+<a href="https://plato.stanford.edu/entries/religious-experience/">Religious experiences</a>
+  are typically defined as first-person episodes that the subject takes to
+  involve contact with, disclosure of, or orientation toward something sacred,
+  divine, ultimate, or metaphysically significant. This experience is understood
+  to be religious by the subject, in other words it is interpretation-laden.
+  Common features of religious experiences include:
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>Ineffability: hard to put into words.</li>
+<li>Noetic quality: seems to convey insight or knowledge.</li>
+<li>Transiency: brief; effects can linger.</li>
+<li>Passivity: feels “given” or “granted,” not fabricated.</li>
+<li>
+        Sacredness/numinousness: awe, reverence, “otherness” (often
+        fear-and-fascination).
+      </li>
+<li>
+        Unity or wholeness: dissolution of ego boundaries, sense of oneness.
+      </li>
+<li>
+        Timelessness/altered temporality: “eternal now,” slowed or vanished
+        time.
+      </li>
+<li>
+        Transformative after-effects: durable changes in values, behavior,
+        meaning.
+      </li>
+</ul>
+</div>
+</div>
+<p>
+  These criteria have been influenced by William James
+  <a href="https://en.wikipedia.org/wiki/The_Varieties_of_Religious_Experience">criteria</a>
+  set out in his "The Varieties of Religious Experience". This phrase can be
+  thought of as an umbrella category, often including
+  <a href="https://en.wikipedia.org/wiki/Mystical_or_religious_experience">mystical experiences</a>, revelatory/prophetic experiences (seemingly received messages: visions,
+  voices, scriptural illumination, specific guidance), conversion/awakening
+  experiences (sudden reorientation of belief and life-direction),
+  nature-mediated or aesthetic experiences (overwhelmed by beauty), and
+  ritualistic/communal experiences (shared absorption such as chanting, liturgy,
+  and dance). These are by no means necessary for religious experience; not all
+  mystic experiences are revelatory, not all awakening experiences are connected
+  to the aesthetic, not all communal experiences require sudden reorientation
+  etc. The key point is the subject must construe them as disclosing something
+  ultimate, it is the classification of the person having the experience which
+  makes it such. Religious experiences often include feelings of:
+</p>
+<p></p>
+<ul style="text-align: left;">
+<li>Awe and wonder (sometimes with small-self feelings)</li>
+<li>Peace/bliss (ananda) or fear/trembling (tremendum)</li>
+<li>Presence: vivid sense “someone/thing is here”</li>
+<li>Ego-dissolution / oceanic boundlessness</li>
+<li>Unity-of-opposites / paradox tolerance</li>
+<li>Heightened meaning and salience (everything seems significant)</li>
+<li>Altered time (eternal present, timelessness)</li>
+<li>Moral urgency (call to repent, forgive, serve)</li>
+<li>Certainty or self-authenticating feel (“I know this was real”)</li>
+</ul>
+<div>
+  They can be cultivated through prayer, meditation, fasting, solitude, ritual
+  or contemplation. They can be spontaneous or crisis driven, motivated by
+  grief, danger, or death scenarios. They can be driven by aesthetic
+  experiences, like looking into the night sky. Or they can be stimulated via
+  classical psychedelics. In short, religious experiences can be anything and
+  can be prompted by just about anything. 
+</div>
+<div><br/></div>
+<h3 id="miracle-revelation-prophecy-testimony">Miracle, revelation, prophecy, and testimony</h3>
+<p>A useful distinction is that a <strong>miracle claim</strong> need not be identical to a religious experience. A person can have an intense mystical or numinous experience without identifying any discrete miraculous event, and someone can call an external event—a recovery, coincidence, apparent prophecy, or unlikely escape—a miracle without having a mystical experience at all. In this essay, “miracle claim” refers to an event interpreted as involving extraordinary divine agency or as functioning as a sign of divine action.</p>
+<p>This matters because the epistemic burden changes with the claim. “I felt overwhelming peace” reports an experience. “God caused that peace” adds a causal attribution. “The Christian God caused it” adds an identity claim. “God caused it in order to tell me X” adds revelation. “Therefore you should believe X” adds a public normative claim. Those are not interchangeable propositions, and evidence sufficient for an earlier step does not automatically justify the later ones.</p>
+<div>
+<a href="https://plato.stanford.edu/entries/divine-revelation/">Divine revelation</a>
+  can be thought of as a subset of religious experience. This is the type of
+  experience where something is presumed to be disclosed from a source to the
+  target. Often, it is an interpretation of an experience that is taken to
+  be directed at the person as the intended audience; normally used for
+  theological justifications. The subject of the revelation takes the source to
+  be God and takes God to be disclosing something, usually with authority and often with content
+  (guidance, a truth, a command). This content is then communicated to others.
+  It is taken to be authoritative for the recipient and believers, introducing
+  questions of obligation, canon, and community vetting. In fact, the entire
+  biblical narrative crucially depends on alleged divine revelations to the
+  prophets. So, as you can see, a very powerful form of religious experience
+  that can generate completely new religions if deemed credible.
+</div>
+<div><br/></div>
+<div>
+  Revelations can be propositional or non-propositional. In the former scenario,
+  it would be something like "God told me X", in the latter scenario it would be
+  something like "God showed itself, and later I put it into words." There is
+  also a distinction drawn in theology between general revelation and special
+  revelation. The former refers to disclosures that are available to everyone,
+  while the latter are particular disclosures to people at a particular time.
+  There is also the private vs public distinction; private revelation is not
+  intersubjectively verifiable, whereas public revelation is intended for the community and is
+  historically tied to canon formation. Given these distinctions, you can see
+  how theists justify "no one is without excuse" when it comes to believing in
+  God, because of the general revelation it should be obvious to everyone.
+  Revelations are often treated as something that can extend through events,
+  texts, and communities (not just inner episodes); often attributing divine
+  importance or causation in such non-direct experiential events. For
+  revelation, it is a subset of experience, and therefore has stricter
+  requirements. Ask yourself these questions below, if the answer is yes to more
+  than one, it constitutes a revelation:
+</div>
+<div>
+<div>
+<ol style="text-align: left;">
+<li>
+<b>Attribution</b>: Does the person explicitly ascribe the episode to
+        God as speaker/actor?
+      </li>
+<li>
+<b>Content</b>: Is there determinate guidance or truth-claim, or only
+        presence/union?
+      </li>
+<li>
+<b>Scope</b>: Is it binding just for the subject or also for a
+        community?
+      </li>
+<li>
+<b>Mediation</b>: Is it framed as direct speech/vision, or as
+        illumination of text/event/practice?</li></ol></div></div><div></div>
+<h2 id="part-ii-experience-to-claim">II. From Experience to Religious Claim</h2>
+<p>The easiest way to see the central epistemic problem is to separate the layers that are often compressed into a single sentence such as “God spoke to me.” The farther the claim moves from the raw occurrence, the more interpretive and evidential work has to be done.</p>
+<div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Level</th><th>Claim</th><th>What has been added</th></tr></thead><tbody>
+<tr><td data-label="Level">1. Occurrence</td><td data-label="Claim">“Something happened.”</td><td data-label="What has been added">Minimal commitment: an event or internal state occurred.</td></tr>
+<tr><td data-label="Level">2. Experience</td><td data-label="Claim">“I experienced awe, presence, peace, a voice, a vision, or a coincidence.”</td><td data-label="What has been added">A first-person characterization of the occurrence.</td></tr>
+<tr><td data-label="Level">3. Religious interpretation</td><td data-label="Claim">“This was sacred or divine.”</td><td data-label="What has been added">A worldview-dependent classification.</td></tr>
+<tr><td data-label="Level">4. Causal attribution</td><td data-label="Claim">“A divine agent caused it.”</td><td data-label="What has been added">A causal explanation competing with natural alternatives.</td></tr>
+<tr><td data-label="Level">5. Identification</td><td data-label="Claim">“The agent was God / Jesus / Allah / another specific supernatural being.”</td><td data-label="What has been added">Tradition-specific content and a much narrower hypothesis.</td></tr>
+<tr><td data-label="Level">6. Revelation</td><td data-label="Claim">“The agent intended to communicate proposition X.”</td><td data-label="What has been added">Intentionality, semantic content, and often authority.</td></tr>
+<tr><td data-label="Level">7. Public obligation</td><td data-label="Claim">“You should believe or obey X because it was revealed.”</td><td data-label="What has been added">Transfer of warrant from a private event to outsiders.</td></tr>
+</tbody></table></div>
+<p>This ladder does not assume in advance that the later claims are false. It shows why they require more than the sincerity or intensity of the initial experience. The rest of the essay asks what additional evidence, if any, can carry the inference from one level to the next.</p>
+<h3 id="twenty-common-conflations">Twenty common conflations</h3>
+<div><div>I think it is crucial to draw a number of distinctions that are consistently conflated in discussions of this topic. Religious experiences may be among the most compelling reasons people become theists, but they are also among the most epistemically problematic. That tension is striking: what is often presented as the most persuasive basis for belief is simultaneously among the least rigorous and most prone to error. Within experiential arguments for belief, these conflations cannot be ruled out beyond reasonable doubt. Let X = “some object, event, occurrence, experience, text, etc.” What follows are distinctions that are frequently blurred, along with the characteristic errors they invite and examples of how those errors arise in practice. </div><div><div class="table-wrap"><table class="three-col extra-wide-table long-table dense"><thead><tr><th>Analytical layer</th><th>Distinction</th><th>Analysis and example</th></tr></thead><tbody><tr><td data-label="Analytical layer">Causal attribution</td><td data-label="Distinction">X vs. the cause of X</td><td data-label="Analysis and example">The raw sensation (X)—a sudden warmth during prayer, a “presence,” a rush of peace—is just the experience itself; moving from that to “God did it” conflates the data with one particular causal story. The central error here is a post hoc inference that ignores base rates and rival natural causes such as music, social contagion, expectation, or physiology. For example, someone prays for a job, later gets an offer, and treats the outcome as direct divine intervention while overlooking prior applications, networking, and an improving labor market. </td></tr><tr><td data-label="Analytical layer">Interpretation</td><td data-label="Distinction">X vs. your interpretation of X</td><td data-label="Analysis and example">The experience (X) is the unadorned occurrence, whereas calling it “a sign from God” adds an interpretive layer supplied by one’s worldview. What goes wrong at this point is usually theory-ladenness combined with confirmation bias, since a preferred meaning is read into ambiguous data. For example, after seeing the number 777 three times in a day, a believer may interpret it as God’s guidance to change careers, while a numerologist or gambler would derive an entirely different meaning, showing that the ambiguity lies in the interpretation rather than in the experience itself. </td></tr><tr><td data-label="Analytical layer">Perception</td><td data-label="Distinction">X vs. your perception of X</td><td data-label="Analysis and example">X is the event, while perception is your selective and fallible construction of it. The problem here is misperception, often amplified by apophenia and context effects. For example, in candlelit devotion a parishioner sees the Virgin Mary “in the shadows” on the wall, but under bright light it turns out to be a water stain. What changes is the perception, which reveals that the conclusion “Mary appeared” rested not on X itself but on a particular way of seeing it. </td></tr><tr><td data-label="Analytical layer">Description &amp; classification</td><td data-label="Distinction">X vs. your description of X (and its classification)</td><td data-label="Analysis and example">X is the experience, while calling it “the Holy Spirit,” “kundalini,” or “flow” is already an act of description and classification. The mistake here is reification: treating a label or taxonomy as though it were the thing itself. For example, a sudden chest warmth at a revival may be described as “the Spirit’s fire,” while a meditator reports the same sensation as “prana rising.” Since the underlying phenomenology remains the same, the label alone cannot validate a theistic conclusion. </td></tr><tr><td data-label="Analytical layer">Effects &amp; significance</td><td data-label="Distinction">X vs. the effects of X</td><td data-label="Analysis and example">X is the event, whereas its effects are whatever follow from it—moral renewal, sobriety, community, and so on. The error that often appears here is the pragmatic fallacy, in which usefulness is mistaken for truth. For example, a person escapes addiction after a conversion experience and concludes, “therefore God is real.” The life change may be genuine and important, but beneficial outcomes can also arise through placebo, group support, new identity, and discipline without establishing a supernatural cause. </td></tr><tr><td data-label="Analytical layer">Context &amp; framing</td><td data-label="Distinction">X vs. the context of X</td><td data-label="Analysis and example">X occurs within a cultural and situational frame—a revival tent, chanting, incense—but that frame is not identical to the experience. The risk here is context-driven priming and situational confounding. For example, pilgrims at a famous shrine report miracles at much higher rates than at home prayer meetings because the charged setting primes expectation, making the same internal sensations feel miraculous. That dependence on context weakens the inference to a uniquely divine cause. </td></tr><tr><td data-label="Analytical layer">Effects &amp; significance</td><td data-label="Distinction">X vs. the significance of X</td><td data-label="Analysis and example">X is neutral as data, while “this changed my life” expresses the significance assigned to it. The associated mistake is to let affective and meaning-making biases turn personal importance into evidential weight. For example, a dream about a deceased parent may be taken as a heaven-sent message “meant just for me.” The experience may deeply matter to the dreamer, but significance does not transform private meaning into public evidence of the supernatural. </td></tr><tr><td data-label="Analytical layer">Memory &amp; reconstruction</td><td data-label="Distinction">X vs. your memory of X</td><td data-label="Analysis and example">X is what happened, whereas memory is a reconstruction that can drift over time. The main concern here is memory inflation, confabulation, and consistency bias. For example, a healing testimony may grow over the years from “my pain diminished after prayer” into “my bone instantly regrew.” At that point, what is being preached is evidence about recall rather than reliable evidence about the original event. </td></tr><tr><td data-label="Analytical layer">Affect &amp; expectation</td><td data-label="Distinction">X vs. your emotional reaction to X</td><td data-label="Analysis and example">X is the event, while awe, fear, or ecstasy are your responses to it. The danger here is the affect heuristic, along with the illusion that emotional certainty is equivalent to evidential strength. For example, someone standing under the Milky Way may feel overwhelming transcendence and conclude, “there must be a Creator.” The awe is real, but strong emotion can intensify conviction without improving the quality of the evidence. </td></tr><tr><td data-label="Analytical layer">Affect &amp; expectation</td><td data-label="Distinction">X vs. your expectations of X</td><td data-label="Analysis and example">X is what occurs, whereas expectation is the prior template shaping what you are prepared to see. This opens the door to expectancy effects, suggestion, and placebo dynamics. For example, at a revival where people are told they will “fall under the power,” many do; those same individuals may not do so in neutral settings. In that case, expectation has helped steer sensation and behavior, so “we fell, therefore God” reads too much into an outcome already shaped by suggestion. </td></tr><tr><td data-label="Analytical layer">Representation &amp; knowledge</td><td data-label="Distinction">X vs. the representation of X</td><td data-label="Analysis and example">A testimony, icon, or verse is a representation; it is not the event itself, much less the deity itself. The confusion here is map-territory conflation, often reinforced by reification. For example, opening scripture at random and finding a verse that “speaks directly to my situation” may be treated as God’s own voice. Yet what has actually occurred is a text-selection process combined with human pattern-finding, not direct contact with the represented reality. </td></tr><tr><td data-label="Analytical layer">Representation &amp; knowledge</td><td data-label="Distinction">X vs. the knowledge of X</td><td data-label="Analysis and example">X is the occurrence, while “knowledge of X” refers to your informational state regarding it, which may be partial or mistaken. The characteristic error here is the illusion of explanatory depth, in which felt familiarity is confused with justified knowledge. For example, someone may say, “I know in my heart that God was there because I felt peace.” That establishes something about their own state of mind, but not knowledge that a specific supernatural agent was present. </td></tr><tr><td data-label="Analytical layer">Underdetermination</td><td data-label="Distinction">X vs. alternative versions of X</td><td data-label="Analysis and example">X is your experience, while alternative versions reveal how the same kind of experience can be fitted into incompatible doctrines. The problem exposed here is underdetermination, since the same data support multiple hypotheses. For example, mystical union may be taken by a Christian as the indwelling Christ, by a Sufi as *fana*, and by a non-theist as nondual awareness. One phenomenology can sustain many theological stories, which means the experience alone cannot adjudicate among them. </td></tr><tr><td data-label="Analytical layer">Pattern &amp; structure</td><td data-label="Distinction">X vs. the structure of X</td><td data-label="Analysis and example">X includes the whole event, whereas its structure is the pattern or blueprint abstracted from it. The error here is to fetishize recurring form and treat it as proof of one particular cause. For example, near-death experiences often include a tunnel, a light, and a life review, but treating that shared structure as proof of a specific afterlife neglects neurophysiological accounts—such as hypoxia or temporal-parietal activity—that predict the same pattern without invoking theism. </td></tr><tr><td data-label="Analytical layer">Teleology</td><td data-label="Distinction">X vs. the purpose of X</td><td data-label="Analysis and example">X may occur without any purpose at all, whereas saying “this happened for a reason” adds teleology to the event. The error involved is teleological bias: projecting intention onto chance or impersonal processes. For example, surviving a crash may become “God spared me to spread His message.” But the survival event does not arrive with its own purpose tag; purpose is an interpretive overlay added afterward. </td></tr><tr><td data-label="Analytical layer">Transmission &amp; rhetoric</td><td data-label="Distinction">X vs. the medium through which X is conveyed</td><td data-label="Analysis and example">The channel—sermon, film, music, social media—is not the same thing as the content it conveys. The problem here is medium mystification, where persuasive delivery is confused with evidential force. For example, a cinematic testimony video may move viewers to tears, and those tears may then be counted as evidence. But high production value and swelling music can shape response without improving the truth-tracking quality of the claims themselves. </td></tr><tr><td data-label="Analytical layer">History &amp; provenance</td><td data-label="Distinction">X vs. the history of X</td><td data-label="Analysis and example">X is a present claim or practice, while its backstory is a separate matter. The mistake here is the genetic fallacy: inferring truth from origin. For example, someone may argue, “This healing tradition traces to the apostles, therefore it is authentic.” Even if the lineage were historically accurate, provenance alone would not establish the reality of contemporary miracles; present evidential support would still be required. </td></tr><tr><td data-label="Analytical layer">Rules &amp; insulation</td><td data-label="Distinction">X vs. the rules governing X</td><td data-label="Analysis and example">Ritual rules or prayer formulas are not the same as the truth conditions of the event. The danger here is rule reification—assuming that following the correct steps guarantees a supernatural result. For example, “If we fast forty days, God must answer.” When an answer seems to come, the rule is treated as confirmed; when it does not, ad hoc explanations appear instead. Either way, the rule becomes insulated from genuine testing. </td></tr><tr><td data-label="Analytical layer">Base rates &amp; selection</td><td data-label="Distinction">X vs. X as part of a larger system</td><td data-label="Analysis and example">A single instance—such as an answered prayer—is not the same thing as the full field of outcomes to which it belongs. The error here is survivorship bias combined with base-rate neglect. For example, a community may collect and circulate dramatic “hits” as proof while ignoring countless “misses.” Focusing only on vivid successes distorts the system-level evidence. </td></tr><tr><td data-label="Analytical layer">Culture &amp; interpretation</td><td data-label="Distinction">X vs. its cultural meaning</td><td data-label="Analysis and example">Cultural meanings are overlays, and they vary even when the underlying event type is similar. The associated mistake is ethnocentric projection: treating local symbolism as though it carried universal warrant. For example, a rainbow after a storm may be read in one setting as a biblical sign of covenant, in another as a bridge of spirits, and in meteorology simply as an optical phenomenon. The cultural meaning attached to the rainbow does not itself elevate it into supernatural evidence. </td></tr></tbody></table></div></div><div>The recurring move here is that the experience itself is repeatedly burdened with layers that go beyond it—causal, interpretive, emotional, cultural, and theological. Those added layers may be meaningful, but they are precisely where the major epistemic vulnerabilities enter. </div></div>
+<p></p>
+<p>
+  These distinctions don’t deny that the experiences are powerful or valuable;
+  they show why, as <em>evidence</em>, conflating X with these different layers
+  systematically inflates confidence beyond what the raw experiences can
+  actually justify. I essentially want to argue that religious experiences,
+  miracles, and revelation are byproducts of the inability to make one or many
+  of these distinctions. 
+</p>
+<h2 id="part-iii-private-public-evidence">III. Private Experience, Revelation, and Public Evidence</h2>
+<p>Religious experience becomes especially difficult once it moves from first-person conviction to public knowledge. Even granting the experience for the sake of argument, the recipient and the audience occupy different epistemic positions. The recipient may have an immediate seeming; everyone else has a report of that seeming. Revelation to one person therefore becomes testimony to another.</p>
+<div>
+  Before finishing this section, I want to discuss a topic that frequently comes
+  up in modern discussions on religious experience. Many people will claim that
+  they received revelation from god through a dream. This is incredibly common
+  in charismatic Protestant traditions, but is even observed throughout the
+  biblical narrative itself. Littered throughout the new and old testaments are
+  verses claiming god told such and such to do such and such in a dream. I think
+  it's safe to say that a large proportion of alleged experiences come in the
+  form of dreams. Which brings me to this quote by
+  <a href="https://darkwing.uoregon.edu/~rbear/hobbes/leviathan3.html">Thomas Hobbes</a>:
+</div>
+<div></div>
+<blockquote>
+<div>
+<b>To say He hath spoken to him in a dream is no more than to say he dreamed
+      that God spake to him</b>; which is not of force to win belief from any man that knows dreams are
+    for the most part natural, and may proceed from former thoughts; and such
+    dreams as that, from self-conceit, and foolish arrogance, and false opinion
+    of a man's own goodliness, or virtue, by which he thinks he hath merited the
+    favour of extraordinary revelation. To say he hath seen a vision, or heard a
+    voice, is to say that he dreamed between sleeping and waking: for in such
+    manner a man doth many times naturally take his dream for a vision, as not
+    having well observed his own slumbering. To say he speaks by supernatural
+    inspiration is to say he finds an ardent desire to speak, or some strong
+    opinion of himself, for which he can allege no natural and sufficient
+    reason.
+  </div>
+<div></div>
+</blockquote>
+<div>
+  There is a very big difference between god speaking to you directly and you
+  dreaming that god is speaking to you directly. There is no functional
+  difference between the two, from the standpoint of publicly available evidence, both are reports of dream experience. The claim that god
+  communicated in a dream does not obligate others to believe it. Those
+  reporting these "revelations" or experiences, can often be bestowed the title
+  "<a href="https://en.wikipedia.org/wiki/Prophet">prophet</a>", which really is
+  just a fancy word describing a fortune teller. They are presumed to be in
+  contact with, and speak on behalf of, a divine being. The message that the
+  prophet conveys is a prophecy. Every major religion today comes from a
+  prophetic tradition; in other words, the historical dominance of Christianity
+  essentially derives from some dudes saying they speak for god, and a ton of
+  people believing them. Quite extraordinary when you put it in these terms.
+</div>
+<div><br/></div>
+<div>
+  Let's assume for the sake of argument that god does exist, and he communicates
+  via divine revelation. How do we determine which revelations are genuine? We
+  would need knowledge about what sorts of messages god would reveal. But for
+  that, we would need a genuine prophet. Which begs the question, how do we know
+  which prophet is communicating genuine revelations? Well, we would need to
+  know which revelations are valid. Starting to see the vicious circle? Imagine
+  an unknown artist produces a work of art, what can we conclude about the
+  artist from the artwork? In order to know something about the artist, we have
+  to correctly interpret the artwork. If we use our own personal
+  interpretations, we will only be learning about ourselves, not the artist. So
+  in order to correctly interpret the artwork, we have to know something about
+  the artist, which is the very thing we are trying to determine. In other
+  words, when reflecting on divine revelation as a legitimate knowledge source, we
+  can see the inherent circularity at the core of its epistemology. 
+</div>
+<div><br/></div>
+<div>
+  This brings me to my final point I'd like to express before moving on.
+  Religious experiences are epistemically vapid. Thomas Paine pointed this out
+  in chapter 2 of
+  <a href="https://sacred-texts.com/aor/paine/aor/aor04.htm">The Age of Reason</a>:
+</div>
+<div>
+<div></div>
+<blockquote>
+<div>
+      No one will deny or dispute the power of the Almighty to make such a
+      communication if he pleases. But admitting, for the sake of a case, that
+      something has been revealed to a certain person, and not revealed to any
+      other person, it is revelation to that person only. When he tells it to a
+      second person, a second to a third, a third to a fourth, and so on, it
+      ceases to be a revelation to all those persons.
+      <b>It is revelation to the first person only, and hearsay to every other,
+        and, consequently, they are not obliged to believe it.</b>
+</div>
+<div><br/></div>
+<div>
+      It is a contradiction in terms and ideas to call anything a revelation
+      that comes to us at second hand, either verbally or in writing. Revelation
+      is necessarily limited to the first communication. After this, it is only
+      an account of something which that person says was a revelation made to
+      him; and though he may find himself obliged to believe it, it cannot be
+      incumbent on me to believe it in the same manner, for it was not a
+      revelation made to me, and I have only his word for it that it was made to
+      him.
+    </div>
+</blockquote>
+<p>
+    Even if a revelation or religious experience is genuine, no one is obligated
+    to believe hearsay. So pretty much, the entire western religious canon is
+    based on bad epistemology and hearsay. 
+  </p>
+<div></div>
+</div>
+<p></p>
+<h3 id="counterargument-testimony">Counterargument: “But testimony is how we know almost everything”</h3>
+<p>This is a strong objection to any crude dismissal of revelation as “mere hearsay.” Human knowledge is profoundly testimonial. I know about places I have never visited, historical events I never witnessed, and scientific results I never personally replicated because I reasonably trust other people and institutions.</p>
+<p>But that concession does not rescue religious testimony automatically. It clarifies the standard that religious testimony has to meet. Second-hand revelation is no longer revelation <em>for the audience</em>; it is testimonial evidence. Its force depends on ordinary questions about the witness’s competence, independence, incentives, memory, access to the event, corroboration, error rates, and the existence of equally sincere but incompatible testimony. The audience does not inherit the experiencer’s first-person seeming merely by hearing the story.</p>
+<p>The point, then, is not that testimony can never justify belief. The point is that the epistemic status changes as soon as the experience is transmitted. Paine’s core insight survives in a narrower and stronger form: <strong>private warrant does not automatically transfer through narration.</strong></p>
+<h3 id="counterargument-dreams">Counterargument: “God could reveal himself through dreams”</h3>
+<p>Of course. If God exists, there is no obvious logical barrier preventing divine communication through dreams, visions, altered states, ordinary events, or anything else. The skeptical objection is not that dreams are metaphysically incapable of containing revelation. It is that the dream state supplies an obvious non-divine explanation for dream content, and an outsider ordinarily lacks an independent method for distinguishing “God spoke in the dream” from “I dreamed that God spoke.” The possibility of divine causation remains open while the evidential discrimination remains poor.</p>
+<h2 id="part-iv-cognitive-social-conditions">IV. Cognitive and Social Conditions of Belief</h2>
+<p>So far the problem has been inferential: how does an event become a theological conclusion? The next question is explanatory: why do particular interpretations feel so natural and resistant to alternatives? Cognitive and sociological mechanisms answer that question. Importantly, a causal explanation of belief is not itself a refutation of the belief. It becomes epistemically relevant when it supplies an alternative route to the same evidence, creates dependence among testimonies, selectively amplifies confirming cases, or suppresses error correction.</p>
+<h3 id="cognitive-errors-epistemic-norms">Cognitive errors, plausibility structures, and epistemic norms</h3>
+<p>
+  I think these conflations result from some combination of unclear and wishful
+  thinking; and are amplified by various social structures. I'll incorporate the
+  idea of a
+  <a href="https://en.wikipedia.org/wiki/Plausibility_structure">plausibility structure</a>
+  to explain the believability of these sorts of claims. A plausibility
+  structure is the social matrix within which a belief system becomes credible.
+  Religious experience is only believable because it happens within a community
+  that legitimates it through shared assumptions, practices, and
+  language. Once internalized, these structures make alternative views seem
+  unintelligible or threatening, reinforcing belief. These claims are more
+  believable given certain background assumptions, while the structure also
+  amplifies known cognitive biases that prime people into finding these things
+  more acceptable than what they warrant. These act as social conditions of
+  belief, where miracles are only persuasive within certain interpretive
+  frameworks, essentially amplifying biases while filtering disconfirming
+  evidence.  The believability of these claims normally rests on one or
+  many of errors in reasoning or cognitive biases. This list might not be
+  exhaustive but common errors include:</p><p></p><div class="table-wrap"><table class="three-col extra-wide-table long-table dense"><thead><tr><th>Family</th><th>Bias / failure</th><th>How it operates here</th></tr></thead><tbody><tr><td data-label="Family">Evidence selection</td><td data-label="Bias / failure">Anecdotal Evidence</td><td data-label="How it operates here">This occurs when someone relies on personal stories or isolated cases instead of systematic evidence. In religious contexts, a single spiritual experience may be treated as proof of divine reality, even though alternative explanations remain available and no broader evidential base is offered. So, for instance, someone might say, “My aunt prayed and recovered from cancer—therefore miracles are real.”</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Narrative Fallacy</td><td data-label="How it operates here">This is the tendency to impose a coherent story on events that may in fact be random or unrelated, supplying meaning and causation where neither has been established. Religious believers may therefore weave otherwise disconnected experiences into a divine narrative. For example, someone might reason, “I missed my bus, met a stranger, and got a job through them—God clearly planned it.”</td></tr><tr><td data-label="Family">Social reinforcement</td><td data-label="Bias / failure">Echo Chambers</td><td data-label="How it operates here">These are social settings in which people mainly encounter views that reinforce what they already believe, which can produce overconfidence and resistance to contrary evidence. In a religious community, this often means that only faith-affirming testimonies are circulated, making divine experiences seem far more universal and secure than they really are. For example, within a church group, only stories that confirm faith may be shared.</td></tr><tr><td data-label="Family">Evidence selection</td><td data-label="Bias / failure">Availability Heuristic</td><td data-label="How it operates here">This is the tendency to judge what is true or common based on how easily examples come to mind rather than on their actual frequency or reliability. In religious reasoning, frequent exposure to stories of answered prayer may make miracles seem common, even when unanswered prayers or failed expectations go unmentioned. For example, hearing many vivid testimonies of healing may lead someone to conclude that miracles happen regularly.</td></tr><tr><td data-label="Family">Social reinforcement</td><td data-label="Bias / failure">Social Proof Heuristic</td><td data-label="How it operates here">This involves treating something as true or good simply because many other people believe it or participate in it. In religious contexts, the sheer number of believers or testimonies can be mistaken for evidence. Thus someone might argue, “Millions of people have felt God’s presence, so it must be real.”</td></tr><tr><td data-label="Family">Identity &amp; motivation</td><td data-label="Bias / failure">Motivated Reasoning</td><td data-label="How it operates here">Here, reasoning is used less to discover the truth than to justify preexisting desires, commitments, or identities. People often interpret ambiguous experiences in ways that confirm what they already hope to be true. For example, a believer may interpret a coincidence as divine guidance because they want to feel chosen or reassured.</td></tr><tr><td data-label="Family">Evidence selection</td><td data-label="Bias / failure">Confirmation Bias</td><td data-label="How it operates here">This is the tendency to seek out, notice, and remember evidence that supports one’s beliefs while downplaying or forgetting contrary evidence. In religious life, this can mean highlighting every prayer that seemed effective while ignoring the many that appeared unanswered. For example, someone may vividly remember each “successful” prayer but not the failures.</td></tr><tr><td data-label="Family">Evidence selection</td><td data-label="Bias / failure">Self-Serving Bias</td><td data-label="How it operates here">This bias appears when people attribute positive outcomes to themselves or to divine favor, while assigning failures to outside forces. In a religious framework, success may be taken as evidence of blessing, whereas setbacks are blamed on hostile spiritual interference or external obstacles. For example, someone may say, “My success proves God blessed me; my struggles are Satan’s interference.”</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Post Hoc Fallacy</td><td data-label="How it operates here">This is the error of assuming that because one event followed another, the first must have caused the second. Religious claims can easily take this form when prayer or ritual is immediately followed by some desired outcome. For example, someone may reason, “I prayed for rain and then it rained, so prayer caused it.”</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Patternicity</td><td data-label="How it operates here">This is the tendency to detect meaningful patterns in random or unrelated data. Humans are naturally inclined to connect dots, even when no genuine pattern is there. In religious contexts, this can turn ordinary coincidences into signs. For example, seeing a cloud shaped like a cross may be interpreted as a divine message.</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Agenticity</td><td data-label="How it operates here">This is the tendency to attribute events to intentional agents, including supernatural ones, even when natural explanations are sufficient. Rather than seeing events as impersonal or accidental, people infer agency behind them. For example, someone may conclude that a storm occurred because a deity was angry.</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Representative Heuristic</td><td data-label="How it operates here">This involves judging probability by resemblance to a familiar or typical case rather than by actual likelihood. In religion, an experience may be judged divine simply because it feels similar to how divine experiences are imagined or described in tradition. For example, someone might think, “That vision felt holy, like the ones prophets describe, so it must be divine.”</td></tr><tr><td data-label="Family">Pattern &amp; causation</td><td data-label="Bias / failure">Illusory Correlation</td><td data-label="How it operates here">This is the tendency to perceive a relationship between events even when no real connection has been established. In religious practice, people may come to believe that prayer reliably produces results despite inconsistent or selective evidence. For example, someone may think praying before exams always improves performance, even when the broader pattern does not support that conclusion.</td></tr><tr><td data-label="Family">Model comparison</td><td data-label="Bias / failure">The Problem of Underdetermination</td><td data-label="How it operates here">This refers to the fact that the same body of evidence can often be explained by multiple competing hypotheses, making it difficult to justify one conclusion as uniquely warranted. Religious experiences are especially vulnerable here because a single feeling or event may fit both supernatural and natural interpretations. For example, a feeling of peace could be explained as divine presence, a neurochemical reaction, or the effect of meditation.</td></tr><tr><td data-label="Family">Model comparison</td><td data-label="Bias / failure">Bayesian Reasoning Failure</td><td data-label="How it operates here">This occurs when someone neglects prior probabilities while evaluating extraordinary claims, failing to ask how likely a supernatural explanation is compared with more ordinary alternatives. As a result, unusual events may be treated as miraculous simply because they are striking. For example, someone may interpret an unlikely coincidence as a miracle without considering how many coincidences occur every day.</td></tr><tr><td data-label="Family">Identity &amp; motivation</td><td data-label="Bias / failure">Self-Identity Preservation</td><td data-label="How it operates here">People often resist evidence that threatens their worldview because belief is tied not only to ideas but also to identity. When religion becomes part of the self, counterevidence can feel personally destabilizing rather than merely intellectually challenging. For example, a lifelong believer may dismiss evidence against miracles because abandoning that belief would unsettle their entire sense of self.</td></tr><tr><td data-label="Family">Testimony</td><td data-label="Bias / failure">Issues with Testimonial Epistemology</td><td data-label="How it operates here">This arises when people trust others’ religious testimonies without sufficiently critical evaluation. Testimony is socially powerful, but its epistemic force is limited, since sincerity does not guarantee truth. For example, someone may accept a friend’s account of a vision as evidence of God simply because the friend seems honest.</td></tr></tbody></table></div><p></p><ul style="text-align: left;">
+</ul>
+<p></p>
+<div>
+  Each conflation can be traced back to one or many of these more fundamental
+  reasoning failures. These can also be seen as epistemic failures embedded
+  within the reasoning patterns accepted as common practice within a community.
+  What I mean is that there tend to be
+  <a href="https://philosophy.stackexchange.com/questions/15225/what-is-an-epistemic-norm">epistemic norms</a>, rules guiding belief acquisition, taken for granted by religious
+  communities and reinforced as standard procedure (often not explicitly stated,
+  but generally recognized and reproduced by subsequent generations within the
+  community). Take scientific inference for example. It is common practice that
+  a peer review is required before something is published. The function of this
+  is to reduce the amount of poor quality studies being accepted by publishers;
+  ensuring a level of quality such that other researchers can be confident
+  citing the research when developing their own research. This is an
+  institutional level filter, but there are more fundamental norms inherent to
+  scientific practice such as "Suspend judgement when evidence is insufficient",
+  "claims must be supported by evidence", "Methods and data should be shared so
+  others can independently verify results", and "hypotheses should be
+  unambiguously stated and testable". These norms essentially tell you whether
+  you have knowledge. In religious communities, their norms are often not
+  outright stated, but there are certainly identifiable through their behaviors
+  and customs. For example, you are often incentivized and encouraged to assign
+  meaning to illusory correlations. You can recognize this when people "give
+  praise to god" during religious ceremonies. Another example, people are
+  encouraged to give high significance to anecdotal evidence when it confirms
+  various tenets of the worldview, and are discouraged to critically reflect on
+  such evidence. This is often seen as "witnessing" or "sharing testimonials"
+  during religious ceremonies. These poor epistemic norms lead to the
+  conflations listed above, which then reinforces the communities plausibility
+  structure. The assumptions and practices guiding the community are never
+  thoroughly examined, people are disincentivized from critical
+  examination. 
+</div>
+<div><br/></div>
+<div>
+  How is this related to the topic of religious experience? Well, we can clearly
+  see experience based conversions or arguments are derived from cognitive
+  errors, leading to conflations during reasoning, which are reinforced and
+  amplified by poor epistemic norms within religious communities. These
+  experiences tend to be socially grounded doxastic practices that license
+  belief from within the community. That is why they are persuasive.
+</div>
+<div><br/></div>
+<h3 id="sociological-scaffolding">Sociological scaffolding and cultural conditioning</h3>
+<h3 id="four-sociological-mechanisms">Four sociological mechanisms, four different jobs</h3>
+<div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Framework</th><th>What it explains</th><th>Role in this argument</th></tr></thead><tbody>
+<tr><td data-label="Framework"><strong>Berger: plausibility structures</strong></td><td data-label="What it explains">Why a belief feels credible when embedded in a shared social world.</td><td data-label="Role in this argument">Explains the background conditions under which a religious interpretation becomes the default interpretation.</td></tr>
+<tr><td data-label="Framework"><strong>Goffman: framing / dramaturgy</strong></td><td data-label="What it explains">How settings, roles, audiences, and scripts organize what people think is happening.</td><td data-label="Role in this argument">Explains how testimony is performed and how communities recognize a story as an authentic religious experience.</td></tr>
+<tr><td data-label="Framework"><strong>Bourdieu: habitus and symbolic capital</strong></td><td data-label="What it explains">How dispositions are internalized and how social rewards attach to recognized performances.</td><td data-label="Role in this argument">Explains why religious ways of seeing can become embodied and why displays of spiritual credibility are reinforced.</td></tr>
+<tr><td data-label="Framework"><strong>Luhrmann: cultivated interpretation</strong></td><td data-label="What it explains">How repeated practices can train attention, imagination, and interpretation.</td><td data-label="Role in this argument">Explains how experiences can be sincerely felt as vivid divine communication without requiring conscious fabrication.</td></tr>
+</tbody></table></div>
+<div>
+  There are also many critical sociological and performative dimensions
+  that bolster the plausibility and perceived authenticity of religious
+  experiences. For example, it’s a social taboo to question someone’s
+  alleged religious experience unless of course it comes from a different
+  religion or diverging denomination. In many religious contexts, personal
+  religious experience is treated as sacred, private, and off-limits to
+  critique, especially when it aligns with the group’s shared beliefs.
+  Questioning someone’s testimony is often seen as rude, irreverent, or even
+  spiritually dangerous, which socially inoculates the testimony from scrutiny.
+  In other words, no one is taught to be critical of these testimonies. I
+  alluded to this above in the prior section. This deference is not applied
+  equally: experiences from rival denominations or religions are often met with
+  skepticism or reinterpretation (e.g., “they were deceived,” “that’s demonic,”
+  etc.).  This selective skepticism reinforces the in-group plausibility
+  structure while protecting it from external challenges. 
+</div>
+<div><br/></div>
+<div>
+  I’ve also noticed patterns in the way these experiences are communicated at
+  churches; altar calls, seemingly scripted “experiences” (their stories always
+  seem to follow a similar pattern), and feedback from the community. When
+  someone communicates an experience using an accepted
+  <a href="https://www.annakschaffner.com/post/recognising-the-cultural-scripts-that-shape-us">cultural script</a>, it seems more plausible. Testimonies of religious experience often follow
+  familiar narrative arcs: sin/crisis → encounter with the divine →
+  transformation → reintegration into the community. These patterns become
+  cultural templates, shaping how people interpret and express their
+  experiences. Think of it as a kind of “narrative scaffolding”: experiences are
+  squeezed into formats the community recognizes and affirms. This sort of
+  performativity occurs within church settings, where pressure to conform is
+  likely the highest. Events like altar calls, healing services, or revivals are
+  emotionally charged and socially performative environments. In these spaces,
+  people are often coached implicitly or explicitly on how to behave and what
+  kinds of experiences to expect (and report). Public feedback (affirmation,
+  applause, tears, prayer) rewards conformity to these expected patterns,
+  encouraging people to present their experiences in ways that are recognizably
+  “spiritual” or “miraculous.” The more a community celebrates and validates
+  religious experiences, the more people internalize these as real and valuable.
+  There's often a feedback loop: personal experience → community affirmation →
+  greater belief → reinterpretation of further events through that belief. 
+</div>
+<div><br/></div>
+<div>
+  In many communities, not having an experience (or not having the “right” kind)
+  can be stigmatized. People may feel compelled to conform, embellish, or even
+  fabricate experiences to maintain spiritual status or avoid marginalization.
+  From an early age, people in religious environments learn what “counts” as a
+  religious experience, what vocabulary to use, and what the community values.
+  This is not necessarily deceitful, often it's genuine enculturation, where
+  people sincerely interpret ambiguous internal states (e.g., emotional arousal,
+  dissociation, awe) through a religious lens because that’s the interpretive
+  framework they’ve been taught. Religious experiences and miracle testimonies,
+  while persuasive, are epistemologically weak because they emerge in social
+  environments that reward belief, discourage doubt, and amplify biases. These
+  social dynamics are part of the plausibility structure; they not only help
+  make the beliefs feel credible but also mask or deflect critical scrutiny.
+  Miracles and religious experiences are persuasive within plausibility
+  structures because they're embedded in a social world that validates them, not
+  because they withstand objective scrutiny.
+</div>
+<div><br/></div>
+<div>
+<div>
+    The concept of
+    <a href="https://en.wikipedia.org/wiki/Frame_analysis">Frame Analysis</a>
+    can help illuminate more broadly what I am describing. Social interaction is
+    like a performance, where individuals play roles and manage impressions
+    based on the expectations of their "audience." Religious settings (e.g.,
+    churches, summer camp, retreats) are stage-like environments with scripts,
+    costumes, rituals, and cues that shape how religious experience is expressed
+    and interpreted. Framing helps individuals understand “what is going on
+    here”;  it organizes how we interpret ambiguous events. Testimonies
+    and miracle stories are performed within expected frames, shaped to match
+    community scripts and receive social validation. The performative and staged
+    nature of church spaces (altar calls, healing services) creates conditions
+    that prime people to interpret experiences as spiritual or miraculous.
+  </div>
+<div><br/></div>
+<div>
+    Pierre Bourdieu introduced the notion of "<a href="https://en.wikipedia.org/wiki/Habitus_(sociology)">Habitus</a>", which refers to the internalized dispositions shaped by social
+    structures; we come to "feel" and "know" the world in ways that match our
+    social context. Religious experience is not just believable, it's felt and
+    embodied because of early and repeated exposures to the religious field.
+    Symbolic capital (spiritual credibility, holiness) accrues to those who can
+    convincingly display signs of religious experience within that field.
+    Religious institutions reproduce belief systems by legitimizing certain
+    experiences as “authentic” and discrediting others. People may genuinely
+    experience what they’re trained to feel, because their habitus predisposes
+    them to interpret events through a religious lens. Miraculous experiences
+    bring symbolic rewards, reinforcing their recurrence even if the epistemic
+    basis is weak.
+  </div>
+<div><br/></div>
+<div>
+    In When God Talks Back (2012) and Persuasions of the Witch's Craft
+    (1989),
+    <a href="https://en.wikipedia.org/wiki/Tanya_Luhrmann">Tanya Luhrmann</a> discusses the concept that religious practitioners learn to interpret
+    thoughts, emotions, and events as divine communication through repeated
+    exposure to specific cultural practices. In charismatic evangelical
+    contexts, believers are trained to use imaginative techniques to hear God’s
+    voice; this can make religious experiences feel vivid and real. The line
+    between imagination and perception blurs through practice, making people
+    more susceptible to “experiencing” the divine. The idea being that
+    miraculous and spiritual experiences are not spontaneous, but the result of
+    deliberate training in interpretive practices that teach believers to see
+    the world in supernatural terms. Plausibility is socially and cognitively
+    constructed, not objectively evident.
+  </div>
+<div><br/></div>
+<div>
+<div>
+      The persuasiveness of religious experience and miracle claims can be
+      understood not only through cognitive biases, but through sociological
+      frameworks that reveal how such experiences are scaffolded by culture and
+      community. As Berger (1967) argues, plausibility structures render belief
+      credible by embedding it in a shared social world. Goffman’s (1956)
+      dramaturgical model highlights the performative nature of testimony, where
+      experiences conform to community scripts. Bourdieu (1977) shows how
+      habitus shapes perception and symbolic capital incentivizes displays of
+      spiritual authority. Finally, Luhrmann (2012) demonstrates that spiritual
+      experiences are cultivated through disciplined imaginative practice, not
+      spontaneous eruptions of the divine.
+    </div>
+</div>
+<div><br/></div>
+<div>
+    Very often, descriptions of these religious experiences tend to reflect
+    these social forces. For example, here is a fun fact of Christianity: no one
+    knows what Jesus actually looked like. There are no depictions of him in the
+    Bible, nothing describing his features. Quite interesting to think about how
+    someone would know when they're having a religious experience that it's
+    Jesus. Human perception is never neutral; it’s filtered through our
+    cultural and cognitive frameworks. When people report visions of Jesus,
+    Mary, angels, or other religious figures, they usually describe them
+    according to the imagery that their culture provides. In the West, that
+    means the Europeanized Jesus (pale skin, long hair, robes) an image shaped
+    by Renaissance art (Leonardo, Michelangelo, etc.). But in other cultures,
+    people might see Jesus or divine figures with features closer to their own
+    ethnic or cultural background. The form of the experience is conditioned by
+    mental imagery available to the experiencer. Psychologists of religion
+    like William James, and later thinkers like Carl Jung and Rudolf Otto, have
+    pointed out that religious experience involves both a numinous core
+    (something ineffable, overwhelming, sacred) and a symbolic form that our
+    minds construct to interpret it. Our brains can’t handle “raw transcendence”
+    — they translate it into known images, archetypes, and metaphors. So when
+    someone “sees Jesus,” it might be that their consciousness encounters
+    something deeply spiritual, but the form their mind gives it comes from
+    familiar iconography.
+  </div>
+<div><br/></div>
+<div>
+    From an anthropological point of view, this makes perfect sense: all
+    religious experiences happen in a cultural matrix. Near-death experiences,
+    for instance, are described very differently across cultures, Westerners
+    report tunnels of light, whereas some Indigenous peoples might describe
+    rivers or paths leading to ancestors. The content of mystical experience is
+    therefore shaped by expectations, upbringing, and internalized imagery, even
+    when the emotional or existential intensity feels universal. So what does
+    this tell us? It shows how profoundly human consciousness is intertwined
+    with culture. Our minds read for meaning, and culture provides the
+    vocabulary and imagery through which that meaning manifests. 
+  </div>
+<div><br/></div>
+<div>
+    I want to end this section with a preview for my later section when it comes
+    to using religious experience as an argument for the existence of a God. An
+    undercutting defeater is a reason to doubt that an experience is a reliable
+    indicator of the proposition it seems to support. This "cultural
+    conditioning" point is a defeater; if people "see Jesus" in the style their
+    culture taught them, this undercuts the inference from "I had a religious
+    experience that included Jesus (or any other significant character)" to
+    "therefore god exists", because of this strong alternative explanation
+    (enculturation and expectation). If the argument is “many people have
+    striking experiences, therefore probably God,” then the fact that content
+    tracks culture raises P(experience | no God), making the experience less
+    confirmatory in a Bayesian sense. Also, equally sincere, epistemic peers
+    report mutually incompatible “revelations” keyed to their traditions. That
+    lowers the evidential weight any one report has for outsiders. Both of these
+    considerations tie directly back to the epistemic issues I listed earlier.
+    Now, it's important to remember that these undercutters don't directly
+    falsify the possibility that there is an external transcendent cause; the
+    source might be real. But these factors should undermine our confidence in
+    that inference. Cultural variance is a global defeater, but it doesn't
+    necessarily defeat the first-person justification. For all we know, God
+    could have chosen to give you the "true" revelation. This undercutter
+    specifically works with strong claims, weaker claims are only partially
+    undercut. It just reduces public evidential support, especially of the
+    experience contains thick doctrinal content. 
+  </div>
+<div><br/></div>
+</div>
+<h3 id="counterargument-cultural-conditioning">Counterargument: “Everything is culturally conditioned”</h3>
+<p>The believer can reasonably object that cultural mediation is universal. We do not encounter the world as blank slates; language, concepts, expectations, and prior knowledge shape ordinary perception too. Therefore, showing that a vision of Jesus reflects familiar iconography does not prove that Jesus was absent.</p>
+<p>Correct—and the argument does not need that conclusion. Cultural conditioning functions primarily as an <strong>undercutting defeater</strong>. If the content of religious experience strongly tracks prior cultural exposure, then the probability of receiving culturally specific content without a corresponding divine source increases. That reduces how strongly the content discriminates between “this tradition is uniquely true” and “human cognition interpreted an intense experience using available cultural materials.” A culturally shaped experience might still have a transcendent cause; it simply does less evidential work for a thick, tradition-specific interpretation.</p>
+<h3 id="counterargument-sociology-truth">Counterargument: “A sociological explanation does not make a belief false”</h3>
+<p>Again, correct. Explaining why scientists trust peer review does not show scientific claims are false, and explaining why a religious community trusts testimony does not show the testimony is false. The relevant question is whether the social process is truth-conducive. Institutions can improve reliability when they reward error detection, preserve negative results, encourage adversarial criticism, and permit independent replication. They can reduce reliability when they reward conformity, penalize doubt, circulate only dramatic successes, or validate evidence by standards that presuppose the worldview being tested. The sociological argument matters because it identifies mechanisms that can systematically distort the evidential record, not because “socially caused” means “false.”</p>
+<h2 id="part-v-conversion-narratives">V. Conversion Narratives as a Case Study</h2>
+<p>Conversion testimony is where the earlier pieces become visible at once: private experience, interpretation, cultural scripts, social reward, identity transformation, testimony, and audience persuasion. The point of treating conversion narratives separately is therefore not to introduce a new theory but to watch the previous mechanisms operate together in a recognizable genre.</p>
+<div>
+    Conversion narratives are very persuasive within religious circles and are
+    often the standard apologetic method people rely on for converting
+    non-Christians. Even among more "sophisticated" apologists, they will end
+    arguments with their conversion story. I want to dissect these narratives,
+    because they are quite interesting from a rhetorical perspective. Conversion
+    narratives are one of many performative behaviors of religious practice. As
+    mentioned earlier, they tend to follow scripted patterns, so much so that
+    they've been recognized by anthropologists such as
+    <a href="https://en.wikipedia.org/wiki/Victor_Turner">Victor Turner</a>,
+    akin to a rite of passage. There are three stages that mark this transition:
+  </div>
+<div>
+<div>
+<ol style="text-align: left;">
+<li>
+<b>Separation </b>– The individual becomes disenchanted or estranged
+          from their previous life or belief system. This often involves a sense
+          of moral crisis, suffering, or existential void.
+        </li>
+<li>
+<b>Liminality </b>– A period of ambiguity or searching, where the
+          person explores alternative worldviews, meets believers, or
+          experiences a destabilizing event. This is often described in
+          emotional or mystical terms.
+        </li>
+<li>
+<b>Incorporation </b>– The person adopts the new faith identity,
+          receives formal recognition from the community (baptism, testimony,
+          shahada, initiation), and reconstructs their personal story through
+          the new interpretive lens.
+        </li>
+</ol>
+<div>
+        These arcs are common cross-culturally and across religions. Conversion
+        narratives follow this recognizable ritual narrative structure. They are
+        performed, not just experienced personally. This performative nature
+        serves a rhetorical function within the community, a type of self
+        affirmation. Among Christian sects, they will often leverage ex-atheist
+        conversion narratives, or simply fabricate such narratives, to reinforce
+        communal belief. <p><strong>These are related but not identical models.</strong> Turner describes the social transition of the convert; the conversion script describes the rhetorical form in which that transition is later narrated to an audience. Keeping those levels separate prevents the ritual structure of conversion from being confused with the storytelling structure used to make conversion persuasive.</p><p>A "conversion script" is a culturally learned framework
+        for narrating one's experience, including features such as:
+      </p></div>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+<b>Crisis and Search</b>: The convert recounts a period of
+          dissatisfaction, sin, or confusion — a necessary prelude to
+          transformation.
+        </li>
+<li>
+<b>Encounter and Revelation</b>: A key turning point (a meeting, a
+          text, a dream, or a moment of insight) signals divine or moral
+          intervention.
+        </li>
+<li>
+<b>Transformation and Certainty</b>: The new faith is portrayed as
+          resolving prior tensions. The person gains clarity, peace, or moral
+          purpose.
+        </li>
+<li>
+<b>Missionary Turn</b>: Many narratives conclude with the convert’s
+          new commitment to sharing their experience — converting others or
+          testifying publicly.
+        </li>
+</ul>
+</div>
+</div>
+<div>
+    This is a socially patterned structure. The narratives conform to communal
+    expectations about how to perform your belief. So in the case of an atheist
+    conversion, you can see how this pattern conforms to observed testimony.
+    They will bring this "ex-atheist" to say, a youth event. The ex-atheist will
+    talk about their "nihilistic" outlook on life, finding no meaning in
+    anything. Note the choice of the word "nihilism"; this is patterned language
+    often seen within protestant traditions. No one loves that word more than a
+    Christian. Next, this ex-atheist had an "ineffable" experience with what
+    could only be explained as "the divine". They then realized that life had
+    meaning, that they are loved by Jesus, and have started seeing positive
+    outcomes in their lives (the transformative effects aspect of religious
+    experience). Lastly, there is a call to action. The audience is encouraged to
+    share their experiences with the world; to bring the Truth to this fallen
+    world of atheism and secularism from which this ex-atheist came from.
+  </div>
+<div><br/></div>
+<div>
+    These are very common indoctrination tactics among religious youth. But
+    notice the rhetorical effect; it acts as social proof of their religion.
+    There are various sociological factors that make conversion "work" in a
+    given community, in addition to social proof. Individuals often
+    encounter testimonies long before converting themselves. These stories act
+    as templates that structure how they later interpret their own experiences.
+    Hearing multiple conversion stories “primes” listeners to perceive certain
+    feelings as evidence of divine activity. The reason I gave the youth group
+    example, is precisely because of this reason. Many young children simply
+    have never had a religious experience or are not that committed to the
+    church. This templating not only successfully establishes the out-group as
+    evil, but it provides a ready-made schema for someone to insert their
+    experiences into, and an effective communication framework to communicate
+    with those whose faith is "wavering" (or non-church members). This obviously
+    is much more frequent in evangelical circles, but can also be seen in
+    Catholic groups as well (though, they tend to focus more on saints and
+    martyrs). 
+  </div>
+<div><br/></div>
+<div>
+    There are other background factors contributing to the persuasiveness of
+    conversion narratives. Communities have shared vocabularies for what counts
+    as a “real” or “authentic” conversion — often shaped by scripture, doctrine,
+    and precedent. For instance, evangelical Christianity prizes “born-again”
+    experiences with strong emotional climax, while Buddhist narratives might
+    center on gradual insight. Acceptance depends not just on what one
+    experienced but how one tells it. Communities affirm certain narratives
+    through applause, ritual recognition, and inclusion. Deviant stories
+    (conversions without crisis) may be doubted or ignored. Organizations
+    often formalize or publicize conversion stories (through testimony meetings,
+    literature, or social media) thus standardizing the “grammar” of conversion.
+    You can see obvious examples of this with high-profile conversions like C.S.
+    Lewis; those who are outspoken "critics of the faith" who ultimately
+    convert. This fits nicely into the Saul to Paul conversion template,
+    something Christians love to hear. The narrative must fit into broader
+    cultural assumptions; for example, Western liberal individualism finds
+    resonance in stories of personal choice and authenticity, while other
+    contexts valorize submission and communal belonging. The idea of "costly
+    signaling" also plays a role; sacrifice (time, money, reputation), reversals
+    (leaving a lucrative path), and perseverance across adversity function as
+    reliability signals. This makes the narrative feel more "credible". There is
+    also a redundancy aspect to this. Many similar testimonies produce
+    credibility cascades (“not just one person”). Even outside the group,
+    repeated, independent reports can shift priors.
+  </div>
+<div><br/></div>
+<div>
+    Remember, this conversion testimony script functions as an epistemic device.
+    The ultimate goal is to connect these alleged experiences to "God is real
+    and acts in your life". The script functions as a method to communicate
+    persuasively to an audience. The fact that it's a first-person carries
+    weight, but it is through this template that religious experiences are
+    amplified as credible. They conform to background assumptions, signal
+    sacrifice, and are designed specifically to arouse emotion. The testimony
+    bundles "I had an intense experience" with "the best explanation is god".
+    These testimonies are often delivered live, with overt voice, tears, and
+    embodied cues, coupled with communal resonance, creating an intimate
+    environment. Remember, the core evidential content of the experience is
+    non-transferable. It is not intersubjectively verifiable. Therefore, the
+    act of communicating the experience tends to be embedded in these social
+    practices, and so the believability is primarily a function of the
+    effectiveness of the performance and structural aspects of the script that
+    highlight particular aspects that are persuasive while deemphasizing the
+    aspects that could call the story into question.
+  </div>
+<div><br/></div>
+<div>
+<h3 id="bayesian-clarification">Bayesian clarification: persuasion is not the same as evidential support</h3>
+<p>It is useful to state the Bayesian point precisely. Let <em>H</em> be the hypothesis that a divine agent is genuinely responsible for the experience or testimony, and let <em>E</em> be the observed testimony. The relevant likelihood ratio is not <code>P(H|E) / P(~H|E)</code>; those are posterior probabilities. The evidential comparison is:</p>
+<div class="math-block">\[\frac{P(E\mid H)}{P(E\mid \neg H)}\]</div>
+<p>Posterior odds are prior odds multiplied by that likelihood ratio:</p>
+<div class="math-block">\[\frac{P(H\mid E)}{P(\neg H\mid E)} = \frac{P(H)}{P(\neg H)} \times \frac{P(E\mid H)}{P(E\mid \neg H)}\]</div>
+<p>This distinction matters because a conversion script can make a report <em>psychologically believable</em> without making it more <em>diagnostic</em> of divine action. Witness reliability, costly signaling, enduring transformation, apparently independent conversions, and the absence of obvious alternative explanations can raise <code>P(E|H)</code> relative to <code>P(E|¬H)</code>. But incentives to conform, selection effects, shared scripts, wishful thinking, social reward, placebo effects, suggestibility, and cultural priming raise <code>P(E|¬H)</code>. The more readily the same kind of testimony is produced without divine intervention, the less strongly the testimony discriminates between the hypotheses.</p>
+<p>This also explains why the same story can feel compelling inside one social world and much weaker outside it. A community may emphasize information that makes the numerator salient while suppressing or discounting information relevant to the denominator. That changes perceived credibility. It does not, by itself, change the objective likelihood ratio. My skepticism therefore does not rest merely on being outside the community; it rests on assigning substantial probability to the non-divine mechanisms that can generate the same evidence.</p>
+<p>Testimony still gives conversion narratives epistemic traction by converting a private event into socially shareable, graded evidence through trusted persons, recognized scripts, costly signals, and institutional vetting. For the person reporting a revelation, warrant may be immediate; for everyone else it is mediated. It is not identical to the first-person experience, but neither is it automatically worthless. The question is how much evidential weight survives after dependence, incentives, alternative explanations, and cross-tradition conflict are taken seriously.</p>
+</div>
+<div><br/></div>
+<div>
+    Conversion narratives have a rhetorical structure optimized for these
+    background conditions and epistemic norms of the community. Remember back to
+    the definition of a religious experience and the epistemic vulnerabilities.
+    By themselves, they are epistemically weak as evidence for anything divine
+    or supernatural. Religious communities recognize this implicitly, and
+    therefore wrap the experience in a conversion script. When delivered, this
+    script masks the fact that religious experience is not truth tracking. When
+    delivered in the script, the experience avoids critical reflection and
+    interrogation; normalizing bad thinking patterns. This is at the very core
+    of the rhetorical practice. Remember, religious experiences are ineffable;
+    they are not capable of being communicated (or intersubjectively
+    verifiable). Conversion scripts provide a rhetorical structure that is
+    understandable by those in the community, enabling the communication of this
+    ineffability, through common tropes and performances. The script provides
+    the community a means of evaluating the alleged religious experience. Does
+    it conform to our understanding? Does the performance fit the common script?
+    If it checks these boxes, its deemed legit, which reinforces belief. Script
+    evaluation is the heuristic religious communities use to evaluate something
+    that is not communicable and has no external evidential support. If the
+    person performs effectively, it is accepted. A conversion testimony
+    isn’t just “reporting” an inner event; it’s a genre that packages private
+    experience into a public, high-credibility performance. Its persuasiveness
+    comes from how form, ritual setting, and audience expectations align.
+    Ineffability is managed by metaphor clusters (“light,” “chains,” “home”),
+    borrowed from canonical texts and prior testimonies. These metaphors
+    translate private qualia into shareable language, signal orthodoxy, and
+    guide interpretation for both speaker and audience. 
+  </div>
+<div><br/></div>
+<div>
+    Conversion narrative templates are rhetorical tools that give credibility to
+    what would otherwise be a fundamentally unpersuasive reporting of a
+    religious experience. They strip away the possibility of critical
+    examination and function as a performance, like a movie that can be assessed
+    based on the qualities of the acting.
+  </div>
+<h2 id="part-vi-strongest-arguments">VI. The Strongest Arguments from Religious Experience</h2>
+<p>At this point the skeptical background is on the table, but it would be a mistake to treat that background as an automatic refutation. The fairest test is to ask what the strongest experiential arguments actually claim, grant them as much as can reasonably be granted, and then identify exactly where the inference remains vulnerable.</p>
+<p>A useful distinction will recur throughout: an argument may support <strong>first-person rationality</strong> more successfully than it supports <strong>public, tradition-specific truth claims</strong>. A response that rescues the former does not automatically rescue the latter.</p>
+<details>
+<summary><strong>Reference map: epistemic defenses and their vulnerabilities</strong></summary>
+<p>The original draft surveyed a wider set of epistemic routes than the six formal schemes below. They are preserved here as a reference map. Several overlap with the later schemes, but the overlap is now explicit rather than accidental.</p>
+<div>Divine revelation is best understood as the authoritative self-disclosure of God, often through a religious experience but conceptually thicker than the experience itself, because it adds a source attribution, often propositional content, and a claim to normative authority. When someone argues from revelation, they are relying on the same epistemic machinery used for religious experiences more broadly. Below is a list of these epistemic features and the vulnerabilities internal to each; those vulnerabilities persist regardless of the type of religious experience. </div><div><ol style="text-align: left;"><li><b>Principle of Credulity:</b> If it seems to S that p (for example, “God is present”), S has prima facie reason to believe p unless there are defeaters. This treats religious experiences like other appearances, as when something simply looks red. That initial plausibility, however, is vulnerable to several familiar objections: easy-to-generate undercutters such as drugs, sleep paralysis, or temporal-lobe spikes; rebutters in the form of conflicting reports across traditions; and the charge that “seemings” in highly primed contexts are not independent evidence. </li><li><b>Principle of Testimony:</b> We are generally entitled to trust others’ sincere reports—visions, voices, miracles—absent reasons to doubt them. It is, after all, how we know most things socially. Yet once this principle is applied to religious claims, its weaknesses come into view: testimonial networks can be insular and self-confirming, authorities may have incentives, and massive inter-religious disagreement weakens the evidential force of any single tradition. </li><li><b>Perceptual Analogy / Phenomenal Conservatism:</b> This approach treats religious experiences as a kind of perception, or at least a “seeming,” of the sacred: if it seems like x to you, that is some evidence for x. The force of the analogy depends on religious experience being sufficiently like ordinary perception, and that is exactly where critics press hardest: there is no public check comparable to rulers or spectrometers, background expectations heavily shape the seeming, and similar phenomenology—such as awe or unity—occurs in clearly non-theistic contexts. </li><li><b>Doxastic Practice Approach (Alston):</b> On this view, it can be rational to trust a socially established practice—prayer, worship, and the like—that reliably produces beliefs for participants, absent undefeated reasons against it, much as we trust memory or sense perception. The difficulty is that this trust appears much less secure once competing practices are considered: plural practices yield incompatible outputs, and without some independent calibration, choosing which practice to trust begins to look circular. </li><li><b>Proper-Function Externalism (Plantinga):</b> A belief formed by cognitive faculties functioning properly in the right environment—for example, through a sensus divinitatis—can have warrant even without argument. Even if that model explains how theistic belief could be warranted, it also introduces serious vulnerabilities: “proper function” is difficult to verify publicly, the same structure can license rival claims about different deities, and the view weakens intersubjective assessment. </li><li><b>Pragmatic/Jamesian Vindication (“by their fruits”)</b>: Enduring moral transformation, psychological integration, and meaning are taken as indirect confirmation that an experience or revelation connects with reality. Still, the transition from beneficial effects to truth is fragile: salutary effects do not reliably track truth, as placebos and ideologies also produce them; beneficial outcomes appear across incompatible religions and secular therapies alike; and the appeal to “fruits” can easily mask confirmation bias. </li><li><b>Inference to the Best Explanation (Abduction)</b>: Here the claim is that the theistic hypothesis—God intentionally disclosed X—explains the relevant data, such as a powerful experience, its timing, or its content, better than naturalistic rivals do. But that explanatory move is contestable at nearly every step: natural explanations are often simpler, competing theologies generate different “best” explanations, and the data frequently underdetermine the conclusion. </li><li><b>Coherence/Reflective Equilibrium</b>: This method fits a putative revelation into one’s wider web of beliefs—scripture, doctrine, ethics, science—while revising elements where needed to increase overall coherence. The attraction of coherence, however, is limited by the fact that coherent worldviews can still be false, starting points differ radically across traditions, and auxiliary hypotheses can be gerrymandered to protect the system from disconfirmation. </li><li><b>Communal Discernment &amp; Tradition-Guided Criteria</b>: On this model, communities vet revelations through tests such as the humility of the claimant, consonance with canon, fruits, longevity of effects, and external confirmations. These standards can lend structure to evaluation, but they also create predictable vulnerabilities: communities can entrench error and power, the criteria are often post hoc and tradition-relative, and dissenting or disconfirming evidence may be suppressed. </li><li><b>Bayesian/Cumulative-Case Reasoning</b>: This approach treats experiences, testimonies, historical claims, and background theism as multiple weak considerations that together raise the posterior probability that a revelation is genuine. Its promise lies in accumulation, but so do its weaknesses: priors are deeply contested, likelihoods are difficult to estimate, and biased priors or dependent data can produce a classic garbage-in-garbage-out effect. </li><li><b>Scriptural Illumination/Canonical Control</b>: Personal experiences are treated as veridical when they illuminate, cohere with, or are authenticated by a revered text or canon; revelation is recognized when it resonates with the canon’s voice. That framework, however, invites an obvious challenge: the experience is validated by a canon that itself rests on earlier experiences, while competing canons validate incompatible claims and everything depends heavily on contested hermeneutics. </li><li><b>Transformational Testimony Networks:</b> This view aggregates many apparently independent narratives of life change that converge on similar revelatory themes and infers a common cause beyond coincidence. Yet the evidential force of such convergence quickly weakens once social mechanisms are considered: testimonies may not be truly independent, publication bias favors dramatic stories, and ordinary group dynamics can explain convergence without positing a single divine cause. </li><li><b>Signs and Wonders/Confirmatory Correlates:</b> Accompanying events—healings, timely coincidences, fulfilled impressions—are weighed as external markers that a revelation is from God. Even so, these correlates are notoriously difficult to interpret: regression to the mean, placebo effects, distorted memory, and cherry-picking all inflate apparent success, while rival traditions report analogous signs that reduce their discriminative value. </li></ol></div><div><div><ol style="text-align: left;">
+</ol>
+</div></div>
+</details>
+<p>Epistemic rules determine what is treated as knowledge. The routes above matter because experiential arguments rely on standards for trusting seemings, testimony, practices, transformations, coherence, and cumulative evidence. The six schemes below make the main versions explicit and expose the questions each must answer.</p>
+<div>
+    Now that we have all of that as preliminary background, let's look at how
+    people argue for the existence of God based on the existence of religious
+    experience. We can already imagine some of the problems undercutting any of
+    these arguments. For example, we talked about epistemic unreliability,
+    insufficient criteria for differentiating genuine from ingenuine
+    experiences, divergent and conflicting interpretations of experiences, the
+    social construction of such experiences, cognitive explanations, historical
+    relativity, placebo effects, non-replicability or falsifiability, and just
+    the general fact that natural explanations are more straightforward and
+    require fewer assumptions. Before even seeing an argument, we know these
+    things are unreliable. Nevertheless, let's steelman some common variations of
+    the argument and then proceed to identify weaknesses and points of
+    refutation. We are going to formalize these arguments using Walton's
+    argumentation schemes, and identify associated critical questions. 
+  </div>
+<h4 id="shared-assumptions" style="text-align: left;">Shared Assumptions Underwriting All Variants</h4>
+<div>
+<div>
+<ol style="text-align: left;">
+<li>
+<b>Seemings Have Prima Facie Force</b>: First-person appearances
+          aren’t worthless; they count unless defeated.
+        </li>
+<li>
+<b>Some Cross-Domain Transfer is Legitimate</b>: Methods that work in
+          ordinary life (perception, testimony) can be cautiously extended to
+          religious cases.
+        </li>
+<li>
+<b>Defeaters Matter</b>: If strong undercutters/rebutters arise (e.g.,
+          pathology, contradiction, failed tests), the inference collapses.
+        </li>
+<li>
+<b>Comparative Evaluation is Possible</b>: We can weigh theistic vs.
+          naturalistic explanations for fit, simplicity, and discriminative
+          power.
+        </li>
+<li>
+<b>Data Can Be Characterized Without Heavy Theory-Loading</b>: It’s
+          possible (at least in principle) to describe the experiences and
+          outcomes neutrally enough to be evidence. (I am actually highly
+          skeptical of this possibility)
+        </li>
+<li>
+<b>Some Independence Among Data Points</b>: The cumulative case
+          assumes the data are not wholly generated by the same underlying
+          natural cause.
+        </li>
+<li>
+<b>Norms of Fair Appraisal</b>: Both sides should count disconfirming
+          cases, not only confirmations.
+        </li>
+<li>
+<b>Public/Communal Scrutiny Helps</b>: Communities and methods can
+          improve reliability over lone reports.
+        </li>
+<li>
+<b>Parsimony is a Constraint, Not a Trump</b>: The simpler hypothesis
+          is better ceteris paribus, but not if it sacrifices too much
+          explanatory power.
+        </li>
+<li>
+<b>Objective Truth is in Play</b>: These arguments aim at truth about
+          reality, not merely personal meaning or usefulness.
+        </li>
+</ol>
+</div>
+</div>
+<h4 id="argument-1-perceptual-analogy" style="text-align: left;">
+    1) Perceptual Analogy Scheme (“Experience as Seeming/Perception”)
+  </h4>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. In everyday life, if it seems to a competent, normally situated
+          subject that X is present, that is defeasible evidence that X is
+          present.
+        </li>
+<li>
+          P2. In a religious experience, it seems to the subject that a divine
+          reality is present or acting.
+        </li>
+<li>
+          P3. The subject is competent and in conditions where seemings are
+          generally reliable (alert, sober, non-manipulated).
+        </li>
+<li>
+          P4. There are no undefeated defeaters (e.g., strong naturalistic
+          undercutters, strong contrary evidence).
+        </li>
+<li>C. Therefore, probably a divine reality was present or acting.</li>
+</ul>
+</div>
+</div>
+<div>
+<div>
+<div><div style="text-align: left;">Critical Questions:</div></div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. Are the subject’s conditions analogous to ordinary reliable
+          perception (no severe fatigue, drugs, coercion, or priming)?
+        </li>
+<li>
+          CQ2. Are there plausible undercutters (e.g., known neurocognitive
+          triggers, sleep paralysis, suggestion effects)?
+        </li>
+<li>
+          CQ3. Are there rebutters (e.g., contradictory facts, failed
+          predictions, incoherent content)?
+        </li>
+<li>
+          CQ4. Is the religious seeming sufficiently publicly calibratable
+          (repeatable, stable across time/contexts)?
+        </li>
+<li>
+          CQ5. Do conflicting seemings across traditions (different
+          deities/interpretations) reduce or cancel the evidential force?
+        </li>
+<li>
+          CQ6. Is there a principled way to distinguish theistic presence from
+          intense but wholly natural awe or absorption?
+        </li>
+</ul><h4>Strongest reply</h4><p>The defender can concede that religious perception is fallible and culturally shaped while insisting that ordinary perception is fallible and theory-laden too. Phenomenal conservatism only claims prima facie justification: if it seems to a normally functioning subject that God is present, that seeming has some initial force unless defeated.</p><h4>Why that reply is limited</h4><p>That saves a modest first-person claim, not the stronger public conclusion. Ordinary perception is embedded in dense networks of cross-checking: multiple observers, repeatability, instruments, prediction, and correction. Religious seemings are far less calibratable, and their thick content varies with prior religious formation. Cultural mediation does not prove the experience false, but it raises the probability of the experience under non-divine hypotheses and therefore undercuts the move from 'it seemed divine' to 'a particular divine reality was probably present.' The more specific the theological conclusion, the larger the evidential gap.</p>
+</div>
+</div>
+<h4 id="argument-2-testimony" style="text-align: left;">
+    2) Testimony Scheme (“Social Evidence from Many Witnesses”)
+  </h4>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. Sincere, competent testimony is a defeasible but central source of
+          knowledge in ordinary life.
+        </li>
+<li>
+          P2. Many independent, sincere, competent people report experiences
+          they take to be encounters with a divine reality.
+        </li>
+<li>
+          P3. The testimonial corpus is not explained by systemic bias,
+          collusion, or strong dependency.
+        </li>
+<li>
+          P4. There are no undefeated reasons to distrust this testimony (e.g.,
+          pervasive fraud, strong incentives, strong counterevidence).
+        </li>
+<li>
+          C. Therefore, probably some people have genuinely encountered a divine
+          reality.
+        </li>
+</ul>
+<div>Critical Questions:</div>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. How independent are the reports (versus social contagion,
+          authority pressure, echo chambers)?
+        </li>
+<li>
+          CQ2. How is competence assessed (ability to detect error,
+          differentiate pathology, resist suggestion)?
+        </li>
+<li>
+          CQ3. Is there publication/selection bias (dramatic cases
+          overrepresented; failures underreported)?
+        </li>
+<li>
+          CQ4. How severe are cross-tradition contradictions, and how do they
+          affect net credibility?
+        </li>
+<li>
+          CQ5. What incentives (status, belonging, power) might distort
+          testimony?
+        </li>
+<li>
+          CQ6. Is there a credible base-rate estimate of misinterpretations, and
+          is it high?
+        </li>
+</ul><h4>Strongest reply</h4><p>The defender can object that dismissing religious testimony as 'hearsay' proves too much. Testimony is indispensable to ordinary knowledge: we rely on other people for history, science, geography, and countless events we never observed ourselves. Large numbers of sincere reports can therefore have evidential force.</p><h4>Why that reply is limited</h4><p>Agreed: testimony is not worthless merely because it is second-hand. But revelation to one person becomes ordinary testimonial evidence for everyone else, and the recipient's first-person warrant does not transfer intact. Its public force depends on independence, competence, incentives, corroboration, error rates, selection effects, and rival testimony. Religious reports are often socially dependent and doctrinally incompatible across traditions. A thousand reports generated by the same script or expectation are not epistemically equivalent to a thousand independent measurements. The testimony can carry weight without carrying enough weight to identify a particular supernatural cause.</p>
+<h4 id="argument-3-transformative-effects" style="text-align: left;">
+        3) Transformative Effects Scheme (“By Their Fruits”)
+      </h4>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. Deep, stable, and morally positive transformation is more likely
+          when a person contacts something real than when they are
+          self-deceived.
+        </li>
+<li>
+          P2. Many religious experiences yield such transformation (enduring
+          altruism, integrity, recovery, meaning).
+        </li>
+<li>
+          P3. Alternative explanations (placebo, therapy, community pressure,
+          maturation) do not explain the timing, depth, and scope as well.
+        </li>
+<li>
+          C. Therefore, the best explanation is that these experiences connect
+          with a real divine source.
+        </li>
+</ul>
+</div>
+<div>Critical Questions</div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. Are transformations measured objectively and longitudinally (not
+          just short-term uplift)?
+        </li>
+<li>
+          CQ2. Do non-religious or rival-religious pathways produce comparable
+          transformations (parity problem)?
+        </li>
+<li>
+          CQ3. Are confounds (therapy, social support, life stage changes)
+          adequately controlled for?
+        </li>
+<li>
+          CQ4. Do we also see harmful transformations attributed to revelation,
+          and how are those filtered without circularity?
+        </li>
+<li>
+          CQ5. What is the justification link from “beneficial effect” to “truth
+          of source”?
+        </li>
+<li>
+          CQ6. Could expectation effects or identity shifts fully account for
+          the observed changes?
+        </li>
+</ul><h4>Strongest reply</h4><p>A defender can argue that radical and durable moral transformation is unlikely to arise from mere error. If an experience reliably produces sobriety, altruism, courage, reconciliation, or a coherent life, perhaps those 'fruits' are indirect evidence that the experience connects with reality.</p><h4>Why that reply is limited</h4><p>Transformation establishes that an experience, practice, identity, or community can be causally powerful; it does not identify the metaphysical source of that power. Rival religions, secular therapies, political movements, placebo effects, intense relationships, and non-theistic contemplative practices can also transform lives. Because incompatible worldviews generate similar fruits, transformation has poor discriminative power between them. The inference from 'this changed me for the better' to 'therefore its theological interpretation is true' remains a pragmatic-to-epistemic leap.</p>
+<h4 id="argument-4-abduction" style="text-align: left;">
+        4) Abductive Scheme (“Inference to the Best Explanation”)
+      </h4>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. When multiple hypotheses can explain data, prefer the one with the
+          best balance of explanatory scope, fit, and simplicity.
+        </li>
+<li>
+          P2. Theism (or “there is a divine agent”) explains the patterns in
+          religious experiences (timeliness, guidance, targeted content,
+          convergence) well.
+        </li>
+<li>
+          P3. Rival naturalistic hypotheses (neurocognitive, cultural-script,
+          coincidence) do not explain the total pattern as well without extra
+          costs.
+        </li>
+<li>C. Therefore, probably a divine agent exists.</li>
+</ul>
+</div>
+<div>Critical Questions</div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. Are the data accurately characterized (how widespread, patterned,
+          non-random, and independently verified)?
+        </li>
+<li>
+          CQ2. Are natural models at least as simple and wide-ranging in
+          explanatory power?
+        </li>
+<li>
+          CQ3. Does the theistic hypothesis make discriminating predictions that
+          could in principle go wrong?
+        </li>
+<li>
+          CQ4. How are contradictory theistic explanations adjudicated
+          (different deities, doctrines)?
+        </li>
+<li>
+          CQ5. Is the “pattern” partly a result of case selection or
+          after-the-fact framing?
+        </li>
+<li>
+          CQ6. Are we double-counting dependent data (e.g., testimonies shaped
+          by a shared script)?
+        </li>
+</ul><h4>Strongest reply</h4><p>The abductive defender can say that theism offers a unified explanation of apparent timing, intentionality, guidance, transformation, and the sense of personal address. A single agent hypothesis may seem more elegant than a patchwork of neurological, social, and chance explanations.</p><h4>Why that reply is limited</h4><p>A hypothesis is not explanatorily strong merely because it can be made to fit many outcomes. The relevant issue is discriminative prediction: what should we expect under theism that we should not also expect under ordinary psychology, culture, coincidence, memory, and social reinforcement? Theistic explanations are additionally underdetermined by rival theologies that can reinterpret the same data. If success, failure, silence, contradiction, healing, non-healing, clarity, and ambiguity can all be accommodated after the fact, flexibility becomes a weakness rather than explanatory power. Natural explanations need not prove that God was absent; they need only make the observed evidence less diagnostic of divine action.</p>
+<h4 id="argument-5-doxastic-practice" style="text-align: left;">
+        5) Doxastic Practice Reliability Scheme (“Trust the Mature Practice”)
+      </h4>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. It is rational to rely on socially established belief-forming
+          practices (perception, memory, testimony) absent undefeated reasons
+          against them.
+        </li>
+<li>
+          P2. Mature religious practices (prayer, discernment, communal testing)
+          are socially established and internally regulated.
+        </li>
+<li>
+          P3. There are no undefeated reasons showing these practices are
+          unreliable at forming true beliefs about a divine reality.
+        </li>
+<li>
+          C. Therefore, it is rational (for participants) to trust beliefs
+          formed via these practices, including that God exists.
+        </li>
+</ul>
+</div>
+<div>Critical Questions</div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. What track record do these practices have where outputs are
+          externally checkable (accuracy outside religious content)?
+        </li>
+<li>
+          CQ2. With multiple mature practices yielding incompatible outputs, by
+          what neutral criterion is reliability assigned?
+        </li>
+<li>
+          CQ3. Are internal checks independent or circular (canon validates
+          experience that validates canon)?
+        </li>
+<li>
+          CQ4. Do peer disagreement and cognitive-science defeaters
+          significantly reduce warrant?
+        </li>
+<li>
+          CQ5. Does “rational for insiders” license a claim to objective truth,
+          or only internal rationality?
+        </li>
+<li>
+          CQ6. Are mechanisms in place to detect and correct error, and do they
+          actually operate?
+        </li>
+</ul><h4>Strongest reply</h4><p>An Alston-style defender can argue that every basic doxastic practice is partly self-supporting. We cannot validate perception without using perception, or memory without using memory. Religious practices may therefore be rational for participants even without a neutral external proof of reliability.</p><h4>Why that reply is limited</h4><p>The analogy is incomplete. Perception and memory are not merely socially entrenched; they participate in extensive cross-practice calibration, generate risky predictions, converge across cultures, and permit publicly detectable error correction. Mature religious practices often generate incompatible outputs while using their own canons and traditions to certify themselves. That may preserve a form of internal rationality for participants, but it does not establish that outsiders should regard the practice as a reliable detector of objective divine reality. The crucial distinction is rational participation versus publicly transferable warrant.</p>
+<h4 id="argument-6-cumulative-bayesian" style="text-align: left;">
+        6) Cumulative-Case / Bayesian Aggregation Scheme
+      </h4>
+</div>
+</div>
+<div>
+<div>
+<ul style="text-align: left;">
+<li>
+          P1. Multiple weak, partly independent indicators can jointly raise the
+          probability of a hypothesis.
+        </li>
+<li>
+          P2. Indicators from religious experience (first-person seemings,
+          testimonies, transformations, timely coincidences) each provide modest
+          support for theism.
+        </li>
+<li>
+          P3. These indicators are sufficiently independent and point in the
+          same direction.
+        </li>
+<li>
+          C. Therefore, the posterior probability of a divine reality is
+          meaningfully raised.
+        </li>
+</ul>
+</div>
+</div>
+<div>
+<div>Critical Questions</div>
+<div>
+<ul style="text-align: left;">
+<li>
+          CQ1. What priors are being used, and are they defensible/not
+          question-begging?
+        </li>
+<li>
+          CQ2. Are the indicators independent enough, or largely products of
+          shared causes (culture, suggestion)?
+        </li>
+<li>
+          CQ3. How are likelihoods estimated (e.g., P(this experience | God) vs
+          P(this experience | nature)) without building in the conclusion?
+        </li>
+<li>
+          CQ4. Are negative data (conflicts, failed prophecies, non-occurrences)
+          included in the pool?
+        </li>
+<li>
+          CQ5. Is there a reference class problem—what counts as “similar”
+          experiences for probability updating?
+        </li>
+<li>
+          CQ6. Are we overcounting anecdotes or treating low-quality reports as
+          equal to high-quality ones?
+        </li>
+</ul><h4>Strongest reply</h4><p>The cumulative-case defender is right that several weak pieces of evidence can jointly become strong when they are sufficiently independent. No single testimony, transformation, coincidence, or seeming has to carry the case alone.</p><h4>Why that reply is limited</h4><p>Independence is exactly what the preceding psychological and sociological analysis puts in doubt. Experiences, interpretations, testimony, transformations, and miracle reports can share common causes: cultural training, expectation, group reinforcement, common texts, selective publication, and repeated narrative templates. Correlated evidence cannot simply be multiplied as though every item were an independent draw. Negative cases also matter. A cumulative case can become strong only if the inputs are reasonably reliable, dependencies are modeled, failures are counted, and likelihoods are not chosen to encode the desired conclusion. Otherwise accumulation merely magnifies the assumptions built into the evidence pool.</p>
+<div>
+        I don't think any of the critical questions in any of the forms can be
+        sufficiently answered to a reasonable degree. Many of them target the
+        core epistemological weak points identified in the first section. There
+        are insurmountable hurdles, therefore the arguments are generally weak.
+        And yet, regardless of the force of the arguments, these still represent
+        the most compelling reasons people become or remain theists. I think a
+        lot of this can be explained by the social analysis of the institutions
+        and customs. But even outside of the religious setting, I know people
+        who've described religious experiences to me. I am generally
+        uncomfortable with critically analyzing their experiences; it just seems
+        rude. So even outside religious communities, secular communities do not
+        press the religious for validation or verification. In other words,
+        there are no dampening factors anywhere. That could probably explain
+        what we see. 
+      </div>
+</div>
+</div>
+<div><br/></div>
+<div>
+</div></div>
+<h2 id="part-vii-conclusion">VII. What Follows—and What Does Not</h2>
+<p>The argument developed here is deliberately narrower than “religious experiences are fake.” People unquestionably have experiences of awe, presence, unity, voices, visions, coincidence, transformation, and apparent revelation. Those experiences can be psychologically profound, morally consequential, and personally difficult to doubt. None of that is the central issue.</p>
+<p>The issue is what the experience can justify. An occurrence does not arrive with a built-in causal label. Intensity is not the same thing as truth. Personal significance is not the same thing as public evidence. Transformation does not uniquely identify its metaphysical source. A culturally familiar image does not independently authenticate the tradition that supplied the image. And a revelation to one person becomes testimony for everyone else.</p>
+<p>The skeptical force is therefore cumulative but not simplistic. Cognitive biases show how ambiguous events can acquire unwarranted significance. Plausibility structures and epistemic norms show why some interpretations are socially privileged and protected. Cultural scripts and conversion narratives show how private episodes are standardized into persuasive public forms. Cross-tradition disagreement shows that equally sincere experiences can support incompatible theological conclusions. Naturalistic mechanisms do not have to prove that God was absent; they weaken the evidential connection whenever they make the same data reasonably expected without the proposed divine cause.</p>
+<p>This is why the claim-strength ladder matters. “I had an extraordinary experience” may be entirely credible. “I experienced something I interpret as transcendent” may also be reasonable as a first-person description. “Therefore a supernatural agent caused it” requires more. “Therefore it was the God of my tradition” requires more again. “Therefore God communicated proposition X” adds still more assumptions. “Therefore you are obligated to believe X” is the strongest and most demanding move of all. The later claim cannot borrow certainty from the earlier one merely because they are narrated in a single sentence.</p>
+<p>The strongest theistic replies do preserve something. Phenomenal conservatism can explain why a person may be prima facie justified in trusting an experience. Testimonial epistemology explains why outsiders should not dismiss every report merely because it is second-hand. Doxastic-practice approaches explain how belief may remain rational inside a mature religious practice. Cumulative-case reasoning correctly reminds us that weak evidence can sometimes add up. Those concessions matter.</p>
+<p>But they do not remove the central weakness. The evidence is typically difficult to calibrate, heavily interpretation-laden, culturally variable, socially dependent, compatible with non-divine mechanisms, and unable to adjudicate cleanly among rival religious explanations. The counterarguments therefore tend to rescue modest claims—personal warrant, psychological significance, or internal rationality—more effectively than they rescue the stronger public conclusion that a particular God probably acted, revealed a particular proposition, or placed outsiders under an obligation to believe it.</p>
+<p>So the final position is not that transcendence has been disproved. For all we know, some external transcendent cause could be real. The point is epistemic: <strong>the available experience usually underdetermines the theological interpretation placed upon it.</strong> The more doctrine, agency, intention, and public authority one loads onto the experience, the more independent evidential work is required. Religious communities are often exceptionally good at supplying rhetorical confidence for that transition. Whether they supply enough truth-tracking evidence is another matter.</p>
+<h2 id="additional-sources">Additional Sources to Consider</h2>
+<div>
+<p>Summary of agnosticism and Religious Skepticism</p>
+<p></p>
+<ol style="text-align: left;">
+<li>
+<a href="https://youtu.be/Uh-BHwFqI-c?si=YidTn7M_EEsUC8H7">The Hidden Problem with Religious Arguments</a>
+</li>
+<li>
+<a href="https://youtu.be/pxHGcSyk3SE?si=pfYxhkPRO9HfWGzt">Begging the Question</a>
+</li>
+</ol>
+<p></p>
+<p>Miracle Arguments</p>
+<p></p>
+<ol style="text-align: left;">
+<li>
+<a href="https://www.youtube.com/live/bkJO8H3Unuc?si=C7gO6j1iRTFv-y8Q">Cameron asked about miracle claims. I answered.</a>
+</li>
+<li>
+<a href="https://youtu.be/xQ9Z92ldW-U?si=b_YMH3jSHHAy66GF">Arif Ahmed, On Miracles</a>
+</li>
+<li>
+<a href="https://youtu.be/v1ihuTb8zhs?si=sXujTwqHZ6ergCv-">Hume Miracles</a>
+</li>
+<li>
+<a href="https://philarchive.org/rec/OPPAAF">An Argument for Atheism from Naturalism</a>
+</li>
+</ol>
+<p></p>
+<p>Religious Experience</p>
+<p></p>
+<ol style="text-align: left;">
+<li>
+<a href="https://youtu.be/i8-5Nzr1F3E?si=qOInQi0N6ZD_nzjh">Episode 13, Religious Experience (Part I)</a>
+</li>
+<li>
+<a href="https://youtu.be/SW7O6N83-zo?si=BJcaQgf5WRmHeEzM">Episode 13, Religious Experience (Part II)</a>
+</li>
+<li>
+<a href="https://youtu.be/ZX-kYd6DGwE?si=Skr1QE7j9cqChdOK">Episode 13, Religious Experience (Part III)</a>
+</li>
+<li>
+<a href="https://youtu.be/WpbX0hMBxl8?si=nyZw4ysBdr3f_dRe">10 Experiential Arguments for God: An Analysis</a>
+</li>
+<li>
+<a href="https://youtu.be/RoyFdWYgz5I?si=GiYfU_Lr1o1qNCVu">Philosophical Failures of Christian Apologetics, Part 11: The Holy
+            Spirit</a>
+</li>
+<li>
+<a href="https://youtu.be/IusbC8pFv1Y?si=a3wLtiIZ5Hz0AoWu">Christians And Muslims Don’t Want To Think About This</a>
+</li>
+<li>
+<a href="https://youtu.be/ZLtDTZHzQeQ?si=BvtcKQETlguRFxgX">What would convince you of God's existence?</a>
+</li>
+<li>
+<a href="https://www.youtube.com/live/2TdLoGpIu3Q?si=HkRorhBwUqgk3L9c">Bad Apologetics Ep 10 - Are Near Death Experiences Evidence of Life
+            After Death?</a>
+</li>
+<li>
+<a href="https://www.youtube.com/live/WEDZ2LToSWM?si=YO2h08hhqHWzzHn2">Dogmatic Materialists DESTROYED by AMAZING EVIDENCE of Pam Reynolds
+            Near Death Experience Case</a>
+</li>
+<li>
+<a href="https://www.youtube.com/live/6g6BqbAQyT0?si=ydW5_tCLc7cuHC5C">More Near-Death Delusions and Christian Nonsense</a>
+</li>
+<li>
+<a href="https://youtu.be/XNGKjsy1QG4?si=abmlroM6aoM60JzH">The Church is One Big Cosplay—And No One Wants to Admit It</a>
+</li>
+</ol>
+<p></p>
+<p><br/></p>
+<p><br/></p>
+</div>
+</div>
+</body></html>
