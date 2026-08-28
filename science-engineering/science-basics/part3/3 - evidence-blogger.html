@@ -1,0 +1,642 @@
+<title>Evidence, Empirical Evidence, and Scientific Underdetermination</title>
+<article class="ep-post">
+<!-- MathJax for LaTeX rendering in Blogger. Paste this once per post in HTML view, or preferably once in your Blogger theme before 
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>. -->
+<!-- Blogger-ready HTML converted from Markdown. -->
+<style>
+  .image-placeholder {
+    border: 1px dashed #999;
+    padding: 1em;
+    margin: 1em 0;
+    text-align: center;
+    font-style: italic;
+  }
+  blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+  }
+</style>
+
+<h1>Evidence, Empirical Evidence, and Scientific Underdetermination</h1>
+<p>It is actually quite difficult to define evidence. What distinguishes a detective who uses evidence from the scientist who uses &quot;empirical evidence&quot;, derived from empirical research, when advancing a claim? Clearly, what counts as evidence in these domains is not entirely overlapping. In addition, there is a plethora of synonymous terms that are very often used interchangeably with &quot;evidence&quot;, but are conceptually distinct (data, facts, etc.) that muddy the waters. There are also related concepts, such as the burden of proof and admissibility, that frequently arise when discussions involve evidence. In some contexts, these are formally established and institutionalized through rules and procedures; as it is the case in law or debate. The word is also used as a modifier. Consider something like evidence based policy or evidence based medicine; to what extent does the word &quot;evidence&quot; impact how each discipline is carried out? What exactly is that modifier doing to the subsequent words? There is even a branch of epistemology called evidentialism, that is primarily concerned with the relationship between evidence, justification, and knowledge. Lastly, there are even attempts to construct frameworks that grade the quality of evidence, such as the Hierarchy of Evidence. Clearly, understanding how people use this term, in particular scientists, is of significant consequence. My main focus with this section is to characterize how scientists use and reason about evidence. But I also want to bridge the gap between these different senses of the term, so I&#x27;ll introduce an two authors who have had an impact on how I think about this concept.</p>
+<p>In &quot;Evidential Foundations of Probabilistic Reasoning&quot;, David Schum introduces the notion of a &quot;Science of Evidence&quot;; he recognizes the inherent plurality of the term and wants to abstract the notion across all disciplinary domains. Schum also recognizes the inherent uncertainty featured in all reasoning tasks based on evidence:</p>
+<blockquote>
+<p>“… in any inference task our evidence is always incomplete, rarely conclusive, and often imprecise or vague; it comes from sources having any gradation of credibility. As a result, conclusions reached from evidence […] can only be probabilistic in nature.”</p>
+</blockquote>
+<p>He also identifies and is concerned with, structural features of evidence; how it all connects together within a network of inference. Schum doesn’t pin “evidence” down with a single neat definition. He argues it’s best understood functionally; by what it does in reasoning. For him, evidence is any item of information (a trace, record, testimony, measurement, etc.) that bears on a hypothesis; its value depends on (i) relevance (how it connects to the hypothesis) and (ii) credibility (how much you can trust the item or its source). The overall inferential force (or probative weight) of an item is a joint product of those two strands.</p>
+<p>For Schum, evidence does not exist in a vacuum; it is relational, not free floating. An item isn’t “evidence” all by itself; it becomes evidence only relative to a specific hypothesis/probandum once you supply (and defend) an inference link from the item to that hypothesis. The link from an item to a hypothesis is licensed by background generalizations (“glue”) that are often implicit and need support; in other words, relevance must be argued. He distinguishes directly relevant evidence (bearing on the hypothesis) from ancillary (meta) evidence; material about the strength of that link (e.g., source credibility or whether the generalization really fits this case). “Evidence” is information put to work in support of a hypothesis, with its relevance and credibility argued. An item becomes evidence only when embedded in an argument that (1) states the hypothesis at issue, (2) shows relevance by supplying the generalization that links the item to that hypothesis, (3) supports credibility (often with ancillary evidence), and (4) assesses inferential force given how the item interacts with the rest of the mass of evidence.</p>
+<p>Schum is explicit that a report about an event and the event’s actual occurrence are not the same; you must infer from the report to the world, and that inference is always uncertain. This is true of domains involving measurement as well; our measure of the thing is not the thing itself. Hence his insistence that all evidential reasoning is, in the end, probabilistic due to this uncertainty. Relevance is the logical/inferential link from an evidential claim to the hypothesis and Credibility concerns source reliability. With testimony, he decomposes credibility into veracity, objectivity, and observational sensitivity (were they truthful, unbiased, and in a position to observe?), but credibility standards are used beyond the legal realm (consider a scientist questioning the mechanism by which data was collected). Much of what we call “evidence” is actually evidence about other evidence;  material that bears on a witness’s credibility or on the soundness of a measurement process. That ancillary layer is often what lets you evaluate the force of the directly relevant items. He often uses the likelihood ratio as a convenient gauge of an item’s inferential force and shows structurally-driven phenomena like inferential drag (links in a chain weaken force), redundancy, and synergy when items combine. But the broader point is structural: you can analyze evidential force even when precise frequencies are unavailable. The key point about structure is that basic configurations of evidence combinations have differing degrees of inferential force. Consider two witnesses claiming to report some event. If we find one of them is wrong, it might weaken our credibility in the other witness if we find out they someone collaborated before reporting the account. In other words, there is structural collapse which leads to a non-linear reduction in inferential force (redundancy). The reverse can be true as well; one piece of information can amplify the inferential force of a collection of evidence (synergy). An item can also be clearly relevant (it bears on the hypothesis) and its source fully credible, yet still move the needle only a little. Fundamentally, the probabilistic assessment of evidence rests on these more primitive notions of relevance and credibility.</p>
+<p>A bit more about the notion of inferential force; this is the diagnostic strength of an item given a stated hypothesis versus its rivals. As mentioned before, Schum gauges this with likelihood ratio, but this is not necessary, and scores force in a similar way to how statisticians score posterior inference with Bayes Factors. An item can have a likelihood ratio near one, and hence little inferential force, despite being relevant and credible. Similarly, an item can have very extreme values for likelihood ratios but carry little weight if the credibility and relevance are called into question. Here are just a few ways Schum describes how this can occur:</p>
+<ul>
+<li>Low diagnosticity: A careful, honest witness saw the suspect “in a dark hoodie”—a description that fits many people. Credibility is high, relevance is clear, but  \(P(E\mid \neg H)\) is also high, so likehood ratio is small.</li>
+<li>Chains = inferential drag: When E supports H only through several intermediate links (\(A \to B \to C \to H\)), each link’s uncertainty compounds, typically reducing net force (“inferential drag”).</li>
+<li>Dependence &amp; redundancy: Two “independent-looking” reports may trace back to the same primary source. The second then adds little; combining them yields less force than naïvely multiplying independent likelihood ratios. (Conversely, truly independent items can show synergy.)</li>
+<li>Ancillary constraints on the Likelihood Ratio: Ancillary (meta) evidence about the measurement/testimony changes the likelihoods (e.g., false-positive rates, viewing conditions), which can push force up or down without altering surface relevance.</li>
+</ul>
+<p>Let&#x27;s transition from Schum to another influential thinker on the topic of evidence. While Schum was a legal scholar at the bridge between law and artificial intelligence, Peter Achinstein was a prolific philosopher, writing extensively in philosophy of science. While philosophers don&#x27;t determine how scientists actually reason in practice, I do find some of them to be quite illustrative and insightful. Achinstein attempts to characterize this in his book &quot;The Concept of Evidence&quot;. Similar to Schum, he does not give a single definition of evidence. He distinguishes four concepts of evidence, making one (&quot;potential evidence&quot;) the base for these others:</p>
+<ul>
+<li>Potential Evidence: a true statement e, together with true background b, is potential evidence for hypothesis h only if (i) e doesn’t entail h, and (ii) given e &amp; b, it’s probable that there is an explanatory connection between e and h (Achinstein formalizes this with an “objective epistemic” probability &gt;½).</li>
+<li>Veridical Evidence: Strong VE requires that (1) e is PE for h; (2) h is true; and (3) there is an explanatory connection between e’s truth and h’s truth. (He also discusses a weaker VE that drops (3), but argues scientists should want the strong form to avoid “misleading” evidence.)</li>
+<li>ES-evidence (Epistemic Situation): e is true and anyone in a specified epistemic situation is justified in believing that e is (probably) VE for h.</li>
+<li>Subjective evidence: at time t, agent X believes e is (probably) VE for h, and X’s reason for believing h (is true/probable) is that e is true.</li>
+</ul>
+<p>Achinstein rejects mere &quot;positive relevance&quot; alone as adequate, grounding his account in the explanatory connection requirement. I think his account is similar to Schums. For both, &quot;evidence&quot; is relative to a hypothesis. There also has to be some sort of linking glue. Achinsteins explanatory connection plays a role like Schums generalizations that justify the relevance link from an item to hypothesis. I think both agree that this link must be argued, its not something obvious. I think the major difference between the two (arguably due to their professions), is that Achinsteins VE requirement depends heavily on this heavy notion of truth, while Schum considers that an item can be functional within an inferential task despite being mistaken or noisy; directly building in this notion of credibility. Achinstein also does not consider likelihood ratios or combination effects, because he does not have a notion of inferential network like Schum. Achinstein gives normative, truth-leaning definitions keyed to explanatory connection and objective epistemic probability (with “veridical evidence” as the scientific gold standard), whereas Schum gives a process/structure-first account where an item’s status depends on argued relevance, assessed credibility, and the net inferential force it contributes within an evidence network.</p>
+<p>Generally, I think Achensteins account is weaker for practitioners, but I do like his explicit recognition of background context; it often contains &quot;ancillary items&quot; recognized by Schum. His non-entailment condition also seems to capture Schums idea of the non-deterministic nature of evidence; one piece of evidence can support multiple, often conflicting hypotheses. Achinstein asks: Is there (probably) a real explanatory connection, and is it (in stronger notions) actually true? Schum asks: Have you argued the link (relevance), can you trust the item (credibility), and how much does it move the odds (force)? The main point is that most evidential links are uncertain and context-sensitive, they are essentially defeasible inferences. These defeasible links can be targeted with critical questioning; these questions address these more basic considerations: relevance, credibility, and explanatory connection. Since I always bring up Douglas Walton in my posts, I&#x27;ll continue that tradition here. Walton tells us that evidence isn’t a freestanding object; it’s a move in a normative exchange that involve dialectical rules about what is and isn&#x27;t an acceptable move. Walton makes the procedural part explicit: relevance, weight, and even admissibility are dialogue-governed. This connects his pragmatic approach to the broader topic of evidence; evidence is a premise (or set of premises) that gives presumptive, defeasible support to a claim within a regulated dialogue, and whose strength is assessed by asking the right critical questions. Walton&#x27;s critical questions are concretizations of the examination of warrants and relevance in an inference task. The dialectical aspect of this is interesting, because these meta-norms of discussion can influence what is considered relevant and the burden of proof. If you can answer the critical questions satisfactorily, the argument keeps its presumptive force, but it&#x27;s always subject to revision because evidential reasoning is incremental and contextual.</p>
+<p>Okay, now how does all of this connect to &quot;Science&quot;? I think to some extent, Schum captures the core logic. Scientists are essentially doing some variation of what Schum, Achenstein, and Walton are describing; but most likely won&#x27;t use the terminology introduced by these thinkers. Scientists don’t always say “this is evidence” — they talk about data, results, signals, effects, fits to a model, p-values, confidence intervals, posterior distributions, replications. But under the hood they’re doing recognizable evidential work:</p>
+<ul>
+<li>They start from questions/hypotheses/models. Even in exploratory work, there’s at least a background model (“these genes might co-express,” “this detector should see X events”). That gives evidence something to be for. This maps nicely to Schums &quot;evidence is not free floating&quot; concept and also captures relevance.</li>
+<li>They produce data via instruments or observations. That’s the raw material; but nobody sensible treats raw data as already “evidence.” This collection step is often a source of critical questioning, mapping to Schum&#x27;s notion of quality.</li>
+<li>They process/clean/model it. This is where measurement error, instrument calibration, and statistical assumptions come in.</li>
+<li>They interpret it relative to rival explanations. “Does this pattern support model A over model B?” “Does this reject the null?” “Does this effect replicate?”</li>
+<li>They document uncertainty (standard errors, likelihoods, Bayes factors, upper bounds).</li>
+<li>They bring in meta/ancillary info (instrument logs, sample provenance, blinding procedures, preregistration, replication studies, peer review).</li>
+<li>They value replication and reproducibility as communal credibility checks: “Can someone else’s instrument get the same item?” That is ancillary evidence writ large.</li>
+</ul>
+<p>Scientists constantly argue for relevance, even if they don&#x27;t explicitly use that word. For example, in an experiment someone might state “If the drug truly lowers blood pressure, the treatment group mean should be lower than control.” That’s the relevance link; they&#x27;re appealing to a causal generalization based on perhaps an implicit understanding of the dynamics in that scenario. In theoretical domains, this relevance criterion comes explicitly from the theory (or implied by the theory). The theory tells you what data to look for, and legitimizes the data as evidence based on the theoretical framework. No matter what the domain, Schum-style &quot;generalizations&quot; are used to connect an item to a hypothesis. Inferential force is often more nuanced in each domain based on their methods (the type of modeling), but is fundamentally about comparing competing hypotheses. For example, in economics, establishing a causal connection by convincingly settling disputes about directionality of effect (\(X \to Y\) instead of \(Y \to X\)), is considered massive inferential force (and might actually win you the Nobel Prize).</p>
+<p>I&#x27;d like to make a few caveats, because obviously no single definition can encapsulate all scientific inquiry. In exploratory data analysis, systems biology, or ML-heavy science, people sometimes say “let’s see what the data say” before fixing a sharp hypothesis. Evidence, for Schum, is always evidence-for. Exploratory science often parks in a pre-evidential phase: it’s producing candidates for evidence. It does not start with H, it determines which set of  H&#x27;s should be considered based on features of the raw information. This is called &quot;Data Driven Science&quot;. Some actually argue this is more of a subset of engineering rather than &quot;pure science&quot; (see the demarcation issue above). I don&#x27;t care to make the distinction. Once the plausible set of H&#x27;s are identified, its pretty much business as usual after that. Another potential issue (perhaps biased by his particular discipline), is that Schum is very item- and argument-focused. Science has a social dimension to confirmation: independent labs, convergence of multiple methodologies (experiment, simulation, field data), long-run track record of an instrument platform etc. That “social corroboration”  can be thought of as Schum-style ancillary evidence from independent sources, but in practice scientists sometimes treat it almost as a separate epistemic good (“multiple independent labs found this”... institutional trust). That’s bigger and messier than one neat inference network. Nevertheless, Schum&#x27;s inference networks in principle could encapsulate this, but in practice it&#x27;s very likely computationally intractable and the evidence landscape will probably dramatically shift before the analyst can finish computing inferential force.</p>
+<ul>
+<li><a href="https://plato.stanford.edu/entries/evidence/" target="_blank" rel="noopener">SEP: Evidence</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Empirical_evidence" target="_blank" rel="noopener">Empirical Evidence</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence" target="_blank" rel="noopener">Hierarchy of Evidence</a></li>
+<li><a href="https://plato.stanford.edu/entries/scientific-underdetermination/" target="_blank" rel="noopener">Underdetermination</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6538819/" target="_blank" rel="noopener">Bayes Factor</a></li>
+</ul>
+</article>

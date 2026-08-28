@@ -1,3 +1,581 @@
+<title>Table of Contents</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   .table-wrap {
     width: 100%;
@@ -47,6 +625,7 @@
     background: #fafafa;
   }
 </style>
+<article class="ep-post">
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#the-core-idea-operational-effectiveness-is-a-lifecycle-property">The Core Idea: Operational Effectiveness Is a Lifecycle Property</a></li>
@@ -126,7 +705,7 @@ flowchart LR
 <p>System effectiveness must be evaluated against lifecycle cost or total cost of ownership. A system may perform well but still be a poor choice if it is too expensive to operate, maintain, support, upgrade, or replace.</p>
 <p>So we can see, these terms are related, but they are not interchangeable. A simple comparison is:</p>
 <div class="table-wrap">
-<table>
+<table class="two-col">
 <thead>
 <tr>
 <th>Concept</th>
@@ -135,24 +714,24 @@ flowchart LR
 </thead>
 <tbody>
 <tr>
-<td><strong>Reliability</strong></td>
-<td>How long can the system perform without failure?</td>
+<td data-label="Concept"><strong>Reliability</strong></td>
+<td data-label="Main Question">How long can the system perform without failure?</td>
 </tr>
 <tr>
-<td><strong>Maintainability</strong></td>
-<td>Can the system be restored after failure or degradation?</td>
+<td data-label="Concept"><strong>Maintainability</strong></td>
+<td data-label="Main Question">Can the system be restored after failure or degradation?</td>
 </tr>
 <tr>
-<td><strong>Supportability</strong></td>
-<td>Can the organization provide the resources needed to keep it operating?</td>
+<td data-label="Concept"><strong>Supportability</strong></td>
+<td data-label="Main Question">Can the organization provide the resources needed to keep it operating?</td>
 </tr>
 <tr>
-<td><strong>Durability</strong></td>
-<td>Can the system continue performing over time without major overhaul?</td>
+<td data-label="Concept"><strong>Durability</strong></td>
+<td data-label="Main Question">Can the system continue performing over time without major overhaul?</td>
 </tr>
 <tr>
-<td><strong>Availability</strong></td>
-<td>Is the system ready and able to perform when needed?</td>
+<td data-label="Concept"><strong>Availability</strong></td>
+<td data-label="Main Question">Is the system ready and able to perform when needed?</td>
 </tr>
 </tbody>
 </table>
@@ -594,7 +1173,7 @@ flowchart TD
 <h2 id="fmeca-versus-fault-tree-analysis">FMECA versus Fault Tree Analysis</h2>
 <p>FMECA and FTA are complementary.</p>
 <div class="table-wrap">
-<table>
+<table class="three-col">
 <thead>
 <tr>
 <th>Dimension</th>
@@ -604,44 +1183,44 @@ flowchart TD
 </thead>
 <tbody>
 <tr>
-<td>Direction</td>
-<td>Bottom-up</td>
-<td>Top-down</td>
+<td data-label="Dimension">Direction</td>
+<td data-label="FMECA">Bottom-up</td>
+<td data-label="Fault Tree Analysis">Top-down</td>
 </tr>
 <tr>
-<td>Starts with</td>
-<td>Functions, items, failure modes</td>
-<td>Specific undesired top event</td>
+<td data-label="Dimension">Starts with</td>
+<td data-label="FMECA">Functions, items, failure modes</td>
+<td data-label="Fault Tree Analysis">Specific undesired top event</td>
 </tr>
 <tr>
-<td>Main question</td>
-<td>What happens if this fails?</td>
-<td>What can cause this top event?</td>
+<td data-label="Dimension">Main question</td>
+<td data-label="FMECA">What happens if this fails?</td>
+<td data-label="Fault Tree Analysis">What can cause this top event?</td>
 </tr>
 <tr>
-<td>Scope</td>
-<td>Broad review of many failure modes</td>
-<td>Deep analysis of one top event</td>
+<td data-label="Dimension">Scope</td>
+<td data-label="FMECA">Broad review of many failure modes</td>
+<td data-label="Fault Tree Analysis">Deep analysis of one top event</td>
 </tr>
 <tr>
-<td>Combinations</td>
-<td>Limited</td>
-<td>Strong, uses logic gates</td>
+<td data-label="Dimension">Combinations</td>
+<td data-label="FMECA">Limited</td>
+<td data-label="Fault Tree Analysis">Strong, uses logic gates</td>
 </tr>
 <tr>
-<td>Output</td>
-<td>Failure modes, causes, effects, severity, frequency, detection, criticality</td>
-<td>Fault tree, minimum cutsets, top event probability/reliability</td>
+<td data-label="Dimension">Output</td>
+<td data-label="FMECA">Failure modes, causes, effects, severity, frequency, detection, criticality</td>
+<td data-label="Fault Tree Analysis">Fault tree, minimum cutsets, top event probability/reliability</td>
 </tr>
 <tr>
-<td>Best for</td>
-<td>Comprehensive failure review and maintenance inputs</td>
-<td>Causal logic, redundancy analysis, single points of failure</td>
+<td data-label="Dimension">Best for</td>
+<td data-label="FMECA">Comprehensive failure review and maintenance inputs</td>
+<td data-label="Fault Tree Analysis">Causal logic, redundancy analysis, single points of failure</td>
 </tr>
 <tr>
-<td>Supports</td>
-<td>Reliability, maintainability, supportability, spares, diagnostics, maintenance tasks</td>
-<td>Reliability, safety, availability, redundancy, critical event prevention</td>
+<td data-label="Dimension">Supports</td>
+<td data-label="FMECA">Reliability, maintainability, supportability, spares, diagnostics, maintenance tasks</td>
+<td data-label="Fault Tree Analysis">Reliability, safety, availability, redundancy, critical event prevention</td>
 </tr>
 </tbody>
 </table>
@@ -686,7 +1265,7 @@ flowchart TD
 <p>Maintainability analysis and MTA are closely related, but they are not the same. Maintainability analysis evaluates the design’s ability to be restored to required function. Its central question is: <strong>Can the system be maintained or restored effectively?</strong> It focuses on accessibility, modularity, diagnostics, ease of removal and replacement, fault isolation, repair time, calibration time, maintenance error risk, required skill level, testability, safety during maintenance, ergonomic factors, and restoration probability. Outputs may include mean time to repair, maximum corrective maintenance time, fault isolation time, maintenance labor hours or probability of repair within a specified time.</p>
 <p>MTA identifies the actual maintenance tasks and the resources required to perform them. Its central question is: <strong>What exactly must be done, by whom, with what resources, at what level, and how often?</strong> It focuses on task definition, task triggers, task frequency, personnel, training, tools, support equipment, spares, facilities, transportation, handling, technical data, computer resources and lifecycle support burden.</p>
 <div class="table-wrap">
-<table>
+<table class="three-col">
 <thead>
 <tr>
 <th>Area</th>
@@ -696,44 +1275,44 @@ flowchart TD
 </thead>
 <tbody>
 <tr>
-<td>Main focus</td>
-<td>Ease and speed of restoration</td>
-<td>Tasks and resources needed for support</td>
+<td data-label="Area">Main focus</td>
+<td data-label="Maintainability Analysis">Ease and speed of restoration</td>
+<td data-label="Maintenance Task Analysis">Tasks and resources needed for support</td>
 </tr>
 <tr>
-<td>Core question</td>
-<td>Can it be restored efficiently?</td>
-<td>What must be done, by whom, with what?</td>
+<td data-label="Area">Core question</td>
+<td data-label="Maintainability Analysis">Can it be restored efficiently?</td>
+<td data-label="Maintenance Task Analysis">What must be done, by whom, with what?</td>
 </tr>
 <tr>
-<td>Primary output</td>
-<td>Maintainability metrics and design assessment</td>
-<td>Maintenance task list and resource requirements</td>
+<td data-label="Area">Primary output</td>
+<td data-label="Maintainability Analysis">Maintainability metrics and design assessment</td>
+<td data-label="Maintenance Task Analysis">Maintenance task list and resource requirements</td>
 </tr>
 <tr>
-<td>Typical metric</td>
-<td>MTTR, repair time, fault isolation time</td>
-<td>Labor hours, tools, parts, personnel, training, facilities</td>
+<td data-label="Area">Typical metric</td>
+<td data-label="Maintainability Analysis">MTTR, repair time, fault isolation time</td>
+<td data-label="Maintenance Task Analysis">Labor hours, tools, parts, personnel, training, facilities</td>
 </tr>
 <tr>
-<td>Design concern</td>
-<td>Accessibility, modularity, diagnostics, repairability</td>
-<td>Practical execution of maintenance tasks</td>
+<td data-label="Area">Design concern</td>
+<td data-label="Maintainability Analysis">Accessibility, modularity, diagnostics, repairability</td>
+<td data-label="Maintenance Task Analysis">Practical execution of maintenance tasks</td>
 </tr>
 <tr>
-<td>Lifecycle concern</td>
-<td>Restoration performance</td>
-<td>Sustaining support planning</td>
+<td data-label="Area">Lifecycle concern</td>
+<td data-label="Maintainability Analysis">Restoration performance</td>
+<td data-label="Maintenance Task Analysis">Sustaining support planning</td>
 </tr>
 <tr>
-<td>Availability impact</td>
-<td>Reduces time to maintain</td>
-<td>Reduces time to maintain and time to support</td>
+<td data-label="Area">Availability impact</td>
+<td data-label="Maintainability Analysis">Reduces time to maintain</td>
+<td data-label="Maintenance Task Analysis">Reduces time to maintain and time to support</td>
 </tr>
 <tr>
-<td>Supportability impact</td>
-<td>Contributes to supportability</td>
-<td>Directly defines supportability resources</td>
+<td data-label="Area">Supportability impact</td>
+<td data-label="Maintainability Analysis">Contributes to supportability</td>
+<td data-label="Maintenance Task Analysis">Directly defines supportability resources</td>
 </tr>
 </tbody>
 </table>
@@ -817,7 +1396,7 @@ flowchart LR
 </ul>
 <p>Key surveillance metrics typically tracked often include measures such as:</p>
 <div class="table-wrap wide-table">
-<table>
+<table class="extra-wide-table">
 <thead>
 <tr>
 <th>Technical Health</th>
@@ -829,46 +1408,46 @@ flowchart LR
 </thead>
 <tbody>
 <tr>
-<td>Failure rate</td>
-<td>Uptime / availability</td>
-<td>Maintenance backlog</td>
-<td>Incident rate</td>
-<td>Cost per operating hour</td>
+<td data-label="Technical Health">Failure rate</td>
+<td data-label="Operational">Uptime / availability</td>
+<td data-label="Support">Maintenance backlog</td>
+<td data-label="Safety / Security">Incident rate</td>
+<td data-label="Economic">Cost per operating hour</td>
 </tr>
 <tr>
-<td>Mean time between failures</td>
-<td>Throughput</td>
-<td>Planned/unplanned maintenance ratio</td>
-<td>Near misses</td>
-<td>Cost per transaction</td>
+<td data-label="Technical Health">Mean time between failures</td>
+<td data-label="Operational">Throughput</td>
+<td data-label="Support">Planned/unplanned maintenance ratio</td>
+<td data-label="Safety / Security">Near misses</td>
+<td data-label="Economic">Cost per transaction</td>
 </tr>
 <tr>
-<td>Mean time to repair</td>
-<td>Response time</td>
-<td>Spare fill rate</td>
-<td>Unresolved vulnerabilities</td>
-<td>Cost per mission</td>
+<td data-label="Technical Health">Mean time to repair</td>
+<td data-label="Operational">Response time</td>
+<td data-label="Support">Spare fill rate</td>
+<td data-label="Safety / Security">Unresolved vulnerabilities</td>
+<td data-label="Economic">Cost per mission</td>
 </tr>
 <tr>
-<td>Condition indicator trends</td>
-<td>Backlog</td>
-<td>Logistics delay</td>
-<td>Patch age</td>
-<td>Sustainment cost trend</td>
+<td data-label="Technical Health">Condition indicator trends</td>
+<td data-label="Operational">Backlog</td>
+<td data-label="Support">Logistics delay</td>
+<td data-label="Safety / Security">Patch age</td>
+<td data-label="Economic">Sustainment cost trend</td>
 </tr>
 <tr>
-<td>Alarm rate</td>
-<td>Service level</td>
-<td>Technician utilization</td>
-<td>Mean time to detect / respond</td>
-<td>Cost of downtime</td>
+<td data-label="Technical Health">Alarm rate</td>
+<td data-label="Operational">Service level</td>
+<td data-label="Support">Technician utilization</td>
+<td data-label="Safety / Security">Mean time to detect / respond</td>
+<td data-label="Economic">Cost of downtime</td>
 </tr>
 <tr>
-<td>Fault recurrence</td>
-<td>Mission success rate</td>
-<td></td>
-<td></td>
-<td></td>
+<td data-label="Technical Health">Fault recurrence</td>
+<td data-label="Operational">Mission success rate</td>
+<td data-label="Support"></td>
+<td data-label="Safety / Security"></td>
+<td data-label="Economic"></td>
 </tr>
 </tbody>
 </table>
@@ -927,19 +1506,19 @@ flowchart TD
 <h3 id="reliability-assessment-dimensions">Reliability assessment dimensions</h3>
 <p>A complete assessment normally considers several related dimensions.</p>
 <div class="table-wrap wide-table">
-<table>
+<table class="three-col">
 <thead><tr><th>Assessment Dimension</th><th>Main Question</th><th>Example Measures or Evidence</th></tr></thead>
 <tbody>
-<tr><td><strong>Functional performance</strong></td><td>Does the system perform the required function?</td><td>Accuracy, throughput, capacity, response time, mission success</td></tr>
-<tr><td><strong>Reliability</strong></td><td>How long or how often can the system perform without failure?</td><td>Failure rate, MTBF, MTTF, survival probability, mission reliability</td></tr>
-<tr><td><strong>Maintainability</strong></td><td>Can the system be restored within the required time?</td><td>MTTR, fault isolation time, restoration probability, maintenance labor hours</td></tr>
-<tr><td><strong>Supportability</strong></td><td>Are the resources needed for restoration available?</td><td>Logistics delay, spare fill rate, technician availability, repair turnaround time</td></tr>
-<tr><td><strong>Availability</strong></td><td>Is the system ready and able to perform when needed?</td><td>Inherent, achieved, and operational availability</td></tr>
-<tr><td><strong>Durability</strong></td><td>Can the system continue performing over its intended life?</td><td>Wear rate, degradation trend, overhaul interval, remaining useful life</td></tr>
-<tr><td><strong>Resilience</strong></td><td>Can the system tolerate, contain, or recover from failure?</td><td>Redundancy, graceful degradation, recovery time, fault containment</td></tr>
-<tr><td><strong>Safety and security</strong></td><td>What harmful consequences can result from failure or compromise?</td><td>Hazard severity, incident rate, vulnerability exposure, risk controls</td></tr>
-<tr><td><strong>Operational effectiveness</strong></td><td>Does the system continue delivering useful mission or business value?</td><td>Readiness, service level, backlog, process efficiency, mission completion</td></tr>
-<tr><td><strong>Lifecycle burden</strong></td><td>What does it cost to operate, maintain, support, and replace the system?</td><td>Cost per operating hour, downtime cost, sustainment cost, lifecycle cost</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Functional performance</strong></td><td data-label="Main Question">Does the system perform the required function?</td><td data-label="Example Measures or Evidence">Accuracy, throughput, capacity, response time, mission success</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Reliability</strong></td><td data-label="Main Question">How long or how often can the system perform without failure?</td><td data-label="Example Measures or Evidence">Failure rate, MTBF, MTTF, survival probability, mission reliability</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Maintainability</strong></td><td data-label="Main Question">Can the system be restored within the required time?</td><td data-label="Example Measures or Evidence">MTTR, fault isolation time, restoration probability, maintenance labor hours</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Supportability</strong></td><td data-label="Main Question">Are the resources needed for restoration available?</td><td data-label="Example Measures or Evidence">Logistics delay, spare fill rate, technician availability, repair turnaround time</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Availability</strong></td><td data-label="Main Question">Is the system ready and able to perform when needed?</td><td data-label="Example Measures or Evidence">Inherent, achieved, and operational availability</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Durability</strong></td><td data-label="Main Question">Can the system continue performing over its intended life?</td><td data-label="Example Measures or Evidence">Wear rate, degradation trend, overhaul interval, remaining useful life</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Resilience</strong></td><td data-label="Main Question">Can the system tolerate, contain, or recover from failure?</td><td data-label="Example Measures or Evidence">Redundancy, graceful degradation, recovery time, fault containment</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Safety and security</strong></td><td data-label="Main Question">What harmful consequences can result from failure or compromise?</td><td data-label="Example Measures or Evidence">Hazard severity, incident rate, vulnerability exposure, risk controls</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Operational effectiveness</strong></td><td data-label="Main Question">Does the system continue delivering useful mission or business value?</td><td data-label="Example Measures or Evidence">Readiness, service level, backlog, process efficiency, mission completion</td></tr>
+<tr><td data-label="Assessment Dimension"><strong>Lifecycle burden</strong></td><td data-label="Main Question">What does it cost to operate, maintain, support, and replace the system?</td><td data-label="Example Measures or Evidence">Cost per operating hour, downtime cost, sustainment cost, lifecycle cost</td></tr>
 </tbody>
 </table>
 </div>
@@ -990,18 +1569,18 @@ flowchart TD
 
 <h3 id="example-comparative-reliability-assessment">Example comparative reliability assessment</h3>
 <div class="table-wrap wide-table">
-<table>
+<table class="wide-table">
 <thead><tr><th>Dimension</th><th>System A</th><th>System B</th><th>Interpretation</th></tr></thead>
 <tbody>
-<tr><td><strong>Mission reliability</strong></td><td>0.97</td><td>0.95</td><td>System A is less likely to fail during the defined mission.</td></tr>
-<tr><td><strong>Operational availability</strong></td><td>0.94</td><td>0.98</td><td>System B is available more often when maintenance and support delays are included.</td></tr>
-<tr><td><strong>Mean restoration time</strong></td><td>8 hours</td><td>2 hours</td><td>System B can be restored more quickly after failure.</td></tr>
-<tr><td><strong>Logistics delay</strong></td><td>36 hours</td><td>8 hours</td><td>System B has the stronger spare parts and support response system.</td></tr>
-<tr><td><strong>Single points of failure</strong></td><td>2</td><td>0</td><td>System B has the more fault-tolerant architecture.</td></tr>
-<tr><td><strong>Degraded operation</strong></td><td>Limited</td><td>Available</td><td>System B can preserve partial function after some failures.</td></tr>
-<tr><td><strong>Evidence maturity</strong></td><td>Primarily predicted</td><td>Three years of field data</td><td>System B’s estimate is supported by more mature operational evidence.</td></tr>
-<tr><td><strong>Acquisition cost</strong></td><td>Lower</td><td>Higher</td><td>System A requires less initial investment.</td></tr>
-<tr><td><strong>Sustainment cost</strong></td><td>Higher</td><td>Lower</td><td>System B may provide lower cost over a sufficiently long lifecycle.</td></tr>
+<tr><td data-label="Dimension"><strong>Mission reliability</strong></td><td data-label="System A">0.97</td><td data-label="System B">0.95</td><td data-label="Interpretation">System A is less likely to fail during the defined mission.</td></tr>
+<tr><td data-label="Dimension"><strong>Operational availability</strong></td><td data-label="System A">0.94</td><td data-label="System B">0.98</td><td data-label="Interpretation">System B is available more often when maintenance and support delays are included.</td></tr>
+<tr><td data-label="Dimension"><strong>Mean restoration time</strong></td><td data-label="System A">8 hours</td><td data-label="System B">2 hours</td><td data-label="Interpretation">System B can be restored more quickly after failure.</td></tr>
+<tr><td data-label="Dimension"><strong>Logistics delay</strong></td><td data-label="System A">36 hours</td><td data-label="System B">8 hours</td><td data-label="Interpretation">System B has the stronger spare parts and support response system.</td></tr>
+<tr><td data-label="Dimension"><strong>Single points of failure</strong></td><td data-label="System A">2</td><td data-label="System B">0</td><td data-label="Interpretation">System B has the more fault-tolerant architecture.</td></tr>
+<tr><td data-label="Dimension"><strong>Degraded operation</strong></td><td data-label="System A">Limited</td><td data-label="System B">Available</td><td data-label="Interpretation">System B can preserve partial function after some failures.</td></tr>
+<tr><td data-label="Dimension"><strong>Evidence maturity</strong></td><td data-label="System A">Primarily predicted</td><td data-label="System B">Three years of field data</td><td data-label="Interpretation">System B’s estimate is supported by more mature operational evidence.</td></tr>
+<tr><td data-label="Dimension"><strong>Acquisition cost</strong></td><td data-label="System A">Lower</td><td data-label="System B">Higher</td><td data-label="Interpretation">System A requires less initial investment.</td></tr>
+<tr><td data-label="Dimension"><strong>Sustainment cost</strong></td><td data-label="System A">Higher</td><td data-label="System B">Lower</td><td data-label="Interpretation">System B may provide lower cost over a sufficiently long lifecycle.</td></tr>
 </tbody>
 </table>
 </div>
@@ -1086,3 +1665,4 @@ flowchart TD
     securityLevel: "loose"
   });
 </script>
+</article>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Causal Inquiry Dialogue</title>
+  
+<style>
+
+/* Blogger-friendly article styling: inherits the blog theme rather than imposing one. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+.page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: 1.65;
+}
+.part {
+  margin: 2.75rem 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.part:first-of-type { margin-top: 2rem; }
+h2, h3, h4 {  scroll-margin-top: 1rem; }
+h2 {
+  margin: 0 0 1.2rem;
+  padding: 0 0 .45rem;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+h3 { margin: 2rem 0 .8rem; font-size: 1.4rem; line-height: 1.3; }
+h4 { margin: 1.6rem 0 .65rem; font-size: 1.16rem; line-height: 1.35; }
+p { margin: .8rem 0; }
+ul, ol { padding-left: 1.45rem; }
+li + li { margin-top: .35rem; }
+a {  }
+
+/* One compact contents list for the whole post. */
+.toc {
+  margin: 0 0 2.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.toc h3 { margin: 0 0 .55rem; font-size: 1.15rem; }
+.toc ol { margin: 0; padding-left: 1.4rem; columns: 2; column-gap: 2.5rem; }
+.toc li { break-inside: avoid; margin: .22rem 0; }
+.toc a { text-decoration: none; border-bottom: 1px dotted currentColor; }
+.toc a:hover { border-bottom-style: solid; }
+
+/* Cross-references are visible but restrained and inherit the theme color. */
+.concept-ref, .back-ref {  text-decoration: none; }
+.concept-ref { font-weight: 600; border-bottom: 1px dotted currentColor; }
+.concept-ref:hover, .back-ref:hover { border-bottom-style: solid; }
+.back-ref { display: inline-block; margin-top: .65rem; font-size: .9em; opacity: .78; }
+.move-name, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.move-name {
+  display: inline-block;
+  padding: .08rem .32rem;
+  border-radius: .25rem;
+  background: color-mix(in srgb, currentColor 9%, transparent);
+}
+.reference-entry, .moves > li, [id^="assumption-"], [id^="estimand-"] {
+  scroll-margin-top: 1rem;
+}
+.reference-entry:target, .moves > li:target, [id^="assumption-"]:target, [id^="estimand-"]:target {
+  outline: 2px solid currentColor;
+  outline-offset: .35rem;
+}
+.k { font-weight: 650; }
+.kv { margin: .45rem 0 0 1rem; padding: 0; }
+.kv li { margin: .25rem 0; }
+.ex { font-style: italic; opacity: .85; }
+
+/* Tables remain readable on wide screens and scroll instead of crushing columns on mobile. */
+.table-scroll {
+  width: 100%;
+  margin: 1.2rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-scroll table, table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+th, td {
+  padding: .65rem .75rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  white-space: nowrap;
+}
+th { font-weight: 700; }
+td.wrap, th.wrap {
+  min-width: 16rem;
+  max-width: 40rem;
+  white-space: normal;
+}
+blockquote {
+  margin: 1.2rem 0;
+  padding: .2rem 0 .2rem 1rem;
+  border-left: 3px solid currentColor;
+  background: transparent;
+}
+.source-list a { overflow-wrap: anywhere; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: .5rem; top: .5rem; z-index: 10; padding: .4rem; background: inherit;  }
+
+@media (max-width: 700px) {
+  .toc ol { columns: 1; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.28rem; }
+  .cid .moves { padding-left: 1.15rem; }
+  th, td { padding: .55rem .6rem; }
+  td.wrap, th.wrap { min-width: 14rem; }
+}
+
+@media print {
+  .toc { break-inside: avoid; }
+  .table-scroll { overflow: visible; }
+  .table-scroll table, table { width: 100%; }
+  .back-ref { display: none; }
+}
+</style>
+
+  
+  
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body>
+<article class="ep-post"><a class="skip-link" href="#main">Skip to main content</a><main class="page" id="main"><nav aria-label="Document contents" class="toc"><h3>Contents</h3><ol><li><a href="#part-1">Introduction and motivation</a></li><li><a href="#part-2">Existing causal argumentation schemes</a></li><li><a href="#part-3">Bradford Hill and modern causal reasoning</a></li><li><a href="#part-4">The Causal Inquiry Dialogue</a></li><li><a href="#part-5">Complete dialogue-move reference</a></li><li><a href="#part-6">Technical foundation: causal estimands</a></li><li><a href="#part-7">Technical foundation: assumptions</a></li><li><a href="#part-8">Concluding synthesis</a></li><li><a href="#part-9">Key References &amp; Suggested Readings</a></li></ol></nav><section class="part" id="part-1"><h2 id="part-1-part-i-introduction-and-motivation">1. Introduction and motivation</h2><p>While writing the "Theory of Rationality" post, I revisited the pragma-dialectical rules for critical discussion and Waltons extended dialogue types; then suddenly got an idea. Walton's extensions could possibly be extended further into sub-types. Why not extend this framework into a dialogue exclusively concerned with the nuances and features of causal inquiry? This interests me in particular because I'm quite familiar and interested in empirical methods used to identify causal effects in data. While in Economics graduate school, I distinctly recall most applied microeconometric research reducing to debates about whether X is a confounder, proper instrument, or if there is selection bias. This sure sounds like a sub-type of Walton's Inquiry Dialogue. Furthermore, Walton already has argumentation schemes for causal reasoning. Perhaps we could simply extend the existing work? Below I will first review the schemes then propose a dialogue sub-type.</p></section><section class="part" id="part-2"><h2 id="part-2-part-ii-existing-causal-argumentation-schemes">2. Existing causal argumentation schemes</h2><h4 id="part-2-1-argument-from-cause-to-effect-ce" style="text-align: left;">1) Argument from Cause to Effect (C→E)</h4><p><strong>Canonical form (presumptive):</strong><br/>
+Generally, if A happens, B (likely) happens.<br/>
+A happens (or will).<br/>
+So, B will (likely) happen.</p><p><strong>What to look for (evaluation criteria):</strong></p><p style="text-align: left;"></p><ul style="text-align: left;"><li>The <em>strength</em> and <em>applicability</em> of the causal regularity (“if A then B”).</li><li>Evidence that A really holds <em>in this case</em>.</li><li>Possible <em>interveners/defeaters</em> that could block B.</li><li>Plausible <em>mechanism</em> and proper <em>temporal order</em> (cause precedes effect)</li></ul><p></p><ul style="text-align: left;">
+</ul><p><strong>Core Critical Questions (CQs):</strong></p><ul style="text-align: left;"><li><span>CQ1 – </span>Strength: How well-supported is the A→B generalization here?</li><li><span>CQ2 – </span>Fact: Is the evidence that A occurs (here/now) good enough?</li><li><span>CQ3 – </span>Interference: Are there other causal factors that would prevent B despite A?</li><li><span>CQ4 – </span>Alternatives/base-rate: Could B occur anyway without A (or mainly from some other cause)? </li></ul><p style="text-align: left;"></p><ul>
+</ul><h4 id="part-2-2-argument-from-effect-to-cause-ec" style="text-align: left;">2) Argument from Effect to Cause (E→C)</h4><p><strong>Canonical form (abductive/IBE-style):</strong><br/>
+Generally, if A happens, B (likely) happens.<br/>
+B is observed.<br/>
+So, (presumably) A happened (as the best explanation). </p><p>Walton treats E→C as <em>defeasible</em> and best understood in an abductive, dialogue-driven setting: you hypothesize the cause that would explain the effect, then test it against rivals and further evidence. </p><p><strong>What to look for (evaluation criteria):</strong></p><em><ul style="text-align: left;"><li><em>Explanatory adequacy</em> of A for B (fit, coherence with background knowledge).</li><li><em>Comparative superiority</em> over <em>rival explanations</em>.</li><li><em>Search thoroughness</em> and <em>stage of inquiry</em> (is it too early to commit?).</li><li><em>Predictive leverage/testability</em> (does A lead to further checkable consequences?).</li></ul></em><p style="text-align: left;"></p><ul>
+</ul><p><strong>Core Critical Questions (CQs) used here (IBE-style):</strong></p><ul style="text-align: left;"><li><span>CQ1 –</span> Adequacy: Does A genuinely explain B (independently of rivals)?</li><li><span>CQ2 – </span>Bestness: Is A a <em>better</em> explanation than the alternatives considered so far?</li><li><span>CQ3 – </span>Inquiry status: Have we looked hard enough (could more inquiry flip our judgment)?</li><li><span>CQ4 – </span>Prudence: Should we withhold conclusion and investigate further before accepting A? </li></ul><p style="text-align: left;"></p><ul>
+</ul><h4 id="part-2-3-argument-from-correlation-to-cause-corrc" style="text-align: left;">3) Argument from Correlation to Cause (Corr→C)</h4><p><strong>Canonical move (heuristic):</strong><br/>
+A and B are correlated.<br/>
+Therefore, (tentatively) A causes B (or B causes A, or there’s a causal link).<br/>
+This is a <em>short</em>, defeasible bridge from association to a causal hypothesis that then needs bolstering. </p><p><strong>What to look for (evaluation criteria):</strong></p><em><ul style="text-align: left;"><li><em>Reality/robustness</em> of the correlation (replication, effect size, sampling).</li><li><em>Directionality</em> and <em>temporal precedence</em> (does putative cause precede effect?).</li><li><em>Non-spuriousness</em> (rule out third variables/common causes; avoid mere coincidence).</li><li><em>Mechanistic plausibility</em> (is there a credible pathway from A to B?). </li></ul></em><p style="text-align: left;"></p><ul>
+</ul><p><strong>Standard Critical Questions (CQs):</strong></p><ul style="text-align: left;"><li>CQ1 – Reality: Is there really a correlation between A and B?</li><li>CQ2 – Coincidence: Is the correlation more than just coincidence?</li><li>CQ3 – Third factor: Could some third factor C be causing both A and B?</li><li>
+(Extended lists add temporal order and mechanism checks, but these three are the widely used core.) </li></ul></section><section class="part" id="part-3"><h2 id="part-3-part-iii-bradford-hill-and-modern-causal-reasoning">3. Bradford Hill and modern causal reasoning</h2><div>Walton explicitly brings the Bradford Hill “considerations” into his treatment of arguments from correlation to causation and treats them as a bank of critical questions for evaluating presumptive causal claims (e.g., he lists Hill’s items under the correlation→causation chapter in Argument Evaluation and Evidence). </div><div>
+<ol>
+<li>
+<p><strong>Temporality</strong> – the putative cause precedes the effect.</p>
+<p>
+        Temporality is the minimal requirement that exposure must occur before the outcome, but this is necessary rather than sufficient for causality: many non-causal associations also satisfy temporal ordering. In practice, the presence of induction periods, onset lags, and feedback loops (where early changes in the outcome can alter subsequent exposure) can make it difficult to determine whether the relevant “causal episode” truly precedes the measured outcome. These complications create room for biases such as immortal-time bias, where individuals must survive event-free long enough to be classified as “exposed,” artificially inflating the apparent benefit of treatment. To extend the basic notion of temporality, timing should be made explicit in both the DAG (e.g., by indexing nodes as exposure at time <em>t</em>, outcome at time <em>t+k</em>) and the study protocol (e.g., through clear eligibility windows, follow-up start, and time-varying covariates), ideally framed as a target trial emulation. For example, defining “treatment initiation” as a well-specified baseline and starting follow-up at that same time reduces bias compared to designs that classify treatment based on future information.
+      </p>
+</li>
+<li>
+<p><strong>Strength (effect size)</strong> – larger associations are harder to dismiss as bias.</p>
+<p>
+        Strong associations (e.g., large risk ratios) are intuitively compelling because it is less plausible that modest unmeasured bias alone could fully explain them, but strength is not a guarantee of causality: confounding, selection bias, or measurement error can either exaggerate or attenuate effect sizes. For instance, if healthier patients are preferentially selected into a preventive intervention, the apparent protective effect may be very large even when the true causal effect is modest or null. Conversely, real causal effects can be small (e.g., subtle environmental exposures), and dismissing them for lack of dramatic effect sizes risks ignoring important public health impacts when exposures are common. To extend this criterion, strength should be examined through formal bias and sensitivity analyses (e.g., E-values, quantitative bias analysis) that ask how strong an unmeasured confounder would need to be to overturn the results, and through triangulation across multiple designs (e.g., cohort, case–control, natural experiments) that are differently vulnerable to specific biases. Consistent evidence of a nontrivial effect from diverse designs can be more persuasive than a single very large estimate from a potentially biased study.
+      </p>
+</li>
+<li>
+<p><strong>Consistency (reproducibility)</strong> – seen across studies, settings, methods.</p>
+<p>
+        Observing similar associations across multiple studies, populations, and analytic methods increases confidence that the relationship is not an artifact of a single dataset or modeling choice, but raw “agreement of estimates” can be misleading if it ignores meaningful contextual differences. Heterogeneity in effect estimates is not always a sign of error; it can reflect genuine effect modification by factors such as age, baseline risk, or healthcare systems. For example, a drug might show strong benefit in high-risk patients but little effect in low-risk populations, leading to apparently inconsistent results that are actually predicted by a more nuanced causal structure. Extending this criterion means planning for and interpreting heterogeneity rather than treating it as a nuisance: constructing subgroup-specific DAGs, formally testing interactions, and using triangulation that treats differences across designs as informative about underlying mechanisms. Instead of asking, “Do all studies find the same number?” we ask, “Do the patterns of where and when the effect appears match what our causal model predicts?”
+      </p>
+</li>
+<li>
+<p><strong>Specificity</strong> – a cause leads to a single effect (or a very specific pattern).</p>
+<p>
+        The classical idea of specificity—that one cause leads to one disease and vice versa—rarely holds in complex, multifactorial systems where exposures affect many outcomes and diseases arise from many interacting causes. For example, smoking increases the risk of lung cancer but also cardiovascular disease, chronic obstructive pulmonary disease, and multiple cancers, while lung cancer itself can be caused by several exposures (e.g., radon, asbestos, air pollution) in addition to smoking. This limits the value of strict one-cause/one-effect specificity as a general criterion for causality and risks overemphasizing “clean” examples at the expense of more realistic, messy etiologies. A more productive extension is to think in terms of <em>pattern specificity</em>: does the exposure predict a distinctive constellation of effects, across outcomes and subgroups, that aligns with a proposed mechanism? For instance, a neurotoxicant might be expected to produce a recognizable pattern of cognitive deficits, imaging findings, and perhaps biomarker changes; observing that pattern, rather than a single isolated outcome, can provide stronger mechanistic support even when strict specificity fails.
+      </p>
+</li>
+<li>
+<p><strong>Biological gradient (dose–response)</strong> – more exposure → more effect.</p>
+<p>
+        A monotonic dose–response relationship—where risk increases with higher levels or longer durations of exposure—fits many simple causal stories and can help rule out some forms of confounding, but real-world relationships are often more complex. Threshold effects (where risk only rises beyond a certain level), saturation (where additional exposure yields little extra risk), and U- or J-shaped curves (where both very low and very high exposures are harmful) can all occur, particularly when homeostatic mechanisms or competing risks are involved. Moreover, exposure misclassification (e.g., poor measurement of cumulative dose) can blur or distort the observed gradient, sometimes making a true nonlinear pattern appear linear, or erasing it altogether. To extend this criterion, dose–response should be modeled flexibly (e.g., splines, categorical dose bands, time-varying exposures) rather than imposed as a simple linear trend, and interpreted in light of plausible mechanisms. Complementary tools—such as negative control exposures/outcomes and quantitative bias analysis—can help assess whether an observed gradient could plausibly arise from residual confounding or measurement error, and whether the shape of the curve matches what a mechanistic model would predict.
+      </p>
+</li>
+<li>
+<p><strong>Plausibility</strong> – is there a credible mechanism?</p>
+<p>
+        Plausibility asks whether the proposed causal relationship fits with current biological, social, or physical theory, which is helpful but also deeply theory-laden and historically contingent: what seems implausible today may become accepted tomorrow as mechanisms are discovered. For example, the early suggestion that infectious agents could cause chronic ulcers was initially deemed implausible given prevailing views, yet later work confirmed <em>Helicobacter pylori</em> as a major causal factor. Over-reliance on plausibility risks dismissing true but currently unexplained associations and privileging mechanisms that fit dominant paradigms. To extend this criterion, we can treat plausibility as a joint requirement that <em>difference-making evidence</em> (showing that manipulating the exposure changes risk) is complemented by mechanistic evidence (e.g., pathways, intermediate biomarkers, experimental models), in line with ideas such as the Russo–Williamson thesis. This encourages explicitly mapping the hypothesized mechanisms (e.g., via DAGs or systems diagrams), identifying what empirical patterns they predict, and then testing those predictions rather than simply appealing to “intuitive” plausibility.
+      </p>
+</li>
+<li>
+<p><strong>Coherence</strong> – fits with what else we know (lab, natural history, theory).</p>
+<p>
+        Coherence emphasizes that a proposed causal relationship should not contradict established knowledge from laboratory studies, natural history of disease, or broader theory; however, without careful formalization, “coherence” can become a vague appeal to intuition or authority. There is also a risk of confirmation bias: investigators may selectively notice and emphasize strands of evidence that fit the favored hypothesis while discounting conflicting data. For instance, animal studies showing toxicity at very high doses might be taken as “coherent” with weak observational signals at low human exposures, even if the dosing regimens or species differences make the analogy tenuous. A more rigorous extension is to encode background knowledge in explicit causal models—such as DAGs or structural equations—and derive testable implications (e.g., conditional independencies, predicted mediating pathways). Empirically checking whether these implications hold (or systematically fail) in data makes coherence a falsifiable property of the whole evidence structure, rather than a subjective impression that everything “seems to fit.”
+      </p>
+</li>
+<li>
+<p><strong>Experiment</strong> – manipulation changes outcomes (e.g., RCTs, natural experiments).</p>
+<p>
+        Experimental evidence, where deliberate or quasi-random changes in exposure lead to changes in outcomes, is often regarded as the strongest single strand of causal support, but experiments have important limitations. Randomized controlled trials (RCTs) may be infeasible, unethical (e.g., assigning harmful exposures), or limited in duration and population, raising questions about external validity when applied to broader or more diverse settings. Natural experiments and instrumental-variable–type settings can mimic randomization but often rely on strong structural assumptions (e.g., exclusion restrictions) that may be difficult to fully justify. To extend this criterion, we can frame observational analyses as <strong>target-trial emulations</strong>, explicitly specifying the hypothetical trial (eligibility, treatment strategies, assignment, follow-up, analysis) and then approximating it with real-world data, paying particular attention to time-varying confounding and dynamic treatment regimes. In addition, we can exploit quasi-experimental designs (e.g., policy changes, step-wedge rollouts, regression discontinuities) and integrate their results with non-experimental evidence to build a coherent picture of how manipulation at different levels and contexts affects outcomes.
+      </p>
+</li>
+<li>
+<p><strong>Analogy</strong> – by similarity to known causal relations.</p>
+<p>
+        Analogy appeals to similarity with established causal relationships—for example, reasoning that if one drug in a class causes a particular adverse effect, another drug with a similar structure might do so as well. While this can be a useful heuristic for hypothesis generation, it is also the weakest and most subjective of the criteria: analogies can be cherry-picked, and superficial similarities may mask crucial differences in mechanisms, contexts, or effect modifiers. Over-reliance on analogy can lead to both false positives (assuming causality because something “looks like” another case) and false negatives (ignoring novel causal structures that lack an obvious precedent). A more disciplined extension is to specify explicitly <strong>which</strong> features of the comparison are claimed to be analogous (e.g., receptor binding profile, route and timing of exposure, population susceptibility) and to use structured analogical mapping to derive concrete, testable predictions. For instance, if two environmental exposures are thought to act via the same oxidative stress pathway, we should observe similar patterns in intermediate biomarkers and effect modification by antioxidant status; systematically testing these implications moves analogy from a loose metaphor toward a source of structured evidence.
+      </p>
+</li>
+</ol>
+</div><div style="text-align: left;">Walton’s causal <strong>argumentation schemes</strong> are defeasible and come with <strong>critical questions</strong>. Bradford Hill’s considerations plug in naturally as such questions when someone argues from <em>correlation to cause</em>:</div><ul style="text-align: left;">
+<li>
+“Does cause precede effect?” (Temporality)</li>
+<li>“How strong/consistent is the association across settings?” (Strength, Consistency)</li>
+<li>“Could a third factor explain both?” (Strength/Consistency via confounding)</li>
+<li>“Is there a dose–response? A plausible mechanism? Coherence with other evidence?” (Gradient, Plausibility, Coherence)</li>
+<li>“Any experimental or quasi-experimental confirmation? Are there relevant analogies?” (Experiment, Analogy)</li>
+<li>Walton’s chapter explicitly points students to Hill (1965) when assessing correlation→causation moves. </li>
+</ul><div style="text-align: left;">Practical limitations of Bradford-Hill Criteria</div><ul style="text-align: left;">
+<li><strong>Confounding/selection/collider bias</strong> can satisfy several considerations spuriously. DAGs help diagnose these risks.</li>
+<li><strong>Over-formalizing</strong> the list as a pass/fail test misses its heuristic intent. Modern reviews emphasize using Hill as guidance within a broader causal framework.</li>
+</ul><div style="text-align: left;">Bradford-Hill can be modernized with sensible extensions that account for modern improvements in the causal literature:</div><ol style="text-align: left;">
+<li>Make the causal question explicit and design to answer it: Use the target-trial emulation playbook for observational studies (eligibility, treatment strategies, time zero, outcomes, estimand).</li>
+<li>Represent assumptions with DAGs: Encode background knowledge, identify confounding/selection structures, and derive testable implications that operationalize “coherence.” </li>
+<li>Triangulate across methods and biases: Combine evidence differing in key sources of bias (e.g., MR, natural experiments, cohorts, case-crossovers) to strengthen inference.</li>
+<li>Blend mechanisms + difference-making: Use the Russo–Williamson insight: require both probabilistic/difference-making evidence and mechanistic support, instead of treating “plausibility” as a soft afterthought.</li>
+<li>Bias-aware quantification: Routine sensitivity analyses for unmeasured confounding and measurement error alongside effect estimates (refines “strength” and “consistency”). </li>
+<li>Keep Hill as critical questions: Treat each item as a Walton-style CQ attached to the correlation→cause scheme; use them to structure inquiry rather than to “grade” causality. (This is exactly how Walton deploys them pedagogically.) </li>
+</ol><div>Here are some more sources to consider before moving on;</div><div>
+<ul class="source-list" style="text-align: left;">
+<li><a href="https://ceur-ws.org/Vol-1341/paper10.pdf">Encompassing Uncertainty in Argumentation Schemes</a></li>
+<li><a href="https://arg.tech/people/chris/publications/2017/flap2017.pdf">Argumentation Schemes. History, Classifications, and Computational Applications</a></li><li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8206235/">Assessing causality in epidemiology: revisiting Bradford Hill to incorporate developments in causal thinking</a></li>
+<li><a href="https://academic.oup.com/ije/article/49/1/322/5536330">Evidence synthesis for constructing directed acyclic graphs (ESC-DAGs): a novel and systematic method for building directed acyclic graphs</a> </li>
+<li><a href="https://link.springer.com/article/10.1007/s11229-022-03924-3">Taking the Russo-Williamson thesis seriously in the social sciences</a></li>
+<li><a href="https://jonwilliamson.uk/publications/documents/epcause-medicine2011.pdf">Epistemic Causality and Evidence-Based Medicine</a></li>
+<li><a href="https://academic.oup.com/ije/article/45/6/1866/2930550">Triangulation in aetiological epidemiology </a></li>
+<li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0895435616301366">Specifying a target trial prevents immortal time bias and other self-inflicted injuries in observational analyses</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4589117/">Applying the Bradford Hill criteria in the 21st century: how data integration has changed causal inference in molecular epidemiology</a></li>
+</ul>
+</div></section><section class="part" id="part-4"><h2 id="part-4-part-iv-the-causal-inquiry-dialogue">4. The Causal Inquiry Dialogue</h2><div>Now, here is a proposed "Causal Inquiry Dialogue", modeled after Waltons Inquiry Dialogue, capturing the dynamics of causal inquiry across disciplines:</div><div>
+<h3 id="part-4-causal-inquiry-dialogue-cid" style="text-align: left;">Causal Inquiry Dialogue (CID)</h3>
+<h4 id="part-4-1-purpose-telos-product" style="text-align: left;">1) Purpose (telos) &amp; product</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li><strong>Goal:</strong> arrive at a <em>warranted</em> causal claim (or non-claim) about a well-specified effect of a well-specified cause, under explicit assumptions and with stated uncertainty.</li><li><strong>Product:</strong> a conclusion tagged with (a) the <strong>estimand</strong> (what causal quantity), (b) <strong>scope</strong> (population, time, context), (c) <strong>assumptions &amp; design</strong>, (d) <strong>robustness</strong> (sensitivity, rival explanations), and (e) <strong>status</strong> (accept/reject/suspend).</li></ul><p></p><ul>
+</ul>
+<h4 id="part-4-2-initial-situation" style="text-align: left;">2) Initial situation</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Anomaly, association, or policy problem triggers the dialogue.</li><li>Participants share <strong>incomplete knowledge</strong> and agree to rules that prioritize discovery over winning.</li></ul><p></p><ul style="text-align: left;">
+</ul>
+<h4 id="part-4-3-roles-can-be-distributed-across-2-parties" style="text-align: left;">3) Roles (can be distributed across 2+ parties)</h4>
+<ul style="text-align: left;"><li><b>Proponent</b>: advances a causal hypothesis and identification strategy.</li><li><b>Challenger</b>: raises targeted doubts, counter-hypotheses, and tests.</li><li><b>Methodologist </b>(optional role, often shared): vets design/assumptions and proposes diagnostics.</li><li><b>Mechanism expert (optional)</b>: articulates or tests mechanistic pathways.</li></ul>
+<p style="text-align: left;"></p><ul>
+</ul>
+<h4 id="part-4-4-key-commitments-set-in-the-opening-stage" style="text-align: left;">4) Key commitments set in the Opening stage</h4>
+<ul style="text-align: left;"><li><b>Question clarity</b>: state the causal question in counterfactual terms and name the estimand (e.g., ATE/CATE, effect of treatment on the treated, etc.).</li><li><b>Target trial/target system</b>: define time-zero, eligibility, treatment strategies, outcomes, follow-up, and causal contrast.</li><li><b>Model sketch</b>: present an initial DAG or structured mechanism showing confounders, mediators, colliders.</li><li><b>Burden of proof</b>: proponent carries the <em>forward</em> burden (positive case); challengers carry a <em>specific defeater</em> burden (to point to concrete alternative mechanisms, biases, or tests).</li></ul>
+<p style="text-align: left;"></p>
+<h3 id="part-4-5-stages-specializing-pragma-dialectics" style="text-align: left;">5) Stages (specializing pragma-dialectics)</h3>
+<h4 id="part-4-stage-i-problem-formulation" style="text-align: left;">Stage I — Problem Formulation</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Moves: <a href="#propose_hypothesis"><em>propose_hypothesis(H)</em></a>, <a href="#state_estimand"><em>state_estimand(ψ)</em></a>, <a href="#define_population"><em>define_population(P)</em></a>, <a href="#define_time_zero"><em>define_time_zero(T0)</em></a>.</li><li>Rule CID-1 (<strong>Clarity</strong>): no arguments about “causation” without a named estimand, population, and time-zero.</li></ul><p></p><ul>
+</ul>
+<h4 id="part-4-stage-ii-modeling-identification" style="text-align: left;">Stage II — Modeling &amp; Identification</h4><ul style="text-align: left;"><li>
+Moves: <a href="#propose_DAG"><em>propose_DAG(G)</em></a>, <a href="#justify_identification"><em>justify_identification(I)</em></a> (randomization, IV, DiD, RD, g-methods, etc.), <a href="#list_assumptions"><em>list_assumptions(A)</em></a>.</li><li>Rule CID-2 (<strong>Identification</strong>): proponent must present a legible identification strategy and its assumptions; <strong>no hidden estimand drift</strong>.</li><li>Rule CID-3 (<strong>Comparative space</strong>): acknowledge plausible rival hypotheses and pathways.</li></ul>
+<p style="text-align: left;"></p><ul>
+</ul>
+<h4 id="part-4-stage-iii-evidence-testing" style="text-align: left;">Stage III — Evidence &amp; Testing</h4><ul style="text-align: left;"><li>
+Moves: <a href="#propose_design"><em>propose_design(D)</em></a>, <a href="#present_evidence"><em>present_evidence(E)</em></a>, <a href="#run_diagnostic"><em>run_diagnostic(QC)</em></a> (placebo/negative controls, balance checks, pre-trend checks, falsification tests, sensitivity/E-values).</li><li>Rule CID-4 (<strong>Relevance &amp; Quality</strong>): evidence must be probative <em>for the stated estimand under G and A</em> (no p-hacking, data dredging, or post-hoc model switching without disclosure).</li><li>Rule CID-5 (<strong>Robustness</strong>): report sensitivity to key unverifiable assumptions (unmeasured confounding, measurement error, model misspecification).</li></ul>
+<p style="text-align: left;"></p><ul>
+</ul>
+<h4 id="part-4-stage-iv-mechanisms-coherence" style="text-align: left;">Stage IV — Mechanisms &amp; Coherence</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Moves: <a href="#propose_mechanism"><em>propose_mechanism(M)</em></a>, <a href="#predict_signature"><em>predict_signature(S)</em></a> (dose-response, lags, subgroup patterns), <a href="#check_coherence"><em>check_coherence(K)</em></a> with background knowledge.</li><li>Rule CID-6 (<strong>Mechanistic–probabilistic pairing</strong>): difference-making evidence should be paired with mechanistic articulation (even if partial) or the conclusion stays <strong>provisional</strong>.</li></ul><p></p><ul>
+</ul>
+<h4 id="part-4-stage-v-comparative-appraisal-rival-explanations" style="text-align: left;">Stage V — Comparative Appraisal &amp; Rival Explanations</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Moves: <a href="#table_rivals"><em>table_rivals(R1..Rn)</em></a>, <a href="#compare_fit"><em>compare_fit(C)</em></a>, <a href="#choose_best_explanation"><em>choose_best_explanation(BE)</em></a>.</li><li>Rule CID-7 (<strong>Best-explanation discipline</strong>): address live rivals; “victory by default” is disallowed.</li></ul><p></p><ul>
+</ul>
+<h4 id="part-4-stage-vi-conclusion-reporting" style="text-align: left;">Stage VI — Conclusion &amp; Reporting</h4>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Moves: <a href="#accept_reject_suspend"><em>accept/ reject/ suspend</em></a>, <a href="#qualify_scope"><em>qualify_scope</em></a>, <a href="#state_uncertainty"><em>state_uncertainty</em></a>, <a href="#declare_limits_and_next_tests"><em>declare_limits &amp; next tests</em></a>.</li><li>Rule CID-8 (<strong>Transparency &amp; Scope</strong>): publish the warrant ledger (what supports the claim) and <strong>external validity</strong> limits.</li></ul><p></p>
+<h3 id="part-4-6-permitted-dialogue-moves-locutions-their-commitments" style="text-align: left;">6) Permitted dialogue moves (locutions) &amp; their commitments</h3>
+<ul style="text-align: left;"><li><b><a class="concept-ref" href="#assert_association"><code>assert_association(A,B)</code></a></b> → commit to reproducible measurement and design details.</li><li><b><a class="concept-ref" href="#propose_DAG"><code>propose_DAG(G)</code></a> </b>→ commit to edges/omissions as working assumptions open to targeted challenge.</li><li><b><a class="concept-ref" href="#challenge_edge"><code>challenge_edge(X→Y)</code></a></b> → must specify the basis (confounder, collider, measurement, selection).</li><li><b><a class="concept-ref" href="#propose_test"><code>propose_test(T)</code></a> / <a class="concept-ref" href="#request_sensitivity"><code>request_sensitivity(S)</code></a></b> → the other side must either perform it (if feasible) or justify non-feasibility.</li><li><b>propose_trial_or_quasi(E)</b> → moves the dialogue toward experimentation when observational inference stalls.</li><li><b><a class="concept-ref" href="#assert_extrapolation"><code>assert_extrapolation(EXT)</code></a></b> → requires a bridging argument for transportability (similarity of mechanisms/distributions).</li></ul>
+<p style="text-align: left;"></p>
+<h3 id="part-4-7-evaluation-grid-critical-questions-specialized-for-causality" style="text-align: left;">7) Evaluation grid: Critical Questions specialized for causality</h3>
+<p>Attach these <strong>CQs</strong> at the points they’re most discriminating (they operationalize Bradford-Hill style concerns without score-keeping):</p>
+<ol style="text-align: left;"><li><b>Temporality CQ</b>: Is time-zero defined, and does exposure precede effect with plausible lags?</li><li><b>Identification CQ</b>: Under G and A, is ψ identified? What assumptions are unverifiable?</li><li><b>Confounding CQ</b>: Which unmeasured factors could generate the association, and how strong must they be (sensitivity/E-value)?</li><li><b>Design CQ</b>: Do design diagnostics pass (balance, parallel trends, bandwidth/placebo tests, instrument strength/exclusion)?</li><li><b>Robustness CQ</b>: Do results survive alternative specifications, samples, and measures?</li><li><b>Mechanism CQ</b>: Is there an articulated pathway predicting distinctive signatures (dose–response, subgroup, temporal pattern) that we observe?</li><li><b>Coherence CQ</b>: Are implications consistent with other data/modalities (lab, quasi-experiments, natural history)?</li><li><b>Rivals CQ</b>: What are the best rival explanations and how do they fare on fit and testability?</li><li><b>Transportability CQ</b>: What changes if we move population/context; which assumptions support extrapolation?</li><li><b>Decision CQ (if policy-relevant)</b>: Given current warrant and uncertainty, what are the consequences of acting vs. waiting?</li></ol>
+<p style="text-align: left;"></p>
+<h3 id="part-4-8-typical-derailments-fallacies-as-violations" style="text-align: left;">8) Typical derailments (fallacies-as-violations)</h3>
+<ul style="text-align: left;"><li>Post hoc ergo propter hoc (violates CID-1 &amp; Temporality CQ).</li><li>Confounding by indication / selection bias (violates CID-2/3).</li><li>Collider conditioning (violates CID-2 by corrupting identification).</li><li>P-hacking / garden of forking paths (violates CID-4).</li><li>Mechanism hand-waving (violates CID-6; claim remains provisional).</li><li>Rival neglect (violates CID-7).</li><li>Target drift (quietly changing estimand/design mid-stream; violates CID-2 &amp; CID-8).</li><li>Illicit dialogue shift (sliding from inquiry into eristic or policy advocacy without declaring a shift and its rules).</li></ul>
+<p style="text-align: left;"></p><h3 id="part-4-9-stopping-rules-how-to-close-the-dialogue" style="text-align: left;">9) Stopping rules (how to close the dialogue)</h3>
+<ul style="text-align: left;"><li><b>Accept (provisional)</b>: ψ is identified; diagnostics satisfactory; rivals addressed; mechanism articulated (or explicitly limited); uncertainty quantified; scope stated.</li><li><b>Suspend</b>: open defeaters remain or diagnostics fail; specify the <em>next most probative test</em>.</li><li><b>Reject</b>: identification breaks, key diagnostics fail, or a rival clearly dominates.</li></ul>
+<p style="text-align: left;"></p>
+<h3 id="part-4-10-how-this-extends-walton-pragma-dialectics" style="text-align: left;">10) How this extends Walton + pragma-dialectics</h3>
+<p style="text-align: left;"></p><ul style="text-align: left;"><li>
+Keeps <strong>inquiry’s</strong> discovery telos but <strong>adds causal-specific rules</strong> (estimand clarity, DAG/identification discipline, sensitivity obligations, rival management, and mechanism pairing).</li><li>Preserves the pragma-dialectical spirit (burden of proof, relevance, clarity, closure) with <strong>domain-specific instantiations</strong> that make “rationality” depend on <em>good causal practice</em> in a cooperative exchange.</li></ul><p></p>
+<h3 id="part-4-11-minimal-protocol-card-you-can-use" style="text-align: left;">11) Minimal “protocol card” you can use</h3>
+<ol style="text-align: left;"><li>State ψ, P, T0 → what effect, on whom, from when?</li><li>Show G, name I → DAG + identification strategy.</li><li>Run QC → diagnostics + sensitivity/negative controls.</li><li>Predict signatures → dose/lag/subgroups; check them.</li><li>Confront rivals → articulate, test, compare.</li><li>Conclude with scope &amp; uncertainty → accept/suspend/reject; next test.</li></ol>
+<p style="text-align: left;"></p></div></section><section class="part" id="part-5"><h2 id="part-5-part-v-complete-dialogue-move-reference">5. Complete dialogue-move reference</h2><div>Below is a more detailed description of some of the function declarations listed above. 1-4 represent problem formation, 5-7 represent modeling &amp; identification, 8-10 represent Evidence &amp; Testing, 11-13 represent mechanism &amp; coherence, 14-16 represent comparative appraisal, 17-20 represent conclusions &amp; reporting, and 21-26 represent cross cutting challenge or response moves. How to use in practice:</div><div class="cid">
+<ol class="moves">
+<li class="reference-entry" id="propose_hypothesis">
+<b><span class="move-name">propose_hypothesis(H)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Put a causal claim on the table in plain language.</li>
+<li><span class="k">When:</span> Opening of inquiry.</li>
+<li><span class="k">Inputs:</span> Cause, effect, context (e.g., “X increases Y among P during T”).</li>
+<li><span class="k">Output/Commitments:</span> Commit to making the claim testable (estimand, design, diagnostics).</li>
+<li><span class="k">Acceptance checks:</span> Clear, falsifiable, time-anchored.</li>
+<li><span class="k">CQs:</span> Directional? Time-ordered? Contextualized?</li>
+<li><span class="k">Pitfalls:</span> Vagueness (“X affects Y somehow”).</li>
+<li class="ex"><span class="k">Example:</span> “Traffic-related PM2.5 increases asthma ER visits among adults in County Z, 2016–2020.”</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="state_estimand">
+<b><span class="move-name">state_estimand(Ψ)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Turn the hypothesis into a named causal quantity.</li>
+<li><span class="k">When:</span> Immediately after H.</li>
+<li><span class="k">Inputs:</span> Target population, exposure contrast, outcome, time-zero, follow-up, summary (ATE/CATE/ATT).</li>
+<li><span class="k">Output/Commitments:</span> A precise counterfactual query you will identify/estimate.</li>
+<li><span class="k">Acceptance checks:</span> Formally writable (e.g., E[Y(1)−Y(0)] over window W).</li>
+<li><span class="k">CQs:</span> Is the contrast precise? Are time &amp; population fixed?</li>
+<li><span class="k">Pitfalls:</span> Estimand drift later.</li>
+<li class="ex"><span class="k">Example:</span> “Ψ = ATT of odd-even traffic restrictions on ER visits within 7 days among registered drivers.”</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="define_population">
+<b><span class="move-name">define_population(P)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Lock in who Ψ is about.</li>
+<li><span class="k">When:</span> With Ψ.</li>
+<li><span class="k">Inputs:</span> Inclusion/exclusion, geography, time, eligibility.</li>
+<li><span class="k">Output/Commitments:</span> Sampling frame; transportability boundaries.</li>
+<li><span class="k">Acceptance checks:</span> Replicable inclusion criteria.</li>
+<li><span class="k">CQs:</span> Any selection mechanisms tied to exposure/outcome?</li>
+<li><span class="k">Pitfalls:</span> Convenience samples inducing bias.</li>
+<li class="ex"><span class="k">Example:</span> “Adults 18–65 in County Z, continuously insured, 2016–2020.”</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="define_time_zero">
+<b><span class="move-name">define_time_zero(T0)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Fix the start of risk/measurement (avoid immortal-time bias).</li>
+<li><span class="k">When:</span> With Ψ/P.</li>
+<li><span class="k">Inputs:</span> Operational timestamp for exposure assignment &amp; follow-up.</li>
+<li><span class="k">Output/Commitments:</span> All timing claims become checkable.</li>
+<li><span class="k">Acceptance checks:</span> Exposure precedes outcome; lags specified.</li>
+<li><span class="k">CQs:</span> Is temporality satisfied for everyone in P?</li>
+<li><span class="k">Pitfalls:</span> Post-exposure covariates treated as baseline.</li>
+<li class="ex"><span class="k">Example:</span> “T0 = 00:00 on restriction day; outcomes over next 7 days.”</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="propose_DAG">
+<b><span class="move-name">propose_DAG(G)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Externalize assumed causal structure.</li>
+<li><span class="k">When:</span> Early modeling.</li>
+<li><span class="k">Inputs:</span> Nodes (exposure, outcome, covariates), edges (assumed arrows).</li>
+<li><span class="k">Output/Commitments:</span> You own edges &amp; omissions; open to targeted challenge.</li>
+<li><span class="k">Acceptance checks:</span> G justifies a concrete adjustment/strategy.</li>
+<li><span class="k">CQs:</span> Confounders, mediators, colliders correctly classified?</li>
+<li><span class="k">Pitfalls:</span> Post-treatment adjustment; omitted common causes.</li>
+<li class="ex"><span class="k">Example:</span> Weather &amp; mobility → PM2.5 &amp; ER; PM2.5 → ER; no ER → PM2.5.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="justify_identification">
+<b><span class="move-name">justify_identification(I)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Show how Ψ is identified under G + assumptions.</li>
+<li><span class="k">When:</span> After G.</li>
+<li><span class="k">Inputs:</span> Strategy (RCT, IV, RD, DiD, panel FE, g-methods, matching, TMLE, etc.) with identification conditions.</li>
+<li><span class="k">Output/Commitments:</span> Map assumptions → estimand; diagnostic plan.</li>
+<li><span class="k">Acceptance checks:</span> Clear conditions (exchangeability, positivity/SUTVA; IV relevance/exclusion; RD continuity; DiD parallel trends).</li>
+<li><span class="k">CQs:</span> Are conditions plausible? How will you check them?</li>
+<li><span class="k">Pitfalls:</span> “Black-box” ML with no identification story.</li>
+<li class="ex"><span class="k">Example:</span> DiD with city×week FE; 24-week pre-trends; matched control cities.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="list_assumptions">
+<b><span class="move-name">list_assumptions(A)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Make hidden levers visible.</li>
+<li><span class="k">When:</span> With I.</li>
+<li><span class="k">Inputs:</span> Testable &amp; untestable assumptions; measurement &amp; linkage assumptions.</li>
+<li><span class="k">Output/Commitments:</span> Each assumption gets a diagnostic or sensitivity plan.</li>
+<li><span class="k">Acceptance checks:</span> Feasible tests or reasoned defense for untestables.</li>
+<li><span class="k">CQs:</span> Which assumption, if broken, flips the conclusion?</li>
+<li><span class="k">Pitfalls:</span> Hand-waving (“no unmeasured confounding”).</li>
+<li class="ex"><span class="k">Example:</span> No cross-border migration this week; wind-shift IV affects ER only via PM2.5.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="propose_design">
+<b><span class="move-name">propose_design(D)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Commit to a concrete empirical design before results.</li>
+<li><span class="k">When:</span> Pre-analysis / design registration.</li>
+<li><span class="k">Inputs:</span> Data sources, inclusion rules, variables, transformations, windows, bandwidths, models.</li>
+<li><span class="k">Output/Commitments:</span> A design others can reproduce.</li>
+<li><span class="k">Acceptance checks:</span> Pre-specification or justified deviations.</li>
+<li><span class="k">CQs:</span> Is D aligned with Ψ and I?</li>
+<li><span class="k">Pitfalls:</span> Garden of forking paths; hidden post-hoc tweaks.</li>
+<li class="ex"><span class="k">Example:</span> Synthetic control; donor pool 20 counties; outcome = daily ER rate; covariates = weather, holidays.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="present_evidence">
+<b><span class="move-name">present_evidence(E)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Put results on the table (estimates + uncertainty).</li>
+<li><span class="k">When:</span> After D executed.</li>
+<li><span class="k">Inputs:</span> Point estimates, intervals, diagnostics, robustness tables/figures.</li>
+<li><span class="k">Output/Commitments:</span> Accept scrutiny relative to D, I, A, G, Ψ.</li>
+<li><span class="k">Acceptance checks:</span> Traceable to design; uncertainty quantified; code/metadata if practical.</li>
+<li><span class="k">CQs:</span> Consistent with identification diagnostics?</li>
+<li><span class="k">Pitfalls:</span> Reporting only favorable specs; unit confusion.</li>
+<li class="ex"><span class="k">Example:</span> ATT = −6.2% (95% CI −9.8, −2.5); pre-trend p=0.62; placebo policies null.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="run_diagnostic">
+<b><span class="move-name">run_diagnostic(QC)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Execute validity checks specific to I.</li>
+<li><span class="k">When:</span> Alongside E.</li>
+<li><span class="k">Inputs:</span> Balance/pre-trends, negative controls, IV F-stat, RD density, sensitivity (E-values), etc.</li>
+<li><span class="k">Output/Commitments:</span> Abide by diagnostic implications (revise/suspend if they fail).</li>
+<li><span class="k">Acceptance checks:</span> Pre-specified or justified; adequate power.</li>
+<li><span class="k">CQs:</span> Do diagnostics support key assumptions?</li>
+<li><span class="k">Pitfalls:</span> Underpowered/irrelevant tests; ignoring failures.</li>
+<li class="ex"><span class="k">Example:</span> RD McCrary p=0.47; IV first-stage F=28; negative-control outcome (fractures) null.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="propose_mechanism">
+<b><span class="move-name">propose_mechanism(M)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Articulate a causal pathway (even partial) that makes predictions.</li>
+<li><span class="k">When:</span> After initial E (or earlier if known).</li>
+<li><span class="k">Inputs:</span> Biological/behavioral/economic mechanism; intermediates.</li>
+<li><span class="k">Output/Commitments:</span> Mechanism-linked, testable implications.</li>
+<li><span class="k">Acceptance checks:</span> Compatible with G and E.</li>
+<li><span class="k">CQs:</span> Intermediates measurable? Implied lags/dose/subgroups?</li>
+<li><span class="k">Pitfalls:</span> Vague “plausibility” with no predictions.</li>
+<li class="ex"><span class="k">Example:</span> Inflammatory pathways; expect lag 0–2 days; stronger in COPD subgroup.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="predict_signature">
+<b><span class="move-name">predict_signature(SIG)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Turn M into observable signatures.</li>
+<li><span class="k">When:</span> With M.</li>
+<li><span class="k">Inputs:</span> A-priori patterns (dose–response, lags, subgroup/geo gradients).</li>
+<li><span class="k">Output/Commitments:</span> Agree that non-appearance weakens the claim.</li>
+<li><span class="k">Acceptance checks:</span> Predictions precise enough to test.</li>
+<li><span class="k">CQs:</span> Are signatures unique to M or shared with rivals?</li>
+<li><span class="k">Pitfalls:</span> Post-hoc signature invention.</li>
+<li class="ex"><span class="k">Example:</span> Stronger effects on high-exposure commuting days; no effect on fractures.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="check_coherence">
+<b><span class="move-name">check_coherence(K)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Integrate with external strands of evidence.</li>
+<li><span class="k">When:</span> After E &amp; SIG.</li>
+<li><span class="k">Inputs:</span> Lab/toxicology, quasi-experiments, history, mechanistic literature.</li>
+<li><span class="k">Output/Commitments:</span> Place finding in broader web; explain inconsistencies.</li>
+<li><span class="k">Acceptance checks:</span> Citations &amp; comparability discussed; conflicts acknowledged.</li>
+<li><span class="k">CQs:</span> Any discordant high-quality results? Why?</li>
+<li><span class="k">Pitfalls:</span> Cherry-picking supportive studies.</li>
+<li class="ex"><span class="k">Example:</span> Animal models show inflammation within 24h; UK congestion-charge study shows similar ER reduction.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="table_rivals">
+<b><span class="move-name">table_rivals(R₁…Rₙ)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Lay out live alternative explanations side-by-side.</li>
+<li><span class="k">When:</span> Before concluding.</li>
+<li><span class="k">Inputs:</span> Confounding, measurement error, selection, alternative causes, reverse causation.</li>
+<li><span class="k">Output/Commitments:</span> Each rival gets proposed tests/diagnostics.</li>
+<li><span class="k">Acceptance checks:</span> Rivals are plausible (not straw versions).</li>
+<li><span class="k">CQs:</span> Which rival best fits residual patterns?</li>
+<li><span class="k">Pitfalls:</span> Ignoring the serious rival.</li>
+<li class="ex"><span class="k">Example:</span> R1: heat waves; R2: care-seeking changes; R3: coding changes.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="compare_fit">
+<b><span class="move-name">compare_fit(COMP)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Evaluate main hypothesis vs. rivals on fit &amp; testability.</li>
+<li><span class="k">When:</span> After R₁…Rₙ.</li>
+<li><span class="k">Inputs:</span> Likelihood/posteriors, predictive checks, out-of-sample performance, qualitative pattern match.</li>
+<li><span class="k">Output/Commitments:</span> Transparent scoring or narrative with criteria.</li>
+<li><span class="k">Acceptance checks:</span> Uses pre-agreed criteria or justified ex post.</li>
+<li><span class="k">CQs:</span> Does any rival explain signatures better?</li>
+<li><span class="k">Pitfalls:</span> Changing metrics mid-stream.</li>
+<li class="ex"><span class="k">Example:</span> Heat waves fail (effects persist in cool weeks); care-seeking fails placebo tests.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="choose_best_explanation">
+<b><span class="move-name">choose_best_explanation(BE)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Make the abductive choice, or suspend.</li>
+<li><span class="k">When:</span> End of appraisal.</li>
+<li><span class="k">Inputs:</span> COMP outcome; decision threshold reflecting stakes.</li>
+<li><span class="k">Output/Commitments:</span> Reasoned, defeasible selection; or suspension with next tests.</li>
+<li><span class="k">Acceptance checks:</span> Clear rationale tied to diagnostics &amp; signatures.</li>
+<li><span class="k">CQs:</span> Risk of premature closure?</li>
+<li><span class="k">Pitfalls:</span> Victory by default (rivals not addressed).</li>
+<li class="ex"><span class="k">Example:</span> Adopt main hypothesis provisionally; rivals underperform on pre-specified diagnostics.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="accept_reject_suspend">
+<b><span class="move-name">accept / reject / suspend</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Close the dialogue honestly.</li>
+<li><span class="k">When:</span> After BE.</li>
+<li><span class="k">Inputs:</span> Evidence grade, diagnostics, rival status.</li>
+<li><span class="k">Output/Commitments:</span> If accept: provisional &amp; scoped; if suspend: name next test; if reject: explain failure.</li>
+<li><span class="k">Acceptance checks:</span> Closure matches warrant.</li>
+<li><span class="k">CQs:</span> Are you over-claiming?</li>
+<li><span class="k">Pitfalls:</span> Treating “accept” as certainty; or never closing.</li>
+<li class="ex"><span class="k">Example:</span> Accept (provisional): −6% effect; next: mechanism sub-study.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="qualify_scope">
+<b><span class="move-name">qualify_scope(SCOPE)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> State where the claim applies.</li>
+<li><span class="k">When:</span> With closure.</li>
+<li><span class="k">Inputs:</span> Population, time, setting; transportability limits.</li>
+<li><span class="k">Output/Commitments:</span> Boundaries for reuse/policy.</li>
+<li><span class="k">Acceptance checks:</span> Matches P and data support.</li>
+<li><span class="k">CQs:</span> Any reason scope would shrink/expand?</li>
+<li><span class="k">Pitfalls:</span> Over-generalization.</li>
+<li class="ex"><span class="k">Example:</span> Urban counties with similar traffic mix; 2010s vehicle fleet.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="state_uncertainty">
+<b><span class="move-name">state_uncertainty(UQ)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Make uncertainty first-class (statistical + structural).</li>
+<li><span class="k">When:</span> With closure.</li>
+<li><span class="k">Inputs:</span> CIs/posteriors; sensitivity ranges; model dependence; unknowns.</li>
+<li><span class="k">Output/Commitments:</span> Honest map of confidence and fragility.</li>
+<li><span class="k">Acceptance checks:</span> Quantified where possible; qualitative where needed.</li>
+<li><span class="k">CQs:</span> What single assumption, if wrong, flips the sign?</li>
+<li><span class="k">Pitfalls:</span> Reporting only sampling error.</li>
+<li class="ex"><span class="k">Example:</span> If unmeasured confounder RR 2.0 with 15% prevalence difference exists, effect may vanish.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="declare_limits_and_next_tests">
+<b><span class="move-name">declare_limits_and_next_tests(NEXT)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Record what remains uncertain and the next best test.</li>
+<li><span class="k">When:</span> Final step.</li>
+<li><span class="k">Inputs:</span> Open defeaters; feasible designs.</li>
+<li><span class="k">Output/Commitments:</span> Concrete plan (experiment, new data, quasi-design).</li>
+<li><span class="k">Acceptance checks:</span> Next test would truly discriminate.</li>
+<li><span class="k">CQs:</span> Is the next step proportionate to stakes?</li>
+<li><span class="k">Pitfalls:</span> Vague “more research needed.”</li>
+<li class="ex"><span class="k">Example:</span> IV using refinery outages; mechanistic biomarker panel in COPD clinic.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="assert_association">
+<b><span class="move-name">assert_association(A,B)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Put a descriptive association on record (not yet causal).</li>
+<li><span class="k">When:</span> Early evidence marshalling.</li>
+<li><span class="k">Inputs:</span> Estimand-free correlation/regression with proper denominators/weights.</li>
+<li><span class="k">Output/Commitments:</span> Full description of how measured; ready for stress-tests.</li>
+<li><span class="k">Acceptance checks:</span> Replicability; robustness to basic spec changes.</li>
+<li><span class="k">CQs:</span> Is it real (not artifact)?</li>
+<li><span class="k">Pitfalls:</span> Implicit causal spin.</li>
+<li class="ex"><span class="k">Example:</span> Pearson r=0.31 across 200 days; Spearman 0.29.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="challenge_edge">
+<b><span class="move-name">challenge_edge(X→Y)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Target a specific arrow in G.</li>
+<li><span class="k">When:</span> After DAG proposed.</li>
+<li><span class="k">Inputs:</span> Missing confounder, wrong direction, collider path, measurement error.</li>
+<li><span class="k">Output/Commitments:</span> Challenger offers a concrete alternative or test.</li>
+<li><span class="k">Acceptance checks:</span> Connects to data/design or literature.</li>
+<li><span class="k">CQs:</span> Would change alter identification?</li>
+<li><span class="k">Pitfalls:</span> Generic skepticism.</li>
+<li class="ex"><span class="k">Example:</span> Mobility is a common cause of PM2.5 and ER; omitting it biases ATT.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="propose_test">
+<b><span class="move-name">propose_test(T)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Add a discriminating check.</li>
+<li><span class="k">When:</span> Any time a live uncertainty is identified.</li>
+<li><span class="k">Inputs:</span> Diagnostic, required data, expected pattern if H vs. rival.</li>
+<li><span class="k">Output/Commitments:</span> Other party runs it if feasible, or justifies infeasibility.</li>
+<li><span class="k">Acceptance checks:</span> Test truly discriminates; adequate power.</li>
+<li><span class="k">CQs:</span> What result would falsify?</li>
+<li><span class="k">Pitfalls:</span> Non-diagnostic tests.</li>
+<li class="ex"><span class="k">Example:</span> Add placebo outcome (appendicitis). Effect should be null.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="request_sensitivity">
+<b><span class="move-name">request_sensitivity(S)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Quantify robustness to unmeasured threats.</li>
+<li><span class="k">When:</span> After initial E.</li>
+<li><span class="k">Inputs:</span> E-values, Rosenbaum bounds, bias-factor grids; parameter ranges.</li>
+<li><span class="k">Output/Commitments:</span> Run &amp; report; interpret.</li>
+<li><span class="k">Acceptance checks:</span> Transparent parameterization; realistic ranges.</li>
+<li><span class="k">CQs:</span> Are requested ranges realistic?</li>
+<li><span class="k">Pitfalls:</span> Cherry-picking benign ranges.</li>
+<li class="ex"><span class="k">Example:</span> Report E-value for point estimate and CI bound.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="propose_trial_or_quasi">
+<b><span class="move-name">propose_trial_or_quasi(XP)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Escalate to intervention (RCT) or strong quasi-experiment if feasible.</li>
+<li><span class="k">When:</span> When observational designs plateau.</li>
+<li><span class="k">Inputs:</span> Sketch of randomization or natural experiment; ethics/logistics.</li>
+<li><span class="k">Output/Commitments:</span> Consider seriously (or justify why not).</li>
+<li><span class="k">Acceptance checks:</span> Would answer Ψ with fewer assumptions.</li>
+<li><span class="k">CQs:</span> Is XP ethical, timely, powered?</li>
+<li><span class="k">Pitfalls:</span> Dismissing feasible experiments.</li>
+<li class="ex"><span class="k">Example:</span> Randomize congestion-pricing start across districts.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+<li class="reference-entry" id="assert_extrapolation">
+<b><span class="move-name">assert_extrapolation(EXT)</span>
+</b><ul class="kv">
+<li><span class="k">Purpose:</span> Argue that findings transport to new settings.</li>
+<li><span class="k">When:</span> After acceptance/scope.</li>
+<li><span class="k">Inputs:</span> Bridge assumptions; similarities/differences; reweighting/transport formulas if used.</li>
+<li><span class="k">Output/Commitments:</span> State what must hold in the target to carry over Ψ.</li>
+<li><span class="k">Acceptance checks:</span> Structural &amp; distributional alignment argued or shown.</li>
+<li><span class="k">CQs:</span> Which differences would break transport?</li>
+<li><span class="k">Pitfalls:</span> Hand-wavy generalization.</li>
+<li class="ex"><span class="k">Example:</span> Effect transports to City Q because fleet mix, baseline and compliance are similar; reweighted estimate shown.</li>
+</ul>
+<a class="back-ref" href="#part-4">↩ Return to the CID framework</a></li>
+</ol>
+</div></section><section class="part" id="part-6"><h2 id="part-6-part-vi-technical-foundation-causal-estimands">6. Technical foundation: causal estimands</h2><div class="cid">
+<h2 id="part-6-causal-estimands-a-structured-map-of-the-causal-inference-universe">Causal Estimands: A Structured Map of the Causal Inference Universe</h2>
+<p>
+    Below is a structured map of common causal <strong>estimands</strong> (targets of inference), grouped into major
+    families. For each family, we explain:
+  </p>
+<ul>
+<li>What kinds of causal questions it addresses</li>
+<li>What each estimand means</li>
+<li>When you’d use it and what you can conclude</li>
+<li>Key references with links</li>
+</ul>
+<p>We use potential-outcomes notation:</p>
+<ul>
+<li><strong>Binary treatment:</strong> \(A \in \{0,1\}\)</li>
+<li><strong>Outcome:</strong> \(Y\)</li>
+<li><strong>Potential outcomes:</strong> \(Y(1)\) (if treated), \(Y(0)\) (if not treated)</li>
+</ul>
+<h3 id="part-6-1-single-binary-treatment-one-time-point" style="text-align: left;">1. Single Binary Treatment, One Time Point</h3>
+<h4 id="part-6-1-1-what-kinds-of-questions" style="text-align: left;">1.1 What kinds of questions?</h4>
+<ul>
+<li>“On average, what is the effect of this program/drug/policy?”</li>
+<li>“What was the effect <em>on the people who actually got treated</em>?”</li>
+<li>“Does the effect differ across subgroups (by age, risk, etc.)?”</li>
+<li>“What is the effect in some target population (not just our sample)?”</li>
+</ul>
+<h4 id="part-6-1-2-core-estimands" style="text-align: left;">1.2 Core estimands</h4>
+<p id="estimand-individual-treatment-effect" style="text-align: left;"><b>(a) Individual Treatment Effect (ITE)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong> For individual \(i\), the individual treatment effect is
+    \(\tau_i = Y_i(1) - Y_i(0)\).
+  </li><li><strong>Use:</strong> This is a conceptual object: the causal effect for a specific individual. We almost never
+    observe both \(Y_i(1)\) and \(Y_i(0)\) for the same person.
+  </li><li><strong>Value:</strong> All population-level estimands (ATE, ATT, etc.) are averages of these individual effects
+    \(\tau_i\).
+  </li></ul>
+<p></p>
+<p id="estimand-average-treatment-effect" style="text-align: left;"><b>(b) Average Treatment Effect (ATE)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{ATE} = \mathbb{E}[Y(1) - Y(0)].
+    \]
+  </li><li><strong>Question:</strong>
+    “If everyone in the target population were treated instead of not treated, by how much would the
+    <em>average</em> outcome change?”
+  </li><li><strong>Use: </strong>Evaluating the overall impact of a policy or intervention on a population. Randomized trials where you want the effect of assignment to treatment on average.</li><li><strong>What you can conclude:</strong> Under appropriate identification assumptions (e.g., randomization or
+    no unmeasured confounding), the difference in mean outcomes between treated and control can be interpreted
+    as a causal ATE.
+  </li></ul>
+<p></p>
+<p>
+<strong>Alternative scales for binary outcomes:</strong>
+</p>
+<ul>
+<li><strong>Risk Difference (RD):</strong> \(\mathbb{E}[Y(1)] - \mathbb{E}[Y(0)]\)</li>
+<li><strong>Risk Ratio (RR):</strong> \(\mathbb{E}[Y(1)] / \mathbb{E}[Y(0)]\)</li>
+<li><strong>Odds Ratio (OR):</strong> ratio of odds under treatment vs control</li>
+</ul>
+<p id="estimand-average-treatment-effect-on-the-treated" style="text-align: left;"><b>(c) ATT / ATET (Average Treatment Effect on the Treated)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{ATT} = \mathbb{E}[Y(1) - Y(0) \mid A = 1].
+    \]
+  </li><li><strong>Question:</strong>
+    “Among the people who <em>actually received treatment</em>, what was the average effect of treatment?”
+  </li><li><strong>Use: </strong>Program evaluation (e.g., job-training, subsidies, social programs), Clinical settings where the treated population is not representative of everyone.</li><li><strong>What you can conclude:</strong> ATT is about the effect on the <em>realized treated group</em>, not the
+    whole population. It is especially relevant for ex-post evaluation: did the intervention help the participants?
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(d) ATC / ATU (Average Treatment Effect on Controls / Untreated)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{ATC} = \mathbb{E}[Y(1) - Y(0) \mid A = 0].
+    \]
+  </li><li><strong>Question:</strong> “If the currently untreated were treated, what would their average effect be?”
+  </li><li><strong>Use:</strong> Relevant when considering expanding access or changing eligibility, and you care about
+    the effect among those currently not treated.
+  </li></ul>
+<p></p>
+<p id="estimand-conditional-average-treatment-effect" style="text-align: left;"><b>(e) CATE (Conditional Average Treatment Effect)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{CATE}(x) = \mathbb{E}[Y(1) - Y(0) \mid X = x],
+    \]
+    where \(X\) is a vector of baseline covariates (e.g., age, sex, risk score).
+  </li><li><strong>Question:</strong>
+    “For individuals with characteristics \(X = x\), what is the average treatment effect?”
+  </li><li><strong>Use: </strong>Understanding <strong>heterogeneous treatment effects</strong> across subgroups. Personalized / precision medicine: “What is the expected benefit for a patient like this?”</li><li><strong>What it tells you:</strong> How treatment effects vary with covariates. The overall ATE can be expressed as
+    \[
+      \text{ATE} = \mathbb{E}_X[\text{CATE}(X)].
+    \]
+  </li></ul>
+<p></p>
+<p><strong>Variants:</strong></p>
+<ul>
+<li id="estimand-att"><strong>CATT(x):</strong> treatment effect among treated with \(X = x\).</li>
+<li id="estimand-ate"><strong>Subgroup ATEs:</strong> special cases of CATE for defined groups (e.g., men vs women).</li>
+</ul>
+<p id="estimand-sate" style="text-align: left;"><b>(f) SATE, PATE, TATE (Sample vs Population vs Target)</b></p>
+<ul style="text-align: left;">
+<li><strong>SATE (Sample ATE):</strong> ATE in your actual analytic sample.</li>
+<li id="estimand-pate"><strong>PATE (Population ATE):</strong> ATE in a reference population of interest.</li>
+<li><strong>TATE (Target ATE):</strong> ATE in a specific target population (which may differ from both your sample and
+      the “default” population).</li>
+<li><strong>Questions:</strong> “What was the effect in this trial sample?” vs “What is the effect in our target
+    population?”
+  </li><li><strong>Use:</strong> These are central to <strong>generalizability</strong> and <strong>transportability</strong> problems, where you
+    adjust for differences between the sample and the target population.
+  </li></ul>
+<p style="text-align: left;"><b>1.3 Policy / stochastic variations (still single treatment)</b></p>
+<p>
+    We can go beyond “everyone treated” vs “everyone untreated” to consider specific policies.
+  </p>
+<ul>
+<li><strong>Population Intervention Effect (PIE):</strong> Difference in average outcome between the observed world and a
+      hypothetical world where treatment is set or assigned by some specified policy or probability rule.</li>
+<li><strong>Population Attributable Fraction (PAF):</strong> Proportion of adverse outcomes that would be prevented if an
+      exposure were eliminated or reduced.</li>
+</ul>
+<h3 id="part-6-2-noncompliance-instrumental-variable-iv-settings" style="text-align: left;">2. Noncompliance &amp; Instrumental-Variable (IV) Settings</h3>
+<h4 id="part-6-2-1-what-questions" style="text-align: left;">2.1 What questions?</h4>
+<ul>
+<li>“We randomized encouragement/assignment, but people don’t comply perfectly. What’s the effect of actually
+      taking the treatment?”</li>
+<li>“What’s the effect for the group whose treatment status is influenced by the instrument?”</li>
+</ul>
+<p>
+    Let \(Z\) be an <strong>instrument</strong> (e.g., random assignment, encouragement, distance to facility),
+    \(A\) the actual treatment, and \(Y\) the outcome.
+  </p>
+<h4 id="part-6-2-2-estimands" style="text-align: left;">2.2 Estimands</h4>
+<p id="estimand-intention-to-treat" style="text-align: left;"><b>(a) ITT (Intention-To-Treat Effect)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong> Effect of assignment on the outcome:
+    \[
+      \text{ITT}_Y = \mathbb{E}[Y \mid Z = 1] - \mathbb{E}[Y \mid Z = 0].
+    \]
+  </li><li><strong>Question:</strong>
+    “What is the impact of being <em>assigned or encouraged</em> to treatment, regardless of whether people comply?”
+  </li><li><strong>Use:</strong> Policy settings in which assignment or offer itself is the policy lever (e.g., offering a voucher,
+    offering a training program).
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(b) Effect of assignment on treatment (first stage)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{ITT}_A = \mathbb{E}[A \mid Z = 1] - \mathbb{E}[A \mid Z = 0].
+    \]
+  </li><li><strong>Question:</strong>
+    “How much does the instrument (assignment/encouragement) change treatment uptake?”
+  </li><li><strong>Use:</strong> A non-zero first stage is crucial for IV; if this is near zero, the instrument is weak.
+  </li></ul>
+<p></p>
+<p id="estimand-local-average-treatment-effect" style="text-align: left;"><b>(c) LATE / CACE (Local Average Treatment Effect / Complier Average Causal Effect)</b></p>
+<p>
+    Conceptually, individuals fall into compliance types:
+  </p>
+<ul style="text-align: left;">
+<li><strong>Compliers:</strong> take treatment if \(Z = 1\), don’t if \(Z = 0\).</li>
+<li><strong>Always-takers:</strong> take treatment regardless of \(Z\).</li>
+<li><strong>Never-takers:</strong> never take treatment.</li>
+<li><strong>Defiers:</strong> do the opposite of the assignment (usually ruled out by monotonicity).</li>
+<li><strong>Definition:</strong>
+    \[
+      \text{LATE} = \mathbb{E}[Y(1) - Y(0) \mid \text{compliers}].
+    \]
+  </li><li><strong>Question:</strong>
+    “Among those whose treatment status is actually changed by the instrument (the compliers), what is the average
+    causal effect of treatment?”
+  </li><li><strong>Wald / IV form:</strong> under standard IV assumptions,
+    \[
+      \text{LATE} = \frac{\text{ITT}_Y}{\text{ITT}_A}.
+    \]
+  </li><li><strong>Use: </strong>Randomized trials with noncompliance, Observational IV studies (e.g., draft lottery, distance to hospital, policy shocks).</li><li><strong>Interpretation:</strong>
+    LATE is <em>local</em> to the complier subgroup and need not equal the overall ATE. It answers “What is the
+    effect on those who are marginal with respect to the instrument?”
+  </li></ul>
+<p style="text-align: left;"><b>(d) LATT / LATU</b></p>
+</div><blockquote style="border: none; margin: 0 0 0 40px; padding: 0px;"><div class="cid"><p style="text-align: left;">
+    Variations exist like <strong>LATT</strong> (Local Average Treatment effect on the Treated) and related
+    principal-stratum estimands that focus on effects for specific compliance types among treated or untreated.
+  </p></div></blockquote><div class="cid">
+<p id="estimand-policy-relevant-treatment-effect" style="text-align: left;"><b>(e) MTE (Marginal Treatment Effect) &amp; PRTE (Policy-Relevant Treatment Effect)</b></p>
+<p>
+    More advanced econometric estimands that link ATE, ATT, LATE, etc.
+  </p>
+<ul>
+<li id="estimand-mte"><strong>MTE:</strong> treatment effect for individuals at a specific level of an unobserved “treatment resistance”
+      variable. Conceptually, these are people just on the margin of indifference to treatment.</li>
+<li id="estimand-prte"><strong>PRTE:</strong> the effect of changing a policy (instrument distribution) on outcomes, integrating MTE
+      over the range of individuals affected by the policy change.</li>
+</ul>
+<p>
+    These help show how different causal estimands (ATE, ATT, LATE, etc.) are averages of underlying MTEs over
+    different subsets of the population.
+  </p>
+<h3 id="part-6-3-mediation-pathway-effects" style="text-align: left;">3. Mediation / Pathway Effects</h3>
+<p>
+    Here we care not just whether treatment works, but <strong>how it works</strong>, via mediators.
+  </p>
+<p>
+    Let:
+  </p>
+<ul>
+<li><strong>A:</strong> treatment</li>
+<li><strong>M:</strong> mediator</li>
+<li><strong>Y:</strong> outcome</li>
+</ul>
+<h4 id="part-6-3-1-what-questions" style="text-align: left;">3.1 What questions?</h4>
+<ul>
+<li>“How much of the effect of smoking on heart disease is mediated by blood pressure?”</li>
+<li>“How much of a policy’s effect on health works through income versus stress?”</li>
+</ul>
+<h4 id="part-6-3-2-estimands" style="text-align: left;">3.2 Estimands</h4>
+<p id="estimand-total-effect" style="text-align: left;"><b>(a) Total Effect (TE)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong> Often expressed as
+    \[
+      \text{TE} = \mathbb{E}[Y(1)] - \mathbb{E}[Y(0)],
+    \]
+    or more explicitly
+    \[
+      \text{TE} = \mathbb{E}[Y(1, M(1))] - \mathbb{E}[Y(0, M(0))].
+    \]
+  </li><li><strong>Question:</strong>
+    “What is the overall effect of treatment on the outcome, regardless of the path it takes?”
+  </li></ul>
+<p></p>
+<p id="estimand-natural-direct-effect" style="text-align: left;"><b>(b) Natural Direct Effect (NDE)</b></p>
+<p></p><ul style="text-align: left;"><li>
+    The NDE captures the part of the treatment effect <em>not</em> operating through the mediator.
+  </li><li><strong>Definition (for change \(0 \to 1\) in \(A\)):</strong>
+    \[
+      \text{NDE} = \mathbb{E}[Y(1, M(0))] - \mathbb{E}[Y(0, M(0))].
+    \]
+  </li><li><strong>Question:</strong>
+    “If we change treatment but keep the mediator at the level it would have under no treatment, how much does the
+    outcome change?”
+  </li><li><strong>Use:</strong> Quantifying direct pathways that bypass the mediator.
+  </li></ul><p></p>
+<p id="estimand-natural-indirect-effect" style="text-align: left;"><b>(c) Natural Indirect Effect (NIE)</b></p>
+<p></p><ul style="text-align: left;"><li>
+    The NIE captures the effect transmitted <em>through</em> the mediator.
+  </li><li><strong>Definition:</strong>
+    \[
+      \text{NIE} = \mathbb{E}[Y(0, M(1))] - \mathbb{E}[Y(0, M(0))].
+    \]
+  </li><li><strong>Question:</strong>
+    “If we hold treatment fixed, but let the mediator vary as it would under treatment versus control, how much does
+    the outcome change?”
+  </li><li>
+    Under certain assumptions, the total effect decomposes as
+    \[
+      \text{TE} = \text{NDE} + \text{NIE}.
+    \]
+  </li></ul><p></p>
+<p id="estimand-controlled-direct-effect" style="text-align: left;"><b>(d) Controlled Direct Effect (CDE)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong> The effect of changing \(A\) while fixing the mediator at a specific value \(m\):
+    \[
+      \text{CDE}(m) = \mathbb{E}[Y(1, m)] - \mathbb{E}[Y(0, m)].
+    \]
+  </li><li><strong>Question:</strong>
+    “If we could intervene to fix \(M\) at value \(m\) for everyone, what is the direct effect of treatment?”
+  </li><li><strong>Use:</strong> Evaluating policies where the mediator can be controlled or standardized.
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(e) Interventional / randomized analogues</b></p>
+<p>
+    Interventional direct and indirect effects (sometimes called randomized interventional effects) define mediation
+    estimands by <em>randomizing</em> the mediator from its distribution under each treatment level, which can relax
+    some identification assumptions.
+  </p>
+<p style="text-align: left;"><b>(f) Path-specific effects</b></p>
+<p>
+    For complex DAGs with multiple mediators, you can define effects associated with specific paths (e.g.,
+    \(A \to M_1 \to Y\) vs \(A \to M_2 \to Y\)).
+  </p>
+<p>
+<strong>Question:</strong>
+    “What is the causal effect transmitted through this specific path or set of paths?”
+  </p>
+<h3 id="part-6-4-time-varying-treatments-dynamic-regimes" style="text-align: left;">4. Time-Varying Treatments &amp; Dynamic Regimes</h3>
+<p>
+    Now treatment and covariates evolve over time:
+  </p>
+<ul>
+<li>Treatments: \(A_0, A_1, \dots, A_T\)</li>
+<li>Covariates: \(L_0, L_1, \dots, L_T\)</li>
+</ul>
+<h4 id="part-6-4-1-what-questions" style="text-align: left;">4.1 What questions?</h4>
+<ul>
+<li>“What is the effect of a sustained treatment strategy over several years?”</li>
+<li>“What if we start treatment when a biomarker crosses a threshold?”</li>
+<li>“What is the <em>optimal</em> treatment strategy over time?”</li>
+</ul>
+<h4 id="part-6-4-2-estimands" style="text-align: left;">4.2 Estimands</h4>
+<p>Let \(\bar{A}_t = (A_0, \dots, A_t)\); similarly for \(\bar{L}_t\).</p>
+<p id="estimand-nde" style="text-align: left;"><b>(a) Mean outcome under a static treatment regime</b></p>
+<p>
+    Consider a fixed sequence of treatments \(\bar{a}\) (e.g., always treat, never treat).
+  </p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \mathbb{E}[Y^{\bar{a}}],
+    \]
+    the expected outcome if everyone followed regime \(\bar{a}\).
+  </li><li><strong>Question:</strong>
+    “What would the average outcome be if everyone followed this static treatment strategy?”
+  </li><li><strong>Use:</strong> Comparing different hypothetical long-term strategies via the g-formula, marginal structural
+    models (MSMs), etc.
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(b) Dynamic treatment regime estimands</b></p>
+<p>
+    A dynamic regime sets treatment based on history: \(A_t = g_t(\bar{L}_t, \bar{A}_{t-1})\).
+  </p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \mathbb{E}[Y^{g}],
+    \]
+    the expected outcome if everyone followed regime \(g\).
+  </li><li><strong>Question:</strong>
+    “What is the effect of following a data-dependent strategy, like ‘treat if CD4 &lt; 350’?”
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(c) Optimal regime value</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \max_{g \in \mathcal{G}} \mathbb{E}[Y^{g}],
+    \]
+    where \(\mathcal{G}\) is a class of candidate regimes.
+  </li><li><strong>Question:</strong>
+    “Among all feasible treatment strategies in class \(\mathcal{G}\), which yields the best expected outcome?”
+  </li><li><strong>Use:</strong> Basis for dynamic treatment regimes and reinforcement learning approaches in medicine and
+    policy.
+  </li></ul>
+<p></p>
+<p style="text-align: left;"><b>(d) MSM parameters</b></p>
+<p>
+    Marginal Structural Models (MSMs) specify parametric models for causal contrasts between multiple hypothetical
+    treatment regimes (e.g., log-hazard ratios comparing always-treat vs never-treat). The parameters of these models
+    are estimands summarizing \(\mathbb{E}[Y^{\bar{a}}]\) across different regimens.
+  </p>
+<h3 id="part-6-5-distributional-inequality-focused-estimands" style="text-align: left;">5. Distributional / Inequality-Focused Estimands</h3>
+<h4 id="part-6-5-1-what-questions" style="text-align: left;">5.1 What questions?</h4>
+<ul>
+<li>“Does the treatment help the worst-off more than the best-off?”</li>
+<li>“How does treatment affect the distribution of outcomes, not just the mean?”</li>
+<li>“Does this policy reduce or increase inequality?”</li>
+</ul>
+<h4 id="part-6-5-2-estimands" style="text-align: left;">5.2 Estimands</h4>
+<p style="text-align: left;"><b>(a) Quantile Treatment Effect (QTE)</b></p>
+<p>
+    Let \(Q_{Y(a)}(q)\) be the \(q\)-th quantile of \(Y(a)\).
+  </p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{QTE}(q) = Q_{Y(1)}(q) - Q_{Y(0)}(q).
+    \]
+  </li><li><strong>Question:</strong>
+    “How much does the \(q\)-th percentile of the outcome distribution change if everyone were treated
+    vs not treated?”
+  </li><li><strong>Use: </strong>Understanding who gains most from treatment (e.g., bottom vs top of the outcome distribution). Assessing distributional impacts rather than just mean effects.</li></ul>
+<p></p>
+<p style="text-align: left;"><b>(b) Effects on variance / inequality indices</b></p>
+<p>
+    Estimands can target:
+  </p>
+<ul>
+<li>\(\text{Var}(Y(1)) - \text{Var}(Y(0))\) (effect on variance)</li>
+<li>Differences in Gini coefficient, Theil index, etc., under treatment vs control</li>
+</ul>
+<p>
+<strong>Question:</strong>
+    “Does the intervention make outcomes more or less unequal?”
+  </p>
+<h3 id="part-6-6-interference-spillover-effects" style="text-align: left;">6. Interference / Spillover Effects</h3>
+<p>
+    Here, one unit’s treatment may affect another unit’s outcome (e.g., networks, households, classrooms).
+    This violates the usual no-interference part of SUTVA.
+  </p>
+<h4 id="part-6-6-1-what-questions" style="text-align: left;">6.1 What questions?</h4>
+<ul>
+<li>Vaccines: “What is the direct protection from vaccinating someone, and what is the indirect herd protection
+      via others being vaccinated?”</li>
+<li>Social programs: “Does your neighbor’s treatment status affect your outcome?”</li>
+</ul>
+<p>
+    A common assumption is <strong>partial interference</strong>: interference only within, not between, groups
+    (e.g., villages, households).
+  </p>
+<h4 id="part-6-6-2-hudgens-hallorantype-estimands" style="text-align: left;">6.2 Hudgens &amp; Halloran–type estimands</h4>
+<p>
+    Hudgens &amp; Halloran (2008) define:
+  </p>
+<ul>
+<li><strong>Direct effect</strong></li>
+<li><strong>Indirect (spillover) effect</strong></li>
+<li><strong>Total effect</strong></li>
+<li><strong>Overall effect</strong></li>
+</ul>
+<p>
+    Very roughly:
+  </p>
+<ul>
+<li><strong>Direct effect:</strong> Effect on an individual of changing <em>their own</em> treatment status, holding
+      others’ treatment fixed.</li>
+<li><strong>Indirect (spillover) effect:</strong> Effect on an individual of changing <em>others’</em> treatments,
+      holding that individual’s own treatment fixed.</li>
+<li><strong>Total effect:</strong> Combined effect of changing both own and others’ treatment (direct + indirect).</li>
+<li><strong>Overall effect:</strong> Effect on average outcomes of changing the <em>allocation strategy</em> (e.g.,
+      vaccinate 30% vs 70% of the group).</li>
+</ul>
+<p>
+    These are formally defined in terms of potential outcomes that depend on the entire vector of treatments within a
+    group.
+  </p>
+<h3 id="part-6-7-principal-stratification-truncation-by-events" style="text-align: left;">7. Principal Stratification &amp; Truncation by Events</h3>
+<p>
+    Principal stratification handles post-treatment variables that define latent subgroups, like survival or compliance
+    type.
+  </p>
+<h4 id="part-6-7-1-what-questions" style="text-align: left;">7.1 What questions?</h4>
+<ul>
+<li>“What is the treatment effect among people who would survive under either treatment arm?”</li>
+<li>“What is the effect among compliers, i.e., those who would take treatment if encouraged and not otherwise?”</li>
+</ul>
+<h4 id="part-6-7-2-estimands" style="text-align: left;">7.2 Estimands</h4>
+<p style="text-align: left;"><b>(a) Principal stratification in general</b></p>
+</div><blockquote style="border: none; margin: 0 0 0 40px; padding: 0px;"><div class="cid"><p style="text-align: left;">
+    Let \(S(a)\) be a post-treatment variable (e.g., survival indicator under treatment level \(a\)).
+    Principal strata are defined by joint potential values \((S(0), S(1))\) (e.g., survive both, survive only if
+    treated, etc.).
+  </p></div></blockquote><div class="cid">
+<p id="estimand-survivor-average-causal-effect" style="text-align: left;"><b>(b) SACE (Survivor Average Causal Effect)</b></p>
+<p></p><ul style="text-align: left;"><li><strong>Definition:</strong>
+    \[
+      \text{SACE} = \mathbb{E}[Y(1) - Y(0) \mid S(0) = 1, S(1) = 1].
+    \]
+  </li><li><strong>Question:</strong>
+    “Among those who would survive regardless of treatment assignment, what is the average treatment effect on
+    outcome?”
+  </li></ul>
+<p></p>
+<p id="estimand-cace" style="text-align: left;"><b>(c) CACE / LATE as principal-stratum estimand</b></p>
+</div><blockquote style="border: none; margin: 0 0 0 40px; padding: 0px;"><div class="cid"><p style="text-align: left;">
+    The complier average causal effect (CACE) can also be expressed via principal strata defined by potential treatment
+    receipt under \(Z = 0\) and \(Z = 1\). Compliers are the stratum with \(A(0) = 0\), \(A(1) = 1\).
+  </p></div></blockquote><div class="cid">
+<h3 id="part-6-8-transportability-external-validity-estimands" style="text-align: left;">8. Transportability &amp; External Validity Estimands</h3>
+<h4 id="part-6-8-1-what-questions" style="text-align: left;">8.1 What questions?</h4>
+<ul>
+<li>“Given a trial in population A, what is the expected effect in population B?”</li>
+<li>“How does the effect vary across sites or settings?”</li>
+</ul>
+<h4 id="part-6-8-2-estimands" style="text-align: left;">8.2 Estimands</h4>
+<p></p><ul style="text-align: left;"><li><strong>Transported ATE / TATE:</strong> The ATE in a target population whose covariate distribution differs from the
+    study sample. Often:
+    \[
+      \text{TATE} = \mathbb{E}_{X \sim \text{target}}[\text{CATE}(X)].
+    \]
+  </li><li><strong>Site-specific ATEs:</strong> ATEs within each study site, plus summaries (e.g., meta-analytic estimands).
+  </li></ul>
+<p></p>
+<p>
+    These estimands formalize the notion of applying causal findings from one context to another under explicit
+    assumptions about effect modification and covariate shifts.</p>
+</div></section><section class="part" id="part-7"><h2 id="part-7-part-vii-technical-foundation-assumptions">7. Technical foundation: assumptions</h2><h4 id="part-7-common-assumptions" style="text-align: left;">Common Assumptions</h4><div>
+<ol>
+<li id="assumption-consistency-well-defined-interventions"><strong>Consistency (Well-defined Interventions)</strong>
+<ul>
+<li>
+          The observed outcome under the treatment actually received equals the potential outcome for that treatment 
+          (i.e., if a person receives treatment level <em>A = a</em>, then their observed outcome is the same as 
+          their potential outcome <em>Y(a)</em>).
+        </li>
+<li>
+          Requires that treatments are clearly and precisely defined (what, when, how long, dosage, etc.) and 
+          implemented consistently across individuals.
+        </li>
+<li>
+          Implies that there are no “mismatches” between the label of the treatment in the data and what the 
+          potential outcome refers to (the treatment in theory is the same as the treatment in practice).
+        </li>
+<li><strong>Why it matters:</strong> If the same treatment label corresponds to different real-world procedures, 
+          you cannot interpret the estimated effect as the effect of a single well-defined intervention.
+        </li>
+<li><strong>Example:</strong>
+<ul>
+<li>
+              Suppose “treatment” is recorded as “received physical therapy.” If in reality some patients get 
+              2 weeks of light stretching and others get 3 months of intensive rehab, then the treatment is not 
+              well-defined. Consistency is violated because <em>Y(therapy)</em> is ambiguous.
+            </li>
+<li>
+              In contrast, if treatment is defined as “12 sessions of standardized physical therapy over 4 weeks 
+              following protocol X,” and everyone labeled as treated actually gets that same protocol, then the 
+              consistency assumption is more plausible.
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="assumption-exchangeability-no-unmeasured-confounding-ignorability"><strong>Exchangeability (No Unmeasured Confounding / Ignorability)</strong>
+<ul>
+<li>
+          Given the observed covariates <em>X</em>, treatment assignment <em>A</em> is independent of the potential 
+          outcomes <em>Y(a)</em> for all treatment levels <em>a</em>. Intuitively, after conditioning on <em>X</em>, 
+          there are no unmeasured factors that jointly affect both treatment and outcome.
+        </li>
+<li>
+          After adjusting for the covariates <em>X</em>, the treated and untreated groups are comparable as if treatment 
+          were randomized within levels of <em>X</em>.
+        </li>
+<li>
+          This assumption is sometimes phrased as “no unmeasured confounders,” “selection on observables,” or 
+          “conditional ignorability.”
+        </li>
+<li><strong>Why it matters:</strong> Violations lead to biased estimates because differences in outcomes may 
+          be due to unmeasured factors rather than the treatment itself.
+        </li>
+<li><strong>Example:</strong>
+<ul>
+<li>
+              Studying the effect of a new diabetes medication on HbA1c. If sicker patients (with higher baseline 
+              HbA1c, more comorbidities) are more likely to receive the medication, and these health characteristics 
+              are <em>not</em> measured or adjusted for, then exchangeability is violated. The treated group is 
+              systematically different from the untreated group in ways that affect the outcome.
+            </li>
+<li>
+              If, however, you have rich data on baseline HbA1c, comorbidities, age, BMI, prior treatment history, 
+              and healthcare access, and you appropriately adjust for them, then it becomes more plausible that 
+              within levels of these covariates, treatment assignment is “as good as random.”
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="assumption-positivity-overlap-common-support"><strong>Positivity (Overlap / Common Support)</strong>
+<ul>
+<li>
+          For every combination of observed covariates <em>X</em> that occurs in the population, each treatment level 
+          has a positive probability of being received:
+          <br/>
+<em>0 &lt; P(A = a | X = x) &lt; 1</em> for all relevant <em>a, x</em>.
+        </li>
+<li>
+          Intuitively, there must be overlap between treated and untreated individuals within covariate strata. 
+          If some subgroup never (or almost never) receives a particular treatment, we cannot learn the causal 
+          effect for that subgroup from the data.
+        </li>
+<li>
+          Positivity can be violated structurally (by design, e.g., guidelines forbid treatment in a subgroup) 
+          or practically (e.g., probabilities extremely close to 0 or 1 due to strong selection).
+        </li>
+<li><strong>Why it matters:</strong> Without overlap, comparisons become extrapolations outside the support 
+          of the data, making causal estimates unstable or non-identifiable.
+        </li>
+<li><strong>Example:</strong>
+<ul>
+<li>
+              Suppose you are evaluating the effect of an aggressive chemotherapy protocol, but in practice it is 
+              only ever given to patients under age 70. For patients over 70, the probability of receiving this 
+              treatment is effectively 0. You cannot estimate the effect of this protocol for patients over 70 
+              because there is no treated comparison group for them.
+            </li>
+<li>
+              In a policy setting, if a scholarship is only available to students above a certain test score, then 
+              for low-score students the probability of receiving the scholarship is 0. The effect of the scholarship 
+              on those low-score students is not identifiable from the observed data.
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="assumption-stable-unit-treatment-value-assumption-sutva"><strong>Stable Unit Treatment Value Assumption (SUTVA)</strong>
+<ul>
+<li id="assumption-no-interference">
+<strong>No interference:</strong> Each individual’s potential outcome depends only on their own treatment 
+          assignment, not on the treatment assignments of other individuals (i.e., my outcome is unaffected by 
+          what treatment you receive).
+        </li>
+<li>
+<strong>No hidden versions of treatment:</strong> For each treatment level defined in the study (e.g., 
+          “treated” vs “untreated”), there is a single, well-defined version. Different versions that could have 
+          different effects are not all lumped into the same category.
+        </li>
+<li>
+          SUTVA is fundamental for defining potential outcomes as functions of an individual’s own treatment only, 
+          rather than of the entire treatment vector in the population.
+        </li>
+<li><strong>Why it matters:</strong> Violations can cause standard causal estimands (like average treatment 
+          effects) to be ill-defined or misleading, because outcomes depend on others’ treatment or on unrecognized 
+          treatment variations.
+        </li>
+<li><strong>Examples:</strong>
+<ul>
+<li>
+<em>Interference violation:</em> Studying the effect of a vaccine on infection risk. If my risk depends 
+              not only on whether I am vaccinated but also on whether the people around me are vaccinated 
+              (herd immunity), then SUTVA (no interference) is violated. Specialized methods (e.g., network or 
+              spillover models) are needed.
+            </li>
+<li>
+<em>Hidden versions violation:</em> Treatment is “participation in a job training program,” but in reality 
+              there are multiple program types (short workshop, intensive multi-month training, online vs in-person). 
+              If these versions have different effects but are all coded simply as “treated,” the no hidden versions 
+              part of SUTVA is violated.
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="assumption-correct-model-specification-when-using-parametric-models"><strong>Correct Model Specification (when using parametric models)</strong>
+<ul>
+<li>
+          The chosen statistical model correctly represents the relationship among treatment, covariates, and outcome, 
+          including the functional form (e.g., linear vs nonlinear), interactions, and distributional assumptions 
+          (e.g., normal errors, logistic link).
+        </li>
+<li>
+          Misspecification can occur if important covariates are omitted, if nonlinearity is ignored, if interactions 
+          are missing, or if incorrect link/distribution assumptions are made.
+        </li>
+<li>
+          Parametric approaches (e.g., simple linear or logistic regression) strongly rely on these assumptions; 
+          semi-parametric or nonparametric / machine learning approaches can relax them but still require other 
+          assumptions (e.g., enough data, regularization).
+        </li>
+<li><strong>Why it matters:</strong> Even if exchangeability, consistency, and positivity hold, a misspecified 
+          model can yield biased estimates of causal effects.
+        </li>
+<li><strong>Example:</strong>
+<ul>
+<li>
+              Fitting a linear regression model to estimate the effect of dosage on blood pressure, when the true 
+              relationship is highly nonlinear (e.g., plateauing at high doses). If the model assumes a straight line, 
+              the estimated effect at high doses could be severely biased.
+            </li>
+<li>
+              Using a logistic regression without including an important interaction (e.g., treatment × age), when in 
+              reality the effect of treatment varies substantially by age. The model may then misrepresent the average 
+              effect or suggest no effect when there is one in specific subgroups.
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="assumption-additional-method-specific-assumptions"><strong>Additional Method-Specific Assumptions</strong>
+<ul>
+<li><em>Instrumental Variables (IV)</em>:
+          <ul>
+<li>
+<strong>Relevance:</strong> The instrument <em>Z</em> is associated with the treatment <em>A</em> 
+              (i.e., it meaningfully shifts the probability or level of treatment).
+            </li>
+<li id="assumption-exclusion-restriction">
+<strong>Exclusion restriction:</strong> The instrument affects the outcome <em>Y</em> only through its 
+              effect on the treatment <em>A</em>, not through any other pathway.
+            </li>
+<li>
+<strong>Independence / Ignorability of the instrument:</strong> The instrument is independent of all 
+              unmeasured confounders of the treatment–outcome relationship (often assumed conditional on covariates).
+            </li>
+<li>
+<strong>Monotonicity (often assumed):</strong> There are no “defiers,” i.e., there is no individual 
+              who would take the opposite treatment status in response to the instrument compared to everyone else.
+            </li>
+<li><strong>Example:</strong> Using distance to the nearest hospital that offers a specialized treatment 
+              as an instrument for receiving that treatment. Relevance requires that living closer increases the chance 
+              of receiving the treatment. The exclusion restriction requires that distance affects the health outcome 
+              only through treatment, not through other channels like general healthcare quality (this is often 
+              debatable and must be argued carefully).
+            </li>
+</ul>
+</li>
+<li><em>Difference-in-Differences (DiD)</em>:
+          <ul>
+<li id="assumption-parallel-trends-assumption">
+<strong>Parallel trends assumption:</strong> In the absence of treatment, the average outcome in treated 
+              and control groups would have followed parallel (or at least similar) trends over time.
+            </li>
+<li>
+              Often requires stable composition of groups over time, no anticipatory effects (units do not change 
+              behavior before the treatment actually occurs), and no simultaneous shocks that differentially affect 
+              treated and control groups.
+            </li>
+<li><strong>Example:</strong> Evaluating the effect of a minimum wage increase in one state (treated) using 
+              a nearby state (control) without a change as a comparison. The key assumption is that, absent the policy, 
+              employment trends in both states would have evolved similarly. If the treated state experiences a separate 
+              recession or industry shock at the same time, the parallel trends assumption may fail.
+            </li>
+</ul>
+</li>
+<li><em>Regression Discontinuity (RD)</em>:
+          <ul>
+<li id="assumption-continuity-of-potential-outcomes-at-the-cutoff">
+<strong>Continuity of potential outcomes at the cutoff:</strong> In the absence of treatment, the 
+              potential outcome as a function of the running variable would be continuous at the threshold where 
+              treatment assignment changes.
+            </li>
+<li>
+              Requires that individuals cannot precisely manipulate the running variable around the cutoff in ways 
+              that select into treatment (or that such manipulation can be ruled out or tested for).
+            </li>
+<li>
+              Under these conditions, units just above and just below the cutoff are assumed to be comparable, and 
+              the discontinuous jump in outcomes at the cutoff can be attributed to the treatment.
+            </li>
+<li><strong>Example:</strong> A scholarship is awarded to students with test scores above 80. If students 
+              cannot precisely manipulate scores and nothing else changes discontinuously at score 80, then the jump 
+              in college attendance at the score threshold can be interpreted as the causal effect of receiving the 
+              scholarship for students near that cutoff.
+            </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div></section><section class="part" id="part-8"><h2 id="part-8-part-viii-concluding-synthesis">8. Concluding synthesis</h2><h4 id="part-8-concluding-remarks" style="text-align: left;">Concluding Remarks</h4><div>For causal inquiry, this is a general outline for what to expect:</div><div><ol><li><b>Formulate</b>: propose_hypothesis → state_estimand → define_population/define_time_zero.</li><li><b>Model/Identify</b>: propose_DAG → justify_identification → list_assumptions.</li><li><b>Design/Estimate</b>: propose_design → run → present_evidence + run_diagnostic.</li><li><b>Mechanize &amp; Compare</b>: propose_mechanism → predict_signature → check_coherence → table_rivals → compare_fit → choose_best_explanation.</li><li><b>Close</b>: accept/reject/suspend + qualify_scope + state_uncertainty + declare_limits_and_next_tests.</li><li><b>At any point</b>: opponents deploy challenge_edge, propose_test, request_sensitivity, propose_trial_or_quasi, assert_extrapolation.</li></ol></div><p style="text-align: left;"></p></section><section class="part" id="part-9"><h2 id="part-9-key-references-suggested-readings">9. Key References &amp; Suggested Readings</h2>
+<h3 id="part-6-general-textbooks-overviews">General textbooks / overviews</h3>
+<ul class="source-list">
+<li>
+      Miguel A. Hernán &amp; James M. Robins,
+      <em>Causal Inference: What If</em>. Free PDF and info:
+      <a href="https://miguelhernan.org/whatifbook" rel="noopener" target="_blank">https://miguelhernan.org/whatifbook</a>
+      (chapters on ATE/ATT, time-varying treatments, g-methods, policy interventions, etc.).
+    </li>
+<li>
+      Guido W. Imbens &amp; Donald B. Rubin,
+      <em>Causal Inference for Statistics, Social, and Biomedical Sciences</em>, Cambridge University Press.
+      Overview and publisher page:
+      <a href="https://www.gsb.stanford.edu/faculty-research/books/causal-inference-statistics-social-biomedical-sciences" rel="noopener" target="_blank">
+        https://www.gsb.stanford.edu/faculty-research/books/causal-inference-statistics-social-biomedical-sciences
+      </a>
+</li>
+<li>
+      Judea Pearl,
+      <em>Causality</em> (2nd ed.). Core reference for DAGs, identification, mediation, path-specific effects, and
+      transportability.
+    </li>
+<li>
+      Tyler VanderWeele,
+      <em>Explanation in Causal Inference: Methods for Mediation and Interaction</em>, Oxford University Press.
+      Book info:
+      <a href="https://hsph.harvard.edu/research/vanderweele-group/books/" rel="noopener" target="_blank">
+        https://hsph.harvard.edu/research/vanderweele-group/books/
+      </a>
+</li>
+</ul>
+<h3 id="part-6-iv-late-and-related-topics">IV, LATE, and related topics</h3>
+<ul class="source-list">
+<li>
+      Guido W. Imbens &amp; Joshua D. Angrist (1994),
+      “Identification and Estimation of Local Average Treatment Effects,” <em>Econometrica</em>.
+      PDF (author copy):
+      <a href="https://scholar.harvard.edu/files/imbens/files/identification_and_estimation_of_local_average_treatment_effects.pdf" rel="noopener" target="_blank">
+        https://scholar.harvard.edu/files/imbens/files/identification_and_estimation_of_local_average_treatment_effects.pdf
+      </a>
+</li>
+<li>
+      Lecture notes on LATE by Imbens:
+      <a href="https://www.cedlas.econo.unlp.edu.ar/wp/wp-content/uploads/miami_late.pdf" rel="noopener" target="_blank">
+        https://www.cedlas.econo.unlp.edu.ar/wp/wp-content/uploads/miami_late.pdf
+      </a>
+</li>
+</ul>
+<h3 id="part-6-mediation-path-specific-effects">Mediation &amp; path-specific effects</h3>
+<ul class="source-list">
+<li>
+      Tyler J. VanderWeele (2016),
+      “Explanation in causal inference: developments in mediation and interaction,” <em>International Journal of Epidemiology</em>.
+      Open-access overview:
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6373498/" rel="noopener" target="_blank">
+        https://pmc.ncbi.nlm.nih.gov/articles/PMC6373498/
+      </a>
+</li>
+<li>
+      Hernán &amp; Robins, <em>What If</em>, chapters on mediation &amp; g-methods
+      (see PDF link above).
+    </li>
+</ul>
+<h3 id="part-6-interference-spillover-effects">Interference / spillover effects</h3>
+<ul class="source-list">
+<li>
+      M.G. Hudgens &amp; M.E. Halloran (2008),
+      “Toward Causal Inference With Interference,” <em>Journal of the American Statistical Association</em>.
+      Open-access version:
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2600548/" rel="noopener" target="_blank">
+        https://pmc.ncbi.nlm.nih.gov/articles/PMC2600548/
+      </a>
+</li>
+</ul>
+<h3 id="part-6-dynamic-treatments-g-methods">Dynamic treatments &amp; g-methods</h3>
+<ul>
+<li>
+      Hernán &amp; Robins, <em>What If</em>, especially chapters on the g-formula, inverse probability weighting, and
+      marginal structural models (see book link above).
+    </li>
+</ul>
+<p>
+    This set of estimands (ATE/ATT/CATE/LATE, direct/indirect effects, regime-based estimands, distributional effects,
+    interference estimands, principal stratification, transportability, and stochastic interventions) covers the main
+    landscape of causal questions in modern causal inference. Each estimand is just a formal way of turning a verbal
+    question (“what if we…”) into a precise mathematical target.
+  </p>
+</section></main></article>
+</body></html>

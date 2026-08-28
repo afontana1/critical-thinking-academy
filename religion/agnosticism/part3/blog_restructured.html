@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Prayer, True Belief, and the Epistemology of Theism</title><style>
+<html><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Prayer, True Belief, and the Epistemology of Theism</title>
+<style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
         color: inherit;
@@ -371,7 +372,187 @@
           color: color-mix(in srgb, currentColor 72%, transparent);
         }
       }
-    </style><script>
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
       window.MathJax = {
         tex: {
           inlineMath: [
@@ -395,7 +576,9 @@
           ],
         },
       };
-    </script><script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="ep-post"><h1>Prayer, “True Belief,” and the Epistemology of Theism</h1><p data-source-index="0">In this post I want to examine several connected components of theistic belief: what it means to say that prayer “works,” what people mean by “true belief,” how religious claims are related to evidence, and what may help explain the persistence of theistic belief. The material is wide-ranging, so I have reorganized it around a progression from the <strong>conceptual problem of prayer</strong>, to the <strong>epistemology of belief</strong>, to <strong>apologetic case studies</strong>, and finally to some <strong>psychological questions about belief revision</strong>.</p><div class="table-wrap"><table aria-label="Table of contents" class="three-col"><thead><tr><th>Part</th><th>Question</th><th>Focus</th></tr></thead><tbody><tr><td data-label="Part"><a href="#part-i-prayer">I. Prayer</a></td><td data-label="Question">What would it mean for prayer to work?</td><td data-label="Focus">Petitionary prayer, omniscience, providence, agency, coincidence, and observable outcomes.</td></tr><tr><td data-label="Part"><a href="#part-ii-true-belief">II. “True Belief”</a></td><td data-label="Question">What kind of belief is religious belief?</td><td data-label="Focus">Belief-in versus belief-that, revelation, miracles, evidence, inner witness, and evidential vulnerability.</td></tr><tr><td data-label="Part"><a href="#part-iii-apologetics">III. Apologetic case studies</a></td><td data-label="Question">How are arguments and conversion stories used?</td><td data-label="Focus">Testimony, “reasonable atheists,” Lee Strobel, Aquinas, fine-tuning, and recurring argumentative patterns.</td></tr><tr><td data-label="Part"><a href="#part-iv-belief-revision">IV. Belief revision</a></td><td data-label="Question">Why can these commitments be difficult to revise?</td><td data-label="Focus">Existential stakes, identity, cognitive dissonance, and belief-preserving mechanisms.</td></tr></tbody></table></div><h2 id="part-i-prayer">Part I — What Would It Mean for Prayer to Work?</h2><h3>1. Scope: prayer, petition, and causal effectiveness</h3><p data-source-index="1">I’ll start with prayer. Before asking whether prayer “works,” we first need to ask what prayer is and what it would mean for it to work. Does “working” mean merely having some effect on the person who prays, or does it mean bringing about the requested outcome? Prayer can include praise, confession, thanksgiving, contemplation, requests for guidance, and petitions on behalf of oneself or another person. Jesus’ Lord’s Prayer and the Islamic practice of Salah illustrate that prayer can serve several functions beyond simple requests. My main concern here, however, is <strong>petitionary prayer</strong>: prayer that asks God to bring about some state of affairs. The objection is therefore not that every form of prayer is meaningless, but that claims about the <a href="https://en.wikipedia.org/wiki/Efficacy_of_prayer">efficacy of prayer</a> often move between different meanings of “works.” A response such as “you can’t ask God for a BMW” does not resolve that ambiguity. It also seems to presuppose a view about divine psychology—what God would or would not choose to do—despite the familiar claim that human beings cannot fully grasp God’s reasons. Kevin Scharp discusses this problem of <a href="https://www.reddit.com/r/philosophy/comments/50nmmh/william_lane_craig_and_kevin_scharp_debate_is/">divine psychology in this debate</a>. The central issue I want to examine is narrower: what causal or explanatory role can petitionary prayer play if God is traditionally understood as tri-omni—omnipotent, omnipresent, and omniscient—and why do alleged answers to prayer seem to track outcomes that already have natural mechanisms or nonzero probabilities, while physically extraordinary requests such as <a href="https://whywontgodhealamputees.com/">healing amputees</a> do not?</p><div class="table-wrap"><table class="three-col"><thead><tr><th>Term</th><th>Working definition</th><th>Why it matters</th></tr></thead><tbody><tr><td data-label="Term">Prayer</td><td data-label="Working definition">A broad category including praise, contemplation, confession, thanksgiving, guidance, and petition.</td><td data-label="Why it matters">Not every criticism of petitionary prayer is a criticism of prayer in every sense.</td></tr><tr><td data-label="Term">Petitionary prayer</td><td data-label="Working definition">A request that God bring about, prevent, or alter some state of affairs.</td><td data-label="Why it matters">This is the form of prayer for which causal efficacy is most naturally claimed.</td></tr><tr><td data-label="Term">“Prayer works”</td><td data-label="Working definition">For the present argument: the requested outcome occurs at least partly because the petition was offered.</td><td data-label="Why it matters">This distinguishes causal efficacy from comfort, reflection, community, or post hoc interpretation.</td></tr></tbody></table></div><h3>2. Omniscience, foreknowledge, providence, and agency</h3><p data-source-index="2">
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head><body><div class="ep-post"><h1>Prayer, “True Belief,” and the Epistemology of Theism</h1><p data-source-index="0">In this post I want to examine several connected components of theistic belief: what it means to say that prayer “works,” what people mean by “true belief,” how religious claims are related to evidence, and what may help explain the persistence of theistic belief. The material is wide-ranging, so I have reorganized it around a progression from the <strong>conceptual problem of prayer</strong>, to the <strong>epistemology of belief</strong>, to <strong>apologetic case studies</strong>, and finally to some <strong>psychological questions about belief revision</strong>.</p><div class="table-wrap"><table class="three-col" aria-label="Table of contents"><thead><tr><th>Part</th><th>Question</th><th>Focus</th></tr></thead><tbody><tr><td data-label="Part"><a href="#part-i-prayer">I. Prayer</a></td><td data-label="Question">What would it mean for prayer to work?</td><td data-label="Focus">Petitionary prayer, omniscience, providence, agency, coincidence, and observable outcomes.</td></tr><tr><td data-label="Part"><a href="#part-ii-true-belief">II. “True Belief”</a></td><td data-label="Question">What kind of belief is religious belief?</td><td data-label="Focus">Belief-in versus belief-that, revelation, miracles, evidence, inner witness, and evidential vulnerability.</td></tr><tr><td data-label="Part"><a href="#part-iii-apologetics">III. Apologetic case studies</a></td><td data-label="Question">How are arguments and conversion stories used?</td><td data-label="Focus">Testimony, “reasonable atheists,” Lee Strobel, Aquinas, fine-tuning, and recurring argumentative patterns.</td></tr><tr><td data-label="Part"><a href="#part-iv-belief-revision">IV. Belief revision</a></td><td data-label="Question">Why can these commitments be difficult to revise?</td><td data-label="Focus">Existential stakes, identity, cognitive dissonance, and belief-preserving mechanisms.</td></tr></tbody></table></div><h2 id="part-i-prayer">Part I — What Would It Mean for Prayer to Work?</h2><h3>1. Scope: prayer, petition, and causal effectiveness</h3><p data-source-index="1">I’ll start with prayer. Before asking whether prayer “works,” we first need to ask what prayer is and what it would mean for it to work. Does “working” mean merely having some effect on the person who prays, or does it mean bringing about the requested outcome? Prayer can include praise, confession, thanksgiving, contemplation, requests for guidance, and petitions on behalf of oneself or another person. Jesus’ Lord’s Prayer and the Islamic practice of Salah illustrate that prayer can serve several functions beyond simple requests. My main concern here, however, is <strong>petitionary prayer</strong>: prayer that asks God to bring about some state of affairs. The objection is therefore not that every form of prayer is meaningless, but that claims about the <a href="https://en.wikipedia.org/wiki/Efficacy_of_prayer">efficacy of prayer</a> often move between different meanings of “works.” A response such as “you can’t ask God for a BMW” does not resolve that ambiguity. It also seems to presuppose a view about divine psychology—what God would or would not choose to do—despite the familiar claim that human beings cannot fully grasp God’s reasons. Kevin Scharp discusses this problem of <a href="https://www.reddit.com/r/philosophy/comments/50nmmh/william_lane_craig_and_kevin_scharp_debate_is/">divine psychology in this debate</a>. The central issue I want to examine is narrower: what causal or explanatory role can petitionary prayer play if God is traditionally understood as tri-omni—omnipotent, omnipresent, and omniscient—and why do alleged answers to prayer seem to track outcomes that already have natural mechanisms or nonzero probabilities, while physically extraordinary requests such as <a href="https://whywontgodhealamputees.com/">healing amputees</a> do not?</p><div class="table-wrap"><table class="three-col"><thead><tr><th>Term</th><th>Working definition</th><th>Why it matters</th></tr></thead><tbody><tr><td data-label="Term">Prayer</td><td data-label="Working definition">A broad category including praise, contemplation, confession, thanksgiving, guidance, and petition.</td><td data-label="Why it matters">Not every criticism of petitionary prayer is a criticism of prayer in every sense.</td></tr><tr><td data-label="Term">Petitionary prayer</td><td data-label="Working definition">A request that God bring about, prevent, or alter some state of affairs.</td><td data-label="Why it matters">This is the form of prayer for which causal efficacy is most naturally claimed.</td></tr><tr><td data-label="Term">“Prayer works”</td><td data-label="Working definition">For the present argument: the requested outcome occurs at least partly because the petition was offered.</td><td data-label="Why it matters">This distinguishes causal efficacy from comfort, reflection, community, or post hoc interpretation.</td></tr></tbody></table></div><h3>2. Omniscience, foreknowledge, providence, and agency</h3><p data-source-index="2">
   Let's start with the first point: How it seems somewhat weird to pray given God
   is omniscient. This is actually an even broader topic of discussion if we
   think about how God's foreknowledge might compromise Free Will. This is known
@@ -1285,7 +1468,7 @@
   </p>
 <p>
     Even though Muslims and Mormons claim to have the witness of God in their
-    hearts, Craig denies that other conﬂicting faiths have this exact same self
+    hearts, Craig denies that other conï¬‚icting faiths have this exact same self
     authenticating witness of the Holy Spirit, or that their claims are even
     relevant to the witness he has in his heart.
   </p>
@@ -1294,7 +1477,7 @@
     believe an outrageous and outlandish hypothesis: namely, that billions of
     people now and in the past were not telling the truth when they claimed that
     they never had such an experience.” [Michael Martin, “Craig’s Holy Spirit
-    Epistemology” (1998), http://www.inﬁdels
+    Epistemology” (1998), http://www.inï¬dels
     .org/library/modern/michael_martin/holy_spirit.html] In other words, the
     evidence of billions of sincere nonbelievers is evidence that there is no
     inner Holy Spirit witness of the truth of Christianity. Dr. Craig is

@@ -1,3 +1,4 @@
+<title>Patterns of Reasoning in MAGA Conversations</title>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -369,7 +370,186 @@
           color: color-mix(in srgb, currentColor 72%, transparent);
         }
       }
-    </style>
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
 <script>
       window.MathJax = {
         tex: {
@@ -396,22 +576,6 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<style>
-  .ep-post .lede { font-size: 1.06em; }
-  .ep-post .toc { margin: 1.35em 0 2em; padding: 1em 1.1em; border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: .65rem; background: color-mix(in srgb, currentColor 3%, transparent); }
-  .ep-post .toc h2 { margin-top: 0; border-bottom: 0; padding-bottom: 0; }
-  .ep-post .toc ul { margin-top: .35em; margin-bottom: .35em; }
-  .ep-post .toc ul ul { margin-top: .2em; }
-  .ep-post .section-intro { font-size: 1.02em; }
-  .ep-post .bridge { margin-top: 1.3em; font-style: italic; color: color-mix(in srgb, currentColor 84%, transparent); }
-  .ep-post h2[id], .ep-post h3[id] { scroll-margin-top: 1rem; }
-  .ep-post .back-to-toc { font-size: .88em; margin-top: 1.15em; }
-  .ep-post .synthesis-list li { margin: .38em 0; }
-  @supports not (color: color-mix(in srgb, white 50%, black)) {
-    .ep-post .toc { border-color: rgba(128,128,128,.3); background: rgba(128,128,128,.06); }
-    .ep-post .bridge { color: inherit; opacity: .86; }
-  }
-</style>
 <div class="ep-post"><h1 id="top">Patterns of Reasoning in MAGA Conversations</h1><p class="lede">I've been interacting with Trump loyalists for quite some time. In many of these conversations, I deliberately resist challenging every claim in real time because I want to hear how the reasoning unfolds: which distinctions are made, which assumptions go unexamined, and how certain conclusions come to feel obvious within the conversation.</p><p>This post draws on several recent conversations to examine those recurring patterns. The point is not merely to catalogue political opinions I disagree with. What interests me is the method of reasoning underneath them: black-and-white categorization, emotive language, selective skepticism, conceptual imprecision, and the tendency to filter evidence through an already established political or religious identity.</p><nav aria-label="Table of contents" class="toc" id="contents"><h2>Contents</h2><ul><li><a href="#case-study-lunch">Case Study I: The Lunch Conversation</a><ul><li><a href="#binary-categorization">Political Identity as Binary Categorization</a></li><li><a href="#semantic-collapse">Semantic Collapse and Emotive Language</a></li><li><a href="#system-performance">What Does It Mean for a System to “Work”?</a></li><li><a href="#tribal-allegiance">From Healthcare to Tribal Allegiance</a></li></ul></li><li><a href="#brain-rot">What I Mean by “Brain Rot”</a></li><li><a href="#case-study-friend">Case Study II: Recurring Patterns in a Friend’s Reasoning</a></li><li><a href="#selective-skepticism-expertise">Selective Skepticism and the Politics of Expertise</a><ul><li><a href="#the-over-reliance-on-jordan-peterson-and-the-ignoring-of-broader-psychological-research">The Over-Reliance on Jordan Peterson and the Ignoring of Broader Psychological Research</a></li><li><a href="#the-carnivore-diet-political-bias-and-the-lack-of-scientific-support">The Carnivore Diet, Political Bias, and the Lack of Scientific Support</a></li><li><a href="#contradictions-in-his-approach-to-science-and-rationality">Contradictions in his Approach to Science and Rationality</a></li><li><a href="#the-enneagram-as-a-just-so-story-the-misuse-of-a-pseudoscientific-framework">The Enneagram as a Just-So Story: The Misuse of a Pseudoscientific Framework</a></li><li><a href="#deep-seated-anti-intellectualism-and-the-populist-contempt-for-expertise">Deep-Seated Anti-Intellectualism and the Populist Contempt for Expertise</a></li><li><a href="#knee-jerk-dismissal-of-neuroscience-ignorance-disguised-as-skepticism">Knee-Jerk Dismissal of Neuroscience: Ignorance Disguised as Skepticism</a></li></ul></li><li><a href="#religion-morality-evidence">Religion, Morality, and the Boundaries of Evidence</a><ul><li><a href="#misrepresenting-depression-as-a-personal-choice-and-the-just-world-bias">Misrepresenting Depression as a Personal Choice and the Just World Bias</a></li><li><a href="#morality-and-religious-justification">Morality and Religious Justification</a></li><li><a href="#conflating-ethics-with-abortion">Conflating Ethics with Abortion</a></li><li><a href="#the-shallow-and-inconsistent-morality-of-divine-command-theory">The Shallow and Inconsistent Morality of Divine Command Theory</a></li><li><a href="#shallow-and-misguided-understanding-of-free-will">Shallow and Misguided Understanding of Free Will</a></li><li><a href="#ignorant-assumption-that-atheists-dont-understand-theology">Ignorant Assumption That Atheists Don’t Understand Theology</a></li></ul></li><li><a href="#freedom-individualism-consistency">Freedom, Individualism, and Ethical Consistency</a><ul><li><a href="#psilocybin-cognitive-liberty-and-libertarian-hypocrisy">Psilocybin, Cognitive Liberty, and Libertarian Hypocrisy</a></li><li><a href="#the-selective-approach-to-cognitive-biases-exploitation-vs-understanding">The Selective Approach to Cognitive Biases: Exploitation vs. Understanding</a></li><li><a href="#defending-discrimination">Defending Discrimination</a></li><li><a href="#misuse-of-the-curt-richter-rat-study-cherry-picking-science-to-fit-an-ideological-narrativ">Misuse of the Curt Richter Rat Study: Cherry-Picking Science to Fit an Ideological Narrative</a></li></ul></li><li><a href="#conceptual-precision">Conceptual Precision and Intellectual Performance</a><ul><li><a href="#the-conflation-of-philosophy-and-business-strategy">The Conflation of Philosophy and Business Strategy</a></li><li><a href="#misuse-of-philosophical-terminology-the-ai-girlfriend-and-nihilism-confusion">Misuse of Philosophical Terminology: The “AI Girlfriend” and Nihilism Confusion</a></li></ul></li><li><a href="#political-cultural-narratives">Political and Cultural Narratives</a><ul><li><a href="#cult-like-faith-in-trump-and-his-ignorance-of-geopolitics">Cult-Like Faith in Trump and His Ignorance of Geopolitics</a></li><li><a href="#ignorance-about-alan-turing-and-the-historical-suppression-of-homosexuality">Ignorance About Alan Turing and the Historical Suppression of Homosexuality</a></li><li><a href="#delusional-take-on-tulsi-gabbard-and-the-democratic-party">Delusional Take on Tulsi Gabbard and the Democratic Party</a></li></ul></li><li><a href="#conclusion">Conclusion: The Recurring Structure</a></li></ul></nav><h2 id="case-study-lunch">Case Study I: The Lunch Conversation</h2><p class="section-intro">The first conversation is useful because it shows the process in real time: a policy discussion begins with a vague political label, moves through a chain of increasingly loaded terms, and eventually becomes a test of group membership.</p><h3 id="binary-categorization">Political Identity as Binary Categorization</h3><p>I'll start with what I perceived to be a clear example of brain rot. I recently attended a lunch where everyone at the table was quite radical in their conservatism. However, these were not the types to wave a MAGA flag. They are more subtle in their fanaticism. They are most certainly Trump loyalists. I've never heard anything critical from them about Trump or the new conservative movement more broadly. Inevitably, politics got brought up. We were dining with someone who is in the medical field, and is of Southeast Asian descent. They were asked whether people in the medical profession are "liberal or conservative". Questions like this bother me because they reveal a pervasive <a href="https://en.wikipedia.org/wiki/False_dilemma">black and white thinking</a> that plagues American politics.</p><p>Is it not the case that people subscribe to another <a href="https://en.wikipedia.org/wiki/Category:Political_ideologies">political philosophy</a> that isn't aligned with American conservatism or liberalism? These words are not clearly defined to any extent and they're not descriptive or representative of the actual chain of thought leading someone to a conclusion that can be labeled as "conservative" or "liberal". Rather, bringing these up in conversation is a way to determine whether some person is aligned with your <a href="https://en.wikipedia.org/wiki/Tribalism">tribe</a> . They are markers that designate whether there is a common ground, not a well thought out political philosophy that guides how institutions and governance should operate. This is evident in their usage of the term "The Government"; it's personified as some entity that is fundamentally pernicious, not a collection of institutions existing to achieve certain societal goals.</p><p>The term is used as a <a href="https://en.wikipedia.org/wiki/Synecdoche">synecdoche</a> , reducing it to a monolithic entity that behaves independent of the constituents that fundamentally compose it, rather than perceiving it more broadly in action-oriented terms like <a href="https://en.wikipedia.org/wiki/Governance">Governance</a> . This is what strikes me about these sorts of conversations. A governing body will emerge out of any societal structure; so what we should be talking about are the structures of governance needed to achieve societal goals. Instead, the conversation becomes unnuanced under a facade of sophisticated thinking. Even if we take these terms as useful descriptors of some underlying ideological framework, in the Trump framework, it's just not possible that they could refer to a gradable category. It's also not possible to be more or less liberal/conservative with respect to some question of policy.</p><p>Rather, the terms are used as absolute demarcations, and are unjustifiably contrasted with one another. They construct a <a href="https://en.wikipedia.org/wiki/Straw_man">straw man</a> of the contrasted term (in this case, liberalism) and then demonize it. In the context of these sorts of discussions, "conservative" is a shorthand way of deciding whether your interlocutor is "in the correct group", if their implicit and often unexamined system of values correlates with the person asking the question. That was only the beginning. I decided to stay quite and let the conversation flow rather than interject by calling out the fundamental conceptual errors determining the path of conversation.</p><h3 id="semantic-collapse">Semantic Collapse and Emotive Language</h3><p>The question was answered: apparently, the medical community is more conservative. I understand the meaning of this differently than the way the message is interpreted by the Trump audience. The medical community likely is conservative in the sense that there are power structures resistant to change. This does not mean that medical practitioners are radical Trump supporters. Perhaps some segments of the system are resistant to change and see the Trump administration as useful for preserving their status. However, rather than discussing this crucial difference, the conversation devolves. Instead of using "conservatism" in its traditional sense normally attributed to <a href="https://en.wikipedia.org/wiki/Edmund_Burke">Edmund Burke</a> , a philosophy rooted in skepticism of rapid change, respect for tradition, and the belief in organic social development, it's used in its modern sense of <a href="https://en.wikipedia.org/wiki/Market_fundamentalism">market fundamentalism</a> .</p><p>Almost immediately, liberalism is conflated with socialism, socialism is conflated with Marxism, and Marxism is conflated with evil. The medical practitioner says "the community is typically more conservative because many of them are business owners who don't want to pay taxes". Then, he says that "socialized medicine doesn't work anyway, look what happened under Communism, it just doesn't work". There is a great deal packed into that claim. For one thing, reform of the healthcare system does not imply a "socialized" system, whatever that may mean. This is just a manifestation of black or white thinking; its either a fully privatized market-based solution or socialism (whatever that means). Again, given the level of generality in which these conversations operate and the frivolous ways in which these emotive terms are used, it's hard to have a productive conversation.</p><p>However, from the perspective of a Trump supporter, this conversation is incredibly productive; it reaffirms the dominant narrative that "anything to the Left is Evil". By rapid-firing emotively charged thought-terminating words and phrases, the conversation is simply devoid of any meaningful thought. Emotive words like these have implicit arguments embedded within them. Douglas Walton, a philosopher known for his work on argumentation theory, discusses the argumentative use of emotive language as a way in which language is strategically used to persuade by appealing to emotions rather than relying solely on logic or evidence. The choice of words frames an issue in a way that predisposes an audience to accept or reject an argument. For example: "Tax relief" (implying that taxes are a burden) versus "public investment" (implying benefits).</p><p>Walton emphasizes that in real-world argumentation, speakers often use emotive language to shift burdens of proof, gain rhetorical advantage, or obscure weak arguments. This is precisely what we have here; a <a href="https://en.wikipedia.org/wiki/Gish_gallop">Gish Gallop</a> of weak implicit arguments using undefined terms that are conceptually devoid of any meaning, other than its specific contextual usage of avoiding critical thinking. Since Liberalism = Socialism = Marxism = Evil, we simply don't need to understand, investigate, or interrogate the claim "socialized medicine never works".</p><h3 id="system-performance">What Does It Mean for a System to “Work”?</h3><p>Presumably, there are a plethora of instances of "socialized medicine" a society can choose to instantiate. Each could be configured, designed, and funded differently to meet the needs of a population. By saying "socialized medicine never works, just look at Communist Russia", the person is arguing that every possible instantiation of socialized medicine in principle "won't work" by referring to one historical case, of which no evidence is presented as to whether that system "worked". Absolutely no reasons are given to support the implicit assertion that "in principle" the entire set of instances of this type, is unworkable. The people in this conversation do not want to interrogate this line of inquiry. By even posing the question, you are deemed suspect, are a part of the opposing tribe; which means your thought is wrong by default.</p><p>At this point, no one seems interested in rigorous analysis; the conversation is functioning mainly to confirm a preexisting worldview. The line of reasoning goes like this: "Smart doctor says government bad, therefore I am right". From my perspective, I am waiting for someone to say something that actually has meaningful content. Perhaps we can focus on the "work" part of "socialized medicine does not work". What could this possibly mean in the mind of a Trump supporter? After all, we are comparing systems and evaluating their effectiveness on multiple dimensions. Is a market fundamentalist approach preferred because on the entire vector of possible dimensions, it performs better than socialized medicine? Do we only care about a subset of these possible measures, and does the fundamentalist approach outperform socialized medicine with respect to these?</p><p>We are talking about system performance, so presumably someone should mention at least one key indicator we can use to anchor the discussion. If I say something "does not work", I should specify what aspects of that system are non-performant relative to some preferred alternative, and relative to some criteria. Eventually, someone says "Yeah the wait times in Canada are outrageous". Finally, there is a concrete claim to examine. But again, the conversation stays at an incredibly high level, where nuance and analysis are crowded out in favor of herd consensus. In my mind, the obvious follow-up questions are "wait times on average? wait times for all possible procedures? wait times for certain very important procedures? What are the causes? Is it due to limited capacity? Are there funding constraints?</p><p>Are these factors unique to the Canadian system or are they fundamental to all socialized systems? Despite these issues, was the Canadian system worse prior to switching to this system?". After all, if a system was indeed worse on all dimensions, it would probably be more obvious. None of these questions is actually posed. With respect to one vague measure, Canadian health care performs less effectively than its American counterpart. Even if I grant that, does this mean "socialized medicine does not work"? Perhaps the Canadian system outperforms the US on quality of care, cost effectiveness, healthcare outcomes, public health impact, equity, coverage, resilience, disaster recovery, disaster preparedness, fault tolerance, and accessibility; we will simply never know unless we analyze the words "good" and "works".</p><p>Between these two countries, it's not obvious what type of system achieves its goals more effectively. Perhaps we value cost effectiveness more than faster wait times, because we can have some other government program focused on preventative care, reducing the need for health services; meaning that limited capacity wouldn't be an issue because there is not high demand. This kind of systems thinking simply drops out of the Trump-oriented framework I am describing. Also, why limit the scope to Canada? Systems like those in Germany, the Netherlands, and Scandinavia rank high due to universal coverage with shorter wait times than Canada and lower costs than the U. S. Wouldn't these be examples of "socialized medicine" working? Overall, Canadian public health outranks the US on life expectancy, infant mortality rate, obesity rate, preventable deaths, and healthcare spending per capita; would these be indications of a deteriorating US medical system?</p><p>Of course, the US performs better on a variety of metrics, such as specialty care and high-end treatments. But this also depends on whether the person has insurance that will cover it and affordability. Should we prefer a system where specialty care outranks every other country, but only a select few citizens could have access to that specialty care? Across the board, Canadian prescription drugs are cheaper than those provided in the US; would you prefer having access to a system that has cheaper prescription drugs but worse specialty care? None of these questions are asked. The conversation could have incredible depth. Perhaps we could even discover a novel solution. But no, critical thinking is suppressed in the mind of a MAGA enthusiast. As the conversation progressed, I eventually tuned everyone out just thinking of all this. At some point, the conversation derailed further when Stalin was brought up and how he was worse than Hitler. It's funny that a conversation about healthcare devolves into <a href="https://en.wikipedia.org/wiki/Red_Scare">Red Scare</a> and borderline fascist apologetics.</p><h3 id="tribal-allegiance">From Healthcare to Tribal Allegiance</h3><p>I eventually tuned back in when I heard Russia brought up, and how it's doing great under Putin. <a href="https://accountability.gop/ukraine-quotes/">Right-wing populists romanticize</a> the Putin regime, among other authoritarians like <a href="https://www.newyorker.com/podcast/politics-and-more/why-do-conservatives-love-hungarys-viktor-orban">Viktor Orban's Hungary</a> . They see these places as <a href="https://foreignpolicy.com/2024/09/06/russia-putin-trump-maga-conservative-religion-church-traditional-values-populist/">conservative havens</a> that promote "traditional values", free from any "Leftist" influences. Of course, not all conservatives think this. Many of the right-wing populists who subscribe to media outlets like Epoch Times or The Daily Wire tend to take these pseudo-contrarian positions. If "the Left" supports Ukraine, and anything the left does is by definition Evil, then given a black or white worldview, they will support Russia, finding rationalizations in their echo-chamber. What strikes me is how little media literacy these conversations often display. They latch on to anti-woke media personalities and accept everything they have to say as gospel.</p><p>Thankfully the conversation hit a dead end at this point. It was at this moment when someone engaged me in the conversation. I was asked if I was a "Liberal or Conservative". Obviously, I wanted to give an answer that didn't pigeonhole me into the demonized "liberal" category, while also being somewhat descriptive on how I approach these questions of policy. I am trained as an economist and am well read in the history of economic thought and political philosophy so obviously this left-right framework doesn't quite map on to my understanding of things. How can I possibly explain that I reject market fundamentalism because I am familiar with the assumptions behind neoclassical economic models and Austrian economics, without someone assuming I am a Marxist?</p><p>How can I possibly describe in a few sentences that modern conservatives and liberals share many assumptions in common originating from the Thatcher and Reagan era that I reject, when they conceive of the political landscape as "good versus evil" between two parties? How am I to explain that my opinions are primarily determined by econometric literature, the quality of economic models, and philosophical texts, to an audience who is completely unfamiliar with all of this, anti-intellectual, and skeptical of established knowledge? How am I supposed to explain that some of the wisdom from classical conservative writings resonate with me, but the anarcho-capitalistic austerity policies held by modern conservatives across the world, and the subsequent policy opinions, is the complete antithesis of what I hold to be established economic knowledge?</p><p>They probably wouldn't have ever heard of those terms. I answered with this: "Some of what the liberals say resonates with me, some of what the conservatives say resonates with me, but neither of the parties sufficiently represent what I think about these things, and I've not encountered a politician worth endorsing.". I have no party loyalty. I am not a moderate. My opinions are formed quite differently than Trump loyalists. If you think about it as a Venn Diagram, maybe 5% of the policy stances held by republicans I somewhat agree with, and maybe 15% of the policy stances held by Democrats I somewhat agree with, but that leaves about 80% completely unrepresented. In terms of presidential candidates, there never is an optimal choice.</p><p>I approach it via negativa, or through eliminative reasoning, or negative heuristic reasoning, such that I eliminate the obviously bad ones; obviously it would be Trump in this case. But what happens when I explain this nuance? Usually, the response is boredom, misunderstanding, or confusion. That reaction is disappointing, especially because I am close with these people. The conversation almost immediately shifts once they realize you're not in their camp.</p><h2 id="brain-rot">What I Mean by “Brain Rot”</h2><p class="section-intro">The lunch conversation is one example. Before moving to a longer case study, it helps to define the pattern I am trying to describe.</p><p>In the context of political discourse like this, "brain rot" is a slang term used to describe the perceived decline in someone's ability to think critically, often due to excessive exposure to partisan media, propaganda, or low-quality online discussions. It refers to a state where a person's opinions become increasingly extreme, reactionary, or detached from reality due to ideological echo chambers, misinformation, or unhealthy media consumption habits. I am fairly certain that this conversation is the result of constant engagement with oversimplified or misleading political memes that replace critical engagement with complex issues, exposure to conspiracy theories (deep state narratives) that warp political views into paranoia, and engagement with figures who profit from outrage-driven content manipulate audiences into extreme positions. This entire conversation is a great example of treating politics like a sports team rivalry rather than a discussion of policies, overreliance on talking points from a single ideological source, and a compete absence of engagement with opposing viewpoints that haven't been filtered through the conservative news machine.</p><p>It's sad to say, but there is a religious element to this. In prior conversations, I've seen people from religious communities prioritize faith-based narratives over evidence (e.g., vaccine conspiracies, claims that certain politicians are literal demons). Many of these conspiracy theories (QAnon, globalist cabals, "Satanic elites") borrow from religious apocalyptic storytelling which resonates with many right-wing populists. I've seen people of this demographic align political developments with end-times prophecy, leading to paranoia and disengagement from real-world solutions; for example, a Biden reelection would indicate the end times. The most obvious issue is that religious identity is becoming entangled with nationalism; political loyalty is framed as a religious duty. I've literally heard people suggest that you "Cannot be a Christian and a Democrat". The irony is that right wing populists were "sick of the identity politics" but fail to acknowledge the powerful role of religious identity in political campaigning. Identity politics has completely consumed this new conservative movement. Hence, the pernicious brain rot that's overtaking any reasonable political discourse.</p><h2 id="case-study-friend">Case Study II: Recurring Patterns in a Friend’s Reasoning</h2><p class="section-intro">Not everyone who identifies with right-wing populism is equally zealous, and the following case is more complicated because it concerns a friend I will keep anonymous and whom I genuinely like. We share a sense of humor, enjoy many of the same activities, and have had plenty of good times together. Sometimes, though, I simply cannot make sense of some of the things he says. Over several years, I began taking notes when particular conversations stood out.</p><p>Rather than treating those notes as twenty-one unrelated complaints, I have grouped them by the reasoning pattern each example illustrates. The purpose is to make the accumulation easier to follow: each example adds a different dimension to a smaller set of recurring habits.</p><p>I think this makes the friend a useful case study of what I would call the more sophisticated MAGA mind: the positions can sound more intellectualized than the lunch-table conversation, while many of the same underlying patterns remain.</p><h2 id="selective-skepticism-expertise">Selective Skepticism and the Politics of Expertise</h2><p class="section-intro">The first cluster is about the standards used to decide which authorities, studies, and fields deserve trust. The recurring problem is not a blanket rejection of expertise. It is selective acceptance: evidence is welcomed when it reinforces an existing worldview and discounted when it threatens one.</p><p class="bridge">This pattern first appears in the way a single public intellectual can become a proxy for an entire academic field.</p><h3 id="the-over-reliance-on-jordan-peterson-and-the-ignoring-of-broader-psychological-research">The Over-Reliance on Jordan Peterson and the Ignoring of Broader Psychological Research</h3><p>
  This person is obsessed with Jordan Peterson, much like many right-wing
  individuals who self-identify as libertarians. However, he ignores

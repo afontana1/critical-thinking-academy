@@ -1,3 +1,4 @@
+<title>The Puzzle: Why “Argument from Silence” Leads to Apologetics</title>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -371,146 +372,182 @@
       }
     
 
-      /* Phase 3: presentation reform */
-      .ep-post .ep-deflist {
-        display: grid;
-        grid-template-columns: minmax(10rem, 28%) minmax(0, 1fr);
-        margin: 1.05em 0;
-        border-top: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
         border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
       }
-      .ep-post .ep-deflist dt,
-      .ep-post .ep-deflist dd {
-        margin: 0;
-        padding: 0.62em 0.7em;
-        border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
-      }
-      .ep-post .ep-deflist dt:nth-of-type(1),
-      .ep-post .ep-deflist dd:nth-of-type(1) { border-top: 0; }
-      .ep-post .ep-deflist dt {
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
         font-weight: 700;
-        background: color-mix(in srgb, currentColor 5%, transparent);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
       }
-      .ep-post .ep-subpoints { margin-top: 0.45em; }
-      .ep-post .ep-subpoint {
-        margin: 0.3em 0;
-        padding-left: 0.85em;
-        border-left: 2px solid color-mix(in srgb, currentColor 18%, transparent);
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
       }
-      .ep-post .ep-argument,
-      .ep-post .ep-example-box {
-        margin: 1em 0;
-        padding: 0.8em 1em;
-        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-        border-radius: 0.6rem;
-        background: color-mix(in srgb, currentColor 3%, transparent);
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
       }
-      .ep-post .ep-argument > :first-child,
-      .ep-post .ep-example-box > :first-child { margin-top: 0; }
-      .ep-post .ep-argument > :last-child,
-      .ep-post .ep-example-box > :last-child { margin-bottom: 0; }
-      @supports not (color: color-mix(in srgb, white 50%, black)) {
-        .ep-post .ep-deflist,
-        .ep-post .ep-deflist dt,
-        .ep-post .ep-deflist dd,
-        .ep-post .ep-argument,
-        .ep-post .ep-example-box { border-color: rgba(128, 128, 128, 0.28); }
-        .ep-post .ep-deflist dt,
-        .ep-post .ep-argument,
-        .ep-post .ep-example-box { background: rgba(128, 128, 128, 0.07); }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
       }
-      @media (max-width: 720px) {
-        .ep-post .ep-deflist { display: block; border: 0; }
-        .ep-post .ep-deflist dt {
-          border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-          border-bottom: 0;
-          border-radius: 0.55rem 0.55rem 0 0;
-          margin-top: 0.8em;
-        }
-        .ep-post .ep-deflist dd {
-          border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-          border-top: 0;
-          border-radius: 0 0 0.55rem 0.55rem;
-        }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
       }
-
-
-      /* Phase 5–6 editorial refinements */
-      .ep-post .section-lead {
-        margin: 0.35em 0 1.1em;
-        font-size: 1.03em;
-        line-height: 1.62;
-        color: color-mix(in srgb, currentColor 86%, transparent);
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
       }
-
-      .ep-post .math-inline { white-space: nowrap; }
-      .ep-post mjx-container[jax="CHTML"] { color: inherit; }
-      .ep-post mjx-container:not([display="true"]) { margin: 0 0.08em; }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
 
 
       /* =========================================================
-         Table of contents
+         Phase 4: editorial presentation system
          ========================================================= */
-      .ep-post .ep-toc {
-        margin: 0.4em 0 2.2em;
-        padding: 1rem 1.1rem;
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
         border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-        border-radius: 0.65rem;
+        border-radius: 0.7rem;
         background: color-mix(in srgb, currentColor 3%, transparent);
       }
 
-      .ep-post .ep-toc-title {
-        margin: 0 0 0.25em;
-        font-size: 1.2rem;
-        line-height: 1.3;
-        font-weight: 700;
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
       }
 
-      .ep-post .ep-toc-note {
-        margin: 0 0 0.9em;
-        font-size: 0.92em;
-        color: color-mix(in srgb, currentColor 78%, transparent);
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
       }
 
-      .ep-post .ep-toc-grid {
-        display: block;
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
       }
 
-      .ep-post .ep-toc-group {
-        display: block;
-        min-width: 0;
-        margin: 0.42em 0;
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
       }
 
-      .ep-post .ep-toc-section {
-        display: inline-block;
-        font-weight: 700;
-        line-height: 1.35;
-        margin-bottom: 0.18em;
-      }
-
-      .ep-post .ep-toc-subsections {
-        margin: 0.2em 0 0 1.15em;
-        padding: 0;
-        font-size: 0.9em;
-        line-height: 1.45;
-      }
-
-      .ep-post .ep-toc-subsections li {
-        margin: 0.16em 0;
-      }
-
-      @supports not (color: color-mix(in srgb, white 50%, black)) {
-        .ep-post .ep-toc {
-          border-color: rgba(128, 128, 128, 0.3);
-          background: rgba(128, 128, 128, 0.05);
-        }
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
       }
 
       @media (max-width: 720px) {
-        .ep-post .ep-toc-group {
-          margin: 0.5em 0;
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
         }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
       }
 </style>
 <script>
@@ -538,7 +575,7 @@
         },
       };
     </script>
-<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <!-- Structural revision: phases 1–2 only. Substantive source content preserved; headings added and blocks reordered. -->
 <!-- Editorial revision through phases 7–8: structure, presentation, paragraphing, transitions/prose, notation consistency, and continuity audit. -->
 <div class="ep-post">

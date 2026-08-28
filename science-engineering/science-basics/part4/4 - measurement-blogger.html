@@ -1,0 +1,698 @@
+<title>Scientific Measurement</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+  .image-placeholder {
+    border: 1px dashed #999;
+    padding: 12px;
+    margin: 1em 0;
+    font-style: italic;
+    color: #666;
+    background: #f7f7f7;
+  }
+  .concept-flow {
+    display: block;
+    padding: 10px 12px;
+    margin: 1em 0;
+    background: #f7f7f7;
+    border-left: 4px solid #ccc;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    color: #555;
+    background: #f9f9f9;
+  }
+</style>
+<article class="ep-post">
+<h1>Scientific Measurement</h1>
+<p>This topic actually spans entire academic journals, so it will be somewhat difficult to condense this rich topic into something concise. Measurement is important across pretty much every domain of science and engineering. Given the nuances specific to each domain, I'll try to capture the broad generalities that could represent how scientists "in general" think about measurement. Much of my thinking on this section comes from "Measurement Across the Sciences: Developing a Shared Concept System for Measurement".</p>
+<p>As a disclaimer, this section will be biased towards measurement considerations in the social sciences, primarily because I am an applied econometrician by training. Like I mentioned previously, the concept of "measurement" is extremely broad. For example, there is a widely research area of research in mathematics called "Measure Theory", that seeks to formalize and generalize common notions of measurement such as magnitude, mass, and probability. In contrast, there is the scientific study of measurement called "Metrology", which is less concerned with formalization, and much more concerned with establishing units of measurement, development of measurement methods/instruments, identification of measurement standards, evaluation of uncertainties, and the traceability/usability of these standards across a wider population. Mathematical theories of measure do not concern themselves with evidential grounds or success criteria associated with such methods. This culminates in products such as the International Vocabulary of Metrology standardized by ISO. If you look at broad definitions of measurement, they almost always make explicit reference to the fact that the thing being measured is physical. This begs the question "can non-physical 'things' be measured?" If something is non-physical, is it inherently incapable of being empirically investigated? Consider something like "subjective probability" in Bayesian statistics, to what extent can someone measure their "degrees of belief" about a proposition? Nevertheless, social scientists frequently make reference to "measurements" when conducting empirical research. Economists construct "Happiness Indexes", Psychologists measure "Personality", and Sociologists measure "Community Cohesion", often using sophisticated statistical methods that map observed data to unobserved "constructs". At first glance, I think it's obvious these are quite distinct from yardstick measures someone can use in a physical science lab. In many physical-science settings, there’s a well-defined quantity, and an instrument that’s been calibrated to that quantity. In a lot of social-science settings, there’s a theoretical construct, and we build a data-collection apparatus to approximate it. I'll explain this difference in detail later; for now lets dive into the fundamentals.</p>
+<p>So what is measurement? It is the process of assigning numbers (or well-ordered labels) to aspects of the world according to a rule so that the numbers reflect something about the thing. We have a set of real things (objects, events) and a set of numbers; measurement is a structure preserving assignment from one set to the other. I think social science adds additional constraints, captured by the SEP article linked above. From section 7 of the SEP article, model-based accounts of measurement consist of two levels:</p>
+<blockquote>(i) a concrete process involving interactions between an object of interest, an instrument, and the environment; and (ii) a theoretical and/or statistical model of that process, where “model” denotes an abstract and local representation constructed from simplifying assumptions. The central goal of measurement according to this view is to assign values to one or more parameters of interest in the model in a manner that satisfies certain epistemic desiderata, in particular coherence and consistency.</blockquote>
+<p>So measurement involves interaction between the object (or aspect of the system), an instrument (or measuring tool), and an environment, which includes the subjects doing the measurement. Measurement represents these interactions with parameters, assigning values to the parameters (measurands), based on the results of the interactions. The SEP article continues, saying there are two main outputs identified by model-based accounts of measurement:</p>
+<ul>
+<li>Instrument indications: these are properties of the measuring instrument in its final state after the measurement process is complete. Examples are digits on a display, marks on a multiple-choice questionnaire and bits stored in a device’s memory. Indications may be represented by numbers, but such numbers describe states of the instrument and should not be confused with measurement outcomes, which concern states of the object being measured.</li>
+</ul>
+<ul>
+<li>Measurement Outcomes: these are knowledge claims about the values of one or more quantities attributed to the object being measured, and are typically accompanied by a specification of the measurement unit and scale and an estimate of measurement uncertainty. For example, a measurement outcome may be expressed by the sentence “the mass of object a is 20±1 grams with a probability of 68%”.</li>
+</ul>
+<p>Inferring outcomes from instrument measures is non-trivial, often being theory laden and reliant on statistical assumptions about the object being measured, the instrument, the environment, and calibration process. Let's concretize this. Consider an econometric study that seeks to understand the the effect of some policy on health outcomes. The object being measured might be aggregate outcomes among a population (survival rates), the instrument might be self-report surveys or hospital reports, the environment might include sources of confounding variables (noise), and the calibration process might be how the surveyor constructed the survey (use of language, choice of questions, etc.), how those questions connect to the concept (health), and accepted measurement standards. Corrections in data might be necessary to account for systematic bias in data collection; for example if we know there to be a non-response bias due to some expected reason, we might adjust the data according to statistical and theoretic assumptions. On this view, measurement is a set of procedures aimed at assigning values to model parameters based on instrument indicators.</p>
+<p>Like I mentioned earlier, my views of measurement comes from economics graduate studies. Above is a partial view of the entire field of measurement; a highly partial view, I recognize. But is there core terminology independent of a domain? The text referenced above (Measurement Across the Sciences), seeks to establish such a lexicon. They note that the book is a departure from the VIM (listed above), which assumes that only physical quantities are measurable. This book seeks to expand that, where non-physical properties of a system can also be measured (expanding the scope of measurement to social science and management domains). According to the text, measurement can be thought of as:</p>
+<blockquote>a process based on empirical interaction with an object and aimed at producing information on a property of that object in the form of values of that property.</blockquote>
+<div class="image-placeholder">[Image placeholder: measure1 — measure-1.png]</div>
+<div class="image-placeholder">[Image placeholder: measure2 — measure-2.png]</div>
+<p>Measurement is an empirical process, designed on purpose, whose input is a property of an object, and that produces information in the forms of values of that property.</p>
+<p>The first aspect of measurement is that it is an empirical process that operates on inputs to produce outputs. This demarcates measurement from related concepts such as computation; computing the surface of a volume for example. You must be able to interact with the object under consideration. There are many input-output processes that are not measurements, so this is not a sufficient characterization. Which leads us to the next aspect; measurement is a process designed on purpose, rather than a spontaneous transformation of inputs and outputs. Measurements are performed according to specifications called measurement procedures. Measurement is inherently pragmatic, designed for a specific purpose (acquiring information on a property of a system), aimed at enabling decision making in a given context (enabling decisions rules such as "if the value of property is less than X, do Y, else do Z"). Another purpose-driven reason for measurement is conformance assessment, in which a measurement is used to decide if an item confirms to a specified requirement. This is of particular importance in engineering applications. A specification for a target value of a property of the system is called the nominal value, and then compared to what has been measured for that property. This is done within a level of acceptable tolerance; used to decide whether something produced has met its requirements. Below summarizes this second aspect:</p>
+<div class="image-placeholder">[Image placeholder: measure3 — measure-3.png]</div>
+<p>This condition is still not sufficient, leading us to our third component of the definition. Measurement requires an interaction with an object, and this interaction must be related to a property of that object. This assumes a basic ontology that objects have properties. This is how it is depicted:</p>
+<div class="image-placeholder">[Image placeholder: measure4 — measure-4.png]</div>
+<p>This makes it clear that we do not measure objects themselves, but properties of these objects (or systems). It also enables comparison of objects on these measured properties, assuming the system of measurement used to measure these values are the same. This is important, because it address the "how" you went about measuring the property. If someone measures say, intelligence using procedure X and someone else measures it with procedure Y, we might not be able to compare the two measures. Generally speaking, you must compare properties of the same kind, in order for the comparison to be meaningful. "Property" in this context, designates both properties of objects and their kinds of properties. Below the authors provide notation and more detail for how to refer to properties:</p>
+<div class="image-placeholder">[Image placeholder: measure5 — measure-5.png]</div>
+<p>The last component of the definition of measurement is that it produces information on the measurand in the form of values of properties, and thus, in the specific case of quantities, in the form of values of quantities. Remember earlier, I mentioned these authors wanted to expand the notion of measurement to non-quantitative properties, something metrologists typically do not do. I'm not sure how controversial this is more broadly, but doing this enables qualitative research methods. Extending figure 2.5 to include this aspect:</p>
+<div class="image-placeholder">[Image placeholder: measure6 — measure-6.png]</div>
+<p>The measurement result is called the measurand. This is known as the "Basic Evaluation Equation", which symbolically is :</p>
+<div class="image-placeholder">[Image placeholder: measure7 — measure-7.png]</div>
+<p>Where Q[a] refers to "Generic property of object a", "q_ref" refers to the unit, and "x" is the numerical value of the quantity. We choose "Q" instead of "P" in the case where we are deliberately interested in quantitative properties of the object. This leads to the most generic understanding of measurement: it is designed empirical property evaluation (of an object, system, process). Measurement is a process that connects entities of the empirical world and entities of the information world. The authors describe this connection using the following terminology:</p>
+<ol>
+<li>Transduction: A measuring instrument interacts with an object and, being sensitive to a specific property, changes its own state to produce an indication of that property. In other words, it converts (transduces) the measurand into something observable—like a bathroom scale’s spring turning weight (force) into spring elongation, or a paper test turning a person’s reading ability into a pattern of marked answers. This step is purely empirical.</li>
+<li>Instrument scale application: The instrument is built so its observable indications can be systematically linked to information units (often numbers) through a scale. This means mapping the physical sign to a value—like turning spring elongation into a length reading in centimeters, or turning a pattern of checked boxes into scored responses. This step mixes empirical observation with informational mapping.</li>
+<li>Calibration function computation: Because the indication (e.g. length, scored items) is usually not the same kind of property as the measurand (e.g. force, reading ability), the indication value must be transformed via a calibration function that models how the instrument’s indication relates to the actual quantity of interest. Thus, length is converted to force, and scored responses to a reading-comprehension level. This step is entirely informational.</li>
+</ol>
+<p>The figure below visually depicts this process:</p>
+<div class="image-placeholder">[Image placeholder: measure8 — measure-8.png]</div>
+<p>Remember, this is a designed procedure. The intent of the process is to produce an information entity; the measured value is expected to convey information about an empirical entity (and analyzed mathematically). As a person carrying out this procedure, we seek to minimize the distance between the measured property of an object and the measured value; we want to minimize the error/uncertainty. There can be multiple sources of drift between the actual value of the property and the measured property, which collectively contribute to measurement uncertainty. In the book, the authors mention that these sources somewhat derive from your measurement strategy (daily-life, operational, statistical, analytical). The two main sources of uncertainty are:</p>
+<ul>
+<li>Definitional uncertainty: we didn’t fully or sharply say what the measurand is. This refers to how fuzzy the measurand’s definition is.</li>
+<li>Measurement uncertainty: even if we did define it sharply, the instrument/procedure isn’t perfectly repeatable, is not sensitive to the measurand, has calibration issues etc.</li>
+</ul>
+<p>Transferability is basically a consequence of the strategy. If you poorly define your measure or have issues with your procedure (instrumentation), you'll likely not have a reproducible measure. In practice, there are also many methods practitioners use to minimize this uncertainty; of which I am not going to dive in to. Generally speaking, a measuring instrument triggers transduction, and a calibration function converts the state of the instrument to an informational value that is supposed to map the the empirical property. In principle, all measurement (should) follows this abstract process. The authors end with an initial characterization of measurement:</p>
+<blockquote>measurement is an empirical and informational process, designed on purpose, whose input is an empirical property of an object and that produces information in the form of values of that property.</blockquote>
+<div class="image-placeholder">[Image placeholder: measure9 — measure-9.png]</div>
+<p>The authors end the section with an example from human sciences, which I think leads nicely into the last few points I want to note about measurement:</p>
+<blockquote>In the human sciences, one can see an example of the distinction between intended property and effective property in the case of measurement of reading comprehension ability. Here, the assessments always specify that the tests are to be given under conditions free from distraction while the student is reading the passages and responding to the comprehension questions, so that a noisy environment, for example, would not be advisable. This is strongly associated with the intended property—a student’s comprehension of text under good conditions. However, it may be the case that, in a given situation, a student is asked to respond in a noisy and distracting environment— this would be a case where the effective property differs from the intended property, and, presumably, any measurements made in this distracting situation would tend to show lower reading comprehension ability.</blockquote>
+<p>I bolded those words deliberately because, if it was not clear by now, as an applied econometrician I am familiar with these problems; they plague the social sciences. In physical sciences, you can more or less always use an operational strategy with clear definitions grounded in very precise and unambiguous terms. You can simply never do this in the social sciences. The way we measure objects is highly theory laden and model dependent. The authors address this, and I made note of it earlier, but I want to dive into this more, and discuss the implications when it comes to non-social scientists interpreting the literature. Let's first look at the process by which social scientists go from concept to measure. Here's a high level overview of the flow for attaining a measurement:</p>
+<p><span class="concept-flow">Phenomenon &rarr; Concept &rarr; Construct &rarr; Operationalization &rarr; Instrument/Procedure &rarr; Data &rarr; Metric/Indicator &rarr; Interpretation</span></p>
+<ol>
+<li>Phenomenon: Something in the world you care about (well-being, intelligence, economic activity, discrimination).</li>
+<li>Concept: Your verbal idea of it — usually a bit fuzzy. “Intelligence is the ability to adapt and solve problems.” “Economic growth is how much more stuff a society produces.”</li>
+<li>Construct: The theory-shaped version of the concept — clearer, bounded, hooked into other ideas. A construct says, “this thing has these dimensions, relates to these causes/effects.” Psychologists love this word. It’s the “scientific” packaging of the concept. Economists use this word less often, but they're doing the same thing.</li>
+<li>Operationalization: “Given that construct, what observable things will stand in for it?” This is the missing link people skip. It’s the mapping rule. “We will treat X, Y, and Z behaviors/scores/answers as evidence of the construct.” This is highly theory laden, meaning it depends on the theoretical formulation.</li>
+<li>Instrument / Procedure: The actual tool or protocol: a survey scale, a test, a national accounts system, a coding scheme for interviews. This is the point where we ask "is the procedure measuring the attribute of the system/object we care about."</li>
+<li>Data: The raw responses, counts, test scores, monetary totals. This are supposed to be the raw measures attained through the transduction phase, extracted from the measurand.</li>
+<li>Metric / Indicator: The processed number (or small set of numbers) we show to the world: IQ = 115, GDP = $24 trillion, Depression score = 18/27.</li>
+<li>Interpretation: “Therefore, this person is above average,” or “this economy is growing,” or “this group is more prejudiced.” When a theory is mathematically precise, there should be less room for competing interpretations. Every step prior to this influences what can be said about the metric.</li>
+</ol>
+<p>Pretty much at every step, something can go wrong (and does go wrong).</p>
+<ul>
+<li>Concept/construct problems: Concepts can be normative (“a good life,” “social capital”) but treated as descriptive. Different scholars mean different things by the same word. Constructs often bake in a theory: e.g. “intelligence is unitary” vs “intelligence is multiple.” The measure will follow that theory.</li>
+<li>Operationalization problems: Operationalization is a choice. You’re saying: “We can’t see the thing, so we will look at these things instead.” Choices can be narrow (only income for SES) or broad (income, education, occupation). Choices can be convenient rather than conceptually tight (we measure “learning” with multiple-choice tests because they’re easy to score). And crucially: different operationalizations can all be defensible — but they will give different numbers.</li>
+<li>Instrument/procedure problems: This is quite a problem in social sciences. Very often in economics, this is conflated with modeling itself. You might hear something like "what was your identification strategy?", meaning how did you isolate causal relationships, not how you generated the data. This is however, a problem of data collection and data reliability; having much to do with the sampling scheme (did we generate a truly representative subset of the population?)</li>
+<li>Data → metric problems: We often transform raw data (standardize, scale, weight, index); these transformations create meaning. Indexes like GDP combine heterogeneous stuff using formulas that look technical but are ultimately convention + theory.</li>
+<li>Interpretation Problems: People forget the metric is about a construct, not the "thing in itself". They ignore error and uncertainty, they over-generalize from group level properties to individuals, and reverse.</li>
+</ul>
+<p>Compared to say, measuring the length of a table, in social sciences the concepts are latent, they are often value-laden, they are theory-dependent which implies multiple distinct operationalizations, and they are highly contextual. This leads to massive confusions as to what something is supposed to mean when cited by the "experts". Lets consider two examples that are frequently misunderstood and misused in public discourse: GDP and IQ.</p>
+<p>GDP is built to measure the value of market production inside a country over a period, using a set of accounting conventions (final goods only, market prices, imputed rent, exclusion of unpaid work, etc.). Statistical agencies gather data and, following standards like SNA, turn it into metrics such as GDP, real GDP, and GDP per capita. Where people go wrong is treating that number as if it were a direct measure of well-being or “the economy” in some natural sense. It isn’t. It leaves out unpaid care work, most environmental costs, distributional issues, and leisure because the operational rules said to leave them out. It also reflects the way national accountants define “production,” not an eternal truth about economic life. And the fact that changing the accounting basis can raise GDP without anyone getting richer shows how conventional it is. So the misunderstanding is: people read a theory-laden, convention-driven production number as a full report card on social prosperity.</p>
+<p>IQ tests take a particular theory of intelligence — that there’s a general factor you can tap by giving people a battery of cognitive tasks — and operationalize it with standardized tests, normed so 100 = average for that population at that time. The scores are useful for comparing people on those tasks. The public mistake is to inflate that into “IQ = how smart you are, full stop.” IQ doesn’t capture wisdom, creativity, social skill, or motivation; it captures performance on certain decontextualized tasks that happen to correlate. People also forget it’s norm-referenced, so 100 is just “average for this group,” not a natural zero or a percent. And they reify the scale — treating 130 as “30% more intelligent” — even though it’s a constructed scale with only limited interval meaning. Add in cultural and language loading at the test stage, and you get a metric that partly reflects context. So the misunderstanding is: people treat a narrow, theory-shaped cognitive measure as a total, context-free measure of human intelligence.</p>
+<p>There are countless examples like these from social sciences. They reflect a common pattern of misunderstanding, based on the general lack of awareness of how scientists go about measuring phenomena. The first is reification; people will often treat the "score" or "measure" of something as the thing itself. GDP is not the economy. The second is people often forget the exclusions that occur in the process of operationalization; they ignore what was left out of the procedure. This can manifest in choosing to include certain categories of measurement but not others. The third common mistake is people ignore the population and context; they forget the metric is normed and defined for a specific time and place. The fourth common mistake is that people will mistake convenience for truth. Just because something was given a number, does not mean that number maps to the measurand; it could have been just an easy number to generate. The fifth common error is not recognizing metric drift. Over time, the instrument/procedure changes, but people compare numbers as if the whole chain were stable. This also happens when the definition of the concept changes, resulting in how the information is collected, computed, and recorded. Lastly, people thing one indicator can exhaust the multivariate landscape from which it's constructed.</p>
+<p>Social scientists (especially empiricists) should be aware of these nuances and issues. Researchers use something called "validity" to judge whether there were errors in the process of going from concept to measure. To be clear, statistical validity is a much broader domain, including experimental validity (more on that later). I'm just going to introduce the validity concepts related to measurement for now. Broadly speaking, it refers to the degree to which your measurement strategy measures the concept you intended on measuring. The three we are covering are Content Validity, Criterion Validity, and Construct Validity:</p>
+<ul>
+<li>Content Validity: This asks “Did we include the right content for this construct?” Does a measure represent all the facets of the measurand it's intending on covering? This is primarily about coverage; the instrument should span the entire conceptual category. This is hard to achieve in social sciences. Social constructs are often broad and contested (e.g. “well-being,” “social capital,” “leadership”). If experts don’t even agree on the domain, content validity can’t be settled once and for all. You end up with “for this theory, this was good coverage,” which is weaker than “this is the coverage.”</li>
+<li>Criterion Validity: This asks “Does our measure relate in the right way to some external, meaningful criterion?” It refers to "the extent to which an operationalization of a construct, such as a test, relates to, or predicts, a theoretically related behavior or outcome — the criterion". For example, a job aptitude test should predict actual job performance. Often there is no gold-standard criterion. What’s the “true” criterion for intelligence, or for political trust, or for creativity? We use proxies (grades, supervisor ratings, future income), but those proxies are themselves social measurements with their own validity problems. So you get “a measure validated against another imperfect measure.”</li>
+<li>Construct Validity: This asks “Does this measure behave like the theory says the underlying construct should behave?” This actually refers to a broader umbrella of relate validity questions. Does it correlate with things it should correlate with? (Convergent) Does it not correlate with things it shouldn’t? (Discriminant) Does it fit into the nomological network — the web of other variables the theory posits? Generally speaking, construct validity refers to how well a set of indicators reflects or represents a concepts that is not directly observable (latent). Are the numbers produced by your measurements actually mapping onto something in the real world? For example, IQ is not directly measurable.</li>
+</ul>
+<p>Contrast this with physics; none of this is really a topic of discussion in that discipline. Constructs are much clearer/stable, operational definitions are agreed upon in the community, calibration of instruments is much more precise, and traceability is possible. Physical instruments are engineered to reduce random error and bias; you can model their error precisely. In social science, the “instrument” is often a questionnaire answered by a tired human who has opinions about you. Social scientists often make drastically simplifying assumptions about the distribution and source of error. Physical quantities often have ratio scales with a meaningful zero (0 kg, 0 m). Many social measures don’t — IQ 0 isn’t “no intelligence.” So you can’t interpret differences and ratios as straightforwardly. The process of measurement in physical sciences looks like this:</p>
+<p><span class="concept-flow">Construct (very stable) &rarr; Operational definition (community standard) &rarr; Instrument (calibrated) &rarr; Measurement (with known error)</span></p>
+<p>While social sciences it often looks like this:</p>
+<p><span class="concept-flow">Construct (contested) &rarr; Operationalization (chosen among several) &rarr; Instrument (partly human, context-sensitive) &rarr; Measurement (with unknown or changing error, plus assumptions) &rarr; Interpretation (theory-relative)</span></p>
+<p>To wrap up this ridiculously long section (that could have been much longer because this is such a rich topic), I'd like to describe how I used to teach concepts of economic measurement. I used to work for a massive data provider in the finance industry. My job essentially was "be the subject domain expert" for economic data and "be the data engineer", which meant I had to understand how economic indices were constructed, generated, reported, and used, across statistical agencies globally. I also used to teach fundamental economic concepts for non-economists who specialized in other data domains (like fixed income or commodities). These other domains are quite different from economics; they (like physics) are much more amenable to direct measurement. For example, a fixed income "measure" might just be a straight forward report from a bank about what interest rate they are charging on some financial instrument. No mystery there. Likewise, a commodities dataset reported from CBOE might simply be bids and asks for a particular trading day. As alluded to earlier, economic data is highly aggregated and connected with sampling schemes and theory. You would think that, given the background of many of these people, they would have some familiarity with the construction of an economic index. Surprisingly, many would assume the economic measurements are as straightforward as the data they specialize in. This is perhaps one thing many people misunderstand: the distinction between economists/statisticians, and someone who majored in Business Administration. It becomes quite evidence when you get into the nuances of data. At the start of these lectures, I would begin by saying something like "We can measure the flow of water simply by putting a well calibrated and sensitive instrument into that river, this gives us a direct measure. Economic measurement is different from this. In many cases, we are often 'probing' for data. We construct surveys to extract information, on subjects who can game the metric (Goodhart's Law) and who are aware they're being measured (think Hawthorne Effect; the respondent is not a passive transducer). In many cases, there isn't an observable 'thing' we are measuring. 'Instrument calibration' is completely different (and very possibly non-existent) in social sciences."</p>
+<p>In economics, the signal source is elicited, not naturally emitted. People answer questionnaires because you asked, firms report because you surveyed, households disclose because it’s the census. That makes measurement reactive and context-dependent: wording, order, incentives, trust in the agency — all affect the signal. Even “administrative data” (tax records, unemployment claims) is behavior under rules — if rules change, behavior and therefore “measurement” changes. In economics, measures are highly theory dependent. “Unemployment,” “inflation,” “household,” even “GDP” are statistical constructs defined by agencies: Change the definition, change the number, even if the world didn’t change. The object is theory and convention-dependent: you need a theory of labor-force attachment to define unemployment; a theory of consumption to define a price index. Measurement error is radically different in social sciences. Errors can come from comprehension, nonresponse, strategic answering, interviewer effects, mode effects, seasonal economic behavior, policy changes; Some of these errors are not i.i.d. and not stationary, they change when the social context changes (which makes doing historical analyses incredibly difficult). Unlike physical sciences, repeating the measurement doesn’t always reduce error (people may learn the test, or get bored). Now im not arguing here that Economists don't have methods to account for these issues, that would be foolish. I'm simply saying that the nature of the measurement process in economics is fundamentally different from a physical science, and therefore how you interpret the data. I think the biggest issue is that we are measuring a unit of analysis that is fundamentally reflexive, not passive; people know things and can infer from context, which can nudge their behavior ever so slightly, biasing the measurement.  In physical science, we often tap into an existing, stable signal with a calibrated device. In social science and economics, we often have to coax a signal out of people and institutions using instruments made of questions, definitions, and incentives. That means the quality of the number depends much more on theory, on design, and on people’s cooperation — not just on the sensitivity of the device.</p>
+<ul>
+<li><a href="https://link.springer.com/book/10.1007/978-3-031-22448-5">Measurement Across the Sciences</a></li>
+<li><a href="https://plato.stanford.edu/entries/measurement-science/">Measurement in Science</a></li>
+<li><a href="https://hdsr.mitpress.mit.edu/pub/0r4v4k4z/release/2">Reproducibility in Science: A Metrology Perspective</a></li>
+<li><a href="https://link.springer.com/article/10.1007/s11135-020-00970-2">Measurement in metrology, psychology and social sciences: data generation traceability and numerical traceability as basic methodological principles applicable across sciences</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Validity_%28statistics%29">Validity</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Content_validity">Content Validity</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Criterion_validity">Criterion Validity</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Construct_validity">Construct Validity</a></li>
+</ul>
+</article>

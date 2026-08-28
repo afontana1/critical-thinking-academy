@@ -1,0 +1,993 @@
+<title>The Market Fundamentalism Feedback Loop</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+
+      .ep-post .mermaid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.65em 0 1.8em;
+        overflow-x: auto;
+        overflow-y: hidden;
+        color: inherit;
+        background: transparent;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          ignoreHtmlClass: "mermaid",
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<div class="ep-post"><h1 id="the-market-fundamentalism-feedback-loop">The Market Fundamentalism Feedback Loop</h1>
+<p>In the first two parts of this blog series, I argued that supply-side economics is theoretically and empirically weak, then examined why the ideology nevertheless persists among the public. This post takes a somewhat more rigorous approach.</p>
+<p>I have also alluded to the way supply-side economics is commonly paired with austerity policies. We previously introduced <strong>market fundamentalism</strong>: the extension of neoliberal market ideology into broader areas of social and political life. For the purposes of this post, I will treat these concepts as equivalent and construct a system-dynamics model that captures some of the causal forces introduced in the previous installment.</p>
+<nav aria-label="Table of contents" class="ep-toc"><div class="ep-toc-title">Contents</div><ul class="ep-toc-list"><li><a href="#infrastructure-behind-market-fundamentalism">1. The infrastructure behind market fundamentalism</a><ul><li><a href="#ideological-package">The ideological package</a></li><li><a href="#atlas-and-spn">Atlas Network and State Policy Network</a></li><li><a href="#funding-architecture">Funding architecture</a></li></ul></li><li><a href="#network-influence">2. How the network produces and distributes influence</a><ul><li><a href="#network-building">Network building and organizational replication</a></li><li><a href="#expertise-policy-production">Expertise and policy production</a></li><li><a href="#multi-channel-diffusion">Multi-channel diffusion</a></li><li><a href="#cultural-institutional-diffusion">Cultural and institutional diffusion</a></li></ul></li><li><a href="#network-to-feedback-system">3. From network to feedback system</a><ul><li><a href="#two-reinforcing-mechanisms">Two reinforcing mechanisms</a></li><li><a href="#epistemic-closure">Epistemic closure and self-reinforcement</a></li><li><a href="#scale-and-reach">Scale and reach</a></li></ul></li><li><a href="#core-variables">4. Core variables in the model</a></li><li><a href="#reinforcing-loops">5. Reinforcing loops (the “engine” of propagation)</a><ul><li><a href="#r1-wealth-funding-policy-more-wealth">R1 – Wealth → funding → policy → more wealth</a></li><li><a href="#r2-network-growth-ideological-diffusion">R2 – Network growth and ideological diffusion</a></li><li><a href="#r3-career-incentives-intellectual-supply">R3 – Career incentives and intellectual supply</a></li><li><a href="#r4-narrativeidentitymedia-loop">R4 – Narrative–identity–media loop</a></li><li><a href="#r5-global-policy-diffusion-loop">R5 – Global policy diffusion loop</a></li></ul></li><li><a href="#balancing-loops">6. Balancing loops (countervailing forces and potential failure modes)</a><ul><li><a href="#b1-empirical-reality-policy-failure">B1 – Empirical reality and policy failure</a></li><li><a href="#b2-credibility-scandal-loop">B2 – Credibility and scandal loop</a></li><li><a href="#b3-regulation-transparency-loop">B3 – Regulation and transparency loop</a></li><li><a href="#b4-institutional-capture-institutional-collapse">B4 – Institutional capture → institutional collapse</a></li></ul></li><li><a href="#other-causal-influences">7. Other causal influences</a></li><li><a href="#references">8. References</a></li></ul></nav><h2 id="infrastructure-behind-market-fundamentalism">1. The infrastructure behind market fundamentalism</h2>
+<p>We begin with the Atlas Network<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> and the State Policy Network (SPN)<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup>, two organizations that function, in effect, as “think tanks for think tanks.” They serve as hubs in a wider network and provide <strong>infrastructure for market fundamentalism</strong>—not only around narrow tax policy, but also around austerity, neoliberal “reforms,” climate inaction, and libertarian culture-war issues.</p>
+<p>Rather than merely producing arguments themselves, these organizations help create and support other organizations by providing instruction, training, funding, and networking. The result is an infrastructure for propagating the same broad ideological package across many institutions and policy domains.</p>
+<h3 id="ideological-package">The ideological package</h3>
+<p>Across the Atlas ecosystem and related conservative and libertarian think tanks, the same <strong>bundle</strong> of ideas appears repeatedly:</p><ul>
+<li><strong>Supply-side economics</strong> – tax cuts, deregulation, labor “flexibility,” privatization framed as growth engines.</li>
+<li><strong>Austerity &amp; “fiscal responsibility”</strong> – spending caps, balanced-budget rules, welfare and pension cuts, often in the middle of downturns.</li>
+<li><strong>Neoliberal structural reforms</strong> – privatizing utilities and pensions, trade and capital account liberalization, independent central banks <em>plus</em> weakened unions and social protections.</li>
+<li><strong>Climate inaction / environmental skepticism</strong> – from full denial to “delay/derail” strategies that oppose binding regulations.<sup class="ref-cite"><a aria-label="Reference 3" href="#ref-3">3</a></sup> </li>
+<li><strong>Libertarian cultural politics</strong> – anti-union, school vouchers/charters, “parental choice,” anti-DEI, anti-ESG, hostility to public health mandates, etc.</li>
+</ul><h3 id="atlas-and-spn">Atlas Network and State Policy Network</h3>
+<p>Atlas Network describes its mission as supporting “classically liberal” and “pro-freedom” organizations worldwide and helping them learn how to “win the battle for hearts and minds” on free markets and small government.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> In practice, this extends <strong>market fundamentalism</strong> beyond conventional economic policy into areas such as pensions, schools, environmental regulation, and culture.</p>
+<p>Atlas is a <strong>meta-network</strong>. Founded in 1981, it now claims <strong>~580–590 partner organizations in 100+ countries</strong>.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> Its budget is around <strong>$24–28M per year</strong>, including <strong>$7–8M in grants</strong> to partners, while roughly 4,000 people are trained annually through Atlas Network Academy in fundraising, marketing, leadership, and campaign tactics.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </p>
+<p>Atlas describes itself as a connector—a “think tank that creates think tanks”—providing seed grants, training, and networking to pro-market organizations around the world.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> Recent research by Vucetic (2024), “Atlas Asunder?,” treats Atlas as a <strong>global neoliberal thought network</strong>. Analyzing dozens of partner organizations’ outputs from 2017–22, the study finds that they prioritize “free market” causes and often view rising radical-right movements as tactical allies rather than threats.<sup class="ref-cite"><a aria-label="Reference 4" href="#ref-4">4</a></sup> </p>
+<p>Investigative work by Lee Fang has also described Atlas-linked think tanks as deeply involved in <strong>Latin American politics</strong>, including the training of activists and politicians associated with austerity and privatization agendas and campaigns against left governments in Brazil, Argentina, Bolivia, and elsewhere.<sup class="ref-cite"><a aria-label="Reference 5" href="#ref-5">5</a></sup> </p>
+<p>In the United States, the <strong>State Policy Network (SPN)</strong> mirrors Atlas at the state level. Formed in 1992 as an outgrowth of Heritage-inspired state groups, it now has <strong>65+ member think tanks across all 50 states</strong>, along with hundreds of affiliates.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> Its stated mission is to advance “market-oriented public policy solutions” and “limited government” at the state level.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </p>
+<p>SPN generates roughly <strong>$25–27M per year</strong> in revenue, in addition to tens of millions in combined revenues among affiliates.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> It is closely linked to ALEC, which develops model state legislation, and to major national advocacy organizations such as Americans for Prosperity and Americans for Tax Reform.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </p>
+<p>SPN affiliates promote state tax cuts and spending caps, welfare cuts and Medicaid rollbacks, school vouchers, attacks on unions framed as “workplace freedom,” and deregulation in energy, environmental, and labor policy.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> Hertel-Fernandez’s <em>State Capture</em> argues that SPN, ALEC, and Koch-linked groups have <strong>reengineered state policy regimes</strong> in ways that entrench neoliberal and anti-labor rules.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </p>
+<h3 id="funding-architecture">Funding architecture</h3>
+<p>Three broad funding patterns recur across this infrastructure:</p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Funding pattern</th><th>Core description</th><th>Examples and channels</th></tr></thead><tbody><tr><td data-label="Funding pattern">1</td><td data-label="Core description"><div>Billionaire and corporate families and foundations: Jane Mayer’s <em>Dark Money</em> documents a core set of right-wing billionaire families whose foundations built this infrastructure: <strong>Koch, Scaife (Mellon heir), Bradley, Olin, Coors, DeVos, etc.</strong><sup class="ref-cite"><a aria-label="Reference 6" href="#ref-6">6</a></sup> </div></td><td data-label="Examples and channels"><div>The Koch network seeded Cato and heavily funded Americans for Prosperity, AEI, and other organizations.<sup class="ref-cite"><a aria-label="Reference 7" href="#ref-7">7</a></sup> </div><div>Scaife gave roughly $23M to Heritage and was previously the largest single donor to AEI.<sup class="ref-cite"><a aria-label="Reference 8" href="#ref-8">8</a></sup> </div><div>Bradley and other funders support SPN and state-level groups.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </div></td></tr><tr><td data-label="Funding pattern">2</td><td data-label="Core description"><div>Donor-advised “dark money” conduits: A substantial share of funding flows through <strong>DonorsTrust</strong> and <strong>Donors Capital Fund</strong>, donor-advised funds explicitly marketed as a “dark money ATM for the conservative movement.”<sup class="ref-cite"><a aria-label="Reference 9" href="#ref-9">9</a></sup> In 2024, DonorsTrust alone granted about <strong>$195M</strong> to more than 300 right-wing influence groups, litigation centers, media outlets, and climate deniers.<sup class="ref-cite"><a aria-label="Reference 10" href="#ref-10">10</a></sup> </div></td><td data-label="Examples and channels"><div>Investigations show DonorsTrust and Donors Capital funneling tens or hundreds of millions into SPN affiliates, climate-denial and “free-market” think tanks, and right-wing media outlets.<sup class="ref-cite"><a aria-label="Reference 11" href="#ref-11">11</a></sup> </div></td></tr><tr><td data-label="Funding pattern">3</td><td data-label="Core description"><div>Fossil-fuel and tobacco money: The role of conservative think tanks in climate and tobacco policy is heavily documented. Robert Brulle’s funding analysis calls these conservative foundations and front groups the core organizational base of the climate denial movement.<sup class="ref-cite"><a aria-label="Reference 12" href="#ref-12">12</a></sup> </div></td><td data-label="Examples and channels"><div>Atlas itself received funding from <strong>Koch-affiliated groups, the ExxonMobil Foundation, and the tobacco industry</strong> in earlier decades; many partners were funded by tobacco companies in the 1990s–2000s and acted to oppose tobacco control.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </div><div>Dunlap and McCright and others show fossil-fuel-funded think tanks (Heritage, Cato, Heartland, etc.) as central <strong>nodes in the climate denial countermovement</strong>.<sup class="ref-cite"><a aria-label="Reference 3" href="#ref-3">3</a></sup> </div></td></tr></tbody></table></div><h2 id="network-influence">2. How the network produces and distributes influence</h2><h3 id="network-building">Network building and organizational replication</h3>
+<p>From a systems and network perspective, Atlas, SPN, and related organizations function as central hubs in a multilayered graph. Their role is not limited to funding ideas: they also <strong>manufacture organizations</strong> by seeding and scaling new nodes—the logic behind the phrase “a think tank that creates think tanks.” Grants of a few thousand dollars, combined with training and organizational support, can help launch new think tanks, especially in the Global South, including organizations in Peru, Africa, and Eastern Europe.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </p>
+<p>These new nodes import both a shared <strong>ideological template</strong>—free markets and anti-statism—and a shared <strong>organizational playbook</strong> built around policy papers, op-eds, index reports, and media outreach. In network terms, this resembles <strong>scale-free network growth</strong>: a small number of highly connected hubs such as Atlas, SPN, and Koch-related funds accumulate links to many peripheral but ideologically aligned nodes.</p>
+<p>Atlas explicitly operates Atlas Network Academy and regional Liberty Forums, where partners receive training in fundraising, marketing, leadership, media engagement, grassroots organizing, and the framing of policy disputes as moral conflicts such as freedom versus statism.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> ABC News has described partners as being trained to “win the battle for hearts and minds.” The activity, in other words, extends well beyond the production of white papers into political communication.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </p>
+<p>SPN plays a similar role at the state level, offering training intended to help member think tanks operate more like coordinated business franchises while remaining aligned around school choice, tax cuts, union weakening, and deregulation.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </p>
+<h3 id="expertise-policy-production">Expertise and policy production</h3>
+<p>Conservative think tanks produce what might be called <strong>“policy-based evidence”</strong> in several forms: short studies supporting tax cuts, deregulation, privatization, and austerity; freedom and economic-freedom indices that encode neoliberal metrics and penalize countries or states with larger public sectors; and climate-skeptic books and reports that manufacture uncertainty about scientific findings.</p>
+<p>Dunlap and colleagues identify a strong connection between conservative think tanks and <strong>108 climate-change-denial books</strong>, arguing that these publications are important vehicles for attacking mainstream climate science.<sup class="ref-cite"><a aria-label="Reference 13" href="#ref-13">13</a></sup> Boussalis and coauthors similarly find that the <strong>volume of climate-contrarian content from conservative think tanks has grown sharply</strong>, while the messaging has shifted from questioning whether climate change is real toward arguing that policy responses are harmful—a shift consistent with strategies of delaying or weakening regulation.<sup class="ref-cite"><a aria-label="Reference 14" href="#ref-14">14</a></sup> </p>
+<h3 id="multi-channel-diffusion">Multi-channel diffusion</h3>
+<p>Information diffuses through several channels—media, politics, movement organizations, and direct communication with the public.</p>
+<p>The first is the <strong>think tank → media</strong> channel: op-eds, press releases, policy briefings, and readily available “experts” who can be quoted by journalists working on deadline, especially within ideological media ecosystems.</p>
+<p>A second channel runs from <strong>think tanks → politicians and staffers</strong>. It includes model legislation, such as bills circulated through ALEC and SPN, as well as policy blueprints such as Heritage’s <em>Mandate for Leadership</em> and <em>Project 2025</em>.<sup class="ref-cite"><a aria-label="Reference 9" href="#ref-9">9</a></sup> </p>
+<p>A third channel connects <strong>think tanks → movement organizations and influencers</strong>. This includes training activists such as the Free Brazil Movement, Latin American youth organizations, and Tea Party or AFP activists,<sup class="ref-cite"><a aria-label="Reference 5" href="#ref-5">5</a></sup> as well as supplying talking points and “studies” to pastors, YouTubers, and movement media.</p>
+<p>Finally, there is the <strong>think tank → public</strong> channel, in which organizations communicate directly through branded concepts such as “Tax Freedom Day,” “economic freedom” rankings, and “welfare dependency” narratives that become part of popular political vocabulary. From a systems perspective, think tanks therefore operate as <strong>information hubs</strong> with high betweenness centrality: they sit between billionaire donors, politicians, media organizations, and grassroots supporters, shaping the “expert knowledge” that flows among them.</p>
+<h3 id="cultural-institutional-diffusion">Cultural and institutional diffusion</h3>
+<p>Market fundamentalism also spreads beyond the narrowly economic domain and into culture and public institutions. McCright, Dunlap, and others describe conservative think tanks as a <strong>“denial machine”</strong> that transforms a narrower economic skepticism of regulation into <strong>full-spectrum environmental skepticism</strong> encompassing climate, pollution, and environmental health, often reframed in libertarian language about property rights.<sup class="ref-cite"><a aria-label="Reference 3" href="#ref-3">3</a></sup> </p>
+<p>Atlas has historically helped partner think tanks oppose tobacco controls and, later, vape regulation by aligning corporate interests with generic rhetoric about freedom, consumer choice, and the “nanny state.”<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> Climate-denial messaging has also diffused <strong>transnationally</strong>, moving from U.S. think tanks to the United Kingdom, Canada, Australia, New Zealand, and beyond through networks such as Atlas and SPN.<sup class="ref-cite"><a aria-label="Reference 15" href="#ref-15">15</a></sup> </p>
+<p>The same logic appears in other policy areas. SPN and Atlas partners promote <strong>school vouchers and charters</strong> as “choice,” thereby marketizing education;<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> <strong>healthcare privatization and opposition to Medicaid expansion</strong> as a market approach to health;<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> and <strong>attacks on unions and collective bargaining</strong> as “workplace freedom.”<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </p><p>Anti-DEI and anti-ESG campaigns are similarly reframed as efforts to “protect shareholders” or “keep politics out of business.” This is what Wendy Brown describes as neoliberalism as a <strong>political rationality</strong>: schools, families, democracy, and identity are increasingly reframed in market terms such as competition, choice, and human capital, with think tanks acting as important engineers of that reframing.</p>
+<h2 id="network-to-feedback-system">3. From network to feedback system</h2><h3 id="two-reinforcing-mechanisms">Two reinforcing mechanisms</h3><div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Mechanism</th><th>Sequence</th></tr></thead><tbody><tr><td data-label="Mechanism">Wealth → influence → policy → more wealth</td><td data-label="Sequence"><div><p>From a systems-dynamics perspective, the first mechanism is a classic <strong>positive feedback loop</strong>: wealth → influence → policy → more wealth. Wealthy donors and corporations fund think tanks and networks; those organizations design and promote policies that increase returns to capital, including tax cuts, deregulation, and weakened labor or environmental rules; those policies further concentrate wealth among the same elites; and the resulting wealth increases the capacity to fund and expand the network.</p></div></td></tr><tr><td data-label="Mechanism">Narrative → belief → support → capacity</td><td data-label="Sequence"><div><p>The second mechanism runs through narrative and social reinforcement: narrative → belief → support → capacity. Think tanks generate claims such as “tax cuts grow the economy,” “regulation kills jobs,” or “climate policies hurt the poor.” Those narratives spread through media, churches, schools, and activist networks, shaping public and elite beliefs. Believers then donate, vote, and consume aligned media, increasing both demand for think-tank content and the political clout of aligned politicians. Publicized victories—“we defeated X bill” or “we elected Y”—can further strengthen credibility and in-group loyalty, producing still more support and narrative production.</p></div></td></tr></tbody></table></div><h3 id="epistemic-closure">Epistemic closure and self-reinforcement</h3>
+<p>Over time, these mechanisms can produce <strong>epistemic closure</strong>. Within the movement’s information network, in-network “experts” such as Heritage, AEI, and Atlas partners become trusted authorities, while critical scholarship is dismissed as partisan or “globalist.” This is the “apologetics” dynamic noted earlier: the reasoning becomes conclusion-first, community-reinforced, and increasingly self-sealing.</p>
+<p>Several structural features help keep the system relatively closed to outside influence:</p>
+<ul>
+<li><strong>Donor anonymity</strong> (via DonorsTrust, etc.) breaks the accountability loop between source and public; you see the message, not the money.<sup class="ref-cite"><a aria-label="Reference 11" href="#ref-11">11</a></sup> </li>
+<li><strong>Network density and homophily</strong>: Atlas/SPN affiliates mostly cross-reference each other, invite each other to conferences, and publicize each others’ work, increasing perceived “consensus” within the bubble.<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </li>
+<li><strong>Parallel media ecosystem</strong>: when your “experts” appear constantly on Fox, talk radio, YouTube, aligned newspapers, there is little incentive for your audience to ever check what, say, the IMF or mainstream econ journals are saying.</li>
+</ul><p>In systems terms, this creates a <strong>self-reinforcing attractor</strong>: once funders, think tanks, politicians, activists, or citizens enter the basin, a combination of incentives and identity can keep them circulating within it even when external evidence conflicts with the core beliefs.</p><h3 id="scale-and-reach">Scale and reach</h3>
+<p>The scale of the network is broad. A few indicators illustrate its reach:</p><ul>
+<li><strong>Atlas</strong>: ~580–590 partner organizations in 100+ countries; multi-million-dollar grant-making and thousands trained annually (we will look at map plots of this later).<sup class="ref-cite"><a aria-label="Reference 1" href="#ref-1">1</a></sup> </li>
+<li><strong>SPN</strong>: at least one affiliate in each U.S. state; combined revenues of network orgs in the tens of millions; active on tax, labor, education, welfare, environment.<sup class="ref-cite"><a aria-label="Reference 2" href="#ref-2">2</a></sup> </li>
+<li><strong>DonorsTrust / Donors Capital</strong>: almost $200M in 2024 alone to 300+ right-wing groups; tens of millions annually for more than a decade prior.<sup class="ref-cite"><a aria-label="Reference 10" href="#ref-10">10</a></sup> </li>
+<li><strong>Climate denial</strong>: conservative think-tank climate output has grown rapidly, and think-tank-linked denial books form a key spine of the global denial movement.<sup class="ref-cite"><a aria-label="Reference 14" href="#ref-14">14</a></sup> </li>
+</ul>
+<p>Latin America offers a particularly concrete example. Investigations describe Atlas-affiliated think tanks as helping shape party platforms, advise ministers, and coordinate campaigns against left governments using imported “free-market,” anti-corruption, and anti-statist narratives.<sup class="ref-cite"><a aria-label="Reference 5" href="#ref-5">5</a></sup> The broader point is that this infrastructure is not marginal; it operates as a <strong>globalized ideological supply chain</strong>.</p>
+<p>With that background in place, we can now build the systems-dynamics model. The next sections define the main variables and then trace the <strong>reinforcing (R)</strong> and <strong>balancing (B)</strong> loops through which supply-side and market-fundamentalist ideas spread across think-tank networks such as Atlas, SPN, and the broader Heritage/AEI orbit.</p><h2 id="core-variables">4. Core variables in the model</h2>
+<p>The model is organized into four layers:</p><div class="table-wrap"><table class="three-col wide-table long-table dense"><thead><tr><th>Layer</th><th>Variable</th><th>Meaning and examples</th></tr></thead><tbody><tr><td data-label="Layer">Resources and structure</td><td data-label="Variable"><strong>Wealth of economic elites (WEALTH)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Resources and structure</td><td data-label="Variable"><strong>Donor funding to ideological networks (FUNDING)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Resources and structure</td><td data-label="Variable"><strong>Think tank network size/density (NETWORK_DENSITY)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Resources and structure</td><td data-label="Variable"><strong>Think tank capacity (TT_CAP)</strong></td><td data-label="Meaning and examples">staff, communications, research, training</td></tr><tr><td data-label="Layer">Resources and structure</td><td data-label="Variable"><strong>Movement infrastructure (INFRA)</strong></td><td data-label="Meaning and examples">conferences, training programs, legal organizations, media outlets</td></tr><tr><td data-label="Layer">Information and narratives</td><td data-label="Variable"><strong>Market-fundamentalist content volume (MF_CONTENT)</strong></td><td data-label="Meaning and examples">papers, op-eds, television appearances, social posts</td></tr><tr><td data-label="Layer">Information and narratives</td><td data-label="Variable"><strong>Perceived expert consensus on markets (PERCEIVED_CONSENSUS)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Information and narratives</td><td data-label="Variable"><strong>Media amplification (MEDIA_AMP)</strong></td><td data-label="Meaning and examples">how often these organizations appear as “experts”</td></tr><tr><td data-label="Layer">Information and narratives</td><td data-label="Variable"><strong>Resonant narratives / frames (NARRATIVE_APPEAL)</strong></td><td data-label="Meaning and examples">“tax cuts create growth,” “regulation = socialism,” “freedom vs nanny state,” etc.</td></tr><tr><td data-label="Layer">Beliefs and politics</td><td data-label="Variable"><strong>Public belief in market fundamentalism (PUBLIC_BELIEF)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Beliefs and politics</td><td data-label="Variable"><strong>Elite belief / policy preferences (ELITE_BELIEF)</strong></td><td data-label="Meaning and examples">among politicians, judges, high-level bureaucrats</td></tr><tr><td data-label="Layer">Beliefs and politics</td><td data-label="Variable"><strong>Political power of aligned actors (POLITICAL_POWER)</strong></td><td data-label="Meaning and examples">seats, committee chairs, appointments</td></tr><tr><td data-label="Layer">Beliefs and politics</td><td data-label="Variable"><strong>Policy adoption of supply-side/neoliberal reforms (POLICY_ADOPTION)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Outcomes and feedback</td><td data-label="Variable"><strong>Inequality / wealth concentration (INEQUALITY)</strong></td><td data-label="Meaning and examples">—</td></tr><tr><td data-label="Layer">Outcomes and feedback</td><td data-label="Variable"><strong>Regulatory capacity &amp; state legitimacy (STATE_CAPACITY)</strong></td><td data-label="Meaning and examples">quality of public institutions, enforcement, social trust</td></tr><tr><td data-label="Layer">Outcomes and feedback</td><td data-label="Variable"><strong>Policy performance (POLICY_PERFORMANCE)</strong></td><td data-label="Meaning and examples">growth, stability, crises, social indicators</td></tr><tr><td data-label="Layer">Outcomes and feedback</td><td data-label="Variable"><strong>Counter-movement strength (COUNTER_MVT)</strong></td><td data-label="Meaning and examples">unions, progressive think tanks, and climate/justice organizations</td></tr><tr><td data-label="Layer">Outcomes and feedback</td><td data-label="Variable"><strong>Systemic shocks (SHOCKS)</strong></td><td data-label="Meaning and examples">crises that visibly contradict the narrative (financial crashes, climate disasters, pandemics)</td></tr></tbody></table></div><p>These variables can now be connected into the reinforcing and balancing loops that make up the model.</p><h2 id="reinforcing-loops">5. Reinforcing loops (the “engine” of propagation)</h2><h3 id="r1-wealth-funding-policy-more-wealth">R1 – <strong>Wealth → funding → policy → more wealth</strong></h3>
+<p><em>The classic plutocratic growth loop.</em></p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>WEALTH (+) → FUNDING</strong></div></td><td data-label="Mechanism and explanation"><div><p>More concentrated wealth among economic elites creates more surplus resources that can be directed into Atlas-, SPN-, and Heritage-type networks.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>FUNDING (+) → TT_CAP &amp; INFRA</strong></div></td><td data-label="Mechanism and explanation"><div><p>More funding supports additional staff, stronger communications teams, more training programs, and more organizational spin-offs, including new think tanks, front groups, and student organizations.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>TT_CAP &amp; INFRA (+) → MF_CONTENT</strong></div></td><td data-label="Mechanism and explanation"><div><p>Greater capacity and infrastructure support a higher volume of reports, op-eds, “indexes,” YouTube content, training sessions, and school curricula.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><div><strong>MF_CONTENT (+) → MEDIA_AMP &amp; PERCEIVED_CONSENSUS</strong></div></td><td data-label="Mechanism and explanation"><div><p>Journalists and platforms operating under time pressure can repeatedly turn to readily available “experts.” Repetition across many separately branded organizations can create the <strong>illusion of a broad expert consensus</strong> around market fundamentalism.</p></div></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><div><strong>MEDIA_AMP &amp; PERCEIVED_CONSENSUS (+) → ELITE_BELIEF &amp; PUBLIC_BELIEF</strong></div></td><td data-label="Mechanism and explanation"><div><p>Politicians, judges, and voters may internalize the idea that “everyone knows” tax cuts and deregulation are the route to growth and freedom.</p></div></td></tr><tr><td data-label="Step">6</td><td data-label="Causal relationship"><div><strong>ELITE_BELIEF (+) → POLITICAL_POWER &amp; POLICY_ADOPTION</strong></div></td><td data-label="Mechanism and explanation"><div><p>Market-fundamentalist elites win elections, staff agencies, and implement supply-side, austerity, privatization, and deregulatory policies.</p></div></td></tr><tr><td data-label="Step">7</td><td data-label="Causal relationship"><div><strong>POLICY_ADOPTION (+) → INEQUALITY &amp; WEALTH</strong></div></td><td data-label="Mechanism and explanation"><div><p>These policies can increase profits, asset prices, and top-end incomes, further concentrating <strong>WEALTH</strong> among the same class that funds the network.</p></div></td></tr><tr><td data-label="Step">8</td><td data-label="Causal relationship"><div><strong>INEQUALITY (+) → WEALTH</strong></div></td><td data-label="Mechanism and explanation"><div><p>Greater inequality concentrates more wealth that can be converted into political resources, feeding back into <strong>FUNDING</strong>.</p></div></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>WEALTH → FUNDING → TT_CAP → MF_CONTENT → BELIEFS → POLICY → WEALTH</p>
+</blockquote><p class="figure-caption"><strong>Figure 1. Core political economy loop (R1).</strong> The central engine connects wealth, funding, think-tank capacity, content production, belief, policy, and renewed wealth concentration.</p><div class="mermaid">
+flowchart TD
+    %% R1 --- Core wealth---funding---policy loop
+
+    w_wealth["Wealth of economic elites"]
+    f_funding["Funding to ideological networks (R1 --- R2, R3)"]
+    tt_cap["Think tank capacity and policy infrastructure"]
+    mf_content["Market-fundamentalist content"]
+    media_amp["Media amplification"]
+    perc_cons["Perceived expert consensus"]
+    elite_belief["Elite belief in market fundamentalism"]
+    public_belief["Public belief in market fundamentalism"]
+    pol_power["Political power of aligned actors"]
+    policy_adopt["Adoption of supply-side / neoliberal policies (R1 --- B1---B4)"]
+    inequality["Inequality and wealth concentration"]
+
+    w_wealth -->|positive| f_funding
+    f_funding -->|positive| tt_cap
+    tt_cap -->|positive| mf_content
+    mf_content -->|positive| media_amp
+    media_amp -->|positive| perc_cons
+    perc_cons -->|positive| elite_belief
+    media_amp -->|positive| public_belief
+    elite_belief -->|positive| pol_power
+    public_belief -->|positive| pol_power
+    pol_power -->|positive| policy_adopt
+    policy_adopt -->|positive| inequality
+    inequality -->|positive| w_wealth
+</div><h3 id="r2-network-growth-ideological-diffusion">R2 – <strong>Network growth and ideological diffusion</strong></h3>
+<p><em>The Atlas/SPN “think tank that creates think tanks” loop.</em></p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>FUNDING (+) → NETWORK_DENSITY &amp; INFRA</strong></div></td><td data-label="Mechanism and explanation"><div><p>Atlas and SPN use funding to <strong>seed new think tanks</strong>, train staff, and convene regional forums.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>NETWORK_DENSITY (+) → MF_CONTENT &amp; MEDIA_AMP</strong></div></td><td data-label="Mechanism and explanation"><div><p>More nodes produce more reports and more locally situated “experts.” When journalists and officials encounter different organizational brands repeating similar ideas, <strong>PERCEIVED_CONSENSUS</strong> can strengthen.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>NETWORK_DENSITY (+) → NARRATIVE_APPEAL</strong></div></td><td data-label="Mechanism and explanation"><div><p>The same frames—for example, “Tax Freedom Day,” “economic freedom index,” and “school choice”—can be <strong>localized and culturally adapted</strong>, increasing their resonance.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><strong>NARRATIVE_APPEAL (+) → PUBLIC_BELIEF &amp; ELITE_BELIEF</strong></td><td data-label="Mechanism and explanation"><p>Greater narrative appeal strengthens both public and elite belief.</p></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><strong>BELIEFS (+) → DEMAND for aligned think tanks</strong></td><td data-label="Mechanism and explanation"><p>A more receptive audience makes it easier to recruit young staff, politicians, and donors into the network.</p></td></tr><tr><td data-label="Step">6</td><td data-label="Causal relationship"><div><strong>DEMAND (+) → FUNDING &amp; NETWORK_DENSITY</strong></div></td><td data-label="Mechanism and explanation"><div><p>When donors see visible “impact”—media hits, policy victories, or social-media traction—they may become more willing to fund expansion and organizational spin-offs.</p></div></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>FUNDING → NETWORK_DENSITY → MF_CONTENT → BELIEFS → DEMAND → FUNDING</p>
+</blockquote><p>Atlas and SPN are organizationally well suited to reinforce this loop because their funding, training, and network-building functions all expand the number and reach of aligned organizations.</p><h3 id="r3-career-incentives-intellectual-supply">R3 – <strong>Career incentives and intellectual supply</strong></h3>
+<p><em>Why the system produces a steady supply of “experts.”</em></p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>TT_CAP &amp; INFRA (+) → CAREER_OPPORTUNITIES_IN_MOVEMENT</strong></div></td><td data-label="Mechanism and explanation"><div><p>The infrastructure creates fellowships, think-tank jobs, media opportunities, speaking circuits, consulting work, and political appointments.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>CAREER_OPPORTUNITIES (+) → SUPPLY_OF_INTELLECTUALS &amp; SPOKESPEOPLE</strong></div></td><td data-label="Mechanism and explanation"><div><p>Ambitious people, including PhDs, can see a viable career path within the ideological ecosystem.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>SUPPLY_OF_INTELLECTUALS (+) → MF_CONTENT &amp; APPARENT SOPHISTICATION</strong></div></td><td data-label="Mechanism and explanation"><div><p>More intellectual and media personnel generate additional white papers, models, “studies,” and polished public performances, making the movement appear more intellectually substantial.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><div><strong>APPARENT SOPHISTICATION (+) → PERCEIVED_CONSENSUS &amp; ELITE_BELIEF</strong></div></td><td data-label="Mechanism and explanation"><div><p>The more institutionally “serious” the movement appears, the easier it becomes for elites to cite and rely on its work.</p></div></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><strong>ELITE_BELIEF (+) → POLICY_ADOPTION → DONOR_SATISFACTION → FUNDING</strong></td><td data-label="Mechanism and explanation"><p>Policy adoption can satisfy donors and encourage further funding.</p></td></tr><tr><td data-label="Step">6</td><td data-label="Causal relationship"><strong>FUNDING (+) → TT_CAP &amp; INFRA</strong></td><td data-label="Mechanism and explanation"><p>Additional funding replenishes think-tank capacity and movement infrastructure.</p></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>TT_CAP → CAREER_OPPORTUNITIES → INTELLECTUAL_SUPPLY → MF_CONTENT → LEGITIMACY → FUNDING → TT_CAP</p>
+</blockquote><p>This parallels an “apologetics industrial complex”: the system <strong>rewards</strong> people who can produce apparently evidentiary support for conclusions that are already ideologically fixed.</p><p class="figure-caption"><strong>Figure 2. Careers &amp; “expertise” loop (R3).</strong> The loop shows how organizational resources create career paths that expand the supply of aligned experts and, in turn, reinforce legitimacy and funding.</p><div class="mermaid">
+flowchart TD
+    %% R3 --- Career incentives and 'expert' supply
+
+    f_funding["Funding to ideological networks (from R1)"]
+    tt_cap["Think tank capacity (from R1)"]
+    career_opps["Career opportunities in movement (jobs, fellowships, media gigs, political posts)"]
+    intel_supply["Supply of sympathetic 'experts' and spokespeople"]
+    mf_content["Market-fundamentalist content (to R1, R2, R4)"]
+    apparent_soph["Apparent sophistication (models, indices, citations)"]
+    perc_cons["Perceived expert consensus (from R1)"]
+    elite_belief["Elite belief (from R1)"]
+
+    f_funding -->|positive| tt_cap
+    tt_cap -->|positive| career_opps
+    career_opps -->|positive| intel_supply
+    intel_supply -->|positive| mf_content
+    intel_supply -->|positive| apparent_soph
+    apparent_soph -->|positive| perc_cons
+    perc_cons -->|positive| elite_belief
+    elite_belief -->|positive| f_funding
+</div><h3 id="r4-narrativeidentitymedia-loop">R4 – <strong>Narrative–identity–media loop</strong></h3>
+<p><em>How ideas become embedded in identity and culture.</em></p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>MF_CONTENT &amp; NARRATIVE_APPEAL (+) → IDENTITY_ALIGNMENT</strong></div></td><td data-label="Mechanism and explanation"><div><p>Messages are framed as “American values,” “Christian values,” “patriotism,” “freedom,” or “anti-communism,” making belief a matter of identity rather than opinion alone.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>IDENTITY_ALIGNMENT (+) → MEDIA_DEMAND &amp; AUDIENCE_LOYALTY</strong></div></td><td data-label="Mechanism and explanation"><div><p>Audiences seek media that affirms their identity, including Fox, talk radio, YouTube channels, and newsletters.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>MEDIA_DEMAND (+) → MEDIA_AMP</strong></div></td><td data-label="Mechanism and explanation"><div><p>Media outlets have incentives to amplify think-tank content when it resonates with audiences and drives engagement.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><strong>MEDIA_AMP (+) → MF_CONTENT_VISIBILITY</strong></td><td data-label="Mechanism and explanation"><p>Greater media amplification increases the visibility of market-fundamentalist content.</p></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><strong>VISIBILITY (+) → IDENTITY_ALIGNMENT &amp; PUBLIC_BELIEF</strong></td><td data-label="Mechanism and explanation"><p>That visibility feeds back into identity alignment and public belief, reinforcing the cycle.</p></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>MF_CONTENT → IDENTITY → MEDIA_DEMAND → MEDIA_AMP → MF_CONTENT (visibility)</p>
+</blockquote><p>The result is a tighter epistemic bubble: changing one’s mind can begin to threaten identity and group membership rather than merely altering a policy opinion.</p><p class="figure-caption"><strong>Figure 3. Identity &amp; media loop (R4).</strong> The loop shows how ideological content becomes tied to identity, increasing demand for aligned media and further amplifying the content.</p><div class="mermaid">
+flowchart TD
+    %% R4 --- Identity, media, and culture
+
+    mf_content["Market-fundamentalist content (from R1, R2, R3)"]
+    narrative_appeal["Narrative appeal ('freedom', 'anti-socialism', 'Christian free enterprise')"]
+    identity_align["Identity alignment (patriotism, religion, tribe)"]
+    media_demand["Demand for aligned media content"]
+    media_amp["Media amplification (from R1)"]
+    public_belief["Public belief (to R1, from R1)"]
+
+    mf_content -->|positive| narrative_appeal
+    narrative_appeal -->|positive| identity_align
+    identity_align -->|positive| media_demand
+    media_demand -->|positive| media_amp
+    media_amp -->|positive| mf_content
+
+    identity_align -->|positive| public_belief
+</div><h3 id="r5-global-policy-diffusion-loop">R5 – <strong>Global policy diffusion loop</strong></h3>
+<p><em>How Atlas-style networks export neoliberal policy scripts across countries.</em></p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>NETWORK_DENSITY (global) (+) → POLICY_TEMPLATE_AVAILABILITY</strong></div></td><td data-label="Mechanism and explanation"><div><p>Network growth makes prepackaged reforms more readily available, including voucher laws, pension privatization, deregulation scripts, and “economic freedom” benchmarking.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>POLICY_TEMPLATE_AVAILABILITY (+) → POLICY_ADOPTION in multiple countries</strong></div></td><td data-label="Mechanism and explanation"><div><p>Adoption becomes more likely when international lenders, trade bodies, or regional elites are already oriented toward similar reforms.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>POLICY_ADOPTION (+) → SUCCESS_STORIES (or at least narratives of success)</strong></div></td><td data-label="Mechanism and explanation"><div><p>Adopted policies can then be packaged as “success stories”—for example, “Look at Chile / Estonia / Georgia / [X] after our reforms!”—whether or not the full evidence supports the narrative.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><strong>SUCCESS_STORIES (+) → NARRATIVE_APPEAL &amp; ELITE_BELIEF elsewhere</strong></td><td data-label="Mechanism and explanation"><p>Success stories can strengthen narrative appeal and elite belief elsewhere.</p></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><strong>ELITE_BELIEF (+) → DEMAND for Atlas/SPN-style think tanks in new countries</strong></td><td data-label="Mechanism and explanation"><p>Stronger elite belief can increase demand for Atlas/SPN-style organizations in new countries.</p></td></tr><tr><td data-label="Step">6</td><td data-label="Causal relationship"><strong>DEMAND (+) → FUNDING &amp; NETWORK_DENSITY</strong></td><td data-label="Mechanism and explanation"><p>That demand can expand both funding and network density.</p></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>NETWORK_DENSITY → POLICY_TEMPLATES → POLICY_ADOPTION → SUCCESS_STORIES → BELIEF → DEMAND → NETWORK_DENSITY</p>
+</blockquote><p>This mechanism helps explain why similar policy packages and talking points can appear in countries with otherwise very different political and cultural contexts.</p><p class="figure-caption"><strong>Figure 4. Network growth &amp; global diffusion (R2 + R5).</strong> This combines organizational replication with the international circulation of policy templates and narratives of success.</p><div class="mermaid">
+flowchart TD
+    %% R2 and R5 --- Network growth and global diffusion
+
+    f_funding["Funding to ideological networks (from R1)"]
+    net_density["Network density of think tanks (Atlas, SPN, etc.)"]
+    infra["Movement infrastructure (conferences, training, legal shops)"]
+    mf_content["Market-fundamentalist content (to R1, R3, R4)"]
+    narrative_appeal["Narrative appeal ('freedom', 'tax relief', 'choice')"]
+    public_belief["Public belief (from R1, to R1)"]
+    elite_belief["Elite belief (from R1, to R1)"]
+    demand_thinktanks["Demand for aligned think tanks"]
+    pol_templates["Policy templates and reform toolkits"]
+    policy_adopt["Policy adoption (from R1, to B-loops)"]
+    success_stories["Market-fundamentalist 'success stories'"]
+
+    %% R2 --- network growth
+    f_funding -->|positive| net_density
+    f_funding -->|positive| infra
+    net_density -->|positive| mf_content
+    infra -->|positive| mf_content
+    net_density -->|positive| narrative_appeal
+    mf_content -->|positive| narrative_appeal
+    narrative_appeal -->|positive| public_belief
+
+    public_belief -->|positive| demand_thinktanks
+    elite_belief -->|positive| demand_thinktanks
+    demand_thinktanks -->|positive| f_funding
+
+    %% R5 --- global diffusion
+    net_density -->|positive| pol_templates
+    pol_templates -->|positive| policy_adopt
+    policy_adopt -->|positive| success_stories
+    success_stories -->|positive| narrative_appeal
+    success_stories -->|positive| elite_belief
+    elite_belief -->|positive| demand_thinktanks
+</div><h2 id="balancing-loops">6. Balancing loops (countervailing forces and potential failure modes)</h2>
+<p>Even powerful ideological systems face countervailing forces. These <strong>balancing loops (B)</strong> can slow, constrain, or reverse the expansion of market fundamentalism.</p><h3 id="b1-empirical-reality-policy-failure">B1 – <strong>Empirical reality and policy failure</strong></h3><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>POLICY_ADOPTION (extreme supply-side/austerity) (−) → POLICY_PERFORMANCE</strong></div></td><td data-label="Mechanism and explanation"><div><p>Extreme policy adoption can contribute to deep inequality, fiscal crises, financial crashes, deteriorating public services, and visible climate harms.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>POLICY_PERFORMANCE (−) → STATE_LEGITIMACY &amp; PUBLIC_BELIEF</strong></div></td><td data-label="Mechanism and explanation"><div><p>As people experience precarity, crises, and state failure, both state legitimacy and belief in the governing ideology can weaken.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><strong>Poor PERFORMANCE (+) → SHOCKS &amp; CRITICAL_PUBLIC_DEBATE</strong></td><td data-label="Mechanism and explanation"><p>Poor outcomes can generate visible shocks and critical public debate.</p></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><strong>SHOCKS &amp; DEBATE (+) → COUNTER_MVT &amp; CRITICAL_SCHOLARSHIP visibility</strong></td><td data-label="Mechanism and explanation"><p>Those shocks and debates can create an opening for progressive think tanks, unions, climate and justice movements, and heterodox economists to gain an audience.</p></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><strong>COUNTER_MVT (+) → COMPETING_NARRATIVES (−) → PUBLIC_BELIEF in market fundamentalism</strong></td><td data-label="Mechanism and explanation"><p>Counter-movements can strengthen competing narratives, weakening public belief in market fundamentalism.</p></td></tr><tr><td data-label="Step">6</td><td data-label="Causal relationship"><strong>Lower PUBLIC_BELIEF (−) → POLITICAL_POWER → less POLICY_ADOPTION</strong></td><td data-label="Mechanism and explanation"><p>Lower public belief can reduce the political power available to sustain further policy adoption.</p></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>Extreme POLICY_ADOPTION → bad OUTCOMES → SHOCKS → COUNTER_MOVEMENT → reduced BELIEF → reduced POLICY_ADOPTION</p>
+</blockquote><p>This balancing effect can arrive with a substantial <strong>delay</strong>. Short-term booms may conceal long-run fragility—as in pre-2008 financialization or pre-crisis austerity—so the feedback from poor outcomes may emerge only after the reinforcing dynamics have operated for some time.</p><h3 id="b2-credibility-scandal-loop">B2 – <strong>Credibility and scandal loop</strong></h3><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>MF_CONTENT BIAS &amp; LOW RIGOR (+) → EVIDENCE-REALITY GAP</strong></div></td><td data-label="Mechanism and explanation"><div><p>The more propagandistic the “research” becomes, the larger the gap can grow between its claims and mainstream academic or empirical findings.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>EVIDENCE-REALITY GAP (+) → EXPOSÉS &amp; REPUTATIONAL HITS</strong></div></td><td data-label="Mechanism and explanation"><div><p>Investigative journalism, leaked documents, and academic critiques can make that evidence-reality gap visible, including through reporting on climate-denial funding or tobacco links.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>REPUTATIONAL_HITS (+) → CREDIBILITY_LOSS (−) PERCEIVED_CONSENSUS &amp; ELITE_BELIEF</strong></div></td><td data-label="Mechanism and explanation"><div><p>Repeated reputational hits can lead some elites and media organizations to view the think tanks as partisan advocacy shops rather than neutral experts.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><div><strong>CREDIBILITY_LOSS (−) → MEDIA_AMP &amp; POLICY_ADOPTION</strong></div></td><td data-label="Mechanism and explanation"><div><p>As credibility falls, media amplification and policy influence can also decline.</p></div></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>Propaganda excess → credibility crisis → reduced influence</p>
+</blockquote><p>This loop may be relatively weak inside a core right-wing media ecosystem that protects its own institutions, but stronger in more pluralistic or technocratic settings such as courts, bureaucracies, and some mainstream media organizations.</p><h3 id="b3-regulation-transparency-loop">B3 – <strong>Regulation and transparency loop</strong></h3><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>REVELATIONS about dark money &amp; influence (+) → PUBLIC_CONCERN</strong></div></td><td data-label="Mechanism and explanation"><div><p>Leaks, academic research, and advocacy campaigns can expose donor networks, conflicts of interest, and forms of corporate capture.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><strong>PUBLIC_CONCERN (+) → REGULATORY_PUSH</strong></td><td data-label="Mechanism and explanation"><p>Public concern can create pressure for disclosure, lobbying restrictions, and campaign-finance rules.</p></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><strong>REGULATORY_PUSH (+) → TRANSPARENCY &amp; FUNDING_CONSTRAINTS (−) → FUNDING</strong></td><td data-label="Mechanism and explanation"><p>Greater transparency or tighter funding constraints can make anonymous donor-advised funding more difficult and may deter or alter donor behavior.</p></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><div><strong>Lower FUNDING (−) → TT_CAP &amp; INFRA → weaker MF_CONTENT &amp; MEDIA_AMP</strong></div></td><td data-label="Mechanism and explanation"><div><p>Lower funding reduces think-tank capacity and movement infrastructure, weakening the production and amplification of market-fundamentalist content.</p></div></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>Exposure → regulation → funding limits → reduced capacity</p>
+</blockquote><h3 id="b4-institutional-capture-institutional-collapse">B4 – <strong>Institutional capture → institutional collapse</strong></h3>
+<p>This balancing mechanism is subtler because it arises when market-fundamentalist policies weaken the institutional foundations on which functioning markets themselves depend.</p><div class="table-wrap"><table class="three-col wide-table"><thead><tr><th>Step</th><th>Causal relationship</th><th>Mechanism and explanation</th></tr></thead><tbody><tr><td data-label="Step">1</td><td data-label="Causal relationship"><div><strong>POLICY_ADOPTION (anti-union, anti-public investment, deregulatory) (−) → STATE_CAPACITY</strong></div></td><td data-label="Mechanism and explanation"><div><p>Anti-union, anti-public-investment, and deregulatory policies can degrade public services, regulatory agencies, and civil-service capacity.</p></div></td></tr><tr><td data-label="Step">2</td><td data-label="Causal relationship"><div><strong>STATE_CAPACITY (−) → ABILITY_TO_DELIVER_BASIC_GOODS</strong></div></td><td data-label="Mechanism and explanation"><div><p>Weaker state capacity reduces the ability to deliver high-quality schools, infrastructure, healthcare, and disaster response.</p></div></td></tr><tr><td data-label="Step">3</td><td data-label="Causal relationship"><div><strong>FAILURE_TO_DELIVER (+) → LEGITIMACY_CRISIS &amp; POLITICAL_VOLATILITY</strong></div></td><td data-label="Mechanism and explanation"><div><p>Persistent failure to deliver basic goods can erode trust not only in “big government,” but in institutions <em>overall</em>, including property rights and the rule of law.</p></div></td></tr><tr><td data-label="Step">4</td><td data-label="Causal relationship"><div><strong>VOLATILITY (−) → FAVORABILITY_FOR PREDICTABLE MARKETS</strong></div></td><td data-label="Mechanism and explanation"><div><p>Even many capitalists prefer predictability. Severe volatility can drive investors away or create demand for a different governing model, whether authoritarian or social democratic.</p></div></td></tr><tr><td data-label="Step">5</td><td data-label="Causal relationship"><div><strong>DEMAND_FOR_ALTERNATIVES (+) → COUNTER_MVT &amp; POLICY_REORIENTATION (−) POLITICAL_POWER of supply-side ideologues</strong></div></td><td data-label="Mechanism and explanation"><div><p>A legitimacy crisis can therefore increase demand for alternatives and policy reorientation, weakening the political power of supply-side ideologues.</p></div></td></tr></tbody></table></div><p class="loop-label">Loop summary</p><blockquote class="loop-summary">
+<p>Market fundamentalism undermines the very institutional foundations markets need, eventually reducing its own appeal.</p>
+</blockquote><p class="figure-caption"><strong>Figure 5. Outcomes, shocks, and balancing loops (B1–B4).</strong> This view brings together policy performance, institutional capacity, crises, counter-movements, credibility losses, and regulatory responses.</p><div class="mermaid">
+flowchart TD
+    %% B1---B4 --- Outcomes, shocks, credibility, and backlash
+
+    policy_adopt["Adoption of supply-side / neoliberal policies (from R1, R2)"]
+    policy_perf["Policy performance (growth, stability, welfare)"]
+    state_capacity["State capacity and institutional quality"]
+    shocks["Visible shocks and crises (financial crashes, climate disasters, pandemics)"]
+    counter_mvt["Counter-movements and critical expertise (unions, progressive think tanks, climate orgs)"]
+    competing_narr["Competing narratives (heterodox econ, justice, climate)"]
+    public_belief["Public belief in market fundamentalism (to R1)"]
+    elite_belief["Elite belief in market fundamentalism (to R1)"]
+    perc_cons["Perceived expert consensus (from R1/R3)"]
+    pol_power["Political power of aligned actors (from R1)"]
+
+    cred_gap["Evidence---reality gap (between propaganda and outcomes)"]
+    exposes["Exposes and scandals (funding leaks, climate denial, regulatory capture)"]
+    credibility_loss["Credibility loss of think tanks outside core base"]
+    public_concern["Public concern over capture and dark money"]
+    reg_push["Regulatory push (disclosure, lobbying rules, finance reform)"]
+    trans_constraints["Transparency and funding constraints"]
+    f_funding["Funding to ideological networks (back to R1)"]
+    tt_cap["Think tank capacity (back to R1/R3)"]
+    public_belief_in_state["Belief in value of capable public institutions"]
+
+    %% B1 --- policy failure and counter-movements
+    policy_adopt -->|negative| policy_perf
+    policy_perf -->|positive| state_capacity
+    state_capacity -->|positive| policy_perf
+
+    policy_perf -->|negative| public_belief
+    policy_perf -->|negative| elite_belief
+
+    policy_perf -->|negative| shocks
+    shocks -->|positive| counter_mvt
+    counter_mvt -->|positive| competing_narr
+    competing_narr -->|negative| public_belief
+    competing_narr -->|negative| elite_belief
+    competing_narr -->|negative| perc_cons
+
+    public_belief -->|negative| pol_power
+    elite_belief -->|negative| pol_power
+    pol_power -->|negative| policy_adopt
+
+    %% B2 --- credibility / scandal loop
+    mf_content_b2["Market-fundamentalist content (from R1/R2/R3)"]
+    mf_content_b2 -->|positive| cred_gap
+    policy_perf -->|negative| cred_gap
+    cred_gap -->|positive| exposes
+    exposes -->|positive| credibility_loss
+    credibility_loss -->|negative| perc_cons
+    credibility_loss -->|negative| public_belief
+    credibility_loss -->|negative| elite_belief
+
+    %% B3 --- regulation and transparency
+    exposes -->|positive| public_concern
+    public_concern -->|positive| reg_push
+    reg_push -->|positive| trans_constraints
+    trans_constraints -->|negative| f_funding
+    trans_constraints -->|negative| tt_cap
+
+    %% B4 --- institutional erosion and backlash
+    policy_adopt -->|negative| state_capacity
+    state_capacity -->|positive| public_belief_in_state
+    public_belief_in_state -->|negative| identity_align_b4["Pure anti-state identity framing"]
+    state_capacity -->|negative| counter_mvt
+</div><h2 id="other-causal-influences">7. Other causal influences</h2><div class="table-wrap"><table class="extra-wide-table long-table wide-table"><thead><tr><th>Influence</th><th>Variable(s)</th><th>Causal pathway</th><th>Diagram interpretation</th></tr></thead><tbody><tr><td data-label="Influence"><p><strong>Religious / moral framing</strong></p></td><td data-label="Variable(s)"><p><strong>RELIGIOUS_ALIGNMENT</strong></p></td><td data-label="Causal pathway"><div><p>MF_CONTENT → RELIGIOUS_ALIGNMENT (via Christian free enterprise narratives) → IDENTITY_ALIGNMENT → PUBLIC_BELIEF.</p><p><code>mf_content → religious_align → identity_align → public_belief</code></p></div></td><td data-label="Diagram interpretation"><div><p>Market-fundamentalist ideas can be wrapped in religious language—Christian free enterprise, prosperity-gospel themes, and related frames—strengthening the link between ideology, identity, and belief.</p></div></td></tr><tr><td data-label="Influence"><p><strong>International institutions</strong></p></td><td data-label="Variable(s)"><p><strong>IFIs &amp; TRADE_REGIMES</strong> (IMF, World Bank, WTO)</p></td><td data-label="Causal pathway"><div><p>Atlas/think tanks → influence IFI discourse → embed market-fundamentalist conditionalities → POLICY_ADOPTION in debtor countries → SUCCESS_STORIES.</p><p><code>mf_content → atlas_tt → ifi_trade → cond_policies → policy_adopt → success_stories → public_belief / elite_belief</code></p></div></td><td data-label="Diagram interpretation"><div><p>Think tanks can shape discourse within international financial institutions; conditionalities and policy advice can then embed market-fundamentalist reforms in debtor countries, while selected “success stories” are circulated as evidence for the model elsewhere.</p></div></td></tr><tr><td data-label="Influence"><p><strong>Academic capture</strong></p></td><td data-label="Variable(s)"><p><strong>ACADEMIC_ECON_ORTHODOXY</strong></p></td><td data-label="Causal pathway"><div><p>FUNDING (via chairs, centers) → selective support for pro-market scholars → more market-friendly curricula → ELITE_BELIEF among future policymakers → POLICY_ADOPTION.</p><p><code>f_funding_acad → funding_chairs → econ_orthodoxy → curricula → elite_belief → policy_adopt</code></p></div></td><td data-label="Diagram interpretation"><div><p>Targeted funding for chairs, centers, and institutes can shape economics departments and curricula. That, in turn, affects what future policymakers learn and can feed into elite belief and policy choices.</p></div></td></tr><tr><td data-label="Influence"><p><strong>Social media &amp; algorithms</strong></p></td><td data-label="Variable(s)"><p><strong>ALGO_ENGAGEMENT_BIAS</strong>, <strong>POLARIZATION</strong></p></td><td data-label="Causal pathway"><div><p>Polarizing, identity-laden market-fundamentalist content performs well → ALGO amplifies → MEDIA_AMP → PUBLIC_BELIEF &amp; IDENTITY_ALIGNMENT → more polarizing content → etc. (another reinforcing loop).</p><p><code>mf_content + identity_align → polarizing_content → algo_bias → media_amp → public_belief &amp; identity_align</code></p></div></td><td data-label="Diagram interpretation"><div><p>Polarizing, identity-laden content often performs well on engagement-driven platforms. Algorithmic amplification can therefore strengthen both public belief and identity alignment, while polarization generates still more content suited to the same incentives.</p></div></td></tr></tbody></table></div><p class="figure-caption"><strong>Figure 6. Other causal influences.</strong> These additional pathways connect religious framing, international institutions, academia, and social-media dynamics to the core model.</p><div class="mermaid">
+flowchart TD
+    %% Additional causal influences:
+    %% - Religious / moral framing
+    %% - International institutions (IFIs, trade regimes)
+    %% - Academic capture
+    %% - Social media algorithms
+
+    %% Shared core nodes (same logical variables as in previous diagrams)
+    mf_content["Market-fundamentalist content"]
+    identity_align["Identity alignment (patriotism, religion, tribe)"]
+    public_belief["Public belief in market fundamentalism"]
+    elite_belief["Elite belief in market fundamentalism"]
+    policy_adopt["Adoption of supply-side / neoliberal policies"]
+    media_amp["Media amplification (TV, newspapers, social media)"]
+
+    %% ------------------------------------------------------------
+    %% Religious / moral framing
+    %% ------------------------------------------------------------
+
+    subgraph RELIGION["Religious / moral framing"]
+        religious_align["Religious / moral alignment (e.g. Christian free enterprise)"]
+    end
+
+    mf_content -->|positive| religious_align
+    religious_align -->|positive| identity_align
+    identity_align -->|positive| public_belief
+
+    %% ------------------------------------------------------------
+    %% International institutions (IFIs and trade regimes)
+    %% ------------------------------------------------------------
+
+    subgraph IFI_BLOCK["International institutions (IMF, World Bank, WTO, trade regimes)"]
+        ifi_trade["IFIs and trade regimes (IMF, World Bank, WTO, trade agreements)"]
+        cond_policies["Market-fundamentalist conditionalities and advice"]
+        success_stories["Global 'success stories' (poster countries for reforms)"]
+        atlas_tt["Atlas / think-tank influence on IFIs"]
+    end
+
+    mf_content -->|positive| atlas_tt
+    atlas_tt -->|positive| ifi_trade
+    ifi_trade -->|positive| cond_policies
+    cond_policies -->|positive| policy_adopt
+    policy_adopt -->|positive| success_stories
+    success_stories -->|positive| public_belief
+    success_stories -->|positive| elite_belief
+
+    %% ------------------------------------------------------------
+    %% Academic capture
+    %% ------------------------------------------------------------
+
+    subgraph ACADEMIA["Academic capture and econ orthodoxy"]
+        funding_chairs["Funding for chairs, centers, and institutes"]
+        econ_orthodoxy["Academic econ orthodoxy (pro-market bias in ideas)"]
+        curricula["Market-friendly curricula and training of policymakers"]
+    end
+
+    f_funding_acad["Funding from elites and ideological networks"]
+    f_funding_acad -->|positive| funding_chairs
+    funding_chairs -->|positive| econ_orthodoxy
+    econ_orthodoxy -->|positive| curricula
+    curricula -->|positive| elite_belief
+    elite_belief -->|positive| policy_adopt
+
+    %% ------------------------------------------------------------
+    %% Social media algorithms and polarization
+    %% ------------------------------------------------------------
+
+    subgraph SOCIAL_MEDIA["Social media algorithms and polarization"]
+        algo_bias["Algorithmic engagement bias (toward outrage and sensationalism)"]
+        polarization["Political / cultural polarization"]
+        polarizing_content["Polarizing, identity-laden market-fundamentalist content"]
+    end
+
+    mf_content -->|positive| polarizing_content
+    identity_align -->|positive| polarizing_content
+
+    polarizing_content -->|positive| algo_bias
+    algo_bias -->|positive| media_amp
+    media_amp -->|positive| public_belief
+    media_amp -->|positive| identity_align
+
+    polarizing_content -->|positive| polarization
+    polarization -->|positive| identity_align
+    polarization -->|positive| public_belief
+</div><hr/><h2 id="references">8. References</h2><p>Sources cited in the text are listed once below; repeated citations reuse the same reference number.</p><ol class="references"><li id="ref-1"><span class="ref-source">Wikipedia. </span><a href="https://en.wikipedia.org/wiki/Atlas_Network" rel="noopener noreferrer" target="_blank">Atlas Network</a></li><li id="ref-2"><span class="ref-source">Wikipedia. </span><a href="https://en.wikipedia.org/wiki/State_Policy_Network" rel="noopener noreferrer" target="_blank">State Policy Network</a></li><li id="ref-3"><span class="ref-source">Brown Climate Social Science Network. </span><a href="https://cssn.org/wp-content/uploads/2020/12/DunlapMcCrightRoutledgeHB2010.pdf" rel="noopener noreferrer" target="_blank">Climate change denial: sources, actors and strategies</a></li><li id="ref-4"><span class="ref-source">OUP Academic. </span><a href="https://academic.oup.com/ia/article-pdf/100/5/2173/59032962/iiae132.pdf" rel="noopener noreferrer" target="_blank">Atlas asunder? Neo-liberal think tanks and the radical right</a></li><li id="ref-5"><span class="ref-source">Alainet. </span><a href="https://www.alainet.org/en/articulo/187421" rel="noopener noreferrer" target="_blank">Sphere of Influence: How American Libertarians Are …</a></li><li id="ref-6"><span class="ref-source">Wikipedia. </span><a href="https://en.wikipedia.org/wiki/Dark_Money_%28book%29" rel="noopener noreferrer" target="_blank">Dark Money (book)</a></li><li id="ref-7"><span class="ref-source">Wikipedia. </span><a href="https://en.wikipedia.org/wiki/Koch_network" rel="noopener noreferrer" target="_blank">Koch network</a></li><li id="ref-8"><span class="ref-source">The Guardian. </span><a href="https://www.theguardian.com/us-news/2016/jan/17/dark-money-review-nazi-oil-the-koch-brothers-and-a-rightwing-revolution" rel="noopener noreferrer" target="_blank">Dark Money review: Nazi oil, the Koch brothers and a rightwing revolution</a></li><li id="ref-9"><span class="ref-source">The Guardian. </span><a href="https://www.theguardian.com/environment/2015/jun/09/secretive-donors-gave-us-climate-denial-groups-125m-over-three-years" rel="noopener noreferrer" target="_blank">Secretive donors gave US climate denial groups $125m over three years</a></li><li id="ref-10"><span class="ref-source">EXPOSEDbyCMD. </span><a href="https://www.exposedbycmd.org/2025/11/21/dark-money-donor-conduit-funneled-195-million-to-right-wing-groups-in-2024/" rel="noopener noreferrer" target="_blank">Dark Money Donor Conduit Funneled $195 Million to Right-Wing Groups in 2024</a></li><li id="ref-11"><span class="ref-source">Center for Public Integrity. </span><a href="https://publicintegrity.org/politics/donors-use-charity-to-push-free-market-policies-in-states/" rel="noopener noreferrer" target="_blank">Donors use charity to push free-market policies in states</a></li><li id="ref-12"><span class="ref-source">Scientific American. </span><a href="https://www.scientificamerican.com/article/dark-money-funds-climate-change-denial-effort/" rel="noopener noreferrer" target="_blank">“Dark Money” Funds Climate Change Denial Effort</a></li><li id="ref-13"><span class="ref-source">PMC. </span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3787818/" rel="noopener noreferrer" target="_blank">Climate Change Denial Books and Conservative Think Tanks</a></li><li id="ref-14"><span class="ref-source">ScienceDirect. </span><a href="https://www.sciencedirect.com/science/article/abs/pii/S0959378015300728" rel="noopener noreferrer" target="_blank">Text-mining the signals of climate change doubt</a></li><li id="ref-15"><span class="ref-source">sciencepolicy.colorado.edu. </span><a href="https://sciencepolicy.colorado.edu/students/envs_5000/mccright_2011.pdf" rel="noopener noreferrer" target="_blank">Cool dudes</a></li></ol></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  (function () {
+    var attempts = 0;
+
+    async function renderMermaid() {
+      attempts += 1;
+      if (!window.mermaid) {
+        if (attempts < 40) {
+          window.setTimeout(renderMermaid, 150);
+        }
+        return;
+      }
+
+      window.mermaid.initialize({
+        startOnLoad: false,
+        securityLevel: "loose",
+        suppressErrorRendering: true,
+        theme: "default",
+      });
+
+      var diagrams = document.querySelectorAll(".ep-post .mermaid");
+      for (var i = 0; i < diagrams.length; i += 1) {
+        var diagram = diagrams[i];
+        if (diagram.querySelector("svg")) continue;
+
+        var source =
+          diagram.getAttribute("data-mermaid-source") ||
+          diagram.textContent
+            .replace(/&gt;/g, ">")
+            .replace(/&lt;/g, "<")
+            .replace(/&amp;/g, "&")
+            .trim();
+
+        diagram.setAttribute("data-mermaid-source", source);
+
+        try {
+          var result = await window.mermaid.render(
+            "supply-side-mermaid-" + i + "-" + Date.now(),
+            source
+          );
+          diagram.innerHTML = result.svg;
+          if (result.bindFunctions) {
+            result.bindFunctions(diagram);
+          }
+        } catch (error) {
+          console.error("Mermaid render failed for diagram " + (i + 1), error, source);
+        }
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderMermaid);
+    } else {
+      renderMermaid();
+    }
+
+    window.addEventListener("load", renderMermaid);
+    window.setTimeout(renderMermaid, 500);
+    window.setTimeout(renderMermaid, 1500);
+  })();
+</script>
+

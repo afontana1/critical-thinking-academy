@@ -1,0 +1,671 @@
+<title>Definitions</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      .ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<article class="ep-post">
+<p>&nbsp;<a href="https://drmichaellevin.org/">Michael Levin</a> is a professor of biology at Tufts University, and is quite a prolific thinker. I have been following his work for a while because he is very interdisciplinary; something I think modern academia is seriously lacking. His biological research overlaps with artificial life, bioengineering, computer science, behavioral science, and cognitive science; introducing a truly novel perspective on these overlapping subdomains. This is relevant to me because I think economics (my discipline) ought to incorporate some of the concepts and methods his lab takes seriously, such as: collectives, swarming behavior, emergence, scaling laws, evolutionary development, and process oriented thinking. I think he is modeling complex systems the correct way. A mere mortal like myself couldn't possibly make the intellectual strides he's made. I see him as a thinker I'd like to emulate. However, no one has the answers to everything, and I can't help but critically analyze every argument someone presents. I recently watched "<a href="https://youtu.be/EdEqgCOSx7E?si=fuzHDg0wX-_Cx9Rm">Platonic Space: brief argument and research agenda</a>" by Michael Levin, where he presents an argument that physicalism is false, and there exists some platonic space where "intelligence", among other abstractions and patterns, "live" in an uninstantiated form, but determine the physical forms and patterns we observe. He further claims that these patterns can instantiate within simple systems (like finite state machines), not to the extent in which they instantiate in complex organisms, but nevertheless non-zero. It's somewhat difficult to pin down exactly what he means, because he mentions this is not "platonic in the philosophical sense of timeless forms", but does not provide an outline of what he means by Platonic. Also technically, in the video there seems to be a bit of ambiguity between the direction of causality; he mentions these "patterns supervene on the world in a one-directional way" but simultaneously says things like "biology is very good at exploiting these patterns", which would imply reverse causality; "biology using" these patterns would mean there is some entity "biology" that has the capacity to interact with this platonic space? He is somewhat using these terms in an unfamiliar way; what it means for "biology" to have capacities confuses me. But t his is essentially a philosophical argument. I am no philosopher, but I think his argument straightforwardly <a href="https://en.wikipedia.org/wiki/Begging_the_question">begs the question</a>. Below I'll provide his actual argument, then I will rephrase it in such a way that hopefully steel-mans it, then finally I will put it in an argumentation scheme structure so it's easier to analyze. My main contention is with his conclusion that "physicalism is obviously false". Here is his argument:</p>
+
+<!--Begin blog content-->
+<div class="post-body">
+  <p><strong>1.</strong> There are specific facts of mathematics, let’s call them “patterns” (a.k.a., forms). Examples: value of e, Feigenbaum’s constant, facts of number theory and topology, symmetry of SU(2), amplituhedron, etc.</p>
+
+  <p><strong>2.</strong> There are many specifics which are surprising, and forced on you, once you choose some basic assumptions (very few – just logic, apparently) → you “get more out than you put in”. Start with set theory and get the specific value of e.</p>
+
+  <p><strong>3.</strong> For some such patterns P:</p>
+  <ul>
+    <li>there are aspects of physics and biology that are explained by recourse to the specifics of P. If you ask “why” long enough, you end up in the Mathematics department.</li>
+    <li>in contrast, there is no aspect of the physical world (physical events/laws), and no amount of history (biological selection), that explain/set the properties of P</li>
+    <li>if P’s facts were different, biology and physics would be different.</li>
+    <li>it doesn’t work in the reverse: there is nothing you can change in the physical world to make P be different.
+      <ul>
+        <li>therefore, causality flows from these forms to the physical world (not in the temporal sense).</li>
+        <li>therefore, these facts play important instructive roles. They cannot be ignored if you want to understand and tame evolution, bioengineering, etc.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong>4.</strong> Therefore:</p>
+  <ul>
+    <li>physicalism is a non-viable theory: there are facts that are simply not “in” the physical world in any useful sense of “physics”. Pythagoras knew this already. Let’s call the space of possible properties of P’s “the Platonic Space”.</li>
+  </ul>
+
+  <p><strong>5. Optional hypotheses: (optimistic metaphysical claim)</strong></p>
+  <ul>
+    <li>P is drawn from a distribution that’s not a random collection but a structured space</li>
+    <li>therefore, we have a research program: map the space, understand relationship between interface and which P it channels.</li>
+  </ul>
+
+  <p><strong>5. Skeptical position:</strong> we cannot assume that low-agency models of math encompass all the residents of this Space. Some may be better described by behavioral science tools.</p>
+  <ul>
+    <li>therefore, some of the patterns that ingress into physics and biology may be “kinds of minds”.</li>
+    <li>therefore, Dualism is viable. We already knew it was true in physics and biology; this suggests it’s also relevant in cognitive science.</li>
+  </ul>
+
+  <p><strong>7. Skeptical position:</strong> we cannot assume that biological materials, evolutionary search, etc. have any monopoly on hosting those patterns.</p>
+  <ul>
+    <li>therefore, perhaps algorithms/robots should be searched for surprising ingressions that are not just complexity or unpredictability, but well-understood cognitive competencies.</li>
+  </ul>
+</div>
+<!--End blog content-->
+
+<div>Stripping down the core logic of the argument against physicalism, we have:</div><div><div><ol style="text-align: left;"><li>Certain mathematical “patterns” P explain aspects of physics and biology.</li><li>Physics/biology/history do not explain or determine those mathematical patterns.</li><li>Explanatory direction is one-way: from math → world, not world → math.</li><li>If there are facts that explain the physical world but are not themselves explicable in physical terms, then physicalism is false.</li><li>So, physicalism is false.</li></ol><div>Notice that this fits the Abductive Argument from Best Explanation described by Walton; which is nice because we can construct critical questions specifically addressing the content of the premises and the general form:</div></div></div><div><div><ul style="text-align: left;"><li>Premise 1 (Data): Phenomenon F is observed.</li><li>Premise 2 (Explanatory link): Hypothesis H would explain F.</li><li>Premise 3 (Comparative): No other available hypothesis explains F as well as H.</li><li>Conclusion: Therefore, H is (provisionally) acceptable.</li></ul></div></div><div>Before reconstructing the argument in this form, just a few opening remarks. At a very high level, I think the argument against physicalism seems to be lacking on premise two, specifically it begs the question. From my view, I see mathematics as a <a href="https://en.wikipedia.org/wiki/Formalism_(philosophy_of_mathematics)">formalism</a>. But premise 2 seems to merely assume Platonism. It somewhat admits formalism as viable, since it mentions assumptions (presumably axioms), which are indeed selected and once selected, certain facts fall out of the reasoning. But those facts are a consequence of humans selecting the axioms and assumptions. If we’ve identified formal systems that map onto empirical reality very cleanly that’s one thing, but I’m not quite certain the facts derived from them are “outside of physics”. They’re model artifacts, like hyperparameters or something, not metaphysical objects with causal powers. In Waltons structure, here is Levin's "Argument from Mathematical Explanation against Physicalism":</div><div><ul style="text-align: left;"><li><b>P1 (Data)</b>: There are features of physics and biology – call them the “targets” – that can be explained by appealing to specific mathematical facts/patterns P. (From the slide: “there are aspects of physics and biology that are explained by recourse to the specifics of P.”)</li><li><b>P2 (Explanatory link)</b>: If mathematical facts/patterns P are mind- and world-independent (i.e. belong to a nonphysical “Platonic Space”), then their explanatory role in physics/biology is accounted for.</li><li><b>P3 (Asymmetry / Negative claim)</b>: No purely physical facts, and no historical/biological story, explain or determine the mathematical facts/patterns P. (From the original argument: “there is no aspect of the physical world … and no amount of history … that explain/set the properties of P.”)</li><li><b>P4 (Bridge principle)</b>: If something explains the physical but is not itself explainable in physical terms, then physicalism is false (or at least “non-viable”).</li><li><b>C (Conclusion)</b>: Therefore, physicalism is false / non-viable.</li></ul></div><p>There are quite a few assumptions underlying this argument that Levin takes for granted. Once you explicate the assumptions, it becomes clear where the argument fails. P2 silently builds in a Platonist reading of mathematics, which is the source of question begging.&nbsp;</p><p>Here are the ontological assumptions:</p><p></p><ul style="text-align: left;"><li>(A1) Robust mathematical realism: Mathematical facts/patterns P exist independently of human activity and of the physical world.</li><li>(A2) Explanations license ontological commitment: If an entity/fact genuinely explains something, we are entitled to count it in our ontology (this is a Quinean/indispensability style move).</li><li>(A3) Explanatory priority ↔ non-reducibility: If X explains Y and Y cannot in principle explain X, then X is not reducible to Y.</li></ul><p></p><p>I don't think A3 is controversial, but A1 and A2 are definitely not settled. The argument also makes assumptions about mathematics, science, and physicalism:</p><p style="text-align: left;"></p><ul style="text-align: left;"><li>(A4) The explanations in physics/biology really do appeal to particular mathematical facts, not just to our current best formalism. (if they’re merely model-artifacts, the premise weakens.)</li><li>(A5) The choice of axioms is not merely pragmatic/human, or at least the truths that follow are not hostage to that choice. The slide hints at assumptions/axioms, but then treats what “falls out” as if it were fixed and independent of us.</li><li>(A6) Physicalism requires that all explanatorily relevant facts be ultimately physical or derivable from the physical.</li><li>(A7) Mathematical facts that are not derivable from the physical count as a counterexample to physicalism. (This is stronger than many physicalists would grant – they often allow abstracta as noncausal and harmless.)</li></ul><p></p><p>There are also missing links required for getting us to "physicalism is non-viable":</p><p></p><ul style="text-align: left;"><li>(M1) If an explanans E for a physical phenomenon is itself not physically explainable, then E is not physical.</li><li>(M2) If there exists at least one nonphysical but explanatorily indispensable fact, physicalism is false.</li></ul><p></p><p>These are not trivial. They are also not defended in Levin's formulation. Perhaps they are defended elsewhere, I am not sure. Moving on, now we can construct critical questions targeting these premises and assumptions:</p>
+
+<div>
+  <h4 style="text-align: left;">CQ group 1: About the data/explanations (P1)</h4>
+  <ul>
+    <li><strong>CQ1:</strong> Are there really scientific explanations that essentially appeal to specific mathematical facts (and not just to the use of a mathematical model)?</li>
+    <li><strong>CQ2:</strong> Could the same physical/biological phenomena be explained equally well with an empirically equivalent but mathematically different formalism?</li>
+    <li><strong>CQ3:</strong> Are we mistaking representation for explanation – i.e. is math merely the language in which the explanation is stated?</li>
+  </ul>
+
+  <h4 style="text-align: left;">CQ group 2: About the asymmetry (P3)</h4>
+  <ul>
+    <li><strong>CQ4:</strong> Is it actually true that the physical/historical cannot explain the choice, adoption, or success of mathematical formalisms? (E.g. cognitive science of mathematics, evolutionary stories about why we have certain concepts.)</li>
+    <li><strong>CQ5:</strong> Even if the physical cannot explain the truth of mathematical statements, can it explain why those truths are the ones that get to play an explanatory role in science?</li>
+    <li><strong>CQ6:</strong> Is the direction “math → world” being construed as causal when it is only conceptual or structural?</li>
+  </ul>
+
+  <h4 style="text-align: left;">CQ group 3: About the platonist step (P2, A1)</h4>
+  <ul>
+    <li><strong>CQ7:</strong> Why should we interpret mathematical success as evidence for the existence of a nonphysical realm, rather than as evidence for the usefulness of certain formalisms?</li>
+    <li><strong>CQ8:</strong> If mathematics is a human-selected formal system, and the world happens to be amenable to being modeled that way, does that require extra ontology?</li>
+    <li><strong>CQ9:</strong> Can a nominalist or formalist account for all the same explanatory practices without positing nonphysical objects?</li>
+  </ul>
+
+  <h4 style="text-align: left;">CQ group 4: About the bridge to anti-physicalism (P4, M1, M2)</h4>
+  <ul>
+    <li><strong>CQ10:</strong> Does admitting noncausal, abstract, or representational entities automatically refute physicalism, or can a physicalist treat them as “ontologically lightweight”?</li>
+    <li><strong>CQ11:</strong> Does physicalism require that every explanatorily relevant fact be physical, or only that concrete facts are physical?</li>
+    <li><strong>CQ12:</strong> Is the inference from “indispensable abstracta” to “physicalism is non-viable” valid, or is that just importing a strong form of naturalism?</li>
+  </ul>
+
+  <h4 style="text-align: left;">CQ group 5: About competing explanations (Walton’s comparative step)</h4>
+  <ul>
+    <li><strong>CQ13:</strong> Are there rival hypotheses – e.g. mathematical fictionalism, structuralism, instrumentalism about models – that explain the same data (math’s role in science) as well as platonism?</li>
+    <li><strong>CQ14:</strong> If there are rival explanations of equal or better fit, why should we prefer the platonist one?</li>
+    <li><strong>CQ15:</strong> Is the appeal to a “Platonic Space” really explanatory, or just restating the phenomenon (“math seems prior”) in ontological language?</li>
+  </ul>
+
+  <h4 style="text-align: left;">CQ group 6: About overreach</h4>
+  <ul>
+    <li><strong>CQ16:</strong> Even if mathematics is nonphysical, why does that show physicalism about mind/biology/physics is false, rather than only physicalism about abstracta?</li>
+    <li><strong>CQ17:</strong> Is the conclusion too strong for the premises – i.e. should the conclusion be “physicalism is incomplete” rather than “non-viable”?</li>
+  </ul>
+</div>
+
+<p>Essentially, I am pressing on the argument with CQ1, CQ3, CQ7, and CQ9. I do not think that scientific use of math commits us to mathematical objects or patterns as a separate realm. I see modeling as a practice rather than a feature of reality. Under these views, P2 loses its force, and the bridge premises are undercut.&nbsp;</p><p>More crucially, the argument is fundamentally question begging. To beg the question, means to assume the conclusion of an argument in one of your premises. In this argument, the "mathematical facts that aren’t themselves explained by anything physical, therefore there are explanatory facts 'outside' the physical" premise is where Levin is committing the fallacy. This premise looks obvious if you already see math as something mind/world independent (if you are a Platonist), but if you are a&nbsp;formalist/<a href="https://plato.stanford.edu/entries/nominalism-mathematics/">nominalist</a>/<a href="https://plato.stanford.edu/entries/structuralism-mathematics/">structuralist</a>, you’ll say: “No, those ‘facts’ are just features of the formal apparatus we’re using; of course physics doesn’t explain them, because they’re not that kind of thing.”&nbsp;So the key premise (“these mathematical facts aren’t physical / can’t be physically explained”) is not neutral. It’s loaded with the anti-physicalist ontology. That’s what “begging the question” looks like in a philosophical dispute. So in other words, by asserting physicalism is false because platonism is true, is like saying "you are wrong because I am right"; there hasn't been an independent case made for the truth of the thing you are assuming. To rationally persuade a committed physicalist, you can’t lean on a premise that only people who already reject physicalism would accept (a robust platonism that counts as nonphysical). A formalist could just respond by saying "humans pick axioms, the axioms generate consequences, some of those consequences model the world really well. That doesn’t mean the consequences are extra, nonphysical objects." The explanatoriness of math is a model-level feature, not an ontological one.</p><p>This entire response could be completely irrelevant. After all, like mentioned earlier, Levin does not really give an account of Platonic Space other than to say its "not really like it in the classical sense." If that's the case, then sure, but then I'm not sure what the argument becomes. To be fair, he <a href="https://thoughtforms.life/platonic-space-where-cognitive-and-morphological-patterns-come-from-besides-genetics-and-environment/">has written about it on his website</a>, of which I have not read. I am in the process of watching the videos on his <a href="https://thoughtforms.life/symposium-on-the-platonic-space/">Symposium on the Platonic Space</a>, so maybe something will become clearer in that process. At the end of the day, if this informs his experimental research program in a way that leads to novel discoveries, that is the ultimate arbiter of success. Perhaps this framework will inform experimental design and hypothesis generation in a way that leads to incredible success in bioengineering and artificial life. If that becomes the case, then my response is irrelevant. After all, the experiment is what determines our knowledge, not mere philosophical argumentation. Sometimes you need radical perturbations to your assumptions if you want progress in a research paradigm. This could be what Lakatos refers to when he talks about paradigm shifts in scientific research; we could be, in the present, witnessing such a revolution.&nbsp;</p><h3 style="text-align: left;">Definitions</h3><div><b>Philosophy of mathematics</b>: At its core, philosophy of math is trying to answer a small cluster of stubborn questions: What are mathematical objects (numbers, sets, functions) supposed to be? Do they exist, and if so, where and how? How can we have knowledge of them if they’re not in space and time? Why is mathematics so effective in science? And what makes a mathematical statement true—does it report a fact about something, or is it true because of rules we made up? Different views in philosophy of math are basically different ways of answering those questions while trying not to create new problems that are worse than the originals.</div><div><br /></div><div><b>Platonism</b>: Platonism says that mathematical objects are real, mind-independent, and abstract. The number 2, the set of real numbers, group structures—these are not inventions, they’re discoveries. They don’t live in space or time, they don’t depend on human practices, and mathematical statements are true because they describe how these abstract things actually are. On this view, “2 + 2 = 4” is true in roughly the way “water is H₂O” is true: it lines up with the structure of reality, just a nonphysical slice of it. The big advantage of platonism is that it explains the objectivity of math and its uncanny usefulness: of course math works, because the world instantiates or mirrors these real structures. The big cost is epistemic and metaphysical: how do we, spatiotemporal critters, get knowledge of non-spatiotemporal objects, and how do such objects fit into a broadly naturalistic picture?</div><div><br /></div><div><b>Formalism</b>: Formalism tries to lower the metaphysical temperature. On a formalist picture, mathematics is not primarily about a realm of abstract objects, it is about manipulating symbols according to rules inside formal systems. We lay down axioms and inference rules; the theorems are what you can derive by following the rules. “Truth” inside a system is a matter of derivability, not of correspondence to a Platonic reality. This makes mathematical practice look more like playing a very elaborate, very constrained game. But that doesn’t mean it’s arbitrary, because not all games are equally useful: some formal systems map onto empirical reality elegantly, and so we keep them. The contrast with platonism is sharp here: the platonist says math is true because the structure exists; the formalist says math is valid because the rules generate those sentences. A standard worry for formalism is that mathematicians talk and act as if they are discovering something, not merely seeing what follows from stipulations, and that we still need to explain why certain symbol games are so perfectly suited to physics.</div><div><br /></div><div><b>Nominalism</b>: Nominalism’s starting impulse is “no abstract objects, please.” A nominalist wants to do mathematics without committing to numbers, sets, or other entities that aren’t concrete. There are different strategies, but the shared idea is that mathematical talk can be paraphrased, regimented, or otherwise understood so that it doesn’t require a Platonic ontology. Sometimes this means treating mathematical statements as shorthand for claims about concrete things; sometimes it means treating them as part of a useful fiction that doesn’t carry ontological commitment. In contrast with platonism, nominalism denies that mathematical statements are literally about a mind-independent abstract realm. Its appeal is that it fits better with a physicalist or naturalist worldview. Its challenge is to recover the apparent objectivity and necessity of mathematics without the obvious, clean story the platonist has (“it’s necessary because that’s how the abstract realm is”).</div><div><br /></div><div><b>Structuralism</b>: Structuralism sits in an interesting middle space. It says that mathematics is about structures, not about individual abstract objects taken in isolation. What matters in math are the positions in a structure and the relations among them, not some mysterious intrinsic nature of “the number 2.” On this view, different systems that have the same structure are mathematically the same for all relevant purposes. So arithmetic is about the structure common to all ω-like sequences, not about one privileged sequence living in Plato’s heaven. Compared with platonism, structuralism keeps the idea that mathematics is objective and not just a human game, but it thins out what we have to believe in: we don’t need robust, haecceity-laden objects, we need the existence (or possibility) of structures. Compared with formalism, structuralism insists that math isn’t just symbol pushing; the symbols succeed because they capture real structural possibilities. The pressure on structuralism is to say what it is for a structure to exist if not in some abstract way, and whether that pushes it back toward a gentler platonism.</div><div><br /></div><div>Platonism (robust objects), formalism (rule-governed symbol games), nominalism (no abstracta), and structuralism (relations over objects) are basically four answers to the same puzzle: how can math be necessary, objective, and scientifically indispensable without bloating our ontology? Each trades off clarity about practice for metaphysical economy, or the other way around.</div>
+</article>
