@@ -75,7 +75,6 @@ def render_index(posts: dict[str, list[tuple[str, str]]]) -> str:
         links = "\n".join(
             f'''            <li>
               <a href="{html.escape(url, quote=True)}">{html.escape(title)}</a>
-              <span>{html.escape(url)}</span>
             </li>'''
             for title, url in sorted(items, key=lambda item: item[0].lower())
         )
@@ -238,16 +237,8 @@ def render_index(posts: dict[str, list[tuple[str, str]]]) -> str:
 
       .post-list a {{
         display: block;
-        padding: 0.85rem 0.9rem 0.2rem;
+        padding: 0.85rem 0.9rem;
         font-weight: 700;
-      }}
-
-      .post-list span {{
-        display: block;
-        padding: 0 0.9rem 0.85rem;
-        color: var(--muted);
-        font-size: 0.82rem;
-        overflow-wrap: anywhere;
       }}
 
       footer {{
