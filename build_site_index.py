@@ -36,6 +36,17 @@ def title_for(path: Path) -> str:
     return path.parent.name.replace("-", " ").replace("_", " ").title()
 
 
+def flatten_mapping(data: dict, prefix: tuple[str, ...] = ()) -> dict[str, str]:
+    flattened: dict[str, str] = {}
+    for key, value in data.items():
+        parts = prefix + (str(key),)
+        if isinstance(value, dict):
+            flattened.update(flatten_mapping(value, parts))
+        else:
+            flattened["/".join(parts)] = str(value)
+    return flattened
+
+
 def load_title_mappings() -> dict[str, dict[str, str]]:
     mappings: dict[str, dict[str, str]] = {}
     for section_dir in ROOT.iterdir():
@@ -46,9 +57,7 @@ def load_title_mappings() -> dict[str, dict[str, str]]:
             if not mapping_path.exists():
                 continue
             data = json.loads(mapping_path.read_text(encoding="utf-8-sig"))
-            mappings[section_dir.name] = {
-                str(folder): str(title) for folder, title in data.items()
-            }
+            mappings[section_dir.name] = flatten_mapping(data)
             break
     return mappings
 
@@ -57,10 +66,13 @@ def mapped_title_for(path: Path, mappings: dict[str, dict[str, str]]) -> str | N
     if len(path.parts) < 2:
         return None
     section = path.parts[0]
-    folder = path.parts[1]
-    title = mappings.get(section, {}).get(folder)
-    if title:
-        return title
+    section_mapping = mappings.get(section, {})
+    folder_parts = path.parts[1:-1]
+    for index in range(len(folder_parts), 0, -1):
+        key = "/".join(folder_parts[:index])
+        title = section_mapping.get(key)
+        if title:
+            return title
     return None
 
 
