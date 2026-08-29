@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Critical Thinking Academy</title>
+    <meta
+      name="description"
+      content="A static archive of critical thinking, philosophy, economics, religion, science, and media analysis essays."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #111413;
+        --panel: #181d1b;
+        --panel-soft: #202622;
+        --text: #f1f3ee;
+        --muted: #aab2aa;
+        --line: #394039;
+        --accent: #86d1c2;
+        --accent-2: #e5c56e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-color: color-mix(in srgb, var(--accent) 72%, transparent);
+        text-underline-offset: 0.18em;
+      }
+
+      .site-shell {
+        width: min(1120px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 2.5rem 0 4rem;
+      }
+
+      header {
+        padding: 2rem 0 1.2rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 780px;
+        font-size: clamp(2rem, 5vw, 4.25rem);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      header p {
+        max-width: 760px;
+        margin: 1rem 0 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 1.25rem 0 0;
+      }
+
+      .stats span,
+      nav a {
+        display: inline-flex;
+        min-height: 2.25rem;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 0.45rem;
+        padding: 0.35rem 0.65rem;
+        background: var(--panel);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.5rem 0 2rem;
+      }
+
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        border-color: var(--accent);
+      }
+
+      .post-section {
+        padding: 1.4rem 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.35rem;
+      }
+
+      .section-heading p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .post-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .post-list li {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 0.45rem;
+        background: var(--panel);
+      }
+
+      .post-list a {
+        display: block;
+        padding: 0.85rem 0.9rem 0.2rem;
+        font-weight: 700;
+      }
+
+      .post-list span {
+        display: block;
+        padding: 0 0.9rem 0.85rem;
+        color: var(--muted);
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+      }
+
+      footer {
+        margin-top: 2rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 760px) {
+        .site-shell {
+          width: min(100% - 1rem, 1120px);
+          padding-top: 1.2rem;
+        }
+
+        header {
+          padding-top: 1rem;
+        }
+
+        .post-list {
+          grid-template-columns: 1fr;
+        }
+
+        .section-heading {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="site-shell">
+      <header>
+        <h1>Critical Thinking Academy</h1>
+        <p>
+          A static archive of essays on argumentation, evidence, philosophy,
+          economics, religion, science, engineering, media, and propaganda.
+        </p>
+        <div class="stats">
+          <span>99 posts</span>
+          <span>7 sections</span>
+        </div>
+      </header>
+      <nav aria-label="Sections">
+<a href="#culture">Culture</a>
+<a href="#economics">Economics</a>
+<a href="#philosophy">Philosophy</a>
+<a href="#policy-politics">Policy &amp; Politics</a>
+<a href="#propaganda">Propaganda</a>
+<a href="#religion">Religion</a>
+<a href="#science-engineering">Science &amp; Engineering</a>
+      </nav>
+      <section id="culture" class="post-section">
+        <div class="section-heading">
+          <h2>Culture</h2>
+          <p>6 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="culture/bad-bunny-alex-pretti/blog.html">Bad Bunny, Alex Pretti, and Media Discourse</a>
+              <span>culture/bad-bunny-alex-pretti/blog.html</span>
+            </li>
+            <li>
+              <a href="culture/charlie-kirk/blog.html">Contents</a>
+              <span>culture/charlie-kirk/blog.html</span>
+            </li>
+            <li>
+              <a href="culture/freedom-of-conscience/blog.html">Freedom of Conscience and Political Argument</a>
+              <span>culture/freedom-of-conscience/blog.html</span>
+            </li>
+            <li>
+              <a href="culture/pseudo-profound-bullshit/blog.html">Jordan Peterson and Pseudo-Profound Bullshit</a>
+              <span>culture/pseudo-profound-bullshit/blog.html</span>
+            </li>
+            <li>
+              <a href="culture/cosmic-skeptic-jordan-peterson/blog.html">Jordan Peterson, Cosmic Skeptic, and Biblical Historicity</a>
+              <span>culture/cosmic-skeptic-jordan-peterson/blog.html</span>
+            </li>
+            <li>
+              <a href="culture/maga-brain-rot/blog.html">Patterns of Reasoning in MAGA Conversations</a>
+              <span>culture/maga-brain-rot/blog.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="economics" class="post-section">
+        <div class="section-heading">
+          <h2>Economics</h2>
+          <p>11 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="economics/core-concepts/empirical-part-1/empirical-concepts-blog-part1.html">Core Concepts in Empirical Economics and Causal Inference</a>
+              <span>economics/core-concepts/empirical-part-1/empirical-concepts-blog-part1.html</span>
+            </li>
+            <li>
+              <a href="economics/core-concepts/empirical-part-4/empirical-concepts-part-4.html">Core Concepts in Empirical Economics and Causal Inference — Part 4</a>
+              <span>economics/core-concepts/empirical-part-4/empirical-concepts-part-4.html</span>
+            </li>
+            <li>
+              <a href="economics/core-concepts/empirical-part-2/empirical-concepts-blog-part2.html">Core Concepts in Empirical Economics and Causal Inference, Part 2</a>
+              <span>economics/core-concepts/empirical-part-2/empirical-concepts-blog-part2.html</span>
+            </li>
+            <li>
+              <a href="economics/core-concepts/empirical-part-3/empirical-concepts-blog-part3.html">Core Concepts in Empirical Economics and Causal Inference, Part 3</a>
+              <span>economics/core-concepts/empirical-part-3/empirical-concepts-blog-part3.html</span>
+            </li>
+            <li>
+              <a href="economics/core-concepts/intro/core-concepts.html">Economy</a>
+              <span>economics/core-concepts/intro/core-concepts.html</span>
+            </li>
+            <li>
+              <a href="economics/core-concepts/inequality/inequality-research.html">Inequality as Economic Architecture: A Systems Approach</a>
+              <span>economics/core-concepts/inequality/inequality-research.html</span>
+            </li>
+            <li>
+              <a href="economics/minimum-wage/wage_blogger_rewritten_final.html">Introduction</a>
+              <span>economics/minimum-wage/wage_blogger_rewritten_final.html</span>
+            </li>
+            <li>
+              <a href="economics/supply-side-economics/part1/econ-part1-restructure.html">Supply Side Economics</a>
+              <span>economics/supply-side-economics/part1/econ-part1-restructure.html</span>
+            </li>
+            <li>
+              <a href="economics/supply-side-economics/part2/econ-part2-restructure.html">Supply Side Economics</a>
+              <span>economics/supply-side-economics/part2/econ-part2-restructure.html</span>
+            </li>
+            <li>
+              <a href="economics/supply-side-economics/part3/econ-part3-restructure.html">The Market Fundamentalism Feedback Loop</a>
+              <span>economics/supply-side-economics/part3/econ-part3-restructure.html</span>
+            </li>
+            <li>
+              <a href="economics/influential-economists/econ.html">Top Figures in Economics</a>
+              <span>economics/influential-economists/econ.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="philosophy" class="post-section">
+        <div class="section-heading">
+          <h2>Philosophy</h2>
+          <p>22 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="philosophy/rationality-theory/blog.html">1. What are we trying to do? Rationality has a dialogical context</a>
+              <span>philosophy/rationality-theory/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/interpretation/blog.html">An Argumentation Scheme for Interpretation</a>
+              <span>philosophy/interpretation/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/self-reinforcing-beliefs/blog.html">Belief Preservation, Cognitive Inertia, and Self-Sealing Belief Systems</a>
+              <span>philosophy/self-reinforcing-beliefs/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/claims-are-not-evidence/blog.html">Claims Are Not Evidence: What the Claim Means and Why the Distinction Matters</a>
+              <span>philosophy/claims-are-not-evidence/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/cognitive-immunology/blog.html">Cognitive Immunology and Mental Immunity</a>
+              <span>philosophy/cognitive-immunology/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/critical-questions/blog.html">Critical Questions and Critical Thinking</a>
+              <span>philosophy/critical-questions/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/debunking/blog.html">Debunking from Off-Track Genealogy</a>
+              <span>philosophy/debunking/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/platonic-space/blog.html">Definitions</a>
+              <span>philosophy/platonic-space/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/authoritarian-pseudo-rationalism/blog.html">Evidential Naïveté Masquerading as Rigor</a>
+              <span>philosophy/authoritarian-pseudo-rationalism/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/expert-identification/blog.html">Expert Identification and Social Epistemology</a>
+              <span>philosophy/expert-identification/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/explanation/part3/part-3-blogger-restructured.html">Explanation vs model</a>
+              <span>philosophy/explanation/part3/part-3-blogger-restructured.html</span>
+            </li>
+            <li>
+              <a href="philosophy/free-will/blog.html">Free Will, Responsibility, and Conceptual Confusion</a>
+              <span>philosophy/free-will/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/wittgenstein/blog.html">Free Will, Wittgenstein, and Agency</a>
+              <span>philosophy/wittgenstein/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/explanation/part2/part-2-blogger-restructured.html">I. General Standards for Good Explanation</a>
+              <span>philosophy/explanation/part2/part-2-blogger-restructured.html</span>
+            </li>
+            <li>
+              <a href="philosophy/useless-objective-subjective/blog.html">Objective and Subjective: A Useless Distinction?</a>
+              <span>philosophy/useless-objective-subjective/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/argument-evaluation/blog.html">Part I — Missing Evidence and Bayesian Reasoning</a>
+              <span>philosophy/argument-evaluation/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/explanation/intro/intro_blogger_restructured.html">Part I — What Makes Something an Explanation?</a>
+              <span>philosophy/explanation/intro/intro_blogger_restructured.html</span>
+            </li>
+            <li>
+              <a href="philosophy/pragma-dialectic/blog.html">Pragma-Dialectics and Argument Evaluation</a>
+              <span>philosophy/pragma-dialectic/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/some-thoughts-causation/blog.html">Some Thoughts on Causation</a>
+              <span>philosophy/some-thoughts-causation/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/principle-of-charity/blog.html">The Principle of Charity</a>
+              <span>philosophy/principle-of-charity/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/arguments-from-silence/blog.html">The Puzzle: Why “Argument from Silence” Leads to Apologetics</a>
+              <span>philosophy/arguments-from-silence/blog.html</span>
+            </li>
+            <li>
+              <a href="philosophy/toulmin-argument-model/blog.html">The Toulmin Argument Model</a>
+              <span>philosophy/toulmin-argument-model/blog.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="policy-politics" class="post-section">
+        <div class="section-heading">
+          <h2>Policy &amp; Politics</h2>
+          <p>4 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="policy-politics/nationalism/blog.html">Analysis of Schopenhauer</a>
+              <span>policy-politics/nationalism/blog.html</span>
+            </li>
+            <li>
+              <a href="policy-politics/defining-fascism/blog.html">Defining Fascism</a>
+              <span>policy-politics/defining-fascism/blog.html</span>
+            </li>
+            <li>
+              <a href="policy-politics/school-choice/blogger.html">Education is not a Private Transaction</a>
+              <span>policy-politics/school-choice/blogger.html</span>
+            </li>
+            <li>
+              <a href="policy-politics/more-brain-rot/blog.html">Was the United States &quot;Provoked&quot; Into War?</a>
+              <span>policy-politics/more-brain-rot/blog.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="propaganda" class="post-section">
+        <div class="section-heading">
+          <h2>Propaganda</h2>
+          <p>1 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="propaganda/part-2/blog.html">Motivated Skepticism in Religious Debates</a>
+              <span>propaganda/part-2/blog.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="religion" class="post-section">
+        <div class="section-heading">
+          <h2>Religion</h2>
+          <p>28 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="religion/fine-tuning/blog.html">Abductive Reasoning and Critical Questions</a>
+              <span>religion/fine-tuning/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/apologetics/blog.html">Abstract</a>
+              <span>religion/apologetics/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part4.4/part4.4_restructured_with_toc.html">Additional Mechanisms of Belief Persistence</a>
+              <span>religion/agnosticism/part4.4/part4.4_restructured_with_toc.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part1/blog.html">Agnosticism as an Epistemic Disposition</a>
+              <span>religion/agnosticism/part1/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part2/blog_restructured.html">Agnosticism, Apologetics, and Evaluating Worldviews</a>
+              <span>religion/agnosticism/part2/blog_restructured.html</span>
+            </li>
+            <li>
+              <a href="religion/motivated-skepticism/argument-motivated-skepticism-blogger.html">Argument from Motivated Skepticism</a>
+              <span>religion/motivated-skepticism/argument-motivated-skepticism-blogger.html</span>
+            </li>
+            <li>
+              <a href="religion/natural-desire/blog.html">Argument from Natural Desire</a>
+              <span>religion/natural-desire/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/god-unintelligable/blog.html">Contents</a>
+              <span>religion/god-unintelligable/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/christian-lifecycle/lifecycle.html">Creating a Christian</a>
+              <span>religion/christian-lifecycle/lifecycle.html</span>
+            </li>
+            <li>
+              <a href="religion/syncretism/syncretism.html">Critical Questions for Common Apologetic Responses</a>
+              <span>religion/syncretism/syncretism.html</span>
+            </li>
+            <li>
+              <a href="religion/dogmatic-belief/blog.html">Dogmatic Belief</a>
+              <span>religion/dogmatic-belief/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/faith-conflation/blog.html">Faith Conflation</a>
+              <span>religion/faith-conflation/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/apologetics/appendix.html">I. Social Epistemic Mechanisms</a>
+              <span>religion/apologetics/appendix.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part4.2/blog_restructured_blogger_toc.html">Infantilization, Metaphor, and Religious Reasoning</a>
+              <span>religion/agnosticism/part4.2/blog_restructured_blogger_toc.html</span>
+            </li>
+            <li>
+              <a href="religion/divine-psychology/blog.html">Introduction: When an Explanation Explains Too Much</a>
+              <span>religion/divine-psychology/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/moral-argument/blog.html">Introduction: Why the Moral Argument Appears So Persuasive</a>
+              <span>religion/moral-argument/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/auschwitz/blog.html">Introduction: World War II as a Historical Rupture</a>
+              <span>religion/auschwitz/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/modal-ontological/blog.html">Key terms and notation</a>
+              <span>religion/modal-ontological/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part3/blog_restructured.html">Prayer, True Belief, and the Epistemology of Theism</a>
+              <span>religion/agnosticism/part3/blog_restructured.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part5/part-5-restructured-with-toc.html">Religious Experience, Miracles, and Revelation</a>
+              <span>religion/agnosticism/part5/part-5-restructured-with-toc.html</span>
+            </li>
+            <li>
+              <a href="religion/rooted-in-therefore-arguments/blog.html">Rooted-In Therefore Arguments</a>
+              <span>religion/rooted-in-therefore-arguments/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/resurrection/blog.html">Steelman of the Argument for the Resurrection of Jesus</a>
+              <span>religion/resurrection/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/christian-nationalism-logic/blog.html">System Dynamics</a>
+              <span>religion/christian-nationalism-logic/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/pagan-bible/bible.html">The &quot;Pagan&quot; Bible</a>
+              <span>religion/pagan-bible/bible.html</span>
+            </li>
+            <li>
+              <a href="religion/nomological-harmony/blog.html">The Argument Seems Severely Confused</a>
+              <span>religion/nomological-harmony/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/free-will-defense/blog.html">The Free Will Defense</a>
+              <span>religion/free-will-defense/blog.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part4.1/blog_restructured.html">What Causes Religious Belief? A Multilevel Naturalistic Account</a>
+              <span>religion/agnosticism/part4.1/blog_restructured.html</span>
+            </li>
+            <li>
+              <a href="religion/agnosticism/part4.3/blog_restructured.html">What Causes Religious Belief? Narrative, Doubt, and Obedience</a>
+              <span>religion/agnosticism/part4.3/blog_restructured.html</span>
+            </li>
+        </ol>
+      </section>
+      <section id="science-engineering" class="post-section">
+        <div class="section-heading">
+          <h2>Science &amp; Engineering</h2>
+          <p>27 posts</p>
+        </div>
+        <ol class="post-list">
+            <li>
+              <a href="science-engineering/anecdotal-evidence/blog.html">Anecdotal Evidence</a>
+              <span>science-engineering/anecdotal-evidence/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part8/8-causal_inference-blogger.html">Causal Inference and Experimentation</a>
+              <span>science-engineering/science-basics/part8/8-causal_inference-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/causal-inquiry/blog.html">Causal Inquiry Dialogue</a>
+              <span>science-engineering/causal-inquiry/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/systems-thinking/2. engineering/engineering_blogger_updated.html">Core architectural views</a>
+              <span>science-engineering/systems-thinking/2. engineering/engineering_blogger_updated.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part5/5 - data_literacy-blogger.html">Data, Statistics, and Uncertainty</a>
+              <span>science-engineering/science-basics/part5/5 - data_literacy-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/systems-thinking/4. emergent-properties/4-emergent_properties_revised.html">Emergent Properties</a>
+              <span>science-engineering/systems-thinking/4. emergent-properties/4-emergent_properties_revised.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part3/3 - evidence-blogger.html">Evidence, Empirical Evidence, and Scientific Underdetermination</a>
+              <span>science-engineering/science-basics/part3/3 - evidence-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/research-appraisal/blog.html">How to Evaluate Research</a>
+              <span>science-engineering/research-appraisal/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part6/6 - hypothesizing-blogger.html">Hypothesizing and Confirmation</a>
+              <span>science-engineering/science-basics/part6/6 - hypothesizing-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part9/9 - big_data-blogger.html">Institutional-Level Research, Big Data, and the Scientific Enterprise</a>
+              <span>science-engineering/science-basics/part9/9 - big_data-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part1/1 - intro-blogger.html">Introduction</a>
+              <span>science-engineering/science-basics/part1/1 - intro-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/evolution/evolution_blogger.html">Introduction: Why Evolution Is So Easy to Misunderstand</a>
+              <span>science-engineering/evolution/evolution_blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/large-language-models/blog.html">Large Language Models and AGI</a>
+              <span>science-engineering/large-language-models/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/personality-research/blog_revised.html">Personality, Explanation, and the Limits of Typology</a>
+              <span>science-engineering/personality-research/blog_revised.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/systems-thinking/1. science/systems-thinking-restyled.html">Principles</a>
+              <span>science-engineering/systems-thinking/1. science/systems-thinking-restyled.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part13/13 - pseudo-blogger.html">Science and Pseudo-Science</a>
+              <span>science-engineering/science-basics/part13/13 - pseudo-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part4/4 - measurement-blogger.html">Scientific Measurement</a>
+              <span>science-engineering/science-basics/part4/4 - measurement-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part12/12 - objectivity-blogger.html">Scientific Objectivity: How Science Learns to Correct Human Subjectivity</a>
+              <span>science-engineering/science-basics/part12/12 - objectivity-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part7/7 - models_representation-blogger.html">Scientific Representation, Models, and Mathematical Modeling</a>
+              <span>science-engineering/science-basics/part7/7 - models_representation-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part14/14 - scientism-blogger.html">Scientism</a>
+              <span>science-engineering/science-basics/part14/14 - scientism-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part10/10 - simulation-blogger.html">Simulation Modeling</a>
+              <span>science-engineering/science-basics/part10/10 - simulation-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/artificial-general-intelligence/blog.html">Skepticism About Artificial General Intelligence</a>
+              <span>science-engineering/artificial-general-intelligence/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part11/11 - systems-thinking.html">Systems Thinking: Structure, Feedback, Boundaries, and Intervention</a>
+              <span>science-engineering/science-basics/part11/11 - systems-thinking.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/systems-thinking/3. lifecycle/lifecycle_blogger_v2.html">The Core Idea: Operational Effectiveness Is a Lifecycle Property</a>
+              <span>science-engineering/systems-thinking/3. lifecycle/lifecycle_blogger_v2.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/thoughtless-engineering/blog.html">The First Symptom: Ambiguous Metrics and Unsupported Claims</a>
+              <span>science-engineering/thoughtless-engineering/blog.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/science-basics/part2/2 - theories-blogger.html">Theories and Scientific Theories</a>
+              <span>science-engineering/science-basics/part2/2 - theories-blogger.html</span>
+            </li>
+            <li>
+              <a href="science-engineering/systems-analysis/blog.html">What Is a System?</a>
+              <span>science-engineering/systems-analysis/blog.html</span>
+            </li>
+        </ol>
+      </section>
+      <footer>
+        <p>Published as a static GitHub Pages project site.</p>
+      </footer>
+    </main>
+  </body>
+</html>
