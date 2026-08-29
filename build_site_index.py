@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -11,6 +12,7 @@ SKIP_PARTS = {".git"}
 TITLE_RE = re.compile(r"<title\b[^>]*>(.*?)</title>", re.I | re.S)
 HEADING_RE = re.compile(r"<h([12])\b[^>]*>(.*?)</h\1>", re.I | re.S)
 TAG_RE = re.compile(r"<[^>]+>")
+MAPPING_FILENAMES = ("title-mapping.json", "title-mappings.json")
 
 
 def clean_text(value: str) -> str:
@@ -34,6 +36,34 @@ def title_for(path: Path) -> str:
     return path.parent.name.replace("-", " ").replace("_", " ").title()
 
 
+def load_title_mappings() -> dict[str, dict[str, str]]:
+    mappings: dict[str, dict[str, str]] = {}
+    for section_dir in ROOT.iterdir():
+        if not section_dir.is_dir() or section_dir.name in SKIP_PARTS:
+            continue
+        for filename in MAPPING_FILENAMES:
+            mapping_path = section_dir / filename
+            if not mapping_path.exists():
+                continue
+            data = json.loads(mapping_path.read_text(encoding="utf-8-sig"))
+            mappings[section_dir.name] = {
+                str(folder): str(title) for folder, title in data.items()
+            }
+            break
+    return mappings
+
+
+def mapped_title_for(path: Path, mappings: dict[str, dict[str, str]]) -> str | None:
+    if len(path.parts) < 2:
+        return None
+    section = path.parts[0]
+    folder = path.parts[1]
+    title = mappings.get(section, {}).get(folder)
+    if title:
+        return title
+    return None
+
+
 def section_name(part: str) -> str:
     return {
         "culture": "Culture",
@@ -48,6 +78,7 @@ def section_name(part: str) -> str:
 
 def collect_posts() -> dict[str, list[tuple[str, str]]]:
     posts: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    mappings = load_title_mappings()
     for path in sorted(ROOT.rglob("*.html")):
         if any(part in SKIP_PARTS for part in path.parts):
             continue
@@ -55,7 +86,7 @@ def collect_posts() -> dict[str, list[tuple[str, str]]]:
             continue
         try:
             rel = path.relative_to(ROOT).as_posix()
-            title = title_for(path)
+            title = mapped_title_for(path, mappings) or title_for(path)
         except OSError:
             continue
         section = section_name(path.parts[0]) if len(path.parts) > 1 else "Posts"
