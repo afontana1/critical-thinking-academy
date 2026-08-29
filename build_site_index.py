@@ -56,7 +56,10 @@ def load_title_mappings() -> dict[str, dict[str, str]]:
             mapping_path = section_dir / filename
             if not mapping_path.exists():
                 continue
-            data = json.loads(mapping_path.read_text(encoding="utf-8-sig"))
+            raw = mapping_path.read_text(encoding="utf-8-sig").strip()
+            if not raw:
+                continue
+            data = json.loads(raw)
             mappings[section_dir.name] = flatten_mapping(data)
             break
     return mappings
