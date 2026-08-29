@@ -1,0 +1,33 @@
+{
+    "anecdotal-evidence": "Why Anecdotal Evidence is Inherently Weak",
+    "artificial-general-intelligence": "The Problem with Existential Risk Dialogue in Regards to AGI",
+    "causal-inquiry": "Causal-Inquiry Dialogue",
+    "evolution": "Misunderstanding Evolution",
+    "large-language-models": "Why Large Language Models are Not and Will Not Become Artificial General Intelligence",
+    "personality-research": "The Illusion of Explanation: Personality Typologies, Just-So Stories, and the Seduction of Ad Hoc Reasoning",
+    "research-appraisal": "Basic Considerations for Critically Appraising Research",
+    "science-basics": {
+        "part1": "Clarifying Scientific Concepts Part 1: Introduction",
+        "part2": "Clarifying Scientific Concepts Part 2: Theories",
+        "part3": "Clarifying Scientific Concepts Part 3: Evidence",
+        "part4": "Clarifying Scientific Concepts Part 4: Measurement",
+        "part5": "Clarifying Scientific Concepts Part 5: Data",
+        "part6": "Clarifying Scientific Concepts Part 6: Hypothesis",
+        "part7": "Clarifying Scientific Concepts Part 7: Models",
+        "part8": "Clarifying Scientific Concepts Part 8: Causality",
+        "part9": "Clarifying Scientific Concepts Part 9: Big Data",
+        "part10": "Clarifying Scientific Concepts Part 10: Simulation",
+        "part11": "Clarifying Scientific Concepts Part 11: Systems Thinking",
+        "part12": "Clarifying Scientific Concepts Part 12: Objectivity",
+        "part13": "Clarifying Scientific Concepts Part 13: Pseudoscience",
+        "part14": "Clarifying Scientific Concepts Part 14: Scientism"
+    },
+    "systems-analysis": "What Does a Systems Analyst Do?",
+    "systems-thinking": {
+        "1. science": "Systems Thinking Part 1: Science",
+        "2. engineering": "Systems Thinking Part 2: Engineering",
+        "3. lifecycle": "Systems Thinking Part 3: The Systems Lifecycle",
+        "4. emergent-properties": "Systems Thinking Part 4: Emergent Properties"
+    },
+    "thoughtless-engineering": "Thoughtless Engineering: When Technical Activity Becomes Detached from Engineering Judgment"
+}

@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import subprocess
 from collections import defaultdict
 from pathlib import Path
 
@@ -70,12 +71,13 @@ def mapped_title_for(path: Path, mappings: dict[str, dict[str, str]]) -> str | N
         return None
     section = path.parts[0]
     section_mapping = mappings.get(section, {})
-    folder_parts = path.parts[1:-1]
-    for index in range(len(folder_parts), 0, -1):
-        key = "/".join(folder_parts[:index])
-        title = section_mapping.get(key)
-        if title:
-            return title
+    candidates = [path.parts[1:], path.parts[1:-1]]
+    for parts in candidates:
+        for index in range(len(parts), 0, -1):
+            key = "/".join(parts[:index])
+            title = section_mapping.get(key)
+            if title:
+                return title
     return None
 
 
@@ -91,10 +93,26 @@ def section_name(part: str) -> str:
     }.get(part, part.replace("-", " ").replace("_", " ").title())
 
 
+def iter_html_paths() -> list[Path]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "*.html"],
+            check=True,
+            capture_output=True,
+            encoding="utf-8",
+        )
+        paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
+        if paths:
+            return sorted(paths)
+    except (OSError, subprocess.CalledProcessError):
+        pass
+    return sorted(ROOT.rglob("*.html"))
+
+
 def collect_posts() -> dict[str, list[tuple[str, str]]]:
     posts: dict[str, list[tuple[str, str]]] = defaultdict(list)
     mappings = load_title_mappings()
-    for path in sorted(ROOT.rglob("*.html")):
+    for path in iter_html_paths():
         if any(part in SKIP_PARTS for part in path.parts):
             continue
         if path.name.lower() == "index.html":

@@ -1,12 +1,34 @@
 {
     "agnosticism": {
-        "part1": "",
-        "part2": "",
-        "part3": "",
-        "part4.1": "",
-        "part4.2": "",
-        "part4.3": "",
-        "part4.4": "",
-        "part5": ""
-    }
+        "part1": "The Nature of Agnosticism Part 1: Agnosticism as an Epistemic Disposition",
+        "part2": "The Nature of Agnosticism Part 2: Agnosticism, Apologetics, and Evaluating Worldviews",
+        "part3": "The Nature of Agnosticism Part 3: Prayer, “True Belief,” and the Epistemology of Theism",
+        "part4.1": "The Nature of Agnosticism Part 4.1: What Causes Religious Belief? A Multilevel Naturalistic Account",
+        "part4.2": "The Nature of Agnosticism Part 4.2: Infantilization, Metaphor, and Religious Reasoning",
+        "part4.3": "The Nature of Agnosticism Part 4.3: What Causes Religious Belief? Narrative, Doubt, and Obedience",
+        "part4.4": "The Nature of Agnosticism Part 4.4: Additional Mechanisms of Belief Persistence",
+        "part5": "The Nature of Agnosticism Part 5: Religious Experience, Miracles, and Revelation"
+    },
+    "apologetics": {
+        "blog.html": "The Social Epistemology of Apologetics: A Functional Analysis of Belief Maintenance, Uncertainty Reduction, and Epistemic Control",
+        "appendix.html": "The Social Epistemology of Apologetics: Appendix"
+    },
+    "auschwitz": "After Auschwitz - World War II as a Stress Test for Theism",
+    "christian-lifecycle": "How to Create a Christian",
+    "christian-nationalism-logic": "The Logic of a Christian Nationalism",
+    "divine-psychology": "Unconstrained Explanations, Ad Hoc Reasoning, and Divine Psychology",
+    "dogmatic-belief": "21 Indications of Dogmatic Belief",
+    "faith-conflation": "Conflating Faith with Non-Faith Concepts",
+    "fine-tuning": "The Fine Tuning Argument is Dog Shit",
+    "free-will-defense": "The Free-Will-Defense Is Incoherent",
+    "god-unintelligable": "Why 'God Exists' is an Unintelligable Statement",
+    "modal-ontological": "The Modal Ontological Argument",
+    "moral-argument": "The Moral Argument is not a 'Slam Dunk'",
+    "motivated-skepticism": "Argument from Motivated Skepticism",
+    "natural-desire":"The Argument from Natural Desire",
+    "nomological-harmony": "The Argument from Nomological Harmony",
+    "pagan-bible": "The Pagan Bible",
+    "resurrection": "Arguments for the Resurrection of Jesus",
+    "rooted-in-therefore-arguments": "Arguments Following the Pattern 'Rooted in Therefore...'",
+    "syncretism": "Religious Parallels, Syncretism, and the Problem of Special Pleading"
 }
