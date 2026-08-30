@@ -282,15 +282,18 @@
       }
 
       /* Math support */
-      .ep-post .mjx-container {
+      .ep-post mjx-container {
         overflow-x: auto;
         overflow-y: hidden;
         max-width: 100%;
       }
 
       .ep-post .math-block {
+        display: block;
+        max-width: 100%;
         margin: 1em 0;
         overflow-x: auto;
+        overflow-y: hidden;
       }
 
       @supports not (color: color-mix(in srgb, white 50%, black)) {
@@ -586,14 +589,8 @@
 <script>
       window.MathJax = {
         tex: {
-          inlineMath: [
-            ["\\(", "\\)"],
-            ["$", "$"],
-          ],
-          displayMath: [
-            ["\\[", "\\]"],
-            ["$$", "$$"],
-          ],
+          inlineMath: [["\\(", "\\)"]],
+          displayMath: [["\\[", "\\]"]],
           processEscapes: true,
         },
         options: {
@@ -863,13 +860,13 @@ seem abstract initially, so I'll try to concretize them:
         running mental models. These are implicit models with hidden
         assumptions, untested internal consistency, and unknown logical
         consequences. The distinction lies in making these models explicit,
-        allowing for scrutiny, replication, and validation.​ Building explicit
+        allowing for scrutiny, replication, and validation. Building explicit
         models involves clearly stating assumptions, which facilitates
         understanding their implications. Explicit models can be shared, tested
         against data, and refined. They enable sensitivity analysis, allowing
         researchers to explore how changes in parameters affect outcomes. This
         process is crucial for identifying uncertainties, robust regions, and
-        critical thresholds, particularly in policy-making contexts.​ Epstein
+        critical thresholds, particularly in policy-making contexts. Epstein
         also describes the value of modeling beyond out of sample prediction. He
         lists 16 different uses:
       </div>
@@ -970,7 +967,7 @@ seem abstract initially, so I'll try to concretize them:
       questioned its features. Upon attempting to explain, they realized each
       had a different interpretation of which parts represented the chicken's
       head, body, and tail. This divergence highlighted that their shared
-      understanding was more assumed than actual.​ The parable serves as a
+      understanding was more assumed than actual. The parable serves as a
       metaphor for the pitfalls of relying solely on verbal models in science.
       While verbal descriptions can seem comprehensive, they often harbor
       ambiguities that lead to misinterpretations. In contrast, formal models,
@@ -978,7 +975,7 @@ seem abstract initially, so I'll try to concretize them:
       assumptions, fostering clearer communication and understanding among
       researchers. Smaldino emphasizes that the "stupidity" or simplicity of
       models is a strength, as it forces clarity and facilitates the testing of
-      specific hypotheses.​ Models force us to make sure we are all talking
+      specific hypotheses. Models force us to make sure we are all talking
       about the same thing. A corollary to precision is tractability. Formal
       models are logical engines that transform assumptions into conclusion.
       Stating assumptions precisely allows us to know what necessarily follows
@@ -1086,7 +1083,7 @@ seem abstract initially, so I'll try to concretize them:
           ></span
         >&nbsp;is defined as the 9-tuple:
       </p>
-      <span class="katex"
+      <span class="katex math-block"
         ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
           ><semantics
             ><mrow
@@ -2394,64 +2391,182 @@ seem abstract initially, so I'll try to concretize them:
   <div><br /></div>
 
   <h2 id="Opportunity-Cost" style="text-align: left">Opportunity Cost</h2>
-  <div>
-    This is a fundamental concept used by economists to understand the
-    allocation of some scarce resource. The resource can be time, energy, money,
-    something physical like land, etc. Opportunity cost refers to a decision
-    about the scarce resource and the implicit tradeoff you are making relative
-    to alternative uses. For example, suppose you have some resource called X,
-    that can be used for purposes, ranked in descending order, (a,b,c). By
-    selecting option (a), your opportunity cost is (b); it represents what you
-    have to "give up" in order to devote those resources to option (a). The
-    opportunity cost is the actual value (usually defined in terms of utility,
-    something we will define later) someone must give up.&nbsp;
+  <p class="chapter-lead">
+    Opportunity cost is one of the central concepts economists use to reason about
+    scarcity and choice. A scarce resource—time, money, land, labor, energy,
+    attention, productive capacity—can usually be put to more than one use. Choosing
+    one use therefore means excluding other feasible uses. The <strong>opportunity
+    cost</strong> of a choice is the value of the <em>best feasible alternative
+    forgone</em>, not the sum of every alternative you did not choose.
+  </p>
+
+  <div class="concept-callout">
+    <strong>Core idea:</strong> scarcity creates a set of feasible alternatives;
+    choosing within that set creates trade-offs; opportunity cost measures the value
+    of the next-best alternative that the choice displaces.
   </div>
-  <div><br /></div>
-  <div>
-    Let's concretize this with an example. Suppose you have a portfolio of
-    financial assets, with a mixture of fixed income and equities. You can
-    imagine a scenario where you have 1000$ to spend on different mixtures, or
-    combinations of these assets. Call these mixtures M1, M2 and M3. Lets say M1
-    gives expected profits of 100$, M2 90$ and M3 85$. Your opportunity cost
-    will be the difference between M1 and M2.&nbsp;
+
+  <h3>Opportunity Cost as Trade-Space Analysis</h3>
+  <p>
+    A useful way to make this idea more explicit is through <strong>trade-space
+    analysis</strong>, a term common in engineering, operations research, and
+    decision analysis. A <strong>trade space</strong> is the set of alternatives
+    available to a decision maker after accounting for constraints. If a city has a
+    fixed transportation budget, for example, the trade space might contain many
+    different combinations of road repair, bus service, rail expansion, bicycle
+    infrastructure, and maintenance. Some imaginable combinations are outside the
+    trade space because they violate the budget, labor, technical, legal, or time
+    constraints.
+  </p>
+  <p>
+    Once the feasible alternatives have been identified, we compare them along the
+    dimensions we care about: cost, output, reliability, risk, equity, environmental
+    impact, time, quality, or some other objective. A <strong>trade-off</strong>
+    occurs when improving one valued dimension requires giving up performance on
+    another. Opportunity cost is the economic valuation of that sacrifice. In this
+    sense, opportunity cost is not a separate idea from trade-off analysis; it is one
+    of the main ways economists summarize the trade-off created by choosing one
+    feasible alternative instead of another.
+  </p>
+
+  <div class="table-wrap">
+    <table class="two-col comparison-table">
+      <thead>
+        <tr>
+          <th>Concept</th>
+          <th>Meaning in a choice problem</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Concept"><strong>Trade space</strong></td>
+          <td data-label="Meaning in a choice problem">
+            The feasible set of alternatives available under the relevant
+            constraints.
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Concept"><strong>Criteria / objectives</strong></td>
+          <td data-label="Meaning in a choice problem">
+            The dimensions used to evaluate alternatives, such as cost, benefit,
+            risk, speed, quality, or fairness.
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Concept"><strong>Trade-off</strong></td>
+          <td data-label="Meaning in a choice problem">
+            A sacrifice in one objective or outcome required to gain more of
+            another.
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Concept"><strong>Dominated alternative</strong></td>
+          <td data-label="Meaning in a choice problem">
+            An option that is no better on any relevant criterion and worse on at
+            least one criterion than another feasible option.
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Concept"><strong>Pareto frontier</strong></td>
+          <td data-label="Meaning in a choice problem">
+            The set of non-dominated alternatives. On this frontier, improving one
+            objective generally requires worsening another, so the real trade-offs
+            become visible.
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Concept"><strong>Opportunity cost</strong></td>
+          <td data-label="Meaning in a choice problem">
+            The value of the best feasible alternative forgone once the decision
+            maker's preferences or objective have ranked the alternatives.
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div><br /></div>
-  <div>
-    This seems like a rather useless concept at first, but I cannot stress how
-    essential it is within the economists toolkit. It is fundamentally about how
-    agents identify, rank, and select among alternative uses of some resource;
-    which is at the core of economic behavior. Opportunity cost focuses on the
-    single most valuable thing you had to give up, when making your choice. Here
-    is an example you might see in a textbook. Suppose a company owns a
-    building. It can choose to rent it out for 50k a year or use it for its own
-    operations. If the company decides to use it, it is forgoing 50k dollars of
-    rent they could have earned. So they will not use the building unless they
-    expect they can make more than 50k on the alternative use.&nbsp;
+
+  <p>
+    Formally, let \(F\) be the feasible trade space and let \(V(a)\) represent the
+    value assigned to alternative \(a\). If you choose \(a\), its opportunity cost
+    is the value of the highest-valued feasible alternative you did not choose:
+  </p>
+  <div class="formula-callout">
+    \[ OC(a) = \max_{b \in F,\; b \neq a} V(b) \]
   </div>
-  <div><br /></div>
-  <div>
-    Consider another example. Imagine a group of citizens under an oppressive
-    regime. They’re frustrated, hungry, overtaxed, but they haven’t revolted
-    yet. Why might this be? Revolting involves opportunity costs. To participate
-    in a revolution, people must give up their current income (even if its low),
-    relative safety, and the time/effort that could go into something else like
-    fleeing. So the opportunity cost of revolting is the stability and limited
-    benefits of not revolting. Now suppose those current benefits diminish, the
-    opportunity cost of not revolting will increase. So from an economists
-    perspective, when the opportunity cost of action becomes lower than the
-    opportunity cost of inaction, a revolution might spark.&nbsp;
-  </div>
-  <div><br /></div>
-  <div>
-    I'm not here to argue about whether revolutions are made based on an
-    economic calculus. All I am attempting to do is show how the concept is
-    applied. Obviously, ideological factors strongly influence the nature of
-    revolutions. Also, even within a business context, someone might not pick
-    the better alternative (from a financial perspective) for reasons such as
-    sentimentality, or emotional connection to one alternative. Opportunity
-    costs are intimately connected with incentives, which we'll learn about
-    next.
-  </div>
+  <p>
+    This formulation also shows why opportunity cost depends on constraints and
+    preferences. If the feasible set changes, the best alternative may change. If
+    the decision maker values the criteria differently, the ranking of alternatives
+    may change as well. With a single objective such as profit, ranking can be
+    straightforward. With multiple objectives—profit, risk, resilience, emissions,
+    and so on—there may be no single "best" option until the decision maker specifies
+    how those objectives should be weighted or otherwise compared.
+  </p>
+
+  <h3>A Simple Portfolio Trade Space</h3>
+  <p>
+    Suppose you have <strong>$1,000</strong> to allocate among three feasible
+    portfolios. M1 has an expected payoff of <strong>$100</strong>, M2 has an
+    expected payoff of <strong>$90</strong>, and M3 has an expected payoff of
+    <strong>$85</strong>. If expected payoff is the only criterion and you choose M1,
+    the opportunity cost is <strong>$90</strong>: the value of M2, the best alternative
+    forgone. The <strong>$10</strong> difference between M1 and M2 is not the
+    opportunity cost; it is M1's incremental expected advantage over the next-best
+    alternative.
+  </p>
+  <p>
+    The analysis becomes more interesting if the portfolios differ in risk. M1 may
+    offer the highest expected payoff but also the highest volatility; M2 may give up
+    some expected return in exchange for greater stability. Now we are looking at a
+    genuine multi-dimensional trade space. A portfolio that has both lower expected
+    return and higher risk than another would be <strong>dominated</strong> and can
+    usually be eliminated. The remaining non-dominated portfolios form an efficient,
+    or Pareto, frontier. Moving along that frontier makes the trade-off explicit:
+    more expected return can only be obtained by accepting more risk, or less risk can
+    only be obtained by giving up expected return. Which point is preferred depends
+    on the decision maker's objectives and tolerance for risk.
+  </p>
+
+  <h3>Marginal Opportunity Cost</h3>
+  <p>
+    Trade-offs can also be analyzed at the margin. Imagine two outputs, \(X\) and
+    \(Y\), produced from the same limited resources. Along a feasible production
+    frontier, increasing production of \(X\) may require reducing production of
+    \(Y\). The amount of \(Y\) sacrificed for an additional unit of \(X\) is the
+    <strong>marginal opportunity cost</strong> of \(X\). In a simple two-dimensional
+    trade space, this is represented by the slope of the frontier: the rate at which
+    one objective must be exchanged for the other. This is why production
+    possibility frontiers are often used to teach opportunity cost: they make the
+    trade space, its constraints, and its marginal trade-offs visible in one picture.
+  </p>
+
+  <h3>Opportunity Cost in Applied Decisions</h3>
+  <p>
+    Consider a company that owns a building. It can rent the building for
+    <strong>$50,000 per year</strong> or use it for its own operations. If the company
+    uses the building, the forgone rent is part of the economic cost of that decision
+    even though no rent check is actually written. The building should not be treated
+    as "free" merely because the company already owns it. Its use consumes a scarce
+    asset that has another valuable feasible use.
+  </p>
+  <p>
+    The same logic applies outside markets. A government that devotes engineers,
+    money, and construction capacity to one infrastructure project cannot use those
+    exact resources for another project at the same time. A person who spends an hour
+    on one activity gives up the best alternative use of that hour. A policy that
+    reduces the attractiveness of one option can change the entire ranking of the
+    trade space, thereby changing the relevant opportunity costs.
+  </p>
+  <p>
+    This does not mean people mechanically calculate every choice in monetary terms.
+    Values can include safety, identity, leisure, fairness, sentiment, ideology, or
+    any other consideration that enters the decision maker's preferences. The point
+    of the concept is analytical: whenever alternatives compete for scarce resources,
+    ask what the feasible trade space is, which alternatives are dominated, what
+    trade-offs exist among the non-dominated options, and what valuable alternative
+    is displaced by the choice actually made. This is also why opportunity cost is
+    intimately connected with incentives, which we will turn to next.
+  </p>
   <div><br /></div>
 
   <h2 id="Incentives" style="text-align: left">Incentives</h2>
@@ -2577,7 +2692,7 @@ seem abstract initially, so I'll try to concretize them:
     function is typically written as:
   </div>
   <div>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2655,7 +2770,7 @@ seem abstract initially, so I'll try to concretize them:
         <p><strong>Cobb-Douglas Utility</strong>:</p>
       </li>
     </ol>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2680,7 +2795,7 @@ seem abstract initially, so I'll try to concretize them:
         <p><strong>Perfect Substitutes</strong>:</p>
       </li>
     </ol>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2705,7 +2820,7 @@ seem abstract initially, so I'll try to concretize them:
         <p><strong>Perfect Complements</strong>:</p>
       </li>
     </ol>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2732,7 +2847,7 @@ seem abstract initially, so I'll try to concretize them:
         <p><strong>Quasilinear Utility</strong>:</p>
       </li>
     </ol>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2756,7 +2871,7 @@ seem abstract initially, so I'll try to concretize them:
         </p>
       </li>
     </ol>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2857,7 +2972,7 @@ seem abstract initially, so I'll try to concretize them:
   </div>
   <div>
     <p style="text-align: left">The Core Euler Equation (in real terms):</p>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -2974,7 +3089,7 @@ seem abstract initially, so I'll try to concretize them:
       Appears in the Euler equation <em>indirectly</em>, via the real interest
       rate:
     </p>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -3105,7 +3220,7 @@ seem abstract initially, so I'll try to concretize them:
       >
       today, if it signals future rate hikes, that changes:
     </p>
-    <span class="katex"
+    <span class="katex math-block"
       ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
         ><semantics
           ><mrow
@@ -3216,7 +3331,7 @@ seem abstract initially, so I'll try to concretize them:
             ></span
           >, then:
         </p>
-        <span class="katex"
+        <span class="katex math-block"
           ><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
             ><semantics
               ><mrow
