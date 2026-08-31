@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GDP, Growth, and the Myth of the President as Economic Manager</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<article class="ep-post"><h1 id="gdp-growth-and-the-myth-of-the-president-as-economic-manager">GDP, Growth, and the Myth of the President as Economic Manager</h1>
+<p>There is a familiar ritual in political discourse: when an administration is evaluated, discussion quickly turns to economic growth, employment, inflation, stock-market performance, or some other headline economic indicator. Of these, GDP growth often occupies a privileged position. A strong growth rate is treated as evidence that the economy is doing well, and, by extension, that the government—and often the president in particular—is doing a good job managing it. There are several distinct ideas embedded in this reasoning, and they are often treated as though they were interchangeable. They are not. GDP is a measure of economic production. Economic production is not the same thing as economic welfare. Economic welfare is not the same thing as social welfare. The objectives of a government are broader still. And even where macroeconomic outcomes are relevant to evaluating government performance, they are not straightforwardly attributable to the executive branch.</p>
+<p>The problem, then, is not that GDP is a poor statistic. Quite the opposite: GDP is an extraordinarily useful piece of economic accounting. The problem is that an accounting measure is frequently elevated into an objective function. To see the distinction, suppose that the economic system produces a vector of outcomes</p>
+<div class="math-block">$$
+\mathbf{x}
+=
+\left(
+Y,\,
+D,\,
+Q,\,
+R,\,
+E,\,
+S,\,
+L,\,
+\ldots
+\right),
+$$</div>
+<p>where, for example, <span class="math-inline">\(Y\)</span> denotes aggregate output, <span class="math-inline">\(D\)</span> its distribution, <span class="math-inline">\(Q\)</span> the quality of goods and services, <span class="math-inline">\(R\)</span> the resilience and reliability of the productive system, <span class="math-inline">\(E\)</span> environmental conditions, <span class="math-inline">\(S\)</span> economic security or stability, and <span class="math-inline">\(L\)</span> leisure. The precise list is not important. The point is that the state of an economy is multidimensional. GDP provides information about one particularly important component of this vector: the value of final production over a given period. But a social evaluation of the economy would instead have to take some form such as</p>
+<div class="math-block">$$
+W = W(\mathbf{x}),
+$$</div>
+<p>where <span class="math-inline">\(W\)</span> represents whatever criterion—or collection of criteria—we use to evaluate economic outcomes. There is no reason, either conceptually or mathematically, to presume that</p>
+<div class="math-block">$$
+\max Y
+\quad\Longleftrightarrow\quad
+\max W.
+$$</div>
+<p>Higher output can contribute substantially to welfare. In poor economies, increases in productive capacity can transform nutrition, housing, health, education, and material security. Even in wealthy economies, growth can ease fiscal constraints, permit improvements in consumption, and make distributional conflicts less severe. But none of this establishes that maximizing the rate of growth of measured output is itself the appropriate objective. Yet political discourse frequently behaves as though the actual problem facing society were approximately</p>
+<div class="math-block">$$
+\max_{\text{government policy}} \; g_Y,
+$$</div>
+<p>where <span class="math-inline">\(g_Y\)</span> is the growth rate of GDP. This is already a questionable representation of economic success. It is an even worse representation of the objective of government. A government is not a firm whose performance can be summarized by profit, revenue, or growth in enterprise value. It is a multi-objective institution expected to provide security, enforce laws, protect rights, supply public goods, maintain social stability, respond to political demands, correct certain market failures, preserve institutions, and perform numerous other functions that cannot sensibly be collapsed into a single production statistic.</p>
+<p>Nevertheless, a remarkably common mental model treats the president as something like the chief executive officer of a national corporation. GDP becomes the country's revenue figure, economic growth becomes its quarterly earnings growth, government debt becomes a credit-card balance, and the president becomes the manager responsible for the numbers.</p>
+<p class="core-claim">This model is simple, intuitive, and deeply misleading.</p>
+<p>It also helps explain another familiar political heuristic: the belief that someone who has accumulated substantial wealth or successfully operated businesses must therefore be particularly qualified to manage the national economy and, from there, particularly qualified to govern. But this reasoning requires a sequence of propositions that are usually never defended explicitly:</p>
+<div class="math-block">$$
+\text{wealth}
+\rightarrow
+\text{business competence}
+\rightarrow
+\text{macroeconomic competence}
+\rightarrow
+\text{economic growth}
+\rightarrow
+\text{economic welfare}
+\rightarrow
+\text{successful government}.
+$$</div>
+<p>Every arrow in this chain represents a distinct claim. Several are weak; some are simply category errors. The argument of this essay is therefore not that economic growth is irrelevant, nor that GDP should be discarded. It is that GDP, growth, business performance, macroeconomic performance, and governmental performance describe different objects. Treating them as interchangeable produces a distorted understanding both of what an economy is for and of what governments actually do.</p>
+<nav aria-label="Table of contents" class="ep-toc"><h2>Table of Contents</h2><div class="ep-toc-part"><p>Orientation</p><ul><li><a href="#the-distinctions-at-a-glance">The Distinctions at a Glance</a></li><li><a href="#what-this-argument-doesand-does-notclaim">What This Argument Does—and Does Not—Claim</a></li></ul></div><div class="ep-toc-part"><p><a href="#gdp-is-an-accounting-measure-not-a-social-objective">GDP Is an Accounting Measure, Not a Social Objective</a></p><ul><li><a href="#composition-distribution-and-welfare">Composition, Distribution, and Welfare</a></li><li><a href="#defensive-production-externalities-and-misleading-activity">Defensive Production, Externalities, and Misleading Activity</a></li><li><a href="#who-receives-the-gains">Who Receives the Gains?</a></li><li><a href="#quality-durability-and-economic-services">Quality, Durability, and Economic Services</a></li><li><a href="#flows-stocks-and-the-condition-of-the-system">Flows, Stocks, and the Condition of the System</a></li></ul></div><div class="ep-toc-part"><p><a href="#growth-is-a-means-not-an-end">Growth Is a Means, Not an End</a></p><ul><li><a href="#why-growth-is-valuable">Why Growth Is Valuable</a></li><li><a href="#growth-depends-on-context">Growth Depends on Context</a></li><li><a href="#efficiency-leisure-and-system-quality">Efficiency, Leisure, and System Quality</a></li><li><a href="#why-modern-institutions-become-dependent-on-growth">Why Modern Institutions Become Dependent on Growth</a></li></ul></div><div class="ep-toc-part"><p><a href="#government-is-not-a-corporation">Government Is Not a Corporation</a></p><ul><li><a href="#firms-and-governments-have-different-objective-functions">Firms and Governments Have Different Objective Functions</a></li><li><a href="#government-often-produces-states-of-the-world-not-transactions">Government Often Produces States of the World, Not Transactions</a></li><li><a href="#more-activity-can-reflect-failure-rather-than-success">More Activity Can Reflect Failure Rather Than Success</a></li><li><a href="#public-goods-externalities-and-obligations-markets-can-avoid">Public Goods, Externalities, and Obligations Markets Can Avoid</a></li><li><a href="#efficiency-depends-on-the-objective">Efficiency Depends on the Objective</a></li><li><a href="#resilience-and-the-value-of-redundancy">Resilience and the Value of Redundancy</a></li><li><a href="#what-this-means-for-evaluating-government">What This Means for Evaluating Government</a></li></ul></div><div class="ep-toc-part"><p><a href="#the-president-is-not-the-economy-s-ceo">The President Is Not the Economy’s CEO</a></p><ul><li><a href="#influence-is-not-control">Influence Is Not Control</a></li><li><a href="#the-counterfactual-problem">The Counterfactual Problem</a></li><li><a href="#presidential-influence-without-total-attribution">Presidential Influence Without Total Attribution</a></li><li><a href="#policy-lags-and-causal-timing">Policy Lags and Causal Timing</a></li><li><a href="#multiple-policy-authorities">Multiple Policy Authorities</a></li><li><a href="#no-headline-metric-maps-cleanly-onto-presidential-competence">No Headline Metric Maps Cleanly onto Presidential Competence</a></li><li><a href="#evaluate-policy-relative-to-feasible-alternatives">Evaluate Policy Relative to Feasible Alternatives</a></li><li><a href="#institutional-constraints-define-the-feasible-policy-set">Institutional Constraints Define the Feasible Policy Set</a></li><li><a href="#a-better-framework-for-evaluating-presidential-economic-performance">A Better Framework for Evaluating Presidential Economic Performance</a></li><li><a href="#causal-responsibility-democratic-accountability-and-decision-quality">Causal Responsibility, Democratic Accountability, and Decision Quality</a></li></ul></div><div class="ep-toc-part"><p><a href="#the-billionaire-to-president-fallacy">The Billionaire-to-President Fallacy</a></p><ul><li><a href="#wealth-is-not-the-same-thing-as-business-competence">Wealth Is Not the Same Thing as Business Competence</a></li><li><a href="#business-competence-is-not-macroeconomic-competence">Business Competence Is Not Macroeconomic Competence</a></li><li><a href="#why-firm-level-intuition-does-not-automatically-scale">Why Firm-Level Intuition Does Not Automatically Scale</a></li><li><a href="#macroeconomic-competence-is-not-governing-competence">Macroeconomic Competence Is Not Governing Competence</a></li><li><a href="#corporate-authority-and-democratic-authority-reward-different-skills">Corporate Authority and Democratic Authority Reward Different Skills</a></li><li><a href="#competence-does-not-determine-the-realized-growth-rate">Competence Does Not Determine the Realized Growth Rate</a></li><li><a href="#growth-is-not-the-same-thing-as-successful-government">Growth Is Not the Same Thing as Successful Government</a></li><li><a href="#the-full-chain-of-category-errors">The Full Chain of Category Errors</a></li></ul></div><div class="ep-toc-part"><p><a href="#why-the-misconception-persists">Why the Misconception Persists</a></p><ul><li><a href="#cognitive-simplicity">Cognitive Simplicity</a></li><li><a href="#measurability-proxy-targets-and-goodhart-type-effects">Measurability, Proxy Targets, and Goodhart-Type Effects</a></li><li><a href="#wealth-as-a-political-heuristic">Wealth as a Political Heuristic</a></li><li><a href="#political-communication-rewards-causal-compression">Political Communication Rewards Causal Compression</a></li></ul></div><div class="ep-toc-part"><p><a href="#conclusion-putting-gdp-back-in-its-proper-place">Conclusion: Putting GDP Back in Its Proper Place</a></p><ul></ul></div></nav><h3 id="the-distinctions-at-a-glance">The Distinctions at a Glance</h3>
+<p>The essay can be read as a sequence of distinctions. Each row below identifies a useful signal and the stronger conclusion that does <strong>not</strong> follow automatically from it.</p>
+<div class="table-wrap"><table class="three-col wide-table comparison-table">
+<thead>
+<tr>
+<th>Signal or concept</th>
+<th>What it can tell us</th>
+<th>What does not automatically follow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Signal or concept">GDP</td>
+<td data-label="What it can tell us">The value of measured final production</td>
+<td data-label="What does not automatically follow">That economic or social welfare improved</td>
+</tr>
+<tr>
+<td data-label="Signal or concept">GDP growth</td>
+<td data-label="What it can tell us">That measured production increased</td>
+<td data-label="What does not automatically follow">That faster growth was the socially optimal objective</td>
+</tr>
+<tr>
+<td data-label="Signal or concept">Macroeconomic performance</td>
+<td data-label="What it can tell us">How the economy performed along particular aggregate dimensions</td>
+<td data-label="What does not automatically follow">That the president caused the observed result</td>
+</tr>
+<tr>
+<td data-label="Signal or concept">Business success</td>
+<td data-label="What it can tell us">Evidence about performance within particular firms and markets</td>
+<td data-label="What does not automatically follow">General macroeconomic competence</td>
+</tr>
+<tr>
+<td data-label="Signal or concept">Economic expertise</td>
+<td data-label="What it can tell us">Competence in an important domain of policy</td>
+<td data-label="What does not automatically follow">General governing competence</td>
+</tr>
+<tr>
+<td data-label="Signal or concept">Presidential policy</td>
+<td data-label="What it can tell us">One important influence on economic outcomes</td>
+<td data-label="What does not automatically follow">Administrative control of the national economy</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="what-this-argument-doesand-does-notclaim">What This Argument Does—and Does Not—Claim</h3>
+<p>Nothing in the argument requires treating GDP as useless, growth as undesirable, presidents as economically irrelevant, or business experience as worthless in public life. The narrower claim is that each is informative about a particular object and becomes misleading when treated as a complete measure of a different one. The task of the essay is therefore not to reverse the familiar hierarchy and declare GDP or growth unimportant, but to put each concept back in the role it can actually support. The first step in untangling these ideas is the simplest one: putting GDP back in its proper conceptual place.</p>
+<div class="chapter-guide"><p><strong>Argument path</strong></p><p class="chapter-path">Measurement → welfare → growth → government objectives → presidential attribution → domain-specific competence → political heuristics.</p></div><h2 class="ep-source-section" id="gdp-is-an-accounting-measure-not-a-social-objective">GDP Is an Accounting Measure, Not a Social Objective</h2>
+<p class="chapter-lead">Gross domestic product is often spoken about as though it were a direct measure of whether an economy is doing well. But conceptually, GDP is much narrower than that. It is an accounting measure of the market value of final goods and services produced within an economy over a given period. In simplified form,</p>
+<div class="math-block">$$
+GDP_t = \sum_{i=1}^{n} p_{it} q_{it},
+$$</div>
+<p>where <span class="math-inline">\(p_{it}\)</span> and <span class="math-inline">\(q_{it}\)</span> denote the price and quantity of final good or service <span class="math-inline">\(i\)</span> produced during period <span class="math-inline">\(t\)</span>. In practice, national accounting is considerably more sophisticated than this expression suggests, especially when constructing real GDP and adjusting for price changes and quality, but the basic point remains: GDP is designed to measure production. It is not designed to answer the broader question of whether the resulting economic state is desirable.</p>
+<h3 id="composition-distribution-and-welfare">Composition, Distribution, and Welfare</h3>
+<p>Suppose two economies have the same real GDP per capita,</p>
+<div class="math-block">$$
+\frac{Y_A}{N_A}
+=
+\frac{Y_B}{N_B},
+$$</div>
+<p>where <span class="math-inline">\(Y\)</span> denotes real output and <span class="math-inline">\(N\)</span> population. Very little follows about whether people in the two economies actually experience similar economic conditions. Economy <span class="math-inline">\(A\)</span> might have reliable infrastructure, inexpensive housing, short commutes, clean air, low crime, substantial leisure, and relatively broad access to high-quality goods and services. Economy <span class="math-inline">\(B\)</span> might have expensive housing, long commutes, deteriorating infrastructure, high pollution, significant insecurity, and highly concentrated income. The aggregate production figures could nevertheless be similar. The reason is straightforward: GDP does not contain enough information to distinguish between these states. It aggregates heterogeneous forms of production into a common monetary measure, necessarily discarding information about their composition and distribution.</p>
+<p>More generally, if aggregate output is</p>
+<div class="math-block">$$
+Y = \sum_i y_i,
+$$</div>
+<p>then knowledge of <span class="math-inline">\(Y\)</span> does not uniquely identify the vector</p>
+<div class="math-block">$$
+\mathbf{y}
+=
+(y_1,y_2,\ldots,y_n).
+$$</div>
+<p>Many radically different compositions of production can generate the same aggregate value. This matters because we do not value all configurations of output equally. An additional billion dollars of production in preventive healthcare, public transportation, or housing is not socially identical to an additional billion dollars spent repairing avoidable environmental damage, responding to violent crime, or replacing infrastructure destroyed through neglect. GDP records production occurring in each case. It does not, by itself, tell us why that production was necessary or whether the underlying circumstances are desirable.</p>
+<h3 id="defensive-production-externalities-and-misleading-activity">Defensive Production, Externalities, and Misleading Activity</h3>
+<p>This creates what can initially appear to be paradoxical cases. A major storm destroys homes and infrastructure. Reconstruction generates construction activity and increases measured production. A rise in crime generates additional expenditure on locks, surveillance, private security, policing, and insurance. Worsening pollution may generate additional healthcare expenditure. Severe congestion leads households to consume more fuel simply to travel the same distance. None of this means GDP accounting treats destruction, crime, pollution, or congestion as socially beneficial. The misunderstanding comes from asking the statistic a question it was never constructed to answer.</p>
+<p>If a damaging event <span class="math-inline">\(D\)</span> produces both a welfare loss and subsequent market activity, we might write</p>
+<div class="math-block">$$
+\Delta Y(D) &gt; 0
+$$</div>
+<p>while simultaneously having</p>
+<div class="math-block">$$
+\Delta W(D) &lt; 0.
+$$</div>
+<p>There is no contradiction. <span class="math-inline">\(Y\)</span> and <span class="math-inline">\(W\)</span> are different variables. This distinction becomes even clearer once externalities are introduced. Suppose measured output generates some desirable benefits <span class="math-inline">\(B(Y)\)</span>, but production also produces environmental or social costs <span class="math-inline">\(C(Y)\)</span>. A crude welfare expression might then be</p>
+<div class="math-block">$$
+W = B(Y) - C(Y).
+$$</div>
+<p>If</p>
+<div class="math-block">$$
+\frac{\partial B}{\partial Y} &gt; 0,
+$$</div>
+<p>higher output creates benefits. But if marginal costs also rise,</p>
+<div class="math-block">$$
+\frac{\partial C}{\partial Y} &gt; 0,
+$$</div>
+<p>then it does not follow that every increase in output improves welfare. The relevant derivative is</p>
+<div class="math-block">$$
+\frac{dW}{dY}
+=
+\frac{dB}{dY}
+-
+\frac{dC}{dY}.
+$$</div>
+<p>GDP growth tells us that <span class="math-inline">\(dY&gt;0\)</span>. It does not, on its own, tell us the sign or magnitude of <span class="math-inline">\(dW\)</span>.</p>
+<h3 id="who-receives-the-gains">Who Receives the Gains?</h3>
+<p>Distribution presents another problem. Suppose national income increases by <span class="math-inline">\(\Delta Y\)</span>. The welfare implications may depend heavily on how that increase is distributed across households. If income is distributed across individuals <span class="math-inline">\(j=1,\ldots,m\)</span>, then a social welfare function might take the form</p>
+<div class="math-block">$$
+W
+=
+\sum_{j=1}^{m}
+\omega_j u(c_j),
+$$</div>
+<p>where <span class="math-inline">\(c_j\)</span> is individual consumption, <span class="math-inline">\(u(\cdot)\)</span> represents the welfare derived from consumption, and <span class="math-inline">\(\omega_j\)</span> represents whatever social weights are assigned to different individuals. Two economies can therefore experience identical increases in GDP,</p>
+<div class="math-block">$$
+\Delta Y_A = \Delta Y_B,
+$$</div>
+<p>while generating very different changes in welfare,</p>
+<div class="math-block">$$
+\Delta W_A \neq \Delta W_B,
+$$</div>
+<p>because the underlying distribution of the gains differs. Even setting normative questions about social welfare weights aside, distribution is economically consequential. Concentrated growth may leave median living standards largely unchanged. National output may increase while particular regions stagnate. Labor income can perform differently from capital income. Aggregate figures can improve while economic insecurity increases for large portions of the population.</p>
+<h3 id="quality-durability-and-economic-services">Quality, Durability, and Economic Services</h3>
+<p>The same problem applies to quality. Suppose a refrigerator produced today costs roughly the same as one produced decades ago, but consumes less electricity, lasts longer, is quieter, and performs better. The economic service generated by the modern refrigerator is greater even if expenditure remains similar. National statistical agencies make sophisticated attempts to account for quality changes, and real GDP is not simply a naive summation of nominal expenditures. But there are practical limits to how completely qualitative improvement can be represented in a single aggregate index. More importantly, some improvements in economic performance can actually reduce the amount of market activity required to achieve a given outcome.</p>
+<p>Suppose an appliance lasts twenty years rather than five. From the perspective of the household, this is an improvement: the same service is obtained with fewer replacement purchases. Yet fewer transactions occur. Likewise, preventing disease may reduce medical expenditure. Better urban planning may reduce fuel consumption. Durable infrastructure may reduce the frequency of costly repairs. Open-source software may provide services at zero monetary price that previously required paid transactions. This exposes a deeper distinction between the <strong>services generated by an economic system</strong> and the <strong>monetary throughput required to generate them</strong>.</p>
+<p>If some desired outcome is <span class="math-inline">\(S\)</span>, and market production <span class="math-inline">\(Y\)</span> is one input into producing it, we might write</p>
+<div class="math-block">$$
+S = F(Y,Z),
+$$</div>
+<p>where <span class="math-inline">\(Z\)</span> represents technology, institutions, infrastructure, knowledge, organizational quality, and other relevant factors. Economic improvement can then occur not only by increasing <span class="math-inline">\(Y\)</span>, but by improving the mapping <span class="math-inline">\(F\)</span> itself. That is,</p>
+<div class="math-block">$$
+S' &gt; S
+$$</div>
+<p>does not necessarily require</p>
+<div class="math-block">$$
+Y' &gt; Y.
+$$</div>
+<p>An economy can become better at converting resources and production into useful outcomes.</p>
+<h3 id="flows-stocks-and-the-condition-of-the-system">Flows, Stocks, and the Condition of the System</h3>
+<p>This point is particularly important when distinguishing flows from stocks. GDP is a flow variable. It measures production occurring over a period. But many of the things that determine economic well-being are stocks: accumulated infrastructure, housing, physical capital, knowledge, institutional capacity, environmental quality, human capital, and social trust. Let the relevant state of the system be represented by a stock vector</p>
+<div class="math-block">$$
+\mathbf{K}_t
+=
+(K_t^{physical},
+K_t^{human},
+K_t^{institutional},
+K_t^{environmental},
+\ldots).
+$$</div>
+<p>Production during period <span class="math-inline">\(t\)</span> may increase or maintain these stocks,</p>
+<div class="math-block">$$
+\mathbf{K}_{t+1}
+=
+(1-\boldsymbol{\delta})\mathbf{K}_t
++
+\mathbf{I}_t,
+$$</div>
+<p>where <span class="math-inline">\(\boldsymbol{\delta}\)</span> represents depreciation or deterioration and <span class="math-inline">\(\mathbf{I}_t\)</span> represents investment, broadly understood. A high level of current production may therefore coexist with deterioration in the underlying system if output is generated by depleting valuable stocks faster than they are replenished.</p>
+<p>Conversely, a mature economy with durable infrastructure, accumulated knowledge, reliable institutions, and highly efficient technology may be able to sustain a high standard of living with relatively modest increases in annual throughput. This is why it is useful to think of GDP as measuring something closer to the <strong>rate of economically valued activity passing through the system</strong> rather than the overall quality of the system itself. There is nothing wrong with measuring that rate. Policymakers need it. Businesses need it. Economists need it. It provides indispensable information about recessions, productive capacity, tax bases, aggregate demand, and changes in economic activity.</p>
+<p>The conceptual error occurs only when the statement</p>
+<div class="math-block">$$
+GDP \text{ increased}
+$$</div>
+<p>is silently transformed into</p>
+<div class="math-block">$$
+\text{the economic system improved}.
+$$</div>
+<p>The former is an accounting statement. The latter is an evaluative judgment. GDP can provide evidence relevant to that judgment, sometimes extremely important evidence. But the judgment requires information that GDP alone does not contain. The problem, then, is not that GDP measures the wrong thing. It is that we routinely ask it to measure much more than it actually does.</p>
+<h2 class="ep-source-section" id="growth-is-a-means-not-an-end">Growth Is a Means, Not an End</h2>
+<p class="chapter-lead">Once GDP is understood as an accounting measure rather than a welfare measure, a second question follows naturally: why should growth in GDP itself be treated as an objective? This is often taken for granted. Economic growth is described as though it were inherently desirable, and periods of slow growth are frequently treated as evidence that something has gone wrong. But that conclusion requires an argument. An economy is not simply a machine whose purpose is to generate an ever larger volume of output. It is a system of institutions, technologies, markets, organizations, and social arrangements that exists, broadly speaking, to coordinate production and exchange and to satisfy human needs and preferences.</p>
+<p>From a systems perspective, growth is only one possible response to changing conditions. Suppose the relevant economic system delivers a vector of socially valued outcomes</p>
+<div class="math-block">$$
+\mathbf{s}
+=
+(s_1,s_2,\ldots,s_n),
+$$</div>
+<p>where these outcomes might include adequate housing, nutrition, mobility, healthcare, security, leisure, access to information, and other capabilities. The system uses some combination of labor, capital, energy, natural resources, institutions, and knowledge to generate those outcomes:</p>
+<div class="math-block">$$
+\mathbf{s}
+=
+F(\mathbf{x},\mathbf{K},A),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{x}\)</span> represents current inputs and throughput, <span class="math-inline">\(\mathbf{K}\)</span> represents accumulated stocks such as infrastructure and capital, and <span class="math-inline">\(A\)</span> represents technology, knowledge, and organizational efficiency. There are at least two fundamentally different ways for the system to improve. The first is to increase throughput:</p>
+<div class="math-block">$$
+\mathbf{x}' &gt; \mathbf{x}.
+$$</div>
+<p>The second is to improve the efficiency or quality of the transformation process itself:</p>
+<div class="math-block">$$
+F'(\cdot) &gt; F(\cdot).
+$$</div>
+<p>The latter means that the economy can generate better outcomes using the same, or even fewer, resources. This distinction matters because conventional discussions of growth tend to privilege the first form of improvement. If households obtain better healthcare through prevention rather than costly treatment, if transportation systems move people more efficiently using less fuel, if buildings require less energy, if appliances last longer, or if software provides more capability at lower cost, the economic system has improved even if the monetary value of annual transactions does not increase proportionately. In other words,</p>
+<div class="math-block">$$
+\Delta W &gt; 0
+$$</div>
+<p>does not require</p>
+<div class="math-block">$$
+g_Y &gt; 0,
+$$</div>
+<p>where <span class="math-inline">\(g_Y\)</span> is the growth rate of real GDP. Growth can contribute to welfare, but welfare improvement is not logically equivalent to growth. This becomes clearer if the objective is written explicitly. Suppose social welfare depends on consumption, leisure, distribution, environmental quality, resilience, and other variables:</p>
+<div class="math-block">$$
+W
+=
+W(C,L,D,E,R,\ldots).
+$$</div>
+<p>GDP enters this function only indirectly, insofar as higher productive capacity enables greater consumption, investment, public provision, or some other valued outcome. The policy problem is therefore not naturally</p>
+<div class="math-block">$$
+\max g_Y.
+$$</div>
+<p>It is closer to</p>
+<div class="math-block">$$
+\max_{\mathbf{p}} W(C,L,D,E,R,\ldots),
+$$</div>
+<p>subject to technological, fiscal, institutional, ecological, and resource constraints, where <span class="math-inline">\(\mathbf{p}\)</span> denotes the set of available policies. GDP growth may relax some of these constraints. But that makes growth an input into the optimization problem, not the objective function itself.</p>
+<h3 id="why-growth-is-valuable">Why Growth Is Valuable</h3>
+<p>This distinction is especially important because growth can be extremely useful. A growing economy makes many political and economic problems easier to solve. If real output grows, incomes can rise without necessarily requiring an explicit redistribution of existing income. Governments can collect more revenue without raising statutory tax rates. Existing debt burdens can become smaller relative to national income. Firms may find it easier to invest, and workers may find more employment opportunities. Social conflicts over distribution can become less severe when the total economic pie is expanding. In simplified terms, suppose government has outstanding debt <span class="math-inline">\(B_t\)</span> and GDP <span class="math-inline">\(Y_t\)</span>. The debt burden is often summarized by</p>
+<div class="math-block">$$
+b_t = \frac{B_t}{Y_t}.
+$$</div>
+<p>Even if nominal debt remains unchanged, an increase in the denominator reduces the debt-to-GDP ratio:</p>
+<div class="math-block">$$
+Y_{t+1} &gt; Y_t
+\quad \Rightarrow \quad
+\frac{B_t}{Y_{t+1}}
+&lt;
+\frac{B_t}{Y_t}.
+$$</div>
+<p>Likewise, if government revenue is approximately</p>
+<div class="math-block">$$
+T_t = \tau Y_t,
+$$</div>
+<p>where <span class="math-inline">\(\tau\)</span> is an effective tax rate, then economic growth can increase fiscal capacity without requiring an increase in <span class="math-inline">\(\tau\)</span>. These are real advantages, but notice the nature of the argument: growth is valuable here because it helps satisfy other objectives, not because growth is intrinsically identical to those objectives. That is an instrumental argument. The distinction can be written as</p>
+<div class="math-block">$$
+g_Y
+\rightarrow
+\text{greater fiscal space}
+\rightarrow
+\text{greater capacity to achieve } W,
+$$</div>
+<p>rather than</p>
+<div class="math-block">$$
+g_Y
+\equiv
+W.
+$$</div>
+<p>This may seem like a minor conceptual distinction, but it matters enormously for policy. If growth is a means, then it must be evaluated alongside other means and against its costs. A policy that increases output slightly while creating severe environmental damage, regional inequality, institutional fragility, or systemic risk may not be desirable merely because measured GDP rises.</p>
+<p>More generally, suppose growth produces benefits <span class="math-inline">\(B(g)\)</span> and costs <span class="math-inline">\(C(g)\)</span>. Then the relevant objective is not</p>
+<div class="math-block">$$
+\max g,
+$$</div>
+<p>but something closer to</p>
+<div class="math-block">$$
+\max_g \left[B(g)-C(g)\right].
+$$</div>
+<p>An interior optimum would satisfy</p>
+<div class="math-block">$$
+B'(g^*)
+=
+C'(g^*).
+$$</div>
+<p>There is no economic principle requiring the optimal growth rate <span class="math-inline">\(g^*\)</span> to be the largest technologically achievable rate. In some circumstances, rapid growth will clearly be desirable. In others, a lower growth rate accompanied by greater resilience, better distribution, reduced resource use, or greater leisure may produce a superior outcome.</p>
+<h3 id="growth-depends-on-context">Growth Depends on Context</h3>
+<p>The development context is especially important. For a low-income economy in which large portions of the population lack adequate housing, sanitation, healthcare, transportation, electricity, or nutrition, additional productive capacity may directly address severe unmet needs. In such a case, the marginal welfare benefit of additional output may be very high:</p>
+<div class="math-block">$$
+\frac{\partial W}{\partial Y}
+\gg 0.
+$$</div>
+<p>But the same conclusion need not hold with the same force in a wealthy, mature economy where basic material needs are already largely satisfied. As income rises, additional output may increasingly take the form of qualitative improvement, convenience, leisure, durability, specialization, or reduced resource intensity rather than simple increases in physical quantity. This does not imply that wealthy economies should stop growing. It means only that the normative case for growth becomes more dependent on what the additional production consists of, who receives it, what resources it consumes, and what problems it actually solves.</p>
+<h3 id="efficiency-leisure-and-system-quality">Efficiency, Leisure, and System Quality</h3>
+<p>A systems perspective makes this particularly intuitive. Most systems do not expand indefinitely simply because expansion is possible. They expand when additional capacity is needed. They also maintain themselves, replace deteriorated components, become more efficient, adapt to changing environments, build redundancy, and improve robustness. A power grid is not judged solely by how rapidly its generating capacity increases each year. It is also judged by reliability, redundancy, efficiency, cost, and its ability to withstand shocks. A transportation system is not automatically better because it moves a greater tonnage of vehicles. It may be better because people can reach their destinations more quickly and reliably using fewer resources.</p>
+<p>Likewise, an economy that requires continuously increasing quantities of labor, material, energy, and transactions to generate the same standard of living may be less impressive than one that can produce better outcomes with less throughput. This suggests a more useful concept of economic performance:</p>
+<div class="math-block">$$
+\eta
+=
+\frac{\text{valued outcomes}}{\text{resource and economic throughput}}.
+$$</div>
+<p>An improvement in <span class="math-inline">\(\eta\)</span> represents a system becoming better at converting resources into things people actually value. From this perspective, technological progress is interesting not only because it allows economies to produce more, but because it can allow them to produce the same or better outcomes with less effort. If productivity improvements allow a society to maintain its material standard of living while reducing average working hours, for example, measured output might grow more slowly than it otherwise would. Yet workers gain additional leisure. A welfare framework naturally recognizes this tradeoff:</p>
+<div class="math-block">$$
+W = W(C,L),
+$$</div>
+<p>where consumption <span class="math-inline">\(C\)</span> and leisure <span class="math-inline">\(L\)</span> are both desirable. If productivity rises, society can choose some combination of additional consumption and additional leisure. Treating maximum GDP growth as the obvious objective implicitly privileges the consumption response. But there is no economic theorem saying that all productivity gains should be converted into additional production rather than time.</p>
+<h3 id="why-modern-institutions-become-dependent-on-growth">Why Modern Institutions Become Dependent on Growth</h3>
+<p>This leads to a broader institutional question. Modern economies are often structured in ways that make persistent growth highly desirable, and sometimes seemingly necessary. Public and private debt obligations, pension systems, labor-market expectations, fiscal commitments, asset valuations, and political promises may all become easier to sustain when aggregate income is rising. That fact should not necessarily be interpreted as evidence that perpetual growth is a natural objective of economic systems. It may instead tell us something about the institutions we have constructed around them. If an economy becomes socially unstable whenever growth slows, an important question is not simply</p>
+<div class="math-block">$$
+\text{How do we restore growth?}
+$$</div>
+<p>but also</p>
+<div class="math-block">$$
+\text{Why does this system require continuous growth to remain stable?}
+$$</div>
+<p>Those are different questions. The first treats growth as the solution. The second treats dependence on growth as a property of the system that itself deserves analysis. None of this amounts to an argument against economic growth. Growth can dramatically improve human welfare, expand opportunities, reduce scarcity, and provide societies with greater capacity to address collective problems. The narrower claim is that growth has no privileged normative status simply because it is growth.</p>
+<p>What ultimately matters is what additional productive capacity allows the economic system to accomplish. Growth is valuable when it helps produce better states of the world.</p>
+<p class="core-claim">The better states of the world are the objective.</p>
+<h2 class="ep-source-section" id="government-is-not-a-corporation">Government Is Not a Corporation</h2>
+<p class="chapter-lead">One reason GDP growth acquires such an outsized role in political evaluation is that governments are often implicitly modeled as though they were very large firms. The analogy is superficially attractive. Firms have executives; governments have presidents or prime ministers. Firms have budgets; governments have budgets. Firms employ people, own assets, incur liabilities, make investments, and pursue strategies. From this, it is tempting to imagine that governing is simply a more complicated version of running an organization.</p>
+<h3 id="firms-and-governments-have-different-objective-functions">Firms and Governments Have Different Objective Functions</h3>
+<p>But the analogy breaks down at the level that matters most: the objective function. A stylized firm can often be represented as maximizing some combination of profit, firm value, survival, or market share. In the simplest textbook case,</p>
+<div class="math-block">$$
+\max_{\mathbf{q}} \; \pi(\mathbf{q})
+=
+R(\mathbf{q}) - C(\mathbf{q}),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{q}\)</span> is the vector of goods or services produced, <span class="math-inline">\(R\)</span> is revenue, and <span class="math-inline">\(C\)</span> is cost. Real firms are of course more complicated. Managers may care about growth, prestige, employee retention, long-run strategy, regulatory risk, or market dominance. But the important point is that firms generally operate within a comparatively narrow institutional mandate, and financial performance provides a meaningful summary statistic for whether they are succeeding at it.</p>
+<p>Government has no equivalent bottom line. The state is expected to perform multiple functions simultaneously, many of which cannot be reduced to monetary returns and some of which are inherently in tension with one another. A schematic governmental objective might instead be written as</p>
+<div class="math-block">$$
+\max_{\mathbf{p}}
+\;
+G
+=
+G(
+S,
+J,
+R,
+P,
+H,
+E,
+D,
+L,
+C,
+\ldots
+),
+$$</div>
+<p>where, for example,</p>
+<ul>
+<li><span class="math-inline">\(S\)</span> denotes security,</li>
+<li><span class="math-inline">\(J\)</span> the administration of justice and rule of law,</li>
+<li><span class="math-inline">\(R\)</span> protection of rights,</li>
+<li><span class="math-inline">\(P\)</span> provision of public goods,</li>
+<li><span class="math-inline">\(H\)</span> public health and material welfare,</li>
+<li><span class="math-inline">\(E\)</span> environmental quality,</li>
+<li><span class="math-inline">\(D\)</span> distributional objectives,</li>
+<li><span class="math-inline">\(L\)</span> political legitimacy,</li>
+<li><span class="math-inline">\(C\)</span> social cohesion,</li>
+</ul>
+<p>and <span class="math-inline">\(\mathbf{p}\)</span> denotes the vector of policies available to the government. Even this representation is too simple, because there is no universally agreed set of weights over these objectives. One citizen may place greater weight on redistribution, another on national security, another on civil liberties, another on environmental protection, and another on economic growth. So a more realistic formulation would be</p>
+<div class="math-block">$$
+G
+=
+G(\mathbf{z};\boldsymbol{\omega}),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{z}\)</span> is the vector of governmental outcomes and <span class="math-inline">\(\boldsymbol{\omega}\)</span> represents the social or political weights assigned to those outcomes. Those weights are themselves contested through democratic politics. In other words, government does not merely solve an optimization problem. Part of politics consists of deciding what the objective function should be. This sharply distinguishes the state from the firm. The contrast can be summarized before turning to the examples:</p>
+<div class="table-wrap"><table class="three-col wide-table comparison-table">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Firm</th>
+<th>Government</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Dimension">Objective</td>
+<td data-label="Firm">Comparatively concentrated and often financially summarized</td>
+<td data-label="Government">Multiple, contested, and partly normative</td>
+</tr>
+<tr>
+<td data-label="Dimension">Scope of obligation</td>
+<td data-label="Firm">Can often exit activities, markets, locations, or customer segments</td>
+<td data-label="Government">Often must serve citizens or provide legally mandated and universal functions</td>
+</tr>
+<tr>
+<td data-label="Dimension">Meaning of activity</td>
+<td data-label="Firm">More activity commonly corresponds to more output or revenue</td>
+<td data-label="Government">More activity can signal underlying failure, crisis, or unmet need</td>
+</tr>
+<tr>
+<td data-label="Dimension">Treatment of external effects</td>
+<td data-label="Firm">Often relevant only when priced, regulated, or internalized</td>
+<td data-label="Government">Frequently expected to account for social costs and benefits outside market transactions</td>
+</tr>
+<tr>
+<td data-label="Dimension">Redundancy</td>
+<td data-label="Firm">Often appears as idle cost</td>
+<td data-label="Government">Can be valuable insurance against rare or catastrophic states</td>
+</tr>
+<tr>
+<td data-label="Dimension">Authority</td>
+<td data-label="Firm">Internal authority is comparatively hierarchical</td>
+<td data-label="Government">Authority is deliberately fragmented across institutions</td>
+</tr>
+</tbody>
+</table></div>
+<p>A corporation can abandon an unprofitable product line. A government cannot simply decide that an unprofitable group of citizens is no longer worth serving. A firm may close a location if expected revenues do not justify the costs. A government may have an obligation to provide policing, courts, infrastructure, emergency services, or education in a remote region precisely because the market return is insufficient to induce private provision. A business can screen customers according to profitability.</p>
+<p>The state is generally expected to provide many fundamental services according to citizenship, legal entitlement, need, or universal access.</p>
+<h3 id="government-often-produces-states-of-the-world-not-transactions">Government Often Produces States of the World, Not Transactions</h3>
+<p>The distinction becomes especially clear when examining activities that governments perform successfully. Consider a fire department. Its objective is not</p>
+<div class="math-block">$$
+\max \text{revenue from fires}.
+$$</div>
+<p>Indeed, a society in which fewer fires occur may be better off even though the fire department performs fewer observable interventions. Likewise, a court system is not successful because it maximizes the number of trials. A criminal justice system in which rights are respected, laws are broadly obeyed, disputes are resolved efficiently, and crime is relatively rare may generate less observable activity than a dysfunctional system overwhelmed by litigation and violence. A public health agency can succeed by preventing illness. A military can succeed through deterrence, meaning that enormous quantities of resources are committed to capabilities that ideally never need to be fully used.</p>
+<p>A regulator can succeed by preventing a financial crisis that therefore never appears in the data. These examples reveal an important feature of government production: many desirable outputs are not commodities or transactions; they are states of the world. The relevant outcome may be</p>
+<div class="math-block">$$
+\Pr(\text{war}) \downarrow,
+$$</div>
+<p>or</p>
+<div class="math-block">$$
+\Pr(\text{financial crisis}) \downarrow,
+$$</div>
+<p>or</p>
+<div class="math-block">$$
+\Pr(\text{epidemic}) \downarrow.
+$$</div>
+<p>The value of these activities lies partly in events that do not happen.</p>
+<h3 id="more-activity-can-reflect-failure-rather-than-success">More Activity Can Reflect Failure Rather Than Success</h3>
+<p>This creates a serious mismatch between governmental performance and business-accounting intuitions. In business, greater observable activity often corresponds to greater output. In governance, greater observable activity may sometimes reflect failure. More arrests may indicate better enforcement, or they may indicate more crime. More emergency spending may indicate a strong disaster response, or it may reflect inadequate preparation.</p>
+<p>More healthcare expenditure may indicate improved access, or it may indicate a sicker population. More military expenditure may improve security, or it may reflect an increasingly dangerous geopolitical environment. The quantity of resources moving through a government institution therefore cannot, by itself, tell us whether that institution is succeeding. The same is true of the state as a whole.</p>
+<p>Consider a government that spends heavily after allowing bridges, electrical infrastructure, and flood defenses to deteriorate. The resulting reconstruction raises measured government expenditure and may increase GDP. Another government may spend somewhat more on maintenance beforehand and avoid the destruction entirely. The first government may generate more measured economic activity. The second may have produced the better state of the world. A systems perspective captures this more naturally than a production perspective.</p>
+<p>Suppose government chooses policies <span class="math-inline">\(\mathbf{p}\)</span> that influence a state vector</p>
+<div class="math-block">$$
+\mathbf{x}_{t+1}
+=
+F(\mathbf{x}_t,\mathbf{p}_t,\boldsymbol{\epsilon}_t),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{x}_t\)</span> describes the current condition of society and <span class="math-inline">\(\boldsymbol{\epsilon}_t\)</span> represents external shocks. The governmental problem is not merely to maximize activity during period <span class="math-inline">\(t\)</span>. It is to choose policies that move the system toward desirable future states while preserving important constraints. One might write</p>
+<div class="math-block">$$
+\max_{\{\mathbf{p}_t\}}
+\sum_{t=0}^{\infty}
+\beta^t
+G(\mathbf{x}_t),
+$$</div>
+<p>subject to</p>
+<div class="math-block">$$
+\mathbf{x}_{t+1}
+=
+F(\mathbf{x}_t,\mathbf{p}_t,\boldsymbol{\epsilon}_t),
+$$</div>
+<p>along with constitutional, fiscal, political, administrative, and resource constraints. This formulation makes visible something that GDP-centered political discussion often obscures: government is fundamentally concerned with managing a dynamic system over time. That involves trade-offs between current consumption and future capacity, efficiency and redundancy, liberty and security, speed and procedural safeguards, taxation and public provision, specialization and resilience, local autonomy and national coordination. These trade-offs cannot be reduced to a single number without imposing strong normative assumptions.</p>
+<h3 id="public-goods-externalities-and-obligations-markets-can-avoid">Public Goods, Externalities, and Obligations Markets Can Avoid</h3>
+<p>This is particularly important because governments often intervene precisely where profit maximization fails to produce socially desirable outcomes. Public goods provide the clearest textbook example. If a good is non-rival and non-excludable, private markets may underprovide it because firms cannot easily capture the full benefit of production. National defense is the standard case, but the logic extends to areas such as basic scientific research, disease surveillance, environmental protection, and certain forms of infrastructure. If the state simply behaved like a profit-maximizing corporation, it would systematically neglect many of the functions that justify its existence.</p>
+<p>Externalities create a similar problem. A firm maximizing</p>
+<div class="math-block">$$
+\pi = R-C
+$$</div>
+<p>has no intrinsic reason to account for costs imposed on third parties unless those costs are internalized through prices, liability, regulation, or some other institution. Government, by contrast, is often expected to care about</p>
+<div class="math-block">$$
+C_{\text{social}}
+=
+C_{\text{private}}
++
+C_{\text{external}}.
+$$</div>
+<p>One of the state's central economic functions is precisely to address cases in which private objective functions diverge from broader social objectives. The idea that government should therefore be operated "like a business" contains a peculiar contradiction. If every socially relevant problem could be solved simply by applying the objective function of a private firm, much of the economic rationale for government intervention would disappear in the first place. Government exists partly because the optimization problem facing society is not identical to the optimization problem facing any individual firm.</p>
+<p>There is another important asymmetry. A successful firm frequently creates value by excluding activities with negative expected returns. Government often exists to absorb precisely those responsibilities that cannot be abandoned. A private insurer may prefer not to insure extremely high-risk individuals. A government cannot necessarily abandon them. A logistics firm may decline to serve an isolated community if delivery costs are too high. A postal system may be legally required to provide universal service.</p>
+<p>A hospital may find some forms of emergency care financially unattractive. A public health system may nevertheless consider their provision essential. From the perspective of a firm, these may appear as inefficiencies. From the perspective of government, they may be the objective.</p>
+<h3 id="efficiency-depends-on-the-objective">Efficiency Depends on the Objective</h3>
+<p>This is why the language of "efficiency" itself requires care. Efficiency is always efficiency relative to an objective. If the objective is profit,</p>
+<div class="math-block">$$
+\eta_{\pi}
+=
+\frac{\pi}{\text{resources used}}
+$$</div>
+<p>may be relevant. If the objective is universal access, resilience, security, or equal treatment under law, a system that maintains apparently redundant capacity may actually be more efficient relative to the true objective.</p>
+<h3 id="resilience-and-the-value-of-redundancy">Resilience and the Value of Redundancy</h3>
+<p>Consider resilience. A firm operating in a highly competitive environment may minimize inventories and spare capacity because idle resources impose costs. A government concerned with national resilience may rationally maintain strategic reserves, redundant infrastructure, emergency capacity, or domestic production capabilities that appear inefficient during normal periods. If performance is evaluated only under ordinary conditions, redundancy looks wasteful. If performance is evaluated across possible states of the world, the calculation changes.</p>
+<p>Let expected social loss be</p>
+<div class="math-block">$$
+\mathbb{E}[L]
+=
+\sum_s
+p_s L_s,
+$$</div>
+<p>where <span class="math-inline">\(s\)</span> indexes possible states of the world. Maintaining redundant capacity may increase costs in the normal state while sharply reducing losses in rare but catastrophic states. A policy that appears inefficient under a narrow cost-minimization criterion can therefore be optimal under a resilience criterion.</p>
+<p>Again, the issue is the objective function.</p>
+<h3 id="what-this-means-for-evaluating-government">What This Means for Evaluating Government</h3>
+<p>This broader view also clarifies why governmental performance cannot be inferred from GDP growth alone. Economic growth may contribute to employment, fiscal capacity, household income, and political stability, all of which governments reasonably care about. But they are components of a much larger vector of outcomes. A government that achieves rapid GDP growth while undermining legal institutions, allowing infrastructure to deteriorate, generating severe environmental damage, or creating substantial systemic fragility cannot automatically be called successful.</p>
+<p>Conversely, a government facing a severe external shock may preside over weak GDP growth while performing competently in preventing much worse outcomes. The appropriate evaluation depends on the state of the system, the available alternatives, and the objectives society expects government to pursue. The corporation analogy therefore fails not because businesses are unimportant or because business skills are worthless in government. It fails because firms and states solve different problems. The firm asks, roughly,</p>
+<div class="math-block">$$
+\text{How can this organization create and capture economic value?}
+$$</div>
+<p>The state asks a much more complicated question:</p>
+<div class="math-block">$$
+\text{How should institutions organize and constrain collective life across many competing objectives?}
+$$</div>
+<p>The first problem is difficult; the second is not merely a larger version of it.</p>
+<h2 class="ep-source-section" id="the-president-is-not-the-economy-s-ceo">The President Is Not the Economy’s CEO</h2>
+<p class="chapter-lead">Even if one accepts that macroeconomic performance should matter substantially in evaluating a government, a further problem remains: how much of that performance can actually be attributed to the president? Political discourse often treats economic outcomes as though they were managerial outputs. GDP rises, unemployment falls, inflation increases, or the stock market declines, and responsibility is assigned directly to the president in office. This way of speaking encourages a misleading mental model:</p>
+<div class="math-block">$$
+\text{President}
+\rightarrow
+\text{policy}
+\rightarrow
+\text{economic outcome}.
+$$</div>
+<h3 id="influence-is-not-control">Influence Is Not Control</h3>
+<p>The real causal structure is much more complicated. Aggregate economic outcomes are jointly produced by millions of households and firms, financial institutions, state and local governments, legislatures, central banks, foreign governments, technological changes, demographic shifts, commodity markets, and random shocks. A more realistic representation would be</p>
+<div class="math-block">$$
+Y_t
+=
+F(
+P_t,
+M_t,
+L_t,
+X_t,
+A_t,
+D_t,
+Y_{t-1},
+\varepsilon_t
+),
+$$</div>
+<p>where:</p>
+<ul>
+<li><span class="math-inline">\(P_t\)</span> represents executive policy,</li>
+<li><span class="math-inline">\(M_t\)</span> monetary and financial conditions,</li>
+<li><span class="math-inline">\(L_t\)</span> legislation and fiscal policy,</li>
+<li><span class="math-inline">\(X_t\)</span> external or international conditions,</li>
+<li><span class="math-inline">\(A_t\)</span> technology and productivity,</li>
+<li><span class="math-inline">\(D_t\)</span> demographic and structural factors,</li>
+<li><span class="math-inline">\(Y_{t-1}\)</span> inherited economic conditions,</li>
+<li>and <span class="math-inline">\(\varepsilon_t\)</span> unexpected shocks.</li>
+</ul>
+<p>The president influences some of these variables, directly or indirectly. But the president does not determine them all. This distinction is elementary but routinely ignored. An administration may enter office during an economic expansion generated partly by investments, technologies, monetary conditions, or legislation established years earlier. Another may inherit a recession, financial crisis, war, commodity shock, or pandemic. The fact that one administration presides over higher growth than another does not, by itself, establish that it governed the economy more competently.</p>
+<h3 id="the-counterfactual-problem">The Counterfactual Problem</h3>
+<p>The problem is one of causal identification. Suppose observed GDP growth under President <span class="math-inline">\(A\)</span> is</p>
+<div class="math-block">$$
+g_t(A).
+$$</div>
+<p>What we actually want to know is not merely what happened while <span class="math-inline">\(A\)</span> was in office. We want to know what would have happened under some alternative administration <span class="math-inline">\(B\)</span>, holding the relevant circumstances fixed. The causal effect of the administration is therefore conceptually closer to</p>
+<div class="math-block">$$
+\tau
+=
+g_t(A)
+-
+g_t(B),
+$$</div>
+<p>where <span class="math-inline">\(g_t(B)\)</span> is the counterfactual growth rate that would have occurred under President <span class="math-inline">\(B\)</span> in the same world. But that counterfactual is not observed. We observe only one realized history. This is the same fundamental problem that appears throughout causal inference. The quantity of interest is a difference between potential outcomes,</p>
+<div class="math-block">$$
+\tau
+=
+Y(1)-Y(0),
+$$</div>
+<p>but for a given historical episode, only one of those outcomes can occur. In politics, the identification problem is especially severe because administrations are not randomly assigned. Different presidents enter office at different moments, inherit different institutions, face different shocks, encounter different congressional majorities, and operate within different international environments. A president taking office during a global commodity boom is not directly comparable to one taking office during a financial crisis. Likewise, a president governing with unified legislative control faces a different policy environment from one facing an opposition legislature.</p>
+<p>The observed outcome is therefore a mixture of treatment effects, inherited conditions, institutional constraints, and external shocks. In reduced form, we might write</p>
+<div class="math-block">$$
+Y_t
+=
+\alpha
++
+\beta P_t
++
+\gamma Z_t
++
+\varepsilon_t,
+$$</div>
+<p>where <span class="math-inline">\(P_t\)</span> represents presidential policy and <span class="math-inline">\(Z_t\)</span> contains all other relevant determinants. The political temptation is to observe <span class="math-inline">\(Y_t\)</span> and infer <span class="math-inline">\(\beta\)</span>. But without identifying the contribution of <span class="math-inline">\(Z_t\)</span>, that inference is generally unjustified.</p>
+<h3 id="presidential-influence-without-total-attribution">Presidential Influence Without Total Attribution</h3>
+<p>This does not mean presidents are economically irrelevant. Executive decisions can have enormous effects. Presidents can influence fiscal policy, trade policy, regulation, immigration, industrial policy, appointments, enforcement priorities, foreign relations, crisis response, and expectations about future policy. They can also affect the composition of institutions through appointments to agencies, courts, and central banks. The point is not that presidential influence is small.</p>
+<p>The point is that influence must be distinguished from total observed outcome. Consider inflation. Suppose inflation rises sharply during an administration. That increase may reflect some combination of fiscal policy, monetary policy, supply disruptions, energy prices, labor-market conditions, housing constraints, exchange rates, geopolitical conflict, and inherited demand conditions. A president may bear some responsibility. But the proposition</p>
+<div class="math-block">$$
+\pi_t \uparrow
+$$</div>
+<p>does not imply</p>
+<div class="math-block">$$
+\text{presidential policy caused the full increase}.
+$$</div>
+<p>The same is true in the opposite direction. If inflation falls, unemployment declines, or GDP accelerates, the incumbent should not automatically receive full credit. Political evaluation often applies an implicit model of the form</p>
+<div class="math-block">$$
+Y_t
+=
+f(\text{president}),
+$$</div>
+<p>when the relevant model is closer to</p>
+<div class="math-block">$$
+Y_t
+=
+f(\text{institutions},
+\text{private behavior},
+\text{policy},
+\text{history},
+\text{shocks}).
+$$</div>
+<h3 id="policy-lags-and-causal-timing">Policy Lags and Causal Timing</h3>
+<p>Policy lags create an additional attribution problem because macroeconomic variables often respond slowly. A policy enacted today may have effects that appear years later. Infrastructure spending takes time to plan and implement. Research funding may influence productivity over decades. Regulatory changes may alter investment gradually.</p>
+<p>Education policy can affect labor productivity long after the administration responsible has left office. Conversely, an administration can inherit the consequences of previous policy mistakes. If economic outcomes evolve according to</p>
+<div class="math-block">$$
+Y_t
+=
+\sum_{k=0}^{K}
+\beta_k P_{t-k}
++
+\gamma Z_t
++
+\varepsilon_t,
+$$</div>
+<p>then current performance depends not just on current policy <span class="math-inline">\(P_t\)</span>, but on a distributed lag of earlier policy choices. This means that political credit and blame are often assigned according to calendar timing rather than causal timing. The administration in office when an effect becomes visible may not be the administration primarily responsible for generating it.</p>
+<h3 id="multiple-policy-authorities">Multiple Policy Authorities</h3>
+<p>Monetary policy further complicates the picture. In countries with independent central banks, the executive branch does not directly control the policy rate. If inflation rises and the central bank tightens monetary policy, the resulting slowdown may be partly intentional. A decline in GDP growth can therefore reflect an institutional response designed to prevent even worse inflation. Judging the president simply by the lower growth rate ignores the interaction between multiple policy authorities pursuing different mandates.</p>
+<p>In a stylized model,</p>
+<div class="math-block">$$
+g_t
+=
+g(
+f_t,
+i_t,
+z_t
+),
+$$</div>
+<p>where <span class="math-inline">\(f_t\)</span> represents fiscal policy, <span class="math-inline">\(i_t\)</span> monetary policy, and <span class="math-inline">\(z_t\)</span> other conditions. The executive branch may influence <span class="math-inline">\(f_t\)</span>, but the legislature also matters. The central bank influences <span class="math-inline">\(i_t\)</span>. Neither actor fully determines <span class="math-inline">\(z_t\)</span>.</p>
+<p class="core-claim">The economy therefore has no single manager.</p>
+<h3 id="no-headline-metric-maps-cleanly-onto-presidential-competence">No Headline Metric Maps Cleanly onto Presidential Competence</h3>
+<p>The same attribution problem applies beyond GDP. Stock-market performance is frequently attributed to presidents, despite the fact that asset prices are forward-looking and respond to interest rates, earnings expectations, global capital flows, technological developments, risk sentiment, and expectations about future policy. Employment responds to aggregate demand, demographics, sectoral shifts, labor-force participation, investment, and productivity. Real wages depend on inflation, labor-market tightness, productivity, bargaining institutions, and sectoral composition. No single headline variable maps cleanly onto presidential competence.</p>
+<h3 id="evaluate-policy-relative-to-feasible-alternatives">Evaluate Policy Relative to Feasible Alternatives</h3>
+<p>The more appropriate question is therefore not</p>
+<div class="math-block">$$
+\text{Did the economy perform well?}
+$$</div>
+<p>but rather</p>
+<div class="math-block">$$
+\text{How much did the administration's choices improve outcomes relative to feasible alternatives?}
+$$</div>
+<p>That is a fundamentally counterfactual question. Suppose a severe recession occurs, but competent policy prevents it from becoming a depression. Observed growth may still be negative:</p>
+<div class="math-block">$$
+g_{\text{observed}} &lt; 0.
+$$</div>
+<p>Yet if the relevant counterfactual is</p>
+<div class="math-block">$$
+g_{\text{counterfactual}} \ll g_{\text{observed}},
+$$</div>
+<p>then the policy response may have been highly successful. The same logic applies to crises generally. A government may perform well by limiting losses rather than generating positive headline outcomes. We might define policy performance as</p>
+<div class="math-block">$$
+\Delta Y^{policy}
+=
+Y^{observed}
+-
+Y^{counterfactual}.
+$$</div>
+<p>A negative observed outcome can coexist with a positive policy contribution. Likewise, a booming economy can coexist with poor policy if the counterfactual boom would have been even stronger or more sustainable.</p>
+<h3 id="institutional-constraints-define-the-feasible-policy-set">Institutional Constraints Define the Feasible Policy Set</h3>
+<p>Feasible alternatives also depend on institutional constraints. An administration does not choose from an unlimited policy set. Let the feasible policy space be</p>
+<div class="math-block">$$
+\mathcal{P}_t
+=
+\mathcal{P}(
+\text{Congress},
+\text{courts},
+\text{institutions},
+\text{fiscal capacity},
+\text{political support}
+).
+$$</div>
+<p>The executive chooses</p>
+<div class="math-block">$$
+P_t \in \mathcal{P}_t.
+$$</div>
+<p>A president facing a hostile legislature may have a much smaller feasible policy set than one with unified control. Courts may invalidate policies. Administrative capacity may limit implementation. International agreements may constrain available actions. Federal systems divide authority across different levels of government.</p>
+<p>So even when evaluating policy choices, one must distinguish between what the executive preferred and what the executive could actually implement. Fragmented constitutional authority creates another problem for the CEO analogy. A corporate executive generally operates within a hierarchy over which the firm has substantial internal authority. A president operates inside a constitutional system deliberately designed to fragment authority:</p>
+<ul>
+<li>Congress legislates.</li>
+<li>Courts review.</li>
+<li>Agencies implement.</li>
+<li>States exercise their own powers.</li>
+<li>Central banks may possess statutory independence.</li>
+<li>Bureaucracies have existing mandates, procedures, and constraints.</li>
+</ul>
+<p>Other political actors can veto, alter, delay, or reverse executive preferences. This is not an accidental inefficiency. It is part of the institutional design. The president is therefore not simply an executive manager standing above the economic system. The president is one strategic actor within a larger political and economic system.</p>
+<h3 id="a-better-framework-for-evaluating-presidential-economic-performance">A Better Framework for Evaluating Presidential Economic Performance</h3>
+<p>This suggests that evaluating presidential economic performance requires a different framework. Rather than asking only whether GDP rose or inflation fell, one should ask questions such as:</p>
+<ul>
+<li>What economic conditions did the administration inherit?</li>
+<li>What shocks did it face?</li>
+<li>What policy options were actually available?</li>
+<li>What policies did it choose?</li>
+<li>What mechanisms connected those policies to observed outcomes?</li>
+<li>How were the gains and losses distributed?</li>
+<li>What long-run liabilities or capabilities did those policies create?</li>
+<li>And, most importantly, what plausible alternative outcomes were available?</li>
+</ul>
+<h3 id="causal-responsibility-democratic-accountability-and-decision-quality">Causal Responsibility, Democratic Accountability, and Decision Quality</h3>
+<p>Causal attribution and democratic accountability should also be kept distinct. Saying that a president did not <em>cause</em> an entire macroeconomic outcome does not imply that the president bears no responsibility for preparation, mitigation, appointments, coordination, implementation, or crisis response. An external shock may be outside the executive's control while the quality of the response remains an appropriate object of political judgment. Conversely, favorable external conditions do not automatically establish good policy simply because the observed outcome was favorable.</p>
+<p>A further distinction is therefore useful between the <strong>realized outcome</strong>, the <strong>causal contribution of policy</strong>, and the <strong>quality of the decision given the information available at the time</strong>. Good decisions can occasionally be followed by bad outcomes because adverse shocks occur; poor decisions can occasionally be followed by good outcomes because circumstances are favorable. Evaluating governing competence requires asking not only what happened and what policy contributed, but whether the choices were reasonable relative to the information, risks, and feasible alternatives available when they were made.</p>
+<p>In formal terms, presidential evaluation should concern something closer to</p>
+<div class="math-block">$$
+\text{Performance}
+=
+W(\mathbf{x}^{P})
+-
+W(\mathbf{x}^{CF}),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{x}^{P}\)</span> is the realized state under the administration's policies and <span class="math-inline">\(\mathbf{x}^{CF}\)</span> is a plausible counterfactual state under alternative policies. Of course, <span class="math-inline">\(\mathbf{x}^{CF}\)</span> is never known with certainty. That is precisely why political claims assigning complete credit or blame for aggregate economic outcomes should be treated cautiously. The president, policy, and government all matter. But the economy is not an organization sitting beneath the president in an administrative hierarchy. It is a decentralized, dynamic system containing millions of independent actors and multiple institutions, all responding to one another and to conditions inherited from the past. Treating the president as the economy's CEO therefore creates two errors at once. It exaggerates the executive branch's control over macroeconomic outcomes, and it evaluates those outcomes using a managerial analogy that does not fit the institutional structure of government in the first place.</p>
+<p class="core-claim">A president can influence the economy. That is not the same thing as managing it.</p>
+<h2 class="ep-source-section" id="the-billionaire-to-president-fallacy">The Billionaire-to-President Fallacy</h2>
+<p class="chapter-lead">The belief that a wealthy businessperson is especially well suited to govern rests on a chain of intuitions that are rarely stated explicitly. The rough logic is familiar:</p>
+<div class="math-block">$$
+\text{wealth}
+\rightarrow
+\text{business competence}
+\rightarrow
+\text{economic competence}
+\rightarrow
+\text{economic growth}
+\rightarrow
+\text{good government}.
+$$</div>
+<p>At first glance, each step can feel plausible: wealth appears to signal success; business success appears to signal financial skill; financial skill appears relevant to the economy; economic growth appears desirable; and if the economy performs well, the government must be performing well. The problem is that each arrow represents a separate proposition. None follows automatically from the previous one.</p>
+<h3 id="wealth-is-not-the-same-thing-as-business-competence">Wealth Is Not the Same Thing as Business Competence</h3>
+<p>Begin with the first step:</p>
+<div class="math-block">$$
+\text{wealth}
+\Rightarrow
+\text{business competence}.
+$$</div>
+<p>Even this is weaker than it initially appears. Individual wealth can arise from entrepreneurship, inheritance, ownership of scarce assets, favorable market timing, financial leverage, monopoly power, political connections, luck, or some combination of these factors. Observed wealth is therefore an outcome generated by many inputs:</p>
+<div class="math-block">$$
+W_i
+=
+F(
+A_i,
+K_i,
+H_i,
+L_i,
+M_i,
+\varepsilon_i
+),
+$$</div>
+<p>where <span class="math-inline">\(A_i\)</span> might represent initial assets or inheritance, <span class="math-inline">\(K_i\)</span> access to capital, <span class="math-inline">\(H_i\)</span> human capital and skill, <span class="math-inline">\(L_i\)</span> institutional or network advantages, <span class="math-inline">\(M_i\)</span> market conditions, and <span class="math-inline">\(\varepsilon_i\)</span> luck or unobserved factors. Business skill may contribute substantially to wealth, but wealth does not identify business skill by itself. The causal inference problem appears here just as it does in evaluating presidents. Observing an outcome does not tell us the relative contribution of every factor that produced it. Suppose, however, that we set this issue aside and consider someone whose record provides strong evidence of genuine business competence.</p>
+<h3 id="business-competence-is-not-macroeconomic-competence">Business Competence Is Not Macroeconomic Competence</h3>
+<p>The next implication is still problematic:</p>
+<div class="math-block">$$
+\text{business competence}
+\Rightarrow
+\text{macroeconomic competence}.
+$$</div>
+<p>These are different forms of expertise. A business executive primarily operates within a microeconomic environment. The relevant problems include pricing, investment, financing, organizational structure, competition, hiring, supply chains, marketing, and the allocation of resources within a firm. Macroeconomic policy concerns a different class of problems: inflation, unemployment, aggregate demand, monetary institutions, fiscal policy, exchange rates, financial stability, sovereign debt, productivity growth, international balances, and economy-wide externalities. Knowledge in one domain may be useful in the other. It does not automatically transfer.</p>
+<h3 id="why-firm-level-intuition-does-not-automatically-scale">Why Firm-Level Intuition Does Not Automatically Scale</h3>
+<p>The distinction can be made more precise by comparing objective functions. A firm may choose employment <span class="math-inline">\(L\)</span>, capital <span class="math-inline">\(K\)</span>, output <span class="math-inline">\(q\)</span>, and other decisions to maximize profit:</p>
+<div class="math-block">$$
+\max_{q,L,K}
+\pi
+=
+p(q)q
+-
+wL
+-
+rK
+-
+C(q,L,K).
+$$</div>
+<p>From the firm's perspective, wages are a cost:</p>
+<div class="math-block">$$
+\frac{\partial \pi}{\partial w}&lt;0
+$$</div>
+<p>under ordinary conditions. Reducing labor costs can therefore increase profitability. At the level of the aggregate economy, however, wages are not merely costs; they are also household income. If total labor income is</p>
+<div class="math-block">$$
+Y_L
+=
+\sum_{i=1}^{N} w_i L_i,
+$$</div>
+<p>then reducing wages economy-wide reduces an important source of aggregate purchasing power. A strategy that is rational for one firm cannot simply be generalized to the entire system. This is a classic fallacy of composition. For an individual firm,</p>
+<div class="math-block">$$
+\text{lower payroll}
+\rightarrow
+\text{higher profit},
+$$</div>
+<p>all else equal. But it does not follow that</p>
+<div class="math-block">$$
+\text{lower aggregate payroll}
+\rightarrow
+\text{higher aggregate welfare}.
+$$</div>
+<p>The firm's cost is someone else's income. The same issue appears in employment. A firm facing weak demand may rationally reduce its workforce. If one firm does so, the resulting decline in its wage bill may improve its financial position. If every firm simultaneously attempts to reduce employment, aggregate income falls, demand weakens, and the original problem can intensify.</p>
+<p>Formally, firm <span class="math-inline">\(i\)</span> may treat demand <span class="math-inline">\(D_i\)</span> as largely exogenous when choosing employment:</p>
+<div class="math-block">$$
+L_i^*
+=
+L_i(D_i,w_i,\ldots).
+$$</div>
+<p>But in the aggregate,</p>
+<div class="math-block">$$
+D
+=
+D(Y),
+$$</div>
+<p>and aggregate income <span class="math-inline">\(Y\)</span> itself depends partly on employment. The individual decision changes the environment in which all other firms operate. This feedback is precisely what microeconomic intuition can miss when applied mechanically to macroeconomic systems. Savings provide another classic example. For an individual household,</p>
+<div class="math-block">$$
+S_i
+=
+Y_i-C_i
+$$</div>
+<p>is a sensible means of strengthening its balance sheet. If one household cuts consumption, it can accumulate more financial assets. But if every household simultaneously attempts to increase saving by sharply reducing consumption, aggregate demand may fall. Since one person's expenditure is another person's income,</p>
+<div class="math-block">$$
+C \downarrow
+\Rightarrow
+Y \downarrow
+$$</div>
+<p>under conditions of deficient demand. Aggregate saving may therefore fail to increase by the amount each individual household intended. The rationality of the individual action does not imply the desirability of its universal adoption. The same problem applies to trade. A business may regard imports as a cost.</p>
+<p>A household may regard spending as money leaving its account. This can encourage the intuition that a nation should similarly minimize money "leaving" through imports. But a national economy is not a firm with a single cash account. Imports are goods and services received by domestic agents, and international transactions are embedded in a system of exports, capital flows, exchange rates, and asset ownership. Once again,</p>
+<div class="math-block">$$
+\text{firm accounting}
+\neq
+\text{national accounting}.
+$$</div>
+<p>These examples point to a broader principle: microeconomics studies the behavior of agents within a system, while macroeconomics must also account for how those behaviors interact and aggregate. The aggregate system has properties that no individual firm possesses. A corporation can reduce its workforce while taking household demand as external. The economy cannot.</p>
+<p>A corporation can sell assets to outsiders. The national economy cannot treat all domestic assets as though there were some external purchaser independent of the system. A corporation can accumulate financial claims without asking where the corresponding liabilities reside. At the aggregate level, financial assets and liabilities must be accounted for across sectors. A firm can fail and disappear.</p>
+<p>A state cannot ordinarily liquidate itself and distribute the proceeds to shareholders. This is why describing the national economy as a very large business is not merely an imperfect analogy. It can generate systematically incorrect intuitions.</p>
+<h3 id="macroeconomic-competence-is-not-governing-competence">Macroeconomic Competence Is Not Governing Competence</h3>
+<p>Now suppose, again generously, that the businessperson in question actually possesses substantial macroeconomic expertise. The next implication still does not follow:</p>
+<div class="math-block">$$
+\text{macroeconomic competence}
+\Rightarrow
+\text{governing competence}.
+$$</div>
+<p>Government is not merely macroeconomic policy. A president or prime minister must make decisions involving foreign policy, national security, administrative appointments, constitutional constraints, diplomacy, emergency response, regulation, legislation, public communication, coalition management, and the operation of a large bureaucracy. These require different forms of knowledge and judgment. An exceptional economist may be poor at diplomacy. An exceptional investor may be poor at institutional management.</p>
+<p>An exceptional corporate executive may be poor at operating within a constitutional structure where authority is deliberately fragmented.</p>
+<p>Expertise is domain-specific. We might represent a political leader's competence as a vector:</p>
+<div class="math-block">$$
+\mathbf{c}
+=
+(
+c_E,
+c_F,
+c_A,
+c_D,
+c_L,
+c_S,
+\ldots
+),
+$$</div>
+<p>where <span class="math-inline">\(c_E\)</span> represents economic competence, <span class="math-inline">\(c_F\)</span> foreign-policy competence, <span class="math-inline">\(c_A\)</span> administrative competence, <span class="math-inline">\(c_D\)</span> diplomatic competence, <span class="math-inline">\(c_L\)</span> legal and institutional competence, and <span class="math-inline">\(c_S\)</span> security-related competence. Overall governing performance is some function</p>
+<div class="math-block">$$
+G
+=
+G(\mathbf{c},\mathbf{x},\boldsymbol{\varepsilon}),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{x}\)</span> denotes institutional conditions and <span class="math-inline">\(\boldsymbol{\varepsilon}\)</span> unexpected shocks. High competence in one coordinate does not establish high competence across the entire vector.</p>
+<h3 id="corporate-authority-and-democratic-authority-reward-different-skills">Corporate Authority and Democratic Authority Reward Different Skills</h3>
+<p>There is an additional complication: some skills that are rewarded in business may interact poorly with the constraints of democratic governance. Corporate authority is often hierarchical. A chief executive can reorganize internal departments, fire subordinates, change strategy, terminate product lines, and reallocate capital with relatively concentrated authority. Democratic political systems are intentionally different. Authority is dispersed across legislatures, courts, agencies, subnational governments, civil servants, independent institutions, political parties, and voters.</p>
+<p>A president who treats those constraints as managerial inefficiencies may misunderstand their purpose. What appears from a corporate perspective as an obstacle to decisive management may, from a constitutional perspective, be a safeguard against arbitrary power. The issue is therefore not that business experience has no value in politics. It may provide useful knowledge about organizations, negotiation, investment, incentives, markets, or personnel management. The mistake is treating that experience as a general certificate of governing competence.</p>
+<h3 id="competence-does-not-determine-the-realized-growth-rate">Competence Does Not Determine the Realized Growth Rate</h3>
+<p>The next step in the chain is also weak:</p>
+<div class="math-block">$$
+\text{economic competence}
+\Rightarrow
+\text{high GDP growth}.
+$$</div>
+<p>Even a highly competent policymaker cannot determine economic growth at will. As discussed previously, growth depends on technology, demographics, inherited capital, monetary policy, global conditions, private-sector behavior, legislative constraints, and unexpected shocks. A competent administration may govern during a period of weak growth because it confronts unfavorable circumstances. An incompetent administration may govern during a boom generated largely by forces outside its control. Competence must therefore be evaluated relative to feasible alternatives, not simply observed outcomes.</p>
+<h3 id="growth-is-not-the-same-thing-as-successful-government">Growth Is Not the Same Thing as Successful Government</h3>
+<p>And even if we somehow established that a particular leader caused higher GDP growth, one final leap would remain:</p>
+<div class="math-block">$$
+\text{higher GDP growth}
+\Rightarrow
+\text{successful government}.
+$$</div>
+<p>That implication returns us to the original problem. Government has multiple objectives. Growth may improve fiscal capacity, employment, consumption, and political stability. But it does not directly measure rights, security, institutional integrity, environmental sustainability, distribution, public health, social trust, or resilience. A government can perform well along some dimensions and poorly along others.</p>
+<p>There is no conceptual reason to collapse them all into GDP.</p>
+<h3 id="the-full-chain-of-category-errors">The Full Chain of Category Errors</h3>
+<p>The complete argument therefore contains several separate inferential steps:</p>
+<div class="math-block">$$
+\text{wealth}
+\overset{1}{\rightarrow}
+\text{business competence}
+\overset{2}{\rightarrow}
+\text{macroeconomic competence}
+\overset{3}{\rightarrow}
+\text{ability to generate growth}
+\overset{4}{\rightarrow}
+\text{economic welfare}
+\overset{5}{\rightarrow}
+\text{governmental success}.
+$$</div>
+<p>For the conclusion to follow, every relevant arrow must be defensible. Instead, each transition either requires substantial qualification or fails as a general proposition. This is what makes the reasoning particularly misleading. It does not contain one obvious error. It contains a sequence of category mistakes that reinforce one another.</p>
+<p>The intuition persists partly because the alternative requires distinguishing concepts that ordinary political discourse tends to collapse. The distinctions can be stated directly:</p>
+<ul>
+<li>Money is not the same thing as business.</li>
+<li>Business is not the same thing as the economy.</li>
+<li>The economy is not the same thing as government.</li>
+<li>Economic growth is not the same thing as economic welfare.</li>
+<li>And economic welfare is not the full objective of the state.</li>
+</ul>
+<p>Once those distinctions are made explicit, the idea that personal wealth is itself compelling evidence of presidential competence loses most of its conceptual force. The relevant question is not whether someone has been successful at making money. It is whether that person possesses the particular combination of judgment, knowledge, institutional competence, and political skill required to govern.</p>
+<p>Those are different things.</p>
+<h2 class="ep-source-section" id="why-the-misconception-persists">Why the Misconception Persists</h2>
+<p class="chapter-lead">If these distinctions are conceptually straightforward, why do the conflations persist so strongly?</p>
+<h3 id="cognitive-simplicity">Cognitive Simplicity</h3>
+<p>Part of the answer is that the simplified model is cognitively attractive. A modern economy is an extraordinarily complex system. It contains millions of households and firms, layers of government, financial institutions, regulators, central banks, foreign actors, supply chains, legal constraints, and constantly changing technologies. Outcomes emerge from interactions among all of them. That is difficult to reason about. The corporate analogy offers a much simpler picture. The analogy compresses the system into a set of familiar substitutions:</p>
+<div class="table-wrap"><table class="two-col">
+<thead>
+<tr>
+<th>Complex political-economic object</th>
+<th>Simplified corporate analogue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Complex political-economic object">The country</td>
+<td data-label="Simplified corporate analogue">A firm</td>
+</tr>
+<tr>
+<td data-label="Complex political-economic object">The president</td>
+<td data-label="Simplified corporate analogue">Its chief executive</td>
+</tr>
+<tr>
+<td data-label="Complex political-economic object">GDP</td>
+<td data-label="Simplified corporate analogue">Revenue</td>
+</tr>
+<tr>
+<td data-label="Complex political-economic object">Growth</td>
+<td data-label="Simplified corporate analogue">Quarterly performance</td>
+</tr>
+<tr>
+<td data-label="Complex political-economic object">Government debt</td>
+<td data-label="Simplified corporate analogue">A credit-card balance</td>
+</tr>
+<tr>
+<td data-label="Complex political-economic object">Voters</td>
+<td data-label="Simplified corporate analogue">Shareholders deciding whether management deserves another term</td>
+</tr>
+</tbody>
+</table></div>
+<p>This model is easy to understand because it maps an unfamiliar system onto a familiar organizational structure. The problem is that simplicity is purchased by removing precisely the features that make macroeconomics and government distinct. A firm has relatively clear ownership. A country does not. A firm has a comparatively narrow objective. A state has many. A CEO typically operates within a hierarchy. A president operates within institutions designed to fragment authority.</p>
+<p>A business can abandon unprofitable activities. A government often exists precisely to perform socially necessary activities that are not profitable. And a corporation is one agent inside the economy, whereas the national economy is the system within which firms, households, and governments interact. The analogy therefore works rhetorically much better than it works analytically.</p>
+<h3 id="measurability-proxy-targets-and-goodhart-type-effects">Measurability, Proxy Targets, and Goodhart-Type Effects</h3>
+<p>A second source of the misconception is the asymmetry between what is important and what is easy to measure. GDP possesses several features that make it unusually attractive as a public statistic. It is standardized, regularly reported, internationally comparable, historically available, and expressible as a single number. This creates a powerful temptation to move from</p>
+<div class="math-block">$$
+\text{GDP is measurable}
+$$</div>
+<p>to</p>
+<div class="math-block">$$
+\text{GDP is important}
+$$</div>
+<p>and then, almost imperceptibly, to</p>
+<div class="math-block">$$
+\text{GDP is what should be maximized}.
+$$</div>
+<p>The first implication is reasonable. The second does not follow. This is an instance of a more general problem in institutional decision-making: variables that are easy to quantify tend to acquire more importance than variables that are difficult to quantify. Suppose the true objective is</p>
+<div class="math-block">$$
+W
+=
+W(x_1,x_2,\ldots,x_n),
+$$</div>
+<p>but only a subset of these variables is easily observable. Let</p>
+<div class="math-block">$$
+\mathbf{x}
+=
+(\mathbf{x}^{obs},\mathbf{x}^{latent}),
+$$</div>
+<p>where <span class="math-inline">\(\mathbf{x}^{obs}\)</span> represents measurable outcomes and <span class="math-inline">\(\mathbf{x}^{latent}\)</span> represents outcomes that are difficult to observe or quantify. Decision-makers may gradually behave as though</p>
+<div class="math-block">$$
+W
+\approx
+W(\mathbf{x}^{obs}),
+$$</div>
+<p>not because the latent variables are unimportant, but because they are difficult to measure. Over time, the proxy can become confused with the objective. This resembles the general logic behind Goodhart's law: once a measure becomes a target, its usefulness as a measure can deteriorate. If GDP growth becomes the dominant political target, policymakers acquire incentives to favor activities that increase measured production even when the relationship between those activities and broader welfare is ambiguous. The issue is not necessarily manipulation.</p>
+<p>It can arise simply because institutions optimize what they are evaluated on. If political success is strongly associated with</p>
+<div class="math-block">$$
+g_Y,
+$$</div>
+<p>then policymakers face an incentive to increase <span class="math-inline">\(g_Y\)</span>, even when a broader social objective would be</p>
+<div class="math-block">$$
+\max W(Y,D,E,R,L,\ldots).
+$$</div>
+<p>The political metric is lower-dimensional than the actual problem. This is particularly tempting because multidimensional evaluation is uncomfortable. Suppose one administration produces stronger GDP growth but worse environmental outcomes. Another produces weaker growth but greater economic security. A third generates strong employment growth but poor productivity.</p>
+<p>Which performed better? There is no purely technical answer. The judgment depends on how the competing outcomes are weighted. Formally, if</p>
+<div class="math-block">$$
+W
+=
+\sum_{i=1}^{n}\omega_i x_i,
+$$</div>
+<p>then ranking governments requires choosing the weights</p>
+<div class="math-block">$$
+\omega_1,\omega_2,\ldots,\omega_n.
+$$</div>
+<p>Those weights are normative and political. A single statistic avoids this difficulty by appearing to provide an objective ranking. If</p>
+<div class="math-block">$$
+g_A &gt; g_B,
+$$</div>
+<p>then one can simply declare administration <span class="math-inline">\(A\)</span> more economically successful. The apparent precision is attractive. But it is achieved by suppressing the question of what economic success actually means.</p>
+<h3 id="wealth-as-a-political-heuristic">Wealth as a Political Heuristic</h3>
+<p>There is a related reason that business success functions as a political heuristic. Most voters cannot be expected to possess detailed knowledge of macroeconomic theory, public finance, institutional design, administrative law, monetary policy, or causal inference. This is not unusual. Modern societies depend on specialization, and citizens routinely make judgments about domains in which they are not experts. In such settings, people use signals. Personal wealth is a particularly visible signal.</p>
+<p>It is concrete and easy to rank; because wealth is denominated in money, it also appears naturally connected to economic competence. The implicit heuristic becomes</p>
+<div class="math-block">$$
+\text{has accumulated a great deal of money}
+\Rightarrow
+\text{understands money}
+\Rightarrow
+\text{understands the economy}.
+$$</div>
+<p>But the word "money" is doing too much work. Managing private wealth, operating a firm, understanding financial markets, understanding macroeconomic systems, and governing public institutions are different tasks. They overlap in places, but they are not nested versions of the same skill.</p>
+<h3 id="political-communication-rewards-causal-compression">Political Communication Rewards Causal Compression</h3>
+<p>Political narratives create a further asymmetry because complex causal explanations are difficult to communicate. Suppose GDP growth is weak because of some combination of an inherited monetary tightening cycle, deteriorating foreign demand, energy prices, demographic changes, and private investment weakness. That explanation may be accurate. It is also politically cumbersome.</p>
+<p>"Growth was weak because the president failed" is much simpler. Likewise, if growth is strong because of technological investment that began a decade earlier, favorable monetary conditions, and an unexpected global boom, attributing the entire outcome to the incumbent provides a cleaner narrative. Political communication rewards causal compression. Many causes become one cause. The president becomes a convenient focal point because the office is visible, identifiable, and electorally accountable.</p>
+<p>This creates a tension. Democratic accountability requires citizens to evaluate elected officials. But aggregate outcomes are produced by systems whose causal structure does not map neatly onto election cycles. We therefore need heuristics. The problem arises when the heuristic becomes mistaken for a model of how the system actually works.</p>
+<p>GDP growth is useful evidence. So are inflation, employment, wages, productivity, investment, public health, fiscal capacity, infrastructure quality, inequality, institutional stability, and many other measures. None is sufficient on its own. The more reasonable approach is therefore not to reject simple indicators, but to resist assigning them more interpretive weight than they can bear. A statistic can be useful without being an objective.</p>
+<p>A business career can be relevant without being dispositive. A president can influence the economy without managing it. And an economy can improve without maximizing the growth rate of its measured output. The persistence of the misconception is therefore understandable. It offers a simple story for a complicated system.</p>
+<p>But the simplicity of a story is not evidence that the underlying model is correct.</p>
+<h2 class="ep-source-section" id="conclusion-putting-gdp-back-in-its-proper-place">Conclusion: Putting GDP Back in Its Proper Place</h2>
+<p class="chapter-lead">The argument can now be compressed into a single sequence: <strong>measure production correctly; distinguish means from ends; distinguish firms from governments; distinguish influence from control; and distinguish domain-specific success from general governing competence.</strong> Each step corrects a different category error, and none requires denying that GDP, growth, economic policy, presidential leadership, or business experience can matter.</p>
+<div class="table-wrap"><table class="two-col worksheet-table">
+<thead>
+<tr>
+<th>Question</th>
+<th>Appropriate standard</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Question">Did measured production increase?</td>
+<td data-label="Appropriate standard">GDP and related national-accounting measures</td>
+</tr>
+<tr>
+<td data-label="Question">Did the economic system improve?</td>
+<td data-label="Appropriate standard">A multidimensional assessment of welfare, distribution, quality, resilience, stocks, and sustainability</td>
+</tr>
+<tr>
+<td data-label="Question">Did government perform well?</td>
+<td data-label="Appropriate standard">Performance across the multiple objectives and constraints of the state</td>
+</tr>
+<tr>
+<td data-label="Question">Did the president improve outcomes?</td>
+<td data-label="Appropriate standard">Policy contribution relative to plausible counterfactuals and feasible alternatives</td>
+</tr>
+<tr>
+<td data-label="Question">Is a particular person well suited to govern?</td>
+<td data-label="Appropriate standard">The relevant vector of economic, institutional, administrative, diplomatic, legal, and political competence</td>
+</tr>
+</tbody>
+</table></div>
+<p>GDP is not useless, misleading, or obsolete. It is one of the most important accounting measures available to economists. It tells us something meaningful about the scale and movement of economic production. It helps identify recessions, estimate productive capacity, compare economies, analyze fiscal sustainability, and understand changes in aggregate activity. The problem begins when a measure of production is transformed into a measure of success. GDP answers a relatively specific question:</p>
+<div class="math-block">$$
+\text{How much final production occurred in this economy during this period?}
+$$</div>
+<p>It does not answer the much broader question:</p>
+<div class="math-block">$$
+\text{How well is this economic system serving the people within it?}
+$$</div>
+<p>The latter requires information about distribution, quality, resilience, environmental constraints, leisure, security, institutional capacity, and the composition of output. More generally, the relevant object is not simply</p>
+<div class="math-block">$$
+Y_t,
+$$</div>
+<p>or even its growth rate</p>
+<div class="math-block">$$
+g_t
+=
+\frac{Y_t-Y_{t-1}}{Y_{t-1}}.
+$$</div>
+<p>It is the broader state of the system,</p>
+<div class="math-block">$$
+\mathbf{x}_t
+=
+(
+Y_t,
+D_t,
+Q_t,
+R_t,
+E_t,
+L_t,
+S_t,
+\ldots
+),
+$$</div>
+<p>and the extent to which that state satisfies whatever social objectives we consider important. Growth may contribute greatly to those objectives.</p>
+<p>But contribution is not equivalence.</p>
+<p>The appropriate relationship is</p>
+<div class="math-block">$$
+g_Y
+\rightarrow
+\text{greater productive capacity}
+\rightarrow
+\text{greater possibilities for welfare},
+$$</div>
+<p>not</p>
+<div class="math-block">$$
+g_Y
+\equiv
+W.
+$$</div>
+<p>A society can use additional productive capacity well or poorly. Growth can be broadly distributed or highly concentrated. It can expand capabilities or compensate for damage. It can strengthen future productive capacity or undermine the ecological and institutional stocks on which that capacity depends. The number alone cannot tell us which has occurred.</p>
+<p>The same conceptual discipline should apply to government. The state does not exist to maximize GDP. Its objective is inherently multidimensional. It must maintain institutions, provide security, enforce laws, protect rights, supply public goods, respond to collective problems, manage risks, and balance competing interests. A schematic governmental objective is therefore much closer to</p>
+<div class="math-block">$$
+\max_{\mathbf{p}}
+G(
+\text{security},
+\text{rights},
+\text{welfare},
+\text{stability},
+\text{resilience},
+\text{legitimacy},
+\ldots
+)
+$$</div>
+<p>than to</p>
+<div class="math-block">$$
+\max_{\mathbf{p}} g_Y.
+$$</div>
+<p>Economic performance belongs inside this objective. It is not the objective itself. Nor should aggregate economic outcomes be treated as direct measures of presidential competence. A president influences economic policy but does not sit above the economy as a chief executive sits above a corporation. Observed outcomes emerge from legislation, central banks, private decisions, international conditions, inherited institutions, technological developments, demographic changes, and unpredictable shocks.</p>
+<p>The relevant evaluation is therefore counterfactual:</p>
+<div class="math-block">$$
+\text{Policy contribution}
+=
+W(\mathbf{x}^{observed})
+-
+W(\mathbf{x}^{counterfactual}).
+$$</div>
+<p>What matters is not simply what happened while someone held office, but how policy changed the range of outcomes that otherwise might have occurred. This distinction also exposes the weakness in treating private wealth or business success as a general credential for political leadership. The chain</p>
+<div class="math-block">$$
+\text{wealth}
+\rightarrow
+\text{business competence}
+\rightarrow
+\text{macroeconomic competence}
+\rightarrow
+\text{growth}
+\rightarrow
+\text{welfare}
+\rightarrow
+\text{good government}
+$$</div>
+<p>contains multiple independent claims. None should be treated as automatic. A successful firm is not a successful economy in miniature. A national economy is not a corporation. And a government is not the management team of that corporation.</p>
+<p>These distinctions may seem obvious when written explicitly. Yet much of ordinary political argument proceeds as though they did not exist. That is perhaps the broader lesson. Measures become dangerous when we forget what they measure. Analogies become dangerous when we forget where they stop applying.</p>
+<p>And institutions become difficult to evaluate when a complex objective is compressed into a convenient scalar. GDP should therefore be treated neither as an enemy nor as an oracle. It is a useful instrument for observing one important dimension of economic activity. Growth should be treated similarly. There are times when additional productive capacity is enormously valuable, especially where important needs remain unmet. There are also circumstances in which improved quality, durability, efficiency, distribution, resilience, or leisure may matter more than maximizing the rate at which measured output expands.</p>
+<p>From a systems perspective, this should not be surprising. The success of a system is not determined by how rapidly its throughput increases. It is determined by whether the system reliably produces the outcomes for which it exists while preserving the conditions necessary to continue doing so. That is the more appropriate standard for evaluating an economy. And it is a far better starting point for evaluating government than asking whether the line called GDP happened to go up.</p>
+</article>
+</body>
+</html>
