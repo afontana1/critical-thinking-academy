@@ -1,6 +1,5 @@
-<title>Large Language Models and AGI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Large Language Models and AGI</title><style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
         color: inherit;
@@ -608,155 +607,343 @@
         },
       };
     </script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post">
-<p>
-  &nbsp;I was originally intending on writing a multi-post analysis on the topic
-  of LLMs and AGI specifically to show the fundamental problems of conflating
-  the two or thinking it's likely the former will lead to the latter. However,
-  it dawned on me that it would probably be more useful to simply list out and
-  describe the resources that have been leading me to this conclusion rather
-  than regurgitate the arguments in a watered down form. Therefore, this post
-  will contain many references to what I see as expositions that point out some
-  of the fundamental constraints of LLMs and AGI more broadly.
-</p>
-<!-- wp:paragraph -->
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><article class="ep-post"><h1 id="top">Large Language Models and AGI</h1><p class="chapter-lead">I originally intended to write a multi-post analysis of large language models (LLMs) and artificial general intelligence (AGI), especially the problems with conflating the two or assuming that progress in the former makes the latter likely. I eventually decided that it would be more useful to organize the resources that led me to this conclusion and explain how they fit together, rather than reproduce each argument in a watered-down form.</p><div class="core-claim"><strong>Core thesis.</strong> The impressive capabilities of current LLMs do not, by themselves, resolve the deeper problems of reasoning, semantic understanding, agency, embodiment, relevance, memory, and cognitive architecture that arise when we move from language modeling to claims about general intelligence. This is not an argument that LLMs are useless, nor does every source below establish that AGI is impossible. The narrower claim is that “better language modeling” and “general intelligence” should not be treated as interchangeable propositions.</div><h2 id="contents">Table of Contents</h2><nav aria-label="Table of contents" class="ep-toc"><div class="ep-toc-part"><p>Overview</p><ul><li><a href="#argument-map">Argument Map</a></li><li><a href="#terms">Terms and Scope</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-1">Part I — Framing the Claim</a></p></div><div class="ep-toc-part"><p><a href="#part-2">Part II — Statistical Learning, Reasoning, and Relevance</a></p><ul><li><a href="#source-15">Deep Learning: A Critical Appraisal</a></li><li><a href="#source-7">Neural Networks are not Reasoning Systems</a></li><li><a href="#source-13">The Frame Problem</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-3">Part III — Syntax, Semantics, and Understanding</a></p><ul><li><a href="#source-9">The Chinese Room Argument</a></li><li><a href="#source-10">The Symbol Grounding Problem</a></li><li><a href="#source-1">Dancing with Pixies</a></li><li><a href="#source-8">AI, computation, and understanding</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-4">Part IV — Intelligence as Embodied, Evolved, and Situated</a></p><ul><li><a href="#source-14">Core Knowledge and Innateness</a></li><li><a href="#source-4">Cephalopod Intelligence</a></li><li><a href="#source-3">The Microbiome and Cognitive Development</a></li><li><a href="#source-12">Affordances and Organismic Agency</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-5">Part V — Agency and Cognitive Architecture</a></p><ul><li><a href="#source-5">Free Agents</a></li><li><a href="#source-6">The Evolution of Agency</a></li><li><a href="#source-2">What We Should Be Building Instead</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-6">Part VI — Limits, Risk, and What Would Change My Mind</a></p><ul><li><a href="#source-11">Why Machines Will Never Rule the World</a></li></ul></div><div class="ep-toc-part"><p><a href="#conclusion">Conclusion</a></p></div></nav><h2 id="argument-map">Argument Map</h2><p>The sources below are easier to follow if they are treated as evidence for several distinct questions rather than as one undifferentiated list.</p><div class="table-wrap"><table class="three-col comparison-table"><thead><tr><th>Question</th><th>Why it matters</th><th>Sources / concepts</th></tr></thead><tbody><tr><td data-label="Question">Can statistical learning supply general reasoning?</td><td data-label="Why it matters">General intelligence appears to require abstraction, analogy, causal and defeasible reasoning, relevance selection, and adaptation outside familiar contexts.</td><td data-label="Sources / concepts">Marcus; reasoning systems; Forbus; frame problem</td></tr><tr><td data-label="Question">Can competent syntax amount to semantic understanding?</td><td data-label="Why it matters">Behaviorally successful symbol manipulation does not automatically settle whether the system has intrinsic meaning or understanding.</td><td data-label="Sources / concepts">Searle; Harnad; Bishop</td></tr><tr><td data-label="Question">Is intelligence independent of embodiment and developmental history?</td><td data-label="Why it matters">Human and animal cognition emerges through evolved priors, bodies, environments, and developmental constraints.</td><td data-label="Sources / concepts">Spelke; Berent; cephalopods; microbiome; affordances</td></tr><tr><td data-label="Question">What kind of agency matters for AGI?</td><td data-label="Why it matters">Operational software “agency” should be distinguished from the richer biological and psychological agency discussed in evolutionary accounts.</td><td data-label="Sources / concepts">Mitchell; Tomasello</td></tr><tr><td data-label="Question">What might a richer architecture require?</td><td data-label="Why it matters">If scaling statistical language models is insufficient, cognitive architectures, memory systems, knowledge representation, and hybrid approaches become central.</td><td data-label="Sources / concepts">Dietterich; Forbus; cognitive architectures</td></tr></tbody></table></div><h2 id="terms">Terms and Scope</h2><div class="table-wrap"><table class="two-col glossary-table"><thead><tr><th>Term</th><th>How I am using it here</th></tr></thead><tbody><tr><td data-label="Term"><a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence">AGI</a></td><td data-label="How I am using it here">An operational idea of an intelligent agent capable of human-like or better performance across intellectual tasks. This does not, by definition, establish consciousness.</td></tr><tr><td data-label="Term"><a href="https://en.wikipedia.org/wiki/Intelligent_agent">Agent</a></td><td data-label="How I am using it here">An actor that can act in an environment. Different disciplines use the term differently; that ambiguity matters when software systems are described as autonomous agents.</td></tr><tr><td data-label="Term">Strong AI</td><td data-label="How I am using it here">The stronger philosophical claim that an artificial system could literally possess a mind or consciousness, rather than merely reproduce intelligent behavior.</td></tr><tr><td data-label="Term"><a href="https://en.wikipedia.org/wiki/Category:Intelligence">Intelligence</a></td><td data-label="How I am using it here">A contested concept. AGI research often operationalizes it through task performance, while cognitive science, psychology, and animal-intelligence research use broader conceptions.</td></tr><tr><td data-label="Term">LLM</td><td data-label="How I am using it here">A statistical language model trained to predict tokens from data. This essay asks what follows—and what does not follow—from the remarkable competence produced by that objective.</td></tr></tbody></table></div><header class="ep-part-banner" id="part-1"><span class="ep-part-kicker">Part 1</span><h2 class="ep-part-title">Framing the Claim</h2><span class="ep-part-summary">Separate operational AGI, agency, intelligence, consciousness, and LLM capability before evaluating the critiques.</span></header><p class="chapter-lead">Before evaluating the sources, it helps to separate several questions that are often collapsed into one another. <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence">Artificial General Intelligence</a> is usually framed operationally: can an <a href="https://en.wikipedia.org/wiki/Intelligent_agent">intelligent agent</a> perform across the range of intellectual tasks associated with humans? That framing is already different from asking whether a system has a mind, consciousness, or intrinsic semantic understanding.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> definitions → varieties of agency → Strong AI versus operational competence → risk → technical background</p></div><p>An agent, in the broadest sense, is an abstract actor capable of acting in an environment. In classical computer-science discussions, the computational substrate is usually assumed to be expressible in the <a href="https://plato.stanford.edu/entries/turing-machine/">Turing-machine</a> model.  The concepts of <a href="https://en.wikipedia.org/wiki/Agency_(philosophy)">agency</a> and <a href="https://en.wikipedia.org/wiki/Intentionality">intentionality</a> are deep philosophical topics, and I will not try to resolve them here. In a technical sense, agency can refer to the capacity to set goals, form criteria for evaluating those goals, construct a model of an environment, and adapt that model in response to feedback.</p><p>That definition is not comprehensive because different disciplines operationalize agents differently. In economics, <a href="https://en.wikipedia.org/wiki/Agent_(economics)">agents</a> may be idealized buyers and sellers optimizing an objective function. In <a href="https://en.wikipedia.org/wiki/Agent-based_model">agent-based models</a>, agents can be autonomous objects following predefined update rules. Computer science adds <a href="https://en.wikipedia.org/wiki/Software_agent">software agents</a> and <a href="https://en.wikipedia.org/wiki/Multi-agent_system">multi-agent systems</a>. Calling all of these things “agents” does not mean that they possess agency in the richer psychological or philosophical sense.</p><p>Within AGI discussions, an agent is often treated as generally intelligent if it can act autonomously and match or surpass humans across human tasks. That is an operational criterion. It says very little by itself about whether such a system would be conscious or possess a “mind” in the Strong AI sense. From an engineering perspective, those philosophical questions may be outside the immediate design objective, even though they become difficult to ignore once systems exhibit unexpectedly sophisticated behavior.</p><p>One aim of this essay is therefore to resist a slide from “LLMs produce increasingly competent behavior” to “LLMs are thereby approaching Strong AI.” I do not think a statistical model of language, simply by becoming larger, gives us a theory of consciousness. More importantly for the narrower AGI question, the sources below identify unresolved problems in reasoning, semantic grounding, memory, relevance, agency, embodiment, and cognitive architecture.</p><div class="learning-insight-block"><h3>A note on risk</h3><p>I am also skeptical of framing <a href="https://en.wikipedia.org/wiki/Existential_risk_from_artificial_general_intelligence">existential risk from AGI</a> primarily through anthropomorphic stories about a machine acquiring human-like motives. That skepticism should not be confused with saying that advanced AI systems are harmless. The more immediate risk, in my view, comes from inserting probabilistic subsystems into increasingly interconnected and complex higher-level systems, where errors can propagate into <a href="https://en.wikipedia.org/wiki/Cascading_failure">cascading failures</a>.</p><p>Once these systems are embedded in environments characterized by <a href="https://en.wikipedia.org/wiki/Knightian_uncertainty">Knightian uncertainty</a>, the problem becomes a form of <a href="http://www.ub.edu/grc_logos/project_card.php?idProj=92">epistemic risk</a> whose full probability distribution may not be calculable in advance. In that sense, the danger can remain an all-too-human systems-engineering problem even if the underlying model has no consciousness or human-like intentionality.</p><p>Finally, AGI presupposes a particular operational definition of <a href="https://en.wikipedia.org/wiki/Category:Intelligence">intelligence</a> that does not necessarily align with cognitive science, psychology, or <a href="https://en.wikipedia.org/wiki/Category:Animal_intelligence">animal intelligence</a>. A recurring theme below is whether intelligence can be abstracted away from the evolutionary and <a href="https://en.wikipedia.org/wiki/Embodied_cognition">embodied</a> history through which biological cognition develops.</p></div><div class="concept-callout"><strong>Technical background.</strong> Before reading the critiques, it is useful to understand what pretrained generative transformers are doing under the hood. Stephen Wolfram’s <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/">“What Is ChatGPT Doing … and Why Does It Work?”</a> gives an accessible account of next-token prediction, embeddings, <a href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets">training/validation/test data</a>, and neural networks. Familiarity with different <a href="https://en.wikipedia.org/wiki/Category:Theory_of_mind">theories of mind</a>, <a href="https://en.wikipedia.org/wiki/Category:Philosophy_of_mind">philosophy of mind</a>, and related <a href="https://en.wikipedia.org/wiki/Category:Concepts_in_the_philosophy_of_mind">concepts in philosophy of mind</a> will also help because those questions recur throughout the critiques.</div><header class="ep-part-banner" id="part-2"><span class="ep-part-kicker">Part 2</span><h2 class="ep-part-title">Statistical Learning, Reasoning, and Relevance</h2><span class="ep-part-summary">What does general intelligence require beyond statistical generalization?</span></header><p class="chapter-lead">The first cluster concerns reasoning rather than consciousness. Even if we bracket the question of whether a model “really understands,” an AGI claim still has to explain abstraction, analogy, prior knowledge, relevance selection, open-ended inference, and adaptation to new contexts.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> deep-learning limitations → reasoning and representation → relevance and the frame problem</p></div><section class="source-dossier" id="source-15"><h3><a href="https://arxiv.org/abs/1801.00631">Deep Learning: A Critical Appraisal</a>
+    by Gary Marcus</h3><div class="concept-callout"><strong>Summary: </strong><p>
+The author lists ten concerns for deep
+        learning
 
-<!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>
-  <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence"
-    >Artificial General Intelligence</a
-  >
-  is the idea that an
-  <a href="https://en.wikipedia.org/wiki/Intelligent_agent"
-    >Intelligent Agent</a
-  >
-  (usually assumed to be manifested in the form of a computer system based on
-  the notion of a
-  <a href="https://plato.stanford.edu/entries/turing-machine/">Turing Machine</a
-  >) can achieve human-like performance with any intellectual task. An agent is
-  any sort of abstract actor who has the capability to act in a given
-  environment; the concepts of
-  <a href="https://en.wikipedia.org/wiki/Agency_(philosophy)">agency</a> and
-  <a href="https://en.wikipedia.org/wiki/Intentionality">intentionality</a> are
-  deep philosophical topics that have been discussed for thousands of years so I
-  am not going to dive too deeply into it. From a technical sense of the term,
-  agency refers to the intrinsic capacity to set goals, form criteria associated
-  with those goals for evaluation, the ability to construct a mental model of an
-  environment, and adapt that model in accordance with feedback from their
-  environment. This is by no means comprehensive; different disciplines
-  characterize agents differently conditional on the problem domain, such as in
-  Economics where
-  <a href="https://en.wikipedia.org/wiki/Agent_(economics)">Agents</a> are
-  idealized buyers and sellers who always trying to optimize some objective
-  function, or
-  <a href="https://en.wikipedia.org/wiki/Agent-based_model"
-    >Agent Based Models</a
-  >
-  where "Agents" can be thought of as autonomous objects interacting with others
-  based on an exhaustive pre-set list of update rules. There is also the notion
-  of a
-  <a href="https://en.wikipedia.org/wiki/Software_agent">Software Agent</a>,
-  <a href="https://en.wikipedia.org/wiki/Multi-agent_system"
-    >multi-agent systems</a
-  >, and many more. Within the context of AGI, an agent can be considered to
-  have attained "general intelligence" if it is autonomous and can surpass
-  humans on human tasks. It should be obvious that this definition alone is
-  almost entirely operational, it says nothing about whether these systems will
-  emerge consciousness or a "mind" (the Strong AI Hypothesis). From an
-  engineering perspective, philosophical questions like these tend to be out of
-  scope for actually developing the system, although they do arise when these
-  systems seem to surpass expectations. Part of the reason for writing this post
-  is to convince the reader that LLMs are not Strong AI in any sense of the term
-  and that it is kind of silly to think statistical models of language are
-  somehow fundamental to consciousness. I also don't really care to comment on
-  the X-Risk (<a
-    href="https://en.wikipedia.org/wiki/Existential_risk_from_artificial_general_intelligence"
-    >Existential Risk from Artificial General Intelligence</a
-  >) "debate" because it will become clear, based on the references I will
-  provide, that AGI doomers fundamentally misunderstand and mistakenly
-  anthropomorphize these systems in a way that leads to hysteria. The true risks
-  come from injecting probabilistic sub-systems into increasingly interconnected
-  and complex higher level systems that can lead to
-  <a href="https://en.wikipedia.org/wiki/Cascading_failure"
-    >Cascading Failures</a
-  >; and since this environment would be characterized by a form of
-  <a href="https://en.wikipedia.org/wiki/Knightian_uncertainty"
-    >Knightian Uncertainty</a
-  >, we are now dealing with a type of
-  <a href="http://www.ub.edu/grc_logos/project_card.php?idProj=92"
-    >Epistemic Risk</a
-  >
-  that is fundamentally incalculable. In other words, X-Risk is really just
-  another type of all-too-human problem. Anthropomorphizing autonomous systems
-  really just distracts us from the real issue. It also should also be obvious
-  that AGI presupposes a specific, very operational, definition of
-  <a href="https://en.wikipedia.org/wiki/Category:Intelligence">Intelligence</a>
-  that isn't necessarily aligned with how it's conceptualized in Cognitive
-  Science, Psychology, or the field of
-  <a href="https://en.wikipedia.org/wiki/Category:Animal_intelligence"
-    >Animal Intelligence</a
-  >. AGI researchers seem to assume that intelligence can emerge outside of an
-  evolutionary and
-  <a href="https://en.wikipedia.org/wiki/Embodied_cognition">embodied</a>
-  history, something I find to be highly unlikely.
-</p>
-<!-- /wp:paragraph -->
+</p><ul>
 
-<!-- wp:paragraph -->
-<p>
-  Before we dive into some of the critiques, it is important to understand what
-  Pre-Trained Generative Transformers (The most ubiquitous LLM architecture at
-  the moment) are actually doing under the hood. Stephen Wolfram wrote an
-  article
-  <a
-    href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/"
-    >What Is ChatGPT Doing … and Why Does It Work?</a
-  >
-  explaining the fundamentals of next word prediction, concept embeddings,
-  <a
-    href="https://en.wikipedia.org/wiki/Training,_validation,_and_test_data_sets"
-    >Training Validation and Test Data</a
-  >, and the basics of neural networks. You should at least skim that article
-  before diving any further into this one. Also, familiarity with different
-  <a href="https://en.wikipedia.org/wiki/Category:Theory_of_mind"
-    >Theories of Mind</a
-  >
-  will be useful because
-  <a href="https://en.wikipedia.org/wiki/Category:Philosophy_of_mind"
-    >philosophy of mind</a
-  >
-  seems to reoccur in certain criticisms (See list of
-  <a
-    href="https://en.wikipedia.org/wiki/Category:Concepts_in_the_philosophy_of_mind"
-    >Concepts in Philosophy of Mind</a
-  >).
-</p>
-<!-- /wp:paragraph -->
+<li>Deep learning thus far is data hungry</li>
 
-<!-- wp:paragraph -->
-<p>Okay so here we go; below you can find the resources and some commentary.</p>
-<!-- /wp:paragraph -->
 
-<!-- wp:list {"ordered":true} -->
-<ol>
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://philarchive.org/rec/BISDWP-2"
-      >Dancing with pixies: strong artificial intelligence and panpsychism</a
-    >.
-    <!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: The argument presented in this paper is not a
+<li>
+            Deep learning thus far is shallow and has limited capacity for
+            transfer
+          </li>
+
+
+<li>
+            Deep learning thus far has no natural way to deal with hierarchical
+            structure
+          </li>
+
+
+<li>
+            Deep learning thus far has struggled with open-ended inference
+          </li>
+
+
+<li>Deep learning thus far is not sufficiently transparent</li>
+
+
+<li>
+            Deep learning thus far has not been well integrated with prior
+            knowledge
+          </li>
+
+
+<li>
+            Deep learning thus far cannot inherently distinguish causation from
+            correlation
+          </li>
+
+
+<li>
+            Deep learning presumes a largely stable world, in ways that may be
+            problematic
+          </li>
+
+
+<li>
+            Deep learning thus far works well as an approximation, but its
+            answers often cannot be fully trusted
+          </li>
+
+
+<li>Deep learning thus far is difficult to engineer with</li>
+
+</ul></div><h4>My analysis</h4><p>Several of Marcus's criticisms overlap with issues raised elsewhere in this essay. I also think some are more tractable than others. Engineering difficulty, for example, has improved substantially as open-source tools and model ecosystems have matured, and some approximation problems may be reduced through better systems design.</p><p>The deeper concerns are the ones involving hierarchical structure, transfer, prior knowledge, open-ended inference, and the distinction between correlation and causation. If a neural network is fundamentally a statistical model, there is always some room for error in relations that humans often treat as structurally basic—for example, recognizing a relation such as “on top of” and carrying it systematically into a new context.</p><p>Lexical semantics contains many such relations: taxonomic and meronomic relations, contrast, congruence, chaining, ranking, grading, degree, synonymy, homonymy, hyponymy, and many others. My concern is that systematic command of these relations requires conceptual schemas and reasoning over them, not only statistical proximity in a learned representation space.</p></section><section class="source-dossier" id="source-7"><h3>Neural Networks are not
+    <a href="https://en.wikipedia.org/wiki/Reasoning_system">Reasoning Systems</a></h3><h4>My analysis</h4><p>When you interact with a chatbot, its output can look like reasoning and persuasion. My claim is narrower: the underlying language model is not, merely by virtue of next-token prediction, an explicit reasoning system with its own intentional goals. It does not natively come with a formal mechanism for <a href="https://en.wikipedia.org/wiki/Abductive_reasoning">abductive reasoning</a> grounded in common knowledge, a stable <a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">formal ontology</a>, or an explicit system of <a href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning">knowledge representation and reasoning</a>.</p><p>That distinction matters because humans routinely use <a href="https://plato.stanford.edu/entries/reasoning-defeasible/">defeasible reasoning</a> and <a href="https://en.wikipedia.org/wiki/Commonsense_reasoning">commonsense reasoning</a>, revising conclusions when the context changes. Humans can often adapt after a small amount of new evidence instead of requiring large-scale iterative retraining. The open question is whether the statistical machinery of an LLM can supply these capabilities systematically or whether additional representational and inferential machinery is required.</p><p>Melanie Mitchell's work on abstraction and analogy is especially relevant here. One of the most useful features of human intelligence is the ability to construct analogies and abstract relations between concrete objects or concepts, then carry those relations into a new domain. Machine-learning systems certainly generalize, but their generalization is learned statistically. The question is whether that is equivalent to the kind of structured conceptual generalization humans perform, or only an approximation to it.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://melaniemitchell.me/">Melanie Mitchell</a>: <a href="https://melaniemitchell.me/PapersContent/EBeM_Workshop2022.pdf">Evaluating Understanding on Conceptual Abstraction Benchmarks</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/ImKkaeUx1MU?si=wy20OCLxwK230Zin">Melanie Mitchell: Concepts, Analogies, Common Sense &amp; Future
+              of AI | Lex Fridman Podcast #61</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/zb39ty248bU?si=Njui_e4BrMM_MQ9I">Why AI is harder than we think | Prof. Melanie Mitchell | AI
+              Forward Forum</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/3wMKoSRbGVs?si=w1HiUAGD1uQA7nI6">Douglas Lenat: Cyc and the Quest to Solve Common Sense Reasoning
+              in AI | Lex Fridman Podcast #221</a>
+</li>
+
+
+<li>
+<a href="https://www.researchgate.net/profile/Douglas-Lenat">Douglas B. Lenat Research</a>
+            :
+            <a href="https://arxiv.org/abs/2308.04445">Getting from Generative AI to Trustworthy AI: What LLMs might
+              learn from Cyc</a>
+</li>
+
+
+<li>
+<a href="https://en.wikipedia.org/wiki/Conceptual_metaphor">Conceptual Metaphor</a>
+</li>
+
+</ul><div class="learning-insight-block"><h4>Supporting source</h4><p>
+        7b.
+        <a href="https://psycnet.apa.org/record/2019-19670-000">Qualitative Representations: How People Reason and Learn about the
+          Continuous World</a>:
+        <a href="https://scholar.google.com/citations?user=IdRYT-8AAAAJ&amp;hl=en">Ken Forbus</a>
+</p><div class="concept-callout"><strong>Summary: </strong><p>
+This book is based on multiple decades of
+            research in artificial intelligence (AI) on qualitative reasoning by
+            group but also by many others. It proposes that qualitative
+            representations hold the key to one of the deepest mysteries of
+            cognitive science: how one reasons and learns about the continuous
+            phenomena surrounding us. It argues that qualitative
+            representations—symbolic representations that carve continuous
+            phenomena into meaningful units—are central to human cognition. Qualitative representations provide a basis for commonsense
+            reasoning, because they enable practical reasoning with very little
+            data; this makes qualitative representations a useful component of
+            natural language semantics. Qualitative representations also provide
+            foundation for expert reasoning in science and engineering by making
+            explicit the broad categories of things that might happen and
+            enabling causal models that help guide the application of more
+            quantitative knowledge as needed.</p><p> Qualitative representations are
+            important for creating more human-like artificial intelligence
+            systems with capabilities for spatial reasoning, vision, question
+            answering, and understanding natural language.
+
+
+</p><ul>
+
+<li>
+<a href="https://youtu.be/RFtGiRCHvdg?si=Hdu8CtawcbTzJ4g-">Kenneth Forbus -- Analogy in Cognitive Architecture</a>
+</li>
+
+</ul></div></div></section><section class="source-dossier" id="source-13"><h3><a href="https://plato.stanford.edu/entries/frame-problem/">The Frame Problem</a></h3><div class="concept-callout"><strong>Summary: </strong><p>
+In the confined world of a robot, surroundings
+        are not static. Many varying forces or actions can cause changes or
+        modifications to it. The problem of forcing a robot to adapt to these
+        changes is the basis of the frame problem in artificial intelligence. Information in the knowledge base and the robot's conclusions combine to
+        form the input for what the robot's subsequent action should be. A good
+        selection from its facts can be made by discarding or ignoring
+        irrelevant facts and ridding of results that could have negative side
+        effects. (Dennett) (Fischler 304-5).</p><p> A robot must introduce facts that
+        are relevant to a particular moment. That is, a robot will examine its
+        current situation, and then look up the facts that will be beneficial to
+        choosing its subsequent action. The robot should also search for any
+        changeable facts. It then examines these facts to determine if any of
+        them have been changed during a previous examination. There are two
+        basic types of change:
+
+
+</p><ul>
+
+<li>Relevant Change: inspect the changes made by an action</li>
+
+
+<li>
+            Irrelevant Change: do not inspect facts that are not related to the
+            task at hand
+          </li>
+
+
+<li>
+            Facts may be examined utilizing two levels:
+<ul>
+
+<li>
+                Semantic Level: This level interprets what kind of information
+                is being examined. Solutions should become obvious by the
+                assumptions of how an object should behave. There are believers
+                in a purely semantic approach who believe that correct
+                information can be reached via meaning. However, this hypothesis
+                has yet to be proven.
+              </li>
+
+
+<li>
+                Syntactic Level: This level simply decides in which format the
+                information should be inspected. That is, it forms solutions
+                based on the structure and patterns of facts.
+              </li>
+
+</ul>
+
+</li>
+
+
+<li>
+            When inspecting the facts, various problems can occur:
+<ul>
+
+<li>Sometimes an implication can be missed.</li>
+
+
+<li>
+                Considering all facts and all their subsequent side effects is
+                time-consuming.
+              </li>
+
+
+<li>
+                Some facts are unnecessarily examined when they are unneeded.
+              </li>
+
+</ul>
+
+</li>
+
+</ul></div><h4>My analysis</h4><p>The frame problem leads directly to the problem of relevance. John Vervaeke, for example, discusses a family of ideas under the heading “relevance realization.” I first became sensitive to the issue while studying argumentation: how do we determine which possible counterargument is actually relevant to a topic rather than merely logically available?</p><p>There is no simple working definition of relevance that tells an agent which facts to consider in every situation. More importantly, we do not fully understand how sentient agents search an enormous combinatorial space while retaining only the salient features. I suspect a solution will require a deeper account of defeasible reasoning and heuristics—mechanisms that reduce the effective search space without exhaustively enumerating it.</p><p>That is where the comparison with LLMs becomes important. We improve statistical generalization by exposing models to enormous amounts of information, whereas humans can often make useful choices without searching anything like the full state space. I do not think current AI methods yet explain that gap.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://philpapers.org/rec/ANDPPA-9">Predictive processing and relevance realization: exploring
+              convergent solutions to the frame problem</a>
+</li>
+
+
+<li>
+<a href="http://groups.umd.umich.edu/cis/course.des/cis479/projects/frame/welcome.html">The Frame Problem</a>
+</li>
+
+
+<li>
+<a href="https://www.researchgate.net/publication/225070451_Cognitive_Wheels_The_Frame_Problem_of_AI">Cognitive Wheels: The Frame Problem of AI</a>
+</li>
+
+</ul></section><div class="chapter-transition"><strong>Transition.</strong> These objections do not merely say that current systems sometimes make mistakes. They ask whether statistical generalization supplies the representational and inferential machinery needed for systematic reasoning. The next section goes one level deeper: even if a system manipulates symbols correctly, what would make those symbols mean anything to the system itself?</div><header class="ep-part-banner" id="part-3"><span class="ep-part-kicker">Part 3</span><h2 class="ep-part-title">Syntax, Semantics, and Understanding</h2><span class="ep-part-summary">Separate successful symbol manipulation from claims about intrinsic meaning or mind.</span></header><p class="chapter-lead">The next set of arguments concerns the relationship between syntax and semantics. This is where the Chinese Room belongs logically: it establishes the problem that later motivates the symbol-grounding discussion and Bishop’s more radical critique of computational functionalism.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> Chinese Room → symbol grounding → computational functionalism → understanding as a category problem</p></div><section class="source-dossier" id="source-9"><h3><a href="https://plato.stanford.edu/entries/chinese-room/">The Chinese Room Argument</a></h3><div class="concept-callout"><strong><a href="https://en.wikipedia.org/wiki/Chinese_room">Summary</a>: </strong><p>
+Searle's thought experiment begins with this hypothetical premise:
+        suppose that artificial intelligence research has succeeded in
+        constructing a computer that behaves as if it understands Chinese. It
+        takes Chinese characters as input and, by following the instructions of
+        a computer program, produces other Chinese characters, which it presents
+        as output. Suppose, says Searle, that this computer performs its task so
+        convincingly that it comfortably passes the Turing test: it convinces a
+        human Chinese speaker that the program is itself a live Chinese speaker. To all of the questions that the person asks, it makes appropriate
+        responses, such that any Chinese speaker would be convinced that they
+        are talking to another Chinese-speaking human being. The question Searle
+        wants to answer is this: does the machine literally "understand"
+        Chinese?</p><p> Or is it merely simulating the ability to understand
+        Chinese?[6][d] Searle calls the first position "strong AI" and the
+        latter "weak AI". He begins with three axioms (A1) "Programs are formal
+        (syntactic)." A program uses syntax to manipulate symbols and pays no
+        attention to the semantics of the symbols. It knows where to put the
+        symbols and how to move them around, but it does not know what they
+        stand for or what they mean. For the program, the symbols are just
+        physical objects like any others. (A2) "Minds have mental contents
+        (semantics)." Unlike the symbols used by a program, our thoughts have
+        meaning: they represent things and we know what it is they represent.
+        (A3) "Syntax by itself is neither constitutive of nor sufficient for
+        semantics." This is what the Chinese room thought experiment is intended
+        to prove: the Chinese room has syntax (because there is a man in there
+        moving symbols around).</p><p> The Chinese room has no semantics (because,
+        according to Searle, there is no one or nothing in the room that
+        understands what the symbols mean). Therefore, having syntax is not
+        enough to generate semantics. Searle posits that these lead directly to
+        this conclusion: (C1) Programs are neither constitutive of nor
+        sufficient for minds. This should follow without controversy from the
+        first three: Programs don't have semantics. Programs have only syntax,
+        and syntax is insufficient for semantics.</p><p> Every mind has semantics. Therefore no programs are minds.
+      </p></div><h4>My analysis</h4><p>Searle's central distinction is between syntax and semantics. A digital computer ultimately implements formal transformations over representations according to rules. At the level of a <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing machine</a>, the description is entirely syntactic: the machine changes states and manipulates symbols without the formalism itself supplying an interpretation of what those symbols mean.</p><p>The Chinese example makes that gap intuitive. Suppose I see a Chinese symbol and consult a registry that maps it to an English symbol. Following the registry could let me produce correct outputs without implying that I understand Chinese. Searle's question is why a sufficiently elaborate version of that formal procedure should suddenly count as semantic understanding rather than increasingly successful symbol manipulation.</p><p>I do not find the standard responses compelling enough to dissolve the problem. That does not mean AGI is impossible: a different computational paradigm, perhaps including analog or other nonstandard approaches, could change the analysis. But if Searle's anti-functionalist conclusion is right, then behavioral equivalence implemented on the current digital paradigm would not, by itself, establish that a machine has a mind.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://youtu.be/1KemhfmAsg8?si=hChwKSRmjtGg_StX">Debate on Mind-Brain Relation: Searle vs Eccles (1984)</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/ot4z1UrPvZY?si=0oOEiZW_uA7rsS_m">Consciousness as a Problem in Philosophy &amp; Neurobiology (John
+              Searle)</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/b5a9NJ10iGQ?si=eYu5wL3TJ4Xk_2pU">Debate on AI &amp; Mind - Searle &amp; Boden (1984)</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/_KVAzAzO5HU?si=Zq5X02fmmYdpUdNI">CONSCIOUSNESS IN THE CHINESE ROOM</a>: Guests: Prof. J. Mark Bishop, Francois Chollet, Prof. David
+            Chalmers, Dr. Joscha Bach, Prof. Karl Friston, Alexander Mattick,
+            Sam Roffey
+          </li>
+
+
+<li>
+<a href="https://youtu.be/sVZ3nb2ZoWc?si=NbMTdPvvjxgu6-1r">Searle's Chinese Room Counter Argument to Turing/Strong AI</a>
+</li>
+
+</ul></section><section class="source-dossier" id="source-10"><h3><a href="https://en.wikipedia.org/wiki/Symbol_grounding_problem">Symbol Grounding Problem</a>
+    by <a href="https://philpapers.org/rec/HARTSG">Stevan Harnad</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+There has been much discussion recently about
+        the scope and limits of purely symbolic models of the mind and about the
+        proper role of connectionism in cognitive modeling. This paper describes
+        the symbol grounding problem : How can the semantic interpretation of a
+        formal symbol system be made intrinsic to the system, rather than just
+        parasitic on the meanings in our heads? How can the meanings of the
+        meaningless symbol tokens, manipulated solely on the basis of their
+        shapes, be grounded in anything but other meaningless symbols? The
+        problem is analogous to trying to learn Chinese from a Chinese/Chinese
+        dictionary alone. A candidate solution is sketched: Symbolic
+        representations must be grounded bottom-up in nonsymbolic
+        representations of two kinds: iconic representations, which are analogs
+        of the proximal sensory projections of distal objects and events, and
+        categorical representations, which are learned and innate
+        feature-detectors that pick out the invariant features of object and
+        event categories from their sensory projections.</p><p> Elementary symbols are
+        the names of these object and event categories, assigned on the basis of
+        their categorical representations. Higher-order symbolic
+        representations, grounded in these elementary symbols, consist of symbol
+        strings describing category membership relations. Connectionism is one
+        natural candidate for the mechanism that learns the invariant features
+        underlying categorical representations, thereby connecting names to the
+        proximal projections of the distal objects they stand for. In this way
+        connectionism can be seen as a complementary component in a hybrid
+        nonsymbolic/symbolic model of the mind, rather than a rival to purely
+        symbolic modeling. Such a hybrid model would not have an autonomous
+        symbolic module, however; the symbolic functions would emerge as an
+        intrinsically dedicated symbol system as a consequence of the bottom-up
+        grounding of categories ' names in their sensory representations.</p><p> Symbol
+        manipulation would be governed not just by the arbitrary shapes of the
+        symbol tokens, but by the nonarbitrary shapes of the icons and category
+        invariants in which they are grounded
+      </p></div><h4>My analysis</h4><p>I see the symbol-grounding problem as closely related to the Chinese Room. The basic question is deceptively simple: how does an arbitrary word or symbol become connected to meaning? The philosophical problem of reference runs from <a href="https://plato.stanford.edu/entries/frege/">Frege</a> and <a href="https://en.wikipedia.org/wiki/Charles_Sanders_Peirce">Peirce</a> to <a href="https://en.wikipedia.org/wiki/Saul_Kripke">Kripke</a>. Is meaning a property a symbol can possess on its own, or does meaning require a mind, a practice, or a communicative context that establishes what the symbol refers to?</p><p>This matters for language models because an LLM—or another statistical model of language such as latent Dirichlet analysis—can discover regularities in a corpus without the statistical operation itself specifying what the tokens refer to in the world. The model processes relations among symbols; the grounding question asks how those relations acquire semantic content rather than merely additional symbolic structure.</p><p>Could we construct an algorithm that generates intrinsic semantic content? I regard that problem as fundamentally unsolved, and I am skeptical that it can be solved within a system whose representations are grounded only in other symbols. Harnad's own proposal is important precisely because it points toward nonsymbolic sensory and categorical grounding rather than treating more symbol manipulation as sufficient.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://youtu.be/eJhhwX4KWyM?si=Mbo2X_vXOutqcjJV">Stevan Harnad - Symbol Grounding - pt 1</a>
+</li>
+
+
+<li>
+<a href="https://youtu.be/BFLqy1PvfLo?si=9nXddH4vdJj046R9">Stevan Harnad - Symbol Grounding part 2</a>
+</li>
+
+
+<li>
+<a href="https://www.mdpi.com/2409-9287/7/5/108">The Difficulties in Symbol Grounding Problem and the Direction
+              for Solving It</a>
+</li>
+
+</ul></section><section class="source-dossier" id="source-1"><h3><a href="https://philarchive.org/rec/BISDWP-2">Dancing with pixies: strong artificial intelligence and panpsychism</a>.</h3><div class="concept-callout"><strong>Abstract: </strong><p>
+The argument presented in this paper is not a
         direct attack or defence of the Chinese Room Argument (CRA), but relates
         to the premise at its heart, that syntax is not sufficient for
         semantics, via the closely associated propositions that semantics is not
-        intrinsic to syntax and that syntax is not intrinsic to physics.
-        However, in contrast to the CRA’s critique of the link between syntax
+        intrinsic to syntax and that syntax is not intrinsic to physics. However, in contrast to the CRA’s critique of the link between syntax
         and semantics, this paper will explore the associated link between
         syntax and physics. The main argument presented here is not
         significantly original – it is a simple reflection upon that originally
@@ -772,617 +959,8 @@
         and following Putnam’s procedure, identical computational (and ex
         hypothesi phenomenal) states (ubiquitous little ‘pixies’) can be found
         in every open physical system.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: Essentially the author is arguing
-        against the
-        <a href="https://en.wikipedia.org/wiki/Computational_theory_of_mind"
-          >Computational Theory of the Mind</a
-        >, and more broadly the
-        <a href="https://plato.stanford.edu/entries/functionalism/"
-          >Functionalist</a
-        >
-        view of mind, claiming that if we consider the mind to be equivalent to
-        brain function, and brain function to be equivalent to a<a
-          href="https://en.wikipedia.org/wiki/Deterministic_finite_automaton"
-        >
-          Deterministic Finite Automaton</a
-        >
-        implemented in the Turing computational model (fundamental to all
-        digital systems), then we would have to accept
-        <a href="https://plato.stanford.edu/entries/panpsychism/">Panpsychism</a
-        >, implying that there is "mind" in mundane objects such as rocks. His
-        argument is a
-        <a href="https://en.wikipedia.org/wiki/Reductio_ad_absurdum"
-          >Reductio ad absurdum</a
-        >, showing that conceptualizing the mind as a
-        <a href="https://en.wikipedia.org/wiki/Finite-state_machine"
-          >finite state machine</a
-        >
-        leads to unacceptable conclusions.
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://youtu.be/cEyHsMzbZBs?si=k9njYlDjjJF6CkUd"
-      >“What's wrong with LLMs and what we should be building instead” - Tom
-      Dietterich</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Summary</strong>: In this discussion
-        <a href="https://engineering.oregonstate.edu/people/thomas-g-dietterich"
-          >Thomas G. Dietterich</a
-        >
-        discusses the fundamental problems with LLMs and potential solutions. He
-        essentially recognizes the need for
-        <a href="https://en.wikipedia.org/wiki/Cognitive_architecture"
-          >Cognitive Architecture</a
-        >
-        and Knowledge bases.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: I think a cognitive approach different
-        than
-        <a href="https://plato.stanford.edu/entries/connectionism/"
-          >Connectionism</a
-        >
-        ought to be the framework for developing Artificial intelligence. As
-        mentioned above, LLMs are essentially massive statistical models that
-        identify patterns within massive data sets, and use these patterns to
-        predict the next likely token in a sequence. I do not think cognition
-        and consciousness can be reduced to a statistical model. If we take a
-        look at
-        <a href="https://en.wikipedia.org/wiki/Outline_of_human_intelligence"
-          >Human Intelligence</a
-        >, memory seems to be something fundamentally missing from language
-        models. Human memory is distinct from database storage and ephemeral
-        memory; it is largely constructed and associated with experiences in an
-        embodied setting. If we take seriously the work from
-        <a href="https://en.wikipedia.org/wiki/Elizabeth_Loftus"
-          >Elizabeth Loftus</a
-        >,
-        <a
-          href="https://scholar.google.com/citations?user=ccxlBZ4AAAAJ&amp;hl=en"
-          >C.R. Gallistel</a
-        >, or any other
-        <a href="https://en.wikipedia.org/wiki/Category:Memory_researchers"
-          >memory researcher</a
-        >
-        (Like the
-        <a
-          href="https://en.wikipedia.org/wiki/Atkinson%E2%80%93Shiffrin_memory_model"
-          >Atkinson-Shiffrin</a
-        >
-        model) it becomes difficult to see how LLM token context can be
-        considered genuine
-        <a href="https://en.wikipedia.org/wiki/Category:Memory">memory</a>. This
-        is just one example of cognitive functionality that neural networks do
-        not emulate. Further, there are specialized sub-modules within our brain
-        that seem to be coupled with other sub-systems. Artificial Deep neural
-        networks don't take into account
-        <a
-          href="https://en.wikipedia.org/wiki/Functional_integration_(neurobiology)"
-          >Functional Integration</a
-        >
-        and does not distinguish between different types of nodes/connections
-        within the system. ANNs abstract away relevant ontological differences
-        between different types of nodes (and their specializations) within the
-        whole system.<!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/I36y3YJLFU0?si=RpEAPR_btCb51qWH"
-              >BI 158 Paul Rosenbloom: Cognitive Architectures</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3463494/"
-      >Gut microbial communities modulating brain development and function</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: Mammalian brain development is initiated in
-        utero and internal and external environmental signals can affect this
-        process all the way until adulthood. Recent observations suggest that
-        one such external cue is the indigenous microbiota which has been shown
-        to affect developmental programming of the brain. This may have
-        consequences for brain maturation and function that impact on cognitive
-        functions later in life. This review discusses these recent findings
-        from a developmental perspective.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: This is very new research but I've been
-        highly motivated by recent discoveries by the
-        <a href="https://hmpdacc.org/">NIH Human Microbiome Project</a>. This
-        stems from my position that cognition evolves from an environment and is
-        embodied. Essentially, any given perturbation of human microbial
-        composition can effect cognitive development. This would strongly imply
-        that cognitive processes are coupled to environmental dynamics and other
-        biological factors. Conceptualizing AGI or consciousness as distinct
-        from an evolutionary history, sitting within some Platonic realm,
-        ignores the situatedness of cognitive development. From the Human
-        Microbiome Project, we know that certain microbes aid cellular
-        functionality; meaning that our evolution as a species has
-        <a href="https://en.wikipedia.org/wiki/Coevolution">coevolved</a> with
-        organisms external to us. I think that understanding human cognition
-        requires a deeper understanding of the microbes that support the
-        flourishing of life. What I am arguing is that our bodies are in a
-        <a href="https://en.wikipedia.org/wiki/Symbiosis"
-          >Symbiotic relationship</a
-        >
-        with the microbial life; cognitive function and degradation must be
-        highly dependent on maintaining this relationship. Here are some other
-        papers that motivate my conclusions:<!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://academic.oup.com/nutritionreviews/article/76/7/481/4985887"
-              >Relationship between the gut microbiome and brain function</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://www.mdpi.com/2072-6643/13/6/2099"
-              >Regulation of Neurotransmitters by the Gut Microbiota and Effects
-              on Cognition in Neurological Disorders</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://www.pnas.org/doi/10.1073/pnas.1010529108"
-              >Normal gut microbiota modulates brain development and behavior</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://www.sciencedirect.com/science/article/pii/S0889159121002919"
-              >Microbiome profiles are associated with cognitive functioning in
-              45-month-old children</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a
-      href="https://www.sciencedirect.com/science/article/pii/S0169534718302672"
-      >Grow Smart and Die Young: Why Did Cephalopods Evolve Intelligence?</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: The most influential views on the evolution
-        of intelligence suggest that intelligence coevolves with slow life
-        history in response to socioecological challenges; however, these
-        conclusions are primarily focused on large-brained vertebrates.
-        Cephalopod mollusks strongly challenge the most accepted hypotheses on
-        the evolution of intelligence: cephalopods evolved complex brains and
-        high behavioral flexibility together with fast life histories and in
-        simple social environments. Surprisingly, the evolution of intelligence
-        in cephalopods has been largely overlooked, thus leaving this
-        evolutionary conundrum unsolved. Discussing differences and similarities
-        between cephalopods and large-brained vertebrates, may shed light on
-        fundamental aspects of the evolution of intelligence.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: Like I mentioned above, AGI researchers
-        tend to think of Intelligence in a very operational sense, mainly
-        because of the need to formalize and abstract an algorithm that can run
-        on a digital computer. While there are fields of research dedicated to
-        <a href="https://en.wikipedia.org/wiki/Bio-inspired_computing"
-          >Biologically Inspired computing</a
-        >
-        who have recognize alternative conceptions of intelligence such as
-        <a href="https://en.wikipedia.org/wiki/Swarm_intelligence"
-          >Swarm Intelligence</a
-        >, as I've alluded to in number 3, Platonifying cognition as distinct
-        from evolutionary history seems to me far fetched. There is also a
-        tendency to focus on humans as the paradigmatic example of intelligence
-        that can obfuscate the fact that there are many other types of
-        intelligences among mammals. The
-        <a href="https://en.wikipedia.org/wiki/Cephalopod_intelligence"
-          >Cephalopods</a
-        >
-        are very unique example in that their brain is literally distributed
-        across its body. There is evidence suggesting that the evolution of
-        cephalopod intelligence was a response to predation. I think human
-        intelligence probably emerged in a similar way and that you simply
-        cannot just decouple "the algorithm" from it's<a
-          href="https://en.wikipedia.org/wiki/Path_dependence"
-        >
-          path dependency</a
-        >.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://www.frontiersin.org/articles/10.3389/fmars.2022.909192/full"
-              >The evolution of predator avoidance in cephalopods: A case of
-              brain over brawn?</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6062618/"
-              >Cephalopod Brains: An Overview of Current Knowledge to Facilitate
-              Comparison With Vertebrates</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://philpapers.org/rec/MITFAH"
-      >Free agents: how evolution gave us free will</a
-    >
-    : <a href="https://www.kjmitchell.com/">Kevin Mitchell</a>, Trinity College
-    Dublin and
-    <a href="https://youtu.be/gxpbvE8V0Dg?si=qenoBQUNct30ZMKL"
-      >The Evolution of Agency</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: An evolutionary case for the existence of
-        free will. Scientists are learning more and more about how brain
-        activity controls behavior and how neural circuits weigh alternatives
-        and initiate actions. As we probe ever deeper into the mechanics of
-        decision making, many conclude that agency-or free will-is an illusion.
-        In Free Agents, leading neuroscientist Kevin Mitchell presents a wealth
-        of evidence to the contrary, arguing that we are not mere machines
-        responding to physical forces but agents acting with purpose. Traversing
-        billions of years of evolution, Mitchell tells the remarkable story of
-        how living beings capable of choice emerged from lifeless matter. He
-        explains how the emergence of nervous systems provided a means to learn
-        about the world, granting sentient animals the capacity to model,
-        predict, and simulate. Mitchell reveals how these faculties reached
-        their peak in humans with our abilities to imagine and to introspect, to
-        reason in the moment, and to shape our possible futures through the
-        exercise of our individual agency. Mitchell's argument has important
-        implications-for how we understand decision making, for how our
-        individual agency can be enhanced or infringed, for how we think about
-        collective agency in the face of global crises, and for how we consider
-        the limitations and future of artificial intelligence. An astonishing
-        journey of discovery, Free Agents offers a new framework for
-        understanding how, across a billion years of Earth history, life evolved
-        the power to choose and why this matters.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: One of the first concepts you encounter
-        with AGI is the idea of "Autonomous Agency". My basic contention is that
-        we refer to these systems as "agents" but strictly speaking they do not
-        have any agency because that is something that emerges from an
-        evolutionary context. This book by Kevin Mitchell is not explicitly
-        attempting to undermine AGI research but I think it is relevant to the
-        idea that agency is something computational.
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a
-      href="https://www.researchgate.net/publication/363343601_The_Evolution_of_Agency_Behavioral_Organization_from_Lizards_to_Humans"
-      >The Evolution of Agency: Behavioral Organization from Lizards to
-      Humans</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: A leading developmental psychologist proposes
-        an evolutionary pathway to human psychological agency. Nature cannot
-        build organisms biologically prepared for every contingency they might
-        possibly encounter. Instead, Nature builds some organisms to function as
-        feedback control systems that pursue goals, make informed behavioral
-        decisions about how best to pursue those goals in the current situation,
-        and then monitor behavioral execution for effectiveness. Nature builds
-        psychological agents. In a bold new theoretical proposal, Michael
-        Tomasello advances a typology of the main forms of psychological agency
-        that emerged on the evolutionary pathway to human beings. Tomasello
-        outlines four main types of psychological agency and describes them in
-        evolutionary order of emergence. First was the goal-directed agency of
-        ancient vertebrates, then came the intentional agency of ancient
-        mammals, followed by the rational agency of ancient great apes, ending
-        finally in the socially normative agency of ancient humans. Each new
-        form of psychological organization represented increased complexity in
-        the planning, decision-making, and executive control of behavior. Each
-        also led to new types of experience of the environment and, in some
-        cases, of the organism's own psychological functioning, leading
-        ultimately to humans' experience of an objective and normative world
-        that governs all of their thoughts and actions. Together, these
-        proposals constitute a new theoretical framework that both broadens and
-        deepens current approaches in evolutionary psychology.
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: This book is similar to Kevin Mitchells in
-        that it postulates agency developing through evolutionary pressures.
-        Tomasello outlines how the need for social cooperation and social
-        coordination lead to evolutionary forces selecting for feedback systems
-        that can interact intelligently with their environment to achieve
-        meta-goals higher than survival. Mitchell also describes the origin of
-        self-preserving feedback systems leading to agency. Again, this is not a
-        direct subversion of AGI research but I think it is relevant, given the
-        examples I listed above concerning the microbiome and cephalopods. This
-        is also relevant because it raises the fundamental question: Can
-        intelligence and agency emerge in a vacuum? Much of learning is social;
-        it seems a bit odd to me that AGI can simply come about absent
-        interaction with other intelligent agents.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://partiallyexaminedlife.com/2023/10/02/ep326-1-tomasello-agency/"
-              >Ep. 326: Guest Michael Tomasello on the Evolution of Agency (Part
-              One)</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://www.researchgate.net/publication/370347105_Imagine_a_lizard_with_the_goal_of_making_better_decisions"
-              >Imagine a lizard with the goal of making better decisions</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="http://ektr.uni-eger.hu/wp-content/uploads/2015/11/tomasello-the-cultural-origins-of-human-cognition.pdf"
-              >The Cultural Origins of Human Cognition</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    Neural Networks are not
-    <a href="https://en.wikipedia.org/wiki/Reasoning_system"
-      >Reasoning Systems</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Commentary</strong>: When you interact with a ChatBot, it is
-        not reasoning with you. It is not trying to persuade you of anything.
-        Partly because it has no intentionality, but also due to that fact that
-        the sequences of tokens it generates are predictions of a statistical
-        model. LLMs have no ability to engage in
-        <a href="https://en.wikipedia.org/wiki/Abductive_reasoning"
-          >abductive reasoning</a
-        >
-        based on common knowledge, no
-        <a href="https://en.wikipedia.org/wiki/Ontology_(information_science)"
-          >formal ontology</a
-        >, no inherent directional orientation humans seem to have innately, and
-        no
-        <a
-          href="https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning"
-          >knowledge representation.</a
-        >
-        This is not trivial, most humans engage in
-        <a href="https://plato.stanford.edu/entries/reasoning-defeasible/"
-          >defeasible reasoning</a
-        >
-        and
-        <a href="https://en.wikipedia.org/wiki/Commonsense_reasoning"
-          >common sense reasoning</a
-        >
-        but neural networks can't do this; they are limited to their training
-        data and have a hard time learning quickly in new contexts. With the use
-        of various reasoning faculties, humans can transcend this need for
-        iterative retraining once the underlying context changes. I am obviously
-        not the first to emphasize the need for reasoning; that statistical
-        learning is insufficient. Melanie Mitchell writes a lot about
-        Abstraction and Analogy in artificial intelligence; one of the most
-        useful functions of human intelligence is the ability to construct
-        analogies and abstract relations between concrete objects or concepts.
-        We have the ability to generalize in this sense; machine learning
-        systems can only statistically generalize. This is not trivial.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://melaniemitchell.me/">Melanie Mitchell</a>: <a
-              href="https://melaniemitchell.me/PapersContent/EBeM_Workshop2022.pdf"
-              >Evaluating Understanding on Conceptual Abstraction Benchmarks</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/ImKkaeUx1MU?si=wy20OCLxwK230Zin"
-              >Melanie Mitchell: Concepts, Analogies, Common Sense &amp; Future
-              of AI | Lex Fridman Podcast #61</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/zb39ty248bU?si=Njui_e4BrMM_MQ9I"
-              >Why AI is harder than we think | Prof. Melanie Mitchell | AI
-              Forward Forum</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/3wMKoSRbGVs?si=w1HiUAGD1uQA7nI6"
-              >Douglas Lenat: Cyc and the Quest to Solve Common Sense Reasoning
-              in AI | Lex Fridman Podcast #221</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://www.researchgate.net/profile/Douglas-Lenat"
-              >Douglas B. Lenat Research</a
-            >
-            :
-            <a href="https://arxiv.org/abs/2308.04445"
-              >Getting from Generative AI to Trustworthy AI: What LLMs might
-              learn from Cyc</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Conceptual_metaphor"
-              >Conceptual Metaphor</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        7b.
-        <a href="https://psycnet.apa.org/record/2019-19670-000"
-          >Qualitative Representations: How People Reason and Learn about the
-          Continuous World</a
-        >:
-        <a
-          href="https://scholar.google.com/citations?user=IdRYT-8AAAAJ&amp;hl=en"
-          >Ken Forbus</a
-        ><!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <strong>Summary</strong>: This book is based on multiple decades of
-            research in artificial intelligence (AI) on qualitative reasoning by
-            group but also by many others. It proposes that qualitative
-            representations hold the key to one of the deepest mysteries of
-            cognitive science: how one reasons and learns about the continuous
-            phenomena surrounding us. It argues that qualitative
-            representations—symbolic representations that carve continuous
-            phenomena into meaningful units—are central to human cognition.
-            Qualitative representations provide a basis for commonsense
-            reasoning, because they enable practical reasoning with very little
-            data; this makes qualitative representations a useful component of
-            natural language semantics. Qualitative representations also provide
-            foundation for expert reasoning in science and engineering by making
-            explicit the broad categories of things that might happen and
-            enabling causal models that help guide the application of more
-            quantitative knowledge as needed. Qualitative representations are
-            important for creating more human-like artificial intelligence
-            systems with capabilities for spatial reasoning, vision, question
-            answering, and understanding natural language.<!-- wp:list -->
-            <ul>
-              <!-- wp:list-item -->
-              <li>
-                <a href="https://youtu.be/RFtGiRCHvdg?si=Hdu8CtawcbTzJ4g-"
-                  >Kenneth Forbus -- Analogy in Cognitive Architecture</a
-                >
-              </li>
-              <!-- /wp:list-item -->
-            </ul>
-            <!-- /wp:list -->
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://arxiv.org/abs/2008.07371"
-      >Artificial Intelligence is stupid and causal reasoning won't fix it</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: Artificial Neural Networks have reached
+      </p></div><h4>My analysis</h4><p>Bishop is arguing against the <a href="https://en.wikipedia.org/wiki/Computational_theory_of_mind">Computational Theory of Mind</a> and, more broadly, the <a href="https://plato.stanford.edu/entries/functionalism/">functionalist</a> view of mind. The argument starts from the idea that if mental states are nothing more than computational states—ultimately describable as the operation of a <a href="https://en.wikipedia.org/wiki/Deterministic_finite_automaton">deterministic finite automaton</a> within a Turing-style computational framework—then the same relevant computational traces can be mapped onto ordinary physical systems.</p><p>The resulting conclusion is a form of <a href="https://plato.stanford.edu/entries/panpsychism/">panpsychism</a>: if the computation alone is sufficient for mind, then we appear committed to finding “mind” in mundane objects such as rocks whenever the appropriate computational description can be imposed on them. Bishop therefore uses a <a href="https://en.wikipedia.org/wiki/Reductio_ad_absurdum">reductio ad absurdum</a>: identifying mind with a sufficiently abstract <a href="https://en.wikipedia.org/wiki/Finite-state_machine">finite-state machine</a> seems to generate consequences that are difficult to accept.</p></section><section class="source-dossier" id="source-8"><h3><a href="https://arxiv.org/abs/2008.07371">Artificial Intelligence is stupid and causal reasoning won't fix it</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+Artificial Neural Networks have reached
         Grandmaster and even super-human performance across a variety of games:
         from those involving perfect-information (such as Go) to those involving
         imperfect-information (such as Starcraft). Such technological
@@ -1397,7 +975,7 @@
         'all the impressive achievements of deep learning amount to just curve
         fitting'. The key, Judea Pearl suggests, is to replace reasoning by
         association with causal-reasoning - the ability to infer causes from
-        observed phenomena. It is a point that was echoed by Gary Marcus and
+        observed phenomena.</p><p> It is a point that was echoed by Gary Marcus and
         Ernest Davis in a recent piece for the New York Times: 'we need to stop
         building computer systems that merely get better and better at detecting
         statistical patterns in data sets - often using an approach known as
@@ -1408,258 +986,226 @@
         AI errors: it is not so much that AI machinery cannot grasp causality,
         but that AI machinery - qua computation - cannot understand anything at
         all.
-      </li>
-      <!-- /wp:list-item -->
+      </p></div><h4>My analysis</h4><p>This is closely related to Bishop's argument in <em>Dancing with Pixies</em>. The paper's conclusion is stronger than the familiar claim that current AI lacks adequate causal reasoning: it argues that computation, considered purely as computation, does not understand anything at all.</p><p>I find that line of argument persuasive, and it connects directly to the Chinese Room and symbol-grounding problems discussed above. The important point for the structure of this essay is that “add causal reasoning” and “solve understanding” are not necessarily the same project.</p></section><div class="learning-insight-block"><h3>Important distinction</h3><p>These arguments target different claims and should not be treated as interchangeable. An operational AGI criterion based on task performance does not logically require consciousness. The Chinese Room and symbol-grounding arguments are stronger when used to challenge claims about intrinsic understanding or mind than when treated as automatic refutations of every behaviorally defined form of AGI.</p><p>That distinction also identifies the strongest burden for this essay: if semantic understanding is not required for an operational definition of AGI, then the case against LLM-to-AGI must also stand on the reasoning, relevance, learning, memory, agency, and architecture arguments developed elsewhere in the article.</p></div><header class="ep-part-banner" id="part-4"><span class="ep-part-kicker">Part 4</span><h2 class="ep-part-title">Intelligence as Embodied, Evolved, and Situated</h2><span class="ep-part-summary">Biological intelligence is not blank-slate induction; it develops through evolved priors, bodies, environments, and histories.</span></header><p class="chapter-lead">Human cognition did not arise as a generic learner exposed to a text corpus. It developed within bodies, ecologies, social systems, and evolutionary histories. The sources in this section motivate that observation from several directions.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> innate structure → alternative animal intelligence → microbiome and environment → affordances and open-ended action</p></div><section class="source-dossier" id="source-14"><h3><a href="https://philpapers.org/rec/SPECK">Core knowledge</a>:
+    <a href="https://en.wikipedia.org/wiki/Elizabeth_Spelke">Elizabeth S. Spelke</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+Complex cognitive skills such as reading and
+        calculation and complex cognitive achievements such as formal science
+        and mathematics may depend on a set of building block systems that
+        emerge early in human ontogeny and phylogeny. These core knowledge
+        systems show characteristic limits of domain and task specificity: Each
+        serves to represent a particular class of entities for a particular set
+        of purposes. By combining representations from these systems, however
+        human cognition may achieve extraordinary flexibility. Studies of
+        cognition in human infants and in nonhuman primates therefore may
+        contribute to understanding unique features of human knowledge. 2020
+        APA, all rights reserved)
+      </p></div><h4>My analysis</h4><p>I think core knowledge raises a fundamental issue for AI because human cognition does not appear to begin as a blank slate. We seem to arrive with cognitive mechanisms that make some kinds of learning dramatically easier, and those mechanisms themselves are products of a long evolutionary history. Their presence also suggests continuity with other mammals that share portions of this inherited cognitive machinery.</p><p>This is related to Chomsky's argument that humans possess an innate capacity for language rather than learning linguistic structure entirely through unconstrained induction. Spelke's work broadens the point: some representations or processing biases may be present by default and then combined into more flexible cognition.</p><p>For LLMs, the relevant question is therefore not simply whether a sufficiently large statistical learner can fit the data. It is whether the learner contains—or can acquire—the kinds of structured priors that biological cognition starts with. A statistical model does not automatically inherit those priors merely by being exposed to more text.</p><p><strong>Related resources</strong></p><ul>
 
-      <!-- wp:list-item -->
-      <li>
-        My Comments: This is pretty much a similar argument to Bishops argument
-        in Number 1. As we will see in the next critique, I agree with Bishop
-        that AI systems don't actually understanding anything.
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
+<li>
+<a href="https://plato.stanford.edu/entries/innateness-language/">Innateness and Language</a>
+</li>
 
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://plato.stanford.edu/entries/chinese-room/"
-      >The Chinese Room Argument</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <a href="https://en.wikipedia.org/wiki/Chinese_room">Summary</a
-        >: Searle's thought experiment begins with this hypothetical premise:
-        suppose that artificial intelligence research has succeeded in
-        constructing a computer that behaves as if it understands Chinese. It
-        takes Chinese characters as input and, by following the instructions of
-        a computer program, produces other Chinese characters, which it presents
-        as output. Suppose, says Searle, that this computer performs its task so
-        convincingly that it comfortably passes the Turing test: it convinces a
-        human Chinese speaker that the program is itself a live Chinese speaker.
-        To all of the questions that the person asks, it makes appropriate
-        responses, such that any Chinese speaker would be convinced that they
-        are talking to another Chinese-speaking human being. The question Searle
-        wants to answer is this: does the machine literally "understand"
-        Chinese? Or is it merely simulating the ability to understand
-        Chinese?[6][d] Searle calls the first position "strong AI" and the
-        latter "weak AI". He begins with three axioms (A1) "Programs are formal
-        (syntactic)." A program uses syntax to manipulate symbols and pays no
-        attention to the semantics of the symbols. It knows where to put the
-        symbols and how to move them around, but it does not know what they
-        stand for or what they mean. For the program, the symbols are just
-        physical objects like any others. (A2) "Minds have mental contents
-        (semantics)." Unlike the symbols used by a program, our thoughts have
-        meaning: they represent things and we know what it is they represent.
-        (A3) "Syntax by itself is neither constitutive of nor sufficient for
-        semantics." This is what the Chinese room thought experiment is intended
-        to prove: the Chinese room has syntax (because there is a man in there
-        moving symbols around). The Chinese room has no semantics (because,
-        according to Searle, there is no one or nothing in the room that
-        understands what the symbols mean). Therefore, having syntax is not
-        enough to generate semantics. Searle posits that these lead directly to
-        this conclusion: (C1) Programs are neither constitutive of nor
-        sufficient for minds. This should follow without controversy from the
-        first three: Programs don't have semantics. Programs have only syntax,
-        and syntax is insufficient for semantics. Every mind has semantics.
-        Therefore no programs are minds.
-      </li>
-      <!-- /wp:list-item -->
 
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: Searle is distinguishing between Semantics
-        and Syntax. Turing machines can only function on arbitrarily specified
-        syntactic input-output transformation rules. At the very core of a
-        <a href="https://en.wikipedia.org/wiki/Turing_machine"
-          >Turing machine</a
-        >
-        is something called machine language; it is the most fundamental thing a
-        computer can "understand" after being compiled from higher level
-        languages. The machine reads the instructions and implements a series of
-        simple transformations on the data; it is a finite state machine as we
-        mentioned before. In the context of understanding Chinese; suppose I see
-        a Chinese symbol and reference it in some registry containing a mapping
-        between the corresponding English symbol. Would this imply that I
-        actually understand Chinese? And that is the point. At the core of every
-        Deep Neural Network is a finite state automaton operating on arbitrary
-        input output rules. It knows nothing about the semantic meaning of the
-        symbols. Simply put; I do not find any of the responses compelling and
-        do not see how this problem can be overcome. This is not to say that AGI
-        is impossible though; perhaps another model of computation (such as
-        analog computing) might be promising. The argument shows that
-        Functionalism is false; this need not mean AGI is impossible but for the
-        time being, we are completely reliant on this model of computation so I
-        don't see a major transition in the near future.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/1KemhfmAsg8?si=hChwKSRmjtGg_StX"
-              >Debate on Mind-Brain Relation: Searle vs Eccles (1984)</a
-            >
-          </li>
-          <!-- /wp:list-item -->
+<li>
+<a href="https://en.wikipedia.org/wiki/Statistical_learning_in_language_acquisition">Statistical learning in language acquisition</a>
+</li>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/ot4z1UrPvZY?si=0oOEiZW_uA7rsS_m"
-              >Consciousness as a Problem in Philosophy &amp; Neurobiology (John
-              Searle)</a
-            >
-          </li>
-          <!-- /wp:list-item -->
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/b5a9NJ10iGQ?si=eYu5wL3TJ4Xk_2pU"
-              >Debate on AI &amp; Mind - Searle &amp; Boden (1984)</a
-            >
-          </li>
-          <!-- /wp:list-item -->
+<li>
+<a href="https://psycnet.apa.org/record/2003-06311-010">What makes us smart? Core knowledge and natural language.</a>
+</li>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/_KVAzAzO5HU?si=Zq5X02fmmYdpUdNI"
-              >CONSCIOUSNESS IN THE CHINESE ROOM</a
-            >: Guests: Prof. J. Mark Bishop, Francois Chollet, Prof. David
-            Chalmers, Dr. Joscha Bach, Prof. Karl Friston, Alexander Mattick,
-            Sam Roffey
-          </li>
-          <!-- /wp:list-item -->
+</ul><div class="learning-insight-block"><h4>Supporting source</h4><p>
+        14b.
+        <a href="https://scholar.google.com/citations?user=6XX0V-gAAAAJ&amp;hl=en">Iris Berent</a>:
+        <a href="https://www.pnas.org/doi/full/10.1073/pnas.1318261111">Language universals at birth</a>
+</p><div class="concept-callout"><strong>Abstract: </strong><p>
+The evolution of human languages is
+            driven both by primitive biases present in the human sensorimotor
+            systems and by cultural transmission among speakers. However,
+            whether the design of the language faculty is further shaped by
+            linguistic biological biases remains controversial. To address this
+            question, we used near-infrared spectroscopy to examine whether the
+            brain activity of neonates is sensitive to a putatively universal
+            phonological constraint. Across languages, syllables like blif are
+            preferred to both lbif and bdif. Newborn infants (2–5 d old)
+            listening to these three types of syllables displayed distinct
+            hemodynamic responses in temporal-perisylvian areas of their left
+            hemisphere.</p><p> Moreover, the oxyhemoglobin concentration changes
+            elicited by a syllable type mirrored both the degree of its
+            preference across languages and behavioral linguistic preferences
+            documented experimentally in adulthood. These findings suggest that
+            humans possess early, experience-independent, linguistic biases
+            concerning syllable structure that shape language perception and
+            acquisition.
+          </p></div><h4>My analysis</h4><p>This is another example of the same issue. If newborns exhibit experience-independent linguistic biases, then human language acquisition cannot be described as brute-force statistical induction from an initially structureless learner. The relevance to AI is not that engineered systems must copy those particular biological biases, but that a theory of general learning has to explain what plays the corresponding role.</p></div></section><section class="source-dossier" id="source-4"><h3><a href="https://www.sciencedirect.com/science/article/pii/S0169534718302672">Grow Smart and Die Young: Why Did Cephalopods Evolve Intelligence?</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+The most influential views on the evolution
+        of intelligence suggest that intelligence coevolves with slow life
+        history in response to socioecological challenges; however, these
+        conclusions are primarily focused on large-brained vertebrates. Cephalopod mollusks strongly challenge the most accepted hypotheses on
+        the evolution of intelligence: cephalopods evolved complex brains and
+        high behavioral flexibility together with fast life histories and in
+        simple social environments. Surprisingly, the evolution of intelligence
+        in cephalopods has been largely overlooked, thus leaving this
+        evolutionary conundrum unsolved. Discussing differences and similarities
+        between cephalopods and large-brained vertebrates, may shed light on
+        fundamental aspects of the evolution of intelligence.
+      </p></div><h4>My analysis</h4><p>AGI research often uses intelligence in a highly operational sense, partly because an engineering project needs a formal description that can be implemented on a digital computer. There are important exceptions: <a href="https://en.wikipedia.org/wiki/Bio-inspired_computing">biologically inspired computing</a> and concepts such as <a href="https://en.wikipedia.org/wiki/Swarm_intelligence">swarm intelligence</a> already recognize that intelligence need not take a single form. My concern is with treating cognition as a Platonic algorithm that can be cleanly separated from the evolutionary history that produced it.</p><p>The human case can also become too dominant. There are many forms of intelligence across the animal world, and <a href="https://en.wikipedia.org/wiki/Cephalopod_intelligence">cephalopods</a> are especially interesting because their neural organization is radically different from ours and is distributed throughout the body. Evidence that cephalopod intelligence evolved under pressures such as predation suggests that intelligence is shaped by the problems an organism repeatedly has to solve.</p><p>I suspect human intelligence is similarly path-dependent. If so, “the algorithm” cannot simply be discussed as though its history were irrelevant; the <a href="https://en.wikipedia.org/wiki/Path_dependence">path dependence</a> of a cognitive system may help determine the representations, priors, and behavioral capacities that the mature system possesses.</p><p><strong>Related resources</strong></p><ul>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/sVZ3nb2ZoWc?si=NbMTdPvvjxgu6-1r"
-              >Searle's Chinese Room Counter Argument to Turing/Strong AI</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
+<li>
+<a href="https://www.frontiersin.org/articles/10.3389/fmars.2022.909192/full">The evolution of predator avoidance in cephalopods: A case of
+              brain over brawn?</a>
+</li>
 
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://en.wikipedia.org/wiki/Symbol_grounding_problem"
-      >Symbol Grounding Problem</a
-    >
-    by <a href="https://philpapers.org/rec/HARTSG">Stevan Harnad</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: There has been much discussion recently about
-        the scope and limits of purely symbolic models of the mind and about the
-        proper role of connectionism in cognitive modeling. This paper describes
-        the symbol grounding problem : How can the semantic interpretation of a
-        formal symbol system be made intrinsic to the system, rather than just
-        parasitic on the meanings in our heads? How can the meanings of the
-        meaningless symbol tokens, manipulated solely on the basis of their
-        shapes, be grounded in anything but other meaningless symbols? The
-        problem is analogous to trying to learn Chinese from a Chinese/Chinese
-        dictionary alone. A candidate solution is sketched: Symbolic
-        representations must be grounded bottom-up in nonsymbolic
-        representations of two kinds: iconic representations, which are analogs
-        of the proximal sensory projections of distal objects and events, and
-        categorical representations, which are learned and innate
-        feature-detectors that pick out the invariant features of object and
-        event categories from their sensory projections. Elementary symbols are
-        the names of these object and event categories, assigned on the basis of
-        their categorical representations. Higher-order symbolic
-        representations, grounded in these elementary symbols, consist of symbol
-        strings describing category membership relations. Connectionism is one
-        natural candidate for the mechanism that learns the invariant features
-        underlying categorical representations, thereby connecting names to the
-        proximal projections of the distal objects they stand for. In this way
-        connectionism can be seen as a complementary component in a hybrid
-        nonsymbolic/symbolic model of the mind, rather than a rival to purely
-        symbolic modeling. Such a hybrid model would not have an autonomous
-        symbolic module, however; the symbolic functions would emerge as an
-        intrinsically dedicated symbol system as a consequence of the bottom-up
-        grounding of categories ' names in their sensory representations. Symbol
-        manipulation would be governed not just by the arbitrary shapes of the
-        symbol tokens, but by the nonarbitrary shapes of the icons and category
-        invariants in which they are grounded
-      </li>
-      <!-- /wp:list-item -->
 
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: I see this as analogous to the Chinese
-        Room Argument. It is very complicated when you think about it; How is it
-        that our words (or any arbitrary symbol) become grounded in meaning? The
-        notion of "Reference" has deep philosophical roots going back to
-        <a href="https://plato.stanford.edu/entries/frege/">Frege</a> and
-        <a href="https://en.wikipedia.org/wiki/Charles_Sanders_Peirce"
-          >Peirce </a
-        >and as recently as
-        <a href="https://en.wikipedia.org/wiki/Saul_Kripke">Saul Kripke</a>. Is
-        it possible for any symbol to have meaning or is it necessary for a mind
-        to assign meaning within a communicative context? Is meaning inherently
-        non-grounded? How is it our minds can pick referents associated with a
-        symbol in the real world? The idea is profound because LLMs and really
-        any other statistical model of language such as Latent Drichlet Analysis
-        for topic modeling actually don't understand the tokens they are
-        processing. They are doing statistics on a corpus of text to find
-        regularities for prediction. Fundamentally, the machine cannot
-        understand what these symbols "mean" in a semantic sense. So is there an
-        algorithm we could construct that constructs semantic content? I see
-        this problem as fundamentally unsolved, and unsolvable.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/eJhhwX4KWyM?si=Mbo2X_vXOutqcjJV"
-              >Stevan Harnad - Symbol Grounding - pt 1</a
-            >
-          </li>
-          <!-- /wp:list-item -->
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6062618/">Cephalopod Brains: An Overview of Current Knowledge to Facilitate
+              Comparison With Vertebrates</a>
+</li>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/BFLqy1PvfLo?si=9nXddH4vdJj046R9"
-              >Stevan Harnad - Symbol Grounding part 2</a
-            >
-          </li>
-          <!-- /wp:list-item -->
+</ul></section><section class="source-dossier" id="source-3"><h3><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3463494/">Gut microbial communities modulating brain development and function</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+Mammalian brain development is initiated in
+        utero and internal and external environmental signals can affect this
+        process all the way until adulthood. Recent observations suggest that
+        one such external cue is the indigenous microbiota which has been shown
+        to affect developmental programming of the brain. This may have
+        consequences for brain maturation and function that impact on cognitive
+        functions later in life. This review discusses these recent findings
+        from a developmental perspective.
+      </p></div><h4>My analysis</h4><p>This line of research has been especially motivating to me because of the <a href="https://hmpdacc.org/">NIH Human Microbiome Project</a> and related work on the gut–brain relationship. It fits my broader view that cognition develops within an environment and is embodied. If changes in microbial composition can affect cognitive development, then at least some cognitive processes are coupled to environmental dynamics and biological factors outside the nervous system considered in isolation.</p><p>That matters because treating AGI or consciousness as something separable from developmental and evolutionary history risks turning cognition into a Platonic abstraction. Our species has <a href="https://en.wikipedia.org/wiki/Coevolution">coevolved</a> with organisms external to us, and some microbes contribute to cellular functions on which the organism depends. Understanding human cognition may therefore require understanding the biological systems that make the organism viable in the first place.</p><p>My claim is not merely that “the gut affects the brain.” It is that the organism exists in a <a href="https://en.wikipedia.org/wiki/Symbiosis">symbiotic relationship</a> with microbial life, so cognitive function and cognitive degradation may depend in part on maintaining that relationship. The additional papers below are included because they motivate that broader picture of cognition as situated within a living system.</p><p><strong>Related resources</strong></p><ul>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://www.mdpi.com/2409-9287/7/5/108"
-              >The Difficulties in Symbol Grounding Problem and the Direction
-              for Solving It</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
+<li>
+<a href="https://academic.oup.com/nutritionreviews/article/76/7/481/4985887">Relationship between the gut microbiome and brain function</a>
+</li>
 
-  <!-- wp:list-item -->
-  <li>
-    <a
-      href="https://www.researchgate.net/publication/361508648_Why_Machines_will_Never_Rule_the_World_Artificial_Intelligence_without_Fear"
-      >Why Machines will Never Rule the World: Artificial Intelligence without
-      Fear</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: The book’s core argument is that an
+
+<li>
+<a href="https://www.mdpi.com/2072-6643/13/6/2099">Regulation of Neurotransmitters by the Gut Microbiota and Effects
+              on Cognition in Neurological Disorders</a>
+</li>
+
+
+<li>
+<a href="https://www.pnas.org/doi/10.1073/pnas.1010529108">Normal gut microbiota modulates brain development and behavior</a>
+</li>
+
+
+<li>
+<a href="https://www.sciencedirect.com/science/article/pii/S0889159121002919">Microbiome profiles are associated with cognitive functioning in
+              45-month-old children</a>
+</li>
+
+</ul></section><section class="source-dossier" id="source-12"><h3><a href="https://www.frontiersin.org/articles/10.3389/fevo.2021.806283/full">How Organisms Come to Know the World: Fundamental Limits on Artificial
+      General Intelligence</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+Artificial intelligence has made tremendous
+        advances since its inception about seventy years ago. Self-driving cars,
+        programs beating experts at complex games, and smart robots capable of
+        assisting people that need care are just some among the successful
+        examples of machine intelligence. This kind of progress might entice us
+        to envision a society populated by autonomous robots capable of
+        performing the same tasks humans do in the near future. This prospect
+        seems limited only by the power and complexity of current computational
+        devices, which is improving fast. However, there are several significant
+        obstacles on this path.</p><p> General intelligence involves situational
+        reasoning, taking perspectives, choosing goals, and an ability to deal
+        with ambiguous information. We observe that all of these characteristics
+        are connected to the ability of identifying and exploiting new
+        affordances—opportunities (or impediments) on the path of an agent to
+        achieve its goals. A general example of an affordance is the use of an
+        object in the hands of an agent. We show that it is impossible to
+        predefine a list of such uses. Therefore, they cannot be treated
+        algorithmically.</p><p> This means that “AI agents” and organisms differ in
+        their ability to leverage new affordances. Only organisms can do this. This implies that true AGI is not achievable in the current algorithmic
+        frame of AI research. It also has important consequences for the theory
+        of evolution. We argue that organismic agency is strictly required for
+        truly open-ended evolution through radical emergence.</p><p> We discuss the
+        diverse ramifications of this argument, not only in AI research and
+        evolution, but also for the philosophy of science.
+      </p></div><div class="learning-insight-block"><h4>Editorial connection</h4><p>This source sharpens the embodiment argument by focusing on affordances: the open-ended ways an organism can discover opportunities for action in a changing environment. The relevance to AGI is not that biology automatically proves silicon intelligence impossible, but that a general-intelligence theory must explain how an artificial system would acquire an equivalent capacity for open-ended, context-sensitive discovery.</p></div></section><div class="learning-insight-block"><h3>The inferential bridge</h3><p>The biological evidence in this section establishes something directly about biological cognition: humans and other animals develop through evolved, embodied, and environmentally coupled mechanisms. It does <em>not</em>, by itself, prove that every possible general intelligence must be biological.</p><p>The stronger argument is comparative. If evolved organisms begin with rich priors, specialized subsystems, bodily feedback, social learning, and context-sensitive mechanisms for relevance, then an artificial system that lacks those mechanisms must either reproduce their functional equivalents or explain why they are unnecessary. In that form, embodiment and evolution become constraints on a theory of AGI rather than an appeal to biology by analogy.</p><p>The same point applies to innateness. Spelke and the language material challenge a blank-slate picture of human learning, but an engineer could respond by building explicit priors into an artificial architecture. The real question is therefore whether current LLM pretraining already supplies the right kinds of priors and representations, or whether a qualitatively richer architecture is required.</p></div><header class="ep-part-banner" id="part-5"><span class="ep-part-kicker">Part 5</span><h2 class="ep-part-title">Agency and Cognitive Architecture</h2><span class="ep-part-summary">Distinguish operational software agency from evolved psychological agency, then ask what architecture a more general system would need.</span></header><p class="chapter-lead">The word “agent” can conceal an important ambiguity. Software can be called agentic because it acts toward goals, while evolutionary accounts use agency to describe a much richer organization of perception, valuation, learning, planning, and self-maintaining behavior.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> evolution of agency → social and normative agency → cognitive architectures and memory</p></div><section class="source-dossier" id="source-5"><h3><a href="https://philpapers.org/rec/MITFAH">Free agents: how evolution gave us free will</a>
+    : <a href="https://www.kjmitchell.com/">Kevin Mitchell</a>, Trinity College
+    Dublin and
+    <a href="https://youtu.be/gxpbvE8V0Dg?si=qenoBQUNct30ZMKL">The Evolution of Agency</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+An evolutionary case for the existence of
+        free will. Scientists are learning more and more about how brain
+        activity controls behavior and how neural circuits weigh alternatives
+        and initiate actions. As we probe ever deeper into the mechanics of
+        decision making, many conclude that agency-or free will-is an illusion. In Free Agents, leading neuroscientist Kevin Mitchell presents a wealth
+        of evidence to the contrary, arguing that we are not mere machines
+        responding to physical forces but agents acting with purpose. Traversing
+        billions of years of evolution, Mitchell tells the remarkable story of
+        how living beings capable of choice emerged from lifeless matter.</p><p> He
+        explains how the emergence of nervous systems provided a means to learn
+        about the world, granting sentient animals the capacity to model,
+        predict, and simulate. Mitchell reveals how these faculties reached
+        their peak in humans with our abilities to imagine and to introspect, to
+        reason in the moment, and to shape our possible futures through the
+        exercise of our individual agency. Mitchell's argument has important
+        implications-for how we understand decision making, for how our
+        individual agency can be enhanced or infringed, for how we think about
+        collective agency in the face of global crises, and for how we consider
+        the limitations and future of artificial intelligence. An astonishing
+        journey of discovery, Free Agents offers a new framework for
+        understanding how, across a billion years of Earth history, life evolved
+        the power to choose and why this matters.
+      </p></div><h4>My analysis</h4><p>One of the first concepts that appears in AGI discussions is “autonomous agency.” My contention is that we should be careful about what that phrase means. We can call a software system an agent in an operational sense because it selects actions toward an objective, but that is not necessarily the same phenomenon as the agency that emerges in a biological organism over evolutionary and developmental time.</p><p>Kevin Mitchell is not writing primarily to undermine AGI research. I include his work because it challenges the assumption that agency is simply another computational function that can be named at a high level and then treated as solved. If agency depends on the organization of self-maintaining living systems, that difference has to be addressed rather than hidden by using the same word for both.</p></section><section class="source-dossier" id="source-6"><h3><a href="https://www.researchgate.net/publication/363343601_The_Evolution_of_Agency_Behavioral_Organization_from_Lizards_to_Humans">The Evolution of Agency: Behavioral Organization from Lizards to
+      Humans</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+A leading developmental psychologist proposes
+        an evolutionary pathway to human psychological agency. Nature cannot
+        build organisms biologically prepared for every contingency they might
+        possibly encounter. Instead, Nature builds some organisms to function as
+        feedback control systems that pursue goals, make informed behavioral
+        decisions about how best to pursue those goals in the current situation,
+        and then monitor behavioral execution for effectiveness. Nature builds
+        psychological agents. In a bold new theoretical proposal, Michael
+        Tomasello advances a typology of the main forms of psychological agency
+        that emerged on the evolutionary pathway to human beings.</p><p> Tomasello
+        outlines four main types of psychological agency and describes them in
+        evolutionary order of emergence. First was the goal-directed agency of
+        ancient vertebrates, then came the intentional agency of ancient
+        mammals, followed by the rational agency of ancient great apes, ending
+        finally in the socially normative agency of ancient humans. Each new
+        form of psychological organization represented increased complexity in
+        the planning, decision-making, and executive control of behavior. Each
+        also led to new types of experience of the environment and, in some
+        cases, of the organism's own psychological functioning, leading
+        ultimately to humans' experience of an objective and normative world
+        that governs all of their thoughts and actions. Together, these
+        proposals constitute a new theoretical framework that both broadens and
+        deepens current approaches in evolutionary psychology.
+      </p></div><h4>My analysis</h4><p>Tomasello's account is similar to Mitchell's in treating agency as something that develops through evolutionary pressures. Tomasello emphasizes social cooperation and coordination: selection favors feedback systems that can interact intelligently with their environment and eventually pursue goals whose organization goes beyond immediate survival. Mitchell likewise describes self-preserving feedback systems as part of the evolutionary pathway toward richer agency.</p><p>Neither book is a direct attack on AGI research, but together they sharpen the question raised by the microbiome and cephalopod examples: can intelligence and agency emerge in a vacuum? Much human learning is social. If the capacities we associate with general intelligence depend heavily on interaction with other agents, then it is not obvious that those capacities can simply appear through isolated statistical learning over a fixed corpus.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://partiallyexaminedlife.com/2023/10/02/ep326-1-tomasello-agency/">Ep. 326: Guest Michael Tomasello on the Evolution of Agency (Part
+              One)</a>
+</li>
+
+
+<li>
+<a href="https://www.researchgate.net/publication/370347105_Imagine_a_lizard_with_the_goal_of_making_better_decisions">Imagine a lizard with the goal of making better decisions</a>
+</li>
+
+
+<li>
+<a href="http://ektr.uni-eger.hu/wp-content/uploads/2015/11/tomasello-the-cultural-origins-of-human-cognition.pdf">The Cultural Origins of Human Cognition</a>
+</li>
+
+</ul></section><section class="source-dossier" id="source-2"><h3><a href="https://youtu.be/cEyHsMzbZBs?si=k9njYlDjjJF6CkUd">“What's wrong with LLMs and what we should be building instead” - Tom
+      Dietterich</a></h3><div class="concept-callout"><strong>Summary: </strong><p>
+In this discussion
+        <a href="https://engineering.oregonstate.edu/people/thomas-g-dietterich">Thomas G. Dietterich</a>
+        discusses the fundamental problems with LLMs and potential solutions. He
+        essentially recognizes the need for
+        <a href="https://en.wikipedia.org/wiki/Cognitive_architecture">Cognitive Architecture</a>
+        and Knowledge bases.
+      </p></div><h4>My analysis</h4><p>I think artificial intelligence will require a cognitive architecture richer than pure <a href="https://plato.stanford.edu/entries/connectionism/">connectionism</a>. LLMs are extraordinarily large statistical models that extract patterns from vast data sets and use those patterns to predict likely tokens. My concern is that neither cognition nor consciousness can simply be identified with that statistical objective.</p><p>Memory is one example. Looking at <a href="https://en.wikipedia.org/wiki/Outline_of_human_intelligence">human intelligence</a>, what we call memory is not equivalent to database storage or to the ephemeral retention of tokens in a context window. Human memory is reconstructed, organized by experience, and embedded in a broader cognitive system. The work of <a href="https://en.wikipedia.org/wiki/Elizabeth_Loftus">Elizabeth Loftus</a>, <a href="https://scholar.google.com/citations?user=ccxlBZ4AAAAJ&amp;hl=en">C. R. Gallistel</a>, other <a href="https://en.wikipedia.org/wiki/Category:Memory_researchers">memory researchers</a>, and models such as <a href="https://en.wikipedia.org/wiki/Atkinson%E2%80%93Shiffrin_memory_model">Atkinson–Shiffrin</a> makes it difficult for me to regard an LLM context window as genuine <a href="https://en.wikipedia.org/wiki/Category:Memory">memory</a> in the same cognitive sense.</p><p>That is only one missing function. The brain also contains specialized subsystems whose behavior depends on their coupling to other subsystems. Artificial deep neural networks abstract away many of these ontological differences between kinds of nodes and connections; they do not directly model <a href="https://en.wikipedia.org/wiki/Functional_integration_(neurobiology)">functional integration</a> in the biological sense. This is why Dietterich's emphasis on cognitive architecture and knowledge bases is important to me: the question is not simply how to scale one statistical mechanism, but how to organize heterogeneous cognitive functions into a coherent system.</p><p><strong>Related resources</strong></p><ul>
+
+<li>
+<a href="https://youtu.be/I36y3YJLFU0?si=RpEAPR_btCb51qWH">BI 158 Paul Rosenbloom: Cognitive Architectures</a>
+</li>
+
+</ul></section><div class="learning-insight-block"><h3>Operational agency versus biological agency</h3><p>A proponent of AI agents can reasonably object that “agency” in software engineering is an operational term and need not reproduce the evolutionary history described by Mitchell or Tomasello. I think that objection should be granted rather than argued past.</p><p>The substantive question is whether operational agency is enough for general intelligence. If the richer capacities associated with biological agency—self-maintenance, endogenous goal formation, adaptive valuation, social learning, perspective taking, and persistent world modeling—are necessary for general intelligence, then calling a tool-using language model an “agent” does not establish that those capacities are present. It changes the vocabulary, not the architecture.</p></div><header class="ep-part-banner" id="part-6"><span class="ep-part-kicker">Part 6</span><h2 class="ep-part-title">Limits, Risk, and What Would Change My Mind</h2><span class="ep-part-summary">Synthesize the strongest claims without collapsing “LLMs are not AGI,” “AGI is impossible,” and “machines cannot have minds.”</span></header><p class="chapter-lead">The final section separates the strongest impossibility claims from the more modest thesis of the article. Some sources argue that computational AGI is impossible in principle; my own conclusion does not need to go that far to reject the inference from current LLM progress to imminent AGI.</p><div class="chapter-guide"><p class="chapter-path"><strong>Path through this section:</strong> formal-limit argument → scope of the thesis → falsifiable update criteria → conclusion</p></div><section class="source-dossier" id="source-11"><h3><a href="https://www.researchgate.net/publication/361508648_Why_Machines_will_Never_Rule_the_World_Artificial_Intelligence_without_Fear">Why Machines will Never Rule the World: Artificial Intelligence without
+      Fear</a></h3><div class="concept-callout"><strong>Abstract: </strong><p>
+The book’s core argument is that an
         artificial intelligence that could equal or exceed human
         intelligence—sometimes called artificial general intelligence (AGI)—is
         for mathematical reasons impossible. It offers two specific reasons for
@@ -1671,473 +1217,19 @@
         computer science, philosophy, linguistics, and biology, setting up their
         book around three central questions: What are the essential marks of
         human intelligence? What is it that researchers try to do when they
-        attempt to achieve "artificial intelligence" (AI)? And why, after more
+        attempt to achieve "artificial intelligence" (AI)?</p><p> And why, after more
         than 50 years, are our most common interactions with AI, for example
         with our bank’s computers, still so unsatisfactory?
-      </li>
-      <!-- /wp:list-item -->
+      </p></div><h4>My analysis</h4><p><a href="https://ontology.buffalo.edu/smith/">Barry Smith</a> and Jobst Landgrebe make the strongest impossibility claim among the sources collected here: they argue that the mathematics needed to model the relevant complexity of human intelligence cannot be captured in the way AGI research requires. This is an entire book, so I cannot summarize the case responsibly in a few sentences.</p><p>What matters for my purposes is that their argument ranges across stochastic complex-systems modeling, language, and social interaction rather than treating intelligence as a single benchmark capability. Smith's discussions of dispositions and capabilities are also useful because those concepts force us to ask what an autonomous system can actually do across changing circumstances, rather than what outputs it can produce in a fixed evaluation.</p><p><strong>Related resources</strong></p><ul>
 
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>:
-        <a href="https://ontology.buffalo.edu/smith/">Barry Smith</a> argues
-        that the mathematics necessary to model human complexity is
-        fundamentally impossible. This is an entire book so I can't really
-        summarize it quickly, but some of their arguments are related to the
-        limitations of stochastic complex systems modeling, language modeling,
-        and social interaction. Barry Smith also has excellent discussions on
-        the notion of Dispositions and Capabilities which are fundamental
-        concepts to understand about autonomous systems.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/GV1Ma2ehpxo?si=GCEMSYy3WVlKRUrU"
-              >Why Machines Will Never Rule the World (Zurich Lecture, October
-              2022)</a
-            >
-          </li>
-          <!-- /wp:list-item -->
+<li>
+<a href="https://youtu.be/GV1Ma2ehpxo?si=GCEMSYy3WVlKRUrU">Why Machines Will Never Rule the World (Zurich Lecture, October
+              2022)</a>
+</li>
 
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://youtu.be/0giPMMoKR9s?si=ImA1fwTa0Gpbj6mc"
-              >Defining Intelligence</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
 
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://www.frontiersin.org/articles/10.3389/fevo.2021.806283/full"
-      >How Organisms Come to Know the World: Fundamental Limits on Artificial
-      General Intelligence</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: Artificial intelligence has made tremendous
-        advances since its inception about seventy years ago. Self-driving cars,
-        programs beating experts at complex games, and smart robots capable of
-        assisting people that need care are just some among the successful
-        examples of machine intelligence. This kind of progress might entice us
-        to envision a society populated by autonomous robots capable of
-        performing the same tasks humans do in the near future. This prospect
-        seems limited only by the power and complexity of current computational
-        devices, which is improving fast. However, there are several significant
-        obstacles on this path. General intelligence involves situational
-        reasoning, taking perspectives, choosing goals, and an ability to deal
-        with ambiguous information. We observe that all of these characteristics
-        are connected to the ability of identifying and exploiting new
-        affordances—opportunities (or impediments) on the path of an agent to
-        achieve its goals. A general example of an affordance is the use of an
-        object in the hands of an agent. We show that it is impossible to
-        predefine a list of such uses. Therefore, they cannot be treated
-        algorithmically. This means that “AI agents” and organisms differ in
-        their ability to leverage new affordances. Only organisms can do this.
-        This implies that true AGI is not achievable in the current algorithmic
-        frame of AI research. It also has important consequences for the theory
-        of evolution. We argue that organismic agency is strictly required for
-        truly open-ended evolution through radical emergence. We discuss the
-        diverse ramifications of this argument, not only in AI research and
-        evolution, but also for the philosophy of science.
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
+<li>
+<a href="https://youtu.be/0giPMMoKR9s?si=ImA1fwTa0Gpbj6mc">Defining Intelligence</a>
+</li>
 
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://plato.stanford.edu/entries/frame-problem/"
-      >The Frame Problem</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Summary</strong>: In the confined world of a robot, surroundings
-        are not static. Many varying forces or actions can cause changes or
-        modifications to it. The problem of forcing a robot to adapt to these
-        changes is the basis of the frame problem in artificial intelligence.
-        Information in the knowledge base and the robot's conclusions combine to
-        form the input for what the robot's subsequent action should be. A good
-        selection from its facts can be made by discarding or ignoring
-        irrelevant facts and ridding of results that could have negative side
-        effects. (Dennett) (Fischler 304-5). A robot must introduce facts that
-        are relevant to a particular moment. That is, a robot will examine its
-        current situation, and then look up the facts that will be beneficial to
-        choosing its subsequent action. The robot should also search for any
-        changeable facts. It then examines these facts to determine if any of
-        them have been changed during a previous examination. There are two
-        basic types of change:<!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>Relevant Change: inspect the changes made by an action</li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Irrelevant Change: do not inspect facts that are not related to the
-            task at hand
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Facts may be examined utilizing two levels:<!-- wp:list -->
-            <ul>
-              <!-- wp:list-item -->
-              <li>
-                Semantic Level: This level interprets what kind of information
-                is being examined. Solutions should become obvious by the
-                assumptions of how an object should behave. There are believers
-                in a purely semantic approach who believe that correct
-                information can be reached via meaning. However, this hypothesis
-                has yet to be proven.
-              </li>
-              <!-- /wp:list-item -->
-
-              <!-- wp:list-item -->
-              <li>
-                Syntactic Level: This level simply decides in which format the
-                information should be inspected. That is, it forms solutions
-                based on the structure and patterns of facts.
-              </li>
-              <!-- /wp:list-item -->
-            </ul>
-            <!-- /wp:list -->
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            When inspecting the facts, various problems can occur:<!-- wp:list -->
-            <ul>
-              <!-- wp:list-item -->
-              <li>Sometimes an implication can be missed.</li>
-              <!-- /wp:list-item -->
-
-              <!-- wp:list-item -->
-              <li>
-                Considering all facts and all their subsequent side effects is
-                time-consuming.
-              </li>
-              <!-- /wp:list-item -->
-
-              <!-- wp:list-item -->
-              <li>
-                Some facts are unnecessarily examined when they are unneeded.
-              </li>
-              <!-- /wp:list-item -->
-            </ul>
-            <!-- /wp:list -->
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: Other scholars have addressed this
-        problem; for example John Vervaeke has explored a solution he calls
-        "Relevance Realization". This is a non-trivial topic; it was something
-        that became apparent to me when studying argumentation. How is it we
-        determine whether a counter-argument is relevant to a given topic? There
-        really is no working definition of "relevance", and furthermore, we
-        really don't understand the processes by which sentient agents explore a
-        combinatorial search space and retain the salient features (or what is
-        relevant). I think the solution will inevitable require us to understand
-        defeasible reasoning and heuristics at a deeper level but no one has
-        identified cognitive mechanisms that reduce the search space to
-        something manageable. Consider the current state of LLMs; we need to
-        train neural networks on as much information as possible for them to
-        fine tune their statistical generalization but humans have this ability
-        to make intelligent choices without searching an exponentially large
-        state space. This is something I do not think can be addressed with
-        current methods in AI research.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://philpapers.org/rec/ANDPPA-9"
-              >Predictive processing and relevance realization: exploring
-              convergent solutions to the frame problem</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="http://groups.umd.umich.edu/cis/course.des/cis479/projects/frame/welcome.html"
-              >The Frame Problem</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://www.researchgate.net/publication/225070451_Cognitive_Wheels_The_Frame_Problem_of_AI"
-              >Cognitive Wheels: The Frame Problem of AI</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://philpapers.org/rec/SPECK">Core knowledge</a>:
-    <a href="https://en.wikipedia.org/wiki/Elizabeth_Spelke"
-      >Elizabeth S. Spelke</a
-    ><!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Abstract</strong>: Complex cognitive skills such as reading and
-        calculation and complex cognitive achievements such as formal science
-        and mathematics may depend on a set of building block systems that
-        emerge early in human ontogeny and phylogeny. These core knowledge
-        systems show characteristic limits of domain and task specificity: Each
-        serves to represent a particular class of entities for a particular set
-        of purposes. By combining representations from these systems, however
-        human cognition may achieve extraordinary flexibility. Studies of
-        cognition in human infants and in nonhuman primates therefore may
-        contribute to understanding unique features of human knowledge. 2020
-        APA, all rights reserved)
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: I think this is a deeply fundamental
-        problem in AI research; Human cognition seems to have innate
-        functionalities that expedite the learning process. The mind is not a
-        blank slate. We are potentially born with cognitive mechanisms that have
-        evolved over a long period of time that allow us to perform specialized
-        functions. This also suggests continuity between us and closely related
-        biological cousins, since many of these functions are shared among
-        related mammals. This suggests, at the very least, that cognitive
-        functions are the product of an evolutionary history. This is similar to
-        Noam Chomsky's idea that we are born with an innate capacity for
-        language. The innateness hypothesis suggests that we are endowed with an
-        innate blueprint rather than learning language inductively. I think this
-        extends to Spelke's ideas as well; there are certain features that we
-        have by default so the statistical models of the mind will fundamentally
-        not have these.
-        <!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://plato.stanford.edu/entries/innateness-language/"
-              >Innateness and Language</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a
-              href="https://en.wikipedia.org/wiki/Statistical_learning_in_language_acquisition"
-              >Statistical learning in language acquisition</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <a href="https://psycnet.apa.org/record/2003-06311-010"
-              >What makes us smart? Core knowledge and natural language.</a
-            >
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        14b.
-        <a
-          href="https://scholar.google.com/citations?user=6XX0V-gAAAAJ&amp;hl=en"
-          >Iris Berent</a
-        >:
-        <a href="https://www.pnas.org/doi/full/10.1073/pnas.1318261111"
-          >Language universals at birth</a
-        ><!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>
-            <strong>Abstract</strong>: The evolution of human languages is
-            driven both by primitive biases present in the human sensorimotor
-            systems and by cultural transmission among speakers. However,
-            whether the design of the language faculty is further shaped by
-            linguistic biological biases remains controversial. To address this
-            question, we used near-infrared spectroscopy to examine whether the
-            brain activity of neonates is sensitive to a putatively universal
-            phonological constraint. Across languages, syllables like blif are
-            preferred to both lbif and bdif. Newborn infants (2–5 d old)
-            listening to these three types of syllables displayed distinct
-            hemodynamic responses in temporal-perisylvian areas of their left
-            hemisphere. Moreover, the oxyhemoglobin concentration changes
-            elicited by a syllable type mirrored both the degree of its
-            preference across languages and behavioral linguistic preferences
-            documented experimentally in adulthood. These findings suggest that
-            humans possess early, experience-independent, linguistic biases
-            concerning syllable structure that shape language perception and
-            acquisition.
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            <strong>My Comments</strong>: This is another example of what I am
-            addressing. Assuming that neural networks can inductively come to
-            understand language and semantics through brute force statistical
-            learning seems contrary to what language researchers know about
-            innate universal structures at birth. I don't think this should be
-            controversial.
-          </li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-
-  <!-- wp:list-item -->
-  <li>
-    <a href="https://arxiv.org/abs/1801.00631"
-      >Deep Learning: A Critical Appraisal</a
-    >
-    by Gary Marcus<!-- wp:list -->
-    <ul>
-      <!-- wp:list-item -->
-      <li>
-        <strong>Summary</strong>: The author lists ten concerns for deep
-        learning<!-- wp:list -->
-        <ul>
-          <!-- wp:list-item -->
-          <li>Deep learning thus far is data hungry</li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far is shallow and has limited capacity for
-            transfer
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far has no natural way to deal with hierarchical
-            structure
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far has struggled with open-ended inference
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>Deep learning thus far is not sufficiently transparent</li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far has not been well integrated with prior
-            knowledge
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far cannot inherently distinguish causation from
-            correlation
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning presumes a largely stable world, in ways that may be
-            problematic
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>
-            Deep learning thus far works well as an approximation, but its
-            answers often cannot be fully trusted
-          </li>
-          <!-- /wp:list-item -->
-
-          <!-- wp:list-item -->
-          <li>Deep learning thus far is difficult to engineer with</li>
-          <!-- /wp:list-item -->
-        </ul>
-        <!-- /wp:list -->
-      </li>
-      <!-- /wp:list-item -->
-
-      <!-- wp:list-item -->
-      <li>
-        <strong>My Comments</strong>: A lot of these are repeats but the author
-        sees them as critical impediments to AGI through LLMs. Some of these I
-        see as solvable, such as the ease of engineering (which recently has
-        been awesome with all of the open source tools) and approximation
-        issues. Some of the deeper critiques, such as hierarchical structure, to
-        me seem fundamentally problematic for deep learning because neural
-        networks are essentially statistical models, there will always be room
-        for error when it comes to basic concepts humans seem to innately have
-        (such as being able to recognize the concept "on top of" without error).
-        There are many other semantic relations such as taxonomic relations,
-        meronomies, contrastive relations, congruence relations, chaining
-        relations, ranking, grading, degree relations, synonymy, homonymy,
-        hyponymy, or literally any other relation identified in lexical
-        semantics that require the ability to reason and use conceptual schemas.
-      </li>
-      <!-- /wp:list-item -->
-    </ul>
-    <!-- /wp:list -->
-  </li>
-  <!-- /wp:list-item -->
-</ol>
-<!-- /wp:list -->
-
-<!-- wp:paragraph -->
-<p>
-  Okay so I think that should be enough for now. I will probably add to this
-  post at some point; especially if I think these issues have been sufficiently
-  addressed. My main thesis I suppose is that I kind of see this LLM hype is
-  nothing but a hype. There are many amazing applications for GPT4, some of
-  which I am using, but the notion that we are anywhere close to AGI seems a bit
-  absurd. However, I could be wrong. For all I know, there is some general
-  learning algorithm that's yet to be released to the public. Maybe there is a
-  single argument that can defeat all of these issues listed above.&nbsp;
-</p>
-<!-- /wp:paragraph -->
-</article>
+</ul></section><div class="checkpoint-block"><h3>Three claims that should remain separate</h3><ol><li><strong>LLMs are insufficient for operational AGI.</strong> This is the main thesis developed by the reasoning, relevance, learning, agency, and architecture sections.</li><li><strong>Computation is insufficient for genuine semantic understanding.</strong> This is a stronger philosophical claim associated with the Chinese Room, symbol grounding, and related critiques.</li><li><strong>Computation is insufficient for consciousness or mind.</strong> This is stronger still. It is relevant to Strong AI, but it is not necessary to establish the narrower claim that scaling LLMs does not automatically yield AGI.</li></ol></div><div class="learning-insight-block"><h3>What would change my mind?</h3><p>A useful thesis should identify evidence that would force it to update. I would take the case for an LLM-centered path to AGI much more seriously if systems demonstrated several of the following properties robustly and outside narrow benchmark conditions:</p><ul class="question-grid"><li>Rapid out-of-distribution learning without massive retraining.</li><li>Persistent, revisable world models that remain coherent across long time horizons.</li><li>Systematic causal, analogical, abductive, and defeasible reasoning in genuinely novel contexts.</li><li>Grounded acquisition of new concepts through interaction rather than text correlation alone.</li><li>Open-ended discovery of relevant affordances in changing environments.</li><li>Autonomous formation, evaluation, and revision of goals rather than merely executing externally supplied objectives.</li><li>Memory that functions as an integrated part of cognition rather than as a larger context window or external database.</li><li>Reliable composition of specialized cognitive functions into a coherent architecture.</li></ul></div><h2 id="conclusion">Conclusion</h2><p>I think this is enough for now, although I expect to add to the post—especially when I encounter work that directly addresses these objections. My main thesis is not that GPT-class systems lack value. There are many impressive and useful applications for them, including applications I use myself. The narrower point is that the jump from those capabilities to “we are close to AGI” remains, in my view, poorly justified.</p><p>The sources collected here point to several different gaps: statistical generalization versus structured reasoning; syntax versus semantics; learned correlations versus grounded concepts; externally specified objectives versus richer agency; context windows versus human memory; and disembodied pretraining versus cognition that develops through bodies, environments, and social interaction. No single one of these observations has to carry the entire argument. Their cumulative force is that “scale the language model” is not yet a theory of general intelligence.</p><p>I could be wrong. There may be a general learning algorithm or architectural development that resolves many of these problems at once, and there may be arguments I have not encountered that substantially weaken the objections above. That is why the update criteria matter: if systems begin to demonstrate those capacities robustly, the thesis should change with the evidence. Until then, I think the burden remains on claims that current LLM progress is evidence of an imminent transition to AGI.</p><p class="chapter-transition"><a href="#top">Back to top ↑</a></p></article></body></html>

@@ -582,6 +582,20 @@
       .ep-post .checkpoint-block + header.ep-part-banner {
         margin-top: 3.8em;
       }
+
+
+      /* =========================================================
+         Desktop editorial lists: keep critical-question/checklist
+         material vertically stacked. Tables retain their normal
+         desktop columns and only become cards in the mobile media
+         query defined above.
+         ========================================================= */
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+      }
+
 </style>
 <script>
       window.MathJax = {
@@ -610,47 +624,39 @@
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <article class="ep-post">
+<h1 id="top">How to Evaluate Research</h1>
+<p class="chapter-lead">Evaluating research is not the same as deciding whether you like its conclusion. The aim is to replace vague approval or suspicion with a structured set of questions about the claim, the design, the evidence, the analysis, the reporting, and the limits of inference.</p>
+<div class="core-claim"><strong>Core principle:</strong> Do not begin with “Is this biased?” Begin with “What exactly is being claimed, and what would have to be true for the evidence to justify that claim?”</div>
+<nav class="ep-toc" aria-label="Table of contents" id="contents"><h2>Table of Contents</h2><div class="ep-toc-part"><p><a href="#part-1">Part I — From Suspicion to Structured Evaluation</a></p><ul><li><a href="#critical-posture">The critical posture</a></li><li><a href="#evaluation-map">A map for evaluating research</a></li><li><a href="#pico">PICO and PICOTTS</a></li><li><a href="#background-foreground">Background and foreground questions</a></li><li><a href="#claim-design-fit">Match the claim to the design</a></li><li><a href="#reporting-validity">Reporting standards and validity</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-2">Part II — Bias, Selective Reporting, and the Evidence Base</a></p><ul><li><a href="#reporting-bias">What reporting bias is—and is not</a></li><li><a href="#disconfirmation">Confirmation, disconfirmation, and null results</a></li><li><a href="#selective-reporting">Forms of selective reporting</a></li><li><a href="#quality-levels">Study quality, report quality, and evidence-base quality</a></li><li><a href="#evidence-context">Evidence-based practice and broader context</a></li><li><a href="#janus">The Janus phenomenon</a></li><li><a href="#broader-model">Selective reporting as a general mental model</a></li><li><a href="#appraisal-questions">Research-appraisal questions</a></li><li><a href="#replication">Replication and reproducibility</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-3">Part III — Study Design, Causality, and Ecological Evidence</a></p><ul><li><a href="#causal-inference">From association to causal inference</a></li><li><a href="#counterfactuals">Counterfactual reasoning</a></li><li><a href="#ecological-studies">Ecological studies and population-level evidence</a></li><li><a href="#causal-questions">Critical questions for causal claims</a></li><li><a href="#ecological-fallacy">The ecological fallacy</a></li><li><a href="#simpsons-paradox">Simpson’s paradox</a></li><li><a href="#summary">Summary</a></li><li><a href="#sources">Sources</a></li></ul></div></nav>
+<header class="ep-part-banner" id="part-1">
+  <span class="ep-part-kicker">Part I</span>
+  <span class="ep-part-title">From Suspicion to Structured Evaluation</span>
+  <span class="ep-part-summary">Build a disciplined process for evaluating a research claim before reaching for broad accusations about bias, funding, ideology, or corruption.</span>
+</header>
+<div class="chapter-guide"><p>This part establishes the intellectual posture of the article and turns it into a practical evaluation sequence.</p><p class="chapter-path"><strong>Path:</strong> critical posture → evaluation map → PICO/PICOTTS → question types → claim–design fit → reporting and validity</p></div>
+<h2 id="critical-posture">The Critical Posture</h2>
 <p>
-  &nbsp;I want to discuss how to approach evaluating research. You do not need
+   I want to discuss how to approach evaluating research. You do not need
   to be an expert to ask the right questions or understand the general
   procedures experts follow when publishing quantitative or qualitative
   research. You do not need to be a statistician to know whether the results of
   a study answer the intended question. As with many arguments, researchers
-  follow a general schematic. The schematic is different from an
-  <a href="https://en.wikipedia.org/wiki/Argumentation_scheme"
-    >argument scheme</a
-  >
-  in that it has been deemed ideal and variations have been ranked according to
-  their strength. The research process represents the ideal form of inference
-  for inferring causation from limited observations in a data set. As with all
+  follow a general schematic. This schematic is related to, but different from, an
+  <a href="https://en.wikipedia.org/wiki/Argumentation_scheme">argument scheme</a>
+  because research designs can be evaluated against methodological ideals and ranked by the strength of the inferences they support. The research process is an organized attempt to draw justified conclusions—including causal conclusions—from limited observations. As with all
   forms of argument, critical questions can be applied to probe various features
   of the inferential process, ultimately evaluating the conclusion. Your
-  questions should be substantial. Sometimes they can be simple yes/no, other
-  times more complex and open ended, or they can be directed at assessing the
-  implications of accepting the conclusion. Sometimes questions can be
-  irrelevant or loaded in favor of your presumptions. The questioning process
-  should be guided by a general level of intellectual humility and fairness. You
-  do not want to unnecessarily use
+  questions should be substantial. Some questions are simple yes-or-no checks; others are open-ended probes into assumptions, methods, or the implications of accepting the conclusion. Questions can also be irrelevant or loaded in favor of your own presumptions. The questioning process
+  should be guided by a general level of intellectual humility and fairness. Avoid unnecessarily using
   <a href="https://en.wikipedia.org/wiki/Loaded_language">loaded language</a> or
-  <a href="https://en.wikipedia.org/wiki/Straw_man">straw man</a> their
-  position.
-  <a
-    href="https://github.com/afontana1/critical_thinking/tree/master/course_outline/course1-Argumentation%20Fundamentals/Books"
-    >See The Thinkers Guides to Asking Questions for more examination</a
-  >. Anyway, that is more of a general point. I specifically want to help us
-  transcend beyond the overly simplistic assertion we all come across when
+  <a href="https://en.wikipedia.org/wiki/Straw_man">straw man</a> their position.
+  <a href="https://github.com/afontana1/critical_thinking/tree/master/course_outline/course1-Argumentation%20Fundamentals/Books">See The Thinkers Guides to Asking Questions for more examination</a>. The practical goal here is to move beyond the overly simplistic assertion we all come across when
   someone disagrees with research: "They are biased and are funded by industry
-  X". It is time to move beyond the ridiculous simplicity of attributing bias
-  without specific evidence to do so. We can begin by looking at one of the
+  X". Attributing bias without specific evidence is not a substitute for evaluating the research. We can begin by looking at one of the
   fundamental framework practitioners use when implementing evidence based
   research:
   <a href="https://en.wikipedia.org/wiki/PICO_process">The PICO Process</a>.
 </p>
-<!--wp:paragraph-->
-
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
 <p>
   I should begin by clarifying I am not saying that bias and malicious intent
   cannot happen within a research agenda. If your mind suddenly jumped to that,
@@ -661,44 +667,23 @@
   <a href="https://en.wikipedia.org/wiki/Reporting_bias">reporting bias</a>,
   misconduct such as
   <a href="https://en.wikipedia.org/wiki/Sham_peer_review">Sham peer review</a>,
-  <a
-    href="https://en.wikipedia.org/wiki/Why_Most_Published_Research_Findings_Are_False"
-    >Why most published research is false</a
-  >,
-  <a href="https://en.wikipedia.org/wiki/Industry_funding_of_academic_research"
-    >industry funding</a
-  >, and the
-  <a href="https://en.wikipedia.org/wiki/Scholarly_peer_review#Criticism"
-    >general skepticism of scholarly peer review</a
-  >. However, these are typically the first things people assume of any research
-  before assessing the validity and process of the research itself. It is
-  normally assumed that, if a conclusion is not to your liking, it is
-  immediately due to one of these issues. No further inquiry needed, and no need
-  to justify your position. Let us assume for simplicity, that none of these
-  problems exist with the research article you hold in your hand. Do you know
+  <a href="https://en.wikipedia.org/wiki/Why_Most_Published_Research_Findings_Are_False">Why most published research is false</a>,
+  <a href="https://en.wikipedia.org/wiki/Industry_funding_of_academic_research">industry funding</a>, and the
+  <a href="https://en.wikipedia.org/wiki/Scholarly_peer_review#Criticism">general skepticism of scholarly peer review</a>. However, these are often the first explanations people reach for before assessing the validity and process of the research itself. If a conclusion is unwelcome, one of these problems may be invoked immediately, ending inquiry rather than beginning it. For the moment, assume that none of these problems exists in the research article you hold in your hand. Do you know
   how to evaluate it?
 </p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
+<h2 id="evaluation-map">A Map for Evaluating Research</h2>
+<p>The ideas developed throughout this article can be organized into a sequence. The sequence is not a mechanical scoring rule; it is a way to make your questions explicit and to prevent one concern—such as suspected bias—from substituting for the rest of the evaluation.</p>
+<div class="table-wrap"><table class="three-col long-table lens-table"><thead><tr><th>Stage</th><th>Central question</th><th>What to inspect</th></tr></thead><tbody><tr><td data-label="Stage">1. Identify the claim</td><td data-label="Central question">What exactly is being asserted?</td><td data-label="What to inspect">Clarify the population, intervention or exposure, comparison, outcome, and type of claim.</td></tr><tr><td data-label="Stage">2. Match claim to design</td><td data-label="Central question">Can this design answer that kind of question?</td><td data-label="What to inspect">Distinguish descriptive, associational, predictive, diagnostic, and causal claims.</td></tr><tr><td data-label="Stage">3. Examine measurement and sampling</td><td data-label="Central question">Were the relevant concepts measured well, and who entered the sample?</td><td data-label="What to inspect">Operational definitions, construct validity, inclusion criteria, attrition, and selection.</td></tr><tr><td data-label="Stage">4. Examine analysis</td><td data-label="Central question">Do the conclusions depend on fragile analytic choices?</td><td data-label="What to inspect">Controls, covariates, interactions, alternative analyses, missing data, uncertainty, and robustness.</td></tr><tr><td data-label="Stage">5. Examine reporting</td><td data-label="Central question">Does the report represent the full inquiry?</td><td data-label="What to inspect">Null and disconfirming results, omitted outcomes, selective citation, and transparency.</td></tr><tr><td data-label="Stage">6. Examine generalization</td><td data-label="Central question">To whom and to what level do the conclusions apply?</td><td data-label="What to inspect">Internal validity, external validity, population composition, and ecological inference.</td></tr><tr><td data-label="Stage">7. Examine the evidence base</td><td data-label="Central question">How does this finding relate to other evidence?</td><td data-label="What to inspect">Replication, contrary studies, hierarchy of evidence, and cumulative support.</td></tr></tbody></table></div>
+<h2 id="pico">PICO and PICOTTS: Start by Structuring the Question</h2>
 <p>
-  Lets begin by unpacking what is meant by this "Pico Process". PICO is an
-  acronym. It can be used for all evidence based disciplines. Contrary to what
+  Let's begin by unpacking what is meant by this "PICO Process". PICO is an
+  acronym. It can be used for all evidence-based disciplines. Contrary to what
   some may think, systematic frameworks are needed to synthesize, understand,
   interpret, and give meaning to evidence.
 </p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
-<p></p>
-<ul style="text-align: left">
-  <li>
-    <strong>P</strong> refers to your patient or population. This can generalize
-    to "what your unit of study is" or "what are the features of your sample".
-    What population are you wanting to generalize about?
-  </li>
-  <li>
-    <strong>I</strong> stands for Intervention. We have talked about this
+<div class="table-wrap"><table class="three-col lens-table"><thead><tr><th>Element</th><th>Meaning</th><th>Questions and implications</th></tr></thead><tbody><tr><td data-label="Element"><strong>P</strong></td><td data-label="Meaning"><strong>Population / unit of study</strong></td><td data-label="Questions and implications">your patient or population. This can generalize to "what your unit of study is" or "what are the features of your sample".
+    What population do you want to generalize to?</td></tr><tr><td data-label="Element"><strong>I</strong></td><td data-label="Meaning"><strong>Intervention</strong></td><td data-label="Questions and implications">Intervention. We have talked about this
     before; it is a crucial determinant for understanding cause and effect. What
     are you giving your patient? What is the specific unemployed worker training
     program you wish to implement? You must intervene on a system in order to
@@ -706,48 +691,23 @@
     another intervention? Do the results look the same or different? Was the
     intervention applied to everyone in the study? Who was left out? Did certain
     participants receive more or less than others? Did anyone drop out before
-    the intervention was complete?
-  </li>
-  <li>
-    <strong>C</strong> stands for comparison, which is closely related to the
-    notion of intervention. You intervene normally compared to the status quo.
+    the intervention was complete?</td></tr><tr><td data-label="Element"><strong>C</strong></td><td data-label="Meaning"><strong>Comparison</strong></td><td data-label="Questions and implications">comparison, which is closely related to the
+    notion of intervention. An intervention is normally evaluated against a comparison condition or the status quo.
     What is the effect of some drug as opposed to no drug? You can also compare
-    the effects of two drugs. What are the effects of drug with dose level A
+    the effects of two drugs. What are the effects of a drug at dose level A
     compared to drug with dose level B? This is generalizable to the policy
     domain as well. Questions of unemployment do not need to be politicized,
-    they need to be rigorous and evidence based.
-  </li>
-  <li>
-    <strong>O</strong> stands for outcomes. What are you even trying to do? Do
+    they need to be rigorous and evidence based.</td></tr><tr><td data-label="Element"><strong>O</strong></td><td data-label="Meaning"><strong>Outcome</strong></td><td data-label="Questions and implications">outcomes. What are you trying to achieve? Do
     you wish to stress test an existing system to find its operational bounds?
-    Do you want to alleviate the effects of some third factor C? Normally in the
-    medical context you are seeking to cure some latent disease. You can measure
+    Do you want to alleviate the effects of some third factor C? In the medical context you are seeking to cure some latent disease. You can measure
     the outcome by testing whether the disease is present, or by alleviating
-    symptoms. Just remember its better to identify a
+    symptoms. Just remember it's better to identify a
     <a href="https://en.wikipedia.org/wiki/Root_cause_analysis">root cause</a>
-    ultimately.
-  </li>
-</ul>
-<p></p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
-
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
-
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
-
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
+    ultimately.</td></tr></tbody></table></div>
+<h3 id="picotts">Extending PICO with PICOTTS</h3>
 <p>
   There are other variations such as <strong>PICOTTS</strong>. The first
-  <strong>T</strong> asks about what kind of clinical question we are even
-  asking. Is it a diagnosis? Therapy? Prevention? This obviously generalizes to
+  <strong>T</strong> asks about what kind of clinical question we are asking. Is it a diagnosis? Therapy? Prevention? This generalizes to
   other evidence domains. Diagnosis normally connotes a medical context but
   "diagnosing" a problem is another way to say "identifying and classifying"
   whatever the problem is. The second <strong>T</strong> stands for time. This
@@ -756,17 +716,10 @@
   the result horizon was observed? Can you follow up and remeasure whatever the
   experimental units were? Lastly, <strong>S</strong> refers to the study type.
   This refers to the
-  <strong
-    ><a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence"
-      >hierarchy of evidence</a
-    ></strong
-  >.
+  <strong><a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">hierarchy of evidence</a></strong>.
 </p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
 <p>
-  Why should you care about anything I have just wrote? Well, PICO gives you a
+  Why does this matter? PICO gives you a
   framework for assessing the quality of research. It allows you to frame your
   critical questions in an effective manner. How far off does a particular
   design deviate from this standard? Was there a legitimate reason to deviate?
@@ -776,150 +729,83 @@
   structure, which allows you to expand your questioning beyond the simple "they
   are biased or stupid" charge.
 </p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
+<h2 id="background-foreground">Background and Foreground Questions</h2>
 <p>
-  My favorite thing to do is ask background and foreground questions. The first
+  A useful next step is to distinguish background questions from foreground questions. The first
   thing you can do is ask whether the researchers even asked any of these. If
-  they did, were they relevant and comprehensive? This can save you a lot of
-  time before you begin formulating your own questions. Maybe you should ask
-  yourself if you have sufficient background knowledge before approaching
-  something. Consult a database, not twitter. Foreground questions are more
-  specific; what is your identification strategy? Are there possibly any
-  unintended consequences of implementing some intervention that may harm the
+  they did, were they relevant and comprehensive? This can save time before you begin formulating your own questions. You should also ask yourself if you have sufficient background knowledge before approaching
+  something. Consult a database rather than Twitter. Foreground questions are more
+  specific; What is the identification strategy? Are there unintended consequences of implementing some intervention that may harm the
   participants? Is the outcome we are measuring a reliable indicator of the
   underlying concept? Is there
-  <a href="https://en.wikipedia.org/wiki/Construct_validity"
-    >construct validity</a
-  >? How is the data being collected?
+  <a href="https://en.wikipedia.org/wiki/Construct_validity">construct validity</a>? How is the data being collected?
 </p>
-<!--/wp:paragraph-->
-
-<!--wp:paragraph-->
+<h2 id="claim-design-fit">Match the Claim to the Design</h2>
+<p>Before asking whether a study is “good,” identify what kind of conclusion it is supposed to support. Different claims place different burdens on the research design. A design can be useful for one purpose while being inadequate for another.</p>
+<div class="table-wrap"><table class="three-col comparison-table"><thead><tr><th>Claim type</th><th>Typical question</th><th>Design implication</th></tr></thead><tbody><tr><td data-label="Claim type">Descriptive</td><td data-label="Typical question">What is happening?</td><td data-label="Design implication">Requires measurements that adequately describe the target population or process.</td></tr><tr><td data-label="Claim type">Associational</td><td data-label="Typical question">Do X and Y vary together?</td><td data-label="Design implication">Supports statements about association, but alternative explanations and confounding remain.</td></tr><tr><td data-label="Claim type">Predictive</td><td data-label="Typical question">Does X help forecast Y?</td><td data-label="Design implication">Prediction may be useful even when the causal mechanism is uncertain.</td></tr><tr><td data-label="Claim type">Diagnostic / classificatory</td><td data-label="Typical question">Can we identify or classify a condition?</td><td data-label="Design implication">Requires attention to measurement validity, thresholds, and error.</td></tr><tr><td data-label="Claim type">Causal</td><td data-label="Typical question">What would happen to Y if we intervened on X?</td><td data-label="Design implication">Requires a credible strategy for approximating the unobserved counterfactual and ruling out competing explanations.</td></tr></tbody></table></div>
+<p class="chapter-transition">This distinction between claim type and design will become especially important in Part III, where association, intervention, counterfactuals, and ecological inference are treated in more detail.</p>
+<h2 id="reporting-validity">Reporting Standards, Sampling, and Validity</h2>
 <p>
-  A related procedure for evidence evaluation is to ask if the research was
-  reported according to CONSORT standards. Some of the questions asked above can
+  A related step in evidence evaluation is to ask whether the research was reported according to CONSORT standards. Some of the questions asked above can
   be answered if researchers follow the
-  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6398298/">checklist </a
-  >and flow diagram proposed by this body of experts in clinical trial
+  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6398298/">checklist </a>and flow diagram proposed by this body of experts in clinical trial
   methodology when publishing their findings. If the reporting of research is
   not standardized in some way, it will be harder for the critical thinker to
-  assess conflicting pieces of research. This can be used as a framework for
-  assessing research but be aware it may fall short somewhere and somehow.
-  Perhaps you can be the inquisitive scholar who finds problems in these
-  standards, and does not simply call them "corrupt". Think about the first node
-  in in the flow diagram. Who is eligible to be in the study? Do the conclusions
-  generalize beyond this population? What was the criteria for inclusion? How
+  assess conflicting pieces of research. CONSORT can therefore serve as one framework for assessment, while still remaining open to criticism and improvement.
+  The critical task is to identify specific limitations in such standards rather than dismissing them with a label such as “corrupt.” Think about the first node
+  in the flow diagram. Who is eligible to be in the study? Do the conclusions
+  generalize beyond this population? What were the criteria for inclusion? How
   many people declined to participate or dropped out of the study? The questions
   below give you a sense of the generalizability of the study. They probe into
   details of
-  <a href="https://en.wikipedia.org/wiki/Internal_validity"
-    >internal validity</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Internal_validity">internal validity</a>
   and
-  <a href="https://en.wikipedia.org/wiki/External_validity">external validity</a
-  >. If you have an incredibly small sample size of homogenous individuals, how
-  well can this generalize to people with different attributes? Does the
-  composition of N imply any selection bias? Was the intervention suspect of
-  bias? Was there a statistical bias in how the treatment was allocated? What
+  <a href="https://en.wikipedia.org/wiki/External_validity">external validity</a>. If you have an incredibly small sample size of homogeneous individuals, how
+  well can this generalize to people with different attributes? Does the composition of the sample imply selection bias? Was the intervention itself subject to bias? Was there a statistical bias in how the treatment was allocated? What
   data was left out of the analysis and for what reason?
 </p>
-<!--/wp:image-->
-
-<!--wp:paragraph-->
-<p><b>Reporting Bias as a Generalized Concept</b></p>
+<header class="ep-part-banner" id="part-2">
+  <span class="ep-part-kicker">Part II</span>
+  <span class="ep-part-title">Bias, Selective Reporting, and the Evidence Base</span>
+  <span class="ep-part-summary">Bias is a legitimate object of investigation, but it should be diagnosed through specific mechanisms: what was measured, analyzed, omitted, emphasized, published, or generalized.</span>
+</header>
+<div class="chapter-guide"><p>This part separates the existence of a prior hypothesis from biased inquiry, then distinguishes selective reporting inside a study from distortion across the broader literature.</p><p class="chapter-path"><strong>Path:</strong> definition → disconfirmation → forms of selection → levels of quality → broader evidence context → application</p></div>
+<h2 id="reporting-bias">What Reporting Bias Is—and What It Is Not</h2>
 <p>
-  Recently I was watching a
-  <a href="https://www.youtube.com/watch?v=WOe1omiM3NM">video</a> titled "The
-  Challenges of Evidence Based Medicine" and a
-  <a href="https://www.youtube.com/watch?v=wvdudpC4bhE">follow up video</a>. If
-  you are not familiar with the concept check out the
-  <a href="https://ebm.bmj.com/">BMJ Evidence-Based Medicine</a> website. In
-  short, the practice seeks to standardize and make rigorous the use of evidence
-  as a foundation for medical research. In it are guidelines about levels of
-  evidence; a hierarchy grading the reliability of different evidence types.
-  There are evaluation methods, statistical basis, and meta-analysis methodology
-  as well.
-  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3789163/"
-    >NCBI also has a nice article describing EBM</a
-  >. Evidence based medicine is subsumed by a broader notion of "Evidence based
-  practice"; which include other topics such as Evidence Based Policy.
-  <a href="https://en.wikipedia.org/wiki/Susan_Haack">Susan Haack</a> is a
-  philosopher who writes about this and evidence more broadly: what is evidence?
-  What makes evidence relevant? Is there a generalized conception of evidence
-  that is trans-disciplinary (although this is something tackled more directly
-  by people such as
-  <a
-    href="https://www.researchgate.net/scientific-contributions/David-A-Schum-2108621468"
-    >David Schum</a
-  >). If you are interested in what evidence really is then consult these
-  resources. These are the topics I am broadly interested in with respect to
-  evidence.
-</p>
-<p>
-  I bring all of this up to provide a bit of context. This is a Critical
-  Thinking blog so some questions might be: What was your motivation behind
-  writing something related to a reporting bias? How does this fit into the
-  larger discussion of bias in research? Where can I find reference to your
-  sources? This is the whole point behind critical thinking: to be one is to
-  pose non-trivial questions that give you deeper insight into whatever it is
-  you are engaged with. Critical thinking is a directed process aimed at
-  achieving multiple objectives such as analysis, synthesis, critique, depth,
-  breadth, scope, and many more. Reporting Bias makes little sense unless
-  embedded in a context broader than this blog post. If you understand what it
-  means at a deeper level you can capitalize on this knowledge and get a better
-  grasp of the scope and applicability of the concept.
-  <em
-    >It is this core idea: generalizing the mental model will help you in your
-    journey.
-  </em>
-</p>
-<p>
-  Reporting bias technically refers to how the results of a quantitative study
-  of some intervention, can be misrepresented in a systematic way. Research
-  tends to be reported in a highly selective way. This is related to the
-  <a href="https://en.wikipedia.org/wiki/Confirmation_bias"
-    >Confirmation Bias
+  Reporting bias refers to systematic distortions in how the results of a study or inquiry are presented. In practice, research can be reported selectively. This is related to the
+  <a href="https://en.wikipedia.org/wiki/Confirmation_bias">Confirmation Bias
   </a>
-  and might just be a subspecies or instantiation of it. What I mean by this is
+  and can overlap with it, although the concepts are not identical. What I mean by this is
   that confirmation bias is about how we tend to favor evidence that supports
   our presumptions, predispositions, or beliefs we are emotionally tied to. The
   job of the critical thinker is not to dismiss all research on the grounds of
   it being subject to confirmation bias. Ironically, calling the results on a
   topic you disagree with suspect of confirmation bias, could be an example of
-  the confirmation bias. You should have reason to suspect something is subject
-  to the confirmation bias rather than claiming it is biased purely on grounds
-  that the results dismiss your desired conclusion. Most scientific research is
-  confirmatory anyway. The fact that I want to prove that X is the case is not
-  ipso facto evidence of a bias. If an investigator is determining who murdered
+  confirmation bias. You should have reason to suspect something is subject
+  to confirmation bias rather than claiming it is biased purely on grounds
+  that the results dismiss your desired conclusion. Much scientific research is confirmatory. Entering an inquiry with a hypothesis to test is not, by itself, evidence of bias. If an investigator is determining who murdered
   a victim, we would not claim that confirmatory DNA evidence is subject to the
-  the confirmation bias.
-  <em
-    >The job of a critical thinker is to move beyond this sort of trivial
-    examination of research</em
-  >. When a researcher is engaged in research, it is possible that they were
-  driven by motivations to prove whatever their presumptions were apriori. This
+  confirmation bias.
+  <em>The job of a critical thinker is to move beyond this sort of trivial
+    examination of research</em>. A researcher may, of course, be motivated to confirm a prior belief. This
   is not necessarily mean that all research is driven by irrational impulses
-  rather than objective inquiry; it just means that we need to be aware that
-  after research is conducted we critically evaluate the results to rule out the
-  possibility that the results are inflated by some agenda. Confirmation can be
+  rather than objective inquiry; It means that the completed research should be evaluated for signs that analytic or reporting choices inflated a preferred conclusion. Confirmation can be
   contrasted with disconfirmation and also null results. The heart of the
   reporting bias is this: did the researcher leave out an analysis that
-  disconfirmed their initial hypothesis? Were there a substantial amount of
-  analyses that yielded null results, not enough evidence in favor of any
-  hypothesis? We need to think about not only confirmatory evidence, but whether
+  disconfirmed their initial hypothesis? Were there substantial numbers of analyses that yielded null results—insufficient evidence in favor of the focal hypothesis? We need to think about not only confirmatory evidence, but whether
   there was a significant amount of disconfirmatory evidence favoring another
   hypothesis. Evidence analysis needs to be holistic. If there is a high quality
   research paper that disconfirms your presupposition, sorry you need to
   reevaluate. This is the problem with empirical research; it is messy and
-  imprecise and that bothers people. Reporting bias is can be less about the
+  imprecise and that bothers people. Reporting bias can be less about the
   quality of a study. There are plenty of measures for this such as: internal
   validity, external validity, construct validity, criterion validity to name a
   few. You can simply assume the internals of the research meet some criterion,
   and assess whether the report of the entire inquiry reflects what happened.
   Reporting bias is multidimensional in this sense.
 </p>
+<div class="core-claim"><strong>Core principle:</strong> Having a prior hypothesis is not itself evidence of bias. The critical question is how evidence that supports, contradicts, or fails to support that hypothesis was generated, analyzed, and reported.</div>
+<h2 id="disconfirmation">Confirmation, Disconfirmation, and Null Results</h2>
 <p>
   The idea of disconfirmation is very important. We can think of it in terms of
   the <a href="https://en.wikipedia.org/wiki/Raven_paradox">Raven Paradox</a>,
@@ -932,74 +818,101 @@
   location of the crime disconfirms the original hypothesis. Generalize this to
   all domains of your life. Rebirth of Reason provides a nice article outlining
   the concept of
-  <a
-    href="http://rebirthofreason.com/Articles/Rowlands/Disconfirming_Evidence.shtml"
-    >disconfirming evidence</a
-  >. FS Blog also
+  <a href="http://rebirthofreason.com/Articles/Rowlands/Disconfirming_Evidence.shtml">disconfirming evidence</a>. FS Blog also
   <a href="https://fs.blog/confirmation-bias/">has a nice article</a>. In the
-  context of statistical research and Reporting Bias, might occur if we dismiss
+  context of statistical research and reporting bias, might occur if we dismiss
   a reproducible randomized experiment or results of one of our trials that run
   contrary to our hypothesis. Should scientific research be like prosecution and
   defense in a criminal trial? I would argue no.
 </p>
+<h2 id="selective-reporting">Forms of Selective Reporting</h2>
 <p>
-  To get a better definition of what reporting bias is you can look at some
-  official sources. From NCBI
-  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6713068/"
-    >Causes of Reporting Bias</a
-  >
+  Several formal sources provide more precise definitions and tools for assessing reporting bias. From NCBI
+  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6713068/">Causes of reporting bias</a>
   , Wikipedia
   <a href="https://en.wikipedia.org/wiki/Reporting_bias">reporting bias</a> ,
   BMJ
-  <a href="https://www.bmj.com/content/362/bmj.k3802"
-    >Outcome reporting bias in trials: a methodological approach for assessment
-    and adjustment in systematic reviews</a
-  >
+  <a href="https://www.bmj.com/content/362/bmj.k3802">Outcome reporting bias in trials: a methodological approach for assessment
+    and adjustment in systematic reviews</a>
   , a paper outlining
-  <a href="https://bmjopen.bmj.com/content/8/3/e019703"
-    >Tools for assessing risk of reporting biases in studies and syntheses of
-    studies: a systematic review</a
-  >
+  <a href="https://bmjopen.bmj.com/content/8/3/e019703">Tools for assessing risk of reporting biases in studies and syntheses of
+    studies: a systematic review</a>
   etc. I will give a brief outline that somewhat alludes to everything above. If
-  you see the links you will notice that Reporting Bias refers to a family of
+  you see the links you will notice that reporting bias refers to a family of
   types of biases. Broadly, it refers to selective presentation, suppression of
   critical contrary evidence, citing specific sources and not others,
-  <a href="https://catalogofbias.org/biases/outcome-reporting-bias/"
-    >favoring certain outcomes</a
-  >
-  when presenting results (you can repeat a trail many times and by pure chance
+  <a href="https://catalogofbias.org/biases/outcome-reporting-bias/">favoring certain outcomes</a>
+  when presenting results (you can repeat a trial many times and by pure chance
   find something significant), omitting "outliers" or other subsets of the data.
   Earlier I mentioned that reporting bias tends to be on the post-study aspects
   of the trial, but it can also happen during pre-study. You can imagine that
   there were alternative study designs that were deliberately disregarded
   because they would favor an alternative outcome. Think of it as another way to
   work backwards in an ad-hoc way to fit data to existing assumptions. It is
-  similar to constructing a narrative to prove a world-view. Someone can have an
+  similar to constructing a narrative to prove a worldview. Someone can have an
   outcome in mind, select data and an experimental design to confirm the
   outcome, and then suppress contrary results or ignore literature that
   disconfirms it. Or think of an example in which the effect size of your study
   is comparatively small but you keep repeating the study until you get a large
   effect size and only report this instance that is favorable. It is probably
   going to get more recognition than the small effect sizes. Or how about any
-  potential second order effects, negative externalities, or impacts that are
+  potential second-order effects, negative externalities, or impacts that are
   not discussed?
 </p>
+<div class="table-wrap"><table class="three-col long-table comparison-table"><thead><tr><th>Form</th><th>What is selected</th><th>Diagnostic question</th></tr></thead><tbody><tr><td data-label="Form">Outcome selection</td><td data-label="What is selected">Favorable outcomes or endpoints</td><td data-label="Diagnostic question">Were all important or prespecified outcomes reported?</td></tr><tr><td data-label="Form">Analysis selection</td><td data-label="What is selected">Favorable models, subsets, or specifications</td><td data-label="Diagnostic question">Would reasonable alternative analyses materially change the conclusion?</td></tr><tr><td data-label="Form">Data selection</td><td data-label="What is selected">Particular observations or subsets</td><td data-label="Diagnostic question">What was excluded, and was the exclusion rule justified in advance?</td></tr><tr><td data-label="Form">Evidence selection</td><td data-label="What is selected">Supporting studies or citations</td><td data-label="Diagnostic question">Was contrary or null evidence represented fairly?</td></tr><tr><td data-label="Form">Design selection</td><td data-label="What is selected">A design likely to favor a preferred result</td><td data-label="Diagnostic question">Were plausible alternative designs considered and rejected for defensible reasons?</td></tr><tr><td data-label="Form">Interpretive selection</td><td data-label="What is selected">Emphasis on favorable effects while minimizing costs or uncertainty</td><td data-label="Diagnostic question">Are effect size, uncertainty, second-order effects, and limitations presented proportionately?</td></tr></tbody></table></div>
+<h2 id="quality-levels">Study Quality, Report Quality, and Evidence-Base Quality</h2>
 <p>
-  All of this talk assumes a certain level of quality associated with the
-  evidence. Implicit in the article remains the questions: What counts as
+  This discussion also assumes that evidence differs in quality and probative force. Implicit in the article remains the questions: What counts as
   evidence? Why does one count as stronger than another? What is the probative
   force of various pieces of evidence? Does a certain degree of accumulation
   have to occur before we accept a body of evidence as pointing in favor of a
   specific proposition or hypothesis?
-  <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence"
-    >The Hierarchy of Evidence</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Hierarchy_of_evidence">The Hierarchy of Evidence</a>
   can help but note that this is an ideal and is difficult to achieve in
   practice. All of these questions are related to the work done by legal
   scholars such as John Henry Wigmore and his successors like William Twining or
   people interested in Bayesianism and belief revision. My editorial note: there
   are more ways you can be wrong or led astray than be right.
 </p>
+<div class="table-wrap"><table class="three-col comparison-table"><thead><tr><th>Level</th><th>Question</th><th>Failure mode</th></tr></thead><tbody><tr><td data-label="Level">Study quality</td><td data-label="Question">Was the study well designed and executed?</td><td data-label="Failure mode">Confounding, poor measurement, selection problems, weak identification, or inadequate analysis.</td></tr><tr><td data-label="Level">Report quality</td><td data-label="Question">Does the publication faithfully represent what was done and found?</td><td data-label="Failure mode">Selective outcomes, omitted analyses, overstated conclusions, or incomplete disclosure.</td></tr><tr><td data-label="Level">Evidence-base quality</td><td data-label="Question">Does the literature represent the full body of relevant evidence?</td><td data-label="Failure mode">Publication bias, selective citation, nonpublication of null findings, or distorted synthesis.</td></tr></tbody></table></div>
+<h2 id="evidence-context">Evidence-Based Practice and the Broader Context of Evidence</h2>
+<p>
+  Recently I was watching a
+  <a href="https://www.youtube.com/watch?v=WOe1omiM3NM">video</a> titled "The
+  Challenges of Evidence-Based Medicine" and a
+  <a href="https://www.youtube.com/watch?v=wvdudpC4bhE">follow up video</a>. If
+  you are not familiar with the concept check out the
+  <a href="https://ebm.bmj.com/">BMJ Evidence-Based Medicine</a> website. In
+  short, the practice seeks to standardize and make rigorous the use of evidence
+  as a foundation for medical research. In it are guidelines about levels of
+  evidence; a hierarchy grading the reliability of different evidence types.
+  There are evaluation methods, statistical basis, and meta-analysis methodology
+  as well.
+  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3789163/">NCBI also has a nice article describing EBM</a>. Evidence-based medicine is subsumed by a broader notion of "Evidence based
+  practice"; which include other topics such as evidence-based policy.
+  <a href="https://en.wikipedia.org/wiki/Susan_Haack">Susan Haack</a> is a
+  philosopher who writes about this and evidence more broadly: what is evidence?
+  What makes evidence relevant? Is there a generalized conception of evidence
+  that is trans-disciplinary (although this is something tackled more directly
+  by people such as
+  <a href="https://www.researchgate.net/scientific-contributions/David-A-Schum-2108621468">David Schum</a>). If you are interested in what evidence really is then consult these
+  resources. These are the topics I am broadly interested in with respect to
+  evidence.
+</p>
+<p>
+  I bring all of this up to provide a bit of context. Because this is a critical-thinking blog so some questions might be: What was your motivation behind
+  writing something related to a reporting bias? How does this fit into the
+  larger discussion of bias in research? Where can I find reference to your
+  sources? This is the whole point behind critical thinking: critical thinking requires us to pose non-trivial questions that give you deeper insight into whatever it is
+  you are engaged with. Critical thinking is a directed process aimed at
+  achieving multiple objectives such as analysis, synthesis, critique, depth,
+  breadth, scope, and other goals. reporting bias makes little sense unless
+  embedded in a context broader than this blog post. Understanding the concept at a deeper level gives you a better grasp of the scope and applicability of the concept.
+  <em>It is this core idea: generalizing the mental model will help you in your
+    journey.
+  </em>
+</p>
+<h2 id="janus">The Janus Phenomenon</h2>
 <p>
   One of the most illuminating parts of the video was the discussion of the
   <a href="https://youtu.be/WOe1omiM3NM?t=1689">Janus Phenomenon</a>. This is in
@@ -1011,10 +924,11 @@
   God with two faces. The Janus effect refers to how you can select whichever
   part of the bi-modal distribution fits your beliefs about the effect of the
   intervention in a study. Take any hot topic at the moment and subject it to a
-  level if rigor that accounts for these biases: Is a vegan diet more effective
+  level of rigor that accounts for these biases: Is a vegan diet more effective
   than a carnivore diet? Maybe there is something about our need to fit into
   little groups so we don't feel ostracized.
 </p>
+<h2 id="broader-model">Selective Reporting as a General Mental Model</h2>
 <p>
   You can think of the reporting bias in an even broader sense. A report is
   simply a transmission of some sort of information to a target audience. Can
@@ -1024,114 +938,105 @@
   selectively procured the information needed to persuade you? The reporting
   bias becomes even more magnified when certain results are cherry picked by
   media outlets and presented as conclusive.
-  <em
-    >A critical thinker should consult primary sources as much as possible; in
+  <em>A critical thinker should consult primary sources as much as possible; in
     this context it means consulting the scientific databases, raw data, and
-    research design. </em
-  >If you are a manager and your subordinate presents an analysis, you wouldn't
+    research design. </em>If you are a manager and your subordinate presents an analysis, you wouldn't
   blindly accept it unless of course there is a financial incentive to do so.
   Think even more broadly, can the reporting bias manifest in cases of witness
   testimony? How about your favorite podcast? Are the speakers qualifying their
-  statements? This pervades our lives and neighbors associated concepts related
-  to self interested or deceptive reporting. Saying that "the facts are on your
+  statements? This pattern pervades ordinary life and overlaps with related forms of self-interested or deceptive reporting. Saying that "the facts are on your
   side" or that "you have evidence" is simply insufficient if ancillary critical
   questions have not been answered. I will list a few below:
 </p>
-<ol>
-  <!--wp:list-item-->
-  <li>What is it the researchers are attempting to show?</li>
-  <!--/wp:list-item-->
+<h2 id="appraisal-questions">A Practical Set of Research-Appraisal Questions</h2>
+<ul class="question-grid">
 
-  <!--wp:list-item-->
-  <li>How are they showing it? What are the design implications?</li>
-  <!--/wp:list-item-->
+<li>What is it the researchers are attempting to show?</li>
 
-  <!--wp:list-item-->
-  <li>
+
+<li>How are they showing it? What are the design implications?</li>
+
+
+<li>
     Are definitions explicit and operational? Do you agree with how the target
     is measured?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>How was the data procured and sampled? Was the full dataset analyzed?</li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
+<li>How was the data procured and sampled? Was the full dataset analyzed?</li>
+
+
+<li>
     Are there alternative ways of analyzing it that lead to different results?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>Is the current way of analyzing it robust?</li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>Was the literature selectively represented?</li>
-  <!--/wp:list-item-->
+<li>Is the current way of analyzing it robust?</li>
 
-  <!--wp:list-item-->
-  <li>
-    Was the study replicable? Is the data available to a third party researcher
-    who can perform the study?
+
+<li>Was the literature selectively represented?</li>
+
+
+<li>
+    Was the study replicable? Are the data available to a third-party researcher who can reproduce or reanalyze the study?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
+
+<li>
     Are the results overstated? Was it an observational study but causal effects
     were reported?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>Are you results resistant to refutation?</li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
+<li>Are your results resistant to refutation?</li>
+
+
+<li>
     Is your evidence anecdotal? Have you made sure you are not falling prey to
     the
-    <a href="https://en.wikipedia.org/wiki/Regression_toward_the_mean"
-      >Regression to the mean</a
-    >? What were the controls and covariates?
+    <a href="https://en.wikipedia.org/wiki/Regression_toward_the_mean">Regression to the mean</a>? What were the controls and covariates?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
+
+<li>
     Is there another study not directly related to the one under discussion that
-    contradicts or nulls the results or casts doubts?
+    contradicts or nulls the results or casts doubt?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    Are there any assumptions underlying the design and sample selection? If so
-    how do they impact the results?
+
+<li>
+    Are there any assumptions underlying the design and sample selection? If so, how do they impact the results?
   </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>Are there any interactions?</li>
-  <!--/wp:list-item-->
-</ol>
+
+<li>Are there any interactions?</li>
+
+</ul>
+<div class="checkpoint-block">
+<h3 id="additional-checks">Additional checks that strengthen the same framework</h3>
+<p>Several questions fit naturally into the framework already developed above. They do not replace the original checklist; they make some of its implicit concerns explicit.</p>
+<ul class="question-grid">
+<li><strong>Effect size and uncertainty:</strong> Is the effect large enough to matter, and how uncertain is the estimate?</li>
+<li><strong>Missing data and attrition:</strong> Who or what disappeared from the analysis, and could that change the result?</li>
+<li><strong>Multiple testing:</strong> How many outcomes, models, subgroups, or specifications were examined before the reported result was selected?</li>
+<li><strong>Prespecification:</strong> Were the main hypotheses, outcomes, and analyses specified before the results were known?</li>
+<li><strong>Sensitivity:</strong> Does the conclusion survive plausible alternative assumptions, definitions, and analytic choices?</li>
+<li><strong>Transparency:</strong> Are the data, code, methods, and exclusions documented well enough for independent scrutiny?</li>
+</ul>
+</div>
 <p>
-  The point is to think critically. Not accept things blindly, but also not fall
-  prey to uncritical tendencies such as "They are biased and self-interested but
+  The point is to think critically: neither accept claims blindly nor fall prey to reflexive dismissals such as "They are biased and self-interested but
   we are not", "they are subject to confirmation bias", "they are fallacious"
-  etc. It is important to realize that all of these also apply to your own
+  and similar charges. It is important to realize that all of these also apply to your own
   stance, and calling someone out on bias or fallacy without evidence is simply
   a rhetorical tactic to shut down opposition rather than converge on a
   solution.
 </p>
+<div class="learning-insight-block">
+<h2 id="replication">Replication and Reproducibility</h2>
 <p>
   A related topic is that of the
-  <a href="https://en.wikipedia.org/wiki/Replication_crisis"
-    >Replication Crisis</a
-  >. In short, this refers to the fact that many papers, especially in social
-  sciences, cannot be reproduced. They are one-off analyses that simply do not
+  <a href="https://en.wikipedia.org/wiki/Replication_crisis">Replication Crisis</a>. In broad terms, the replication debate concerns the difficulty of reproducing or replicating many published findings, particularly in some areas of the social sciences. They are one-off analyses that simply do not
   generalize. One of the side effects is that news agencies will gladly report
   on any of these if it means higher ratings. As a consequence, people start to
   believe weird things because they think "it is backed by science" or they come
@@ -1140,127 +1045,51 @@
   and inquisitive. Here is some deeper context and counter arguments as to why
   it is not a crisis:
 </p>
-<p>
-  <!--wp:paragraph-->
+<ul class="compact-grid">
 
-  <!--/wp:paragraph-->
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5579390/">The reproducibility “crisis”</a>
+</li>
 
-  <!--wp:paragraph-->
 
-  <!--/wp:paragraph-->
+<li>
+<a href="https://pubmed.ncbi.nlm.nih.gov/31082406/">What the replication crisis means for intervention science</a>
+</li>
 
-  <!--wp:paragraph-->
 
-  <!--/wp:paragraph-->
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8907098/">Is the replication crisis a base-rate fallacy?</a>
+</li>
 
-  <!--wp:paragraph-->
 
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:list {"ordered":true}-->
-
-  <!--/wp:list-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:paragraph-->
-
-  <!--/wp:paragraph-->
-
-  <!--wp:list-->
-
-  <!--/wp:list-->
-</p>
-<ul>
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5579390/"
-      >The reproducibility â€œcrisisâ€</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://pubmed.ncbi.nlm.nih.gov/31082406/"
-      >What the replication crisis means for intervention science</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8907098/"
-      >Is the replication crisis a base-rate fallacy?</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835722/"
-      >Raising Awareness for the Replication Crisis in Clinical Psychology by
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5835722/">Raising Awareness for the Replication Crisis in Clinical Psychology by
       Focusing on Inconsistencies in Psychotherapy Research: How Much Can We
-      Rely on Published Findings from Efficacy Trials?</a
-    >
-  </li>
+      Rely on Published Findings from Efficacy Trials?</a>
+</li>
 </ul>
-<p><b>Experimental Design: Ecological Study</b></p>
+</div>
+<p class="chapter-transition">The next step is to connect these reporting and appraisal questions to the structure of the study itself. A claim can be reported transparently and still exceed what its design permits.</p>
+<header class="ep-part-banner" id="part-3">
+  <span class="ep-part-kicker">Part III</span>
+  <span class="ep-part-title">Study Design, Causality, and Ecological Evidence</span>
+  <span class="ep-part-summary">The strength of a conclusion depends on what the design lets us infer. This part moves from causal questions and counterfactual reasoning to the specific limits of ecological studies.</span>
+</header>
+<div class="chapter-guide"><p>The key progression is from the kind of claim we want to make to the kind of evidence the design can actually provide.</p><p class="chapter-path"><strong>Path:</strong> causal questions → counterfactuals → association → ecological designs → causal critical questions → ecological fallacy → Simpson’s paradox</p></div>
+<h2 id="causal-inference">From Association to Causal Inference</h2>
 <p>
-  Previously I wrote about the Reporting Bias and alluded to the idea that
-  critical thinkers should be aware of how studies are conducted if you are to
-  assess the severity of the problem in a particular instance. I want to start
-  by describing the
-  <a href="https://en.wikipedia.org/wiki/Ecological_study"
-    >Ecological Study Design</a
-  >
-  and the corresponding
-  <a href="https://en.wikipedia.org/wiki/Ecological_fallacy"
-    >Ecological Fallacy</a
-  >. Before this, we should start by asking what is the purpose of an
-  experimental "design". What is it that researchers are trying to achieve when
-  they conduct a study?
-</p>
-<p>
-  The answer might seem
-  <a href="https://en.wikipedia.org/wiki/Self-evidence">self evident</a>.
+  The answer may seem
+  <a href="https://en.wikipedia.org/wiki/Self-evidence">self-evident</a>.
   Research questions come up when we want to describe a phenomenon or understand
   associations between variables. The most useful information we can gain is
   about
-  <a
-    href="https://github.com/afontana1/critical_thinking/tree/master/course_outline/course5-Causation"
-    >causation</a
-  >. Does smoking <em>cause </em>cancer? Does administering penicillin
+  <a href="https://github.com/afontana1/critical_thinking/tree/master/course_outline/course5-Causation">causation</a>. Does smoking <em>cause </em>cancer? Does administering penicillin
   <em>reduce </em>the severity of an infection? Does a worker retraining program
   <em>lead to</em> a growth in employment? Will practicing a certain way
   <em>result in</em> better performance? All of these questions are within
-  different domains: Health, Economic, and sports. The common theme among them
+  different domains: health, economics, and sports. The common theme among them
   all is about causality: how can we
-  <a href="https://en.wikipedia.org/wiki/Causal_model#Intervention"
-    >intervene </a
-  >in a particular way to create an intended outcome. Notice how we use
+  <a href="https://en.wikipedia.org/wiki/Causal_model#Intervention">intervene </a>in a particular way to create an intended outcome. Notice how we use
   different words to describe the same notion: reduce, lead, result in, cause
   etc. Sometimes it is not obvious that what we wish to understand is something
   about causation. With causal knowledge, we can know what to manipulate in
@@ -1269,11 +1098,11 @@
   research. The notion of a research design allows us to extract cause and
   effect relationships from empirical data.
 </p>
+<h2 id="counterfactuals">Counterfactual Reasoning and Intervention</h2>
 <p>
   If you do not intervene on a process, there will be an outcome. What if you
   are interested in knowing how the outcome would be under alternative
-  scenarios? This is the core idea of counterfactual thinking and it is core to
-  the notion of an experiment. For example, can I expect a greater risk of heart
+  scenarios? This is the core idea of counterfactual thinking, and it is fundamental to experimental reasoning. For example, can I expect a greater risk of heart
   disease under one set of conditions versus another? Suppose I eat vegetables
   and do not contract heart disease. Did the vegetables cause the absence of
   heart disease? What if I ate sugar? The point of the counterfactual is that at
@@ -1282,15 +1111,11 @@
   alternative scenario in which you chose to use another treatment regime. The
   counterfactual state of the world is not observed. You can speculate about it
   based on common knowledge, but that just
-  <a href="https://en.wikipedia.org/wiki/Begging_the_question"
-    >begs the question</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Begging_the_question">begs the question</a>
   as to how the knowledge came to be in the first place. You could eat
   vegetables first, and then sugar second, and measure the outcome; but how do
   you know there are not
-  <a href="https://en.wikipedia.org/wiki/Interaction_(statistics)"
-    >interaction effects</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Interaction_(statistics)">interaction effects</a>
   when sequencing the treatments? How do you know if sequencing the treatments
   leads to the optimal health outcome? We need a rigorous way of inferring what
   the counterfactual state would have been under alternative conditions. This is
@@ -1298,21 +1123,16 @@
   but you can infer probabilistically given data generated from an experiment.
   Instead of speculating, we make our questions explicit, rigorous, and
   testable.
-  <a
-    href="https://www.lesswrong.com/posts/MeYeLEr4RNGreJZcB/on-the-role-of-counterfactuals-in-learning"
-    >Less Wrong has a nice article making the notion accessible</a
-  >.
+  <a href="https://www.lesswrong.com/posts/MeYeLEr4RNGreJZcB/on-the-role-of-counterfactuals-in-learning">Less Wrong has a nice article making the notion accessible</a>.
 </p>
 <p>
   At a very basic level, the experiment generalizes some of our basic cognitive
   faculties.
-  <a href="https://en.wikipedia.org/wiki/Counterfactual_thinking"
-    >Counterfactual thinking</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Counterfactual_thinking">Counterfactual thinking</a>
   seems very fundamental to the human condition, we do it all the time. What if
   the quarterback did X as opposed to Y? The idea is that the action leads to a
   specific instantiation of history. The alternative history is not realized,
-  but we can image what it would have been. In the story in the article above,
+  but we can imagine what it would have been. In the story in the article above,
   two different conditions lead to two different processes that lead to the same
   conclusion. You can imagine countless other possible outcomes, and paths to
   the outcomes, that are more or less plausible. The experiment uses this notion
@@ -1320,371 +1140,271 @@
   counterfactual would have looked like.
 </p>
 <p>
-  Most of the time, we uncritically operate in the association level. We hear
+  Much everyday reasoning remains at the level of association. We hear
   countless reports in the news about some interesting statistical association
   someone identified in observational data. Association, covariance, and
   correlation are the starting point when we want to understand a causal
   relation but be aware of
-  <a href="https://www.tylervigen.com/spurious-correlations"
-    >spurious correlations</a
-  >; you may get out of bed every morning as the sun rises but does the sun
+  <a href="https://www.tylervigen.com/spurious-correlations">spurious correlations</a>; you may get out of bed every morning as the sun rises but does the sun
   cause you to get out of bed? Intervention is when we begin to make changes in
   our environments to achieve our goals. Children do this, but many adults seem
   to forget about their experimental and skeptical nature.
 </p>
+<p class="chapter-transition">With that causal framework in place, ecological studies become easier to evaluate: their usefulness comes from population-level association, while their limitations arise when we ask them to support individual-level or causal conclusions.</p>
+<h2 id="ecological-studies">Ecological Studies and Population-Level Evidence</h2>
 <p>
-  I want to begin with "Ecological Study Designs" because they are simply
-  correlational studies at a population level. They cannot tell us anything
+  Previously I wrote about the reporting bias and alluded to the idea that
+  critical thinkers should be aware of how studies are conducted if you are to
+  assess the severity of the problem in a particular instance. I want to start
+  by describing the
+  <a href="https://en.wikipedia.org/wiki/Ecological_study">Ecological Study Design</a>
+  and the corresponding
+  <a href="https://en.wikipedia.org/wiki/Ecological_fallacy">ecological fallacy</a>. Before this, we should start by asking what is the purpose of an
+  experimental "design". What is it that researchers are trying to achieve when
+  they conduct a study?
+</p>
+<p>
+  Ecological study designs are a useful place to begin because they are correlational studies conducted at a population level. They cannot tell us anything
   about cause and effect, nor tell us anything about individuals. These designs
   are observational studies meaning the data was not generated in a controlled
   setting so there are potentially many
   <a href="https://en.wikipedia.org/wiki/Confounding">confounding variables</a>
   skewing any sort of causal conclusion. We do not have
-  <a href="https://en.wikipedia.org/wiki/Scientific_control"
-    >scientific control</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Scientific_control">scientific control</a>
   over who was exposed to the intervention. Many of these studies will be
   conducted at very high geographic levels like a state or country.
-  <a href="https://www.psy.gla.ac.uk/~steve/best/correlation.html"
-    >All of these are associational so they fall prey to many ways in which
-    inferring causality can be undermined</a
-  >. Does Y cause X or does X cause Y? If we swap the two axis we can paint an
+  <a href="https://www.psy.gla.ac.uk/~steve/best/correlation.html">All of these are associational so they fall prey to many ways in which
+    inferring causality can be undermined</a>. Does Y cause X, or does X cause Y? If we swap the two axes we can paint an
   entirely different story. Does playing video games lead to violent behavior or
   do violent people tend to play more video games? Is there a third variable
   confounding our conclusions that causes both X and Y? See the
-  <a href="https://en.wikipedia.org/wiki/Bradford_Hill_criteria"
-    >Bradford Hill criteria
+  <a href="https://en.wikipedia.org/wiki/Bradford_Hill_criteria">Bradford Hill criteria
   </a>
   for more context. From Douglas Walton, here are some critical questions you
   can ask under any instance of someone arguing something from cause to effect:
 </p>
 <p>
-  <strong
-    ><span style="text-decoration: underline"
-      >Critical Questions for Argument from Cause to Effect<br /></span
-  ></strong>
-</p>
-<ul style="text-align: left">
-  <li>
-    <strong
-      >CQ1: How strong is the causal generalization (if it is true at
-      all)?</strong
-    >
-  </li>
-  <li>
-    <strong
-      >CQ2 : Is the evidence cited (if there is any) strong enough to warrant
-      the generalization as stated?</strong
-    >
-  </li>
-  <li>
-    <strong
-      >CQ3: Are there other factors that would or will interfere with or
-      counteract the</strong
-    >
-  </li>
-  <li><strong>production of the effect in this case?</strong></li>
-</ul>
-<p></p>
-<p>
-  <strong
-    ><span style="text-decoration: underline"
-      >If someone is arguing from effect to cause (backwards, inferring whatever
-      the cause was after the fact)</span
-    ></strong
-  >
-</p>
-<p></p>
-<ul style="text-align: left">
-  <li>
-    CQ1 : How satisfactory is E as an explanation of F. apart from the
-    alternative explanations available so far in the dialogue?
-  </li>
-  <li>
-    CQ2 : How much better an explanation is E than the alternative explanations
-    available so far in the dialogue?
-  </li>
-  <li>
-    CQ3: How far has the dialogue progressed? If the dialogue is an inquiry how
-    thorough has the investigation of the case been?
-  </li>
-  <li>
-    CQ4: Would it be better to continue the dialogue rather than drawing a
-    conclusion at this point?
-  </li>
-</ul>
-<p></p>
-<p>
-  <strong
-    ><span style="text-decoration: underline"
-      >Critical Questions for Argument from Correlation to Cause<br /></span
-  ></strong>
-</p>
-<ul style="text-align: left">
-  <li>
-    <strong>CQ1: Is there a positive correlation between A and B?</strong>
-  </li>
-  <li>
-    <strong
-      >CQ2: Are there a significant number of instances of the positive
-      correlation&nbsp;</strong
-    ><strong>between A and B?</strong>
-  </li>
-  <li>
-    <strong
-      >CQ3: Is there good evidence that the causal relationship goes from A to B
-      and&nbsp;</strong
-    ><strong>not just from B to A?</strong>
-  </li>
-  <li>
-    <strong
-      >CQ4: Can it be ruled out that the correlation between A and B is
-      accounted for&nbsp;</strong
-    ><strong
-      >by some third factor (a common cause) that causes both A and B?</strong
-    >
-  </li>
-  <li>
-    <strong
-      >CQ5: If there any intervening variables, can it be shown that the causal
-      relationship between A and B is indirect (mediated through other
-      causes)?</strong
-    >
-  </li>
-  <li>
-    <strong
-      >CQ6: If the correlation fails to hold outside a certain range of cases,
-      then can&nbsp;</strong
-    ><strong>the limits of the range be clearly indicated?</strong>
-  </li>
-  <li>
-    <strong
-      >CQ7: Can it be shown that the increase or change in B is not solely due
-      to the&nbsp;</strong
-    ><strong
-      >way B is defined, or to the way entities are classified as belonging to
-      the class&nbsp;</strong
-    ><strong
-      >of Bs, or to changing standards, over time, in the way Bs are defined
-      or&nbsp;</strong
-    ><strong>classified?</strong>
-  </li>
-</ul>
-<p></p>
-<p>
-  All of this comes from Chapter 5 of
-  <a
-    href="https://www.amazon.com/Argumentation-Schemes-Douglas-Walton/dp/0521723744"
-    >Argumentation Schemes</a
-  >. This book and author are incredible. He fundamentally impacted my critical
-  faculties.&nbsp;
-</p>
-<p>
-  By "population level" we mean we are calculating statistics over a group of
-  people. One such metric might be "average income in California". The data is
+  By “population level,” we mean that statistics are calculated over groups rather than individual units. One such metric might be "average income in California". The data is
   collective. This is typically found in epidemiology, economics, sociology etc.
   What if you want to compare two cities based on their public debt? Or their
   incidence of coronavirus? Each row in your dataset corresponds to a population
   level aggregate. Most analyses are done with
-  <a href="https://en.wikipedia.org/wiki/Cross-sectional_study"
-    >cross sectional data</a
-  >; data taken at a single instance of time. There are however,
-  <a href="https://en.wikipedia.org/wiki/Longitudinal_study"
-    >longitudinal studies</a
-  >
-  which measure the outcome over time (note that one of the main problems with
-  these in an ecological setting is the attrition bias and the potential for a
-  rapidly changing composition of your population). You can describe various
+  <a href="https://en.wikipedia.org/wiki/Cross-sectional_study">cross-sectional data</a>; data taken at a single instance of time. There are, however,
+  <a href="https://en.wikipedia.org/wiki/Longitudinal_study">longitudinal studies</a>
+  which measure the outcome over time (note that longitudinal ecological data can also be affected by attrition and by and rapid changes in population composition). You can describe various
   attributes of the population by calculating statistics such as ratios and
   odds. You can compare them to other aggregates but remember:
   <em>you are not doing a causal analysis.</em> These types of studies will can
-  be found in news headlines with the click-bait sounding titles like
+  be found in news headlines with the clickbait sounding titles like
   "scientists find link between diet and marital happiness"; which are very
   enticing to click on and share with your friends on Facebook to prove them
   wrong about something. You can gain some insight but remember these are not
-  "Apples to Apples" comparisons; there is likely systematic differences between
+  "apples-to-apples" comparisons; there is likely systematic differences between
   the populations being compared and of course there is no data on potential
   confounders. You probably see selective reporting on aggregate statistics all
-  the time on the news. "California has a homeless problem and its a blue state,
+  the time on the news. "California has a homeless problem and it's a blue state,
   therefore it's liberal policy causing it because in Montana there is no
   issue". Simply put, California has a different migration history, total
   population, ethnic composition, geographic factors, and economic base than
   most other states in the country. Making comparisons on a simple aggregate is
   literally the antithesis of critical thinking; and yet it plagues all of our
-  new outlets. It's as if we crave to be stupid; but not the reader of this
+  news outlets. It's as if we crave to be stupid; but not the reader of this
   article. You will transcend.
-  <a
-    href="https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/6-ecological-studies"
-    >BMJ has an article describing the basics</a
-  >. This is directly related to the reporting bias issue I discussed in a
+  <a href="https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/6-ecological-studies">BMJ has an article describing the basics</a>. This is directly related to the reporting bias issue I discussed in a
   previous article. Many health articles are ecological studies, and many of
   them have conflicting results. Before you click that link and send it to your
   friend on Facebook, ask yourself if you are perpetuating this phenomenon that
   is unfortunately plaguing our society. Remember the Janus effect, remember to
   be humble, and remember to remain inquisitive.
 </p>
+<h2 id="causal-questions">Critical Questions for Causal Claims</h2>
+<p>The following questions from Douglas Walton are most useful after the reader understands the kind of causal inference being attempted. They function as diagnostic prompts rather than automatic objections.</p>
+<h3 id="cause-to-effect">Argument from Cause to Effect</h3>
+<ul class="question-grid" style="text-align: left">
+<li>
+<strong>CQ1: How strong is the causal generalization (if it is true at
+      all)?</strong>
+</li>
+<li>
+<strong>CQ2 : Is the evidence cited (if there is any) strong enough to warrant
+      the generalization as stated?</strong>
+</li>
+<li>
+<strong>CQ3: Are there other factors that would or will interfere with or
+      counteract the</strong>
+</li>
+<li><strong>production of the effect in this case?</strong></li>
+</ul>
+<h3 id="effect-to-cause">Argument from Effect to Cause</h3>
+<ul class="question-grid" style="text-align: left">
+<li>
+    CQ1 : How satisfactory is E as an explanation of F, apart from the
+    alternative explanations available so far in the dialogue?
+  </li>
+<li>
+    CQ2 : How much better an explanation is E than the alternative explanations
+    available so far in the dialogue?
+  </li>
+<li>
+    CQ3: How far has the dialogue progressed? If the dialogue is an inquiry how
+    thorough has the investigation of the case been?
+  </li>
+<li>
+    CQ4: Would it be better to continue the dialogue rather than drawing a
+    conclusion at this point?
+  </li>
+</ul>
+<h3 id="correlation-to-cause">Argument from Correlation to Cause</h3>
+<ul class="question-grid" style="text-align: left">
+<li>
+<strong>CQ1: Is there a positive correlation between A and B?</strong>
+</li>
+<li>
+<strong>CQ2: Are there a significant number of instances of the positive
+      correlation </strong><strong>between A and B?</strong>
+</li>
+<li>
+<strong>CQ3: Is there good evidence that the causal relationship goes from A to B
+      and </strong><strong>not just from B to A?</strong>
+</li>
+<li>
+<strong>CQ4: Can it be ruled out that the correlation between A and B is
+      accounted for </strong><strong>by some third factor (a common cause) that causes both A and B?</strong>
+</li>
+<li>
+<strong>CQ5: If there are intervening variables, can it be shown that the causal
+      relationship between A and B is indirect (mediated through other
+      causes)?</strong>
+</li>
+<li>
+<strong>CQ6: If the correlation fails to hold outside a certain range of cases,
+      then can </strong><strong>the limits of the range be clearly indicated?</strong>
+</li>
+<li>
+<strong>CQ7: Can it be shown that the increase or change in B is not solely due
+      to the </strong><strong>way B is defined, or to the way entities are classified as belonging to
+      the class </strong><strong>of Bs, or to changing standards, over time, in the way Bs are defined
+      or </strong><strong>classified?</strong>
+</li>
+</ul>
 <p>
-  <em
-    >The <strong>Ecological Fallacy</strong> is simple: If there is a
+  All of this comes from Chapter 5 of
+  <a href="https://www.amazon.com/Argumentation-Schemes-Douglas-Walton/dp/0521723744">Argumentation Schemes</a>. This book and author are incredible. He fundamentally impacted my critical
+  faculties. 
+</p>
+<h2 id="ecological-fallacy">The Ecological Fallacy</h2>
+<p>
+<em>The <strong>ecological fallacy</strong> is simple: If there is a
     relationship between exposure and outcome in an ecological study, the
     relationship at the population does not necessarily apply at the individual
-    level</em
-  >. This is the same as stating the
-  <a href="https://en.wikipedia.org/wiki/Fallacy_of_division"
-    >Fallacy of Division</a
-  >
+    level</em>. This is the same as stating the
+  <a href="https://en.wikipedia.org/wiki/Fallacy_of_division">Fallacy of Division</a>
   (and the flip side is the
-  <a href="https://en.wikipedia.org/wiki/Fallacy_of_composition"
-    >fallacy of composition</a
-  >). Simply put: what is true of the whole is not necessarily true of the
+  <a href="https://en.wikipedia.org/wiki/Fallacy_of_composition">fallacy of composition</a>). Simply put: what is true of the whole is not necessarily true of the
   parts. If your car is rated excellent, does it surprise you to find out that
   your interior might be a bit sub-par? If a football team is good, is every
   player on the team good? Apply this thinking to group level statistics. These
   are
-  <a href="https://en.wikipedia.org/wiki/Fallacies_of_illicit_transference"
-    >Fallacies of Illicit Transference</a
-  >. This is a fancy word for stating that people tend to transfer properties
-  attributed to the whole to the parts, and vice versa.
-  <a
-    href="https://www.healthknowledge.org.uk/public-health-textbook/research-methods/1a-epidemiology/descriptive-studies-ecological-studies#:~:text=The%20fallacy%20assumes%20that%20individual%20members%20of%20a%20group%20all%20have%20the%20average%20characteristics%20of%20the%20group%20as%20whole%2C%20when%20in%20fact%20any%20association%20observed%20between%20variables%20at%20the%20group%20level%20does%20not%20necessarily%20mean%20that%20the%20same%20association%20exists%20for%20any%20given%20individual%20selected%20from%20the%20group"
-    >The fallacy assumes that individual members of a group all have the average
+  <a href="https://en.wikipedia.org/wiki/Fallacies_of_illicit_transference">fallacies of illicit transference</a>. This is a fancy word for stating that people tend to transfer properties
+  attributed to the whole onto the parts, and vice versa.
+  <a href="https://www.healthknowledge.org.uk/public-health-textbook/research-methods/1a-epidemiology/descriptive-studies-ecological-studies#:~:text=The%20fallacy%20assumes%20that%20individual%20members%20of%20a%20group%20all%20have%20the%20average%20characteristics%20of%20the%20group%20as%20whole%2C%20when%20in%20fact%20any%20association%20observed%20between%20variables%20at%20the%20group%20level%20does%20not%20necessarily%20mean%20that%20the%20same%20association%20exists%20for%20any%20given%20individual%20selected%20from%20the%20group">The fallacy assumes that individual members of a group all have the average
     characteristics of the group as whole, when in fact any association observed
     between variables at the group level does not necessarily mean that the same
-    association exists for any given individual selected from the group</a
-  >.
+    association exists for any given individual selected from the group</a>.
 </p>
 <p>
-  <strong
-    >With Ecological studies, we have to be very careful drawing conclusions
+<strong>With ecological studies, we have to be very careful drawing conclusions
     about individuals in the population and making comparisons between
-    populations. </strong
-  >Remember the big talk on causality: we are simply in the association stage.
-  We are no where near intervention and counterfactual analysis in a controlled
+    populations. </strong>Remember the big talk on causality: we are simply in the association stage.
+  We are nowhere near intervention and counterfactual analysis in a controlled
   experimental setting.
 </p>
+<h3 id="simpsons-paradox">Simpson’s Paradox</h3>
 <p>
   There is a closely related phenomenon called
-  <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox"
-    >Simpsons Paradox</a
-  >. It also refers to issues that can arise when measurements at the population
+  <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox">Simpson's paradox</a>. It also refers to issues that can arise when measurements at the population
   level do not apply to the disaggregated data. The Wikipedia link states that
   this paradox is a type of ecological fallacy.
-  <a
-    href="https://en.wikipedia.org/wiki/Ecological_fallacy#:~:text=Simpson%27s%20paradox%3A%20the%20fact%20that%20when%20comparing%20two%20populations%20divided%20into%20groups%2C%20the%20average%20of%20some%20variable%20in%20the%20first%20population%20can%20be%20higher%20in%20every%20group%20and%20yet%20lower%20in%20the%20total%20population"
-    >Simpson's paradox</a
-  >: the fact that when comparing two populations divided into groups, the
+  <a href="https://en.wikipedia.org/wiki/Ecological_fallacy#:~:text=Simpson%27s%20paradox%3A%20the%20fact%20that%20when%20comparing%20two%20populations%20divided%20into%20groups%2C%20the%20average%20of%20some%20variable%20in%20the%20first%20population%20can%20be%20higher%20in%20every%20group%20and%20yet%20lower%20in%20the%20total%20population">Simpson's paradox</a>: the fact that when comparing two populations divided into groups, the
   average of some variable in the first population can be higher in every group
   and yet lower in the total population. This can happen when population
   proportions are not comparable. The message remains: be very careful when
   pooling data into aggregates. See the
-  <a
-    href="https://en.wikipedia.org/wiki/Simpson%27s_paradox#UC_Berkeley_gender_bias"
-    >Gender Bias case study</a
-  >.
+  <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox#UC_Berkeley_gender_bias">Gender Bias case study</a>.
 </p>
+<div class="checkpoint-block">
+<h2 id="summary">Summary</h2>
 <p>
-  <strong><span style="text-decoration-line: underline">Summary:</span></strong>
-  When thinking about The Reporting Bias and critically evaluating research,
-  remember how the structure of the design and inhibit or enable specific
+<strong>Summary:</strong>
+  When thinking about The reporting bias and critically evaluating research,
+  remember how the structure of the design can inhibit or enable specific
   generalizations about the population being studied. If it is an ecological
   study, there can be many flaws and even if there are no flaws we are limited
   in our ability to infer causation. If someone is not
   <strong>qualifying </strong>themselves, or are overstating the results, that
   could be a red flag.
 </p>
-<p><strong>Sources</strong></p>
-<!--/wp:heading-->
-
-<!--wp:list {"ordered":true}-->
+<p><strong>The recurring question throughout the article is:</strong> What exactly does this evidence allow me to conclude—and what would I need to know before concluding more?</p>
+</div>
+<h2 id="sources" class="ep-source-section">Sources</h2>
 <ol>
-  <!--wp:list-item-->
-  <li>
-    <a href="https://casp-uk.net/casp-tools-checklists/">CASP Checklists</a>
-  </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://libguides.exeter.ac.uk/c.php?g=660317&amp;p=4708597"
-      >Critical appraisal for medical and health sciences: 3. Checklists</a
-    >
-  </li>
-  <!--/wp:list-item-->
+<li>
+<a href="https://casp-uk.net/casp-tools-checklists/">CASP Checklists</a>
+</li>
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.ncbi.nlm.nih.gov/books/NBK311069/"
-      >Appendix 6Critical Appraisal Skills Programme criteria</a
-    >
-  </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://libguides.cam.ac.uk/c.php?g=679945&amp;p=4847040"
-      >Critical Appraisal : Critical appraisal checklists</a
-    >
-  </li>
-  <!--/wp:list-item-->
+<li>
+<a href="https://libguides.exeter.ac.uk/c.php?g=660317&amp;p=4708597">Critical appraisal for medical and health sciences: 3. Checklists</a>
+</li>
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://guides.library.utoronto.ca/c.php?g=713309&amp;p=5121959"
-      >Knowledge syntheses: Systematic &amp; Scoping Reviews, and other review
-      types</a
-    >
-  </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://libguides.library.kent.edu/c.php?g=1183131&amp;p=8656408"
-      >PUBLIC HEALTH DISSERTATION RESOURCES</a
-    >
-  </li>
-  <!--/wp:list-item-->
+<li>
+<a href="https://www.ncbi.nlm.nih.gov/books/NBK311069/">Appendix 6Critical Appraisal Skills Programme criteria</a>
+</li>
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://canberra.libguides.com/c.php?g=599346&amp;p=4149211"
-      >Evidence Based Practice in Health</a
-    >
-  </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://journals.sagepub.com/doi/full/10.1177/2632084320947559"
-      >Optimising the value of the critical appraisal skills programme (CASP)
-      tool for quality appraisal in qualitative evidence synthesis</a
-    >
-  </li>
-  <!--/wp:list-item-->
+<li>
+<a href="https://libguides.cam.ac.uk/c.php?g=679945&amp;p=4847040">Critical Appraisal : Critical appraisal checklists</a>
+</li>
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://guides.dml.georgetown.edu/ebm/ebmclinicalquestions"
-      >EBM Questions</a
-    >
-  </li>
-  <!--/wp:list-item-->
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.consort-statement.org/about-consort"
-      >CONSORT -
-      <strong>CON</strong
-      >solidated&nbsp;<strong>S</strong>tandards&nbsp;<strong>O</strong>f<strong>&nbsp;R</strong>eporting&nbsp;<strong>T</strong>rials.</a
-    >
-  </li>
-  <!--/wp:list-item-->
+<li>
+<a href="https://guides.library.utoronto.ca/c.php?g=713309&amp;p=5121959">Knowledge syntheses: Systematic &amp; Scoping Reviews, and other review
+      types</a>
+</li>
 
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.consort-statement.org/resources/glossary"
-      >Glossary of Research Terminology</a
-    >
-  </li>
+
+<li>
+<a href="https://libguides.library.kent.edu/c.php?g=1183131&amp;p=8656408">PUBLIC HEALTH DISSERTATION RESOURCES</a>
+</li>
+
+
+<li>
+<a href="https://canberra.libguides.com/c.php?g=599346&amp;p=4149211">Evidence Based Practice in Health</a>
+</li>
+
+
+<li>
+<a href="https://journals.sagepub.com/doi/full/10.1177/2632084320947559">Optimising the value of the critical appraisal skills programme (CASP)
+      tool for quality appraisal in qualitative evidence synthesis</a>
+</li>
+
+
+<li>
+<a href="https://guides.dml.georgetown.edu/ebm/ebmclinicalquestions">EBM Questions</a>
+</li>
+
+
+<li>
+<a href="https://www.consort-statement.org/about-consort">CONSORT -
+      <strong>CON</strong>solidated <strong>S</strong>tandards <strong>O</strong>f<strong> R</strong>eporting <strong>T</strong>rials.</a>
+</li>
+
+
+<li>
+<a href="https://www.consort-statement.org/resources/glossary">Glossary of Research Terminology</a>
+</li>
 </ol>
+<p><a href="#top">Back to top</a></p>
 </article>
-
