@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
 <title>An Argumentation Scheme for Interpretation</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
@@ -439,6 +443,17 @@
       .ep-post .ep-toc {
         margin: 0.8em 0 2.2em;
       }
+
+      .ep-post .ep-toc-part,
+      .ep-post .ep-toc-part ul,
+      .ep-post .ep-toc-part li {
+        display: block;
+        width: 100%;
+      }
+
+      .ep-post .ep-toc-part ul {
+        margin-left: 1.35em;
+      }
       .ep-post .ep-toc-part {
         margin: 1.15em 0;
       }
@@ -480,16 +495,16 @@
       .ep-post ul.compact-grid,
       .ep-post ul.question-grid {
         list-style-position: outside;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.28em 1.6em;
-        margin: 0.8em 0 1.05em 1.25em;
+        display: block;
+        margin: 0.8em 0 1.05em 1.35em;
+        padding: 0;
       }
 
       .ep-post ul.compact-grid li,
       .ep-post ul.question-grid li {
-        break-inside: avoid;
-        padding-right: 0.4em;
+        display: list-item;
+        margin: 0.3em 0;
+        padding-right: 0;
       }
 
       .ep-post .checkpoint-block,
@@ -528,12 +543,6 @@
       }
 
       @media (max-width: 720px) {
-        .ep-post ul.compact-grid,
-        .ep-post ul.question-grid {
-          grid-template-columns: 1fr;
-          gap: 0.2em;
-        }
-
         .ep-post .concept-callout,
         .ep-post .formula-callout,
         .ep-post .core-claim {
@@ -609,68 +618,449 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post">
+</head>
+<body>
+<article class="ep-post"><h1 id="top">An Argumentation Scheme for Interpretation</h1><p class="chapter-lead">Interpretation is often treated as a problem of recovering meaning. This essay develops a broader claim: when meaning is uncertain or contested, interpretation becomes a <strong>defeasible argumentative practice</strong>. Interpreters do not merely propose meanings; they also defend the standards by which those meanings should be judged.</p><nav aria-label="Table of contents" class="ep-toc"><h2 id="contents">Table of Contents</h2><div class="ep-toc-part"><p><a href="#part-1">I. The Problem of Interpretation</a></p></div><div class="ep-toc-part"><p><a href="#part-2">II. What Are We Doing When We Interpret?</a></p></div><div class="ep-toc-part"><p><a href="#part-3">III. Why Interpretation Requires Inference</a></p></div><div class="ep-toc-part"><p><a href="#part-4">IV. What Makes an Interpretation Better?</a></p><ul><li><a href="#hermeneutics">Hermeneutics and evaluative standards</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-5">V. Why Interpretive Standards Differ</a></p><ul class="compact-grid"><li><a href="#authorial-intent">Authorial intent and fruitfulness</a></li><li><a href="#software-analogy">A software analogy</a></li><li><a href="#meaning-and-facts">Facts and object identity</a></li><li><a href="#background-theory">Background theories of meaning</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-6">VI. Law as a Stress Test</a></p><ul><li><a href="#jurisprudence">Jurisprudence</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-7">VII. Interpretation as Argumentation</a></p><ul><li><a href="#two-level-argument">The two-level model</a></li><li><a href="#walton-macagno">Walton–Macagno framework</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-8">VIII. A Domain-General Operational Framework</a></p><ul><li><a href="#worked-example">Worked example</a></li><li><a href="#critical-questions">Critical questions</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-9">IX. Conclusion</a></p></div></nav><header class="ep-part-banner"><span class="ep-part-kicker">Part I</span><h2 class="ep-part-title" id="part-1">The Problem of Interpretation</h2><span class="ep-part-summary">From difficult philosophical texts to constitutional disputes, interpretation matters because competing meanings carry epistemic, practical, and sometimes coercive consequences.</span></header><p>Recently, I have been thinking about what it means to interpret something, and to what extent we can call an interpretation “correct.” The question arose during a conversation about Nietzsche. I was asked whether I had read any of his writings; I answered yes, but qualified the answer by noting how difficult he can be to interpret. Nietzsche is only one example. Philosophers are often difficult to understand in isolation from the rest of their work, the thinkers to whom they were responding, and the cultural circumstances in which they wrote. Wittgenstein came up for much the same reason.</p><p>That conversation made the problem more personal. In one of my previous posts, I had quoted Wittgenstein in support of an argument and then wondered whether citing a famously difficult thinker clarified my point or merely imported another layer of interpretive complexity. From there, I started thinking about interpretation as a kind of information-compression activity and, more broadly, as something embedded in communication itself—even in ordinary conversations among friends.</p><p>Shortly afterward, I was reading about the Supreme Court case <a href="https://en.wikipedia.org/wiki/Trump_v._Slaughter">Trump v. Slaughter</a>, which challenges an existing constitutional settlement concerning presidential control over independent regulatory agencies. The target is the longstanding precedent <em>Humphrey’s Executor</em> (1935), a canonical basis for Congress creating multi-member independent commissions whose members cannot be fired at will. One of the Questions Presented asks whether those removal protections are unconstitutional and whether <em>Humphrey’s Executor</em> should be overruled. Whatever the outcome, the dispute illustrates that interpretation is not merely an isolated act of identifying meaning. It is also a communicative practice that can determine who holds power and how that power may be exercised.</p><p>During a case like this, parties advance reasons for why a text should be understood in one way rather than another. The same structure appears outside law: philosophical argument frequently depends on defending a particular interpretation of a text, and those interpretations are shaped by broader frameworks involving theories of language, theories of meaning, historical traditions, institutional practices, and assumptions that often remain unstated. My central claim is that, once interpretation becomes uncertain or contested, it can be cast as a form of <strong>argumentation</strong>. That makes tools from argumentation theory useful for clarifying not only which interpretation is preferable, but also which standards should govern the dispute in the first place.</p><div class="core-claim"><strong>Thesis:</strong> interpretive disputes involve two related argumentative tasks: choosing the standards that should govern the dispute, and then evaluating candidate interpretations under those standards.</div><p class="chapter-transition">Before comparing interpretive schools, it helps to separate the different activities that the word “interpretation” can name.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part II</span><h2 class="ep-part-title" id="part-2">What Are We Doing When We Interpret?</h2><span class="ep-part-summary">Interpretation is not one task. It can aim at semantic content, communicative intention, context, integration, explanation, application, or significance.</span></header><h3 id="interpretive-goals" style="text-align: left;">The Different Jobs of Interpretation</h3><div>
+  Let's refer back to the objectives laid out at the beginning. What do people
+  even mean when they say "interpret"? What is the goal of interpretation? What
+  sorts of functions or activities are undertaken when applying that
+  term? When people say they’re “interpreting” something, they’re usually
+  doing (some mix of) a handful of distinct activities. The disagreements we've
+  been circling often happen because different people mean different goals by
+  the same word. Interpretation can be aimed at different targets, and those
+  targets often blend in practice. But it helps to separate the main “jobs”
+  interpretation can be doing—what you’re trying to <em>fix</em>,
+  <em>recover</em>, <em>situate</em>, <em>explain</em>, or <em>do</em> with a
+  text, utterance, action, artifact, theory, or dataset.
+</div><div class="table-wrap"><table class="extra-wide-table long-table"><thead><tr><th>Interpretive goal</th><th>Characteristic question</th><th>Evidence/criteria that become salient</th><th>Characteristic failure</th></tr></thead><tbody><tr><td data-label="Interpretive goal"><strong>Sense / semantic content</strong></td><td data-label="Characteristic question">What does the expression say?</td><td data-label="Evidence/criteria that become salient">Lexical meaning, syntax, reference, scope, genre, local context</td><td data-label="Characteristic failure">A reading that is linguistically unavailable or ignores obvious disambiguating evidence</td></tr><tr><td data-label="Interpretive goal"><strong>Communicative intention</strong></td><td data-label="Characteristic question">What was the speaker or author doing by saying it?</td><td data-label="Evidence/criteria that become salient">Historical setting, speech act, authorial habits, audience assumptions, pragmatic context</td><td data-label="Characteristic failure">Attributing implausible intentions or importing later concepts without support</td></tr><tr><td data-label="Interpretive goal"><strong>Contextualization</strong></td><td data-label="Characteristic question">What larger setting makes this intelligible?</td><td data-label="Evidence/criteria that become salient">Historical circumstances, genre, institutions, intertextual relations</td><td data-label="Characteristic failure">Treating an artifact as context-free or using the wrong contextual frame</td></tr><tr><td data-label="Interpretive goal"><strong>Integration</strong></td><td data-label="Characteristic question">How do the parts form a coherent whole?</td><td data-label="Evidence/criteria that become salient">Structural fit, explanatory coverage, consistency, organizing principles</td><td data-label="Characteristic failure">Ad hoc patching that explains local details by breaking the larger pattern</td></tr><tr><td data-label="Interpretive goal"><strong>Causal / functional explanation</strong></td><td data-label="Characteristic question">Why is it like this, and what does it do?</td><td data-label="Evidence/criteria that become salient">Institutions, incentives, reception, ideology, power, social consequences</td><td data-label="Characteristic failure">Ignoring actual uptake or mistaking an author’s self-description for the whole causal story</td></tr><tr><td data-label="Interpretive goal"><strong>Normative application</strong></td><td data-label="Characteristic question">What does a rule or principle require here?</td><td data-label="Evidence/criteria that become salient">Relevant facts, precedent/tradition, operational criteria, exception handling</td><td data-label="Characteristic failure">An application that is unworkable, inconsistent, or disconnected from the governing norm</td></tr><tr><td data-label="Interpretive goal"><strong>Significance</strong></td><td data-label="Characteristic question">What does this mean for us?</td><td data-label="Evidence/criteria that become salient">Critical insight, ethical/political illumination, aesthetic power, fruitfulness</td><td data-label="Characteristic failure">A reading so unconstrained that it could be “proved” for almost any artifact</td></tr></tbody></table></div><div class="post-content">
+<ol>
+<li>
+<p><strong>Fix “what it says” (sense)</strong></p>
 <p>
-  Recently, I've been thinking about what it means to interpret something, and
-  to what extent we can say an interpretation is "correct". During a
-  conversation with a friend on the topic of Nietzsche, I was asked if I've read
-  any of his writings; to which I answered yes, but then qualified it by saying
-  he is difficult to interpret given his writing style. Nietzsche is but one
-  example within the philosophical tradition that is difficult to understand,
-  especially in isolation from the rest of his writings or the thinkers to which
-  he was responding. You often have to embed a philosopher within their own
-  lifecycle and broader cultural context to make sense of them. Wittgenstein was
-  also brought up; to which again I responded by saying he is difficult to
-  interpret (for the same reasons). In one of my last posts, I referenced one of
-  Wittgenstein's writings to support something I was claiming; but then began to
-  wonder whether quoting such a difficult-to-interpret thinker helped illuminate
-  my own arguments or increased its complexity. Then I started thinking about
-  the extent to which interpretation is an information compression activity, and
-  how it's embedded within communication more broadly even within mundane
-  situations like speaking with friends. Shortly after, I was reading about an
-  upcoming
-  <a href="https://en.wikipedia.org/wiki/Trump_v._Slaughter">SCOTUS case</a>
-  that challenges an existing constitutional settlement about how constrained
-  the president is, especially when it comes to independent regulatory
-  agencies.&nbsp;The target is a longstanding Supreme Court precedent:
-  Humphrey’s Executor (1935). That case is the canonical support for Congress
-  creating multi-member “independent” commissions whose members can’t be fired
-  at will. One of the Questions Presented is explicitly whether those removal
-  protections are unconstitutional and whether Humphrey’s Executor should be
-  overruled. This is a matter of constitutional interpretation and will have
-  significant implications if overruled. Interpretation is not just an isolated
-  act of identifying meaning, but a communicative act that determines who holds
-  power and how they can wield it. Crucially, during this SCOTUS case, people
-  will be presenting arguments for why "such and such" text has "such and such"
-  meaning. Interpretation is therefore an argumentative process, in which
-  various parties will advance justifications for why their interpretation
-  should hold. This is true outside of legal cases; philosophical argumentation
-  often consists of someone arguing for a specific interpretation of a text.
-  More broadly, these interpretive arguments are often the product of
-  interpretive frameworks consisting of theories of language, theories of
-  meaning, historical traditions, and other assumptions often not explicitly
-  stated. So in this post, I want to explore what exactly is meant by
-  "interpretation", different interpretive practices, and broader assumptions on
-  which these practices are founded. My key point is that regardless of the
-  tradition, interpretation can fundamentally be cast as an act of
-  argumentation, which means we can use tools from argumentation theory to think
-  clearly about a given interpretation.&nbsp;
+        The aim here is to determine the content of the words, symbols, or
+        actions at the level of meaning—what the expression itself encodes. This
+        is interpretation as <em>disambiguation</em> and
+        <em>semantic determination</em>.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Resolve ambiguity:</strong> Is “bank” referring to a riverbank
+          or a financial bank?
+        </li>
+<li>
+<strong>Pin down reference:</strong> If the text says “he,” “they,” or
+          “it,” who or what is being referred to?
+        </li>
+<li>
+<strong>Determine scope:</strong> When it says “all,” does it mean
+          literally all, or all relevant cases within an implied domain?
+        </li>
+</ul>
+<p>
+        In this mode, a successful interpretation reduces semantic uncertainty:
+        it clarifies what the sentence, clause, sign, or gesture
+        <em>means as such</em>.
+      </p>
+</li>
+<li>
+<p>
+<strong>Recover “what was meant by saying it” (communicative intention /
+          pragmatics)</strong>
 </p>
-<h3 style="text-align: left;">Hermeneutics</h3>
-<div>
+<p>
+        Here the target is not just sentence meaning but
+        <strong>speech-act meaning</strong>: what someone was doing in saying
+        it. This is interpretation as reconstructing an act of
+        communication—often by inferring intentions, conversational goals, and
+        shared assumptions.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Speech act:</strong> Was it a promise, threat, joke, warning,
+          irony, or understatement?
+        </li>
+<li>
+<strong>Responsive context:</strong> What question, problem, or
+          provocation was the speaker responding to?
+        </li>
+<li>
+<strong>Shared presuppositions:</strong> What background knowledge or
+          norms were assumed between speaker and audience?
+        </li>
+</ul>
+<p>
+        In this mode, “meaning” includes implicatures and pragmatic force, not
+        merely dictionary definitions.
+      </p>
+</li>
+<li>
+<p><strong>Place it in a wider context (contextualization)</strong></p>
+<p>
+        This goal treats the object as something whose intelligibility depends
+        on embedding it within larger systems of practice. This is
+        interpretation as <em>situating</em>: identifying the frameworks that
+        make the thing legible.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Historical setting:</strong> What time, place, and social
+          conditions shape what can be said or meant?
+        </li>
+<li>
+<strong>Genre and conventions:</strong> Is this a statute, poem,
+          manifesto, lab report, meme, ritual, or contract—and what does that
+          genre normally do?
+        </li>
+<li>
+<strong>Institutional roles:</strong> Who is speaking (judge, priest,
+          scientist, politician), and what authority or constraints come with
+          that role?
+        </li>
+<li>
+<strong>Intertextual echoes:</strong> What traditions, references, or
+          prior texts are being invoked, adapted, or resisted?
+        </li>
+</ul>
+<p>
+        Contextualization often changes what counts as a plausible reading by
+        showing what kinds of moves the text is “allowed” to make in its
+        setting.
+      </p>
+</li>
+<li>
+<p><strong>Make it coherent (integration)</strong></p>
+<p>
+        This approach treats the object (a text, theory, person’s action,
+        dataset, or practice) as something like a structured whole. The
+        interpreter tries to integrate parts into a pattern, reduce
+        fragmentation, and show how seemingly disconnected elements belong
+        together. This is interpretation as <em>pattern-finding</em> and
+        <em>coherence-building</em>.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Connect parts to wholes:</strong> How do particular passages,
+          claims, or moves contribute to the overall structure?
+        </li>
+<li>
+<strong>Explain tensions and gaps:</strong> How can shifts,
+          contradictions, silences, or missing steps be understood?
+        </li>
+<li>
+<strong>Propose organizing principles:</strong> What themes, values,
+          or inferential rules unify the material?
+        </li>
+</ul>
+<p>
+        Integration can be descriptive (showing the internal logic) or
+        charitable (seeking the most rational, unified version of the view),
+        depending on the interpreter’s aims.
+      </p>
+</li>
+<li>
+<p>
+<strong>Explain “why it’s like that” (causal/functional explanation)</strong>
+</p>
+<p>
+        Sometimes interpretation aims at explanation in a more external sense:
+        not “what does it mean?” but “what produced it?” or “what is it doing in
+        the world?” This is interpretation as <em>diagnosis</em>—often
+        associated with a “hermeneutics of suspicion.”
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Psychological motives:</strong> What needs, fears,
+          aspirations, or self-conceptions might be driving the expression?
+        </li>
+<li>
+<strong>Social pressures and institutions:</strong> What incentives,
+          constraints, or organizational dynamics shape it?
+        </li>
+<li>
+<strong>Ideology, power, economics:</strong> What interests are
+          served, what hierarchies reinforced or challenged, what material
+          conditions reflected?
+        </li>
+<li>
+<strong>Community function:</strong> What role does the text or
+          practice play—boundary-setting, legitimation, identity formation,
+          coordination?
+        </li>
+</ul>
+<p>
+        In this mode, the “meaning” of a text can be partly explained by what it
+        accomplishes socially or politically, regardless of authorial
+        self-understanding.
+      </p>
+</li>
+<li>
+<p><strong>Apply it to a case (normative application)</strong></p>
+<p>
+        In law, theology, ethics, and everyday rule-following, interpretation
+        often means deciding what a general norm requires <em>here and now</em>.
+        This is interpretation as bridging the general to the particular, where
+        “application” is not merely downstream of understanding, but part of
+        what understanding is for in normative domains.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Case-specific judgment:</strong> Given this rule or principle,
+          what should be done in this situation?
+        </li>
+<li>
+<strong>Operationalization:</strong> How do we translate general
+          language into concrete criteria, thresholds, or actions?
+        </li>
+<li>
+<strong>Handling hard cases:</strong> How should exceptions, conflicts
+          of principles, or unforeseen scenarios be treated?
+        </li>
+</ul>
+<p>
+        This mode highlights that norms often “come alive” only through
+        interpretation-in-application: deciding relevance, weighing factors, and
+        producing a warranted verdict.
+      </p>
+</li>
+<li>
+<p><strong>Draw out “what it means for us” (significance)</strong></p>
+<p>
+        This is where much of humanities pluralism lives: interpretation as
+        articulating a work’s significance—what it reveals, symbolizes,
+        critiques, or invites us to become. The aim is not only to decode or
+        explain, but to make explicit the work’s import for a community, a
+        tradition, or a present audience.
+      </p>
+<ul class="compact-grid">
+<li>
+<strong>Revelation and critique:</strong> What does it disclose about
+          a society, an ideology, a moral blind spot, or a form of life?
+        </li>
+<li>
+<strong>Symbolic or aesthetic meaning:</strong> What is its expressive
+          power—its imagery, resonance, and felt orientation?
+        </li>
+<li>
+<strong>Moral/political import:</strong> What stance does it press,
+          what responsibilities does it suggest, what possibilities does it
+          open?
+        </li>
+<li>
+<strong>Why care:</strong> What makes this worth returning to, arguing
+          over, or building upon?
+        </li>
+</ul>
+<p>
+        In this mode, “meaning” is inseparable from evaluation: the
+        interpretation clarifies what the object matters as, not only what it
+        says.
+      </p>
+</li>
+</ol>
+</div><p>
+  Essentially, "interpret" can name at least three big kinds of goals: What does
+  it say/mean? (sense, intention, context), How does it work / why is it
+  this way? (structure, causes, functions), and What should we do with it /
+  what follows? (application, significance); descriptive, explanatory, and
+  normative considerations. People fight about interpretation because
+  they’re often optimizing different targets—one person is doing (1) and (2),
+  another is doing (6) and (7), and they talk past each other as if there must
+  be one single “goal.” 
+</p><div class="core-claim"><strong>Key consequence:</strong> many interpretive disagreements are not direct disagreements about the same target. The parties may be optimizing different things—semantic recovery, authorial intention, social function, legal application, or present significance—while using the single word <em>interpretation</em>.</div><p class="chapter-transition">Once the target is clear, a deeper question appears: why is interpretation needed at all rather than simple decoding? Semiotics supplies the missing inferential step.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part III</span><h2 class="ep-part-title" id="part-3">Why Interpretation Requires Inference</h2><span class="ep-part-summary">Signs do not mechanically deliver their meanings. Interpretation involves context-sensitive conjecture, and those conjectures can be challenged, defeated, and revised.</span></header><h3 id="semiotics" style="text-align: left;">Semiotics</h3><p>
+  This is broadly understood as the study of signs. A
+  <a href="https://en.wikipedia.org/wiki/Sign">sign</a> is simply an entity that
+  stands for something else. The symbols involved within a natural language, for
+  example English, are signs that collectively form a signaling system. People
+  using signaling systems can communicate, create, and express meaning to one
+  another. Signs therefore stand in relation to some underlying meaning;
+  expressed verbally, in written form, through visual cues etc. either
+  intentionally or unintentionally. Semiosis is the capacity or activity or
+  comprehending and production of signs. A sign is literally anything that
+  communicates a meaning, that is not the sign itself, to the interpreter of the
+  sign. The meaning of a sign is what is generated in the process of
+  semiosis. 
+</p><p>
+  Semiotics is a meta-discipline concerned with sign
+  use in general, even in non-human animals (called
+  <a href="https://en.wikipedia.org/wiki/Biosemiotics">biosemiotics</a>). For
+  example, Bees communicate information to one another using complex forms of
+  "dancing"; these movements instruct other members of the aggregate to perform
+  tasks. Collectively, the bee swarm consists of a complex signaling system,
+  where signs such as the dancing, communicate meaning to other members of the
+  collective. Proper interpretation of the dance is crucial for the survival of
+  the collective; and in some sense determines the resulting structure and
+  patterns of the collective. It's very interesting; how a collective transmits
+  and decodes signals is directly related to the resulting structure. This is
+  directly analogous to the signaling systems humans have formed. Even human
+  dancing can be seen as a system for communicating meaning. In fact,
+  hermeneutics (the study of interpretation), which we discussed earlier, is a
+  subset of semiotics concerned with written texts (historically concerned with
+  religious texts, as early as Augustine). I am not a semiotician so I won’t be
+  able to effectively dive into the nuances of the discipline, but various
+  scholars have proposed models of signaling systems. For example, one of the
+  most influential models is
+  <a href="https://en.wikipedia.org/wiki/Semiotic_theory_of_Charles_Sanders_Peirce">C.S. Peirce's triadic model of signs</a>.
+</p><p>
+  Peirce’s <strong>triadic model of signs</strong> says a sign isn’t just a
+  two-part link (like “word ↔ object”). Instead, a sign is a
+  <strong>three-part relation</strong>: something that stands for an object to
+  an interpretant. On this view, you don’t fully have a “sign” unless all three
+  roles are in play, and meaning-making (semiosis) can continue as interpretants
+  generate further signs.
+</p><ul>
+<li>
+<strong>Representamen</strong> (the <em>sign-vehicle</em>)
+    <ul>
+<li>
+        The thing that functions as the sign — a sound, word, image, gesture,
+        smoke, footprint, etc.
+      </li>
+<li>
+<strong>Example:</strong> the written word “tree,” a red light, a
+        weather vane’s arrow.
+      </li>
+</ul>
+</li>
+<li>
+<strong>Object</strong> (what the sign is <em>about</em>)
+    <ul>
+<li>The thing, event, property, or situation the sign refers to.</li>
+<li>
+        Peirce distinguishes:
+        <ul>
+<li>
+<strong>Immediate object:</strong> the object
+            <em>as the sign presents it</em> (the “object-in-the-sign,” a
+            conceptual slice).
+          </li>
+<li>
+<strong>Dynamic object:</strong> the object
+            <em>as it really is / as it constrains the sign</em> (what can
+            surprise or correct you).
+          </li>
+</ul>
+</li>
+<li>
+<strong>Example:</strong> for “tree,” the immediate object might be
+        “tree-as-a-kind,” while the dynamic object could be that specific oak
+        outside (or trees in the world, depending on context).
+      </li>
+</ul>
+</li>
+<li><strong>Interpretant</strong> (the sign’s <em>effect/meaning</em>)</li>
+<ul>
+<li>
+      Not the human interpreter, but the meaning produced — the understanding,
+      inference, habit, or further sign that arises.
+    </li>
+<li>Peirce distinguishes:</li>
+<ul class="compact-grid">
+<li>
+<strong>Immediate interpretant:</strong> the sign’s basic
+        intelligibility (it’s meaningful as a sign).
+      </li>
+<li>
+<strong>Dynamic interpretant:</strong> the actual effect in a particular
+        occasion (you look up, you feel warned, you imagine a tree).
+      </li>
+<li>
+<strong>Final interpretant:</strong> the stabilized meaning a community
+        would converge on under ideal inquiry (a norm/habit of interpretation).
+      </li>
+</ul>
+</ul>
+</ul><p>Here is a concrete example of his model:</p><ul class="compact-grid">
+<li><strong>Representamen:</strong> the red illuminated circle</li>
+<li>
+<strong>Object:</strong> the traffic rule / the state of “stop now” (and the
+    traffic system it belongs to)
+  </li>
+<li>
+<strong>Interpretant:</strong> “I must stop,” leading to braking (and the
+    general habit that red means stop)
+  </li>
+</ul><p>Peirce categorized sign types according to this classification structure:</p><ul class="compact-grid">
+<li>
+<strong>Icon</strong>: resemblance or shared structure. For example, a map,
+    portrait, diagram, waveform display.
+  </li>
+<li>
+<strong>Index</strong>: causal/physical connection or direct pointing
+    <ul>
+<li>
+        Smoke → fire, footprint → someone walked here, thermometer reading →
+        temperature
+      </li>
+</ul>
+</li>
+<li>
+<strong>Symbol</strong>: rule, convention, learned habit. These include
+    words, flags, traffic laws, mathematical notation
+  </li>
+</ul><p>
+  The important feature of this model is that the interpretant (the sign’s effect) results from an inferential process. In the
+  example above, it is somewhat trivial because this is a socially learned
+  meaning taken for granted in modern industrialized nations. Some processes of semiosis, however, require much more deliberate inferential processes. 
+</p><p>
+<a href="https://en.wikipedia.org/wiki/Umberto_Eco">Umberto Eco</a> is another
+  semiotician who stressed this inferential element. Very broadly, Eco thinks
+  that every act of communication consists of encoding and decoding stages. The
+  messages first must be encoded into a set of signs by the sender. These signs
+  should be commonly held. They must then be transmitted and decoded by the
+  receiver, using a coding system, to understand the contained messages. The
+  right interpretation can be called the preferred decoding or preferred
+  reading. Divergence from the intended message is called an
+  <a href="https://en.wikipedia.org/wiki/Aberrant_decoding">aberrant decoding</a>. Errors like these can occur for a variety of reasons. Eco lists four major
+  classes of exceptions:
+</p><ul class="compact-grid" style="text-align: left;">
+<li>People who did not share the same language.</li>
+<li>
+    People trying to interpret the meanings of past cultures. For example,
+    Medieval people looking at Roman art.
+  </li>
+<li>
+    People who did not share the same belief system. For example, Christians
+    looking at pagan art.
+  </li>
+<li>
+    People who came from different cultures. For example, white Europeans
+    looking at Aboriginal art.
+  </li>
+</ul><p>
+  Crucially, this "coding system" is not like a computational system (see the
+  <a href="https://en.wikipedia.org/wiki/Encoding/decoding_model_of_communication">encoding/decoding model of communication</a>); it is conjectural. In
+  <a href="https://tannerlectures.org/wp-content/uploads/2024/06/Eco_91.pdf">Interpretation and Overinterpretation</a>, Eco says the reader’s initiative is to make a conjecture about the text’s
+  intention (his intentio operis) and he frames this as a hermeneutic-circle
+  process: you build a hypothesis about “what kind of reader this text asks
+  for,” and you test it against the text. That’s his “model reader” idea:
+  texts are built with an implied cooperative reader in mind; interpretation is
+  partly the attempt to align yourself with that role. Eco also talks about
+  an “<a href="https://www.researchgate.net/publication/275689765_The_encyclopedia_in_Umberto_Eco%27s_semiotics">encyclopedia</a>”: the background web of shared cultural knowledge that makes signs
+  interpretable in context. If the sender and receiver have different
+  encyclopedias, you get systematic drift. Eco is famous for pushing back
+  on the idea that texts license limitless readings. He calls uncontrolled
+  interpretation a threat to meaning/communication and argues for constraints
+  grounded in the text’s coherence and semiotic strategy. I think the key
+  insight here between Eco and Peirce is this conjectural, inferential, or
+  abductive step required for determining meaning (and interpretation). I think
+  this implies an argumentation theoretic approach. Interpretation is
+  fundamentally underdetermined, and therefore defeasible. Almost all informal
+  reasoning is non-monotonic; also known as defeasible. Assuming no two people
+  can have the same coding system, there will always be some sort of inferential
+  process for determining the meaning of a text; meaning argumentation is
+  fundamental to this process. 
+</p><div class="core-claim"><strong>The bridge from inference to argumentation:</strong> underdetermination produces candidate interpretations; candidates require reasons; reasons can be challenged by rebuttal, undermining, or undercutting; and the resulting comparison is defeasible. Interpretation becomes argumentation when a meaning-attribution must be defended against alternatives.</div><p class="chapter-transition">If interpretation is inferential and defeasible, we need criteria for saying that one reading is better supported than another.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part IV</span><h2 class="ep-part-title" id="part-4">What Makes an Interpretation Better?</h2><span class="ep-part-summary">Hermeneutic traditions disagree about ultimate aims, but they repeatedly rely on constraints, virtues, and purpose-relative criteria for evaluating readings.</span></header><h3 id="hermeneutics" style="text-align: left;">Hermeneutics</h3><div>
   For much of literature, philosophy, and religious exegesis, it seems like
-  there is no agreed-upon standardized evaluative criteria for what something
+  there are no agreed-upon standardized evaluative criteria for what something
   means, and this results in having a plethora of diverging interpretations that
   are often incompatible. Contrast this with data analysis and scientific
   modeling. There are more or less precise and agreed upon standards for saying
   whether an interpretation of a dataset or a model is better or worse than any
   given one. It seems that, fundamentally, if you want to claim that an
-  evaluative criteria is standard, or is good, you have to argue for this
-  position.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  <a href="https://en.wikipedia.org/wiki/Hermeneutics">Hermeneutics</a> is
+  evaluative criterion is standard or good, you have to argue for this
+  position. 
+</div><div>
+<a href="https://en.wikipedia.org/wiki/Hermeneutics">Hermeneutics</a> is
   basically the study of how understanding happens, when it can go wrong, and
   the norms we use to argue that one interpretation is better than another. The
   <a href="https://en.wikipedia.org/wiki/Hermeneutic_circle">hermeneutic circle</a>
@@ -680,12 +1070,9 @@
   the whole and the whole in light of the parts. Interpretation is an iterative
   adjustment: expectations, then encounter, then revise. Disagreement
   proliferates mainly because different readers bring different starting
-  horizons and different purposes for reading the text.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  A crucial insight from humanities is that meaning is not one thing, it's
-  distinguished into several categories. There is the <b>semantic content</b> of
+  horizons and different purposes for reading the text. 
+</div><div>
+  A crucial insight from humanities is that meaning is not one thing; it can be distinguished into several categories. There is the <b>semantic content</b> of
   an utterance; this refers to what the words, sentences, and structures
   plausibly say. There is <b>speaker and authorial intention</b>; this is
   distinct from semantic content and can often diverge. It encompasses pragmatic
@@ -697,100 +1084,86 @@
   always tethered to a referent, whether it be an experience, object, or
   concept. Lastly, there is reception and function. What did the text do in a
   community, historically or now? Many incompatible interpretations are actually
-  competing along different axes of meaning.&nbsp;
-</div>
-<p>
+  competing along different axes of meaning. 
+</div><div class="table-wrap"><table class="extra-wide-table long-table"><thead><tr><th>Dimension of meaning</th><th>Guiding question</th><th>Typical evidence</th></tr></thead><tbody><tr><td data-label="Dimension of meaning"><strong>Semantic content</strong></td><td data-label="Guiding question">What do the words, sentences, and structures plausibly say?</td><td data-label="Typical evidence">Lexical meaning, syntax, compositional structure, local co-text</td></tr><tr><td data-label="Dimension of meaning"><strong>Speaker / authorial intention</strong></td><td data-label="Guiding question">What was the communicator trying to do by saying this?</td><td data-label="Typical evidence">Pragmatic context, speech act, historical situation, communicative aims</td></tr><tr><td data-label="Dimension of meaning"><strong>Reference</strong></td><td data-label="Guiding question">What does the expression pick out or imply about reality?</td><td data-label="Typical evidence">Referential context, domain knowledge, truth-conditional relations</td></tr><tr><td data-label="Dimension of meaning"><strong>Significance</strong></td><td data-label="Guiding question">What does the work matter as—politically, ethically, aesthetically, or existentially?</td><td data-label="Typical evidence">Critical, normative, aesthetic, and experiential considerations</td></tr><tr><td data-label="Dimension of meaning"><strong>Reception / function</strong></td><td data-label="Guiding question">What did the text or artifact do in a community, historically or now?</td><td data-label="Typical evidence">Reception history, institutional use, audience effects, social function</td></tr></tbody></table></div><p>
   Even when schools disagree, there’s a surprisingly stable set of constraints
   and virtues that show up across philosophy, literature, and theology that
   determine whether a given interpretation is "better".
-</p>
-<p>
-  Constraint-type criteria:&nbsp;These are closer to “standards” in science
-  because they rule out readings that violate basic discipline norms.&nbsp;These
+</p><p>
+  Constraint-type criteria: These are closer to “standards” in science
+  because they rule out readings that violate basic discipline norms. These
   don’t force one “true” interpretation, but they create a floor: some readings
   are just bad readings because they can’t satisfy these constraints.
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>
+</p><ul style="text-align: left;">
+<li>
     Textual accountability: Can you show the reading in the text—word choice,
     syntax, imagery, form, argument moves? Does it survive close counterevidence
     (awkward lines you have to explain away)?
   </li>
-  <li>
+<li>
     Non-contradiction / logical discipline: Does the interpretation produce
     contradictions internal to the passage without explanation? If it claims
     irony, ambiguity, or paradox, can it justify that claim textually and
     contextually?
   </li>
-  <li>
+<li>
     Historical/linguistic plausibility: Does it respect what the words could
     mean in the language at the time? Does it avoid anachronism without
     argument?
   </li>
-  <li>
+<li>
     Genre and discourse constraints: Reading a sonnet like a lab report is
     usually a category mistake; genre sets expectations about sense, reference,
     voice, irony, etc.
   </li>
-</ul>
-<p></p>
-<p>
-  Virtue-type criteria:&nbsp;These act like theory-choice virtues in science
-  (coherence, simplicity, fruitfulness), but applied to texts.&nbsp;These
+</ul><p>
+  Virtue-type criteria: These act like theory-choice virtues in science
+  (coherence, simplicity, fruitfulness), but applied to texts. These
   virtues often decide debates when multiple readings satisfy the “floor”
-  constraints.&nbsp;
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>
+  constraints. 
+</p><ul class="compact-grid" style="text-align: left;">
+<li>
     Coherence and integration: Does it unify disparate parts without strain?
     Does it explain why this detail is there?
   </li>
-  <li>
+<li>
     Explanatory power: Does it illuminate puzzles, tensions, tonal shifts,
     structure, omissions, or recurring motifs? Does it account for more of the
     “data” (textual features) than rivals?
   </li>
-  <li>
+<li>
     Parsimony: Does it avoid inventing unsupported machinery (hidden speakers,
     elaborate conspiracies of meaning) unless needed?
   </li>
-  <li>
+<li>
     Fecundity / fruitfulness: Does it open productive lines of inquiry
     (intertextual links, thematic depth) without becoming unconstrained fantasy?
   </li>
-  <li>
+<li>
     Comparative fit across a larger corpus: If you interpret a Plato dialogue or
     a Pauline epistle, does the reading fit the author/corpus patterns unless
     you argue for a deliberate break?
   </li>
-</ul>
-<p></p>
-<p>
-  Purpose-relative criteria (where pluralism really enters):&nbsp;Here the field
+</ul><p>
+  Purpose-relative criteria (where pluralism really enters): Here the field
   explicitly admits that “better” depends on what you’re trying to do.
   Interpretive standards aren’t always “global.” Many are telos-dependent
   (dependent on the discipline’s aims).
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>
+</p><ul class="compact-grid" style="text-align: left;">
+<li>
     Aesthetic/critical aims: If the goal is literary value: richness, formal
     elegance, affective power, innovation, etc.
   </li>
-  <li>
+<li>
     Ethical-political aims: If the goal is critique: how the text participates
     in power, ideology, exclusion; what it legitimates or resists.
   </li>
-  <li>
+<li>
     Theological/confessional aims: If the goal is doctrine/formation:
     consistency with a rule of faith, tradition, liturgical use, or ecclesial
     authority.
   </li>
-</ul>
-<p></p>
-<p>
+</ul><p>
   Stanley Fish pushes the idea that what counts as a “good reading” is
   stabilized by
   <a href="https://en.wikipedia.org/wiki/Interpretive_communities">interpretive communities</a>. Even if you dislike that conclusion, it captures a real phenomenon:
@@ -798,112 +1171,9 @@
   dispute. Different communities emphasize, neglect, and prefer different
   criteria. Different schools disagree because they pick different targets:
   intention, text-as-object, readerly effect, social function, or metaphysical
-  implications.&nbsp;Here are common hermeneutic orientations, each with
-  characteristic evaluative rules.&nbsp;
-</p>
-
-<ol>
-  <li>
-    <strong>Authorial-intent / validity traditions (Schleiermacher, Hirsch)</strong>
-    <ul style="list-style-type: disc;">
-      <li>
-        Aim: recover what the author meant (or what the text meant in its
-        originating act).
-      </li>
-      <li>
-        Standards: historical context, philology, genre, intent-consistency,
-        avoidance of projecting later concerns.
-      </li>
-      <li>
-        Justification style: meaning is anchored in communicative action;
-        otherwise interpretation collapses into projection.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Philosophical hermeneutics (Heidegger, Gadamer)</strong>
-    <ul style="list-style-type: disc;">
-      <li>
-        Aim: understand as a human mode of being; interpretation is always
-        situated.
-      </li>
-      <li>
-        Standards: openness to being corrected by the text, coherence, “fusion
-        of horizons,” dialogical testing of prejudices.
-      </li>
-      <li>
-        Justification style: you can’t step outside history; objectivity becomes
-        responsible situatedness, not neutrality.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Ricoeur-style “hermeneutics of suspicion” + restoration</strong>
-    <ul style="list-style-type: disc;">
-      <li>Aim: both unmask ideology and recover meaning.</li>
-      <li>
-        Standards: explanatory power about distortions (power, desire), plus
-        textual discipline so suspicion doesn’t become free-association.
-      </li>
-      <li>
-        Justification style: surface meaning is often systematically deceptive;
-        critique is an epistemic virtue.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Structuralism / semiotics / formalism</strong>
-    <ul style="list-style-type: disc;">
-      <li>Aim: map structures (codes, oppositions, narrative functions).</li>
-      <li>
-        Standards: systematicity, replicability of analytic procedure, coverage
-        of formal features.
-      </li>
-      <li>
-        Justification style: meaning is constrained by systems, not private
-        intention.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Reader-response / reception (Jauss, Iser, Fish)</strong>
-    <ul style="list-style-type: disc;">
-      <li>Aim: meaning as enacted in reading and historical uptake.</li>
-      <li>
-        Standards: evidence of reception, plausibility of readerly operations,
-        community norms.
-      </li>
-      <li>
-        Justification style: texts don’t “mean” apart from interpretive
-        practices; standards are social.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Deconstruction</strong>
-    <ul style="list-style-type: disc;">
-      <li>
-        Aim: show internal instabilities, undecidability, suppressed
-        oppositions.
-      </li>
-      <li>
-        Standards: extremely close textual attention; demonstrating how a text
-        undermines its own claims.
-      </li>
-      <li>
-        Justification style: the demand for fixed meaning is itself a
-        philosophical overreach the text can’t sustain.
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<p>
+  implications. Here are common hermeneutic orientations, each with
+  characteristic evaluative rules. 
+</p><div class="table-wrap"><table class="extra-wide-table long-table comparison-table"><thead><tr><th>Orientation</th><th>Aim</th><th>Standards</th><th>Justification style</th></tr></thead><tbody><tr><td data-label="Orientation">Authorial-intent / validity traditions (Schleiermacher, Hirsch)</td><td data-label="Aim">recover what the author meant (or what the text meant in its originating act).</td><td data-label="Standards">historical context, philology, genre, intent-consistency, avoidance of projecting later concerns.</td><td data-label="Justification style">meaning is anchored in communicative action; otherwise interpretation collapses into projection.</td></tr><tr><td data-label="Orientation">Philosophical hermeneutics (Heidegger, Gadamer)</td><td data-label="Aim">understand as a human mode of being; interpretation is always situated.</td><td data-label="Standards">openness to being corrected by the text, coherence, “fusion of horizons,” dialogical testing of prejudices.</td><td data-label="Justification style">you can’t step outside history; objectivity becomes responsible situatedness, not neutrality.</td></tr><tr><td data-label="Orientation">Ricoeur-style “hermeneutics of suspicion” + restoration</td><td data-label="Aim">both unmask ideology and recover meaning.</td><td data-label="Standards">explanatory power about distortions (power, desire), plus textual discipline so suspicion doesn’t become free-association.</td><td data-label="Justification style">surface meaning is often systematically deceptive; critique is an epistemic virtue.</td></tr><tr><td data-label="Orientation">Structuralism / semiotics / formalism</td><td data-label="Aim">map structures (codes, oppositions, narrative functions).</td><td data-label="Standards">systematicity, replicability of analytic procedure, coverage of formal features.</td><td data-label="Justification style">meaning is constrained by systems, not private intention.</td></tr><tr><td data-label="Orientation">Reader-response / reception (Jauss, Iser, Fish)</td><td data-label="Aim">meaning as enacted in reading and historical uptake.</td><td data-label="Standards">evidence of reception, plausibility of readerly operations, community norms.</td><td data-label="Justification style">texts don’t “mean” apart from interpretive practices; standards are social.</td></tr><tr><td data-label="Orientation">Deconstruction</td><td data-label="Aim">show internal instabilities, undecidability, suppressed oppositions.</td><td data-label="Standards">extremely close textual attention; demonstrating how a text undermines its own claims.</td><td data-label="Justification style">the demand for fixed meaning is itself a philosophical overreach the text can’t sustain.</td></tr></tbody></table></div><p>
   Establishing the criteria in each of these schools involves arguing that they
   are normatively justified. There are various patterns or common arguments that
   are invoked. For example, in theology the arguments are often institutional
@@ -914,32 +1184,291 @@
   standards must be revised or challenged to reduce that distortion and
   exclusion. Some arguments involve pragmatic elements. For example, someone
   might argue that criterion X is justified because it produces inquiry that is
-  non-arbitrary, criticizable, and progressive.&nbsp;
-</p>
-<h3 style="text-align: left;">Jurisprudence</h3>
-<p>
-  <a href="https://plato.stanford.edu/entries/legal-interpretation/">Law</a>
+  non-arbitrary, criticizable, and progressive. 
+</p><div class="core-claim"><strong>Three layers of evaluation recur across these traditions:</strong> (1) a constraint floor that rules out undisciplined readings, (2) comparative virtues that rank multiple plausible readings, and (3) purpose-relative priorities that determine which virtues matter most for a particular task.</div><p class="chapter-transition">The existence of shared constraints does not eliminate disagreement, because interpreters also disagree about what the artifact is, where meaning resides, and what interpretation is for.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part V</span><h2 class="ep-part-title" id="part-5">Why Interpretive Standards Differ</h2><span class="ep-part-summary">Disagreement often originates beneath the immediate reading: in assumptions about authorship, function, textual history, social uptake, and theories of meaning.</span></header><h3 id="authorial-intent" style="text-align: left;">Authorial Intent</h3><div>
+  A strict, one-for-one “authorial intent” approach can become uncharitable even
+  if it’s trying to be faithful. For some writers, “interpretation” is not
+  mainly recovering a determinate package of propositions that got “encoded” in
+  language and needs to be decoded back out. It’s often closer to engaging with
+  a designed artifact whose point is partly to move the reader through an
+  activity—a way of seeing, a set of temptations to resist, a
+  reorientation—where any “theory” you extract is (at best) a byproduct or a
+  tool. Rigorous authorial-intent interpretation assumes (often
+  implicitly): 
+</div><ol style="text-align: left;">
+<li>the author had a reasonably stable, articulable content in mind,</li>
+<li>the text is mainly a vehicle for transmitting that content, and</li>
+<li>
+    the best reading is the one that most closely matches that intended content.
+  </li>
+</ol><p>
+  I can think of a few authors who presumably violate these assumptions. For
+  people like Wittgenstein and Nietzsche, all three of these assumptions are
+  under pressure:
+</p><ul class="compact-grid" style="text-align: left;">
+<li>
+    The author may not be fully self-transparent: they may be discovering their
+    own view by writing, or working against their own nagging thoughts.
+  </li>
+<li>
+    The aim may not be “theory delivery”: the writing may be therapeutic,
+    diagnostic, genealogical, or provocational.
+  </li>
+<li>
+    The text may be intentionally multi-voiced: aphorisms, masks, remarks,
+    thought experiments—these can be tests for the reader, not “doctrines.”
+  </li>
+</ul><p>
+  If we were to try to reconstruct the faithful intent of writers like this, we
+  very well might be misunderstanding their message. Wittgenstein's
+  aphoristic, remark-based style might not be a failure to compress a complete
+  theory into a digestible form for readers; it can be part of his communicative
+  technique: multiple angles, reminders, and staged confrontations with your own
+  conceptions. With Nietzsche, stylistic elements of writing are not purely
+  decorative, they are part of the argument. Aphorism can resist being
+  turned into a settled doctrine, it can force contextual reading (“this remark
+  has significance only under certain conditions”), enact perspectivism by
+  presenting partial angles rather than a synoptic view, and function as a
+  provocation that reveals the reader’s moral/psychological commitments. So
+  a “univocal” extraction can be a category mistake: you end up treating a
+  repertoire of perspectives and diagnostic tools as if it were a single
+  axiomatized system with one single meaning like mathematics. 
+</p><p>
+  This reveals an interesting tension between faithfulness and fruitfulness when
+  it comes to interpretation. Exegetical faithfulness has the goal of
+  determining what an author is specifically trying to do. Constructive
+  appropriation (fruitfulness) has the goal of asking “What can we build
+  from this that clarifies a problem, even if it goes beyond what the author
+  explicitly (or literally) meant?” In the latter, reconstructing meaning
+  (interpreting) is less about semantic/syntactic meaning, and more about
+  criteria such as explanatory reach, illumination, or problem solving power.
+  Engaging with texts like these can force you to reconceptualize your own views
+  in ways not originally intended by the authors. Authorial intent still
+  matters as a constraint (“don’t make it mean anything”), but it’s not always
+  the sole aim or the highest court of appeal. Wittgenstein wrote in very
+  ambiguous fragments, which ended up influencing fields as diverse as
+  linguistics, AI, and cognitive science. Nietzsche was profoundly
+  influential, ranging from existentialism, political movements, and even the
+  foundational thinkers in psychology. This just shows that a fruitful
+  interpretation of a text is often more important and impactful than a
+  concise faithful interpretation of a text. 
+</p><div class="core-claim"><strong>Goal-relative correction:</strong> faithfulness is not simply better or worse than fruitfulness. If the goal is historical or exegetical reconstruction, authorial evidence may deserve priority. If the goal is constructive appropriation, explanatory reach or illumination may outrank strict fidelity—while textual friction still constrains invention.</div><h3 id="software-analogy" style="text-align: left;">A Software Analogy</h3><div>
+  Meaning, purpose, and function might seem to be synonymous at first glance,
+  but when you investigate these concepts they are quite distinct. I think there
+  is a parallel within the software engineering practice that can illuminate
+  these distinctions, and also shed light into how meaning evolves and how its
+  fundamentally connected to use. 
+</div><div>
+  It's very common in engineering applications where the original intended use
+  case of an engineering artifact is later used for an entirely different
+  purpose. For example, memory foam was originally used for cushioning aircraft,
+  but was later used for mattresses. Shipping containers were originally used
+  for standardized cargo transport, later to be used as modular architecture and
+  living. Hashtags were originally a very uninteresting metadata convention,
+  then became deeply embedded in our culture’s vernacular and a crucial feature
+  of social media systems. Blockchain was originally designed for decentralized
+  digital cash, but later was repurposed for broader data provenance functions.
+  There is actually a similar biological phenomenon. Exaptation refers to the
+  process where a trait (or structure) evolves for one function (or no
+  particular function), and later gets co-opted for a new function. This is
+  distinct from adaptation, in which the feature or trait is selected for
+  function it currently serves. Exaptation refers to repurposing. 
+</div><div>
+  The key analogy is that once an artifact can circulate, it can
+  be taken up in ways that outrun or invert its originating purpose. I think
+  this is true for meaning and interpretation as well. Suppose you are a
+  software engineer building a component for a very specific purpose; in
+  other words, you intend it to serve a function in a particular way in a
+  larger system. The “function” or “meaning” of this component is not exhausted by what the engineer intended when it was created. The component is
+  also its interfaces (what it lets you do), its constraints, its documentation
+  and conventions, and its downstream uptakes. Some code is open to
+  modification, in unanticipated ways. This "open-source repurposing" is
+  basically what
+  <a href="https://web.stanford.edu/class/history34q/readings/Derrida/Derrida_Signature_Event.html">Derrida had in mind</a>
+  when he talked about iterability and recontextualization; a sign (or
+  mark) can be repeated in new contexts in the absence of the original
+  intention, and that repeatability is not a defect—it’s a condition of
+  possibility for communication at all. This is precisely how the open source
+  community operates and I think how any technology becomes possible;
+  technological development crucially takes place within an ecosystem or
+  trial-and-error iterability, where it's realized some system can be repurposed
+  or adapted for an entirely different purpose than originally intended. This is
+  highly analogous to the evolution of the meaning and interpretation of texts.
+  An author might write a story about X, not realizing it will later be
+  appreciated for some trivial aspect Y. 
+</div><div>
+  Within the software development cycle, you are often embedded within an
+  enterprise where the function of the system is determined by stakeholder
+  needs, shifting requirements, and economic constraints. "The purpose" of the
+  system or component, is not just what the engineer intended, but this broader
+  context as well. This mirrors what Michel Foucault discussed in his essay
+  <a href="https://www.open.edu/openlearn/49/d4/49d4e759f7fece3c946da3382b857d9d1feeb6fe?response-content-disposition=inline%3Bfilename%3D%22a840_1_michel_foucault.pdf%22&amp;response-content-type=application%2Fpdf&amp;Expires=1767089640&amp;Signature=Svw86CiXz03wnVhrs08UWNG0GJ6bfzzUQY7iLMdm0-TnXBuGiVjLPkuDlI~mMUi5e7Pva28sR~uGbOaO6nOkUc6CIreEQTs5fD~t8680k2qt0SCYo7s27aJU5Yn1xF4Bsvl367JzIrPskyDPJ20K7bC1-ZeT59S~upzRXfTESBwkmVAhCsB-bNVP9xECrbaJQC5r13bgEohQJnm8Q4hPAOEvo1FcZz7cXHX-OOUf3KgIqAZiF8nrKnt9YdvNdER-a1rOD0YIR1kgar-aU~8IALmNAdV1OGMTXiPoGb0iGWIs2SvG6uCX28kpnu1fG50lYiK203tcfutRz0CZtDI~nw__&amp;Key-Pair-Id=K87HJKWMK329B">What Is an Author?</a> His claim is that "author" is often a function, not a sovereign agent.
+  Authors are not just people, but an author-function: a cultural or
+  institutional way of grouping texts, assigning responsibility, managing
+  meaning, and policing interpretation. In software, who is "the author"; the
+  original dev? the engineers approving the PR? the techops team dictating the
+  platform constraints? Authorship is distributed and
+  institutional. Likewise with texts: genre, institutions, publication
+  practices, disciplinary uptake—these are part of what makes something
+  interpretable and governable. So the "function" of a system or component is
+  often tethered to these enterprise actors, likewise the "meaning" of a text is
+  often tethered to these broader cultural features. The "author" is more of a
+  vessel that transmits these features. “Who the author is” is tangled with
+  ownership, accountability, governance, and downstream reuse. Foucault is
+  basically saying: that tangle is the point. The “author” is a functional node
+  in a social system that manages texts and their acceptable uses. Texts and
+  software are both designed artifacts that (a) embed constraints, (b) travel
+  through changing contexts, and (c) acquire meanings through communities of
+  use. Appealing to “the author” is often not a neutral route to meaning—it’s a
+  practice that serves certain functions (classification, limitation,
+  responsibility, coherence-making). That can be useful, but it’s not
+  inevitable. Likewise, appealing to "the developer" also misses the functional
+  role the developer plays within a broader system.<br/>
+</div><h3 id="meaning-and-facts" style="text-align: left;">Facts, Object Identity, and Interpretive Constraint</h3><div>
+<div>
+    It seems to me that what counts as a permissible interpretation—and which
+    evaluative standards are appropriate—is constrained, at least in part, by
+    facts about the text and its history.
+  </div>
+
+<div>
+    For instance, if I start from the assumption that the Bible is the
+    infallible Word of God—perfectly transmitted, with human authors functioning
+    only as vessels and no scribal error—then I’m likely to treat questions of
+    authorship, transmission, and compilation as basically irrelevant. But that
+    stance conflicts with a range of historical and textual considerations: the
+    Old and New Testaments were assembled over long periods; communities and
+    institutions made deliberate inclusion/exclusion choices (the very idea of a
+    “canon” presupposes selection and filtering, including the exclusion of
+    non-canonical gospels); some books (e.g., Job, on many scholarly views) may
+    reflect multiple authorship and thus multiple intentions; and certain
+    passages appear to be later additions rather than part of the earliest
+    recoverable text (for example, the story of the woman taken in adultery and
+    “let the one without sin cast the first stone”).
+  </div>
+
+<div>
+    Taken together, these kinds of facts should limit what we can responsibly
+    claim about the text’s meaning, intention, and authority—and they should
+    also shape which interpretive criteria it makes sense to apply in the first
+    place.
+  </div>
+
+</div><div>
+  If you say “the Bible is the infallible Word of God with no scribal error and
+  humans were merely vessels,” you’ve (often implicitly) committed yourself to a
+  very specific picture of what the text is. But historical facts
+  immediately complicate which “text” you mean. We don’t possess the
+  original “autographs” for biblical books; we have later manuscript traditions
+  with variants, which is why textual criticism exists at all. “Canon” is itself
+  a historical reality: different communities recognized and listed
+  authoritative books over time; Athanasius’s 39th Festal Letter (367 CE) is
+  often singled out as the first surviving list that matches the 27-book NT
+  canon. So the “facts” force a choice: are you interpreting (a) an
+  idealized perfect original text, (b) a particular manuscript tradition, (c) a
+  particular community’s canon/received text, or (d) the evolving textual
+  tradition? Different answers yield different standards. 
+</div><div>
+<div>
+    You can see major traditions explicitly baking historical realities into
+    their hermeneutics:
+  </div>
+<div>
+<ul style="text-align: left;">
+<li>
+<a href="https://library.dts.edu/Pages/TL/Special/ICBI_1.pdf">Evangelical inerrancy</a>
+        (Chicago Statement) commonly locates strict inerrancy in the autographic
+        text and acknowledges that God did not promise an inerrant transmission,
+        which implicitly authorizes textual criticism as part of responsible
+        “what does Scripture say?” work. 
+      </li>
+<li>
+<a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html">Catholic doctrine</a>
+        (Dei Verbum) explicitly says Scripture is “word of God in human
+        language,” that the human authors are true authors, and frames “without
+        error” in relation to what God wanted conveyed “for the sake of
+        salvation.” 
+      </li>
+<li>
+<a href="https://catholic-resources.org/ChurchDocs/PBC_Interp-FullText.htm">The Pontifical Biblical Commission</a>
+        goes further in method: it calls the historical-critical method
+        “indispensable” for scientific study of meaning precisely because
+        Scripture is God’s word in human language and has sources behind
+        it. 
+      </li>
+</ul>
+</div>
+<div>
+    Notice what’s happening: these aren’t merely interpretations; they’re
+    meta-criteria about how interpretation should proceed given the kind of
+    thing Scripture is taken to be.
+  </div>
+</div><div>
+  Many scholars treat Job as at least structurally composite (prose frame vs
+  poetic core, possibly additional strata), which makes “the author’s intent” at
+  best plural or layered. This alters evaluative criteria. If you assume
+  single authorial unity, you’ll treat tensions as deliberate artistry or
+  pedagogical strategy. If you assume layering/redaction, you’ll treat
+  tensions as evidence of dialogue between traditions/editors, and you’ll
+  evaluate readings by how well they explain seams, shifts, and editorial
+  aims. Same text, different “facts,” different validity conditions for
+  interpretations.
+</div><h3 id="background-theory" style="text-align: left;">Background Theory Determines Interpretation</h3><div>
+  “Interpretation” isn’t a single method so much as an activity that inherits
+  its standards from whatever background picture you have about meaning,
+  language, mind, and reality—whether you’ve made that picture explicit or
+  you’re just running it implicitly. Every interpretation smuggles in a theory
+  of meaning; making it explicit just lets you argue about it rather than
+  letting it silently steer the result. When you say “this passage means
+  X,” you’re taking stands (often tacitly) on questions like: 
+</div><div>
+<div>
+<ul class="compact-grid" style="text-align: left;">
+<li>Is meaning mainly in the author’s intention (Grice-style)?</li>
+<li>
+        Is meaning mainly in public linguistic rules/use (later Wittgenstein)?
+      </li>
+<li>
+        Is meaning a function of reference/truth conditions (Frege/Tarski
+        traditions)?
+      </li>
+<li>
+        Is meaning a function of social practice and power (genealogy/critique
+        traditions)?
+      </li>
+<li>
+        Is meaning a function of readerly uptake (reception/reader-response)?
+      </li>
+<li>
+        Is meaning stable or fundamentally open/iterable (deconstruction-ish)?
+      </li>
+</ul>
+</div>
+</div><p>
+  All of this determines what counts as evidence, what counts as error, and what
+  counts as success. Change the meaning theory → change the goal of
+  interpretation → change the ranking of criteria. 
+</p><div class="core-claim"><strong>The relationship is reciprocal, not one-way:</strong> background theories determine which evidence appears relevant and how it is weighted, but historical, textual, empirical, or institutional evidence can in turn defeat assumptions and force revision of the background theory. Interpretive inquiry therefore has a reflective, feedback-driven structure.</div><p class="chapter-transition">Law makes these abstract differences unusually visible because disagreement must eventually be converted into an authoritative decision.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part VI</span><h2 class="ep-part-title" id="part-6">Law as a Stress Test</h2><span class="ep-part-summary">Legal interpretation exposes the same underdetermination found elsewhere, but adds institutional closure, burdens, precedent, and coercive consequences.</span></header><h3 id="jurisprudence" style="text-align: left;">Jurisprudence</h3><p>
+<a href="https://plato.stanford.edu/entries/legal-interpretation/">Law</a>
   faces a very similar underdetermination problem (multiple plausible readings
   of the same authoritative text), but it has stronger closure mechanisms and
   more institutionalized constraints than most literary/philosophical
-  interpretation.&nbsp;Because law authorizes coercion, systems build in devices
+  interpretation. Because law authorizes coercion, systems build in devices
   that force convergence in practice such as hierarchy (trial, appellate, and
   supreme court),
   <a href="https://constitution.congress.gov/browse/essay/artIII-S1-7-2-1/ALDE_00001187/">stare decisis</a>
   / <a href="https://en.wikipedia.org/wiki/Precedent">precedent</a>, standards
   of review, burdens of proof / procedural limits,
-  <a href="https://legal-resources.uslegalforms.com/r/reasons">written reasons</a>, and authoritative settlement.&nbsp;Even within disagreement, judges share a
-  toolbox and a vocabulary for arguing that a reading is legally better.&nbsp;In
+  <a href="https://legal-resources.uslegalforms.com/r/reasons">written reasons</a>, and authoritative settlement. Even within disagreement, judges share a
+  toolbox and a vocabulary for arguing that a reading is legally better. In
   <a href="https://www.congress.gov/crs-product/R45153">U.S. statutory interpretation</a>, a widely used framing is that textualism and purposivism are the two major
   “theories,” and both deploy overlapping tools (semantic arguments, canons,
   context, structure), while differing about things like legislative history and
-  how strongly purpose should drive results.&nbsp;Different schools disagree
+  how strongly purpose should drive results. Different schools disagree
   partly because they disagree about what interpretation is for (and therefore
-  what counts as “success”).&nbsp;
-</p>
-
-<div class="post-content">
-  <p>
+  what counts as “success”). 
+</p><div class="table-wrap"><table class="extra-wide-table long-table"><thead><tr><th>Approach</th><th>Primary source of constraint</th><th>Characteristic evidence</th><th>Characteristic risk / stress test</th></tr></thead><tbody><tr><td data-label="Approach"><strong>Textualism</strong></td><td data-label="Primary source of constraint">Enacted public text</td><td data-label="Characteristic evidence">Ordinary meaning, syntax, whole-text canons, public linguistic context</td><td data-label="Characteristic risk / stress test">What happens when text is genuinely underdeterminate or produces severe practical tension?</td></tr><tr><td data-label="Approach"><strong>Originalism</strong></td><td data-label="Primary source of constraint">Historically fixed constitutional meaning</td><td data-label="Characteristic evidence">Period usage, dictionaries, legal treatises, ratification-era evidence</td><td data-label="Characteristic risk / stress test">How should fixed meaning relate to evolving applications and inherited doctrine?</td></tr><tr><td data-label="Approach"><strong>Purposivism / intentionalism</strong></td><td data-label="Primary source of constraint">Legislative purpose or communicative aim</td><td data-label="Characteristic evidence">Statutory structure, design, reliable legislative history, practical function</td><td data-label="Characteristic risk / stress test">How can purpose constrain rather than license judicial policy-making?</td></tr><tr><td data-label="Approach"><strong>Constructivism / Dworkinian interpretivism</strong></td><td data-label="Primary source of constraint">Fit plus principled justification</td><td data-label="Characteristic evidence">Precedent, doctrine, institutional history, moral-political principle</td><td data-label="Characteristic risk / stress test">How can justification remain principled rather than collapse into moral preference?</td></tr><tr><td data-label="Approach"><strong>Realist / critical approaches</strong></td><td data-label="Primary source of constraint">Actual causal forces and consequences</td><td data-label="Characteristic evidence">Patterns of decisions, incentives, ideology, distributional effects, institutional behavior</td><td data-label="Characteristic risk / stress test">If power and politics strongly shape outcomes, what remains of distinctively legal constraint?</td></tr></tbody></table></div><div class="post-content">
+<p>
     A useful way to organize theories of legal interpretation is to ask:
     <em>what is doing the constraining?</em> Different schools place the “center
     of gravity” of constraint in different places—(1) the enacted text itself,
@@ -950,10 +1479,8 @@
     what standards we should use to evaluate whether an interpretation is better
     or worse.
   </p>
-
-  <p><strong>Text-centered constraint theories</strong></p>
-
-  <p>
+<h4 id="text-centered-constraint-theories">Text-Centered Constraint Theories</h4>
+<p>
     Text-centered approaches begin from the idea that law’s most legitimate
     public “signal” is the <strong>enacted text</strong>. On this view,
     interpretation should be anchored in the linguistic artifact adopted through
@@ -969,18 +1496,17 @@
     able to look at the law and have a stable basis for prediction, rather than
     depending on a judge’s reconstruction of intentions or moral sensibilities.
   </p>
-
-  <p><em>Evaluative criteria emphasized by textualism:</em></p>
-  <ul>
-    <li>
-      <strong>Linguistic evidence and ordinary meaning:</strong> Prefer
+<p><em>Evaluative criteria emphasized by textualism:</em></p>
+<ul>
+<li>
+<strong>Linguistic evidence and ordinary meaning:</strong> Prefer
       interpretations that track how competent speakers would ordinarily
       understand the words and syntax in context, including grammar,
       punctuation, and the way terms operate in the whole sentence and
       provision.
     </li>
-    <li>
-      <strong>Semantic and syntactic canons (as discipline, not decoration):</strong>
+<li>
+<strong>Semantic and syntactic canons (as discipline, not decoration):</strong>
       Reward readings that respect stable conventions of legal/linguistic
       interpretation; whole-text reasoning, consistent usage, avoiding
       surplusage, and standard narrowing principles when general terms follow
@@ -988,35 +1514,34 @@
       justify a desired outcome; it uses them consistently and explains why
       particular canons apply <i>here</i>.
     </li>
-    <li>
-      <strong>Public accessibility and auditability:</strong> A “better”
+<li>
+<strong>Public accessibility and auditability:</strong> A “better”
       interpretation is one another interpreter could reach from publicly
       available materials (the text, structure, widely shared linguistic
       context), rather than privileged access to insider motives. This makes the
       reasoning easier to critique and replicate.
     </li>
-    <li>
-      <strong>Predictability and administrability:</strong> Favor readings that
+<li>
+<strong>Predictability and administrability:</strong> Favor readings that
       generate clear guidance for citizens, agencies, and lower courts. When
       multiple meanings are possible, textualists often prefer the one that
       reduces litigation incentives and lowers the need for case-by-case moral
       balancing.
     </li>
-    <li>
-      <strong>Democratic legitimacy and separation of roles:</strong> Evaluate
+<li>
+<strong>Democratic legitimacy and separation of roles:</strong> Evaluate
       interpretations by whether they respect the legislature’s job (to
       write/alter law) and the court’s job (to apply law). A key anti-criterion
       is judicial “updating” of policy choices that should be made through
       legislation.
     </li>
-    <li>
-      <strong>Constraint on judicial discretion:</strong> Interpretations are
+<li>
+<strong>Constraint on judicial discretion:</strong> Interpretations are
       viewed as better when they minimize the room for judges to decide based on
       idiosyncratic values while presenting the decision as compelled by law.
     </li>
-  </ul>
-
-  <p>
+</ul>
+<p>
     Originalism treats the Constitution as a historically situated legal act
     that binds later interpreters. Many originalists focus on
     <strong>original public meaning</strong>—how the text would have been
@@ -1026,43 +1551,41 @@
     change should generally occur through amendment rather than judicial
     modernization.
   </p>
-
-  <p><em>Evaluative criteria emphasized by originalism:</em></p>
-  <ul>
-    <li>
-      <strong>Historical semantic grounding:</strong> Prefer interpretations
+<p><em>Evaluative criteria emphasized by originalism:</em></p>
+<ul>
+<li>
+<strong>Historical semantic grounding:</strong> Prefer interpretations
       supported by period-appropriate linguistic evidence: contemporaneous
       dictionaries, usage patterns, legal treatises, public writings, and other
       historical sources that illuminate how key terms were understood at
       enactment/ratification.
     </li>
-    <li>
-      <strong>Fixed meaning (with a distinction between meaning and
+<li>
+<strong>Fixed meaning (with a distinction between meaning and
         application):</strong>
       Evaluate readings by whether they preserve the idea that the
       Constitution’s meaning does not drift with current preferences. Many
       originalists allow that applications can evolve as facts and technologies
       change, but the underlying semantic content should remain anchored.
     </li>
-    <li>
-      <strong>Constraint and legitimacy via amendment-respect:</strong> A better
+<li>
+<strong>Constraint and legitimacy via amendment-respect:</strong> A better
       interpretation is one that does not smuggle major constitutional change
       into “interpretation,” thereby bypassing the amendment process.
     </li>
-    <li>
-      <strong>Doctrinal fit as implementation fidelity:</strong> Assess whether
+<li>
+<strong>Doctrinal fit as implementation fidelity:</strong> Assess whether
       existing doctrine can be justified as a faithful implementation of
       original meaning, or whether doctrine has drifted and should be corrected.
     </li>
-    <li>
-      <strong>Methodological transparency:</strong> Strong originalist arguments
+<li>
+<strong>Methodological transparency:</strong> Strong originalist arguments
       show their work: clear steps from sources to claims about meaning, with
       explicit handling of conflicting evidence.
     </li>
-  </ul>
-
-  <p>
-    <em>Common stress-test for text-centered theories:</em> What should be done
+</ul>
+<p>
+<em>Common stress-test for text-centered theories:</em> What should be done
     when the text is genuinely underdeterminate, yields counterproductive
     results, or collides with deep moral intuitions? Text-centered approaches
     typically respond by tightening the interpretive discipline (better
@@ -1070,80 +1593,75 @@
     institutional remedies (legislation or amendment) rather than judicial
     innovation.
   </p>
-
-  <p><strong>Purpose/intent-centered theories</strong></p>
-
-  <p>
+<h4 id="purposeintent-centered-theories">Purpose/Intent-Centered Theories</h4>
+<p>
     Purpose/intent-centered approaches treat statutes as purposive instruments:
     they are enacted to solve problems, coordinate behavior, allocate authority,
     and pursue goals. The guiding idea is that interpretation should not become
     a fetish for literal language when a literal reading defeats the law’s
     function. In hard cases, interpreters should ask what the statute is
     <em>for</em>, and interpret the text in a way that makes the statute operate
-    as a coherent plan rather than a set of disconnected clauses.&nbsp;<strong>Purposivism / intentionalism&nbsp;</strong>interprets to
+    as a coherent plan rather than a set of disconnected clauses. <strong>Purposivism / intentionalism </strong>interprets to
     advance statutory purpose; intentionalism emphasizes legislative intent
     (what the enacting body meant to do). Many real-world arguments blend the
     two: purpose provides the “why,” intent clarifies the “what we were trying
     to accomplish,” and statutory structure provides the “how.”</p>
-
-  <p><em>Evaluative criteria emphasized by purposivism/intentionalism:</em></p>
-  <ul>
-    <li>
-      <strong>Coherence with the statute’s aims:</strong> Prefer interpretations
+<p><em>Evaluative criteria emphasized by purposivism/intentionalism:</em></p>
+<ul>
+<li>
+<strong>Coherence with the statute’s aims:</strong> Prefer interpretations
       that make the statute function as a rational solution to the problem it
       targets. A reading is weaker if it makes major provisions pointless or
       defeats the core policy the statute appears designed to implement.
     </li>
-    <li>
-      <strong>Avoidance of absurdity and misfires:</strong> Penalize
+<li>
+<strong>Avoidance of absurdity and misfires:</strong> Penalize
       interpretations that generate outcomes that appear self-defeating,
       irrational, or wildly disproportionate relative to the statute’s evident
       objectives—especially when an alternative reading preserves both text and
       function.
     </li>
-    <li>
-      <strong>Fit with legislative design and internal architecture:</strong>
+<li>
+<strong>Fit with legislative design and internal architecture:</strong>
       Evaluate interpretations by how well they align with definitions,
       exceptions, remedies, enforcement mechanisms, and the statute’s broader
       scheme. A good purposive reading treats the statute as an engineered
       system.
     </li>
-    <li>
-      <strong>Explanatory “best account” of the statute’s shape:</strong> Favor
+<li>
+<strong>Explanatory “best account” of the statute’s shape:</strong> Favor
       the reading that best explains why the statute is drafted the way it is
       (why these thresholds, why these categories, why these carve-outs), rather
       than a reading that makes drafting choices mysterious or arbitrary.
     </li>
-    <li>
-      <strong>Responsible use of legislative history (when used):</strong> If
+<li>
+<strong>Responsible use of legislative history (when used):</strong> If
       legislative history is consulted, better interpretations explain what kind
       of history is being used (committee reports vs. floor remarks), why it is
       reliable, and how it interacts with the text. Cherry-picked quotations
       count against interpretive quality.
     </li>
-    <li>
-      <strong>Administrability and practical governance:</strong> Prefer
+<li>
+<strong>Administrability and practical governance:</strong> Prefer
       interpretations that yield workable guidance for agencies and courts,
       reduce perverse incentives, and avoid constant edge-case litigation that
       would paralyze the statutory program.
     </li>
-  </ul>
-
-  <p>
-    <em>Common stress-test for purpose/intent theories:</em> How do we identify
+</ul>
+<p>
+<em>Common stress-test for purpose/intent theories:</em> How do we identify
     “purpose” without turning it into a blank check for judicial policy-making?
     These theories typically respond by demanding disciplined evidence
     (structure, context, history) and by treating purpose as a constraint that
     must remain tethered to the enacted scheme—not a license to rewrite it.
   </p>
-
-  <p style="text-align: left;"><b>Constructivist Approaches</b></p><p>Constructive theories argue that interpretation is not merely linguistic
+<h4 id="constructivist-approaches">Constructivist Approaches</h4><p>Constructive theories argue that interpretation is not merely linguistic
     decoding. Law is a practice that claims authority over people, and that
     claim raises normative questions. On this view, legal texts and precedents
     constrain judges, but rarely determine outcomes fully in contested cases. So
     a responsible interpreter must both (a) respect the institutional record and
     (b) offer a principled justification for why that record should guide
-    decisions.&nbsp;<strong>Dworkin’s interpretivist picture&nbsp;</strong>frames legal
+    decisions. <strong>Dworkin’s interpretivist picture </strong>frames legal
     interpretation as the search for the
     <strong>best constructive interpretation</strong> of the community’s legal
     practice—one that <strong>fits</strong> the institutional history and
@@ -1151,159 +1669,150 @@
     interpretation from becoming free invention; “justification” ensures that
     the law is presented as a principled enterprise rather than a pile of
     compromises.</p>
-
-  <p>
-    <em>Evaluative criteria emphasized by Dworkin-style interpretivism:</em>
-  </p>
-  <ul>
-    <li>
-      <strong>Doctrinal fit:</strong> Prefer interpretations that plausibly
+<p>
+<em>Evaluative criteria emphasized by Dworkin-style interpretivism:</em>
+</p>
+<ul>
+<li>
+<strong>Doctrinal fit:</strong> Prefer interpretations that plausibly
       account for existing materials—precedents, settled doctrines,
       institutional commitments— without treating large portions of the legal
       record as mere mistakes (unless a strong justification is provided).
     </li>
-    <li>
-      <strong>Moral-political justification:</strong> Among interpretations that
+<li>
+<strong>Moral-political justification:</strong> Among interpretations that
       fit reasonably well, favor the one that makes the practice more defensible
       by appealing to principled values (e.g., fairness, equality, liberty,
       democratic legitimacy). The point is not personal preference, but publicly
       arguable principle.
     </li>
-    <li>
-      <strong>Integrity (principled coherence):</strong> A good interpretation
+<li>
+<strong>Integrity (principled coherence):</strong> A good interpretation
       makes the law hang together as a coherent set of principles: like cases
       should be treated alike for reasons that generalize, not because the judge
       likes one party more than another.
     </li>
-    <li>
-      <strong>System-level coherence:</strong> Evaluate interpretations by how
+<li>
+<strong>System-level coherence:</strong> Evaluate interpretations by how
       well they harmonize different areas of law and reduce arbitrary doctrinal
       fragmentation.
     </li>
-    <li>
-      <strong>Candor about normative premises:</strong> Because values are
+<li>
+<strong>Candor about normative premises:</strong> Because values are
       inescapable on this account, interpretive quality increases when the
       interpreter makes their justificatory commitments explicit and open to
       critique rather than hiding them behind “neutral method” rhetoric.
     </li>
-  </ul>
-
-  <p>
-    <em>Common stress-test for constructive theories:</em> How do we keep
+</ul>
+<p>
+<em>Common stress-test for constructive theories:</em> How do we keep
     “justification” from collapsing into judicial moralizing? The typical reply
     is that fit is a real constraint, and justification must be principled,
     generalizable, and consistent with the institutional record—not merely
     outcome-driven.
   </p>
-
-  <p><strong>Realist / critical approaches</strong></p>
-
-  <p>
+<h4 id="realist-critical-approaches">Realist / Critical Approaches</h4>
+<p>
     Realist and critical traditions shift attention from idealized interpretive
     constraints to the <strong>actual causal forces</strong> shaping decisions.
     They stress that outcomes often track practical consequences, institutional
     incentives, ideology, and social power—sometimes more than official
     interpretive rhetoric admits. These approaches often treat “method debates”
     as partly rhetorical: judges may cite textualism or purpose when convenient,
-    but the deeper drivers can be political, psychological, or institutional.&nbsp;<strong>Legal realism (and later critical traditions)&nbsp;</strong>emphasizes that judges respond to facts, equities, and consequences,
+    but the deeper drivers can be political, psychological, or institutional. <strong>Legal realism (and later critical traditions) </strong>emphasizes that judges respond to facts, equities, and consequences,
     and that doctrine can function as a justificatory vocabulary rather than a
     deterministic engine. Later critical theories often expand this by analyzing
     how legal categories and reasoning styles can reproduce hierarchy,
     exclusion, and ideology while presenting themselves as neutral.</p>
-
-  <p><em>Evaluative criteria emphasized by realist/critical approaches:</em></p>
-  <ul>
-    <li>
-      <strong>Explanatory adequacy:</strong> Evaluate accounts of interpretation
+<p><em>Evaluative criteria emphasized by realist/critical approaches:</em></p>
+<ul>
+<li>
+<strong>Explanatory adequacy:</strong> Evaluate accounts of interpretation
       by whether they explain what courts actually do across many cases, not
       just what courts claim to do in opinions. A theory is weaker if it
       repeatedly fails to predict outcomes or must explain away patterns as
       “exceptions.”
     </li>
-    <li>
-      <strong>Transparency and honesty about value choice:</strong> Interpretive
+<li>
+<strong>Transparency and honesty about value choice:</strong> Interpretive
       arguments are better when they acknowledge the value judgments and
       trade-offs that are actually driving results, rather than disguising them
       as mechanically compelled.
     </li>
-    <li>
-      <strong>Attention to power, incentives, and institutional context:</strong>
+<li>
+<strong>Attention to power, incentives, and institutional context:</strong>
       Assess interpretations by their awareness of who benefits, who bears
       costs, how institutions behave under constraints, and how legal decisions
       interact with political economy.
     </li>
-    <li>
-      <strong>Consequential and distributional impact:</strong> A strong
+<li>
+<strong>Consequential and distributional impact:</strong> A strong
       evaluation asks what decisions do in the world—who is harmed, who is
       protected, what incentives are created, what second-order effects follow
       (e.g., chilling effects, strategic compliance, unequal enforcement).
     </li>
-    <li>
-      <strong>Hidden-premise detection:</strong> Interpretive quality increases
+<li>
+<strong>Hidden-premise detection:</strong> Interpretive quality increases
       when the argument exposes contested assumptions embedded in “neutral”
       language—assumptions about markets, families, security, race, gender,
       normality, deservingness, and so on.
     </li>
-  </ul>
-
-  <p>
-    <em>Common stress-test for realist/critical approaches:</em> If law is so
+</ul>
+<p>
+<em>Common stress-test for realist/critical approaches:</em> If law is so
     driven by politics and power, is “legal constraint” an illusion? Responses
     vary. Some realists push for methodological reform (greater candor,
     empirical feedback, institutional redesign). Some critical traditions
     emphasize how contestation is endemic, and evaluate legal argument by its
     role in either sustaining or challenging unjust structures.
   </p>
-
-  <p>Even if you lean heavily toward one framework, it’s often useful to test an
+<p>Even if you lean heavily toward one framework, it’s often useful to test an
     interpretive claim across multiple dimensions. Many disputes persist because
     people are silently using different scoring rules. This checklist makes
     those scoring rules explicit:</p>
-
-  <ul>
-    <li>
-      <strong>Textual plausibility:</strong> Is the reading linguistically
+<ul>
+<li>
+<strong>Textual plausibility:</strong> Is the reading linguistically
       credible given the enacted language?
     </li>
-    <li>
-      <strong>Contextual integration:</strong> Does it cohere with surrounding
+<li>
+<strong>Contextual integration:</strong> Does it cohere with surrounding
       provisions, defined terms, and overall structure?
     </li>
-    <li>
-      <strong>Historical grounding:</strong> Is there strong evidence about
+<li>
+<strong>Historical grounding:</strong> Is there strong evidence about
       meaning-at-enactment or the relevant legal backdrop?
     </li>
-    <li>
-      <strong>Purpose sensitivity:</strong> Does it advance (or undermine) the
+<li>
+<strong>Purpose sensitivity:</strong> Does it advance (or undermine) the
       law’s apparent aims and design?
     </li>
-    <li>
-      <strong>Doctrinal continuity:</strong> Does it fit with precedent and
+<li>
+<strong>Doctrinal continuity:</strong> Does it fit with precedent and
       system-level patterns without ad hoc exceptions?
     </li>
-    <li>
-      <strong>Administrability:</strong> Can it be applied predictably without
+<li>
+<strong>Administrability:</strong> Can it be applied predictably without
       constant litigation or unworkable standards?
     </li>
-    <li>
-      <strong>Institutional legitimacy:</strong> Does it respect the roles of
+<li>
+<strong>Institutional legitimacy:</strong> Does it respect the roles of
       courts vs. legislatures/amenders?
     </li>
-    <li>
-      <strong>Normative defensibility:</strong> Can it be justified by
+<li>
+<strong>Normative defensibility:</strong> Can it be justified by
       principled reasons that generalize beyond this case?
     </li>
-    <li>
-      <strong>Consequential impact:</strong> What are the real-world effects,
+<li>
+<strong>Consequential impact:</strong> What are the real-world effects,
       including distributional consequences and feedback loops?
     </li>
-    <li>
-      <strong>Transparency:</strong> Are the interpretive steps and assumptions
+<li>
+<strong>Transparency:</strong> Are the interpretive steps and assumptions
       explicit and open to critique?
     </li>
-  </ul>
-
-  <p>
+</ul>
+<p>
     Framed this way, disagreements become easier to diagnose: they’re often
     disputes about <em>which evaluative criteria should dominate</em>. Is the
     best interpretation the one most faithful to public meaning? The one that
@@ -1312,277 +1821,15 @@
     In practice, many legal arguments are hybrids—mixing criteria—but the
     weights assigned to each criterion often determine the final result.
   </p>
-</div>
-
-<h3 style="text-align: left;">What is the goal "interpretation"?</h3>
-<div>
-  Let's refer back to the objectives laid out at the beginning. What do people
-  even mean when they say "interpret"? What is the goal of interpretation? What
-  sorts of functions or activities are undertaken when applying that
-  term?&nbsp;When people say they’re “interpreting” something, they’re usually
-  doing (some mix of) a handful of distinct activities. The disagreements we've
-  been circling often happen because different people mean different goals by
-  the same word. Interpretation can be aimed at different targets, and those
-  targets often blend in practice. But it helps to separate the main “jobs”
-  interpretation can be doing—what you’re trying to <em>fix</em>,
-  <em>recover</em>, <em>situate</em>, <em>explain</em>, or <em>do</em> with a
-  text, utterance, action, artifact, theory, or dataset.
-</div>
-<div class="post-content">
-  <ol>
-    <li>
-      <p><strong>Fix “what it says” (sense)</strong></p>
-      <p>
-        The aim here is to determine the content of the words, symbols, or
-        actions at the level of meaning—what the expression itself encodes. This
-        is interpretation as <em>disambiguation</em> and
-        <em>semantic determination</em>.
-      </p>
-      <ul>
-        <li>
-          <strong>Resolve ambiguity:</strong> Is “bank” referring to a riverbank
-          or a financial bank?
-        </li>
-        <li>
-          <strong>Pin down reference:</strong> If the text says “he,” “they,” or
-          “it,” who or what is being referred to?
-        </li>
-        <li>
-          <strong>Determine scope:</strong> When it says “all,” does it mean
-          literally all, or all relevant cases within an implied domain?
-        </li>
-      </ul>
-      <p>
-        In this mode, a successful interpretation reduces semantic uncertainty:
-        it clarifies what the sentence, clause, sign, or gesture
-        <em>means as such</em>.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Recover “what was meant by saying it” (communicative intention /
-          pragmatics)</strong>
-      </p>
-      <p>
-        Here the target is not just sentence meaning but
-        <strong>speech-act meaning</strong>: what someone was doing in saying
-        it. This is interpretation as reconstructing an act of
-        communication—often by inferring intentions, conversational goals, and
-        shared assumptions.
-      </p>
-      <ul>
-        <li>
-          <strong>Speech act:</strong> Was it a promise, threat, joke, warning,
-          irony, or understatement?
-        </li>
-        <li>
-          <strong>Responsive context:</strong> What question, problem, or
-          provocation was the speaker responding to?
-        </li>
-        <li>
-          <strong>Shared presuppositions:</strong> What background knowledge or
-          norms were assumed between speaker and audience?
-        </li>
-      </ul>
-      <p>
-        In this mode, “meaning” includes implicatures and pragmatic force, not
-        merely dictionary definitions.
-      </p>
-    </li>
-
-    <li>
-      <p><strong>Place it in a wider context (contextualization)</strong></p>
-      <p>
-        This goal treats the object as something whose intelligibility depends
-        on embedding it within larger systems of practice. This is
-        interpretation as <em>situating</em>: identifying the frameworks that
-        make the thing legible.
-      </p>
-      <ul>
-        <li>
-          <strong>Historical setting:</strong> What time, place, and social
-          conditions shape what can be said or meant?
-        </li>
-        <li>
-          <strong>Genre and conventions:</strong> Is this a statute, poem,
-          manifesto, lab report, meme, ritual, or contract—and what does that
-          genre normally do?
-        </li>
-        <li>
-          <strong>Institutional roles:</strong> Who is speaking (judge, priest,
-          scientist, politician), and what authority or constraints come with
-          that role?
-        </li>
-        <li>
-          <strong>Intertextual echoes:</strong> What traditions, references, or
-          prior texts are being invoked, adapted, or resisted?
-        </li>
-      </ul>
-      <p>
-        Contextualization often changes what counts as a plausible reading by
-        showing what kinds of moves the text is “allowed” to make in its
-        setting.
-      </p>
-    </li>
-
-    <li>
-      <p><strong>Make it coherent (integration)</strong></p>
-      <p>
-        This approach treats the object (a text, theory, person’s action,
-        dataset, or practice) as something like a structured whole. The
-        interpreter tries to integrate parts into a pattern, reduce
-        fragmentation, and show how seemingly disconnected elements belong
-        together. This is interpretation as <em>pattern-finding</em> and
-        <em>coherence-building</em>.
-      </p>
-      <ul>
-        <li>
-          <strong>Connect parts to wholes:</strong> How do particular passages,
-          claims, or moves contribute to the overall structure?
-        </li>
-        <li>
-          <strong>Explain tensions and gaps:</strong> How can shifts,
-          contradictions, silences, or missing steps be understood?
-        </li>
-        <li>
-          <strong>Propose organizing principles:</strong> What themes, values,
-          or inferential rules unify the material?
-        </li>
-      </ul>
-      <p>
-        Integration can be descriptive (showing the internal logic) or
-        charitable (seeking the most rational, unified version of the view),
-        depending on the interpreter’s aims.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Explain “why it’s like that” (causal/functional explanation)</strong>
-      </p>
-      <p>
-        Sometimes interpretation aims at explanation in a more external sense:
-        not “what does it mean?” but “what produced it?” or “what is it doing in
-        the world?” This is interpretation as <em>diagnosis</em>—often
-        associated with a “hermeneutics of suspicion.”
-      </p>
-      <ul>
-        <li>
-          <strong>Psychological motives:</strong> What needs, fears,
-          aspirations, or self-conceptions might be driving the expression?
-        </li>
-        <li>
-          <strong>Social pressures and institutions:</strong> What incentives,
-          constraints, or organizational dynamics shape it?
-        </li>
-        <li>
-          <strong>Ideology, power, economics:</strong> What interests are
-          served, what hierarchies reinforced or challenged, what material
-          conditions reflected?
-        </li>
-        <li>
-          <strong>Community function:</strong> What role does the text or
-          practice play—boundary-setting, legitimation, identity formation,
-          coordination?
-        </li>
-      </ul>
-      <p>
-        In this mode, the “meaning” of a text can be partly explained by what it
-        accomplishes socially or politically, regardless of authorial
-        self-understanding.
-      </p>
-    </li>
-
-    <li>
-      <p><strong>Apply it to a case (normative application)</strong></p>
-      <p>
-        In law, theology, ethics, and everyday rule-following, interpretation
-        often means deciding what a general norm requires <em>here and now</em>.
-        This is interpretation as bridging the general to the particular, where
-        “application” is not merely downstream of understanding, but part of
-        what understanding is for in normative domains.
-      </p>
-      <ul>
-        <li>
-          <strong>Case-specific judgment:</strong> Given this rule or principle,
-          what should be done in this situation?
-        </li>
-        <li>
-          <strong>Operationalization:</strong> How do we translate general
-          language into concrete criteria, thresholds, or actions?
-        </li>
-        <li>
-          <strong>Handling hard cases:</strong> How should exceptions, conflicts
-          of principles, or unforeseen scenarios be treated?
-        </li>
-      </ul>
-      <p>
-        This mode highlights that norms often “come alive” only through
-        interpretation-in-application: deciding relevance, weighing factors, and
-        producing a warranted verdict.
-      </p>
-    </li>
-
-    <li>
-      <p><strong>Draw out “what it means for us” (significance)</strong></p>
-      <p>
-        This is where much of humanities pluralism lives: interpretation as
-        articulating a work’s significance—what it reveals, symbolizes,
-        critiques, or invites us to become. The aim is not only to decode or
-        explain, but to make explicit the work’s import for a community, a
-        tradition, or a present audience.
-      </p>
-      <ul>
-        <li>
-          <strong>Revelation and critique:</strong> What does it disclose about
-          a society, an ideology, a moral blind spot, or a form of life?
-        </li>
-        <li>
-          <strong>Symbolic or aesthetic meaning:</strong> What is its expressive
-          power—its imagery, resonance, and felt orientation?
-        </li>
-        <li>
-          <strong>Moral/political import:</strong> What stance does it press,
-          what responsibilities does it suggest, what possibilities does it
-          open?
-        </li>
-        <li>
-          <strong>Why care:</strong> What makes this worth returning to, arguing
-          over, or building upon?
-        </li>
-      </ul>
-      <p>
-        In this mode, “meaning” is inseparable from evaluation: the
-        interpretation clarifies what the object matters as, not only what it
-        says.
-      </p>
-    </li>
-  </ol>
-</div>
-
-<p>
-  Essentially, "interpret" can name at least three big kinds of goals: What does
-  it say/mean? (sense, intention, context),&nbsp;How does it work / why is it
-  this way? (structure, causes, functions), and&nbsp;What should we do with it /
-  what follows? (application, significance); descriptive, explanatory, and
-  normative considerations.&nbsp;People fight about interpretation because
-  they’re often optimizing different targets—one person is doing (1) and (2),
-  another is doing (6) and (7), and they talk past each other as if there must
-  be one single “goal.”&nbsp;
-</p>
-<h3 style="text-align: left;">Interpretation as a Two-Layered goal</h3>
-<div>
+</div><div class="core-claim"><strong>Best is not always the same as controlling.</strong> A reading may be epistemically best supported, institutionally authoritative, or pragmatically settled. Courts often must produce a controlling interpretation even when reasonable epistemic disagreement remains. Keeping these statuses distinct prevents institutional settlement from being confused with proof of unique semantic correctness.</div><p class="chapter-transition">The legal example suggests that interpretive disputes have two levels: arguments over the governing standards and arguments over the reading that best satisfies them.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part VII</span><h2 class="ep-part-title" id="part-7">Interpretation as Argumentation</h2><span class="ep-part-summary">The central proposal is a two-level model: first justify the evaluative framework, then justify a candidate interpretation under that framework.</span></header><h3 id="two-level-argument" style="text-align: left;">Interpretation as a Two-Level Argument</h3><div>
   Interpretation is generally a two-pronged goal, one preceding the other.
   First, you must decide and determine what the goal is, which might require
   arguing about what our values are, the pragmatic goals, constraints, etc. Once
   these are determined, proper application of the criteria requires
   argumentation. So for example, once the criterion has been established, we
-  must argue the applicability of the the criterion, within a particular
+  must argue the applicability of the criterion, within a particular
   interpretive task.
-</div>
-<div><br /></div>
-<div>
+</div><div>
   If your goal is "what does it say?", then criteria shift towards textual
   evidence, lexical meaning, genre conventions, internal coherence etc. If your
   goal is "what did the author mean?", this is about intent and pragmatics.
@@ -1591,41 +1838,39 @@
   bad reading would be one that attributes implausible intentions or
   anachronistic concepts without support. If your goal is "what does this do or
   how does this function?", you are now in the realm of reception and social
-  role. Some criteria you might consider are&nbsp;institutional setting,
+  role. Some criteria you might consider are institutional setting,
   audience effects, historical consequences, and intertextual networks. A bad
   reading would be something like ignoring or misrepresenting how the text
   circulated or how it was actually treated. If your goal is "What is its
   significance for us?", now we are interested in the space of critique, value,
-  and appropriation. Criteria you might consider may include&nbsp;insight,
+  and appropriation. Criteria you might consider may include insight,
   ethical/political illumination, explanatory depth about power/ideology,
   transformative or aesthetic payoff—but still usually with a “textual friction”
   requirement so it doesn’t become free association. A bad interpretation might
   be one that can be "proved" for any text. A practical way of thinking about
   this would be to ask the following questions:
-</div>
+</div><div>
 <div>
-  <div>
-    <ol style="text-align: left;">
-      <li>
+<ol style="text-align: left;">
+<li>
         Target: Are we interpreting meaning, intention, function, implication,
         or application?
       </li>
-      <li>
+<li>
         Stakes: Are we trying to decide coercive outcomes (law), form persons
         (theology), or understand/criticize (humanities)?
       </li>
-      <li>
+<li>
         Constraint floor: What must any acceptable reading respect? (text,
         language, context, authority)
       </li>
-      <li>
+<li>
         Ranking rule: When criteria conflict, which wins? (text over purpose?
         purpose over text? precedent over best moral reading?)
       </li>
-    </ol>
-  </div>
+</ol>
 </div>
-<p>
+</div><p>
   Interpretation disputes are two-layer arguments. The first layer is
   <a href="https://oasis.library.unlv.edu/philosophy_fac_articles/59/">meta-interpretive arguments</a>, consisting of dialogue over what counts as decisive in an interpretive
   situation. The second layer is at the object-level, consisting of arguments
@@ -1633,575 +1878,53 @@
   is preferred because of XYZ". I'll elaborate on this more later when
   introducing a generalized scheme of "arguments from interpretation", but this
   dual layer nature of interpretation can be reduced to the following:
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>There is a claim (“This text means M”),</li>
-  <li>
+</p><ul class="compact-grid" style="text-align: left;">
+<li>There is a claim (“This text means M”),</li>
+<li>
     It is defended by argument schemes (textual, definitional, analogical,
     purposive, etc.),
   </li>
-  <li>under procedural norms (burdens, starting points, allowed moves),</li>
-  <li>
+<li>under procedural norms (burdens, starting points, allowed moves),</li>
+<li>
     plus ongoing meta-argument about which norms and schemes should control.
   </li>
-</ul>
-<p></p>
-<p>
+</ul><p>
   The procedural norms refer to these decisions guiding the first layer of
   argument.
   <a href="https://www.researchgate.net/publication/226823979_Dialogical_theory_of_legal_discussions_Pragma-dialectical_analysis_and_evaluation_of_legal_argumentation">Pragma-dialectics refers</a>
   to this as the opening stages of a dialogue. The idea is that any given
-  interpretive act is situated within a broader, lets call it "interpretive
-  situation", establishing the direction of argumentation.
-</p>
-<h3 style="text-align: left;">Semiotics</h3>
-<p>
-  This is broadly understood as the study of signs. A
-  <a href="https://en.wikipedia.org/wiki/Sign">sign</a> is simply an entity that
-  stands for something else. The symbols involved within a natural language, for
-  example English, are signs that collectively form a signaling system. People
-  using signaling systems can communicate, create, and express meaning to one
-  another. Signs therefore stand in relation to some underlying meaning;
-  expressed verbally, in written form, through visual cues etc. either
-  intentionally or unintentionally. Semiosis is the capacity or activity or
-  comprehending and production of signs. A sign is literally anything that
-  communicates a meaning, that is not the sign itself, to the interpreter of the
-  sign. The meaning of a sign is what is generated in the process of
-  semiosis.&nbsp;
-</p>
-<p>
-  Where am I going with this? Semiotics is a meta-discipline concerned with sign
-  use in general, even in non-human animals (called
-  <a href="https://en.wikipedia.org/wiki/Biosemiotics">biosemiotics</a>). For
-  example, Bee's communicate information to one another using complex forms of
-  "dancing"; these movements instruct other members of the aggregate to perform
-  tasks. Collectively, the bee swarm consists of a complex signaling system,
-  where signs such as the dancing, communicate meaning to other members of the
-  collective. Proper interpretation of the dance is crucial for the survival of
-  the collective; and in some sense determines the resulting structure and
-  patterns of the collective. It's very interesting; how a collective transmits
-  and decodes signals is directly related to the resulting structure. This is
-  directly analogous to the signaling systems humans have formed. Even human
-  dancing can be seen as a system for communicating meaning.&nbsp;In fact,
-  hermeneutics (the study of interpretation), which we discussed earlier, is a
-  subset of semiotics concerned with written texts (historically concerned with
-  religious texts, as early as Augustine). I am not a semiotician so I wont be
-  able to effectively dive into the nuances of the discipline, but various
-  scholars have proposed models of signaling systems. For example, one of the
-  most influential models is
-  <a href="https://en.wikipedia.org/wiki/Semiotic_theory_of_Charles_Sanders_Peirce">C.S. Peirce's triadic model of signs</a>.
-</p>
-
-<p>
-  Peirce’s <strong>triadic model of signs</strong> says a sign isn’t just a
-  two-part link (like “word ↔ object”). Instead, a sign is a
-  <strong>three-part relation</strong>: something that stands for an object to
-  an interpretant. On this view, you don’t fully have a “sign” unless all three
-  roles are in play, and meaning-making (semiosis) can continue as interpretants
-  generate further signs.
-</p>
-
-<ul>
-  <li>
-    <strong>Representamen</strong> (the <em>sign-vehicle</em>)
-    <ul>
-      <li>
-        The thing that functions as the sign — a sound, word, image, gesture,
-        smoke, footprint, etc.
-      </li>
-      <li>
-        <strong>Example:</strong> the written word “tree,” a red light, a
-        weather vane’s arrow.
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <strong>Object</strong> (what the sign is <em>about</em>)
-    <ul>
-      <li>The thing, event, property, or situation the sign refers to.</li>
-      <li>
-        Peirce distinguishes:
-        <ul>
-          <li>
-            <strong>Immediate object:</strong> the object
-            <em>as the sign presents it</em> (the “object-in-the-sign,” a
-            conceptual slice).
-          </li>
-          <li>
-            <strong>Dynamic object:</strong> the object
-            <em>as it really is / as it constrains the sign</em> (what can
-            surprise or correct you).
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Example:</strong> for “tree,” the immediate object might be
-        “tree-as-a-kind,” while the dynamic object could be that specific oak
-        outside (or trees in the world, depending on context).
-      </li>
-    </ul>
-  </li>
-
-  <li><strong>Interpretant</strong> (the sign’s <em>effect/meaning</em>)</li>
-  <ul>
-    <li>
-      Not the human interpreter, but the meaning produced — the understanding,
-      inference, habit, or further sign that arises.
-    </li>
-    <li>Peirce distinguishes:</li>
-    <ul>
-      <li>
-        <strong>Immediate interpretant:</strong> the sign’s basic
-        intelligibility (it’s meaningful as a sign).
-      </li>
-      <li>
-        <strong>Dynamic interpretant:</strong> the actual effect in a particular
-        occasion (you look up, you feel warned, you imagine a tree).
-      </li>
-      <li>
-        <strong>Final interpretant:</strong> the stabilized meaning a community
-        would converge on under ideal inquiry (a norm/habit of interpretation).
-      </li>
-    </ul>
-  </ul>
-</ul>
-
-<p>Here is a concrete example of his model:</p>
-<ul>
-  <li><strong>Representamen:</strong> the red illuminated circle</li>
-  <li>
-    <strong>Object:</strong> the traffic rule / the state of “stop now” (and the
-    traffic system it belongs to)
-  </li>
-  <li>
-    <strong>Interpretant:</strong> “I must stop,” leading to braking (and the
-    general habit that red means stop)
-  </li>
-</ul>
-
-<p>Peirce categorized sign types according to this classification structure:</p>
-<ul>
-  <li>
-    <strong>Icon</strong>: resemblance or shared structure. For example, a map,
-    portrait, diagram, waveform display.
-  </li>
-  <li>
-    <strong>Index</strong>: causal/physical connection or direct pointing
-    <ul>
-      <li>
-        Smoke → fire, footprint → someone walked here, thermometer reading →
-        temperature
-      </li>
-    </ul>
-  </li>
-  <li>
-    <strong>Symbol</strong>: rule, convention, learned habit. These include
-    words, flags, traffic laws, mathematical notation
-  </li>
-</ul>
-
-<p>
-  The reason I bring up this model, is to point out the fact that the
-  interpretant (the signs effect), results from an inferential processes. In the
-  example above, it is somewhat trivial because this is a socially learned
-  meaning taken for granted in modern industrialized nations. Some processes of
-  semiosis however, require much more deliberate inferential processes.&nbsp;
-</p>
-<p>
-  <a href="https://en.wikipedia.org/wiki/Umberto_Eco">Umberto Eco</a> is another
-  semiotician who stressed this inferential element. Very broadly, Eco thinks
-  that every act of communication consists of encoding and decoding stages. The
-  messages first must be encoded into a set of signs by the sender. These signs
-  should be commonly held. They must then be transmitted and decoded by the
-  receiver, using a coding system, to understand the contained messages. The
-  right interpretation can be called the preferred decoding or preferred
-  reading. Divergence from the intended message is called an
-  <a href="https://en.wikipedia.org/wiki/Aberrant_decoding">aberrant decoding</a>. Errors like these can occur for a variety of reasons. Eco lists four major
-  classes of exceptions:
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>People who did not share the same language.</li>
-  <li>
-    People trying to interpret the meanings of past cultures. For example,
-    Medieval people looking at Roman art.
-  </li>
-  <li>
-    People who did not share the same belief system. For example, Christians
-    looking at pagan art.
-  </li>
-  <li>
-    People who came from different cultures. For example, white Europeans
-    looking at Aboriginal art.
-  </li>
-</ul>
-<p></p>
-<p>
-  Crucially, this "coding system" is not like a computational system (see the
-  <a href="https://en.wikipedia.org/wiki/Encoding/decoding_model_of_communication">encoding/decoding model of communication</a>); it is conjectural.&nbsp;In
-  <a href="https://tannerlectures.org/wp-content/uploads/2024/06/Eco_91.pdf">Interpretation and Overinterpretation</a>, Eco says the reader’s initiative is to make a conjecture about the text’s
-  intention (his intentio operis) and he frames this as a hermeneutic-circle
-  process: you build a hypothesis about “what kind of reader this text asks
-  for,” and you test it against the text.&nbsp;That’s his “model reader” idea:
-  texts are built with an implied cooperative reader in mind; interpretation is
-  partly the attempt to align yourself with that role.&nbsp;Eco also talks about
-  an “<a href="https://www.researchgate.net/publication/275689765_The_encyclopedia_in_Umberto_Eco%27s_semiotics">encyclopedia</a>”: the background web of shared cultural knowledge that makes signs
-  interpretable in context. If the sender and receiver have different
-  encyclopedias, you get systematic drift.&nbsp;Eco is famous for pushing back
-  on the idea that texts license limitless readings. He calls uncontrolled
-  interpretation a threat to meaning/communication and argues for constraints
-  grounded in the text’s coherence and semiotic strategy. I think the key
-  insight here between Eco and Peirce is this conjectural, inferential, or
-  abductive step required for determining meaning (and interpretation). I think
-  this implies an argumentation theoretic approach. Interpretation is
-  fundamentally underdetermined, and therefore defeasible. Almost all informal
-  reasoning is non-monotonic; also known as defeasible. Assuming no two people
-  can have the same coding system, there will always be some sort of inferential
-  process for determining the meaning of a text; meaning argumentation is
-  fundamental to this process.&nbsp;
-</p>
-<h3 style="text-align: left;">Authorial Intent</h3>
-<div>
-  A strict, one-for-one “authorial intent” approach can become uncharitable even
-  if it’s trying to be faithful. For some writers, “interpretation” is not
-  mainly recovering a determinate package of propositions that got “encoded” in
-  language and needs to be decoded back out. It’s often closer to engaging with
-  a designed artifact whose point is partly to move the reader through an
-  activity—a way of seeing, a set of temptations to resist, a
-  reorientation—where any “theory” you extract is (at best) a byproduct or a
-  tool. Rigorous authorial-intent interpretation assumes (often
-  implicitly):&nbsp;
-</div>
-<p></p>
-<ol style="text-align: left;">
-  <li>the author had a reasonably stable, articulable content in mind,</li>
-  <li>the text is mainly a vehicle for transmitting that content, and</li>
-  <li>
-    the best reading is the one that most closely matches that intended content.
-  </li>
-</ol>
-<p></p>
-<p>
-  I can think of a few authors who presumably violate these assumptions. For
-  people like Wittgenstein and Nietzsche, all three of these assumptions are
-  under pressure:
-</p>
-<p></p>
-<ul style="text-align: left;">
-  <li>
-    The author may not be fully self-transparent: they may be discovering their
-    own view by writing, or working against their own nagging thoughts.
-  </li>
-  <li>
-    The aim may not be “theory delivery”: the writing may be therapeutic,
-    diagnostic, genealogical, or provocational.
-  </li>
-  <li>
-    The text may be intentionally multi-voiced: aphorisms, masks, remarks,
-    thought experiments—these can be tests for the reader, not “doctrines.”
-  </li>
-</ul>
-<p></p>
-<p>
-  If we were to try to reconstruct the faithful intent of writers like this, we
-  very well might be misunderstanding their message.&nbsp;Wittgenstein's
-  aphoristic, remark-based style might not be a failure to compress a complete
-  theory into a digestible form for readers; it can be part of his communicative
-  technique: multiple angles, reminders, and staged confrontations with your own
-  conceptions.&nbsp;With Nietzsche, stylistic elements of writing are not purely
-  decorative, they are part of the argument. Aphorism can&nbsp;resist being
-  turned into a settled doctrine, it can force contextual reading (“this remark
-  has significance only under certain conditions”),&nbsp;enact perspectivism by
-  presenting partial angles rather than a synoptic view, and&nbsp;function as a
-  provocation that reveals the reader’s moral/psychological commitments.&nbsp;So
-  a “univocal” extraction can be a category mistake: you end up treating a
-  repertoire of perspectives and diagnostic tools as if it were a single
-  axiomatized system with one single meaning like mathematics.&nbsp;
-</p>
-<p>
-  This reveals an interesting tension between faithfulness and fruitfulness when
-  it comes to interpretation. Exegetical faithfulness has the goal of
-  determining what an author is specifically trying to do. Constructive
-  appropriation (fruitfulness) has the goal of asking&nbsp;“What can we build
-  from this that clarifies a problem, even if it goes beyond what the author
-  explicitly (or literally) meant?” In the latter, reconstructing meaning
-  (interpreting) is less about semantic/syntactic meaning, and more about
-  criteria such as explanatory reach, illumination, or problem solving power.
-  Engaging with texts like these can force you to reconceptualize your own views
-  in ways not originally intended by the authors.&nbsp;Authorial intent still
-  matters as a constraint (“don’t make it mean anything”), but it’s not always
-  the sole aim or the highest court of appeal. Wittgenstein wrote in very
-  ambiguous fragments, which ended up influencing fields as diverse as
-  linguistics, AI, and cognitive science.&nbsp;Nietzsche was profoundly
-  influential, ranging from existentialism, political movements, and even the
-  foundational thinkers in psychology. This just shows that a fruitful
-  interpretation of a text is often times more important and impactful than a
-  concise faithful interpretation of a text.&nbsp;
-</p>
-<h3 style="text-align: left;">A Software Analogy</h3>
-<div>
-  Meaning, purpose, and function might seem to be synonymous at first glance,
-  but when you investigate these concepts they are quite distinct. I think there
-  is a parallel within the software engineering practice that can illuminate
-  these distinctions, and also shed light into how meaning evolves and how its
-  fundamentally connected to use.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  It's very common in engineering applications where the original intended use
-  case of an engineering artifact is later used for an entirely different
-  purpose. For example, memory foam was originally used for cushioning aircraft,
-  but was later used for mattresses. Shipping containers were originally used
-  for standardized cargo transport, later to be used as modular architecture and
-  living. Hashtags were originally a very uninteresting metadata convention,
-  then became deeply embedded in our cultures vernacular and a crucial feature
-  of social media systems. Blockchain was originally designed for decentralized
-  digital cash, but later was repurposed for broader data provenance functions.
-  There is actually a similar biological phenomenon. Exaptation refers to the
-  process where a trait (or structure) evolves for one function (or no
-  particular function), and later gets co-opted for a new function. This is
-  distinct from adaptation, in which the feature or trait is selected for
-  function it currently serves. Exaptation refers to repurposing.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  The key analogy I want to make, is that once an artifact can circulate, it can
-  be taken up in ways that outrun or invert its originating purpose. I think
-  this is true for meaning and interpretation as well. Suppose you are a
-  software engineering building a component for a very specific purpose; in
-  other words, you intend on it to serve a function in a particular way in a
-  larger system. The "function" or "meaning" of this component is not exhausted
-  by what they had intended at the time of their commitment. The component is
-  also its interfaces (what it lets you do), its constraints, its documentation
-  and conventions, and its downstream uptakes. Some code is open to
-  modification, in unanticipated ways. This "open-source repurposing" is
-  basically what
-  <a href="https://web.stanford.edu/class/history34q/readings/Derrida/Derrida_Signature_Event.html">Derrida had in mind</a>
-  when he talked about iterability and recontextualization;&nbsp;a sign (or
-  mark) can be repeated in new contexts in the absence of the original
-  intention, and that repeatability is not a defect—it’s a condition of
-  possibility for communication at all. This is precisely how the open source
-  community operates and I think how any technology becomes possible;
-  technological development crucially takes place within an ecosystem or
-  trial-and-error iterability, where it's realized some system can be repurposed
-  or adapted for an entirely different purpose than originally intended. This is
-  highly analogous to the evolution of the meaning and interpretation of texts.
-  An author might write a story about X, not realizing it will later be
-  appreciated for some trivial aspect Y.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  Within the software development cycle, you are often embedded within an
-  enterprise where the function of the system is determined by stakeholder
-  needs, shifting requirements, and economic constraints. "The purpose" of the
-  system or component, is not just what the engineer intended, but this broader
-  context as well. This mirrors what Michel Foucault discussed in his essay
-  <a href="https://www.open.edu/openlearn/49/d4/49d4e759f7fece3c946da3382b857d9d1feeb6fe?response-content-disposition=inline%3Bfilename%3D%22a840_1_michel_foucault.pdf%22&amp;response-content-type=application%2Fpdf&amp;Expires=1767089640&amp;Signature=Svw86CiXz03wnVhrs08UWNG0GJ6bfzzUQY7iLMdm0-TnXBuGiVjLPkuDlI~mMUi5e7Pva28sR~uGbOaO6nOkUc6CIreEQTs5fD~t8680k2qt0SCYo7s27aJU5Yn1xF4Bsvl367JzIrPskyDPJ20K7bC1-ZeT59S~upzRXfTESBwkmVAhCsB-bNVP9xECrbaJQC5r13bgEohQJnm8Q4hPAOEvo1FcZz7cXHX-OOUf3KgIqAZiF8nrKnt9YdvNdER-a1rOD0YIR1kgar-aU~8IALmNAdV1OGMTXiPoGb0iGWIs2SvG6uCX28kpnu1fG50lYiK203tcfutRz0CZtDI~nw__&amp;Key-Pair-Id=K87HJKWMK329B">What Is an Author?</a>&nbsp;His claim is that "author" is often a function, not a sovereign agent.
-  Authors are not just people, but an author-function: a cultural or
-  institutional way of grouping texts, assigning responsibility, managing
-  meaning, and policing interpretation. In software, who is "the author"; the
-  original dev? the engineers approving the PR? the techops team dictating the
-  platform constraints? Authorship is distributed and
-  institutional.&nbsp;Likewise with texts: genre, institutions, publication
-  practices, disciplinary uptake—these are part of what makes something
-  interpretable and governable. So the "function" of a system or component is
-  often tethered to these enterprise actors, likewise the "meaning" of a text is
-  often tethered to these broader cultural features. The "author" is more of a
-  vessel that transmits these features.&nbsp;“Who the author is” is tangled with
-  ownership, accountability, governance, and downstream reuse. Foucault is
-  basically saying: that tangle is the point. The “author” is a functional node
-  in a social system that manages texts and their acceptable uses. Texts and
-  software are both designed artifacts that (a) embed constraints, (b) travel
-  through changing contexts, and (c) acquire meanings through communities of
-  use. Appealing to “the author” is often not a neutral route to meaning—it’s a
-  practice that serves certain functions (classification, limitation,
-  responsibility, coherence-making). That can be useful, but it’s not
-  inevitable. Likewise, appealing to "the developer" also misses the functional
-  role the developer plays within a broader system.<br />
-</div>
-<div><br /></div>
-<h3 style="text-align: left;">Is "Meaning" Inseparable from Facts?</h3>
-<div>
-  <div>
-    It seems to me that what counts as a permissible interpretation—and which
-    evaluative standards are appropriate—is constrained, at least in part, by
-    facts about the text and its history.
-  </div>
-  <div><br /></div>
-  <div>
-    For instance, if I start from the assumption that the Bible is the
-    infallible Word of God—perfectly transmitted, with human authors functioning
-    only as vessels and no scribal error—then I’m likely to treat questions of
-    authorship, transmission, and compilation as basically irrelevant. But that
-    stance conflicts with a range of historical and textual considerations: the
-    Old and New Testaments were assembled over long periods; communities and
-    institutions made deliberate inclusion/exclusion choices (the very idea of a
-    “canon” presupposes selection and filtering, including the exclusion of
-    non-canonical gospels); some books (e.g., Job, on many scholarly views) may
-    reflect multiple authorship and thus multiple intentions; and certain
-    passages appear to be later additions rather than part of the earliest
-    recoverable text (for example, the story of the woman taken in adultery and
-    “let the one without sin cast the first stone”).
-  </div>
-  <div><br /></div>
-  <div>
-    Taken together, these kinds of facts should limit what we can responsibly
-    claim about the text’s meaning, intention, and authority—and they should
-    also shape which interpretive criteria it makes sense to apply in the first
-    place.
-  </div>
-  <div><br /></div>
-</div>
-<div>
-  If you say “the Bible is the infallible Word of God with no scribal error and
-  humans were merely vessels,” you’ve (often implicitly) committed yourself to a
-  very specific picture of what the text is.&nbsp;But historical facts
-  immediately complicate which “text” you mean.&nbsp;We don’t possess the
-  original “autographs” for biblical books; we have later manuscript traditions
-  with variants, which is why textual criticism exists at all. “Canon” is itself
-  a historical reality: different communities recognized and listed
-  authoritative books over time; Athanasius’s 39th Festal Letter (367 CE) is
-  often singled out as the first surviving list that matches the 27-book NT
-  canon.&nbsp;So the “facts” force a choice: are you interpreting (a) an
-  idealized perfect original text, (b) a particular manuscript tradition, (c) a
-  particular community’s canon/received text, or (d) the evolving textual
-  tradition? Different answers yield different standards.&nbsp;
-</div>
-<div><br /></div>
-<div>
-  <div>
-    You can see major traditions explicitly baking historical realities into
-    their hermeneutics:
-  </div>
-  <div>
-    <ul style="text-align: left;">
-      <li>
-        <a href="https://library.dts.edu/Pages/TL/Special/ICBI_1.pdf">Evangelical inerrancy</a>
-        (Chicago Statement) commonly locates strict inerrancy in the autographic
-        text and acknowledges that God did not promise an inerrant transmission,
-        which implicitly authorizes textual criticism as part of responsible
-        “what does Scripture say?” work.&nbsp;
-      </li>
-      <li>
-        <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_en.html">Catholic doctrine</a>
-        (Dei Verbum) explicitly says Scripture is “word of God in human
-        language,” that the human authors are true authors, and frames “without
-        error” in relation to what God wanted conveyed “for the sake of
-        salvation.”&nbsp;
-      </li>
-      <li>
-        <a href="https://catholic-resources.org/ChurchDocs/PBC_Interp-FullText.htm">The Pontifical Biblical Commission</a>
-        goes further in method: it calls the historical-critical method
-        “indispensable” for scientific study of meaning precisely because
-        Scripture is God’s word in human language and has sources behind
-        it.&nbsp;
-      </li>
-    </ul>
-  </div>
-  <div>
-    Notice what’s happening: these aren’t merely interpretations; they’re
-    meta-criteria about how interpretation should proceed given the kind of
-    thing Scripture is taken to be.
-  </div>
-</div>
-<div><br /></div>
-<div>
-  Many scholars treat Job as at least structurally composite (prose frame vs
-  poetic core, possibly additional strata), which makes “the author’s intent” at
-  best plural or layered. This alters evaluative criteria.&nbsp;If you assume
-  single authorial unity, you’ll treat tensions as deliberate artistry or
-  pedagogical strategy.&nbsp;If you assume layering/redaction, you’ll treat
-  tensions as evidence of dialogue between traditions/editors, and you’ll
-  evaluate readings by how well they explain seams, shifts, and editorial
-  aims.&nbsp;Same text, different “facts,” different validity conditions for
-  interpretations.
-</div>
-<h3 style="text-align: left;">Background Theory Determines Interpretation</h3>
-<div>
-  “Interpretation” isn’t a single method so much as an activity that inherits
-  its standards from whatever background picture you have about meaning,
-  language, mind, and reality—whether you’ve made that picture explicit or
-  you’re just running it implicitly. Every interpretation smuggles in a theory
-  of meaning; making it explicit just lets you argue about it rather than
-  letting it silently steer the result.&nbsp;When you say “this passage means
-  X,” you’re taking stands (often tacitly) on questions like:&nbsp;
-</div>
-<div>
-  <div>
-    <ul style="text-align: left;">
-      <li>Is meaning mainly in the author’s intention (Grice-style)?</li>
-      <li>
-        Is meaning mainly in public linguistic rules/use (later Wittgenstein)?
-      </li>
-      <li>
-        Is meaning a function of reference/truth conditions (Frege/Tarski
-        traditions)?
-      </li>
-      <li>
-        Is meaning a function of social practice and power (genealogy/critique
-        traditions)?
-      </li>
-      <li>
-        Is meaning a function of readerly uptake (reception/reader-response)?
-      </li>
-      <li>
-        Is meaning stable or fundamentally open/iterable (deconstruction-ish)?
-      </li>
-    </ul>
-  </div>
-</div>
-<p>
-  All of this determines what counts as evidence, what counts as error, and what
-  counts as success. Change the meaning theory → change the goal of
-  interpretation → change the ranking of criteria.&nbsp;
-</p>
-<h2 style="text-align: left;">An Argumentation Scheme for Interpretation</h2>
-<div>
-  Looping back to what was mentioned earlier, there is an obvious argumentative
-  aspect of interpretation. Scholars in Argumentation Theory have identified
-  this, but limit their analysis to the legal domain. I think we can generalize
-  their work, providing a scheme that could apply to all situations of
-  interpretation. So what follows is an attempt at that, based on the following
-  papers from scholars of this discipline.
-</div>
-<div>
-  <ul style="text-align: left;">
-    <li>
-      <a href="https://www.researchgate.net/publication/279526989_Argumentation_Schemes_for_Statutory_Interpretation_A_Logical_Analysis">Argumentation Schemes for Statutory Interpretation: A Logical
+  interpretive act is situated within a broader—let us call it an “interpretive situation”—that establishes the direction of argumentation.
+</p><div class="core-claim"><strong>Why this does not require an infinite regress:</strong> framework choice can itself be challenged, but real practices stop the regress through locally shared higher-order norms—such as institutional rules, public reasons, disciplinary methods, error costs, pragmatic constraints, or reflective equilibrium. These stopping points are defeasible rather than metaphysically final; they can be reopened when the practice itself becomes contested.</div><h3 id="walton-macagno" style="text-align: left;">From Legal Argumentation Schemes to a General Model</h3><p>The preceding sections suggest a general argumentative structure rather than a domain-specific curiosity. Scholars in argumentation theory have developed schemes for legal and statutory interpretation; the proposal here is to generalize that work into a framework that can apply across law, scripture, philosophy, literature, data and model interpretation, institutional artifacts, and other domains in which meaning is contested.</p><div>
+<ul class="compact-grid" style="text-align: left;">
+<li>
+<a href="https://www.researchgate.net/publication/279526989_Argumentation_Schemes_for_Statutory_Interpretation_A_Logical_Analysis">Argumentation Schemes for Statutory Interpretation: A Logical
         Analysis</a>
-    </li>
-    <li>
-      <a href="https://philarchive.org/rec/MACAOS-4">Arguments of statutory interpretation and argumentation schemes</a>
-    </li>
-    <li>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2850164">An Argumentation Framework for Contested Cases of Statutory
+</li>
+<li>
+<a href="https://philarchive.org/rec/MACAOS-4">Arguments of statutory interpretation and argumentation schemes</a>
+</li>
+<li>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2850164">An Argumentation Framework for Contested Cases of Statutory
         Interpretation</a>
-    </li>
-    <li>
-      <a href="https://philarchive.org/rec/MACAOS-4">Arguments of statutory interpretation and argumentation schemes</a>
-    </li>
-    <li>
-      <a href="https://www.researchgate.net/publication/221539116_Legal_reasoning_with_argumentation_schemes">Legal reasoning with argumentation schemes</a>
-    </li>
-    <li>
-      <a href="https://philarchive.org/rec/WALSIA-6">Statutory Interpretation as Argumentation</a>
-    </li>
-  </ul>
-</div>
-
+</li>
+<li>
+<a href="https://philarchive.org/rec/MACAOS-4">Arguments of statutory interpretation and argumentation schemes</a>
+</li>
+<li>
+<a href="https://www.researchgate.net/publication/221539116_Legal_reasoning_with_argumentation_schemes">Legal reasoning with argumentation schemes</a>
+</li>
+<li>
+<a href="https://philarchive.org/rec/WALSIA-6">Statutory Interpretation as Argumentation</a>
+</li>
+</ul>
+</div><div>
+<h3 id="a-waltonmacagno-argumentation-framework-for-interpretation" style="text-align: left;"><strong>A Walton–Macagno Argumentation Framework for Interpretation</strong></h3>
 <div>
-  <h3 style="text-align: left;"><strong>A Walton–Macagno Argumentation Framework for Interpretation</strong></h3>
-
-  <div>
-    <em>A defeasible, goal-relative, dialectical method for settling meaning
+<em>A defeasible, goal-relative, dialectical method for settling meaning
       disputes across domains (law, scripture, philosophy, literature,
       data/model interpretation, institutional artifacts, and beyond).</em></div>
-
-  <p style="text-align: left;"><strong>Core commitments</strong></p>
-
-  <p>
+<h4 id="core-commitments">Core Commitments</h4>
+<p>
     Interpretation is best treated as a
     <strong>defeasible claim about meaning</strong>—a conclusion supported by
     <strong>pro and con arguments</strong> rather than a one-shot deduction. To
@@ -2213,368 +1936,293 @@
     defeasibility of interpretive reasoning is made explicit through
     <strong>critical questions</strong> that expose defaults, assumptions, and
     points of vulnerability.</p>
-
-  <p style="text-align: left;"><strong>0) Trigger condition: when interpretation is needed</strong></p>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p><strong>Interpretation-in-the-strict-sense is appropriate when</strong>
+<h4 id="0-trigger-condition-when-interpretation-is-needed">0. Trigger Condition: When Interpretation Is Needed</h4>
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p><strong>Interpretation-in-the-strict-sense is appropriate when</strong>
     there is a genuine doubt or conflict about what some element
     <strong>E</strong> in an artifact <strong>D</strong>
-    <em>means/does/implies/applies-as</em>, such that
+<em>means/does/implies/applies-as</em>, such that
     <strong>no unchallenged default meaning</strong> settles the issue.
   </p></div><div><p>
     This corresponds to the transition from
     <strong>prima facie understanding</strong> (a shared, conventional default)
     to <strong>interpretation proper</strong>, where the default can no longer
     be taken for granted and must be defended, refined, or replaced.
-  </p></div></blockquote><div>
-
-  
-
-  <div><strong>1) The target form of an interpretive conclusion:&nbsp;</strong><strong>Interpretive claim (meaning-attribution under evaluation)</strong></div>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p><strong>BestInt(E, D | Cxt, G, A) ≡ M</strong></p></div><div><p>
+  </p></div></blockquote><h4 id="1-target-form-of-an-interpretive-conclusion">1. Target Form of an Interpretive Conclusion</h4><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p><strong>BestInt(E, D | Cxt, G, A) ≡ M</strong></p></div><div><p>
     “Relative to context <strong>Cxt</strong>, goal <strong>G</strong>, and
     audience/standards <strong>A</strong>, the best (or most justified)
     interpretation of element <strong>E</strong> in artifact
     <strong>D</strong> is meaning <strong>M</strong>.” This captures interpretation as a
     <strong>meaning-attribution claim</strong> made to overcome doubt, evaluated
-    by an explicit set of criteria and dialectical tests.</p></div></blockquote><div>
-
-  
-
-  <div><strong>2) A two-level Walton-style scheme</strong></div>
-
-  <p>Interpretive disputes often involve two intertwined questions:</p>
-  <ol>
-    <li>
-      <strong>Which evaluative framework should govern the dispute?</strong>
+    by an explicit set of criteria and dialectical tests.</p></div></blockquote><div><h4 id="2-a-two-level-walton-style-scheme">2. A Two-Level Walton-Style Scheme</h4><p>Interpretive disputes often involve two intertwined questions:</p><ol>
+<li>
+<strong>Which evaluative framework should govern the dispute?</strong>
       (meta-level)
     </li>
-    <li>
-      <strong>Given that framework, which interpretation is best?</strong>
+<li>
+<strong>Given that framework, which interpretation is best?</strong>
       (object-level)
     </li>
-  </ol>
-
-  <p>These are modeled as two linked schemes.</p>
-
-  <div>
-    <strong>Scheme I: Argument for adopting an interpretive framework
+</ol><p>These are modeled as two linked schemes.</p><div>
+<strong>Scheme I: Argument for adopting an interpretive framework
       (meta-criteria)</strong>
-  </div>
-
-  <div><strong>Claim (C)</strong></div>
-  <p>
+</div><div><strong>Claim (C)</strong></div><p>
     For this dispute about <strong>E</strong> in <strong>D</strong> (in context
     <strong>Cxt</strong>) with goal <strong>G</strong>, we should evaluate
     interpretations using framework <strong>F</strong>—a
     <strong>set of criteria</strong> plus <strong>priority rules</strong> and
     <strong>burden/standard of proof</strong>.
-  </p>
-
-  <div><strong>Premises</strong></div>
-  <ol>
-    <li>
-      <strong>Goal premise:</strong> The practical/theoretical goal
+  </p><div><strong>Premises</strong></div><ol>
+<li>
+<strong>Goal premise:</strong> The practical/theoretical goal
       <strong>G</strong> of this interpretive task is specified (e.g., faithful
       reconstruction, legal applicability, theological normativity, aesthetic
       understanding, moral critique, predictive adequacy, explanatory adequacy,
       institutional compliance, etc.).
     </li>
-    <li>
-      <strong>Object premise:</strong> <strong>D</strong> is an artifact of type
+<li>
+<strong>Object premise:</strong> <strong>D</strong> is an artifact of type
       <strong>T</strong> in domain <strong>Dom</strong> (statute, scripture,
       poem, scientific model, dataset, contract, UI spec, algorithmic output…),
       with authority-status <strong>A</strong> (binding, canonical, exemplary,
       exploratory, aesthetic…).
     </li>
-    <li>
-      <strong>Practice/fit premise:</strong> In domain <strong>Dom</strong>, for
+<li>
+<strong>Practice/fit premise:</strong> In domain <strong>Dom</strong>, for
       objects like <strong>T</strong> with authority-status <strong>A</strong>,
       framework <strong>F</strong> is (a) recognized as appropriate and/or (b)
       best fits <strong>G</strong> and the relevant constraints (institutional,
       epistemic, moral, practical).
     </li>
-    <li>
-      <strong>Feasibility premise:</strong> <strong>F</strong> can actually be
+<li>
+<strong>Feasibility premise:</strong> <strong>F</strong> can actually be
       applied here (available evidence, competence, time, procedural
       constraints).
     </li>
-    <li>
-      <strong>Defeasibility premise:</strong> No overriding reason blocks using
+<li>
+<strong>Defeasibility premise:</strong> No overriding reason blocks using
       <strong>F</strong> (e.g., <strong>F</strong> violates binding authority or
       explicit procedural rules; <strong>F</strong>’s triggering conditions
       aren’t met; <strong>F</strong> yields contradictions with controlling
       constraints).
     </li>
-  </ol>
-
-  <div><strong>Conclusion</strong></div>
-  <p>
+</ol><div><strong>Conclusion</strong></div><p>
     Therefore, <strong>F</strong> is the (provisional/default) evaluative
     framework for settling interpretations of <strong>E</strong> in
     <strong>D</strong> for goal <strong>G</strong>. Framework choice is itself defeasible.
     In practice, frameworks function as defaults that can be overridden when
-    superior reasons arise.</p>
-
-  <div>
-    <strong>Scheme II: Argument from a framework to a “best interpretation” (object
+    superior reasons arise.</p><div>
+<strong>Scheme II: Argument from a framework to a “best interpretation” (object
       level)</strong>
-  </div>
-
-  <div><strong>Claim (C)</strong></div>
-  <p>
+</div><div><strong>Claim (C)</strong></div><p>
     Interpretation <strong>M</strong> is the best/most justified interpretation
     of <strong>E</strong> in <strong>D</strong> (in <strong>Cxt</strong>) for
     goal <strong>G</strong>, under framework <strong>F</strong>.
-  </p>
-
-  <div><strong>Premises</strong></div>
-  <ol>
-    <li>
-      <strong>Doubt premise:</strong> There is a genuine interpretive
+  </p><div><strong>Premises</strong></div><ol>
+<li>
+<strong>Doubt premise:</strong> There is a genuine interpretive
       doubt/conflict about <strong>E</strong> in <strong>D</strong> in
       <strong>Cxt</strong> for goal <strong>G</strong>
       (i.e., no unchallenged default resolves it).
     </li>
-    <li>
-      <strong>Framework premise:</strong> Framework <strong>F</strong> is
+<li>
+<strong>Framework premise:</strong> Framework <strong>F</strong> is
       applicable here (by Scheme I).
     </li>
-    <li>
-      <strong>Support premise:</strong> Under <strong>F</strong>, there are
+<li>
+<strong>Support premise:</strong> Under <strong>F</strong>, there are
       sufficient pro-arguments supporting <strong>M</strong> from admissible
       sources of support (textual/structural evidence; contextual facts; genre
       constraints; intent evidence; precedent/tradition; functional/purpose
       evidence; empirical fit; institutional fit; explanatory/predictive
       adequacy; etc.).
     </li>
-    <li>
-      <strong>Defeat-management premise:</strong> Defeaters against
+<li>
+<strong>Defeat-management premise:</strong> Defeaters against
       <strong>M</strong>—both rebutting alternatives and undercutting attacks on
       the inference—are answered or neutralized under <strong>F</strong>.
     </li>
-    <li>
-      <strong>Comparative premise:</strong> Competing interpretations
+<li>
+<strong>Comparative premise:</strong> Competing interpretations
       <strong>M₁…Mₙ</strong> are (i) considered and (ii) either rejected or
       shown not better than <strong>M</strong> under <strong>F</strong>.
     </li>
-  </ol>
-
-  <div><strong>Conclusion</strong></div>
-  <p>
+</ol><div><strong>Conclusion</strong></div><p>
     Therefore, <strong>M</strong> is (provisionally) justified as the best
     interpretation of <strong>E</strong> in <strong>D</strong> for goal
     <strong>G</strong>, under <strong>F</strong>.
-  </p>
-
-  <div>
-    <strong>3) A generic Walton-style scheme for interpretive fit under a
-      goal</strong>
-  </div>
-
-  <p>
+  </p></div><p class="chapter-transition">With the two-level architecture in place, the same logic can be collapsed into a reusable domain-general procedure.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part VIII</span><h2 class="ep-part-title" id="part-8">A Domain-General Operational Framework</h2><span class="ep-part-summary">The framework can be used as a repeatable procedure: identify the interpretandum, set the goal and audience, select criteria, compare candidates, test defeaters, and report a statused conclusion.</span></header><div><h4 id="3-a-generic-scheme-for-interpretive-fit-under-a-goal">3. A Generic Scheme for Interpretive Fit Under a Goal</h4><p>
     The two-level view can be implemented as a single, domain-general scheme
     that explicitly parameterizes context, goals, and standards.
-  </p>
-
-  <div>
-    <strong>Scheme: Argument from Interpretive Fit Under a Goal</strong>
-  </div><div><strong><br /></strong></div>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px;"><div><div style="text-align: left;"><strong>Target conclusion:&nbsp;</strong><strong>BestInt(E, D | Cxt, G, A) ≡ M</strong></div></div></blockquote><div><div><strong><br /></strong></div>
-
-  <div><strong>Ordinary premises (grounds)</strong></div>
-  <ol>
-    <li>
-      <strong>Interpretandum identification:</strong> Element/expression
+  </p><div>
+<strong>Scheme: Argument from Interpretive Fit Under a Goal</strong>
+</div></div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px;"><div><div style="text-align: left;"><strong>Target conclusion: </strong><strong>BestInt(E, D | Cxt, G, A) ≡ M</strong></div></div></blockquote><div>
+<div><strong>Ordinary premises (grounds)</strong></div>
+<ol>
+<li>
+<strong>Interpretandum identification:</strong> Element/expression
       <strong>E</strong> occurs in artifact/object <strong>D</strong>, and the
       interpretive question is well-posed (the “thing to be interpreted” is
       fixed).
     </li>
-    <li>
-      <strong>Context specification:</strong> Relevant context
+<li>
+<strong>Context specification:</strong> Relevant context
       <strong>Cxt</strong> is identified (local co-text, broader corpus,
       historical setting, institutional setting, genre/discourse type, task
       setting).
     </li>
-    <li>
-      <strong>Goal specification:</strong> Interpretive goal
+<li>
+<strong>Goal specification:</strong> Interpretive goal
       <strong>G</strong> is specified (recover intended message, apply a norm,
       preserve doctrinal coherence, achieve aesthetic illumination, obtain
       explanatory/predictive adequacy, etc.).
     </li>
-    <li>
-      <strong>Candidate meaning:</strong> A candidate meaning/reading
+<li>
+<strong>Candidate meaning:</strong> A candidate meaning/reading
       <strong>M</strong> is proposed at the appropriate grain size
       (propositional content, directive, theme, function, rule, model-structure,
       etc.).
     </li>
-    <li>
-      <strong>Method/criterion-set selected:</strong> An evaluative set of
+<li>
+<strong>Method/criterion-set selected:</strong> An evaluative set of
       criteria/warrants <strong>K</strong> (or framework <strong>F</strong>) is
       selected as appropriate to <strong>(D, Cxt, G, A)</strong>.
     </li>
-    <li>
-      <strong>Fit/support claim:</strong> Under <strong>K/F</strong>,
+<li>
+<strong>Fit/support claim:</strong> Under <strong>K/F</strong>,
       interpreting “<strong>E in D as M</strong>” is supported (linguistic fit,
       contextual fit, coherence, explanatory/predictive power, institutional
       fit, empirical fit, etc.).
     </li>
-  </ol>
-
-  <div><strong>Major (warrant) premise — defeasible conditional</strong></div>
-  <p>
-    <strong>Interpretive warrant:</strong> If (1)–(6) obtain and no defeating
+</ol>
+<div><strong>Major (warrant) premise — defeasible conditional</strong></div>
+<p>
+<strong>Interpretive warrant:</strong> If (1)–(6) obtain and no defeating
     exception applies, then <strong>BestInt(E, D | Cxt, G, A) ≡ M</strong>.
   </p>
-
-  <div><strong>Assumptions (defaults unless challenged)</strong></div>
-  <ol>
-    <li>
-      <strong>Default-meaning presumption:</strong> There is a reasonable prima
+<div><strong>Assumptions (defaults unless challenged)</strong></div>
+<ol>
+<li>
+<strong>Default-meaning presumption:</strong> There is a reasonable prima
       facie/default reading available given community conventions, unless
       challenged.
     </li>
-    <li>
-      <strong>Competence/normalcy assumptions:</strong> Interpreter competence;
+<li>
+<strong>Competence/normalcy assumptions:</strong> Interpreter competence;
       normal discourse conditions; artifact integrity; data quality; stable
       background practices, etc.
     </li>
-  </ol>
-
-  <div><strong>Exceptions (potential undercutters)</strong></div>
-  <ol>
-    <li>
-      <strong>Defeater conditions:</strong> Superior reasons support rejecting
+</ol>
+<div><strong>Exceptions (potential undercutters)</strong></div>
+<ol>
+<li>
+<strong>Defeater conditions:</strong> Superior reasons support rejecting
       <strong>K/F</strong> here or preferring a rival meaning
       <strong>M′</strong> (technical context defeats ordinary meaning;
       irony/sarcasm; corruption/variant text; genre shift; redaction;
       measurement error; institutional constraints; etc.).
     </li>
-  </ol>
-
-  <div><strong>Conclusion</strong></div>
-  <p>Therefore, <strong>BestInt(E, D | Cxt, G, A) ≡ M</strong> (defeasibly).</p>
-
-  <div><strong>Standard attack types</strong></div>
-  <ul>
-    <li>
-      <strong>Undermining:</strong> attack a premise (e.g., the alleged context
+</ol>
+<div><strong>Conclusion</strong></div>
+<p>Therefore, <strong>BestInt(E, D | Cxt, G, A) ≡ M</strong> (defeasibly).</p>
+<div><strong>Standard attack types</strong></div>
+<ul class="compact-grid">
+<li>
+<strong>Undermining:</strong> attack a premise (e.g., the alleged context
       is wrong; the evidence is weak).
     </li>
-    <li>
-      <strong>Rebuttal:</strong> support an incompatible conclusion (a rival
+<li>
+<strong>Rebuttal:</strong> support an incompatible conclusion (a rival
       interpretation <strong>M′</strong>).
     </li>
-    <li>
-      <strong>Undercutting:</strong> attack the inferential link by showing an
+<li>
+<strong>Undercutting:</strong> attack the inferential link by showing an
       exception applies (e.g., the canon/criterion is inapplicable here).
     </li>
-  </ul>
-
-  <div>
-    <strong>4) A repeatable workflow: the interpretive act as a dialectical
-      procedure</strong>
-  </div>
-  <ol>
-    <li>
-      <strong>Fix the interpretandum:</strong> Specify what exactly is being
+</ul>
+<h4 id="4-repeatable-workflow">4. Repeatable Workflow</h4>
+<ol>
+<li>
+<strong>Fix the interpretandum:</strong> Specify what exactly is being
       interpreted (<strong>E</strong> and <strong>D</strong>) and what would
       count as an answer.
     </li>
-    <li>
-      <strong>State the goal (G):</strong> Clarify what interpretive success
+<li>
+<strong>State the goal (G):</strong> Clarify what interpretive success
       means (reconstruction, application, critique, explanation, prediction,
       aesthetic illumination, etc.).
     </li>
-    <li>
-      <strong>Set the audience/standard (A):</strong> Identify who must be
+<li>
+<strong>Set the audience/standard (A):</strong> Identify who must be
       persuaded and what proof standard applies (court, scholarly community,
       faith community, lab/peer review, product team, etc.).
     </li>
-    <li>
-      <strong>Establish a default:</strong> Start from a presumptive reading
+<li>
+<strong>Establish a default:</strong> Start from a presumptive reading
       when available (prima facie understanding).
     </li>
-    <li>
-      <strong>Generate alternatives:</strong> Enumerate plausible candidates
+<li>
+<strong>Generate alternatives:</strong> Enumerate plausible candidates
       {<strong>M₁…Mₙ</strong>}.
     </li>
-    <li>
-      <strong>Select warrants/criteria (K) / framework (F):</strong> Choose
+<li>
+<strong>Select warrants/criteria (K) / framework (F):</strong> Choose
       admissible interpretive warrants and any priority rules, burdens, and
       standards appropriate to <strong>G</strong> and <strong>A</strong>.
     </li>
-    <li>
-      <strong>Build pro/con arguments:</strong> Instantiate argument schemes
+<li>
+<strong>Build pro/con arguments:</strong> Instantiate argument schemes
       supporting and attacking each candidate; make inferential dependencies
       explicit.
     </li>
-    <li>
-      <strong>Apply critical questions:</strong> Surface assumptions and test
+<li>
+<strong>Apply critical questions:</strong> Surface assumptions and test
       for exceptions; ensure objections are handled rather than bypassed.
     </li>
-    <li>
-      <strong>Resolve conflicts:</strong> Weigh competing arguments according to
+<li>
+<strong>Resolve conflicts:</strong> Weigh competing arguments according to
       the selected proof standard and any priority rules when schemes collide.
     </li>
-    <li>
-      <strong>Output a statused conclusion:</strong> Report not only
+<li>
+<strong>Output a statused conclusion:</strong> Report not only
       <strong>M</strong>, but its dialectical status (e.g.,
       <em>defensible</em> vs <em>justified</em>) relative to the current
       argument graph and standards—and note any remaining live defeaters or
       unresolved ties.
     </li>
-  </ol>
-
-  <div>
-    <strong>5) What can “back” an interpretation: hidden commitments and fault
-      lines</strong>
-  </div>
-
-  <p>
+</ol>
+<h4 id="5-hidden-commitments-and-fault-lines">5. Hidden Commitments and Fault Lines</h4>
+<p>
     In Toulmin terms, <strong>backing</strong> underwrites the warrants inside
     <strong>K/F</strong>—the often-implicit commitments that make a criterion
     seem appropriate. In real disputes, these are frequently the deepest sources
     of disagreement.
   </p>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>A) Ontology and authority of the artifact</strong></div></div></blockquote><div>
-  <ul style="text-align: left;">
-    <ul><li><strong>What is D?</strong> (law, scripture, literature, model output,
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>A) Ontology and authority of the artifact</strong></div></div></blockquote><div>
+<ul style="text-align: left;">
+<ul class="compact-grid"><li><strong>What is D?</strong> (law, scripture, literature, model output,
       dataset, institutional directive…)
     </li><li><strong>What kind of authority does it have?</strong> (binding/coercive,
       canonical/normative, exemplary, exploratory, aesthetic…)
     </li><li>
-      <strong>Where does authority live?</strong> (original author, final text,
+<strong>Where does authority live?</strong> (original author, final text,
       community practice, institutional body, empirical performance, tradition…)
     </li></ul>
-    
-    
-  </ul>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>B) Semantics and pragmatics (how meaning works)</strong></div></div></blockquote><div style="text-align: left;">
-  <ul>
-    <ul><li>
+</ul>
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>B) Semantics and pragmatics (how meaning works)</strong></div></div></blockquote><div style="text-align: left;">
+<ul>
+<ul class="compact-grid"><li>
       Meaning as ordinary-language default vs technical language vs contextual
       pragmatics
     </li><li>Strong vs weak assumptions about semantic stability over time</li><li>Genre conventions as binding constraints vs looser affordances</li><li>The role of co-text and broader corpus in fixing meaning</li></ul>
-    
-    
-    
-  </ul>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p>
+</ul>
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><p>
     This includes the crucial distinction between
     <strong>prima facie understanding</strong> (default meaning from shared
     socio-linguistic practice) and <strong>interpretation</strong> as a more
     complex presumptive reasoning task when doubt arises.
   </p></div></blockquote><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>C) Hermeneutic school commitments (illustrative)</strong></div></div></blockquote><div>
-
-  
-  <ul style="text-align: left;">
-    <ul><li><strong>Intentionalist:</strong> author’s communicative intent is primary
+<ul style="text-align: left;">
+<ul><li><strong>Intentionalist:</strong> author’s communicative intent is primary
     </li><li><strong>Textualist/formalist:</strong> artifact-internal constraints
       dominate
     </li><li><strong>Purposivist/teleological:</strong> function/aim/purpose dominates
@@ -2585,20 +2233,13 @@
     </li><li><strong>Deconstructive:</strong> emphasizes instability/iterability;
       critiques closure assumptions
     </li><li>
-      <strong>Constructive:</strong> optimize philosophical/ethical/aesthetic
+<strong>Constructive:</strong> optimize philosophical/ethical/aesthetic
       fruitfulness subject to constraints (“textual friction”)
     </li></ul>
-    
-    
-    
-    
-    
-    
-  </ul>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>D) Epistemic and procedural commitments</strong></div></div></blockquote><div>
-  <ul style="text-align: left;">
-    <ul><li>
+</ul>
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>D) Epistemic and procedural commitments</strong></div></div></blockquote><div>
+<ul style="text-align: left;">
+<ul class="compact-grid"><li>
       What counts as admissible evidence (manuscripts, legislative history,
       author letters, experiments, lived experience, model diagnostics,
       institutional records…)
@@ -2608,13 +2249,10 @@
     </li><li>
       Error-cost profiles (false positives vs false negatives in interpretation)
     </li></ul>
-    
-    
-  </ul>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>E) Value commitments</strong></div></div></blockquote><div>
-  <ul style="text-align: left;">
-    <ul><li>
+</ul>
+</div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>E) Value commitments</strong></div></div></blockquote><div>
+<ul style="text-align: left;">
+<ul class="compact-grid"><li>
       What “best” means: truth, coherence, justice, salvation, emancipation,
       predictive accuracy, utility, aesthetic richness, institutional safety,
       etc.
@@ -2625,32 +2263,40 @@
       Why this goal is the right one for this community and object (often
       moral/political/theological/pragmatic)
     </li></ul>
-    
-    
-  </ul>
-
-  <div><strong>6) Critical questions: a comprehensive checklist</strong></div>
-
-  <p>
+</ul>
+<h4 id="6-critical-questions">6. Critical Questions</h4>
+<p>
     A central insight is that interpretive arguments share a general
     critical-question spine:
   </p>
-  <ol>
-    <li><strong>What plausible alternatives exist?</strong></li>
-    <li><strong>What reasons reject them?</strong></li>
-    <li>
-      <strong>What reasons support an alternative as better/equally good?</strong>
-    </li>
-  </ol>
-
-  <p>
+<ol>
+<li><strong>What plausible alternatives exist?</strong></li>
+<li><strong>What reasons reject them?</strong></li>
+<li>
+<strong>What reasons support an alternative as better/equally good?</strong>
+</li>
+</ol>
+<p>
     Below is that spine expanded into a full set covering task framing,
     framework choice (Scheme I), and interpretation choice (Scheme II).
   </p>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>A. CQs about the interpretive task (framing)</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</div><section class="learning-insight-block"><h3 id="worked-example">Worked Example: “No Vehicles in the Park”</h3>
+<p>Consider a toy dispute over a posted rule: <strong>“No vehicles in the park.”</strong> A visitor using a motorized wheelchair enters the park. Does the rule prohibit that device?</p>
+<div class="table-wrap"><table class="two-col worksheet-table"><thead><tr><th>Framework element</th><th>Application</th></tr></thead><tbody>
+<tr><td data-label="Framework element"><strong>Interpretandum (E/D)</strong></td><td data-label="Application">The term <em>vehicles</em> in the posted rule.</td></tr>
+<tr><td data-label="Framework element"><strong>Context (Cxt)</strong></td><td data-label="Application">A public-park rule regulating access and use.</td></tr>
+<tr><td data-label="Framework element"><strong>Goal (G)</strong></td><td data-label="Application">Determine how the rule should be applied to the present case.</td></tr>
+<tr><td data-label="Framework element"><strong>Candidate M₁</strong></td><td data-label="Application">“Vehicle” includes any motorized conveyance, so the wheelchair is prohibited.</td></tr>
+<tr><td data-label="Framework element"><strong>Candidate M₂</strong></td><td data-label="Application">“Vehicle” means the class of conveyances the rule is designed to exclude—cars, motorcycles, and similar traffic—not mobility devices.</td></tr>
+<tr><td data-label="Framework element"><strong>Framework question (Scheme I)</strong></td><td data-label="Application">Should ordinary lexical breadth dominate, or should text be interpreted together with purpose, institutional context, and the function of the rule?</td></tr>
+<tr><td data-label="Framework element"><strong>Object-level question (Scheme II)</strong></td><td data-label="Application">Given the selected framework, which candidate better fits the language, context, purpose, relevant institutional norms, and foreseeable consequences?</td></tr>
+<tr><td data-label="Framework element"><strong>Defeaters</strong></td><td data-label="Application">A technical definition of <em>vehicle</em>, an explicit accessibility exception, contrary precedent, or evidence that the rule was intentionally drafted to cover mobility devices could defeat one of the candidates.</td></tr>
+<tr><td data-label="Framework element"><strong>Statused output</strong></td><td data-label="Application">The conclusion should report not merely “M₂,” but why M₂ is justified under the chosen framework, what evidence controls, and which live defeaters could change the result.</td></tr>
+</tbody></table></div>
+<p>The point of the example is not to predetermine the answer. It is to show where disagreement can occur. Two interpreters may disagree about the word <em>vehicle</em>, but they may instead—or also—disagree about which kinds of evidence are admissible and which criteria outrank others. The two-level model makes that difference explicit.</p>
+</section><h3 id="critical-questions">Critical Questions</h3><p>The exhaustive checklist is retained below as a reference layer. Open the sections relevant to the dispute rather than treating every question as equally salient in every case.</p><details class="checkpoint-block"><summary><strong>A. CQs about the interpretive task (framing)</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       What exactly is the disputed element <strong>E</strong> (term, clause,
       symbol, gesture, data feature, model component)?
     </li><li>
@@ -2667,15 +2313,10 @@
       What decision/stakes hinge on the interpretation, and what error-cost
       profile follows?
     </li></ol>
-    
-    
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>B. CQs about object identity and boundaries</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>B. CQs about object identity and boundaries</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       Are we interpreting the right object <strong>D</strong> (which edition,
       manuscript tradition, translation, dataset version, model version, build)?
     </li><li>
@@ -2685,13 +2326,10 @@
       Is <strong>E/D</strong> possibly corrupted, interpolated, mistranslated,
       noisy, non-authoritative, or otherwise unreliable for this question?
     </li></ol>
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>C. CQs about context selection</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>C. CQs about context selection</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       What contexts <strong>Cxt</strong> are relevant (immediate co-text,
       broader corpus, genre, institutional setting, historical setting,
       speaker/audience situation, task setting)?
@@ -2699,12 +2337,10 @@
       Why these contexts rather than others? Are we cherry-picking or importing
       context illicitly?
     </li></ol>
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>D. CQs for Scheme I: choosing evaluative criteria / framework F</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>D. CQs for Scheme I: choosing evaluative criteria / framework F</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       What alternative frameworks <strong>F′</strong> are plausible here
       (text-first, intent-first, purpose-first, reception-first,
       empirical-fit-first, tradition-first, etc.)?
@@ -2734,18 +2370,10 @@
       Can <strong>F</strong> actually be applied given practical constraints
       (evidence availability, competence, time, procedure)?
     </li></ol>
-    
-    
-    
-    
-    
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>E. CQs for Scheme II: arguing for interpretation M under F</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>E. CQs for Scheme II: arguing for interpretation M under F</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       What is the prima facie/default reading—and why isn’t it sufficient here?
     </li><li>
       What admissible evidence supports <strong>M</strong> under
@@ -2757,16 +2385,16 @@
     </li><li>
       What defeaters exist?
       <ul>
-        <li>
-          <strong>Rebutters:</strong> rival interpretations
+<li>
+<strong>Rebutters:</strong> rival interpretations
           <strong>M′</strong> supported by comparable arguments.
         </li>
-        <li>
-          <strong>Undercutters:</strong> attacks on applicability of the
+<li>
+<strong>Undercutters:</strong> attacks on applicability of the
           inference rule/criterion being used (e.g., “that canon doesn’t apply
           here”).
         </li>
-      </ul></li><li>
+</ul></li><li>
       Have all reasonable alternative interpretations
       <strong>M₁…Mₙ</strong> been considered?
     </li><li>What reasons reject each alternative?</li><li>What reasons suggest an alternative is better/equally good?</li><li>
@@ -2801,26 +2429,10 @@
       measurement error, domain shift, institutional constraint, etc.)—and is
       the alleged exception itself well-supported?
     </li></ol>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>F. CQs about procedural rationality, burden, and convergence</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>F. CQs about procedural rationality, burden, and convergence</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       Who bears the burden to support the interpretation, and when does it shift
       during critical questioning?
     </li><li>
@@ -2837,14 +2449,10 @@
       interpretations converge on the same operative outcome (a
       weak-justification/convergence case)?
     </li></ol>
-    
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>G. CQs about output quality and interpretive robustness</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li>
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>G. CQs about output quality and interpretive robustness</strong></summary><div>
+<ol style="text-align: left;">
+<ol><li>
       Is <strong>M</strong> too vague (unfalsifiable/elastic) or too specific
       (overfitted)?
     </li><li>
@@ -2857,88 +2465,71 @@
       Are we “jumping to a conclusion” prematurely, rather than letting the
       objection-and-response cycle run to convergence?
     </li></ol>
-    
-    
-    
-  </ol>
-
-  </div><blockquote style="border-color: currentcolor; border-image: initial; border-style: none; border-width: medium; border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><div><div><strong>H. Dialectical/procedural CQs (burdens, standards, audiences)</strong></div></div></blockquote><div>
-  <ol style="text-align: left;">
-    <ol><li><strong>Burden allocation:</strong> Who bears the burden to support the
+</ol>
+</div></details><details class="checkpoint-block"><summary><strong>H. Procedural recap: burdens, standards, and audiences</strong></summary><ol style="text-align: left;">
+<ol><li><strong>Burden allocation:</strong> Who bears the burden to support the
       interpretation, and when does it shift during critical questioning?
     </li><li><strong>Proof standard:</strong> What proof standard is in force
       (preponderance, beyond reasonable doubt, scholarly plausibility, etc.),
       and does the argument meet it? (Carneades uses proof standards to resolve
       conflicts .)
     </li><li>
-      <strong>Defensible vs justified:</strong> Is M merely defensible
+<strong>Defensible vs justified:</strong> Is M merely defensible
       (supported in some acceptable extension), or justified in a stronger
       sense?
     </li></ol>
-    
-    
-  </ol>
-
-  <div>Across domains, interpretive support often draws from recurring families of
-    warrants/criteria, including (non-exhaustively):</div>
-  <ul>
-    <li>
-      <strong>Ordinary meaning / conventional use</strong> (often a default
+</ol></details><h4 id="recurring-families-of-interpretive-warrants">Recurring Families of Interpretive Warrants</h4><div>Across domains, interpretive support often draws from recurring families of
+    warrants/criteria, including (non-exhaustively):</div><ul>
+<li>
+<strong>Ordinary meaning / conventional use</strong> (often a default
       starting point)
     </li>
-    <li><strong>Technical meaning</strong> (triggered by technical context)</li>
-    <li>
-      <strong>Contextual harmonization</strong> (co-text/corpus coherence)
+<li><strong>Technical meaning</strong> (triggered by technical context)</li>
+<li>
+<strong>Contextual harmonization</strong> (co-text/corpus coherence)
     </li>
-    <li><strong>Precedent / tradition / canonical constraints</strong></li>
-    <li><strong>Analogy and concept-based reasoning</strong></li>
-    <li><strong>General principles and systematic fit</strong></li>
-    <li>
-      <strong>Historical evidence</strong> (authorship, drafting, redaction,
+<li><strong>Precedent / tradition / canonical constraints</strong></li>
+<li><strong>Analogy and concept-based reasoning</strong></li>
+<li><strong>General principles and systematic fit</strong></li>
+<li>
+<strong>Historical evidence</strong> (authorship, drafting, redaction,
       reception history)
     </li>
-    <li><strong>Purpose / function / teleology</strong></li>
-    <li>
-      <strong>Substantive reasons</strong> (domain-accepted normative or
+<li><strong>Purpose / function / teleology</strong></li>
+<li>
+<strong>Substantive reasons</strong> (domain-accepted normative or
       pragmatic reasons)
     </li>
-    <li>
-      <strong>Intent evidence</strong> (when admissible under the chosen
+<li>
+<strong>Intent evidence</strong> (when admissible under the chosen
       framework)
     </li>
-  </ul>
-
-  <p>
+</ul><p>
     Which of these are admissible, how they’re weighted, and which outrank which
     are questions for <strong>Scheme I</strong>.
-  </p>
-
-  <div>The output of interpretive reasoning is not merely “<strong>M</strong>,” but
-    a <strong>statused interpretive conclusion</strong>:</div>
-  <ul>
-    <li>
-      <strong>The proposed meaning-attribution:</strong>
-      <strong>BestInt(E, D | Cxt, G, A) ≡ M</strong>
-    </li>
-    <li>
-      <strong>Its dialectical status:</strong> <em>defensible</em> vs
+  </p><h4 id="statused-interpretive-output">Statused Interpretive Output</h4><div>The output of interpretive reasoning is not merely “<strong>M</strong>,” but
+    a <strong>statused interpretive conclusion</strong>:</div><ul class="compact-grid">
+<li>
+<strong>The proposed meaning-attribution:</strong>
+<strong>BestInt(E, D | Cxt, G, A) ≡ M</strong>
+</li>
+<li>
+<strong>Its dialectical status:</strong> <em>defensible</em> vs
       <em>justified</em> (relative to proof standards and the current pro/con
       graph)
     </li>
-    <li>
-      <strong>The governing evaluative framework:</strong>
-      <strong>F</strong> (criteria + priority + burdens/standards)
+<li>
+<strong>The governing evaluative framework:</strong>
+<strong>F</strong> (criteria + priority + burdens/standards)
     </li>
-    <li>
-      <strong>The live defeaters and unresolved ties:</strong> what would need
+<li>
+<strong>The live defeaters and unresolved ties:</strong> what would need
       to change to overturn or strengthen the conclusion
     </li>
-  </ul>
-
-  <p>
+</ul><p>
     This makes interpretation a transparent, revisable, burden-sensitive form of
     practical reasoning: a structured method for moving from doubt to a
     justified meaning-attribution under explicit goals and standards.
-  </p>
-</div>
-</article>
+  </p><header class="ep-part-banner"><span class="ep-part-kicker">Part IX</span><h2 class="ep-part-title" id="part-9">Conclusion</h2><span class="ep-part-summary">Interpretation is neither arbitrary projection nor mechanical decoding. It is a goal-relative, evidence-constrained, defeasible practice whose standards can themselves become objects of argument.</span></header><p>The examples that motivated this essay now look like instances of the same general problem. Reading Nietzsche or Wittgenstein requires more than extracting isolated propositions, because style, corpus, historical setting, and the purpose of reading affect what counts as a good interpretation. A constitutional dispute raises the stakes but not an entirely different logical structure: parties propose meanings, invoke criteria, challenge one another’s evidence, and often disagree about which interpretive framework should control.</p><p>The framework developed here therefore separates three questions that are easily conflated: <strong>What is being interpreted?</strong> <strong>What is the goal of interpreting it?</strong> and <strong>What reasons make one candidate interpretation preferable to its rivals under that goal?</strong> Once those questions are explicit, apparent disputes about “meaning” can often be diagnosed more precisely as disputes about object identity, context, admissible evidence, evaluative priorities, burdens of proof, or the goal of the interpretive practice itself.</p><p>This does not guarantee convergence. Some interpretive disagreements are persistent because the parties’ background commitments, institutions, or values genuinely differ. But argumentation theory offers a way to make those disagreements more transparent. Instead of asking only whether an interpretation is “correct,” we can ask what supports it, what could defeat it, which framework licenses those reasons, why that framework is appropriate, and whether the conclusion is merely defensible, provisionally justified, institutionally controlling, or robust across competing frames.</p><p>Interpretation, on this picture, is a structured movement from uncertainty toward a revisable meaning-attribution. Its conclusions remain open to challenge because the underlying reasoning is defeasible; that openness is not a weakness of interpretation but one of the conditions that makes interpretive disagreement rationally discussable.</p><div class="formula-callout"><strong>Compact formulation:</strong> specify the object → specify the goal → justify the framework → compare candidate meanings → test defeaters → report a statused conclusion.</div><p><a href="#contents">Back to table of contents</a></p></article>
+</body>
+</html>

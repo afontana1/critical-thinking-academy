@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
 <title>Debunking from Off-Track Genealogy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
@@ -609,1025 +613,597 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post">
-<p>I've recently been going down a rabbit hole in the philosophical literature of
-"Debunking Arguments".&nbsp;A debunking argument tries to undermine the
-epistemic status of some class of beliefs by tracing them to a genealogy (an
-origin/explanation) that makes their truth epistemically accidental. The
-debunker doesn’t have to show the beliefs are false; rather, they aim to show
-you lack justification (or knowledge) for holding them given how they were
-formed. There are two major kinds of debunking arguments: local debunking and
-global debunking. Local debunking targets a restricted domain while global
-debunking aims at very wide domains (such as all normative beliefs). While
-reading the literature, I've come to realize that variations (mostly watered
-down and not technical) of debunking style arguments frequently arise in public
-discourse, conspiracies, and media. I began to wonder if I could formalize an
-argumentation scheme that captures not only philosophical elements, but also
-variants within these other realms of discourse. In this post, I want I'll first
-introduce these arguments from the philosophical perspective. I will then go
-through a few papers to show how different authors think of debunking. I'll then
-construct a generic argumentation scheme that captures the core elements across
-the literature. Lastly, we will apply that scheme to something practical.&nbsp;</p>
-<div><br /></div>
-<div>
-  To begin, I'll provide a list of the articles I've been reading. I'll only be
-  focusing on the first four, but I will reference content from the rest of them
-  periodically.
-</div>
-<div>
-  <ol style="text-align: left">
-    <li>
-      <a href="https://philarchive.org/rec/KORDA-2"
-        >Debunking Arguments - Daniel Z. Korman</a
-      >
-    </li>
-    <li>
-      <a href="https://philarchive.org/rec/MOOGDA"
-        >Global Debunking Arguments - Andrew Moon</a
-      >
-    </li>
-    <li>
-      <a href="https://philarchive.org/rec/MACGEA-3"
-        >Global Evolutionary Arguments: Self-Defeat, Circularity, and Skepticism
-        about Reason - Diego E. Muchuca</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/KAHEDA"
-        >Evolutionary Debunking Arguments - Guy Kahane</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/BRADAA-5"
-        >Debunking Arguments and the Cognitive Science of Religion - Matthew
-        Braddock</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/BRANNI"
-        >Natural Nonbelief in God: Prehistoric Humans, Divine Hiddenness, and
-        Debunking - Matthew Braddock</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/VAVDED"
-        >Debunking Evolutionary Debunking - Katia Vavova</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/VAVII"
-        >Irrelevant Influences - Katia Vavova</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/SRIVG"
-        >Genealogy, Epistemology and Worldmaking - Amia Srinivasan</a
-      >
-    </li>
-    <li>
-      <a href="https://philpapers.org/rec/DAVTPF-3"
-        >Three problems for the evolutionary debunking argument - Oscar Davis</a
-      >
-    </li>
-  </ol>
-  <div>
-    Lets begin with a broad overview from across these articles. The core
-    structure for most debunking arguments normally looks like this:
-  </div>
-</div>
-<div>
-  <div>
-    <ol style="text-align: left">
-      <li>
+</head>
+<body>
+<article class="ep-post"><h1 id="top">Debunking from Off-Track Genealogy</h1><p class="chapter-lead">A practical framework for understanding when a genealogy of belief genuinely undermines justification—and when it merely explains where a belief came from.</p><p>I’ve recently been going down a rabbit hole in the philosophical literature on <strong>debunking arguments</strong>. A debunking argument tries to undermine the epistemic status of some class of beliefs by tracing those beliefs to a genealogy—an origin or explanation—that makes their truth epistemically accidental. The debunker does not have to show that the beliefs are false. The aim is instead to show that, given how the beliefs were formed, we lack justification or knowledge for holding them.</p><p>Debunking arguments can be <strong>local</strong>, targeting a restricted domain, or <strong>global</strong>, targeting very wide domains such as all normative beliefs or even the reliability of our belief-forming faculties more generally. While reading this literature, I began noticing watered-down, nontechnical versions of the same argumentative pattern in public discourse, conspiracy theories, and media commentary.</p><p>That prompted the question behind this post: can we formalize an argumentation scheme that captures the philosophical core of debunking while also helping us identify and evaluate its everyday variants? I’ll begin with the basic structure, use several authors to develop it, construct a generic scheme, and then apply that scheme to a practical case.</p><div class="core-claim"><strong>Core thesis.</strong> A genealogy does not debunk a belief merely by explaining where it came from. It becomes epistemically significant only when the genealogy is appropriately <em>off-track with respect to truth</em> and the believer lacks adequate independent vindication.</div><h2 id="contents">Contents</h2><div class="ep-toc">
+<div class="ep-toc-part"><p><a href="#part-1">I. The basic structure of debunking</a></p><ul>
+<li><a href="#basic-template">A four-step template</a></li><li><a href="#undercutting">Undercutting, not rebutting</a></li><li><a href="#local-global">Local and global forms</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-2">II. What the literature adds</a></p><ul>
+<li><a href="#korman-kahane">Korman and Kahane: the core architecture</a></li><li><a href="#moon-machuca">Moon and Machuca: going global</a></li><li><a href="#literature-synthesis">Comparative synthesis</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-3">III. Debunking from Off-Track Genealogy</a></p><ul>
+<li><a href="#formal-scheme">Core scheme</a></li><li><a href="#deflectors">Defeater-deflectors</a></li><li><a href="#variants">Variants</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-4">IV. How to evaluate a debunking argument</a></p><ul>
+<li><a href="#evaluation-map">Evaluation map</a></li><li><a href="#hidden-assumptions">Hidden assumptions</a></li><li><a href="#critical-questions">Critical questions</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-5">V. Worked example: climate-change skepticism</a></p><ul>
+<li><a href="#climate-target">Clarifying the target</a></li><li><a href="#skeptic-scheme">The skeptical debunking scheme</a></li><li><a href="#reverse-scheme">Flipping the genealogy</a></li><li><a href="#symmetry-comparison">Symmetry comparison</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-6">VI. General lessons</a></p></div>
+<div class="ep-toc-part"><p><a href="#sources">Sources and further reading</a></p></div>
+</div><header class="ep-part-banner" id="part-1"><span class="ep-part-kicker">Part I</span><span class="ep-part-title">The Basic Structure of Debunking</span><span class="ep-part-summary">Start with the recurring argumentative pattern before turning to disagreements among individual authors.</span></header><h2 id="basic-template">A Four-Step Template</h2><p>Across the literature, the core structure of a debunking argument normally looks like this:</p><ol style="text-align: left">
+<li>
         Genealogical Claim: Your belief that P is best explained by process C
         (e.g., evolution, culture, affect, heuristics), which is insensitive to
         the truth of P (it didn’t aim to track truth about P).
       </li>
-      <li>
+<li>
         Insensitivity → Defeat: If a belief’s explanation is insensitive to
         truth in the relevant way, then (absent further support) you have an
         undercutting defeater for that belief: you’re not entitled to trust it.
       </li>
-      <li>
+<li>
         No Independent Vindication: You lack independent, non-question-begging
         evidence that your belief-forming process here is reliable or that P is
         true.
       </li>
-      <li>
+<li>
         Therefore: you should suspend judgment (or lower confidence) in P.
       </li>
-    </ol>
-  </div>
-</div>
-<div>
-  Philosophically, this is an undercutting (not rebutting) strategy: it removes
-  justification by attacking the link between method and truth. A common type of
-  debunking strategy in philosophy can be seen with Evolutionary Debunking
-  Arguments. The key idea is that natural selection favors traits that enhance
-  fitness, not truth for its own sake.&nbsp;If our moral/evaluative beliefs were
-  largely shaped by selection pressures (e.g., favoring cooperation within
-  groups, discouraging free-riding, promoting care for kin), then the content of
-  those beliefs might be an evolutionary byproduct. If so, the correlation
-  between our moral beliefs and moral truth (especially if moral truths are
-  stance-independent) is suspiciously lucky. This type of debunking argument is
-  used to conclude that our confidence in moral realism (specifically,
-  metaethical theories grounded in naturalistic philosophies) should be reduced.
-  I personally do not find these arguments convincing. There are many
-  counter-arguments that reduce the force of this inference. For
-  example,&nbsp;If the EDA undermines moral cognition, it seems to threaten
-  epistemic norms (what we should believe) and even mathematics (abstracta
-  aren’t causally accessible). If you won’t go global, don’t go local—so either
-  blunt the debunking force or embrace wide skepticism. In other words, it sort
-  of has a scorched earth effect. Other counter-arguments argue that our
-  faculties are generally reliable across many domains; small perturbations in
-  genealogies wouldn’t make most mature, reflectively endorsed moral judgments
-  arbitrary. (Sometimes called “safety” or “stability” replies.) Another common
-  class of counter-arguments I find convincing are those pointing out that not
-  all genealogies debunk; some vindicate.&nbsp;For example, showing how
-  cooperative pressures led us to recognize genuinely reason-giving facts about
-  others’ welfare can bolster, not undercut, justification—especially once we
-  add reflection, argument, and cross-cultural scrutiny. But I am not here to
-  specifically respond to this style of debunking. I just brought it up to shed
-  light on the fact that this is an active area of argument within the
-  philosophy of ethics. Global debunking arguments scale up the genealogical
-  worry. Instead of just moral beliefs, it targets all normative beliefs, all
-  evaluative beliefs, or even common-sense or modal beliefs.&nbsp;If the
-  etiological story about why we have certain beliefs is broadly
-  truth-insensitive (evolutionary pressures, cultural drift, affective
-  heuristics), then why stop at morality? For GDA's, there are typically two
-  styles of response: the self-defeat charge and localizing.&nbsp;If the GDA
-  undercuts our confidence in all normative/epistemic beliefs, it threatens the
-  premises of the argument itself (which rely on epistemic norms), indicating
-  self-defeat.&nbsp;If the same style of reasoning would debunk mathematics,
-  induction, or epistemic norms, you may have proved too much. Either accept
-  radical skepticism or restrict the premise. If you can show the&nbsp;genealogy
-  is selectively truth-insensitive (e.g., disgust, dominance, parochialism)
-  while other parts of cognition are anchored to worldly structures in ways that
-  support reliability, you can retain epistemic support. We are essentially
-  asking; is the cited cause really independent of truth? Or does it select for
-  sensitivity to features that overlap with the target truths?
-</div>
-<div><br /></div>
-<div>
-  Now let's take a look at <b>"Debunking Arguments" by Korman</b>.&nbsp;What
-  makes something a debunking argument is a move from a claim about (the lack
-  of) an explanatory connection between our mental states and the putative facts
-  they’re about to a negative verdict about the epistemic status of those
-  states. In his words, what unifies these arguments is “the transition from a
-  premise about what does or doesn’t explain why we have certain mental states
-  to a negative assessment of their epistemic status.”&nbsp;He says all the
-  disparate debates can be organized into two general templates:&nbsp;
-</div>
-<h4 style="text-align: left">Skeptical Debunking</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ol><h2 id="undercutting">Undercutting, Not Rebutting</h2><p>Philosophically, this is an <strong>undercutting</strong> rather than a rebutting strategy: it attacks the link between a belief-forming method and truth, rather than directly arguing that the target proposition is false. That distinction matters throughout the article. A successful debunking argument may remove warrant even if the target belief happens to be true.</p><p>Evolutionary debunking arguments provide a familiar illustration. Natural selection favors traits that enhance fitness, not truth for its own sake. If our moral or evaluative beliefs were largely shaped by pressures favoring cooperation, discouraging free-riding, or promoting care for kin, then their content might be an evolutionary byproduct. If so, the correlation between those beliefs and stance-independent moral truth can begin to look suspiciously lucky.</p><p>This style of argument is sometimes used to conclude that confidence in moral realism—especially forms of metaethical realism grounded in naturalistic philosophies—should be reduced. I do not find these arguments decisive. One concern is that if an EDA undermines moral cognition simply because the relevant truths were not directly selected for, it can threaten epistemic norms and even mathematics, where abstract objects are not straightforwardly causally accessible. If you refuse to go global, you need a principled reason to stop the argument locally; otherwise the strategy risks a scorched-earth effect.</p><p>Other replies appeal to the general reliability or stability of our faculties. Small perturbations in genealogy need not make mature, reflectively endorsed moral judgments arbitrary. Still other responses stress that not all genealogies debunk: some can vindicate. Cooperative pressures, for example, might help us recognize genuinely reason-giving facts about others’ welfare, especially once reflection, argument, and cross-cultural scrutiny are added. The important point for present purposes is not to settle evolutionary debunking, but to see that genealogy becomes epistemically relevant only through a further argument about truth-tracking and justification.</p><h2 id="local-global">Local and Global Forms</h2><p>Global debunking arguments scale up the genealogical worry. Instead of targeting only moral beliefs, they may target all normative beliefs, all evaluative beliefs, common-sense beliefs, modal beliefs, or even our confidence in our cognitive faculties. If the etiological story behind a wide range of beliefs is broadly truth-insensitive—because of evolutionary pressures, cultural drift, affective heuristics, or some other process—then the obvious question is: why stop at one domain?</p><p>Two recurring responses are <strong>self-defeat</strong> and <strong>localization</strong>. If a global debunking argument undercuts all normative or epistemic beliefs, it may also threaten the premises and inferences needed to formulate the debunking argument itself. If the same reasoning would undermine mathematics, induction, or epistemic norms, the argument may prove too much. The alternative is to restrict the causal claim by showing that some processes are selectively truth-insensitive while other parts of cognition remain anchored to worldly structures in ways that support reliability.</p><div class="concept-callout"><strong>Central diagnostic question:</strong> Is the cited cause really independent of truth, or does it select for—or operate through—features that overlap with the target truths?</div><header class="ep-part-banner" id="part-2"><span class="ep-part-kicker">Part II</span><span class="ep-part-title">What the Literature Adds</span><span class="ep-part-summary">Rather than treating each paper as a separate book report, this section uses the authors to develop successive parts of the same problem.</span></header><h2 id="korman-kahane">Korman and Kahane: The Core Architecture</h2><h3>Korman: Explanatory Premise → Epistemic Verdict</h3><p>In <a href="https://philarchive.org/rec/KORDA-2"><em>Debunking Arguments</em></a>, Daniel Z. Korman characterizes debunking by the move from a claim about the presence or absence of an explanatory connection between our mental states and the putative facts they concern to a negative verdict about the epistemic status of those states. In his formulation, what unifies these debates is the transition from an explanatory premise to a negative epistemic assessment.</p><h4>Skeptical Debunking</h4><ul style="text-align: left">
+<li>
         Our attitudes about some domain D and the D-facts don’t stand in
         explanatory relation E.
       </li>
-      <li>
+<li>
         If so, those attitudes have some negative epistemic status S (e.g.,
         unjustified).
       </li>
-      <li>Therefore, our D-attitudes have status S.</li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">Conditional Debunking</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+<li>Therefore, our D-attitudes have status S.</li>
+</ul><h4>Conditional Debunking</h4><ul style="text-align: left">
+<li>
         A certain kind of theorist T is committed to there being no such
         explanatory relation.
       </li>
-      <li>If so, T is committed to her attitudes having negative status S.</li>
-      <li>Therefore, T is committed to that negative status.</li>
-    </ul>
-  </div>
-</div>
-<div>
-  Each instance should make explicit: (i) the domain D; (ii) which explanatory
-  relation E is claimed absent; (iii) which attitude type is targeted (belief,
-  intuition, experience); and (iv) the specific status S (e.g., “unjustified” or
-  “can’t confer justification”). Conditional versions also specify the class of
-  theorists T (e.g., realists, Platonists). Every debunking argument has an
-  explanatory premise (no appropriate tie between facts and attitudes) and an
-  epistemic premise (recognizing this absence undercuts warrant).&nbsp;Korman
-  distinguishes two strategies for defending the explanatory premise; negative
-  and positive. You can argue target facts couldn't in principle explain our
-  attitudes (negative) or you can give&nbsp;a “sparse” genealogy—an explanation
-  of our attitudes that makes no reference to the target facts (e.g.,
-  evolutionary or proximate psychological stories). If that sparse story
-  suffices, adding D-facts looks unparsimonious.&nbsp;The epistemic premise is
-  then cast as a defeater: once you see your beliefs arose for reasons unrelated
-  to the relevant facts, their justification is undermined (at least for those
-  exposed to the debunking story).&nbsp;
-</div>
-<div><br /></div>
-<div>
-  Korman then maps out possible responses; some of which attack the explanatory
-  premise and some attack the epistemic premise.&nbsp;He shows how this schema
-  recurs across many domains (morality, mathematics, color, laws, religion,
-  time, grounding, free will, etc.) and even in (nearly) global forms that
-  challenge the reliability of our methods wholesale (often via evolutionary
-  genealogy and the idea of adaptive “reliable misrepresentation”). A key point
-  is that by themselves, they don’t prove error or eliminativism; at most they
-  remove warrant. The facts could still be there and our beliefs could even be
-  true “by sheer chance.”
-</div>
-<div><br /></div>
-<div>
-  Next, let's take a look at
-  <b>"Global Debunking Arguments" by Andrew Moon</b>.&nbsp;Moon defines a global
-  defeater as a reason that makes all of one’s beliefs unjustified; a global
-  debunking argument is an argument that concludes you have such a defeater. He
-  defends their possibility against the thought that debunking must be local; in
-  other words, that global debunkers are not self-defeating and they're
-  .&nbsp;Moon classifies GDAs by the structure of the defeater they give for R
-  (“my faculties are generally reliable”):&nbsp;
-</div>
-<div>
-  <ul style="text-align: left">
-    <li>
+<li>If so, T is committed to her attitudes having negative status S.</li>
+<li>Therefore, T is committed to that negative status.</li>
+</ul><p>Each instance should make explicit the domain D, the explanatory relation E claimed to be absent, the attitude type being targeted (belief, intuition, experience), and the negative epistemic status S. Conditional versions also specify the theorist or position T being targeted. In this framework, every debunking argument contains both an explanatory premise and an epistemic premise: the first concerns the relation between facts and attitudes; the second says that recognizing the absence of the relevant relation undercuts warrant.</p><p>Korman distinguishes negative and positive strategies for defending the explanatory premise. A negative strategy argues that the target facts could not in principle explain our attitudes. A positive strategy supplies a “sparse” genealogy—such as an evolutionary or proximate psychological explanation—that accounts for the attitudes without invoking the target facts. If the sparse story suffices, adding the D-facts can look explanatorily unparsimonious. The epistemic premise then casts the newly appreciated genealogy as a defeater: once you recognize that your beliefs arose for reasons unrelated to the relevant facts, their justification is undermined, at least for those who possess the debunking information.</p><p>Korman also maps responses that attack either the explanatory or the epistemic premise. The same schema recurs across morality, mathematics, color, laws, religion, time, grounding, free will, and nearly global challenges to our methods. Crucially, the argument by itself does not establish error or eliminativism. At most, it removes warrant; the relevant facts could still exist, and the belief could even be true by sheer chance.</p><h3>Kahane: When Genealogy Is Epistemically Relevant</h3><p>Guy Kahane’s <a href="https://philpapers.org/rec/KAHEDA"><em>Evolutionary Debunking Arguments</em></a> sharpens a point that is easy to miss: a genealogy is not automatically a debunking argument. He presents the familiar structure as a causal premise, an epistemic premise, and an undercutting conclusion:</p><ol style="text-align: left">
+<li>Causal premise: S believes p because X (aetiology/genealogy).</li>
+<li>
+        Epistemic premise: X isn’t truth-tracking for the truths in question.
+      </li>
+<li>
+        Conclusion: S’s belief that p is unjustified (an undercutting defeat,
+        not a rebuttal of p).
+      </li>
+</ol><p>Kahane stresses that this is not simply the genetic fallacy. A belief’s origin matters epistemically only when that origin leaves no adequate role for truth-tracking processes, or when the post-hoc “reasons” offered for the belief are themselves products of the same off-track source. Debunking is therefore especially forceful when justification bottoms out in intuition rather than in independent evidence or method.</p><p>His further diagnostic point is that targeted evolutionary debunking arguments often presuppose metaethical objectivism. If value is not stance-independent, the worry that evolution failed to track objective evaluative facts may dissolve. Many EDAs therefore bite most directly against objectivists. Kahane also resists sweeping causal premises: evaluative beliefs need not all be evolution-saturated, and cultural diversity, learning, and reflection complicate any global genealogy. At most, such considerations may justify graded skepticism where evolutionary influence is strongest rather than blanket defeat.</p><div class="concept-callout"><strong>Important distinction:</strong> A distal cause can shape the existence or broad tendencies of a cognitive system while a proximal process—reasoning, measurement, testimony, cross-checking—still tracks truth. A debunking genealogy must show that it reaches the epistemically mature belief, not merely its remote causal background.</div><h2 id="moon-machuca">Moon and Machuca: What Happens When Debunking Goes Global?</h2><h3>Moon: Types of Global Defeat</h3><p>Andrew Moon’s <a href="https://philarchive.org/rec/MOOGDA"><em>Global Debunking Arguments</em></a> asks whether a debunking argument can generate a genuinely global defeater. He defines a global defeater as a reason that renders all of one’s beliefs unjustified, and defends the possibility of global debunking against the thought that such arguments must collapse through self-defeat. Moon classifies global debunking arguments by the structure of the defeater they provide for R: “my faculties are generally reliable.”</p><ul style="text-align: left">
+<li>
       Pure-undercutter: You get a reason to doubt the reliability of the process
       that produced R, but no evidence for ¬R. (E.g., a pill that targets just
       the mechanism that yields belief in R.)
     </li>
-    <li>
+<li>
       Undercutter-because-rebutter: First you get evidence against R (a
       rebutter), and because of that you now have an undercutter for each of
       your beliefs (including R).
     </li>
-    <li>
+<li>
       Undercutter-while-rebutter: The same information both lowers the
       probability of R and directly undercuts the reliability of the specific
       faculties that delivered your evidence for R—independently of the
       rebuttal.
     </li>
-  </ul>
-  <div>
-    Moon describes something called the "epistemic origin story solution", in
-    which some appeals can block global defeaters. He essentially distinguishes
-    instances where some of these types of responses are acceptable and others
-    are unacceptable; concluding that in many instances, once a global defeater
-    is established, you cannot reason your way out of that bind.&nbsp;Moon’s
-    EO-Solution is essentially a targeted filter for what defeater-deflectors
-    are admissible in global contexts—only elements of your epistemic origin
-    story that make R probable and that you were already justified in believing.
-    This screens out quick fixes (like conditionalizing on R or “we got lucky”)
-    and clarifies how certain mind–content theories or theistic design stories
-    (if independently justified) could help a naturalist/theist, respectively. I
-    am personally not satisfied with his analysis. On what grounds does one
-    argue that an origin story about R is independently justified without
-    assuming this condition to be satisfied? It seems like an unsatisfiable
-    criteria; determining whether the criteria is applicable for a given story
-    also seems somewhat arbitrary.&nbsp;
-  </div>
-</div>
-<div><br /></div>
-<div>
-  Now moving on to&nbsp;<b>Diego E. Machuca’s</b> view of global evolutionary
-  debunking arguments (EDAs).&nbsp;Machuca looks at global evolutionary
-  arguments—ones that don’t just aim at a domain (e.g., morality) but at the
-  reliability of our belief-forming faculties as a whole. He sets up a pair: a
-  global debunking argument (EDA) and a matching vindicating argument
-  (EVA).&nbsp;The global EDA (self-defeat worry). He formulates an undercutting
-  EDA:&nbsp;
-</div>
-<div>
-  <div>
-    <ol style="text-align: left">
-      <li>Our belief-forming processes were shaped by natural selection.</li>
-      <li>Natural selection aims at survival/reproduction.</li>
-      <li>
+</ul><p>Moon’s “epistemic origin story solution” then asks which defeater-deflectors are admissible once a global defeater has been established. Roughly, the target may appeal only to elements of an epistemic origin story that make R probable and that were already justified independently. This screens out quick fixes such as simply conditionalizing on R or saying “we got lucky,” while allowing certain mind–content theories or theistic design stories to help if they are independently justified.</p><p>I am not fully satisfied with that analysis. The obvious pressure point is how one establishes that an origin story about R is independently justified without already assuming the reliability condition at issue. The criterion can look difficult to satisfy, and determining when it applies can itself appear somewhat arbitrary.</p><h3>Machuca: Self-Defeat, Circularity, and Aporia</h3><p>Diego E. Machuca’s <a href="https://philarchive.org/rec/MACGEA-3"><em>Global Evolutionary Arguments: Self-Defeat, Circularity, and Skepticism about Reason</em></a> develops the global problem through a paired debunking argument (EDA) and vindicating argument (EVA). His undercutting EDA can be summarized as follows:</p><ol style="text-align: left">
+<li>Our belief-forming processes were shaped by natural selection.</li>
+<li>Natural selection aims at survival/reproduction.</li>
+<li>
         False-belief formation can be as fitness-enhancing as true-belief
         formation.
       </li>
-      <li>
+<li>
         Therefore, our belief that our processes are reliable is unjustified
         (agnosticism).
       </li>
-    </ol>
-  </div>
-</div>
-<div>
-  Machuca stresses that this is an undercutter (it removes justification rather
-  than concluding falsity) and that it aims at agnosticism about our cognitive
-  reliability. He then develops the classic self-defeat charge: the very
-  premises/inference rely on the same cognitive system the argument tells us to
-  doubt, so the EDA undermines itself. In the global EVA (epistemic circularity
-  worry). Swap (3) with:
-</div>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ol><p>Machuca emphasizes that this conclusion is an undercutter: it removes justification rather than establishing the falsity of our reliability beliefs. But that produces the classic self-defeat problem. The premises and inferences of the EDA rely on the same cognitive system that the argument tells us to distrust, so the argument appears to undermine itself.</p><p>The matching vindicating argument swaps in the claim that truth-tracking beliefs are more fitness-enhancing than non-tracking beliefs and concludes that our belief-forming processes are reliable:</p><ul style="text-align: left">
+<li>
         3*) Truth-tracking beliefs are more fitness-enhancing than non-tracking
         beliefs.
       </li>
-      <li>4*) So, our belief-forming processes are reliable (justified).</li>
-    </ul>
-  </div>
-</div>
-<div>
-  Machuca argues the EVA looks epistemically circular: to assemble and assess
-  the premises and the inference you already rely on the very faculties whose
-  reliability you’re trying to vindicate. He distinguishes logical from
-  epistemic circularity and says the EVA is the latter. Because the global EDA
-  tends toward self-defeat and the EVA toward circularity, reason appears to
-  push us into an aporetic dilemma; Machuca’s recommended attitude is suspension
-  of judgment about the global reliability of our faculties (a cautiously
-  Pyrrhonian skepticism about reason itself).&nbsp;Are there “virtuous” circles?
-  He critically reviews Alston/Bergmann-style defenses of benign epistemic
-  circularity (e.g., track-record arguments for perception) and presses that
-  embracing circularity to avoid skepticism may be question-begging or
-  dialectically unsatisfying. He emphasizes the live pull of both circularity
-  and regress, reinforcing the sense of aporia. So while Moon claims global
-  debunking is possible, Machuca remains skeptical and Korman is rather neutral.
-</div>
-<div><br /></div>
-<div>
-  Lastly, let's look at
-  <b>Kahane's Evolutionary Debunking Arguments</b>.&nbsp;Kahane treats debunking
-  as a familiar epistemic move: explain a belief by a process that’s “off-track”
-  with respect to the relevant truths, and you thereby undercut its
-  justification. He gives the template:
-</div>
-<div>
-  <div>
-    <ol style="text-align: left">
-      <li>Causal premise: S believes p because X (aetiology/genealogy).</li>
-      <li>
-        Epistemic premise: X isn’t truth-tracking for the truths in question.
-      </li>
-      <li>
-        Conclusion: S’s belief that p is unjustified (an undercutting defeat,
-        not a rebuttal of p).
-      </li>
-    </ol>
-  </div>
-</div>
-<div>
-  He stresses that this isn’t the “genetic fallacy”: a belief’s origin matters
-  only when the origin leaves no role for truth-tracking processes or when
-  post-hoc “reasons” are themselves products of the same off-track source.
-  <i
-    >Debunking is thus especially forceful where justification bottoms out in
-    intuition</i
-  >.&nbsp;Kahane’s big diagnostic point: targeted EDAs presuppose metaethical
-  objectivism. If value is not stance-independent, the worry that evolution
-  didn’t “track” objective evaluative facts dissolves. Hence many widely used
-  EDAs only bite against objectivists; anti-objectivists can simply shrug. To
-  resist the global causal premise, Kahane suggests responding that&nbsp;maybe
-  not all evaluative beliefs are evolution-saturated; diversity and culture
-  complicate a sweeping causal claim. That yields, at best, a graded skepticism
-  (lowered confidence where evolutionary influence is strongest), not
-  vindication
-</div>
-<div><br /></div>
-<div>
-  Okay, now that we have briefly seen what these arguments are, I think it would
-  be useful to construct an argumentation scheme that captures these nuances
-  from the philosophical literature.
-</div>
-<h3 style="text-align: left">Debunking from Off-Track Genealogy</h3>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+<li>4*) So, our belief-forming processes are reliable (justified).</li>
+</ul><p>The EVA, however, looks epistemically circular: in assembling and assessing its premises and inference, we already rely on the very faculties whose reliability we are trying to vindicate. Machuca distinguishes logical from epistemic circularity and places the EVA in the latter category. The EDA tends toward self-defeat; the EVA tends toward circularity. Reason therefore appears to push us toward an aporetic dilemma, motivating suspension of judgment about the global reliability of our faculties—a cautiously Pyrrhonian skepticism about reason itself.</p><p>Machuca also examines defenses of supposedly benign or “virtuous” epistemic circles, such as track-record arguments for perception, but presses the worry that embracing circularity to escape skepticism can remain question-begging or dialectically unsatisfying. The contrast is useful: Moon argues that global debunking can be possible, Machuca remains more skeptical about our ability to escape the resulting dilemma, and Korman is comparatively neutral about how far the schema ultimately succeeds.</p><h2 id="literature-synthesis">Comparative Synthesis</h2><div class="table-wrap"><table class="comparison-table three-col"><thead><tr><th>Author</th><th>Main contribution to the scheme</th><th>Pressure point</th></tr></thead><tbody><tr><td data-label="Author"><a href="https://philarchive.org/rec/KORDA-2"><strong>Korman</strong></a></td><td data-label="Main contribution to the scheme">Makes the explanatory-premise → epistemic-verdict structure explicit; distinguishes skeptical and conditional templates.</td><td data-label="Pressure point">What explanatory relation is required, and why does its absence defeat?</td></tr><tr><td data-label="Author"><a href="https://philpapers.org/rec/KAHEDA"><strong>Kahane</strong></a></td><td data-label="Main contribution to the scheme">Clarifies when genealogy is genuinely debunking rather than a genetic fallacy; stresses objectivist and causal-scope assumptions.</td><td data-label="Pressure point">Does the genealogy really bypass truth-tracking processes and reach the mature belief?</td></tr><tr><td data-label="Author"><a href="https://philarchive.org/rec/MOOGDA"><strong>Moon</strong></a></td><td data-label="Main contribution to the scheme">Systematizes kinds of global defeaters and constrains which origin-story responses can deflect them.</td><td data-label="Pressure point">Can independent vindication survive after a genuinely global defeater lands?</td></tr><tr><td data-label="Author"><a href="https://philarchive.org/rec/MACGEA-3"><strong>Machuca</strong></a></td><td data-label="Main contribution to the scheme">Frames global debunking against self-defeat and global vindication against epistemic circularity.</td><td data-label="Pressure point">Can either skepticism or vindication avoid undermining the reasoning used to support it?</td></tr></tbody></table></div><div class="chapter-transition">The literature therefore supplies the pieces for a more general argumentation scheme: genealogy, off-trackness, independent vindication, scope, and a bridge from those premises to epistemic defeat.</div><header class="ep-part-banner" id="part-3"><span class="ep-part-kicker">Part III</span><span class="ep-part-title">Debunking from Off-Track Genealogy</span><span class="ep-part-summary">The following scheme synthesizes the recurring elements across the literature and makes the debunker’s burden explicit.</span></header><h2 id="formal-scheme">Core Scheme</h2><div class="formula-callout"><strong>Debunking from Off-Track Genealogy</strong></div><ul style="text-align: left">
+<li>
         P1. (Genealogical/Explanatory Claim): Agent S’s attitude(s) A toward
         proposition(s) p (in domain D) are best explained by causal process C
         (e.g., evolution, culture, affect, propaganda, incentives), which
         produced A.
       </li>
-      <li>
+<li>
         P2. (Truth-Insensitivity Claim): Process C is off-track with respect to
         p: in the relevant range of cases, whether p is true makes little or no
         difference to whether C produces A (i.e., C is not appropriately
         truth-tracking for D).
       </li>
-      <li>
+<li>
         P3. (No Independent Vindication Claim): S lacks independent,
         non-question-begging grounds that (i) C is reliable about p (or D), or
         (ii) A is justified apart from C (e.g., argument, evidence, reliable
         method distinct from C).
       </li>
-      <li>
+<li>
         (Optional) P4. (Scope Claim): C substantially explains many or all of
         S’s attitudes in D (local scope) or across domains (global scope).
       </li>
-      <li>
-        C.&nbsp;Therefore, S’s attitude A toward p (or set of attitudes in D) is
+<li>
+        C. Therefore, S’s attitude A toward p (or set of attitudes in D) is
         defeated (undercut): S should suspend judgment or reduce confidence
         substantially.
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">
-  Exceptions / Defeater-Deflectors (to be shown by the target)
-</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><p>The core scheme is defeasible rather than deductively decisive. Its force depends on how well each premise is supported and on whether the target can supply a successful defeater-deflector.</p><h2 id="deflectors">Exceptions / Defeater-Deflectors</h2><p>The target can resist the debunking inference in several recurring ways:</p><ul style="text-align: left">
+<li>
         E1 (Third-Factor/Convergence). There exists a “third factor” T that
         explains both why C would produce A and why p is true (or why methods
         like C are reliable in D).
       </li>
-      <li>
+<li>
         E2 (Explanationist Tie). The facts about p (or D) help explain
         A—causally, constitutively, semantically, or via reduction—so the
         genealogy is not truth-insensitive after all.
       </li>
-      <li>
+<li>
         E3 (Independent Justification). S has independent evidence/argument for
         p that does not rely (or does not primarily rely) on C.
       </li>
-      <li>
+<li>
         E4 (Plenitude/Safety). Even if C is partly off-track, A is not
         precarious (unsafe/insensitive) because there are many nearby ways of
         being right or robust cross-checks that stabilize A.
       </li>
-      <li>
+<li>
         E5 (Scope Restriction). C does not, in fact, explain A (or does so
         weakly/partially), or P4 overstates C’s reach (the argument
         illegitimately “goes global”).
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  <h4 style="text-align: left">Variant 1. Skeptical Debunking (Local)</h4>
-  <div>
-    Same as Core, with P4 fixed to a specific domain D (e.g., moral beliefs,
-    policy preferences, religious credences, consumer tastes).
-  </div>
-  <h4 style="text-align: left">
-    Variant 2. Conditional Debunking (Targeting a Theory/Position)
-  </h4>
-  <div>Replace P1–P3 with:</div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h2 id="variants">Variants</h2><h3>Variant 1. Skeptical Debunking (Local)</h3><p>Same as the core scheme, with P4 fixed to a specific domain D—for example, moral beliefs, policy preferences, religious credences, or consumer tastes.</p><h3>Variant 2. Conditional Debunking (Targeting a Theory or Position)</h3><p>Replace P1–P3 with the following commitment-based form:</p><ul style="text-align: left">
+<li>
         P1 (Commitment Claim).* Theorist T’s own commitments imply that there is
         no appropriate explanatory tie between D-facts and D-attitudes (e.g.,
         because D-facts are causally inert, or T’s semantics rules out such
         ties).
       </li>
-      <li>
+<li>
         P2 (Meta-Epistemic Claim).* If there is no such tie, D-attitudes lack
         justification (or cannot confer justification).
       </li>
-      <li>C.* Therefore, by T’s own lights, D-attitudes are unjustified.</li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">
-    Variant 3. Global Debunking (Across the Board)
-  </h4>
-  <div>Strengthen P4:</div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+<li>C.* Therefore, by T’s own lights, D-attitudes are unjustified.</li>
+</ul><h3>Variant 3. Global Debunking (Across the Board)</h3><p>Strengthen P4 so that the off-track process reaches belief-forming methods broadly, including the higher-order reliability belief R:</p><ul style="text-align: left">
+<li>
         P4G. The off-track process C (e.g., evolution selecting for fitness, or
         a reliability-degrading pill/event) substantially explains S’s
         belief-forming methods broadly, including S’s higher-order belief R (“my
         faculties are broadly reliable”).
       </li>
-      <li>
+<li>
         CG. Therefore S acquires a global defeater: S’s beliefs, including R,
         are unjustified (until the defeater is removed).
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">
-  Hidden Assumptions (what must be true in the background)
-</h4>
-<div>
-  <div>
-    <ol style="text-align: left">
-      <li>
+</ul><header class="ep-part-banner" id="part-4"><span class="ep-part-kicker">Part IV</span><span class="ep-part-title">How to Evaluate a Debunking Argument</span><span class="ep-part-summary">The defeater-deflectors, hidden assumptions, and critical questions are not three unrelated lists; they are three views of the same diagnostic architecture.</span></header><h2 id="evaluation-map">Evaluation Map</h2><p>A useful way to read the rest of the framework is: <strong>premise → what it assumes → how the target can resist → questions to ask</strong>. The table below gives the map; the full assumptions and critical questions follow afterward.</p><div class="table-wrap"><table class="comparison-table three-col wide-table"><thead><tr><th>Component</th><th>What the debunker must establish</th><th>Typical resistance / diagnostic focus</th></tr></thead><tbody><tr><td data-label="Component"><strong>P1. Genealogy</strong></td><td data-label="What the debunker must establish">C really does best explain A, at the right causal grain, rather than merely contributing to it.</td><td data-label="Typical resistance / diagnostic focus">Rival explanations; empirical coverage; proximate vs. distal causes; whether the genealogy reaches the mature belief.</td></tr><tr><td data-label="Component"><strong>P2. Off-trackness</strong></td><td data-label="What the debunker must establish">C fails the relevant truth-tracking standard for p or D.</td><td data-label="Typical resistance / diagnostic focus">Third-factor convergence; safety, sensitivity, calibration, robustness, and local rather than global correlation.</td></tr><tr><td data-label="Component"><strong>P3. No independent vindication</strong></td><td data-label="What the debunker must establish">No adequate evidence or method survives independently of C.</td><td data-label="Typical resistance / diagnostic focus">Surviving evidence; method pluralism; antecedently justified origin stories; strength of the deflection.</td></tr><tr><td data-label="Component"><strong>P4. Scope</strong></td><td data-label="What the debunker must establish">The genealogy reaches as broadly as the conclusion requires.</td><td data-label="Typical resistance / diagnostic focus">Localization, domain differences, overreach, and containment of global defeat.</td></tr><tr><td data-label="Component"><strong>Bridge to defeat</strong></td><td data-label="What the debunker must establish">The explanatory gap actually supplies an undercutting defeater of the claimed strength.</td><td data-label="Typical resistance / diagnostic focus">Which epistemic norm connects genealogy to defeat? Does it cause collateral skepticism? Suspension or mere confidence reduction?</td></tr><tr><td data-label="Component"><strong>Global extension</strong></td><td data-label="What the debunker must establish">Defeat can propagate broadly without dissolving the argument’s own epistemic standing.</td><td data-label="Typical resistance / diagnostic focus">Self-defeat, circular vindication, and credible exit routes.</td></tr><tr><td data-label="Component"><strong>Domain / dialogue conditions</strong></td><td data-label="What the debunker must establish">The relevant meta-level and burden-of-proof assumptions fit the case.</td><td data-label="Typical resistance / diagnostic focus">Objectivism, mixed genealogies, practical stakes, burden allocation, and symmetry.</td></tr></tbody></table></div><h2 id="hidden-assumptions">Hidden Assumptions</h2><p>The core scheme only works if several background assumptions hold. These are worth making explicit because many weak debunking arguments fail here rather than in their headline premises.</p><ol style="text-align: left">
+<li>
         Explanatory Priority. The cited genealogy really does best explain why S
         believes p (or holds A), not merely a possible contributor.
       </li>
-      <li>
+<li>
         Relevant Notion of Truth-Tracking. “Off-track” means the right thing
         (modal safety/sensitivity; counterfactual dependence; calibration to the
         target property).
       </li>
-      <li>
+<li>
         Bridge from Explanatory Gap to Defeat. Recognizing a lack of
         truth-tracking connection provides an undercutting defeater for A.
       </li>
-      <li>
+<li>
         No Quiet Vindication. There isn’t already independent warrant for p that
         survives the genealogy (or the genealogy doesn’t quietly presuppose that
         such warrant is insufficient).
       </li>
-      <li>
+<li>
         Stability of A. A is not stabilized by reflection, cross-domain
         triangulation, or diverse evidence pools (if it is, defeat may not
         transmit).
       </li>
-      <li>
+<li>
         Correct Scope Setting. The debunker’s causal story fits (local or
         global) and isn’t over-generalized from cherry-picked cases.
       </li>
-      <li>
+<li>
         Non-Circularity Constraint (Global). In global variants, attempts to
         vindicate reliability aren’t epistemically circular in a way that begs
         the question (Machuca’s circularity warning).
       </li>
-      <li>
+<li>
         Self-Defeat Manageability (Global). If the argument threatens its own
         premises, the debunker assumes that self-defeat doesn’t erase its
         defeating force (Moon), or else narrows scope to avoid collapse.
       </li>
-      <li>
+<li>
         Meta-level Fit. In evaluative domains, the argument tacitly presupposes
         some form of objectivism (Kahane); if anti-objectivism is true,
         “off-track” may be ill-posed.
       </li>
-      <li>
+<li>
         No Illicit Rebuttal Drift. The move stays undercutting (attacking the
         link), not an unargued slide into rebuttal (attacking p’s truth).
       </li>
-      <li>
+<li>
         Public Accessibility. The audience can, in principle, evaluate the
         genealogical and truth-insensitivity claims (they’re not purely
         speculative hand-waving).
       </li>
-    </ol>
-  </div>
-</div>
-<h3 style="text-align: left">Critical Questions (CQs)</h3>
-<h4 style="text-align: left">A. About the Genealogy (P1)</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ol><h2 id="critical-questions">Critical Questions</h2><p>The following questions operationalize those assumptions. They are deliberately redundant with the scheme in one sense: each group tests a particular premise, bridge principle, or scope condition from another angle.</p><h3>A. About the Genealogy (P1)</h3><ul style="text-align: left">
+<li>
         CQ-A1 (Fit &amp; Coverage). Does C actually explain S’s attitude A
         toward p (or D-attitudes), or is the story selective/speculative? What
         is the empirical, historical, or psychological support?
       </li>
-      <li>
+<li>
         CQ-A2 (Comparative Explanatory Power). Are there rival explanations
         (learning, argument, perception-like access, expert testimony) that
         equal or exceed C in simplicity, scope, or predictive success?
       </li>
-      <li>
+<li>
         CQ-A3 (Causal Grain). Is C pitched at the right level (proximate vs
         distal causes)? Could a distal cause (e.g., evolution) be consistent
         with proximal truth-tracking (e.g., reasoning, measurement)?
       </li>
-      <li>
+<li>
         CQ-A4 (Individuation of A). Which attitudes are being explained—raw
         intuitions, considered judgments, policy endorsements, narrow vs wide
         reflective states? Does the genealogy reach the matured belief or only a
         first-pass reaction?
       </li>
-      <li>
+<li>
         CQ-A5 (Heterogeneity &amp; Drift). How homogeneous are the attitudes
         across cultures/contexts? Do we see divergence that C can’t easily
         model? (Over-homogeneity or over-heterogeneity can both challenge the
         fit.)
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">B. About Truth-Insensitivity (P2)</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>B. About Truth-Insensitivity (P2)</h3><ul style="text-align: left">
+<li>
         CQ-B1 (What notion of “truth-tracking”?) Are we using sensitivity,
         safety, reliability, calibration, or counterfactual dependence? Does C
         really fail that standard?
       </li>
-      <li>
+<li>
         CQ-B2 (Third-Factor Overlap). Could C be selecting for features (e.g.,
         harm detection, predictive accuracy, coherence) that correlate with the
         truth about p (third-factor convergence)?
       </li>
-      <li>
+<li>
         CQ-B3 (Local vs Global Correlation). Even if C is off-track in general,
         is it off-track here (for this p or subdomain)?
       </li>
-      <li>
+<li>
         CQ-B4 (Robustness Checks). Under perturbations (different stakes,
         framings, vantage points), do attitudes produced by C move in ways a
         truth-tracking method would?
       </li>
-      <li>
+<li>
         CQ-B5 (Illicit Rebuttal). Is the critic smuggling in a rebuttal
         (claiming p is false) under the guise of undercutting (claiming the
         route to p is unreliable)?
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">
-  C. About Independent Vindication (P3) &amp; Defeater-Deflectors
-</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>C. About Independent Vindication (P3) &amp; Defeater-Deflectors</h3><ul style="text-align: left">
+<li>
         CQ-C1 (Surviving Evidence). What evidence, arguments, measurements, or
         cross-modal checks for p survive even if C explains the initial
         attitude?
       </li>
-      <li>
+<li>
         CQ-C2 (Method Pluralism). Are there independent methods
         (experimentation, formal proof, triangulation across disciplines) that
         underwrite p without leaning on C?
       </li>
-      <li>
+<li>
         CQ-C3 (Origin-Story Constraint). If the target appeals to background Y
         to resist defeat, is Y (i) antecedently justified and (ii) genuinely
         part of the subject’s epistemic origin story explaining why their
         methods are reliable (vs a post-hoc patch)?
       </li>
-      <li>
+<li>
         CQ-C4 (Costs of Third-Factors). If a third-factor T is invoked, does T
         (a) non-trivially link C to truth and (b) avoid collapsing into
         circularity, mystery, or ad hoc stipulation?
       </li>
-      <li>
+<li>
         CQ-C5 (Strength of the Deflection). Does the deflection restore full
         justification, or only mitigate the hit (lowering the required
         confidence drop)?
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">D. About Scope (P4) — Local vs Global</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>D. About Scope (P4) — Local vs Global</h3><ul style="text-align: left">
+<li>
         CQ-D1 (Overreach). Is the debunking claim calibrated to the actual reach
         of C, or does it leap from “some Xs are off-track” to “most/all Xs are
         unjustified”?
       </li>
-      <li>
+<li>
         CQ-D2 (Fence-Sitting &amp; Consistency). If local EDAs are embraced, why
         aren’t parallel EDAs (or a global EDA) also embraced, given similar
         genealogies elsewhere? (Kahane’s consistency audit.)
       </li>
-      <li>
+<li>
         CQ-D3 (Domain Differences). Are there principled reasons some domains
         (math, perception) resist the genealogy while others (taste, politics)
         don’t?
       </li>
-      <li>
+<li>
         CQ-D4 (Containment). If global defeat is alleged, does the case show the
         right kind (pure undercutter vs undercutter-because-rebutter vs
         undercutter-while-rebutter), and is the path from that to “everything is
         defeated” valid?
       </li>
-    </ul>
-  </div>
-</div>
-<h4 style="text-align: left">
-  E. About the Epistemic Bridge (from P1–P3 to C)
-</h4>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>E. About the Epistemic Bridge (from P1–P3 to C)</h3><ul style="text-align: left">
+<li>
         CQ-E1 (Why does explanatory absence defeat?) What’s the epistemic norm
         connecting a lack of explanatory tie to loss of justification here? Is
         it a safety/insensitivity criterion, a “no epistemic coincidence” norm,
         or a direct explanatory constraint?
       </li>
-      <li>
+<li>
         CQ-E2 (Induction-Friendliness). Does the chosen norm avoid collateral
         damage (e.g., to induction, testimony, perception), or does it make
         everyday knowledge too “lucky”?
       </li>
-      <li>
+<li>
         CQ-E3 (Degree of Defeat). Should the upshot be suspension or merely
         reduced confidence? What credence shift is warranted by the demonstrated
         off-trackness?
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  <h4 style="text-align: left">
-    F. Global-Specific (Self-Defeat &amp; Circularity)
-  </h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>F. Global-Specific (Self-Defeat &amp; Circularity)</h3><ul style="text-align: left">
+<li>
         CQ-F1 (Self-Defeat). If the argument debunks the reliability of the very
         reasoning used to state and endorse it, does the debunker accept that
         self-defeating arguments can still defeat (and if so, how)?
       </li>
-      <li>
+<li>
         CQ-F2 (Circular Vindication). Are proposed vindications of reliability
         epistemically circular (using the very faculties at issue), and if so,
         are they benign, vicious, or dialectically unsatisfying?
       </li>
-      <li>
+<li>
         CQ-F3 (Exit Routes). If a global defeater lands, what non-inferential
         routes (pragmatic actions, new experiences, independent evidence) are
         proposed to remove it? Are those routes credible/available?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">
-    G. Metaethical / Metanormative Preconditions (for evaluative cases)
-  </h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>G. Metaethical / Metanormative Preconditions (for evaluative cases)</h3><ul style="text-align: left">
+<li>
         CQ-G1 (Objectivism Presupposed?). Does the debunking rely on
         stance-independent value/fact? If anti-objectivism holds, is “off-track”
         still well-defined?
       </li>
-      <li>
+<li>
         CQ-G2 (Selective Pressure). If the debunker says evolution is not
         truth-tracking for value, is there evidence it couldn’t track
         naturalistic evaluative features (e.g., welfare, cooperation) that a
         realist might identify with or ground the values in?
       </li>
-      <li>
+<li>
         CQ-G3 (Mixed Genealogies). How do cultural learning, reflection, and
         argument interact with evolutionary influences? Are we debunking
         pre-theoretic intuitions or also the outputs of sustained critical
         reflection?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">H. Dialogue-Level / Pragmatic CQs</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>H. Dialogue-Level / Pragmatic CQs</h3><ul style="text-align: left">
+<li>
         CQ-H1 (Burden of Proof). Who bears which burden at which stage
         (establishing C, showing off-trackness, demonstrating lack of
         independent support)?
       </li>
-      <li>
+<li>
         CQ-H2 (Stakes &amp; Practical Up-shot). Given the stakes, what degree of
         defeat is action-guiding? Is “suspend” practicable or do we adopt a
         provisional credence drop?
       </li>
-      <li>
+<li>
         CQ-H3 (Symmetry Checks). If the same genealogy applies to the debunker’s
         own beliefs (including the meta-level ones), is the standard applied
         symmetrically?
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  Now that we have established the scheme and seen examples in the philosophical
-  literature, let's move to a more practical example. Once you become familiar
-  with this argument, you will see the pattern everywhere. In this example, I'd
-  like to show how climate-change skeptics mount debunking arguments, how to
-  interrogate it, and then how to flip it on its head.&nbsp;Claim (target):
-  “Human-caused climate change is a serious, urgent problem.”:&nbsp;
-</div>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><header class="ep-part-banner" id="part-5"><span class="ep-part-kicker">Part V</span><span class="ep-part-title">Worked Example: Climate-Change Skepticism</span><span class="ep-part-summary">A practical test of the scheme: reconstruct the genealogy charitably, interrogate it premise by premise, then reverse the genealogy and apply the same standards symmetrically.</span></header><h2 id="climate-target">Clarifying the Target</h2><p>Once you become familiar with this pattern, you begin to see it throughout public discourse. Climate-change skepticism provides a useful example because skeptical arguments often appeal to media incentives, political agendas, grant funding, institutional conformity, or group identity as genealogical explanations for climate beliefs.</p><p>Before applying the scheme, however, the target claim should be disaggregated. “Human-caused climate change is a serious, urgent problem” bundles empirical, impact-assessment, and normative components that may have different evidential bases and different relevant genealogies.</p><div class="table-wrap"><table class="comparison-table three-col"><thead><tr><th>Layer of the target</th><th>Illustrative claim</th><th>Why the distinction matters</th></tr></thead><tbody><tr><td data-label="Layer of the target"><strong>Descriptive / empirical</strong></td><td data-label="Illustrative claim">Anthropogenic warming is occurring.</td><td data-label="Why the distinction matters">Primarily evaluated through measurements, physical theory, model-data fit, and independent reconstruction.</td></tr><tr><td data-label="Layer of the target"><strong>Impact assessment</strong></td><td data-label="Illustrative claim">The likely consequences are serious.</td><td data-label="Why the distinction matters">Combines empirical projections, uncertainty, vulnerability, and comparative risk assessment.</td></tr><tr><td data-label="Layer of the target"><strong>Normative / practical</strong></td><td data-label="Illustrative claim">The problem warrants urgent action.</td><td data-label="Why the distinction matters">Adds value judgments, risk tolerance, trade-offs, and action-guiding norms; genealogical arguments may operate differently here.</td></tr></tbody></table></div><h2 id="skeptic-scheme">The Skeptical Debunking Scheme</h2><p>A climate skeptic might reconstruct the target position using the off-track genealogy scheme as follows. The point here is to formulate the argument clearly before evaluating it, not to assume its premises are true:</p><ul style="text-align: left">
+<li>
         P1 – Genealogy. People (and scientists) believe this because of media
         incentives, political agendas, grant funding pressures, and social
         conformity in academia and tech. These forces caused the belief to
         spread.
       </li>
-      <li>
+<li>
         P2 – Off-track. Those forces are aimed at attention, money, and group
         loyalty, not at truth about climate physics, so they’re off-track for
         the claim’s truth.
       </li>
-      <li>
+<li>
         P3 – No independent vindication. Ordinary people can’t check complex
         models; even scientists are trapped in publish-or-perish and echo
         chambers—so there isn’t independent support that escapes those forces.
       </li>
-      <li>
+<li>
         (P4 – Scope, optional). These forces shape most climate beliefs in
         media, policy, and science.
       </li>
-      <li>
+<li>
         Conclusion (defeasible). So confidence in “serious, urgent anthropogenic
         climate change” should be suspended or significantly
-        lowered.&nbsp;(That’s the classic “debunk from off-track genealogy”
+        lowered. (That’s the classic “debunk from off-track genealogy”
         pattern.)
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  This might be one of the most common climate change denial tactics; debunking
-  argumentation. Let's apply the critical questions to this scheme:
-</div>
-<div>
-  <h4 style="text-align: left">A. Genealogy checks (P1)</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><p>This is a recognizable debunking pattern: the genealogy appeals to social and institutional causes, labels those causes truth-insensitive, denies an independent route of vindication, and then draws an epistemic conclusion. The critical questions tell us where that inference can fail.</p><h3>A. Genealogy checks (P1)</h3><ul style="text-align: left">
+<li>
         CQ-A1 Fit &amp; Coverage: Do media and politics really best explain why
         climate scientists hold the view—or do decades of measurements (surface
         temps, ocean heat content, satellite data), lab physics (CO₂
         absorption), and independent datasets explain it better?
       </li>
-      <li>
+<li>
         CQ-A2 Comparative Explanatory Power: If the same belief shows up across
         hundreds of independent institutions and countries with opposed
         politics, is “pressure + conformity” still the best explanation?
       </li>
-      <li>
+<li>
         CQ-A3 Causal Grain: Even if funding and headlines affect which studies
         trend, do they explain away core physical results (e.g., spectroscopy of
         greenhouse gases, energy budget measurements)? Distal causes (politics)
         can co-exist with proximal truth-tracking (measurement,
         cross-validation).
       </li>
-      <li>
+<li>
         CQ-A4 Individuation: Are you debunking public talking points or
         peer-reviewed inference chains (data → model → prediction →
         out-of-sample check)? The genealogy might reach the first but not the
         second.
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">B. Off-track (P2)</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>B. Off-track (P2)</h3><ul style="text-align: left">
+<li>
         CQ-B1 Which truth-tracking standard? Are you claiming lack of
         sensitivity/safety/reliability? What would success look like if a method
         were truth-tracking here (e.g., independent reconstructions matching,
         model hindcasts passing tests)?
       </li>
-      <li>
+<li>
         CQ-B2 Third-factor overlap: Could reputation/funding correlate with
         actually being right because journals, grants, and media reward
         predictive accuracy over time? (Third-factor T = “predictive success”).
       </li>
-      <li>
+<li>
         CQ-B4 Robustness checks: When measurements come from independent systems
         (buoys, satellites, ice cores) and still line up, doesn’t that look like
         truth-tracking behavior?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">C. Independent vindication (P3)</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>C. Independent vindication (P3)</h3><ul style="text-align: left">
+<li>
         CQ-C1 Surviving Evidence: What evidence would remain even if
         media/politics vanished? (e.g., lab physics of CO₂, Mauna Loa CO₂
         record, ocean heat content trends, retreating glaciers tracked by
         surveyors).
       </li>
-      <li>
+<li>
         CQ-C2 Method pluralism: Are there multiple independent methods
         converging? If so, the genealogy doesn’t undercut all of them at once.
       </li>
-      <li>
+<li>
         CQ-C3 Origin-story constraint (Moon-style): If the skeptic adds “but I
         also trust engineers’ thermodynamics,” is that part of their epistemic
         origin story explaining why they’re reliable here—or a post-hoc patch?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">D. Scope (P4)</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>D. Scope (P4)</h3><ul style="text-align: left">
+<li>
         CQ-D1 Overreach: Does your story about media really justify downgrading
         instrument readings and laboratory constants? That’s jumping from the
         public narrative to the measurement pipeline.
       </li>
-      <li>
+<li>
         CQ-D3 Domain differences: Why should politics corrupt satellite radiance
         retrievals more than, say, bridge engineering? What’s special about this
         domain?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">E. Bridge to defeat (P1–P3 → C)</h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>E. Bridge to defeat (P1–P3 → C)</h3><ul style="text-align: left">
+<li>
         CQ-E1 Why does this genealogy defeat? Spell out the norm: “If belief B
         is produced by C and C doesn’t track truth about p, then B is
         unjustified.” Does your norm avoid collateral damage (e.g., it won’t
         also debunk medicine, macro-economics, or pandemic models wholesale)?
       </li>
-      <li>
+<li>
         CQ-E3 Degree of defeat: Are you arguing for suspension or just “be
         somewhat less confident”? Which practical decisions should change?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">
-    F. Global traps (self-defeat &amp; circularity)
-  </h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>F. Global traps (self-defeat &amp; circularity)</h3><ul style="text-align: left">
+<li>
         CQ-F1 Self-defeat check: If “politics and incentives corrupt complex
         inference,” doesn’t that also debunk your contrarian sources (think
         tanks, influencers) who live in the same incentive soup?
       </li>
-      <li>
+<li>
         CQ-F3 Exit routes: If you grant a serious undercutter landed, what would
         remove it? (Open code, replication archives, adversarial audits?) If
         those exist, does your defeat still hold?
       </li>
-    </ul>
-  </div>
-  <h4 style="text-align: left">
-    G. Meta-level (useful in value-laden climate debates)
-  </h4>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>G. Meta-level (useful in value-laden climate debates)</h3><ul style="text-align: left">
+<li>
         CQ-G1 Objectivism presupposed?: Are you debunking facts (temperature
-        trends) or values (how urgent)? Different geneaologies matter for each,
+        trends) or values (how urgent)? Different genealogies matter for each,
         and the “off-track” test differs.
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  The skeptic’s debunking case looks weak once you ask for (i) best-explanation
-  status, (ii) cross-method convergence, and (iii) a non-overreaching bridge
-  from genealogy to defeat. You don’t need to prove the target true—just show
-  the debunking under-motivates defeat. Notice that we can simply flip the
-  argument, and then evaluate how well it performs with respect to these
-  critical questions:
-</div>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+</ul><h3>Interim Assessment</h3><p>The skeptic’s debunking case looks weak once we demand (i) best-explanation status, (ii) cross-method convergence, and (iii) a non-overreaching bridge from genealogy to defeat. Crucially, we do not need to prove the target proposition true in order to make this point. It is enough to show that the proposed genealogy under-motivates the claimed epistemic defeat.</p><div class="concept-callout"><strong>Distal/proximal lesson in the case study.</strong> Political incentives or media dynamics can influence attention, framing, funding priorities, or public uptake without thereby explaining away spectroscopy, instrument readings, independent datasets, replication, or cross-validation. The genealogy must reach the epistemic route that actually supports the belief.</div><h2 id="reverse-scheme">Flipping the Genealogy</h2><p>The same scheme can be turned toward climate skepticism itself. Reversing the genealogy is not a refutation by itself; it is a symmetry test. The reverse argument must satisfy P1–P3 independently rather than merely pointing out that “the other side has causes too.”</p><ul style="text-align: left">
+<li>
         P1 – Genealogy. Skeptical attitudes persist because of
         identity-protective cognition, partisan media ecosystems, and
         industry-funded messaging that reward doubt.
       </li>
-      <li>
+<li>
         P2 – Off-track. Those forces are aimed at group cohesion and profit, not
         at tracking climate truth.
       </li>
-      <li>
+<li>
         P3 – No independent vindication. Most skeptics rely on blogs,
         cherry-picked anomalies, or misread uncertainty; few do primary
         analysis.
       </li>
-      <li>Conclusion. So skepticism is unjustified.</li>
-    </ul>
-  </div>
-</div>
-<div>Running the same critical questions (while being fair and symmetric):</div>
-<div>
-  <div>
-    <ul style="text-align: left">
-      <li>
+<li>Conclusion. So skepticism is unjustified.</li>
+</ul><p>Running the same critical questions fairly and symmetrically produces the following checks:</p><ul style="text-align: left">
+<li>
         CQ-A2 Comparative power: Do these forces explain all skeptical
         positions, including those from credentialed scientists raising
         methodological issues (e.g., particular feedback estimates)? If not,
         don’t over-generalize.
       </li>
-      <li>
+<li>
         CQ-B3 Local vs global: Maybe some memes are off-track but particular
         critiques (measurement biases, cloud feedback parameterization, scenario
         baselines) are not. Separate them.
       </li>
-      <li>
+<li>
         CQ-C1 Surviving evidence: Are there any genuine anomalies or model-data
         mismatches that remain after quality control? If yes, those pockets
         aren’t defeated by the genealogy.
       </li>
-      <li>
+<li>
         CQ-E1 Bridge norm: Don’t slip from “industry PR exists” to “therefore
         counterevidence never justifies anything.” That would be illicit
         rebuttal drift.
       </li>
-      <li>
+<li>
         CQ-D1 Scope: Keep the debunking local (PR-amplified talking points), not
         global (all dissent).
       </li>
-    </ul>
-  </div>
-</div>
-<div>
-  The pro-consensus debunking is clearly stronger when evaluated by critical
-  questions. I think I'll end here. I just hope its somewhat clear by now how
-  these arguments function and where they can be seen "in the wild". They can be
-  wielded for a variety of reasons; often to motivate skepticism about a topic
-  that is rather uncontroversial. But now we have the basic tools for
-  identifying and critically appraising such arguments.&nbsp;
-</div>
-<div><br /></div>
-</article>
+</ul><h2 id="symmetry-comparison">Symmetry Comparison</h2><p>The methodological payoff of the reversal is that both genealogies can now be compared using the same burden of proof. The relevant question is not which side has a social origin—virtually every belief does—but which genealogy best explains the target belief, is genuinely off-track, leaves little independent support, and has the scope required for the proposed defeat.</p><div class="table-wrap"><table class="comparison-table three-col wide-table"><thead><tr><th>Test</th><th>Skeptical genealogy of climate consensus</th><th>Genealogy of climate skepticism</th></tr></thead><tbody><tr><td data-label="Test"><strong>P1: Explanatory coverage</strong></td><td data-label="Skeptical genealogy of climate consensus">Often overstates the explanatory role of politics, media, funding, or conformity relative to measurement and physical evidence.</td><td data-label="Genealogy of climate skepticism">Can explain some identity-protective, media-amplified, or industry-influenced skeptical attitudes, but should not be generalized to every technical dissent.</td></tr><tr><td data-label="Test"><strong>P2: Off-trackness</strong></td><td data-label="Skeptical genealogy of climate consensus">The cited incentives may be off-track in some contexts, but they coexist with truth-sensitive methods such as independent measurement, prediction, and cross-validation.</td><td data-label="Genealogy of climate skepticism">Identity protection, partisan reinforcement, or PR incentives can be truth-insensitive; particular scientific critiques still require separate evaluation.</td></tr><tr><td data-label="Test"><strong>P3: Independent support</strong></td><td data-label="Skeptical genealogy of climate consensus">Substantial evidence can survive the proposed genealogy through laboratory physics, multiple observing systems, independent datasets, and convergent methods.</td><td data-label="Genealogy of climate skepticism">Varies by skeptical claim; genuine anomalies or methodological critiques may survive even if broader skeptical messaging has an off-track genealogy.</td></tr><tr><td data-label="Test"><strong>P4: Scope</strong></td><td data-label="Skeptical genealogy of climate consensus">A genealogy of public discourse does not automatically reach instrument readings or the scientific inference pipeline.</td><td data-label="Genealogy of climate skepticism">Should normally remain local to specific talking points, media ecosystems, or unsupported claims rather than all dissent.</td></tr><tr><td data-label="Test"><strong>Overall</strong></td><td data-label="Skeptical genealogy of climate consensus">The broad debunking inference is comparatively weak because the genealogy does not defeat the independent evidential structure it targets.</td><td data-label="Genealogy of climate skepticism">Potentially stronger for some socially amplified forms of skepticism, but still defeasible and subject to the same localization and surviving-evidence constraints.</td></tr></tbody></table></div><p>On those standards, the pro-consensus debunking argument is stronger in the cases described above—but the important lesson is methodological rather than partisan. A genealogy earns epistemic force only to the extent that it survives the same critical questions we would insist on when the genealogy is aimed at our own preferred beliefs.</p><header class="ep-part-banner" id="part-6"><span class="ep-part-kicker">Part VI</span><span class="ep-part-title">General Lessons</span><span class="ep-part-summary">The framework is useful because it separates the mere existence of a causal story from the much harder task of showing epistemic defeat.</span></header><h2>What to Carry Forward</h2><ul class="compact-grid"><li><strong>Genealogy is not enough.</strong> Explaining why someone believes p does not by itself show that the belief is unjustified.</li><li><strong>Truth-insensitivity does the real work.</strong> The debunker must show that the relevant process is off-track in the relevant domain and at the relevant causal grain.</li><li><strong>Independent support matters.</strong> Reflection, argument, measurement, testimony, formal proof, replication, or triangulation may survive even if they were not the original source of the belief.</li><li><strong>Scope must be earned.</strong> A genealogy that reaches a talking point, intuition, or initial reaction does not automatically reach every mature belief in the domain.</li><li><strong>Global arguments face special hazards.</strong> Self-defeat and epistemic circularity become unavoidable questions once reliability itself is targeted.</li><li><strong>Defeat can be graded.</strong> The correct conclusion may be reduced confidence rather than suspension, and the appropriate degree depends on the strength and reach of the genealogy.</li><li><strong>Apply the test symmetrically.</strong> The debunker’s own beliefs, sources, and standards should face the same genealogy, scope, and bridge questions.</li><li><strong>Some genealogies vindicate.</strong> A causal history can sometimes reveal convergence on truth rather than epistemic accident.</li></ul><p>Debunking arguments can be wielded for many purposes, including attempts to motivate skepticism about topics that are otherwise comparatively well supported. The useful response is not to reject genealogical reasoning wholesale, but to ask exactly what the genealogy explains, whether it is genuinely truth-insensitive, what evidence survives it, how far its scope extends, and why those facts should produce the proposed degree of epistemic defeat.</p><p>The framework developed here is intended as a reusable tool for identifying that structure “in the wild” and critically appraising it without confusing explanation with refutation.</p><h2 class="ep-source-section" id="sources">Sources and Further Reading</h2><p>The discussion above focuses primarily on the first four works below, while drawing periodically on themes and problems developed across the broader reading list.</p><ol style="text-align: left">
+<li>
+<a href="https://philarchive.org/rec/KORDA-2">Debunking Arguments - Daniel Z. Korman</a>
+</li>
+<li>
+<a href="https://philarchive.org/rec/MOOGDA">Global Debunking Arguments - Andrew Moon</a>
+</li>
+<li>
+<a href="https://philarchive.org/rec/MACGEA-3">Global Evolutionary Arguments: Self-Defeat, Circularity, and Skepticism
+        about Reason - Diego E. Machuca</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/KAHEDA">Evolutionary Debunking Arguments - Guy Kahane</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/BRADAA-5">Debunking Arguments and the Cognitive Science of Religion - Matthew
+        Braddock</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/BRANNI">Natural Nonbelief in God: Prehistoric Humans, Divine Hiddenness, and
+        Debunking - Matthew Braddock</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/VAVDED">Debunking Evolutionary Debunking - Katia Vavova</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/VAVII">Irrelevant Influences - Katia Vavova</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/SRIVG">Genealogy, Epistemology and Worldmaking - Amia Srinivasan</a>
+</li>
+<li>
+<a href="https://philpapers.org/rec/DAVTPF-3">Three problems for the evolutionary debunking argument - Oscar Davis</a>
+</li>
+</ol><p><a href="#top">Back to top</a></p></article>
+</body>
+</html>
