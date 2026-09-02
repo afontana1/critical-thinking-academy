@@ -1,0 +1,1542 @@
+<title>The Argument Seems Severely Confused</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<article class="ep-post">
+  <div class="post-body">
+    <h1 id="top">The Argument Seems Severely Confused</h1>
+
+    <p class="chapter-lead">
+      The <a href="https://philarchive.org/archive/CUTTPO-9">argument from nomological harmony</a>
+      is a recent theistic argument. It claims that there is something in need of explanation about the
+      way the laws of nature and the actual contents or states of the universe fit together, and that
+      theism explains this fit better than brute naturalism does. I find the argument deeply
+      unpersuasive, but the most useful way to evaluate it is not to dismiss it at the outset. It is to
+      separate the different claims on which its force depends and ask what each one would actually
+      require.
+    </p>
+
+    <p>
+      My central contention is that the argument trades on several distinctions that need to be kept
+      apart: laws versus descriptions of laws, formal rules versus physical implementation, compatibility
+      versus prediction, and a genuine unexplained feature of reality versus a mystery produced by a
+      tendentious way of describing reality. Once those distinctions are made explicit, the alleged
+      “harmony” becomes much less obviously surprising, and the further inference from harmony to God
+      becomes much harder to justify.
+    </p>
+
+    <div class="core-claim">
+      <strong>Central thesis.</strong> Nomological harmony appears evidentially powerful only if we first
+      treat laws and world-states as sufficiently independent metaphysical items, regard their apparent
+      fit as improbable under naturalism, and then show that a divine mind makes that fit substantially
+      more expected. Each of those steps requires argument; the familiar rulebook analogy tends to
+      obscure those burdens rather than discharge them.
+    </div>
+
+    <nav class="ep-toc" aria-label="Table of contents">
+      <h2>Table of Contents</h2>
+      <div class="ep-toc-part">
+        <p><a href="#part-1">Part I — What the Argument Claims</a></p>
+        <ul>
+          <li><a href="#harmony-claim">The alleged harmony</a></li>
+          <li><a href="#premise-form">The argument in premise form</a></li>
+          <li><a href="#fine-tuning">How it differs from ordinary fine-tuning</a></li>
+          <li><a href="#four-hurdles">Four hurdles the argument must clear</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-2">Part II — The Hidden Metaphysics of “Harmony”</a></p>
+        <ul>
+          <li><a href="#independence">The independence assumption</a></li>
+          <li><a href="#laws-of-nature">What are laws of nature?</a></li>
+          <li><a href="#map-model-world">Map, model, and world</a></li>
+          <li><a href="#semantics-metaphysics">Semantics is not metaphysics</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-3">Part III — The Stronger Intelligibility Argument</a></p>
+        <ul>
+          <li><a href="#charitable-reformulation">A charitable reformulation</a></li>
+          <li><a href="#epistemic-selection">Epistemic selection</a></li>
+          <li><a href="#embedded-cognition">Embedded cognition</a></li>
+          <li><a href="#limits-intelligibility">The world is not uniformly intelligible</a></li>
+          <li><a href="#residual-question">What remains to be explained</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-4">Part IV — From a Mystery to God</a></p>
+        <ul>
+          <li><a href="#argument-template">The recurring argument template</a></li>
+          <li><a href="#ratcheting">Explanatory ratcheting</a></li>
+          <li><a href="#independence-evidence">Are the arguments evidentially independent?</a></li>
+          <li><a href="#naturalism-cant">What “naturalism cannot explain X” may really mean</a></li>
+          <li><a href="#prediction">Compatibility is not prediction</a></li>
+          <li><a href="#divine-choice">The divine-choice problem</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-5">Part V — Why the Chess Analogy Fails</a></p>
+        <ul>
+          <li><a href="#constitutive-rules">Constitutive rules</a></li>
+          <li><a href="#chess-dilemma">The chess dilemma</a></li>
+          <li><a href="#rule-equivocation">Equivocation on “rule”</a></li>
+          <li><a href="#grant-chess">Even granting the analogy</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-6">Part VI — A Computational Perspective</a></p>
+        <ul>
+          <li><a href="#rule-kinds">“Rule” names many different things</a></li>
+          <li><a href="#codefined">Rules and states can be co-defined</a></li>
+          <li><a href="#syntax-semantics">Syntax is not semantics</a></li>
+          <li><a href="#multiple-realizability">Multiple realizability</a></li>
+          <li><a href="#complexity">Complexity and tractability</a></li>
+          <li><a href="#implementation">Rules do not explain implementation</a></li>
+          <li><a href="#commands">Rules are not necessarily commands</a></li>
+        </ul>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#part-7">Part VII — What a Successful Argument Would Need</a></p>
+      </div>
+      <div class="ep-toc-part">
+        <p><a href="#conclusion">Conclusion</a></p>
+      </div>
+    </nav>
+
+    <header class="ep-part-banner" id="part-1">
+      <span class="ep-part-kicker">Part I</span>
+      <span class="ep-part-title">What the Argument Claims</span>
+      <span class="ep-part-summary">Before criticizing the inference, it helps to state the proposed explanandum as clearly and charitably as possible.</span>
+    </header>
+
+    <h2 id="harmony-claim">The alleged harmony</h2>
+    <p>
+      The core idea is that the universe is not merely a pile of stuff plus a separate list of laws. The
+      laws we actually formulate apply to the kinds of things and states that actually occur, and when
+      applied to the universe’s states they generate or constrain further states. Cutter and Saad describe
+      the striking fact as a “harmonious match between laws and states.” They also suggest that things
+      might have been otherwise: a universe might have been “stillborn,” with laws that failed to engage
+      its initial state in any productive way.
+    </p>
+
+    <p>
+      The argument therefore does two things. First, it identifies what is supposed to be a surprising
+      fact: why do the actual laws “hook into” the actual furniture of the world so neatly? Second, it
+      treats that fact as evidence for God. A divine mind or designer could, on this picture, intentionally
+      match laws to a world, whereas on a non-theistic view the match might appear brute or coincidental.
+      The standard intuition pump is a box containing game pieces and a rulebook. The surprising thing is
+      allegedly not merely that there are pieces and rules, but that these rules are exactly the rules for
+      these pieces. Intentional matching would make that pairing seem less accidental.
+    </p>
+
+    <h2 id="premise-form">The argument in premise form</h2>
+    <div class="checkpoint-block">
+      <ol>
+        <li>There is a striking harmony between the actual laws of nature and the actual contents or initial states of the universe.</li>
+        <li>This harmony calls for explanation.</li>
+        <li>Theism provides a better explanation of that harmony than unguided naturalism or brute fact.</li>
+        <li>Therefore, the harmony counts as evidence for God.</li>
+      </ol>
+    </div>
+
+    <h2 id="fine-tuning">How it differs from ordinary fine-tuning</h2>
+    <p>
+      This is related to ordinary fine-tuning arguments, but it is not exactly the same argument.
+      Fine-tuning arguments usually focus on laws, constants, or boundary conditions being life-permitting.
+      Nomological harmony is more basic: it asks why the laws are even apt for the kind of universe that
+      exists at all. The central philosophical pressure point therefore arrives earlier than the usual
+      fine-tuning debate: why assume that a mismatch between laws and states was a genuine live
+      possibility in the first place?
+    </p>
+
+    <p>
+      Critics can challenge that assumption by arguing that laws and the entities, powers, structures, or
+      states they govern are not independently selectable in the way the argument requires. If so, the
+      “surprise” may be overstated before theism ever enters the picture. A second and separate problem is
+      that an appeal to God may merely relocate the contingency unless the defender can explain why a God
+      would choose exactly this harmonious arrangement rather than countless alternatives.
+    </p>
+
+    <p>
+      My reaction to the argument is much more negative than that of some defenders, one of whom describes
+      it as <a href="https://benthams.substack.com/p/the-argument-from-nomological-harmony">“ridiculously convincing.”</a>
+      I find that divergence interesting in its own right. At my most polemical, I am tempted to regard
+      the persuasiveness of arguments like this as anthropological evidence disconfirming theism: evidence,
+      at least, that human beings are extraordinarily capable of manufacturing explanatory pressure from
+      conceptual framings that already favor the conclusion. But the essay does not need that polemical
+      judgment to succeed. The argument can be evaluated on its own inferential structure.
+    </p>
+
+    <h2 id="four-hurdles">Four hurdles the argument must clear</h2>
+    <p>
+      A useful way to organize the rest of the discussion is to separate four questions that are often
+      run together. The argument needs favorable answers to all four.
+    </p>
+
+    <div class="table-wrap">
+      <table class="three-col comparison-table">
+        <thead>
+          <tr><th>Hurdle</th><th>Question</th><th>Why it matters</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Hurdle"><strong>1. Coherence</strong></td>
+            <td data-label="Question">Are laws and states sufficiently separable for their “fit” to be an additional relation?</td>
+            <td data-label="Why it matters">If the fit is partly constitutive or representational, there may be no independent coincidence to explain.</td>
+          </tr>
+          <tr>
+            <td data-label="Hurdle"><strong>2. Modality</strong></td>
+            <td data-label="Question">Were mismatched law/state combinations really possible?</td>
+            <td data-label="Why it matters">Surprise requires a relevant contrast class of alternatives, not merely an imagined recombination.</td>
+          </tr>
+          <tr>
+            <td data-label="Hurdle"><strong>3. Probability</strong></td>
+            <td data-label="Question">If mismatch was possible, was harmony actually improbable on naturalism?</td>
+            <td data-label="Why it matters">Possibility alone does not establish low probability.</td>
+          </tr>
+          <tr>
+            <td data-label="Hurdle"><strong>4. Comparison</strong></td>
+            <td data-label="Question">Does theism make this harmony substantially more expected?</td>
+            <td data-label="Why it matters">A hypothesis gains evidential support only by outperforming relevant alternatives, not merely by accommodating the observation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="chapter-transition">The first two hurdles concern whether the alleged explanandum is even well formed. That is where the argument seems most conceptually unstable.</p>
+
+    <header class="ep-part-banner" id="part-2">
+      <span class="ep-part-kicker">Part II</span>
+      <span class="ep-part-title">The Hidden Metaphysics of “Harmony”</span>
+      <span class="ep-part-summary">The argument sounds neutral only if we overlook how much metaphysics is already packed into the idea of independently paired laws and states.</span>
+    </header>
+
+    <h2 id="independence">The independence assumption</h2>
+    <p>
+      The argument from nomological harmony tends to present laws and world-states as though they were two
+      independently chosen ingredients that then happen to fit. That is already a substantive assumption.
+      The relevant modal picture seems to be that we can hold the laws fixed while varying the states or
+      entities more or less freely—or hold the states fixed while varying the laws—and then ask why we
+      landed on one of the rare combinations in which the two successfully interact.
+    </p>
+
+    <p>
+      But why accept that recombination principle? On many views, laws are not an extra item laid alongside
+      reality like a rulebook beside chess pieces. They are descriptions, systematizations, expressions of
+      powers, modal constraints, or structural relations. On such views, the identities and admissible
+      states of things may already be partly connected to the laws or structures in which they figure.
+      Before one can assign surprise to a “match,” the defender must establish that enough independent
+      recombination is metaphysically possible to generate a meaningful space of mismatches.
+    </p>
+
+    <div class="concept-callout">
+      <strong>The key modal question is not merely:</strong> “Can I verbally describe laws L together with
+      state S?” It is: “Does the relevant metaphysics actually license L and S as independently variable
+      possibilities, and if so, with what measure or probability?”
+    </div>
+
+    <h2 id="laws-of-nature">What are laws of nature?</h2>
+    <p>
+      The argument often gains traction by quietly assuming a governing conception of laws: laws as
+      something like metaphysical rules imposed on an otherwise independent reality. But that is only one
+      family of views. Rival accounts alter the status of the supposed harmony dramatically.
+    </p>
+
+    <div class="table-wrap">
+      <table class="three-col comparison-table wide-table">
+        <thead>
+          <tr><th>Conception</th><th>What laws are</th><th>Effect on the harmony question</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Conception"><strong>Humean</strong></td>
+            <td data-label="What laws are">General summaries of the mosaic of particular facts.</td>
+            <td data-label="Effect">The law is extracted from the world, so asking why it “fits” the world risks treating a summary as independent of what it summarizes.</td>
+          </tr>
+          <tr>
+            <td data-label="Conception"><strong>Best-system</strong></td>
+            <td data-label="What laws are">Axioms of the simplest and strongest true systematization.</td>
+            <td data-label="Effect">Fit is partly built into what qualifies a system as a true and successful lawlike summary.</td>
+          </tr>
+          <tr>
+            <td data-label="Conception"><strong>Dispositionalist / necessitarian</strong></td>
+            <td data-label="What laws are">Expressions of powers, essences, necessary connections, or modal structure in things.</td>
+            <td data-label="Effect">Law and entity may be internally related rather than externally matched.</td>
+          </tr>
+          <tr>
+            <td data-label="Conception"><strong>Structuralist</strong></td>
+            <td data-label="What laws are">Mathematically expressible relations or structures instantiated by reality.</td>
+            <td data-label="Effect">The key question becomes one about structure and representation, not the pairing of a detached rulebook with independent pieces.</td>
+          </tr>
+          <tr>
+            <td data-label="Conception"><strong>Governing / primitivist</strong></td>
+            <td data-label="What laws are">Ontologically basic modal governors or constraints.</td>
+            <td data-label="Effect">The harmony question has its strongest foothold here, but the governing ontology must itself be defended rather than smuggled in through analogy.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      On Humean and best-system pictures especially, “why do the laws fit reality?” is close to malformed,
+      because the laws are extracted from reality as part of our best description or systematization of it.
+      They are not independently floating code that then needs to latch on. On dispositionalist or
+      structuralist accounts, the problem may take a different form, but again the relation between law
+      and world need not be a contingent external pairing. The argument therefore cannot present
+      nomological harmony as a metaphysically neutral datum. Its force varies with one's prior theory of
+      laws.
+    </p>
+
+    <h2 id="map-model-world">Map, model, and world</h2>
+    <p>
+      This is where the map/territory problem becomes useful. If laws are even partly representational,
+      the relevant harmony is not like two separately existing objects that happen to coincide. It is more
+      like the unsurprising fact that a well-made map tracks the terrain. The interesting question is not
+      “why is there harmony between map and terrain?” but “how do creatures like us construct maps that
+      capture enough stable structure to be useful?” That is an epistemic question about abstraction,
+      idealization, model selection, measurement, and predictive success. It is not automatically a
+      metaphysical pointer to God.
+    </p>
+
+    <p>
+      Scientific models are selectively built to capture stable structure, usually under restricted
+      domains and idealizations. They do not mirror reality wholesale; they vary in fidelity, scope, and
+      interpretation. If the nomological-harmony argument says, “Look how well the laws fit the world,”
+      one answer is that successful laws and models are the polished outputs of a practice that retains
+      representations that work and rejects or revises those that fail. That does not dissolve every
+      realist question about why modeling succeeds at all, but it undercuts the idea that the success of a
+      scientific representation should be re-described as an independent cosmic coincidence.
+    </p>
+
+    <h2 id="semantics-metaphysics">Semantics is not metaphysics</h2>
+    <p>
+      A Tarskian perspective makes the same point in a different vocabulary. We should distinguish object
+      language from metalanguage, the world from the sentences or formal systems used to describe it, and
+      a theory from the interpretation under which that theory is true of a domain. Once those distinctions
+      are enforced, some formulations of nomological harmony begin to look like category mistakes. They
+      talk as though formal descriptions stood over against the world in the way a legislator stands over
+      citizens.
+    </p>
+
+    <p>
+      But from a semantic or formalist angle, a law statement is not a little metaphysical governor. It is
+      a sentence or mathematical structure within a theory, interpreted in relation to a model or to the
+      world. The “harmony” can therefore be, at least in part, an ordinary satisfaction relation between
+      representation and domain inflated into a metaphysical relation between two independently existing
+      things.
+    </p>
+
+    <div class="core-claim">
+      The first major objection is therefore not simply “laws are descriptions.” It is stronger: the
+      nomological-harmony argument requires a particular relationship among laws, states, and modal
+      possibility. It cannot assume that relationship and then count the resulting appearance of harmony
+      as neutral evidence.
+    </div>
+
+    <p class="chapter-transition">A defender can respond by abandoning the crude picture of two independently paired objects. The argument then becomes more interesting: perhaps the real mystery is the broader intelligibility of nature.</p>
+
+    <header class="ep-part-banner" id="part-3">
+      <span class="ep-part-kicker">Part III</span>
+      <span class="ep-part-title">The Stronger Intelligibility Argument</span>
+      <span class="ep-part-summary">The best reply shifts the discussion from “rules fitting pieces” to the deeper fact that reality admits unified, compressible, mathematically useful description.</span>
+    </header>
+
+    <h2 id="charitable-reformulation">A charitable reformulation</h2>
+    <p>
+      A defender might concede that laws are not detachable rulebooks and still argue that something
+      striking remains. Reality is sufficiently unified, stable, compressible, mathematically tractable,
+      and regular that elegant generalization is possible. Why should a world be so amenable to systematic
+      understanding by finite minds? This is a more sophisticated argument than the crude rulebook-and-pieces
+      formulation, and it deserves to be treated separately rather than as a mere diversion.
+    </p>
+
+    <p>
+      The difficulty is that intelligibility arguments often take the success conditions of theory and
+      redescribe them as mysterious intrinsic features of reality. We call a theory intelligible, unified,
+      compressible, tractable, elegant, or generalizable because those are precisely the features that make
+      it useful as a theory for finite thinkers like us. When someone asks, “Isn’t it amazing that reality
+      is describable in unified and compressible ways?”, part of the answer is that we deliberately search
+      for, construct, retain, and praise descriptions possessing those virtues.
+    </p>
+
+    <h2 id="epistemic-selection">Epistemic selection</h2>
+    <p>
+      The direction of explanation is therefore easy to reverse. The theistic framing is often presented
+      like this: the world is intelligible; that intelligibility is surprising; therefore intelligence is
+      behind it. But a substantial part of what we call intelligibility is already a relation among the
+      world, our cognitive capacities, and our methods of representation. Our theories are shaped around
+      simplicity, scope, compression, tractability, and inferential manageability. It should not surprise
+      us that the theories that survive our scientific practices disproportionately exhibit the very
+      virtues for which those practices select.
+    </p>
+
+    <div class="checkpoint-block">
+      <h3>A less mysterious ordering</h3>
+      <ul>
+        <li>We count as “intelligible” those aspects of the world our cognitive and theoretical practices can successfully regiment.</li>
+        <li>We deliberately build theories around simplicity, scope, compression, prediction, and inferential manageability.</li>
+        <li>We discard, revise, or marginalize representations that fail badly at those tasks.</li>
+        <li>So the intelligibility of successful theories is partly an output of epistemic selection, not simply a brute input supplied by reality.</li>
+      </ul>
+    </div>
+
+    <p>
+      That does not mean reality contributes nothing. The world must contain enough regularity for some
+      modeling to work at all. But the theistic move often inflates that modest fact—some structures in
+      reality are stable enough to support successful modeling—into the much stronger claim that reality
+      is metaphysically pre-arranged for elegant cognition by minds like ours. The inflation does much of
+      the argumentative work.
+    </p>
+
+    <h2 id="embedded-cognition">Embedded cognition</h2>
+    <p>
+      A natural-language analogy makes the point vivid. Imagine someone saying, “Isn’t it astounding that
+      humans can communicate through implicature, pragmatics, and shared context? Surely this cries out for
+      a transcendent explanation.” The right response need not deny that communication is remarkable. It
+      can instead challenge the thin starting model that generates the mystery. If meanings are pictured
+      as private mental atoms and sentences as bare literal encodings, successful communication can look
+      miraculous. Once language is understood as a socially embedded, inferential, context-sensitive
+      practice shaped by shared forms of life, much of the apparent miracle dissolves.
+    </p>
+
+    <p>
+      The intelligibility argument can make an analogous mistake. It begins with a picture on which reality
+      is fundamentally opaque chaos, mind is somehow external to it, and theory is a detached mirror. Then
+      it marvels that mirroring works at all. But we are organisms inside the world. Our cognitive
+      capacities are constrained by the need to track enough structure for action, prediction, and
+      coordination, while our conceptual tools and scientific methods have been historically refined to
+      exploit recurring structure. Once that embeddedness is in view, intelligibility looks less like an
+      inexplicable gift and more like an achievement of situated agents working within a structured world.
+    </p>
+
+    <h2 id="limits-intelligibility">The world is not uniformly intelligible</h2>
+    <p>
+      The premise is also easy to overstate. “Reality is understandable” often means that we have managed
+      to build some representations of some domains that are understandable enough for particular purposes.
+      That is not the same as saying the world comes pre-labeled for ideal rational apprehension. Much of
+      science is difficult, counterintuitive, computationally expensive, or resistant to elegant closed-form
+      treatment. Quantum theory, turbulence, strongly nonlinear systems, consciousness, complex biological
+      development, and macroeconomic dynamics are hardly paradigms of transparent intelligibility.
+    </p>
+
+    <p>
+      Science often advances precisely by using mathematics, instruments, approximation, simulation, and
+      specialized formalisms to cope with what is not naturally intelligible to unaided human cognition.
+      A world containing some highly compressible regularities alongside enormous local complexity is quite
+      different from a world engineered for effortless comprehension.
+    </p>
+
+    <h2 id="residual-question">What remains to be explained</h2>
+    <p>
+      Still, there is a legitimate residue that should not be waved away. Reality must have enough stable
+      structure for inquiry, representation, and successful prediction to get traction at all. The fact
+      that some domains admit powerful mathematics and generalization may remain philosophically
+      interesting even after selection effects are acknowledged. The mistake is to jump from that modest
+      residual question to the much larger conclusion that an intelligent creator is thereby strongly
+      supported.
+    </p>
+
+    <div class="core-claim">
+      The strongest version of the intelligibility argument therefore does not disappear; it becomes more
+      precise. The real question is how much objective regularity the world must possess for bounded,
+      embedded agents to develop successful theories—and whether theism predicts that level and kind of
+      regularity better than its competitors.
+    </div>
+
+    <p class="chapter-transition">Even if we grant a genuine explanandum at this stage, a second major burden remains: why think “God” is a comparatively strong explanation rather than a flexible label that can be attached to almost any outcome?</p>
+
+    <header class="ep-part-banner" id="part-4">
+      <span class="ep-part-kicker">Part IV</span>
+      <span class="ep-part-title">From a Mystery to God</span>
+      <span class="ep-part-summary">An unexplained phenomenon is not yet evidence for theism. The comparative inference is where much of the argumentative burden actually lies.</span>
+    </header>
+
+    <h2 id="argument-template">The recurring argument template</h2>
+    <p>
+      Nomological harmony seems to instantiate a portable argumentative template that appears throughout
+      philosophical apologetics. The target phenomenon changes, but the inferential pattern often remains
+      remarkably stable.
+    </p>
+
+    <div class="checkpoint-block">
+      <ol>
+        <li>Isolate some phenomenon.</li>
+        <li>Describe it as deeply surprising, brute, or resistant to naturalistic explanation.</li>
+        <li>Introduce theism as a possible high-level explanation.</li>
+        <li>Quietly slide from “possible” or “compatible with” to “best” or “actual.”</li>
+        <li>Reinterpret any later natural explanation as merely the means by which God acted.</li>
+        <li>When the original gap closes, relocate the mystery one level up.</li>
+      </ol>
+    </div>
+
+    <p>
+      The complaint is not merely the familiar accusation of “God of the gaps.” It is more specific. The
+      gap can be manufactured by a tendentious metaphysics, exaggerated by an overstatement of what
+      naturalism must predict, and then treated as resolved once theism is verbally associated with the
+      phenomenon. If the original explanatory pressure depends on construing laws as quasi-Platonic
+      prescriptions floating free of the world, for example, theism is not solving a neutral datum. It is
+      cashing out a problem introduced by the argument's own framing.
+    </p>
+
+    <h2 id="ratcheting">Explanatory ratcheting</h2>
+    <p>
+      I see the same structure outside technical apologetics. I once heard a pastor call a person's healed
+      bone a miracle. When the biological mechanisms of bone healing were acknowledged, the claim shifted:
+      perhaps the miracle was that bones can heal at all. In another case, a cancer remission was described
+      as miraculous; when medical explanation entered the picture, the miracle became the doctors' ability
+      to know how to treat cancer. The explanatory target had moved upward rather than disappeared.
+    </p>
+
+    <p>
+      That migration is the important feature. If one gap closes, the argument can ratchet upward: not this
+      healing, then healing as such; not this remission, then the existence of medical knowledge; not this
+      design feature, then the laws; not the laws, then their intelligibility; not intelligibility, then
+      the very possibility of rational inference. The explanandum is repeatedly redescribed at a higher
+      level of abstraction whenever lower-level accounts improve.
+    </p>
+
+    <p>
+      This makes the strategy unusually resilient because it is not committed to any particular empirical
+      gap. The price of that resilience is that the explanation becomes thinner and less discriminating.
+      The more readily an account can be moved to cover whatever explanatory level remains, the harder it
+      becomes to know what observation would count against it.
+    </p>
+
+    <h2 id="independence-evidence">Are the arguments evidentially independent?</h2>
+    <p>
+      Fine-tuning, psychophysical harmony, moral knowledge, consciousness, rationality, nomological
+      harmony, mathematical applicability, beauty, and related arguments can all be presented as separate
+      evidential lines. But apparent multiplicity does not automatically produce cumulative force. If many
+      arguments depend on the same questionable assumptions—manufactured surprise, an undefined naturalistic
+      probability space, and a very permissive theistic likelihood—then their evidential failures may be
+      correlated.
+    </p>
+
+    <p>
+      The precise point is not that “ten arguments are literally one argument.” It is that their evidential
+      contributions cannot simply be multiplied as though they were conditionally independent. If the same
+      inferential weakness recurs across multiple target domains, counting each target as an independent
+      confirmation risks double-counting the shared premise. The multiplicity may therefore be more
+      rhetorical than evidential.
+    </p>
+
+    <p>
+      This matters because theism can function as an explanatory universal solvent. If X happens, God
+      intended it; if X is lawlike, God authored the laws; if X is random, God chose to work through
+      indeterminacy; if X receives a natural explanation, God created the natural process; if X lacks a
+      natural explanation, God explains the gap. A framework capable of absorbing every evidential state
+      may still be true, but sheer flexibility is not itself a virtue. It can indicate low discriminatory
+      power.
+    </p>
+
+    <h2 id="naturalism-cant">What “naturalism cannot explain X” may really mean</h2>
+    <p>
+      This is also why the phrase “naturalism cannot explain X” deserves much more scrutiny than it usually
+      receives. Very often the claim actually being supported is weaker: naturalism has not yet fully
+      explained X; there is no consensus explanation of X; current accounts leave residual philosophical
+      questions; or the speaker finds available naturalistic explanations intellectually or existentially
+      unsatisfying. Those are all importantly different from the modal claim that naturalism cannot explain
+      X in principle.
+    </p>
+
+    <p>
+      And even the strongest version would still leave the comparative problem untouched. From “naturalism
+      cannot explain X” it does not follow that “theism explains X.” The latter requires an account with
+      its own constraints, expectations, explanatory costs, and reasons for preferring this outcome over
+      relevant alternatives.
+    </p>
+
+    <h2 id="prediction">Compatibility is not prediction</h2>
+    <p>
+      The crucial distinction is between accommodation and prediction. A hypothesis can be compatible with
+      an observation without making that observation especially likely. Saying “God could have wanted X”
+      establishes, at most, that X can be fitted into a theistic story. It does not yet show that X is more
+      expected on theism than on competing views.
+    </p>
+
+    <div class="formula-callout">
+      Evidential support requires something like \(P(E\mid T) > P(E\mid N)\), not merely \(P(E\mid T) > 0\).
+    </div>
+
+    <p>
+      This point sharpens the objection. A sophisticated defender need not claim that theism predicts only
+      one possible world. Broad theories can permit many outcomes while assigning them different
+      probabilities. The problem is instead that bare theism often arrives without a sufficiently
+      constrained account of divine goals to establish a meaningful likelihood for the observed harmony.
+      The defender must show, rather than merely narrate after the fact, that a harmonious law-governed
+      world of roughly this kind is substantially more expected given God.
+    </p>
+
+    <h2 id="divine-choice">The divine-choice problem</h2>
+    <p>
+      Fine-tuning makes the issue especially visible. Theism is often treated as though it reduces
+      arbitrariness, when it may instead relocate or expand it. Replace “Why these physical constants?”
+      with a divine agent and the space of questions does not disappear: Why did God choose these constants?
+      Why this kind of universe? Why embodied biological life? Why create life through cosmological
+      fine-tuning rather than directly? Why this level of suffering, waste, and indirection? Why a
+      law-governed universe at all rather than direct divine sustenance?
+    </p>
+
+    <p>
+      Under a bare naturalistic setup, perhaps we are considering some fixed class of laws or constants and
+      asking about their values. Under theism, by contrast, the apparent freedom can become much larger.
+      God could create different laws, different constants, different dimensionalities, no stable matter,
+      minds without biology, life under radically different physical regimes, or a world in which no
+      fine-tuned intermediary is required. If explanatory flexibility is the issue, theism may enlarge the
+      space of possibilities rather than narrow it.
+    </p>
+
+    <p>
+      That produces the neglected problem of predictive looseness. Why think this life-permitting,
+      mathematically describable, law-governed structure is especially expected on theism rather than any
+      of the countless other ways an unlimited deity might realize value, minds, order, or moral agency?
+      A good explanation should not merely permit the data; it should make the data more expectable than
+      relevant alternatives do.
+    </p>
+
+    <p>
+      In response, theistic explanations often accumulate auxiliary claims: God values embodied creatures,
+      elegant laws, stable causation, discoverability, free processes, gradual emergence, hiddenness, or
+      some particular balance between suffering and moral goods. Any one of these claims might be
+      defensible, but the evidential argument cannot simply add them after the observation and then treat
+      the resulting package as if bare theism had predicted the data all along. The more such preferences
+      are introduced post hoc, the more the explanation risks becoming patchwork.
+    </p>
+
+    <div class="core-claim">
+      The actual inference is therefore much stronger than “naturalism struggles with X, and theism can
+      explain X.” It must be: naturalism struggles with X, while a sufficiently specified theism makes X
+      likely enough, specifically enough, and non-arbitrarily enough to count as a superior explanation.
+      That stronger comparative claim is where the burden lies.
+    </div>
+
+    <p class="chapter-transition">With those general distinctions in place, the chess analogy can now be evaluated as a concrete model of the argument rather than as an independent objection.</p>
+
+    <header class="ep-part-banner" id="part-5">
+      <span class="ep-part-kicker">Part V</span>
+      <span class="ep-part-title">Why the Chess Analogy Fails</span>
+      <span class="ep-part-summary">The analogy is rhetorically effective because it imports human-authored, prescriptive rules into the case of nature. That is also why it is philosophically dangerous.</span>
+    </header>
+
+    <h2 id="constitutive-rules">Constitutive rules</h2>
+    <p>
+      Chess rules are constitutive norms: they partly create the game and help determine the functional
+      identities of its pieces. A bishop is a bishop partly because of the role it occupies in the
+      rule-governed practice. Physics is not obviously like that. To treat physical laws as analogous to
+      game rules already builds in a heavyweight picture of laws as something like prescriptions imposed
+      upon otherwise independent material.
+    </p>
+
+    <div class="table-wrap">
+      <table class="three-col comparison-table wide-table">
+        <thead>
+          <tr><th>Feature</th><th>Chess rules</th><th>Scientific laws</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Feature"><strong>Origin</strong></td><td data-label="Chess rules">Conventionally stipulated and human-authored.</td><td data-label="Scientific laws">Discovered, inferred, modeled, or metaphysically interpreted; authorship is precisely what is in dispute.</td></tr>
+          <tr><td data-label="Feature"><strong>Normativity</strong></td><td data-label="Chess rules">Tell players what moves count as legal within the practice.</td><td data-label="Scientific laws">Do not straightforwardly issue commands or obligations to matter.</td></tr>
+          <tr><td data-label="Feature"><strong>Constitutive role</strong></td><td data-label="Chess rules">Partly determine what it is to be a bishop, rook, legal position, checkmate, and so on.</td><td data-label="Scientific laws">Whether they constitute, govern, describe, or summarize physical entities is a contested metaphysical question.</td></tr>
+          <tr><td data-label="Feature"><strong>Representation</strong></td><td data-label="Chess rules">A conventional rule system for an artifact practice.</td><td data-label="Scientific laws">Embedded in theoretical models involving idealization, measurement, interpretation, and domain restrictions.</td></tr>
+          <tr><td data-label="Feature"><strong>Design inference</strong></td><td data-label="Chess rules">Human design is independently known.</td><td data-label="Scientific laws">Divine design is the conclusion being argued for and therefore cannot be imported from the game case.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="chess-dilemma">The chess dilemma</h2>
+    <p>
+      The analogy collapses in one of two directions. If we take chess pieces in their functional sense,
+      then the “fit” between pieces and rules is not surprising at all, because the pieces are partly
+      individuated through the rules. The physical token is incidental: a bishop can be wood, plastic, a
+      mark on paper, a digital icon, or a purely imagined object. What matters is its role in the formal
+      system. In that case, the analogy does not establish a contingent coordination requiring a designer.
+    </p>
+
+    <p>
+      If, instead, the analogy insists that the pieces are genuinely independent physical objects that
+      happen to be paired with a rulebook, then the alleged “chess pieces” cease to be chess pieces in the
+      relevant sense. They are merely bits of wood or plastic to which someone later assigns a role. The
+      analogy therefore faces a dilemma: understand the pieces functionally and their fit is internal to
+      the game; understand them independently and the case no longer resembles chess in the way needed by
+      the argument.
+    </p>
+
+    <div class="concept-callout">
+      <strong>The dilemma:</strong> if the rules partly constitute the pieces, their fit is not an extra
+      coincidence. If the pieces are independent of the rules, they are not yet chess pieces in the sense
+      required by the analogy.
+    </div>
+
+    <h2 id="rule-equivocation">Equivocation on “rule”</h2>
+    <p>
+      The analogy also trades on an equivocation. In ordinary life, “rule” often means a prescription or
+      stipulation: game rules, legal rules, classroom rules. The analogy then quietly extends that image to
+      laws of nature, as if physical laws were similarly imposed instructions that reality obeys. But in
+      science, laws may instead be inferred from patterns, theory-laden, revisable, representational, or
+      explanatory and predictive summaries. These are not remotely the same concepts simply because the
+      English word “rule” can be used for both.
+    </p>
+
+    <p>
+      Once the meanings are blurred, the rhetorical inference becomes easy: just as chess pieces are paired
+      with chess rules by a mind, physical entities are paired with physical laws by a mind. But that is
+      not a discovery. It is a projection of the artifact model onto nature. The intentionality is already
+      present in the source analogy and is then smuggled into the target case.
+    </p>
+
+    <p>
+      Scientific laws are also theory-dependent in an important sense. They are articulated within
+      representational frameworks involving idealization, scale, background theory, measurement
+      conventions, and explanatory aims. To ask why the “rules” fit the “entities” can therefore be
+      backwards in something like the way it would be backwards to ask why the contours on a topographic
+      map happen to match the mountain. The map was constructed to represent those contours. Likewise, if
+      a scientific law is in significant part an inferred and model-relative representation, its fit with
+      observed structure is not automatically an independent coincidence.
+    </p>
+
+    <h2 id="grant-chess">Even granting the analogy</h2>
+    <p>
+      Suppose, however, that we grant the theist the governing picture and say that God intentionally
+      matched these entities with these rules. That still explains surprisingly little by itself. The
+      explanatory burden is merely displaced into divine psychology and divine choice. Why these rules
+      rather than others? Why this kind of universe? Why deterministic or probabilistic laws in these
+      proportions? Why elegant and discoverable regularities if divine hiddenness matters? Why embodied,
+      law-bound creatures rather than direct divine sustenance?
+    </p>
+
+    <p>
+      Because the answers are not supplied by bare theism, the account again tends to acquire auxiliary
+      preferences: God values elegance, stable causation, creaturely freedom, discovery, gradual
+      development, hiddenness, regularity, or some combination of them. That may eventually become a
+      substantive theological model, but until those commitments are independently motivated, “God matched
+      the rules to the entities” largely restates the pairing in intentional language rather than explaining
+      why this particular pairing should have been expected.
+    </p>
+
+    <p class="chapter-transition">Computation makes the same problem even clearer because it forces us to distinguish several very different senses of “rule,” “state,” “representation,” and “implementation.”</p>
+
+    <header class="ep-part-banner" id="part-6">
+      <span class="ep-part-kicker">Part VI</span>
+      <span class="ep-part-title">A Computational Perspective</span>
+      <span class="ep-part-summary">Formal systems show why “a rulebook matched to pieces” is too crude a model for the relationship among laws, states, semantics, and physical realization.</span>
+    </header>
+
+    <h2 id="rule-kinds">“Rule” names many different things</h2>
+    <p>
+      From the standpoint of computation, a rule is not automatically a little command imposed on passive
+      stuff. “Rule” can refer to a transition function in an automaton, an update rule in a cellular
+      automaton, an inference rule in a formal calculus, a production rule in a grammar, an algorithmic
+      procedure, a constraint on admissible states, or simply a compact description of input-output
+      behavior. These are not one unified metaphysical kind. The nomological argument becomes unstable when
+      it slides among them while preserving the intuitive force of ordinary prescriptive rules.
+    </p>
+
+    <h2 id="codefined">Rules and states can be co-defined</h2>
+    <p>
+      In computation, the relation between rules and the things governed by them is often not one of
+      external matching. Consider a finite automaton: the states, alphabet, and transition function are
+      defined together as a formal system. Asking why the transition rules “happen to fit” those states is
+      confused because the state identities are partly individuated by their place in the transition
+      structure. The pairing is internal to the formalism.
+    </p>
+
+    <p>
+      The same point applies to a Turing machine. Its transition table is not an externally imposed lawbook
+      accidentally matched to a pre-existing tape ontology. The machine description specifies a whole
+      computational system. Change the transition table sufficiently and one does not have “the same
+      machine with different rules”; one has a different machine description. Formal states and rules are
+      frequently co-defined rather than independently selected and then marvelously paired.
+    </p>
+
+    <h2 id="syntax-semantics">Syntax is not semantics</h2>
+    <p>
+      A second distinction is between syntax and semantics. Computational rules are usually syntactic:
+      they specify operations on symbols or states. Whether those symbols represent anything is a further
+      question. A formal system can be perfectly well-defined without denoting a physical reality. A
+      rulebook does not magically latch onto the world. Interpretation, encoding, semantics, and
+      implementation all matter.
+    </p>
+
+    <p>
+      This is precisely where the analogy to scientific law becomes too simple. Scientific laws are not
+      bare transition tables sitting in a void. They belong to theoretical models that require
+      interpretation, idealization, parameterization, measurement conventions, and domain restrictions.
+      The relevant relation is therefore closer to “formal structure used under an interpretation to model
+      recurring patterns” than to “rules matched to pieces.” Once the relation is described accurately, it
+      is much less obviously mysterious.
+    </p>
+
+    <h2 id="multiple-realizability">Multiple realizability</h2>
+    <p>
+      Computer science also makes the substrate issue explicit. The same abstract computation can be
+      implemented in many different physical media. A chess program can run on silicon, be simulated with
+      relays, be executed with marks on paper, or in principle be carried out by human clerks following a
+      procedure. The abstract organization matters more than the material token.
+    </p>
+
+    <p>
+      That observation further weakens the rhetoric of “these rules fitting these pieces.” The material
+      pieces are often irrelevant to the rule structure. What matters is a state space and a pattern of
+      permitted transformations. But once the issue is recast in those terms, the wonder of a rulebook
+      mysteriously matched to a particular set of objects loses much of its grip.
+    </p>
+
+    <h2 id="complexity">Complexity and tractability</h2>
+    <p>
+      Complexity theory also complicates intelligibility arguments. Not every formal rule system is equally
+      tractable, compressible, predictable, or informative. Some systems are easy to simulate; others are
+      computationally expensive, chaotic, universal, or effectively irreducible in the sense that there may
+      be no useful shortcut to predicting their detailed behavior beyond stepping through the dynamics.
+    </p>
+
+    <p>
+      This matters because “Isn't it remarkable that the world has elegant, tractable rules?” is partly a
+      selection-effect question. We preferentially understand, retain, and praise theories that compress
+      phenomena and support feasible inference. A world may contain immense local complexity while still
+      admitting some coarse-grained regularities that bounded agents can exploit. That is enough for
+      science to begin. A maximally incompressible or computationally useless representation would not
+      function well as a theory for us, so successful theories are predictably biased toward computational
+      virtues.
+    </p>
+
+    <h2 id="implementation">Rules do not explain implementation</h2>
+    <p>
+      Formal rules also do not explain their own physical implementation. An abstract automaton description
+      is not the same thing as a physical system that realizes it. Knowing the transition function of a
+      cellular automaton does not explain why some physical medium instantiates that structure. Likewise,
+      saying “God wrote the rules” does not by itself explain why there is a world instantiating them, why
+      it instantiates these rather than others, or why the implementation has the specific features we
+      observe. The move from formal description to metaphysical source is doing much more work than the
+      analogy acknowledges.
+    </p>
+
+    <h2 id="commands">Rules are not necessarily commands</h2>
+    <p>
+      Finally, computation undermines the prescriptive reading of rule. In many computational systems, a
+      “rule” is simply a concise specification of state evolution. Nothing is being commanded, and the
+      system does not “obey” in the normative sense. The rule captures a transition structure. That should
+      make us especially suspicious of importing the everyday notion of prescriptions into nature merely
+      because both contexts use the word “rule.”
+    </p>
+
+    <div class="concept-callout">
+      The argument risks equivocating among at least four notions: rules as prescriptions, rules as
+      constitutive stipulations, rules as syntactic transition functions, and laws as descriptive or
+      explanatory summaries. The word is stable while the concept changes.
+    </div>
+
+    <p>
+      From a computational perspective, then, the chess analogy is deeply misleading. States and transition
+      rules can be specified together, their “fit” can be internal to a formalism, syntax does not determine
+      semantics, the same abstract structure can be multiply realized, and tractability is partly shaped by
+      epistemic selection among bounded reasoners. None of this proves that nature is metaphysically
+      Humean, computational, or merely descriptive. It does show that the simple picture of passive pieces
+      being externally paired with commands is far too coarse to carry the theological inference.
+    </p>
+
+    <p class="chapter-transition">The critique can now be stated constructively. What would a serious nomological-harmony argument have to establish in order to survive these objections?</p>
+
+    <header class="ep-part-banner" id="part-7">
+      <span class="ep-part-kicker">Part VII</span>
+      <span class="ep-part-title">What a Successful Argument Would Need</span>
+      <span class="ep-part-summary">The point is not that every possible harmony argument must fail. It is that the existing inference needs much more structure than the rulebook intuition provides.</span>
+    </header>
+
+    <p>
+      A serious version of the argument would need to do at least four things. First, it would have to
+      defend an ontology of laws and states on which their relationship is sufficiently external for
+      “harmony” to constitute an additional fact. Second, it would have to defend a modal space containing
+      genuine mismatched alternatives rather than merely verbally recombined descriptions. Third, it would
+      need some principled way of saying that harmonious combinations are improbable under the relevant
+      naturalistic hypothesis. And fourth, it would need a sufficiently constrained theology to show that
+      harmony of the observed kind is appreciably more expected given God.
+    </p>
+
+    <div class="table-wrap">
+      <table class="three-col comparison-table wide-table">
+        <thead>
+          <tr><th>Burden</th><th>What must be established</th><th>What is not enough</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Burden"><strong>Ontology</strong></td>
+            <td data-label="What must be established">A defensible account on which laws and world-states can stand in the relevant contingent matching relation.</td>
+            <td data-label="What is not enough">A game analogy that simply presupposes independently authored rules and pieces.</td>
+          </tr>
+          <tr>
+            <td data-label="Burden"><strong>Modality</strong></td>
+            <td data-label="What must be established">A principled class of genuinely possible disharmonious law/state combinations.</td>
+            <td data-label="What is not enough">The fact that we can describe arbitrary recombinations in language.</td>
+          </tr>
+          <tr>
+            <td data-label="Burden"><strong>Naturalistic likelihood</strong></td>
+            <td data-label="What must be established">Why harmony is actually improbable on the naturalistic alternative being compared.</td>
+            <td data-label="What is not enough">Calling harmony “surprising” without a measure, mechanism, or principled probability model.</td>
+          </tr>
+          <tr>
+            <td data-label="Burden"><strong>Theistic likelihood</strong></td>
+            <td data-label="What must be established">Why a sufficiently specified deity would have independent reason to produce a world with this kind of harmony.</td>
+            <td data-label="What is not enough">A post hoc story showing only that God could have wanted it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Notice how different this is from merely identifying an interesting feature of science. Even if the
+      universe possesses impressive regularity, mathematical structure, or compressibility, those facts do
+      not become theistic evidence until a comparative probability claim has been earned. The defender must
+      show both that the explanandum is real and that theism is appropriately constrained enough to predict
+      it. Otherwise, explanatory flexibility is mistaken for explanatory success.
+    </p>
+
+    <header class="ep-part-banner" id="conclusion">
+      <span class="ep-part-kicker">Conclusion</span>
+      <span class="ep-part-title">The Surprise Has to Be Earned</span>
+      <span class="ep-part-summary">The deepest problem is not that nomological harmony asks a philosophical question; it is that it moves too quickly from a contested framing of that question to a theological answer.</span>
+    </header>
+
+    <p>
+      The nomological-harmony argument begins with an arresting image: nature resembles a box of pieces
+      whose rulebook happens to fit them perfectly. But the image is doing too much. Depending on one's
+      metaphysics of laws, the alleged relation may be descriptive, constitutive, structural, dispositional,
+      or genuinely governing. Until that issue is resolved, the “fit” cannot simply be treated as a neutral
+      coincidence awaiting explanation.
+    </p>
+
+    <p>
+      Even after granting a genuine residual puzzle about the world's regularity or intelligibility, the
+      comparative inference remains. An explanatory gap in naturalism is not automatically positive
+      evidence for theism, and a story on which God could produce the observation is not the same thing as
+      a model on which the observation was independently likely. Bare theism can generate an enormous
+      space of possible divine choices, so the very flexibility that makes it easy to accommodate the data
+      also makes its predictive advantage difficult to establish.
+    </p>
+
+    <p>
+      The chess and computational analogies clarify why the original intuition is unstable. Constitutive
+      game rules, syntactic transition functions, scientific laws, semantic interpretations, and physical
+      implementations are different things. Treating them all as instances of a single idea—an externally
+      authored “rule” governing passive “pieces”—creates the appearance of harmony by collapsing distinctions
+      that the argument actually needs to defend.
+    </p>
+
+    <p>
+      So the most important lesson is methodological. Before asking what explains a surprising harmony, we
+      have to establish that there is an independent harmony to explain, that disharmony belongs to a
+      principled possibility space, that the observed fit is genuinely improbable under the relevant
+      naturalistic view, and that a specified theism predicts it substantially better. Until those burdens
+      are met, the argument does not uncover a deep cosmic coincidence and then explain it with God. It
+      risks manufacturing the coincidence through its metaphysics and then using theism to fill the gap it
+      created.
+    </p>
+
+    <p><a href="#top">Back to top</a></p>
+  </div>
+</article>
