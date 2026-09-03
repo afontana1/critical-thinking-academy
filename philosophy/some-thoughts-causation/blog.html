@@ -610,45 +610,41 @@
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <article class="ep-post">
-<p>
-  Causation is an ambiguous concept. The particular meaning depends on its
-  context of use. I will explore some of these concepts in detail, in particular
-  the counterfactual and configurational views:
-</p>
-<p>&nbsp;</p>
+<h1 id="top">Some Thoughts on Causation</h1><p class="chapter-lead">Causation is an ambiguous concept: its meaning depends on the context in which the term is used. In what follows, I explore several of these meanings in detail, beginning with counterfactual and interventionist approaches and then turning to configurational and contrastive accounts of singular causation.</p><div class="core-claim"><strong>Guiding problem.</strong> We routinely use the word <em>cause</em> for at least two different inferential tasks: estimating general causal effects and explaining what caused one particular event. The essay asks how those tasks differ, how several major frameworks approach them, and what must be held fixed for a causal claim to be intelligible.</div>
+
 <div class="separator" style="clear: both; text-align: center">
-  <a
-    href="img/causation.jpg"
-    imageanchor="1"
-    style="margin-left: 1em; margin-right: 1em"
-    ><img
-      border="0"
-      data-original-height="686"
-      data-original-width="1140"
-      height="342"
-      src="img/causation.jpg"
-      width="567"
-  /></a>
-</div>
-<br />
-<p></p>
-<p>
+<a href="img/causation.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="Causation diagram" border="0" data-original-height="686" data-original-width="1140" height="342" src="img/causation.jpg" width="567"/></a>
+</div><nav aria-label="Table of contents" class="ep-toc">
+<h2>Contents</h2>
+<div class="ep-toc-part"><p><a href="#part-1">Part I — Causal Effects and Intervention</a></p><ul><li><a href="#potential-outcomes">Potential outcomes and ATE</a></li><li><a href="#pearl">Pearl and structural causal models</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-2">Part II — General Effects and Singular Causes</a></p><ul><li><a href="#a-in-ate">The “A” in ATE</a></li><li><a href="#singular-causation">The singular-causation problem</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-3">Part III — Mackie: INUS Conditions and Causal Fields</a></p><ul><li><a href="#inus">INUS conditions</a></li><li><a href="#causal-field">Causal fields and relevance</a></li><li><a href="#priority">Causal priority</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-4">Part IV — Wright: NESS, Torts, and Responsibility</a></p><ul><li><a href="#responsibility">Causation and responsibility</a></li><li><a href="#but-for">But-for and overdetermination</a></li><li><a href="#ness">The NESS test</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-5">Part V — Schaffer: Contrastive Causation</a></p><ul><li><a href="#contrast">Contrast classes</a></li><li><a href="#events">Event boundaries</a></li><li><a href="#worlds">Possible worlds and similarity</a></li><li><a href="#absences">Absence causation</a></li><li><a href="#transitivity">Transitivity</a></li></ul></div>
+<div class="ep-toc-part"><p><a href="#part-6">Part VI — Causation in Systems</a></p></div>
+<div class="ep-toc-part"><p><a href="#part-7">Part VII — Synthesis: Relevance, Scale, and Explanation</a></p></div>
+<div class="ep-toc-part"><p><a href="#further-reading">Further Reading</a></p></div>
+</nav><div class="table-wrap"><table class="comparison-table wide-table"><thead><tr><th>Lens</th><th>Primary question</th><th>What the reader should watch for</th></tr></thead><tbody>
+<tr><td data-label="Lens"><strong>Potential outcomes</strong></td><td data-label="Primary question">What difference would an intervention make?</td><td data-label="What to watch for">Counterfactual outcomes, populations, averages, and heterogeneity.</td></tr>
+<tr><td data-label="Lens"><strong>Mackie / INUS</strong></td><td data-label="Primary question">What condition was indispensable within a sufficient configuration?</td><td data-label="What to watch for">Multiple sufficient routes, background conditions, and the causal field.</td></tr>
+<tr><td data-label="Lens"><strong>Wright / NESS</strong></td><td data-label="Primary question">Was a condition a necessary element of an actually sufficient set?</td><td data-label="What to watch for">Overdetermination, preemption, factual causation, and responsibility.</td></tr>
+<tr><td data-label="Lens"><strong>Schaffer</strong></td><td data-label="Primary question">Why c rather than c* and e rather than e*?</td><td data-label="What to watch for">Contrast classes, event descriptions, absences, and transitivity.</td></tr>
+<tr><td data-label="Lens"><strong>Systems</strong></td><td data-label="Primary question">How do shocks and interactions propagate through a dynamic system?</td><td data-label="What to watch for">Feedback, exogeneity, lagged effects, and system boundaries.</td></tr>
+</tbody></table></div>
+<br/>
+
+<header class="ep-part-banner" id="part-1">
+<span class="ep-part-kicker">Part I</span>
+<h2 class="ep-part-title">Causal Effects and Intervention</h2>
+<span class="ep-part-summary">The empirical benchmark: counterfactual outcomes, interventions, and causal models.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> How do empirical disciplines formalize a causal effect?</p><p class="chapter-path"><strong>Path:</strong> Rubin and potential outcomes → ATE → Pearl and structural causal models.</p></div><h3 id="potential-outcomes">Potential outcomes and the Average Treatment Effect</h3><p>
   If you are trained in Econometrics, Statistics, Epidemiology, or biomedical
   sciences, causation is normally thought of as a
-  <a href="https://en.wikipedia.org/wiki/Counterfactual_conditional"
-    >counterfactual conditional</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Counterfactual_conditional">counterfactual conditional</a>
   within the framework of
-  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5841618/"
-    >potential outcomes</a
-  >. This was introduced by Donald Rubin and others when they proposed something
+  <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5841618/">potential outcomes</a>. This was introduced by Donald Rubin and others when they proposed something
   known as the
-  <a href="https://en.wikipedia.org/wiki/Rubin_causal_model"
-    >Rubin Causal Model</a
-  >. Causation within this framework is based on the idea that there is "<a
-    href="https://plato.stanford.edu/entries/causation-mani/"
-    >no causation without manipulation</a
-  >"; you cannot infer causation without intervening on a model. These methods
+  <a href="https://en.wikipedia.org/wiki/Rubin_causal_model">Rubin Causal Model</a>. Causation within this framework is based on the idea that there is "<a href="https://plato.stanford.edu/entries/causation-mani/">no causation without manipulation</a>"; you cannot infer causation without intervening on a model. </p><p>These methods
   seek to address the fundamental problem of causal inference: when intervening
   on a set of units who will receive a treatment, we fundamentally cannot
   observe the counterfactual state of the world where they did not receive the
@@ -656,31 +652,14 @@
   Mathematically we can describe it as:
 </p>
 <div class="separator" style="clear: both; text-align: center">
-  <a
-    href="img/causation-1.jpg"
-    imageanchor="1"
-    style="margin-left: 1em; margin-right: 1em"
-    ><img
-      border="0"
-      data-original-height="492"
-      data-original-width="900"
-      height="286"
-      src="img/causation-1.jpg"
-      width="523"
-  /></a>
+<a href="img/causation-1.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="Causation diagram" border="0" data-original-height="492" data-original-width="900" height="286" src="img/causation-1.jpg" width="523"/></a>
 </div>
 <!--/wp:paragraph-->
-
 <!--wp:image {"id":335,"sizeSlug":"large","linkDestination":"none"}-->
 <figure class="wp-block-image size-large">
-  <img
-    alt=""
-    class="wp-image-335"
-    src="https://thecriticalthinkingacademycom.files.wordpress.com/2023/11/cause-2.png?w=217"
-  />
+<img alt="Causation diagram" class="wp-image-335" src="https://thecriticalthinkingacademycom.files.wordpress.com/2023/11/cause-2.png?w=217"/>
 </figure>
 <!--/wp:image-->
-
 <!--wp:paragraph-->
 <p>
   That is, the expected value of the treatment effect as the expectation of the
@@ -689,132 +668,89 @@
   Effect (ATE) across a representative sample. This is what researchers seek to
   discover when conducting empirical studies whether it be in medicine, social
   sciences, or public policy. Rubin defines a causal effect as:
-</p>
+</p><div class="concept-callout"><strong>Important distinction.</strong> The potential-outcomes framework can define a unit-level causal effect, but both potential outcomes for the same unit cannot be observed at once. An estimated ATE is therefore a population-level summary; by itself it does not establish what caused one particular unit’s realized outcome.</div>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     Intuitively, the causal effect of one treatment, E, over another, C, for a
-    particular unit and an interval of time from&nbsp;
-    <img
-      alt="t_{1}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"
-    />&nbsp;to&nbsp;
-    <img
-      alt="t_{2}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"
-    />&nbsp;is the difference between what would have happened at time&nbsp;<img
-      alt="t_{2}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"
-    />&nbsp;if the unit had been exposed to E initiated at&nbsp;
-    <img
-      alt="t_{1}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"
-    />&nbsp;and what would have happened at&nbsp;<img
-      alt="t_{2}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"
-    />&nbsp;if the unit had been exposed to C initiated at&nbsp;<img
-      alt="t_{1}"
-      src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"
-    />: 'If an hour ago I had taken two aspirins instead of just a glass of
+    particular unit and an interval of time from 
+    <img alt="t_{1}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"/> to 
+    <img alt="t_{2}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"/> is the difference between what would have happened at time <img alt="t_{2}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"/> if the unit had been exposed to E initiated at 
+    <img alt="t_{1}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"/> and what would have happened at <img alt="t_{2}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/749fee708b41e7079eabd50d61c8bf3e965db16f"/> if the unit had been exposed to C initiated at <img alt="t_{1}" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cb0768c0bd659f2f84fb5ef9f4b74f336123d915"/>: 'If an hour ago I had taken two aspirins instead of just a glass of
     water, my headache would now be gone,' or 'because an hour ago I took two
     aspirins instead of just a glass of water, my headache is now gone.' Our
     definition of the causal effect of the E versus C treatment will reflect
     this intuitive meaning."
   </p>
-  <!--/wp:paragraph-->
+<!--/wp:paragraph-->
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="pearl">Pearl and structural causal models</h3><p>
   You may also come across something known as
-  <a href="https://plato.stanford.edu/entries/causal-models/do-calculus.html"
-    >do-calculus</a
-  >, formalized by Judea Pearl, which generalizes this notion of intervention
+  <a href="https://plato.stanford.edu/entries/causal-models/do-calculus.html">do-calculus</a>, formalized by Judea Pearl, which generalizes this notion of intervention
   over a <a href="https://en.wikipedia.org/wiki/Causal_model">causal model</a>.
   The basic idea behind this is that causality is fundamentally unidirectional,
   but the current formalization based on statistical models rely on equality
   operators, we can never truly rule out whether X -&gt; Y or Y -&gt; X;
-  Equality allows for both interpretations. Furthermore, it is difficult to
+  Equality allows for both interpretations. </p><p>Furthermore, it is difficult to
   account for confounders, but in Pearl's framework you can explicitly model the
   pathways between hypothetical factors within your model. You can also do this
   in Structural Equation Modeling (SEM) but Pearl generalizes beyond the
-  assumptions of that set of models. Pearl's framework is rich in that it can
+  assumptions of that set of models. </p><p>Pearl's framework is rich in that it can
   encode causal assumptions (making them testable), explicitly controls
   confounding variables, gives us a way of measuring direct/indirect effects
   through the use of mediation analysis, allows us to test for external validity
   and identify sample selection bias, and algorithmically discovers causal
   effects (assuming the model is properly specified). We can summarize some of
   these ideas from Rubin and Pearl with Pearl's causal hierarchy:
-</p>
+</p><div class="concept-callout"><strong>Clarification on directionality.</strong> A directed causal graph encodes a proposed causal direction; do-calculus then supplies rules for reasoning about interventions and identifying causal quantities under those assumptions. The graph and its assumptions therefore do the work of distinguishing X → Y from Y → X; the calculus does not infer direction merely because ordinary statistical equations use equality signs.</div>
 <p>
   These frameworks are incredibly powerful and are part of my basic frame of
   reference when engaging in empirical analyses. However, I am not going to
   cover this framework in depth right now, even though I hold it dear to my
   heart, given my training in econometrics and statistics. For an in depth
   technical presentation of the ideas refer to
-  <a
-    href="https://www.amazon.com/Causal-Inference-Statistics-Biomedical-Sciences/dp/0521885884"
-    >Causal Inference for Statistics, Social, and Biomedical Sciences: An
-    Introduction</a
-  >, this is the most comprehensive overview of the empirical methods based on
+  <a href="https://www.amazon.com/Causal-Inference-Statistics-Biomedical-Sciences/dp/0521885884">Causal Inference for Statistics, Social, and Biomedical Sciences: An
+    Introduction</a>, this is the most comprehensive overview of the empirical methods based on
   the Rubin Causal Framework.
 </p>
 <div class="separator" style="clear: both; text-align: center">
-  <a
-    href="img/causation-2.png"
-    imageanchor="1"
-    style="margin-left: 1em; margin-right: 1em"
-    ><img
-      border="0"
-      data-original-height="966"
-      data-original-width="1808"
-      height="266"
-      src="img/causation-2.png"
-      width="498"
-  /></a>
+<a href="img/causation-2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="Causation diagram" border="0" data-original-height="966" data-original-width="1808" height="266" src="img/causation-2.png" width="498"/></a>
 </div>
 <div class="separator" style="clear: both; text-align: center">
   (Extra source to clarify terminology:
-  <a href="https://forns.lmu.build/classes/spring-2019/cmsi-498/lecture-2T.html"
-    >Structural Causal Models (SCMs)</a
-  >)
+  <a href="https://forns.lmu.build/classes/spring-2019/cmsi-498/lecture-2T.html">Structural Causal Models (SCMs)</a>)
 </div>
 <!--/wp:image-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-2">
+<span class="ep-part-kicker">Part II</span>
+<h2 class="ep-part-title">General Effects and Singular Causes</h2>
+<span class="ep-part-summary">The pivot from estimating causal effects across a population to explaining one concrete event.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> Why is a population-level causal estimate not automatically a case-specific causal explanation?</p><p class="chapter-path"><strong>Path:</strong> Heterogeneous treatment effects → averages → singular attribution and evidentiary questions.</p></div><p>
   My point of introducing with this causal framework is to provide a benchmark
   to contrast two alternative conceptions discussed in some of the philosophical
   literature. I came across these papers as a response to the fact that
   statistical methods can only provide a probabilistic inference of the effect
   of some intervention on a population, given the estimated effect in the
-  sample. Remember what the ATE is; it's the expected effect on the outcome if
+  sample. </p><p>Remember what the ATE is; it's the expected effect on the outcome if
   everyone in the population were treated. This explicitly means that the causal
   effect will not be the same for everyone; the effect of some intervention is
-  statistical implying a distribution around the average. In other words, there
-  are heterogenous effects; individuals are different, so you could imagine that
+  statistical implying a distribution around the average. </p><p>In other words, there
+  are heterogeneous effects; individuals are different, so you could imagine that
   some intervention affects each person in a systematically different way.
   Mathematically:
 </p>
 <!--/wp:paragraph-->
-
-<!--wp:image {"id":341,"sizeSlug":"large","linkDestination":"none"}-->
-<figure class="wp-block-image size-large">
-  <img
-    alt=""
-    class="wp-image-341"
-    src="https://thecriticalthinkingacademycom.files.wordpress.com/2023/11/cause-3.png?w=531"
-  />
-</figure>
-<!--/wp:image-->
-
+<div class="formula-callout math-block" aria-label="Heterogeneous treatment effects formula">
+  \[Y_i(1)-Y_i(0) \neq Y_j(1)-Y_j(0)\]
+</div>
 <!--wp:paragraph-->
 <p>
-  The subscripts i,j simply represent the i'th and j'th individual within your
+  The subscripts i,j simply represent the ith and jth individual within your
   population of interest. Furthermore, there are random effects that are path
   dependent. You could imagine a scenario where someone receiving some dose of
   medicine to treat hypertension will react differently than someone without
@@ -824,13 +760,12 @@
   these sources of bias.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="a-in-ate">The “A” in ATE</h3><p>
   What I became particularly interested in was the A in ATE. Averages are used
   to reduce a set of information into a single informative measure that
   represents some property of the sample, in order to generalize over that
-  sample. Generalizations necessarily abstract away specific details that may be
+  sample. </p><p>Generalizations necessarily abstract away specific details that may be
   relevant to understand in particular situations. So for example, if I wanted
   to discover the cause of a house fire (denote the event as Y), by referring to
   a statistical analysis of common factors typically associated with house
@@ -838,16 +773,15 @@
   cause of individual fire Y was due to the presence of some set of factors
   Z=(X,W,....). This is just what an expectation is; in the absence of
   case-specific information, the expected value would be your best bet (assuming
-  tight variance, no skewness, and other facts about the distribution). But we
+  tight variance, no skewness, and other facts about the distribution). </p><p>But we
   actually still don't know what caused the event in that particular instance.
   Probabilistic methods necessarily cannot provide that information. This is the
   difference between singular and general causation which began bothering me.
   However, we use the word "cause" when referring to both inferential scenarios.
-</p>
+</p><div class="table-wrap"><table class="two-col"><thead><tr><th>General causation</th><th>Singular causation</th></tr></thead><tbody><tr><td data-label="General causation">Asks whether an intervention or factor tends to change an outcome across a population, subgroup, or class of cases.</td><td data-label="Singular causation">Asks what actually contributed to one particular outcome on one particular occasion.</td></tr><tr><td data-label="General causation">Naturally summarized with distributions, treatment effects, risks, rates, and averages.</td><td data-label="Singular causation">Requires case-specific evidence about the actual configuration, alternatives, and causal history.</td></tr></tbody></table></div>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="singular-causation">The singular-causation problem</h3><p>
   Consider a hypothetical scenario of singular causation. Would we want to use a
   statistical framework for discovering what "the cause" was? Some person
   unfortunately is murdered. We have some facts discovered at the scene of the
@@ -856,17 +790,15 @@
   crime. We therefore find them guilty. Rather than identifying case specific
   information implicating them of their guilt, we use our best guess given
   relative frequencies and proportions. There is obviously something odd about
-  this. When I was in graduate school learning about the Rubin Causal Model,
+  this. </p><p>When I was in graduate school learning about the Rubin Causal Model,
   this dichotomy became immediately apparent to me, so I began reading
   literature from other disciplines such as Jurisprudence and philosophy in
-  order to see how they conceptualize this ambiguous notion of "causality". In
+  order to see how they conceptualize this ambiguous notion of "causality". </p><p>In
   the process, I began asking: What would count as evidence when inferring
   singular causation? If we are not seeking to generalize from repeated events,
   how can we validate if something was the cause of another thing? Is "cause"
   inherently coupled with philosophical necessity? Are
-  <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram"
-    >causal feedback loops</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">causal feedback loops</a>
   somehow different than linear causation (this is particularly interesting
   since within the Rubin framework causality is exogenous, endogenous
   relationships are not causal)? How do we demarcate the boundaries of our
@@ -876,45 +808,36 @@
   empirical methodologies to real world data generating processes.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   In my studies I came across three related but distinct conceptions of
   causality that opened my eyes to alternative explanatory frameworks. I first
   came across
-  <a href="https://philpapers.org/rec/MACCAC-4"
-    >J.L. Mackie's paper Causes and Conditions</a
-  >. This lead me to
-  <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4565095"
-    >Richard W. Wright's paper Causation in Tort Law</a
-  >. Both share a common inspiration; the legal scholars
+  <a href="https://philpapers.org/rec/MACCAC-4">J.L. Mackie's paper Causes and Conditions</a>. This led me to
+  <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4565095">Richard W. Wright's paper Causation in Tort Law</a>. </p><p>Both share a common inspiration; the legal scholars
   <a href="https://academic.oup.com/book/1980">Hart and Honore</a> authored
-  <a href="https://plato.stanford.edu/entries/causation-law/"
-    >Causation in the Law</a
-  >
+  <a href="https://plato.stanford.edu/entries/causation-law/">Causation in the Law</a>
   which addresses questions of causality in the fields of torts and criminal
   law. From what I can gather, Mackie and Wright attempt to construct a
   generalized conception of causality from the work of Hart and Honore. As a
   side note, H.L.A. Hart was incredibly influential within Anglo-American
   jurisprudence; his book
-  <a href="https://en.wikipedia.org/wiki/The_Concept_of_Law"
-    >The Concept of Law</a
-  >
-  is a must read, in my opinion, for anyone interested in the structure of legal
-  systems. Anyway, if you are unfamiliar with
+  <a href="https://en.wikipedia.org/wiki/The_Concept_of_Law">The Concept of Law</a>
+  is a must-read, in my opinion, for anyone interested in the structure of legal
+  systems. </p><p>Anyway, if you are unfamiliar with
   <a href="https://en.wikipedia.org/wiki/Tort">tort law</a>, a tort is a civil
   wrong that causes the claimant to suffer loss or harm, resulting in liability
   for the person who committed the tortious act. On the surface, this sounds
   trivial, but determining legal responsibility has been, and still is, a matter
-  of debate in which there hasn't been any clear decision criteria proposed that
+  of debate in which there hasn't been any clear decision criterion proposed that
   can definitively state X rather than Y caused Z. Wright attempts to explicate
   a set of criteria which can unambiguously distinguish between competing
   possible causal explanations in the field of torts. Mackie's work also
   provides criteria for determining "the cause" in a given situation that
-  extends beyond the legal framework. Both of these criteria provide accounts of
+  extends beyond the legal framework. </p><p>Both of these criteria provide accounts of
   singular causation. This makes sense in the context of a tort since we are not
   seeking to extrapolate a causal generalization from a finite sample, but
-  rather we want to ascertain responsibility. Both of these papers exposed me to
+  rather we want to ascertain responsibility. </p><p>Both of these papers exposed me to
   a rich plethora of research in jurisprudence and evidence based reasoning; I
   really could dedicate an entire blog to this work. For the sake of brevity, we
   will focus on the latter two papers and one final paper from Jonathan Schaffer
@@ -924,17 +847,20 @@
   some of the major concepts from each.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-3">
+<span class="ep-part-kicker">Part III</span>
+<h2 class="ep-part-title">Mackie: INUS Conditions and Causal Fields</h2>
+<span class="ep-part-summary">A cause can be an indispensable component of one sufficient configuration even when it is neither necessary nor sufficient by itself.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> In what sense can an electrical short circuit be “the cause” of a fire?</p><p class="chapter-path"><strong>Path:</strong> INUS conditions → minimally sufficient sets → causal fields → direction and causal priority.</p></div><h3 id="inus">INUS conditions</h3><p>
   Let's start with Causes and Conditions. Mackie wants to extend the traditional
   conception of "cause" beyond merely something that is a necessary and
   sufficient preceding condition. He begins by providing an example of a house
   fire. Investigators conclude that "the cause" of the fire was an electrical
   short circuit in a certain place. Mackie asks "What is the exact force of
-  their statement?". Clearly, the short circuit is not a necessary condition for
+  their statement?". </p><p>Clearly, the short circuit is not a necessary condition for
   a house fire. You can imagine many situations where house fires were not
-  caused by a short circuit. The investigator is also not claiming the short
+  caused by a short circuit. </p><p>The investigator is also not claiming the short
   circuit to be a sufficient condition for the house catching fire; if a short
   circuit occurred in an area without flammable material presumably we can
   conclude the house would not catch fire. So the short-circuit is neither a
@@ -942,14 +868,13 @@
   sense is it "the cause"? Mackie responds to this question by stating:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     At least part of the answer is that there is a set of conditions (of which
     some are positive and some are negative), including the presence of
-    inflammable material, the absence of a suitably placed sprinkler, and no
+    flammable material, the absence of a suitably placed sprinkler, and no
     doubt quite a number of others, which combined with the short-circuit
     constituted a complex condition that was sufficient for the house's catching
     fire - sufficient, but not necessary, for the fire could have started in
@@ -957,45 +882,27 @@
     indispensable part: the other parts of this condition, conjoined with one
     another in the absence of the short-circuit, would not have produced the
     fire.
-    <strong
-      >The short-circuit is said to have caused the fire in thus an
+    <strong>The short-circuit is said to have caused the fire in thus an
       indispensable part of a complex sufficient (but not necessary) condition
-      of the fire.</strong
-    >
-  </p>
-  <!--/wp:paragraph-->
+      of the fire.</strong>
+</p>
+<!--/wp:paragraph-->
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
   From this analysis Mackie derives his famous
-  <strong
-    >INUS condition: an insufficient but necessary part of a condition which is
-    itself unnecessary but sufficient for the result</strong
-  >. When we speak of causation for particular events, this is the condition
+  <strong>INUS condition: an insufficient but necessary part of a condition which is
+    itself unnecessary but sufficient for the result</strong>. When we speak of causation for particular events, this is the condition
   that Mackie has in mind. If you are unfamiliar with this, I will provide a
   visual of what I think Mackie is referring to when formalizing this condition.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:image {"id":357,"width":"700px","height":"auto","sizeSlug":"large","linkDestination":"none"}-->
 <div class="separator" style="clear: both; text-align: center">
-  <a
-    href="img/causation-3.jpg"
-    imageanchor="1"
-    style="margin-left: 1em; margin-right: 1em"
-    ><img
-      border="0"
-      data-original-height="961"
-      data-original-width="1356"
-      height="227"
-      src="img/causation-3.jpg"
-      width="320"
-  /></a>
+<a href="img/causation-3.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="Causation diagram" border="0" data-original-height="961" data-original-width="1356" height="227" src="img/causation-3.jpg" width="320"/></a>
 </div>
 <!--/wp:image-->
-
 <!--wp:paragraph-->
 <p>
   Consider the visualization above. Each circle represents an INUS set. In other
@@ -1003,23 +910,22 @@
   "a cause is an insufficient but necessary part", he is referring to one
   element of each set. If the element is not present, the effect will not be
   brought about; this is just what it means for something to be necessary.
-  However, just because the necessary condition is present, this does not mean
+  </p><p>However, just because the necessary condition is present, this does not mean
   the effect will be brought about if the sufficient conditions (remaining
   letters) are not instantiated for that particular INUS set under
-  consideration. When Mackie mentions that the condition is "itself unnecessary
+  consideration. </p><p>When Mackie mentions that the condition is "itself unnecessary
   but sufficient for the result", I think he is referring to the fact that just
   because one of these sets of conditions is not present, does not mean it can't
-  be brought about by another set. Take for example if the first two are not
+  be brought about by another set. </p><p>Take for example if the first two are not
   instantiated; the effect can still be brought about if the third is
   instantiated. So, each circle represents an INUS set, and each star represents
   the necessary element of each set. And crucially, none of these sets are by
-  themselves "necessary" for the effect to be brought about. In the case of the
+  themselves "necessary" for the effect to be brought about. </p><p>In the case of the
   house fire, the investigator discovers that the short circuit occurred and
   that other conditions were present; the conjunction of every condition
   including the short-circuit was sufficient for the event to occur.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   Mackie provides a more technical definition of the INUS condition. Let A stand
@@ -1027,79 +933,71 @@
   negative, which were needed in conjunction with A to form the sufficient
   condition. The conjunct AB(¬C) represents a sufficient condition for the
   outcome, and contains no redundant factors, in other words, this conjunction
-  is minimally sufficient. DEF, GHI, etc. are all of the other minimally
+  is minimally sufficient. </p><p>DEF, GHI, etc. are all of the other minimally
   sufficient conditions for the outcome. The disjunction of all the minimally
   sufficient conditions for the outcome constitute a necessary and sufficient
   condition for the outcome; this means "ABC" or "DEF" or "GHI" or etc. all
   represent necessary and sufficient conditions, and each disjunct represent a
   minimally sufficient condition. Each conjunct in each minimally sufficient
-  condition represents the INUS condition. More formally, let X stand for B(¬C)
+  condition represents the INUS condition. </p><p>More formally, let X stand for B(¬C)
   in AB(¬C), and Y stand for all other possible minimally sufficient conditions
   (DEF,GHI,JKF...), then the INUS condition is defined as follows:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     A is an INUS condition of a result P if and only if, for some X and for some
     Y, (AX or Y) is a necessary and sufficient condition of P, but A is not a
     sufficient condition of P and X is not a sufficient condition of P.
   </p>
-  <!--/wp:paragraph-->
+<!--/wp:paragraph-->
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
   If A is present in each set of minimally sufficient conditions, then A will
   still be referred to as the INUS condition. Furthermore, if AX is a minimally
   sufficient condition, there is no need for X to be bound to A; in other words
-  KX can be a minimally sufficient condition as well (AX or KX can bother cause
+  KX can be a minimally sufficient condition as well (AX or KX can both cause
   the event); a common set of factors can be coupled with different INUS
   conditions. In the case that A is minimally sufficient to bring about the
   outcome, Mackie states that A is "at least an INUS condition".
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   To summarize it, Mackie states that when someone says "A caused P", there are
   implicitly saying the following claims:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>
+<!--wp:list-item-->
+<li>
     A is at least an INUS condition of P, that is, there is a necessary and
     sufficient condition of P which has one of these forms: (AX or Y), (A or Y),
     AX, A.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>A was present on the occasion in question</li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    The factors represent in X, if any, in the formula for the necessary and
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>A was present on the occasion in question</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+    The factors represented in X, if any, in the formula for the necessary and
     sufficient condition were present on the occasion in question
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     Every disjunct in Y which does not contain A as a conjunct was absent on the
     occasion in question
   </li>
-  <!--/wp:list-item-->
+<!--/wp:list-item-->
 </ol>
 <!--/wp:list-->
-
 <!--wp:paragraph-->
 <p>
   Falsifying any of these conditions would refute the condensed statement "A
@@ -1114,9 +1012,8 @@
   means this framework is defeasible, like the others we will encounter shortly.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="causal-field">Causal fields and relevance</h3><p>
   Next Mackie introduces the notion of a Causal Field. This is used to augment
   his earlier analysis of causal questions. A causal field is a field in which
   you are looking for the cause of an event. It represents the region that is to
@@ -1126,14 +1023,14 @@
   different causal fields. A causal field is similar to our sample space; it is
   our domain of interest. To say that Z is a necessary and sufficient condition
   for P in F is equivalent to ‘All FP are Z and all FZ are P’, where ‘F’ refers
-  to the causal field. Obviously there is still indeterminacy in the choice of
+  to the causal field. </p><p>Obviously there is still indeterminacy in the choice of
   the causal field. Mackie recognizes this problem; essentially it is a question
   of relevance, which I take to be equivalent to the formalization of a causal
   model in Judea Pearl's framework. The causal field is the model of potential
   interacting components of a causal model. Mackie recognizes that in general
   this is rather arbitrary, but I think when considered in light of Pearl's
   framework, you can select more reasonable causal fields over potentially
-  inferior causal fields and make explicit causal assumptions. After introducing
+  inferior causal fields and make explicit causal assumptions. </p><p>After introducing
   the notion of causal field, Mackie restates the phrase "A caused P" to
   actually mean "A caused P in relation to field F", leading us to the more
   general statement: "A is at least an INUS condition of P in the field F, that
@@ -1143,7 +1040,6 @@
   taken for granted, unless explicitly modeled in Pearl's framework.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   I think Mackie and I diverge in his analysis of identifying relevant and
@@ -1156,18 +1052,18 @@
   continues "thus if we are looking for the cause or causes of influenza,
   meaning its cause in relation to the field human beings, we may dismiss as not
   directly relevant, evidence which shows that some proposed cause fails to
-  produce influenza in rats". I think it's quite bold to assert that potentially
+  produce influenza in rats". </p><p>I think it's quite bold to assert that potentially
   analogous causal fields are irrelevant when considering the question at hand;
   particularly in medical trials, it is common to test some intervention on some
   animal with comparable biological mechanisms to humans, extrapolating the
-  effects to the intended unit of analysis. The role of analogy in identifying
-  the causal field plays a prominent role in causal reasoning. I don't think
+  effects to the intended unit of analysis. </p><p>The role of analogy in identifying
+  the causal field plays a prominent role in causal reasoning. </p><p>I don't think
   this is the main thrust of Mackie's argument; rather he is just using this as
   an example to demonstrate that we engage in some process of eliminating
   irrelevant causal factors from our causal field or causal model. What I am
   stating is that, analogical arguments appear to be a component of the process
   by which we reduce or expand the causal field to eliminate irrelevant factors
-  or include relevant factors. This is just something to consider. Mackie
+  or include relevant factors. This is just something to consider. </p><p>Mackie
   modifies the INUS condition to include a causal field to eliminate potential
   for an infinite regress. For example, in the case of the house fire, one can
   include in the set of negative conjuncts "an item such as the earth's not
@@ -1175,14 +1071,12 @@
   to the case in point and wouldn't provide any utility in determining the INUS
   condition, essentially it is outside of our causal field. I'll talk a bit more
   about these "negative conditions" later when we introduce Schaffer's work.
-  Just remember that In all causal statements, we need to specify the causal
+  </p><p>Just remember that in all causal statements, we need to specify the causal
   field. The cause is required to differentiate, within a wider region in which
   the effect sometimes occurs and sometimes does not, the sub-region in which it
-  occurs: this wider region is the causal field. Conceptually, I think this is
+  occurs: this wider region is the causal field. </p><p>Conceptually, I think this is
   similar to the
-  <a href="https://en.wikipedia.org/wiki/Reference_class_problem"
-    >reference class problem</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Reference_class_problem">reference class problem</a>
   in statistics; when estimating the probability of some event X, it is not
   always clear what should be the reference class by which you calculate the
   probability. For example, when estimating the probability of a car crash, you
@@ -1193,20 +1087,19 @@
   class over another. This is particularly similar to how we determine the
   causal field in a given situation. It seems to be primarily driven by the
   application and subject matter knowledge.
-</p>
+</p><div class="core-claim"><strong>Recurring relevance problem.</strong> Mackie’s causal field and the statistical reference-class problem both ask us to justify the boundary of the comparison. Later, Schaffer’s contrast classes and the discussion of spatial/temporal scale will raise the same structural issue in different language.</div>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   Mackie claims this analysis extends to causal generalizations. When we say
   that "Eating sugar causes cavities" we are expressing some INUS condition with
-  respect to a causal field. This extends to functional relationships, in which
+  respect to a causal field. </p><p>This extends to functional relationships, in which
   we take into consideration the magnitude of the effect on P by some causal
-  factor, and where concepts such as necessity and sufficient are special cases.
+  factor, and where concepts such as necessity and sufficiency are special cases.
   Essentially, in the case of functional dependence, there are combinations of
   negative and positive factors that can bring about some effect, with respect
   to some causal field (reference class). There are different complex
-  combinations containing an INUS condition that causal effect an outcome. In
+  combinations containing an INUS condition that causally affect an outcome. </p><p>In
   this context, we speak of the total cause, the complete set of factors on
   whose individual magnitudes combine to yield the magnitude of P, given the
   field F. According to Mackie "that is, variations of P in F are completely
@@ -1214,47 +1107,42 @@
   set', and of these alone. The total cause is analogous to a necessary and
   sufficient set". So in the situation where eating sugar causes cavities, sugar
   acts as an INUS condition among a set of factors, positive and negative,
-  effecting the outcome P. Identifying the causal forces "on a given occasion"
+  affecting the outcome P. Identifying the causal forces "on a given occasion"
   can be found by method of partial derivatives ceteris paribus.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="priority">Causal priority</h3><p>
   I mentioned earlier that in Pearl's framework we are able, in principle, to
   determine directionality given the do calculus operator. Mackie was obviously
   unaware of this development in mathematics since he wrote his paper before
   Pearl's book on Causality. Given a directed acyclic graphical representation
   of some causal system, or causal field in Mackie's terms, we can infer whether
   X -&gt; Y; not merely correlation since we aren't working with equality
-  operators any longer. Direction of causation is mentioned in Mackie's paper so
+  operators any longer. </p><p>Direction of causation is mentioned in Mackie's paper so
   I'd like to touch on it briefly before moving onto the next account of
   causation. Mackie frames the problem as a problem with determining the
   direction of time, however, which I am unaware whether Pearl explicitly
-  acknowledges this in his analysis. I know in the Rubin framework,
+  acknowledges this in his analysis. </p><p>I know in the Rubin framework,
   manipulations precede their effects, and we are in control of these
   interventions so there is no ambiguity as to what comes first (cause or
   effect). I will list out Mackie's concerns:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>
+<!--wp:list-item-->
+<li>
     Intuitively, there is a relation that may be called "causal priority"
     implicit in the phrase "A caused P" that is unidirectional. For this
     relation to hold, A -&gt; P; there is an asymmetric relation between cause
     and effect. This is exemplified in econometrics with notions such as
-    <a href="https://en.wikipedia.org/wiki/Granger_causality"
-      >Granger Causality</a
-    >, although "cause" in this context is meant to be predictive causality
+    <a href="https://en.wikipedia.org/wiki/Granger_causality">Granger Causality</a>, although "cause" in this context is meant to be predictive causality
     which is different than the notion of control and manipulation.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     The relation above is not identical with temporal priority. This can be
     quite confusing for some since it would imply backwards causation. Our
     intuitions of causation are inherently fused with temporality, so a future
@@ -1263,32 +1151,27 @@
     <a href="https://en.wikipedia.org/wiki/Retrocausality">Retrocausality</a>);
     so we need not limit the possibilities of causal order. The possibility of
     backwards causation is best seen in
-    <a href="https://youtu.be/iixrNh7Xp5M?si=TlF7QQgSZ6bgYdQ0"
-      >physical models of the universe</a
-    >, so if you're interested definitely refer to that literature. Going down
+    <a href="https://youtu.be/iixrNh7Xp5M?si=TlF7QQgSZ6bgYdQ0">physical models of the universe</a>, so if you're interested definitely refer to that literature. Going down
     this path however becomes very metaphysical so be aware.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     Mackie's analysis does not explicitly reference causal ordering. Our
     intuitive understanding of necessity and sufficiency includes such a
     reference. Causal priority is separate from the notion of necessary and
     sufficient condition.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     The statement "A is at least an INUS condition of P is not synonymous with
     "P is at least an INUS condition of A"; this is just a reiteration of the
     fact that the causal relation is asymmetric.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     Causal priority is partly based on the direction of explanation. Causal
     priority is also linked with controllability. If there is a relation between
     A and B, and we control A, and the relation between A and B still holds, we
@@ -1306,18 +1189,15 @@
     something like this. He says that if we randomize the effect of A on B we
     can argue that A is causally prior to B. In essence this is what
     econometrics is all about, especially with models like
-    <a href="https://en.wikipedia.org/wiki/Instrumental_variables_estimation"
-      >Instrument variables estimation</a
-    >. Mackie says that "it is true that our knowledge of the direction of
+    <a href="https://en.wikipedia.org/wiki/Instrumental_variables_estimation">Instrumental variables estimation</a>. Mackie says that "it is true that our knowledge of the direction of
     causation in ordinary cases is thus based on what we find to be
     controllable", and on what we either find to be random or find that we can
     randomize; but this cannot without circularity be taken as providing a full
     account either of what we mean by causal priority or how we know about it".
   </li>
-  <!--/wp:list-item-->
+<!--/wp:list-item-->
 </ol>
 <!--/wp:list-->
-
 <!--wp:paragraph-->
 <p>
   The last part, number 5, is very interesting from an inferential standpoint.
@@ -1330,71 +1210,68 @@
   which involves a certain sort of 'coherence' between a large number of
   separated items, whereas A is a single event, and A and B are causally
   connected, A will explain B in a way in which B will not explain A unless some
-  other single event, say C, first explains the coherence of B". Think about it
+  other single event, say C, first explains the coherence of B". </p><p>Think about it
   this way; suppose you observe an effect and are asked what the cause was, the
   potential number of causal explanations, explodes. When you tinker with
   something in a laboratory, you can control variables in interest and observe
-  that the stone caused the waves. Without direct intervention, observing the
+  that the stone caused the waves. </p><p>Without direct intervention, observing the
   waves and inferring a cause leads to a vast number of potential explanations;
   were the waves caused by a fish? Were they caused by a human? You see the
-  point. Causation in this case (more formally known as causal discovery) is an
+  point. </p><p>Causation in this case (more formally known as causal discovery) is an
   <a href="https://en.wikipedia.org/wiki/Inverse_problem">Inverse Problem</a>.
   Imagine you walk into a kitchen and see a puddle of water on the floor, and I
   ask you to infer the shape of the ice that melted resulting in the puddle.
-  Inverse problems are truly amazing; there are a ton of Bayesian approaches. In
+  Inverse problems are truly amazing; there are a ton of Bayesian approaches. </p><p>In
   econometrics, the goal is to do exactly what Popper recommends; identify a
   proper Instrumental variable C that can explain both A and B. If you are
   interested in more of these methods I recommend reading
-  <a href="https://www.mostlyharmlesseconometrics.com/"
-    >Mostly Harmless Econometrics</a
-  >.
+  <a href="https://www.mostlyharmlesseconometrics.com/">Mostly Harmless Econometrics</a>.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
-  Ok so this blog is turning out to be much longer that "brief". I just wanted
-  to show Mackie's framework for determining singular causation because RCT's
+  Ok so this blog is turning out to be much longer than "brief". I just wanted
+  to show Mackie's framework for determining singular causation because RCTs
   cannot infer from the population to the individual; something people seem to
-  literally ignore and make this unfounded leap in inference anyway. Actually, I
+  literally ignore and make this unfounded leap in inference anyway. </p><p>Actually, I
   should be more clear; statistical methods allow you to infer about an
   individual data point the expected value, given assumptions about the
   distribution, data generating process, and functional form. In essence, it is
   a best guess about an observation, given information about the population or
-  sample. Nevertheless, you do not have case-specific information allowing you
-  to infer singular causality. The next account of singular causation comes from
+  sample. </p><p>Nevertheless, you do not have case-specific information allowing you
+  to infer singular causality. </p><p>The next account of singular causation comes from
   legal scholar Richard Wright in his paper Causation in Tort Law. Wright is
   identifying issues with the "But-For" test of causality in cases involving
-  tortuous behavior. He offers a solution that seems a lot like Mackie's. His
-  paper is really long, 100 pages actually, about 10 times longer that Mackie's
+  tortious behavior. He offers a solution that seems a lot like Mackie's. His
+  paper is really long, 100 pages actually, about 10 times longer than Mackie's
   paper; so I am not going to dive super in depth.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-4">
+<span class="ep-part-kicker">Part IV</span>
+<h2 class="ep-part-title">Wright: NESS, Torts, and Responsibility</h2>
+<span class="ep-part-summary">Tort law makes the stakes of singular causation concrete: causal misclassification can misassign responsibility.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> What test should we use when several conditions contribute to one legal harm?</p><p class="chapter-path"><strong>Path:</strong> Responsibility → difficult cases → but-for failures → NESS.</p></div><h3 id="responsibility">Causation and responsibility</h3><p>
   Remember, <a href="https://www.law.cornell.edu/wex/tort">Tort law</a> is
-  primarily concerned with identifying whether the tortuous aspect of the
-  defendants behavior caused some sort of negative outcome to the prosecution.
+  primarily concerned with identifying whether the tortious aspect of the
+  defendant's behavior caused some sort of negative outcome to the plaintiff.
   This is all about liability; who ought to be responsible for something that
-  happened. Legal scholars have written about this in depth; for example Michael
+  happened. </p><p>Legal scholars have written about this in depth; for example Michael
   S. Moore has written a book
-  <a
-    href="https://www.amazon.com/Causation-Responsibility-Essay-Morals-Metaphysics/dp/0199256861"
-    >Causation and Responsibility</a
-  >
+  <a href="https://www.amazon.com/Causation-Responsibility-Essay-Morals-Metaphysics/dp/0199256861">Causation and Responsibility</a>
   where he discusses the inherent coupling between causation and ascription of
   moral or legal responsibility for events. He addresses issues such as
   foreseeability of the harm, complicity, and the use of risk analysis to
-  attribute responsibility. I think people normally conceive of causation as
+  attribute responsibility. </p><p>I think people normally conceive of causation as
   something scientific and disconnected from concepts such as morality, but
   there are obvious links between our conception of causality and moral
-  responsibility. We should also note that responsibility surely entails
+  responsibility. </p><p>We should also note that responsibility surely entails
   causation; but it should also be clear that causation does not entail
   responsibility. Does "responsibility for" and "caused" mean the same thing? If
   you caused something, does that mean you should be responsible for something?
   Intuitively, we can agree that directly causing harm to someone requires
-  accountability. But what about scenarios where you are part of a collective?
+  accountability. </p><p>But what about scenarios where you are part of a collective?
   Or what about situations where there is not immediate harm? Or if it is
   undetectable, but cumulatively leads to gradual harm, such that after
   approaching a threshold the harm becomes apparent? These sort of scenarios
@@ -1403,72 +1280,67 @@
   done.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   We should consider a few more examples to illustrate the need of an effective
   criteria for determining causation. How we conceive of causality will directly
-  effect who we decide is liable in situations concerning torts. There are
+  effect who we decide is liable in situations concerning torts. </p><p>There are
   obviously clear cases where someone pulls the trigger of a gun causing the
   death of someone else. But how about a case where a car manufacturer
   guarantees 99% reliability of their brake system but someone gets in a
   collision due to faulty design? Or how about if someone you are responsible
   for hurts or damages someone else or their belongings; does responsibility
-  transfer to the care taker? How about a case of a negligent city official who
+  transfer to the caretaker? How about a case of a negligent city official who
   fails to warn their citizens of unsafe drinking water, as in the case of Flint
-  Michigan (this is a case of distributed responsibility)? Or what about the
+  Michigan (this is a case of distributed responsibility)? </p><p>Or what about the
   difficult problem of identifying a very delayed causal effect after consuming
-  some product? What about something accidental, how do we prove that something
+  some product? </p><p>What about something accidental, how do we prove that something
   was an accident; consider a situation where someone mops a floor with very
   slippery soap, leaving the general conditions hazardous to anyone walking in
   the area. They fail to prop up a sign indicating a warning. You walk into the
   building with some scissors and a friend, but both of you slip, and you
-  accidently stab your friend. Are you to blame? You can think of other
-  situations where an increase of hazard lead to more negative outcomes that
-  wouldn't have happened under safer conditions. What if you have a child that
-  does something bad, and you just happen to be a dead beat parent, but in this
+  accidentally stab your friend. Are you to blame? You can think of other
+  situations where an increase in hazard leads to more negative outcomes that
+  wouldn't have happened under safer conditions. </p><p>What if you have a child that
+  does something bad, and you just happen to be a deadbeat parent, but in this
   particular instance your child's behavior was the result of some external
   factor outside of your control; should we hold the parent liable on the basis
-  of their poor character or should we identify another cause? What if you
+  of their poor character or should we identify another cause? </p><p>What if you
   poison someone, assuming the effect will complete within 48 hours, but the
   person you poisoned got in a car crash and died prior to the 48 hours
   completing; you technically did not cause their death but should you be held
-  accountable (was the poison actually going to kill them)? What if you engineer
+  accountable (was the poison actually going to kill them)? </p><p>What if you engineer
   a new financial product and mislead customers about its true risk profile,
   culminating in a financial crash that (unknowingly to you) cascades throughout
   the economy because of predatory lending at the mortgage level, resulting in
   the decimation of retirement funds in a matter of minutes? It sure seems
-  someone should be held accountable, but who and to what extent? What if you
+  someone should be held accountable, but who and to what extent? </p><p>What if you
   have insurance, so you technically are not liable under the conditions of your
   contract with the insurer, except under very particular conditions that
   violate the terms of your agreement; should the insurance agency be able to
-  decide whether to insure you or not? Tort law is very interesting; we are
+  decide whether to insure you or not? </p><p>Tort law is very interesting; we are
   concerned with responsibility, accountability, and repercussions. If we have a
   faulty understanding of causation, we might be unfairly or unjustly punishing
   someone. Or we might fail to hold those to account who have negatively
-  effected someone else. A good test will not be overly permissive in what it
-  counts as a causal condition. It will also not be under permissive, failing to
+  effected someone else. </p><p>A good test will not be overly permissive in what it
+  counts as a causal condition. It will also not be underinclusive, failing to
   account for actual instances of causation. You can think about it in terms of
-  <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity"
-    >sensitivity and specificity
+  <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitivity and specificity
   </a>
   of a statistical test; your causal test should minimize the number of
-  <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives"
-    >false positives and false negatives</a
-  >, and maximize the number of true positives and true negatives. In other
-  words, if you hypothesize that some tortuous behavior was the cause of some
+  <a href="https://en.wikipedia.org/wiki/False_positives_and_false_negatives">false positives and false negatives</a>, and maximize the number of true positives and true negatives. In other
+  words, if you hypothesize that some tortious behavior was the cause of some
   harm, you want to maximize the probability that your categorization was indeed
   true.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="but-for">But-for causation and overdetermination</h3><p>
   Very briefly, the but-for test can be expressed as "but for the action, the
   result would not have happened". Wright introduces the NESS test, which states
   that a particular condition was a cause of a specific consequence if and only
   if it was a necessary element of a set of antecedent actual conditions that
-  was sufficient for the occurrence of the consequence. Wright contrasts his
+  was sufficient for the occurrence of the consequence. </p><p>Wright contrasts his
   test with the traditional "but-for" (necessary condition) test, identifying
   two types of overdetermined causation cases it fails to handle: duplicative
   causation and preemptive causation. The but-for test states "that an act
@@ -1476,7 +1348,7 @@
   the act, the injury would not have occurred. That is, the act must have been a
   necessary condition for the occurrence of the injury". Wright correctly notes
   that this intuitive conception fails to account for cases where we assert no
-  causation, when there clearly was an identifiable cause. Overdetermined
+  causation, when there clearly was an identifiable cause. </p><p>Overdetermined
   causation are cases where a factor other than the specified action would have
   been sufficient to produce an injury in the absence of the specified act, but
   "its effects either (1) were preempted by the more immediately operative
@@ -1486,17 +1358,16 @@
   under the but-for (necessity) test.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   Wright provides an example of preemptive causation and duplicative causation
   with the following examples. "For example, D shoots and kills P just as P was
   about to drink a cup of tea that was poisoned by C. D's shot was a preemptive
   cause of P's death, C's poisoning of the tea was not a cause because its
-  potential effects were preempted"; this is the case of preemption. In the case
+  potential effects were preempted"; this is the case of preemption. </p><p>In the case
   of duplication, as an example "C and D independently start separate fires,
   each of which would have been sufficient to destroy P's house. The fires
-  converge and burn down the house". An application of the but-for test would
+  converge and burn down the house". </p><p>An application of the but-for test would
   show that no one caused the house to burn down, and that D's shot did not kill
   P; obviously both conclusions are absurd. Wright argues that the but-for test
   is too restrictive in its application when identifying factual causation.
@@ -1504,27 +1375,26 @@
   causation.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="ness">The NESS test</h3><p>
   Throughout pages 1777-1788 Wright rebuts most of the attempts to modify the
   but-for test. I am not going to cover all of these, since this post is
   supposed to be short. Instead I am going to jump into his analysis of the NESS
-  test and compare it to Mackie's test for singular causation. As part of the
+  test and compare it to Mackie's test for singular causation. </p><p>As part of the
   NESS test, Wright begins by describing Hume's analysis that causation is about
   the instantiation of antecedent conditions that are sufficient for bringing
   about an effect, but we nevertheless cannot directly observe causal relations
   themselves, rather we observe the through repetition or regularity of
-  following one another, forming causal laws or generalizations thereof. Like
+  following one another, forming causal laws or generalizations thereof. </p><p>Like
   Mackie's notion of a causal field, there is a point in which we must
   differentiate between antecedent conditions that are irrelevant from those
   that are relevant. This allows us to state which conditions invariably lead to
-  the effect. Hume sees causation as some set of conditions that lead to an
+  the effect. </p><p>Hume sees causation as some set of conditions that lead to an
   invariant relation between effect and that causal set, something of necessity,
-  John Stuart Mill disagreed. Mill saw causation as something pluralistic. This
+  John Stuart Mill disagreed. Mill saw causation as something pluralistic. </p><p>This
   appears to be similar to Mackie's account of a causally sufficient set, and
   flows directly from Hart and Honore's account of causation in which the NESS
-  test is based. The essence of the concept under this account is that "a
+  test is based. </p><p>The essence of the concept under this account is that "a
   particular condition was a cause of (condition contributing to) a specific
   consequence if and only if it was a necessary element of a set of antecedent
   actual conditions that was sufficient for the occurrence of the consequence".
@@ -1533,21 +1403,20 @@
   are isomorphic.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
   My point in bringing the NESS test into discussion is that it's generated to
   determine singular causation. Consider the scenarios listed above for
   determining legal responsibility; none of these situations are about
   statistical generalizations and yet these are some of the most practical and
-  consequential situations where we need to reason correctly about causation. In
+  consequential situations where we need to reason correctly about causation. </p><p>In
   law, the notion of "justice" appears to be something consistent with the
   correct application of rules that distinguish deserved punishment from
   undeserved punishment for some behavior. If you do not have coherent, correct,
   or valid rules for making necessary distinctions, your legal system diverges
-  from the ideal "just system" we are striving for. But consider these rules for
+  from the ideal "just system" we are striving for. </p><p>But consider these rules for
   your own personal life. Are you identifying causation based on a neutral
-  framework that minimizes the misclassification error rate? Anyways, the paper
+  framework that minimizes the misclassification error rate? </p><p>Anyways, the paper
   is interesting. Wright dives into specific details about how the NESS test
   generalizes beyond the but-for test to account for problem cases. Take a
   moment to think about how NESS is better because it is less restrictive in
@@ -1555,32 +1424,30 @@
   necessarily be intuitive?
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-5">
+<span class="ep-part-kicker">Part V</span>
+<h2 class="ep-part-title">Schaffer: Contrastive Causation</h2>
+<span class="ep-part-summary">Causal claims may be implicitly comparative: c rather than c* causes e rather than e*.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> What happens if causal relations are contrastive rather than merely binary?</p><p class="chapter-path"><strong>Path:</strong> Contrast classes → event individuation → possible worlds → absence causation → transitivity.</p></div><h3 id="contrast">Contrast classes</h3><p>
   The last paper I want to discuss is
-  <a
-    href="https://web.archive.org/web/20061221163057id_/http://people.umass.edu:80/schaffer/papers/ContrastCause.pdf"
-    >Contrastive Causation</a
-  >. Let's begin with a quote:
+  <a href="https://web.archive.org/web/20061221163057id_/http://people.umass.edu:80/schaffer/papers/ContrastCause.pdf">Contrastive Causation</a>. Let's begin with a quote:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
-    Causation is widely assumed to be a binary relation: c causes e. I will<br />argue
-    that causation is a quaternary, contrastive relation: c rather than C*<br />causes
-    e rather than E<em>, where C</em> and E* are nonempty sets of contrast<br />events.
-  </p>
-  <!--/wp:paragraph-->
-</blockquote>
-<!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
-  <a href="https://en.wikipedia.org/wiki/Contrastivism">Contrastivism</a> is an
+    Causation is widely assumed to be a binary relation: c causes e. I will<br/>argue
+    that causation is a quaternary, contrastive relation: c rather than C*<br/>causes
+    e rather than E<em>, where C</em> and E* are nonempty sets of contrast<br/>events.
+  </p>
+<!--/wp:paragraph-->
+</blockquote>
+<!--/wp:quote-->
+<!--wp:paragraph-->
+<p>
+<a href="https://en.wikipedia.org/wiki/Contrastivism">Contrastivism</a> is an
   epistemological theory proposed by Jonathan Schaffer. Simply stated, it holds
   that knowledge statements have the structure "S knows that P rather than Q".
   His analysis of causation draws on this notion of "rather than Q", which I
@@ -1590,30 +1457,28 @@
   actual cause. Consider an example Schaffer uses:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     One might argue that binarity reflects the surface form of causal
     ascriptions. But surface form is equivocal. There are indeed binary
     ascriptions, such as ‘Pam’s throwing the rock caused the window to shatter’.
     But there are also contrastive ascriptions, such as ‘Pam’s throwing the rock
     rather than the pebble caused the window to shatter rather than crack’.
   </p>
-  <!--/wp:paragraph-->
+<!--/wp:paragraph-->
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
   This "rather than" formulation, to me, seems like we are contrasting the
-  "cause" against a set of possible causes. However, I do think that Schaffer is
+  "cause" against a set of possible causes. </p><p>However, I do think that Schaffer is
   intending on making a stronger claim; the effect "shattering the window" is
   contrasted with "cracking the window", in other words "effects" aren't just
   considered "in the abstract" isolated from other ways an effect could have
   manifested, rather they are also comparative, relative to similar "effects".
-  Also consider that the contrastive account would help us understand
+  </p><p>Also consider that the contrastive account would help us understand
   responsibility in tort law by identifying intention; suppose the effect
   "window shattering" occurred when someone threw a pebble, rather than a rock.
   We might be inclined to describe this scenario as "accidental" and therefore,
@@ -1622,57 +1487,54 @@
   the effect because it was foreseeable given common knowledge.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="events">Event boundaries: what exactly is the outcome?</h3><p>
   The contrastive account assumes causal relata are events, it expresses causal
   relatedness using counterfactual dependence; In particular, by using the
   difference making test: c rather than c* causes e rather than e* if and only
   if O(c<em>) &gt; O(e</em>) (in words: if c* had occurred, then e* would have
   occurred), and lastly assumes that the contrast sets C* and E* are fixed by
-  context. There are about six paradoxes that this account allegedly resolves,
+  context. </p><p>There are about six paradoxes that this account allegedly resolves,
   but we will only consider a few of them since this was supposed to be a short
-  post. Before we begin though I want to make a few remarks on the first
+  post. </p><p>Before we begin though I want to make a few remarks on the first
   assumption about causation being about events. Defining an event is not
-  trivial. Consider the case of a house fire used to demonstrate INUS
+  trivial. </p><p>Consider the case of a house fire used to demonstrate INUS
   conditions. How exactly are we defining the outcome of interest? Is the house
   completely burnt down or only partially burnt down? Presumably, whatever the
   INUS condition is, depends on how we describe the outcome. Upon analysis, I
   can claim that AX was an INUS condition for Y, and that had AX or any other
-  INUS condition not been instantiated, Y would not have occurred. However,
+  INUS condition not been instantiated, Y would not have occurred. </p><p>However,
   slightly modify the outcome to be "partially burnt down" and the set of
   possible INUS conditions seems to necessarily change, in order to account for
-  the fire somehow stopping, leaving the house intact. In other words, Mackie's
+  the fire somehow stopping, leaving the house intact. </p><p>In other words, Mackie's
   account is only contrastive on the c side; c rather than C* causes e. If you
   modify the outcome then you have to consider a new set of INUS conditions.
-  This obviously complicates the situation a bit. Given the counterfactual
+  This obviously complicates the situation a bit. </p><p>Given the counterfactual
   dependence criteria Schaffer uses, it only accounts for alternative outcomes
   in the set of outcomes E. It does not express that some other cause, or some
   other INUS condition, will bring about that identical outcome E. Accordingly,
   c rather than C* causes e rather than E*, means that the alternative outcomes
   are actually different events; this account cannot explain how different sets
-  of causes bring about one particular event. Anyway, this is why I mentioned
+  of causes bring about one particular event. </p><p>Anyway, this is why I mentioned
   that defining your event space can be problematic. Should "house burning down"
   and "house partially burning down" be considered the same event? How do we
   demarcate the boundaries between events to make causal analysis even possible?
-  The thing is, I think Schaffer's analysis is distinct from Mackie's, despite
+  </p><p>The thing is, I think Schaffer's analysis is distinct from Mackie's, despite
   being very similar, in that it is answering a different kind of causal
-  question. Think about it this way. Mackie and the NESS account are creating a
+  question. </p><p>Think about it this way. Mackie and the NESS account are creating a
   mapping, a many to one relationship between the set of possible causes and one
   outcome; they are showing how one decides which one of these potential
   mappings from cause to effect can be identified for a particular causal
-  outcome or event under consideration. Schaffer's approach seems to be like a
+  outcome or event under consideration. </p><p>Schaffer's approach seems to be like a
   many-to-many mapping between the contrast sets C* and E*; C1 maps to E1, C2
   maps to E2, C3 maps to E3. So by saying C caused E we are saying that, the C
   rather than C* (the closest or more "similar" causal factor being the more
   relevant contrast, perhaps C2) causes E rather than E* (the contrast event
   being the most similar, or whatever context dependent event we are interested
-  in, perhaps E2). Now I don't think Schaffer explicitly mentions whether C1 and
+  in, perhaps E2). </p><p>Now I don't think Schaffer explicitly mentions whether C1 and
   C2 can both map to the same E, which is what Mackie's account actually solves
-  for. Schaffer's account seems to implicitly rely upon
-  <a href="https://plato.stanford.edu/entries/possible-worlds/"
-    >possible-world</a
-  >
+  for. </p><p>Schaffer's account seems to implicitly rely upon
+  <a href="https://plato.stanford.edu/entries/possible-worlds/">possible-world</a>
   semantics. The idea of a possible world is that things could have been
   otherwise; there are many alternative scenarios that could have manifested
   other than the current one. Possible worlds are an attempt to make sense of
@@ -1682,263 +1544,193 @@
   possible world.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
-  Now, in the this philosophical theory, there is a notion of "closeness"
+<h3 id="worlds">Possible worlds and similarity</h3><p>
+  Now, in this philosophical theory, there is a notion of "closeness"
   between possible worlds. I find this incredibly problematic. Consider a
   <a href="https://en.wikipedia.org/wiki/Metric_space">metric space</a> in which
   we define some measure to estimate distance between two points in Euclidian
   space or <a href="https://en.wikipedia.org/wiki/Phase_space">Phase Space</a>;
   Manhattan distance, Jaccard distance, whatever you want. In empirical
   disciplines, these actually measure distance between data points instantiated
-  in the real world; there is no hypothetical object that are measuring against.
-  Similarity in the machine learning literature is defined by one of these
+  in the real world; there is no hypothetical object that we are measuring against.
+  </p><p>Similarity in the machine learning literature is defined by one of these
   metrics in hyperspace, it is how we estimate the "similarity" between two
   vectors (photographs, collections of text, etc.). This has problems of its
   own, but closeness and similarity, within empirical disciplines, means there
-  has to be an actualization of something that can be measured. You can
+  has to be an actualization of something that can be measured. </p><p>You can
   construct hypothetical datasets to test the predictive quality of the metric
   you select; but the hypothetical data is still actualized in the real world.
   We have no way of estimating something "in the real world" to something that
-  has not been actualized. It seems necessary that The idea of "similar possible
+  has not been actualized. </p><p>It seems necessary that The idea of "similar possible
   worlds" must be entrenched fully within thought experiments, dependent on
-  analogy and metaphor. There is no measurable way to estimate the closeness of
+  analogy and metaphor. </p><p>There is no measurable way to estimate the closeness of
   some alternative possible world.
   <a href="https://plato.stanford.edu/entries/david-lewis/#3.3">David Lewis</a>
   talks about this idea of closeness; but in empirical disciplines we need an
   actual measure or reference class. Claiming counterfactual states of the world
   are more or less similar seems arbitrary at best; relying heavily on the
-  intuition of the linguistic community. So in Schaffer's account, when we say
+  intuition of the linguistic community. </p><p>So in Schaffer's account, when we say
   "c rather than C* causes e rather than E*", it seems to me we are relying on
   some assumption about the contrast class which depends on this "similarity"
-  between possible worlds; something we can construct ad-hoc. I am not saying
+  between possible worlds; something we can construct ad-hoc. </p><p>I am not saying
   this is incorrect, I am just saying in practical situations where we must
   construct a counterfactual state of the world to determine causation or causal
-  effect, we must be very weary of the criterion we select to estimate
+  effect, we must be very wary of the criterion we select to estimate
   "similarity"; are we referring to qualitative similarity, quantitative
   similarity, or something else? Lewis provides a set of criteria. A "similar
   possible world" is defined as one that satisfies these four criteria:
-</p>
+</p><div class="concept-callout"><strong>A sharper practical objection.</strong> Possible-world “closeness” need not be a numerical distance metric. The applied problem is instead how to operationalize and justify the ordering of counterfactual alternatives: which facts are held fixed, which differences count as relevant, and why one comparison is preferred over another.</div>
 <!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>
+<!--wp:list-item-->
+<li>
     It is of the first importance to avoid big, widespread, diverse violations
     of law.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     It is of the second importance to maximize the spatiotemporal region
     throughout which perfect match of particular fact prevails.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     It is of the third importance to avoid even small, localized, simple
     violations of law.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     It is of little or no importance to secure approximate similarity of
     particular fact, even in matters that concern us greatly.
   </li>
-  <!--/wp:list-item-->
+<!--/wp:list-item-->
 </ol>
 <!--/wp:list-->
-
 <!--wp:paragraph-->
 <p>
   Does it have to satisfy all four exhaustively? How do we know if we have
-  satisfied one? This framework also seems dependent on the way in which we
-  understand "<a href="https://en.wikipedia.org/wiki/Category:Scientific_laws"
-    >scientific laws</a
-  >"; I am guessing physical laws, but what about
-  <a href="https://en.wikipedia.org/wiki/Category:Empirical_laws"
-    >statistical laws</a
-  >
+  satisfied one? </p><p>This framework also seems dependent on the way in which we
+  understand "<a href="https://en.wikipedia.org/wiki/Category:Scientific_laws">scientific laws</a>"; I am guessing physical laws, but what about
+  <a href="https://en.wikipedia.org/wiki/Category:Empirical_laws">statistical laws</a>
   and
   <a href="https://en.wikipedia.org/wiki/Category:Principles">principles</a>?
   What about
   <a href="https://en.wikipedia.org/wiki/Stylized_fact">Stylized Facts</a> and
-  concepts such as<a
-    href="https://en.wikipedia.org/wiki/Category:Economics_laws"
-  >
-    Economic Laws</a
-  >? Many of these are dependent on a
-  <a href="https://plato.stanford.edu/entries/ceteris-paribus/"
-    >Ceteris Paribus</a
-  >
+  concepts such as<a href="https://en.wikipedia.org/wiki/Category:Economics_laws">
+    Economic Laws</a>? Many of these are dependent on a
+  <a href="https://plato.stanford.edu/entries/ceteris-paribus/">Ceteris Paribus</a>
   clause, which to me seems to beg the very question of "what is causation" to
   begin with (see the paper
-  <a href="https://link.springer.com/chapter/10.1007/978-94-017-1009-1_2"
-    >There is No Such Thing as a Ceteris Paribus Law</a
-  >). I should note too that these criteria are not agreed upon either. For
+  <a href="https://link.springer.com/chapter/10.1007/978-94-017-1009-1_2">There is No Such Thing as a Ceteris Paribus Law</a>). I should note too that these criteria are not agreed upon either. For
   example, Jonathan Bennett (2003) notes that:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     when the antecedent of a conditional is not about a particular event,
     Lewis’s conditions provide the wrong results. For instance, if the
-    antecedent is of the form&nbsp;<em
-      >If one of these events had not happened</em
-    >, then Lewis’s rules say that the nearest world where the antecedent is
+    antecedent is of the form <em>If one of these events had not happened</em>, then Lewis’s rules say that the nearest world where the antecedent is
     true is always the world where the most recent such event did not happen.
     But this does not seem to provide intuitively correct truth conditions for
     such conditionals.
   </p>
-  <!--/wp:paragraph-->
+<!--/wp:paragraph-->
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
-  I don't want to continue diving down this metaphysical rabbit hole. I just
-  want to note that the criteria we select is going to depend on the differences
+  I don't want to continue diving down this metaphysical rabbit hole. </p><p>I just
+  want to note that the criteria we select are going to depend on the differences
   we think are important; meaning the selection is highly contextual. It will be
   driven by pragmatic factors relevant to the decision makers, reasoners, and
-  parties involved within an ongoing discussion. Selecting the contrast class
+  parties involved within an ongoing discussion. </p><p>Selecting the contrast class
   seems equivalent to selecting the nearest possible world, but we ought to
   think critically about how we select the contrast class.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
-  Moving on; It seems to me that if Mackie's framework accounts for many to one
-  relations and Schaffer's framework accounts for many-to-many relations, we
-  could generalize beyond both by means of
-  <a href="https://en.wikipedia.org/wiki/Multigraph">Multigraphs</a> and
-  <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"
-    >Directed Acyclic Graphs</a
-  >. Pearl's approach uses DAG's but Stephen Wolframs
-  <a
-    href="https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/branchial-graphs-and-multiway-causal-graphs/"
-    >Multiway Causal Graphs</a
-  >
-  seem to be a useful tool for generalizing possible causal relations and their
-  counterfactual conditionals. The ancestor node on a path along the causal
-  graph that has been actualized is "the cause", and alternative paths represent
-  the contrastive states of the world that could have been instantiated, given
-  the instantiation of the ancestor node. This is what a Multiway graph looks
-  like; each path represents potential causal histories and the nodes at the end
-  represent potential outcomes. This mathematical structure is a
-  <a href="https://mathworld.wolfram.com/MultiwaySystem.html">multiway system</a
-  >. These are a kind of substitution system in which multiple states are
-  permitted at any stage. This accommodates rule systems in which there is more
-  than one possible way to perform an update. Alternative ways the system can
-  update refers to these counterfactual scenarios or contrastive events. Of
-  course, figuring out the state transition rules is a complicated matter.
-</p>
-<div class="separator" style="clear: both; text-align: center">
-  <a
-    href="img/causation-4.png"
-    imageanchor="1"
-    style="margin-left: 1em; margin-right: 1em"
-    ><img
-      border="0"
-      data-original-height="806"
-      data-original-width="974"
-      height="349"
-      src="img/causation-4.png"
-      width="421"
-  /></a>
-</div>
-<p>
+
+
+<p class="chapter-transition">
   Anyway, I don't want to digress down this rabbit hole. Let's move along and
   take a look at the paradoxes Schaffer's framework resolves and wrap this up.
   We will look at the problem of whether absences are causal and whether
   causation is transitive.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="absences">Absence causation</h3><p>
   Are absences causal? I will list out the pro and contra reasons Schaffer lists
   and touch briefly on why we may think they are or aren't.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>
+<!--wp:list-item-->
+<li>
     (+) Absence causation is intuitive: intuition accepts some absences as
     causal. The gardener not watering the lawn seems to cause the law dying.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (+) Absences play the predictive and explanatory roles of causes and
     effects. The car driver not slamming on the brakes helps us predict whether
     there will be an accident.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (+) Absences play the moral and legal roles of causes and effects. For
     example, negligent parents who don't feed their children seem morally
     responsible.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (+) Absences mediate causation by disconnection. For example, severing the
     connection between two wire components will cause a power outage.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Absence causation is counterintuitive: intuition rejects some absences
     as causal. For example, saying the queen of England not watering your
     flowers caused my flowers death.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Absence causation is theoretically problematic. What does a negative
     statement denote? There are three options: (i) a nonactual event, (ii) an
     actual fact and (iii) an actual event. The first two conflict with the idea
     of causation involving actual events. One and three conflict with the idea
     of counterfactual dependence.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Absence causation is metaphysically abhorrent. The gardener not watering
     the flowers implies there is no energy momentum flow or other physical
     processes connecting this absence. It violates spatiotemporal continuity;
     "not watering my flowers" could be said to occur literally anywhere.
   </li>
-  <!--/wp:list-item-->
+<!--/wp:list-item-->
 </ol>
 <!--/wp:list-->
-
 <!--wp:paragraph-->
 <p>Schaffer claims the paradoxes are resolved by contrastivity:</p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     The reconciliation strategy is as follows: (i) treat negative nominals as
     denoting actual events, and (ii) treat absence-talk as tending to set the
     associated contrast to the possible event said to be absent. For instance,
@@ -1966,17 +1758,16 @@
     to starve rather than be oxygenated, which in turn caused the prisoner to
     die rather than survive. Contrastivity thus preserves all the plusses of
     absence causation. Moving to (7), the contrastive strategy locates the
-    “oomph” in<br />absence causation. Where c and e are not actually connected,
+    “oomph” in<br/>absence causation. Where c and e are not actually connected,
     the members of C* and E* would have been connected. Or in more complex
     cases, there is a continuous chain composed of connections and
     wouldbe-connections.9 Thus, when the gardener naps rather than watering my
     flowers, there is a would-be-connection from the causal contrast of the
     watering to the effectual contrast of my flowers blooming.
   </p>
-  <!--/wp:paragraph--><cite>Schaffer p. 5-6</cite>
+<!--/wp:paragraph--><cite>Schaffer p. 5-6</cite>
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
   Schaffer recommends resolving the fifth conflict on pragmatic grounds. The
@@ -1985,63 +1776,56 @@
   similar worlds.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<h3 id="transitivity">Transitivity</h3><p>
   Is causation transitive? Transitivity would mean that if C causes D, and D
   causes E, does it follow that C causes E? Schaffer provides the pro and contra
   arguments:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>(+) Transitivity is intuitive.</li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--wp:list-item-->
+<li>(+) Transitivity is intuitive.</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (+) Transitivity links causal histories. This depends on number one. If
     there is no transitivity, then there is no causal sequence leading to a
     conclusion which seems counterintuitive.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Transitivity fails in the dog-bite case; the case in which a terrorist
     is about to detonate a bomb with his right finger, when a dog runs by and
-    bites off that finger. The dog's bye causes the terrorist to press with the
+    bites off that finger. The dog's bite causes the terrorist to press with the
     left finger, causing an explosion. But intuitively, the dog obviously does
     not cause the explosion.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Transitivity fails in the boulder case; a boulder is rolling down a hill
     towards a hiker, when the hiker sees it and ducks out of the way. The
-    boulder's rolling causes the hikers ducking, and the hikers ducking causes
-    his survival, but intuitively the bounders rolling does not cause survival.
+    boulder's rolling causes the hiker's ducking, and the hiker's ducking causes
+    his survival, but intuitively the boulder's rolling does not cause survival.
   </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
     (-) Transitivity fails in the nudgings case; a speck of dust nudges the rock
     off some trajectory onto another trajectory, which causes the rock to reach
     trajectory 2's midpoint, causes a window to shatter. But obviously this is
-    counterintuitive, the specks nudge does not cause the window to shatter, "To
+    counterintuitive, the speck's nudge does not cause the window to shatter, "To
     hold otherwise is to miscount such paradigmatic non-causes as preempted
     backups, innocent bystanders, and hounds baying in the distance as causes
     since their presence contributes photons and sound-waves that nudge the
     causal process".
   </li>
-  <!--/wp:list-item-->
+<!--/wp:list-item-->
 </ol>
 <!--/wp:list-->
-
 <!--wp:paragraph-->
 <p>
   Schaffer claims that paradoxes of transitivity are resolved as follows: (i)
@@ -2051,29 +1835,25 @@
   counterexamples to require illicit shifts in D.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
 <p>
-  For the the claim of intuition, Schaffer claims that fixing the contrast class
+  For the claim of intuition, Schaffer claims that fixing the contrast class
   throughout the utterance resolves any paradox because the statements will
   conform to differential transitivity. He doesn't really elaborate so I can't
-  comment much. This flows into the second the second notion of causal history;
+  comment much. </p><p>This flows into the second notion of causal history;
   fixing the contrast classes for all set of potential causal explanatory
-  factors leads to proper inference. For the cases where transitivity seems to
+  factors leads to proper inference. </p><p>For the cases where transitivity seems to
   be violated, Schaffer states:
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:quote-->
 <blockquote class="wp-block-quote">
-  <!--wp:paragraph-->
-  <p>
+<!--wp:paragraph-->
+<p>
     Bounding over to the counterexamples of (3)–(4), none of these involve
     differential transitivity. All require illicit shifts in the value of D.
     That is, all the counterexamples have the form: c rather than c* causes d
-    rather than d1*, and d rather than d2* causes e rather than e*, where d1<em
-      >* != d2</em
-    >*. In (3), Dog’s biting off Terrorist’s right forefinger rather than
+    rather than d1*, and d rather than d2* causes e rather than e*, where d1<em>* != d2</em>*. In (3), Dog’s biting off Terrorist’s right forefinger rather than
     barking causes Terrorist’s pressing with his left forefinger rather than his
     right forefinger: c rather than c* causes d rather than d1*. But Terrorist’s
     pressing with his left forefinger rather than his right forefinger does not
@@ -2086,10 +1866,9 @@
     {Terrorist’s pressing with his right forefinger} to {Terrorist’s walking
     away}.
   </p>
-  <!--/wp:paragraph--><cite>Schaffer P. 15</cite>
+<!--/wp:paragraph--><cite>Schaffer P. 15</cite>
 </blockquote>
 <!--/wp:quote-->
-
 <!--wp:paragraph-->
 <p>
   The other alleged failures of transitivity will fall short for similar
@@ -2098,264 +1877,222 @@
   metaphysical so we will skip that.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-6">
+<span class="ep-part-kicker">Part VI</span>
+<h2 class="ep-part-title">Causation in Systems</h2>
+<span class="ep-part-summary">Feedback, lagged effects, and exogenous shocks broaden the picture beyond one-way causal chains.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> How should causation be understood when variables interact over time?</p><p class="chapter-path"><strong>Path:</strong> Dynamic systems → exogenous shocks → feedback → multiway causal histories.</p></div><h3 id="multiway">Alternative causal histories and multiway graphs</h3><p>
+  Moving on, it seems to me that if Mackie's framework accounts for many to one
+  relations and Schaffer's framework accounts for many-to-many relations, we
+  could generalize beyond both by means of
+  <a href="https://en.wikipedia.org/wiki/Multigraph">Multigraphs</a> and
+  <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graphs</a>. </p><p>Pearl's approach uses DAGs but Stephen Wolfram's
+  <a href="https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/branchial-graphs-and-multiway-causal-graphs/">Multiway Causal Graphs</a>
+  seem to be a useful tool for generalizing possible causal relations and their
+  counterfactual conditionals. </p><p>The ancestor node on a path along the causal
+  graph that has been actualized is "the cause", and alternative paths represent
+  the contrastive states of the world that could have been instantiated, given
+  the instantiation of the ancestor node. This is what a Multiway graph looks
+  like; each path represents potential causal histories and the nodes at the end
+  represent potential outcomes. </p><p>This mathematical structure is a
+  <a href="https://mathworld.wolfram.com/MultiwaySystem.html">multiway system</a>. These are a kind of substitution system in which multiple states are
+  permitted at any stage. This accommodates rule systems in which there is more
+  than one possible way to perform an update. Alternative ways the system can
+  update refers to these counterfactual scenarios or contrastive events. </p><p>Of
+  course, figuring out the state transition rules is a complicated matter.
+</p><div class="separator" style="clear: both; text-align: center">
+<a href="img/causation-4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em"><img alt="Causation diagram" border="0" data-original-height="806" data-original-width="974" height="349" src="img/causation-4.png" width="421"/></a>
+</div><h3 id="dynamic-systems">Intervention, shocks, and feedback</h3><p>
   I just want to end with a few comments. I started by differentiating causal
   generalizations from singular causation, spoke about how people incorrectly
   infer from a causal generalization case specific details relevant to the
   causal investigation of an individual within that population, and showed a
   couple of philosophical accounts that describe singular causation for every
-  day reasoning. Causality has literally been discusses for thousands of years
+  day reasoning. </p><p>Causality has been discussed for thousands of years
   so you can obviously go very deep. I mostly think about causation in terms of
   systems and controllability; the notion of control reflects the fact I've been
   trained on the Rubin causal model, intervention on a system seems
-  self-evident. However, we need not necessarily have direct control over a
+  self-evident. </p><p>However, we need not necessarily have direct control over a
   system to infer causality, as the research from
   <a href="https://econpapers.repec.org/RAS/pan29.htm">Joshua Angrist</a> on
-  <a href="https://en.wikipedia.org/wiki/Natural_experiment"
-    >Natural Experiments</a
-  >
-  has demonstrated. What we are truly interested in is identifying the
-  <a href="https://en.wikipedia.org/wiki/Exogenous_and_endogenous_variables"
-    >exogenous variables</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Natural_experiment">Natural Experiments</a>
+  has demonstrated. </p><p>What we are truly interested in is identifying the
+  <a href="https://en.wikipedia.org/wiki/Exogenous_and_endogenous_variables">exogenous variables</a>
   that interact causally with our system of
-  <a href="https://en.wikipedia.org/wiki/Endogeneity_(econometrics)"
-    >endogenous variables</a
-  >. If we have direct control over the exogenous variables, that is an added
+  <a href="https://en.wikipedia.org/wiki/Endogeneity_(econometrics)">endogenous variables</a>. If we have direct control over the exogenous variables, that is an added
   benefit; then we can empirically test hypotheses about say, the effects of a
   drug, effectiveness of a policy, or
-  <a href="https://en.wikipedia.org/wiki/Program_evaluation"
-    >quality of a program</a
-  >, given our manipulation of the variable. This also applies to dynamical
+  <a href="https://en.wikipedia.org/wiki/Program_evaluation">quality of a program</a>, given our manipulation of the variable. </p><p>This also applies to dynamical
   systems. In the real world, time components are essential features of many
   systems. Dynamical systems are widely used in science and engineering to model
-  systems consisting of several interacting components. Often, they can be given
+  systems consisting of several interacting components. </p><p>Often, they can be given
   a causal interpretation in the sense that they not only model the evolution of
   the states of the system's components over time, but also describe how their
   evolution is affected by external interventions (exogenous "shocks" in the
-  economic jargon) on the system that perturb the dynamics. This "shock" is
+  economic jargon) on the system that perturb the dynamics. </p><p>This "shock" is
   known as an
   <a href="https://en.wikipedia.org/wiki/Impulse_response">Impulse Response</a>
   in control theory; given some level or value of an external impulse, we can
   trace out the dynamics of the system over time, estimating the trajectory of a
-  measure and equilibrium behavior. Why do I like this formulation? By
+  measure and equilibrium behavior. </p><p>Why do I like this formulation? By
   distinguishing between exogenous shocks and endogenous variables, we can have
-  a better description of system performance. Imagine your car breaks down; was
+  a better description of system performance. </p><p>Imagine your car breaks down; was
   it due to an endogenous failure (like a part being deficient) or some external
   factor causing stress on the system leading to collapse?
-  <a href="https://en.wikipedia.org/wiki/Dynamic_causal_modeling"
-    >Dynamical causal modeling</a
-  >
+  <a href="https://en.wikipedia.org/wiki/Dynamic_causal_modeling">Dynamical causal modeling</a>
   allows you to understand the causal influence of something on a system with
-  interacting components. Take an example from economics; does poverty cause
+  interacting components. </p><p>Take an example from economics; does poverty cause
   illiteracy or does illiteracy cause poverty? Well, from a dynamical systems
-  perspective, this is not a well formed question because the two could be
+  perspective, this is not a well-formed question because the two could be
   interacting in a
   <a href="https://en.wikipedia.org/wiki/Causal_loop_diagram">causal loop</a>
-  due to self reinforcing feedback mechanisms; understanding these two
+  due to self-reinforcing feedback mechanisms; understanding these two
   phenomenon requires us to understand their dynamics within a broader system
-  that causally effects both of them. The dynamical systems perspective also
+  that causally affects both of them. </p><p>The dynamical systems perspective also
   gives you insight into lagged causal effects that would go unobserved in a
-  mere cross sectional analysis. In practice, controllability of social systems
+  mere cross-sectional analysis. </p><p>In practice, controllability of social systems
   is very difficult; in econometrics we always wonder whether something can
   truly be exogenous, Nevertheless, I think these approaches capture our
   intuitive notions of causation, manipulation, and control; despite singular
   causation could still be somewhat of a problem. For more on this see
-  <a
-    href="https://github.com/joelparkerhenderson/causal-analysis-based-on-system-theory"
-    >Causal Analysis Based On System Theory</a
-  >.
+  <a href="https://github.com/joelparkerhenderson/causal-analysis-based-on-system-theory">Causal Analysis Based On System Theory</a>.
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
+<header class="ep-part-banner" id="part-7">
+<span class="ep-part-kicker">Part VII</span>
+<h2 class="ep-part-title">Synthesis: Relevance, Scale, and Explanation</h2>
+<span class="ep-part-summary">Across the frameworks, causal claims depend on what is held fixed, which alternatives matter, and where the explanatory boundary is drawn.</span>
+</header><div class="chapter-guide"><p><strong>Question:</strong> What recurring problem connects these otherwise different accounts?</p><p class="chapter-path"><strong>Path:</strong> Causal field / reference class → contrast class → system boundary → spatial and temporal scale.</p></div><div class="table-wrap"><table class="comparison-table extra-wide-table"><thead><tr><th>Framework</th><th>What it contributes</th><th>Where the relevance problem enters</th></tr></thead><tbody>
+<tr><td data-label="Framework"><strong>Potential outcomes</strong></td><td data-label="Contribution">Counterfactual definition of causal effects and disciplined intervention comparisons.</td><td data-label="Relevance">Population, treatment, outcome, covariates, and identification assumptions.</td></tr>
+<tr><td data-label="Framework"><strong>Mackie</strong></td><td data-label="Contribution">Plural sufficient configurations and INUS conditions.</td><td data-label="Relevance">The causal field determines which background conditions are in play.</td></tr>
+<tr><td data-label="Framework"><strong>Wright</strong></td><td data-label="Contribution">A singular-causation test robust to some overdetermination cases.</td><td data-label="Relevance">The actual sufficient set and legally relevant consequence must be specified.</td></tr>
+<tr><td data-label="Framework"><strong>Schaffer</strong></td><td data-label="Contribution">Explicit contrasts on both cause and effect sides.</td><td data-label="Relevance">The contrast class determines which alternatives make the causal claim true or informative.</td></tr>
+<tr><td data-label="Framework"><strong>Systems view</strong></td><td data-label="Contribution">Feedback, shocks, lags, and interacting components over time.</td><td data-label="Relevance">System boundaries and temporal scale determine what counts as exogenous, endogenous, or causally connected.</td></tr>
+</tbody></table></div><div class="core-claim"><strong>Unifying theme.</strong> Mackie’s causal field, the statistical reference class, Schaffer’s contrast class, and the choice of spatial or temporal scale are all ways of answering a common question: <em>relative to what background and alternatives is this causal claim being made?</em></div><h3 id="scale">Scale and the limits of causal explanation</h3><p>
   Lastly, I just want to note that causal explanation is but one type of
   explanation. Not all explanatory frameworks rely on causal chains of
-  manipulation. An obvious example of a non-causal explanation that people
+  manipulation. </p><p>An obvious example of a non-causal explanation that people
   mistake for causation is that of planetary motion. These equations are
   non-causal; they are descriptive. Do not make the mistake of thinking they
-  are. Another, although contentious, example is that of Evolutionary theory;
+  are. </p><p>Another, although contentious, example is that of evolutionary theory;
   Evolution does not "cause" things to be, it is a description of various
-  biological processes and stochastic dynamics. The level of causal description
+  biological processes and stochastic dynamics. </p><p>The level of causal description
   is also relevant for us to understand "what the cause" was in a particular
   situation. Depending on the specific scale in which you observe a system, you
-  can have vastly different understandings of what that thing is. For example,
+  can have vastly different understandings of what that thing is. </p><p>For example,
   zoom in on my biological system, and you will see a vastly different organism
   composed of interconnected subsystems than you would if you zoomed out and
-  observed me interacting in my environment. The same idea is true of causation;
+  observed me interacting in my environment. </p><p>The same idea is true of causation;
   we say something is the cause of something else, given a background assumption
   about the particular spatial scale we are interested. So if I say "So and So
   got Covid and died as a result of bad policy", I am obviously looking at it
   from a different scale than if I said "So and So got Covid and died because
-  they had hypertension". Spatial scales are not only important, but also
+  they had hypertension". </p><p>Spatial scales are not only important, but also
   temporal scales. Something may appear to be "causal" on one time scale, but
   zoom out and it appears to be part of a larger process. Temporal and spatial
   considerations are essential to clarify when imposing causal interpretations
   on an event.
+</p><p class="chapter-transition">Taken together, these frameworks suggest that a causal claim is rarely just “X caused Y.” A careful claim also specifies the intervention or candidate condition, the outcome being explained, the relevant alternatives, the background conditions, and the spatial and temporal scale. Making those choices explicit does not eliminate causal disagreement, but it makes the disagreement easier to locate and evaluate.</p>
+<!--/wp:paragraph-->
+<!--wp:paragraph-->
+<h2 id="further-reading">Further Reading</h2><p>
+  I found this great flowchart for books on causal inference: W<a href="https://www.bradyneal.com/which-causal-inference-book">hich causal inference book you should read</a>...
 </p>
 <!--/wp:paragraph-->
-
 <!--wp:paragraph-->
-<p>
-  I found this great flowchart for books on causal inference:&nbsp;W<a
-    href="https://www.bradyneal.com/which-causal-inference-book"
-    >hich causal inference book you should read</a
-  >...
-</p>
+<h3>Additional sources</h3>
 <!--/wp:paragraph-->
-
-<!--wp:paragraph-->
-<p>Additional Reading</p>
-<!--/wp:paragraph-->
-
 <!--wp:list {"ordered":true}-->
 <ol>
-  <!--wp:list-item-->
-  <li>
-    <a href="https://link.springer.com/article/10.1007/s10516-021-09548-5"
-      >Minimal Theory of Causation and Causal Distinctions</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.scielo.br/j/rpc/a/jKyQjCVGhvvFBs48KYbQN6s/#"
-      >On the notion of causality in medicine: addressing Austin Bradford Hill
-      and John L. Mackie</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://plato.stanford.edu/entries/causation-regularity/"
-      >Regularity and Inferential Theories of Causation</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://blog.ml.cmu.edu/2020/08/31/7-causality/"
-      >7 – Causal Inference</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://see.library.utoronto.ca/SEED/Vol4-2/Hulswit.htm"
-      >Causality and Causation: The Inadequacy of the Received View</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://plato.stanford.edu/entries/causation-backwards/"
-      >Backward Causation</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01069/full"
-      >Causal Responsibility and Robust Causation</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="https://oar.princeton.edu/jspui/bitstream/88435/pr1xg6t/1/06RosenVol.42.2.r_1.pdf"
-      >CAUSATION, COUNTERFACTUAL DEPENDENCE AND CULPABILITY: MORAL PHILOSOPHY IN
-      MICHAEL MOORE’S CAUSATION AND RESPONSIBILITY</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html"
-      >An Introduction to Directed Acyclic Graphs</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="https://lasttheory.com/article/what-is-the-multiway-graph-in-wolfram-physics"
-      >What is the Multiway Graph in Wolfram Physics</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="https://www.informationphilosopher.com/knowledge/possible_worlds.html"
-      >Possible Worlds</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://www.jstor.org/stable/20118153"
-      >"Ceteris Paribus", There Is No Problem of Provisos</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="https://economics.mit.edu/sites/default/files/2022-11/Empirical%20Strategies%20in%20Economics_%20Illuminating%20the%20Path%20From%20Cause%20to%20Effect.pdf"
-      >EMPIRICAL STRATEGIES IN ECONOMICS: ILLUMINATING THE PATH FROM CAUSE TO
-      EFFECT</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a
-      href="http://causality.cs.ucla.edu/blog/index.php/2019/08/14/a-crash-course-in-good-and-bad-control/"
-      >A Crash Course in Good and Bad Control</a
-    >
-  </li>
-  <!--/wp:list-item-->
-
-  <!--wp:list-item-->
-  <li>
-    <a href="https://link.springer.com/article/10.1007/s10699-023-09910-3"
-      >Non-causal Explanations in the Humanities: Some Examples</a
-    >
-  </li>
-  <li>
-    <a href="https://www.bu.edu/wcp/Papers/Meta/MetaAbdo.htm"
-      >The Ultimate of Reality: Reversible Causality</a
-    >
-  </li>
-  <li>
-    <a href="https://www.r-econometrics.com/timeseries/irf/"
-      >An Introduction to Impulse Response Analysis of VAR Models</a
-    >
-  </li>
-  <li>
-    <a href="https://link.springer.com/article/10.1007/s10462-023-10411-9"
-      >Disentangling causality: assumptions in causal discovery and inference</a
-    >
-  </li>
-  <!--/wp:list-item-->
-</ol>
+<!--wp:list-item-->
+<li>
+<a href="https://link.springer.com/article/10.1007/s10516-021-09548-5">Minimal Theory of Causation and Causal Distinctions</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://www.scielo.br/j/rpc/a/jKyQjCVGhvvFBs48KYbQN6s/#">On the notion of causality in medicine: addressing Austin Bradford Hill
+      and John L. Mackie</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://plato.stanford.edu/entries/causation-regularity/">Regularity and Inferential Theories of Causation</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://blog.ml.cmu.edu/2020/08/31/7-causality/">7 – Causal Inference</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://see.library.utoronto.ca/SEED/Vol4-2/Hulswit.htm">Causality and Causation: The Inadequacy of the Received View</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://plato.stanford.edu/entries/causation-backwards/">Backward Causation</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01069/full">Causal Responsibility and Robust Causation</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://oar.princeton.edu/jspui/bitstream/88435/pr1xg6t/1/06RosenVol.42.2.r_1.pdf">CAUSATION, COUNTERFACTUAL DEPENDENCE AND CULPABILITY: MORAL PHILOSOPHY IN
+      MICHAEL MOORE’S CAUSATION AND RESPONSIBILITY</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html">An Introduction to Directed Acyclic Graphs</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://lasttheory.com/article/what-is-the-multiway-graph-in-wolfram-physics">What is the Multiway Graph in Wolfram Physics</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://www.informationphilosopher.com/knowledge/possible_worlds.html">Possible Worlds</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://www.jstor.org/stable/20118153">"Ceteris Paribus", There Is No Problem of Provisos</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://economics.mit.edu/sites/default/files/2022-11/Empirical%20Strategies%20in%20Economics_%20Illuminating%20the%20Path%20From%20Cause%20to%20Effect.pdf">EMPIRICAL STRATEGIES IN ECONOMICS: ILLUMINATING THE PATH FROM CAUSE TO
+      EFFECT</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="http://causality.cs.ucla.edu/blog/index.php/2019/08/14/a-crash-course-in-good-and-bad-control/">A Crash Course in Good and Bad Control</a>
+</li>
+<!--/wp:list-item-->
+<!--wp:list-item-->
+<li>
+<a href="https://link.springer.com/article/10.1007/s10699-023-09910-3">Non-causal Explanations in the Humanities: Some Examples</a>
+</li>
+<li>
+<a href="https://www.bu.edu/wcp/Papers/Meta/MetaAbdo.htm">The Ultimate of Reality: Reversible Causality</a>
+</li>
+<li>
+<a href="https://www.r-econometrics.com/timeseries/irf/">An Introduction to Impulse Response Analysis of VAR Models</a>
+</li>
+<li>
+<a href="https://link.springer.com/article/10.1007/s10462-023-10411-9">Disentangling causality: assumptions in causal discovery and inference</a>
+</li>
+<!--/wp:list-item-->
+</ol><p class="chapter-transition"><a href="#top">Back to top</a></p>
 <!--/wp:list-->
 </article>
