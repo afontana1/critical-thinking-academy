@@ -96,7 +96,7 @@ def section_name(part: str) -> str:
 def iter_html_paths() -> list[Path]:
     try:
         result = subprocess.run(
-            ["git", "ls-files", "*.html"],
+            ["git", "ls-files", "--cached", "--others", "--exclude-standard", "*.html"],
             check=True,
             capture_output=True,
             encoding="utf-8",
