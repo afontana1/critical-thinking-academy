@@ -102,6 +102,7 @@ def iter_html_paths() -> list[Path]:
             encoding="utf-8",
         )
         paths = [Path(line) for line in result.stdout.splitlines() if line.strip()]
+        paths = [path for path in paths if path.exists()]
         if paths:
             return sorted(paths)
     except (OSError, subprocess.CalledProcessError):
