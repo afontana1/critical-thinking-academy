@@ -12,10 +12,10 @@ flowchart TB
     BP["Boundary policing<br/><br/>(guarding orthodoxy / identity)"]
     OGH["Out-group hostility<br/><br/>(moralized antagonism)"]
     IGC["Intergroup conflict<br/><br/>(open social or political clash)"]
-    EVCW["Evidence" of cosmic war<br/><br/> (conflict re-read as proof)"]
+    EVCW["'Evidence' of cosmic war<br/><br/> (conflict re-read as proof)"]
   end
   subgraph SG1_2["R2 — Moral monopoly -&gt; distrust -&gt; preemptive coercion"]
-    EX["Exclusivism /<br/>moral monopoly belief<br/><br/>&#x27;only one right order&#x27;"]
+    EX["Exclusivism /<br/>moral monopoly belief<br/><br/>'only one right order'"]
     MOD["Moral out-group distrust<br/><br/>others seen as corrupting"]
     FOG["Fear of out-group<br/><br/>threat perception intensifies"]
     SCC["Support for coercive control<br/><br/>force feels protective"]
@@ -137,8 +137,8 @@ flowchart TB
     CON["Conflict<br/><br/>social struggle<br/>intensifies"]
   end
   subgraph SG2_4["B2 failure modes"]
-    ML["Moral licensing<br/><br/>&#x27;humility&#x27; proves<br/>righteousness"]
-    HC["Hierarchy capture<br/><br/>&#x27;humility&#x27; becomes<br/>downward obedience"]
+    ML["Moral licensing<br/><br/>'humility' proves<br/>righteousness"]
+    HC["Hierarchy capture<br/><br/>'humility' becomes<br/>downward obedience"]
     SA["Selective application<br/><br/>humility demanded<br/>of subordinates"]
     AO["Authority / obedience<br/><br/>power asymmetry<br/>normalized"]
     PI["Policing intensity<br/><br/>stricter<br/>enforcement"]
@@ -150,7 +150,7 @@ flowchart TB
     G["Grievance<br/><br/>hurt and backlash<br/>accumulate"]
   end
   subgraph SG2_6["B3 failure modes"]
-    RC["Reclassification<br/><br/>violence renamed<br/>&#x27;justice&#x27; or &#x27;defense&#x27;"]
+    RC["Reclassification<br/><br/>violence renamed<br/>'justice' or 'defense'"]
     DV["Delegation to state /<br/>militia / divine violence<br/><br/>outsourced force"]
     AU["Apocalyptic urgency<br/><br/>emergency<br/>mentality"]
     EO["Emergency override<br/><br/>normal restraint<br/>suspended"]
@@ -273,7 +273,7 @@ flowchart TB
     MC["Mandate certainty<br/><br/>commands feel<br/>absolute"]
     CT["Compromise taboo<br/><br/>concession feels<br/>faithless"]
     CON["Conflict<br/><br/>polarized<br/>struggle"]
-    WDT["&#x27;Watering down truth&#x27;<br/><br/>moderation seen<br/>as betrayal"]
+    WDT["'Watering down truth'<br/><br/>moderation seen<br/>as betrayal"]
     IT["Identity threat<br/><br/>loss of certainty<br/>or status"]
     DFC["Demand for certainty<br/><br/>harder boundaries<br/>sought"]
   end
@@ -293,7 +293,7 @@ flowchart TB
     CG["Conflict / grievance<br/><br/>hurt and<br/>resentment"]
     DFC2["Demand for coercion<br/><br/>pressure for<br/>stronger control"]
     PMC["Moral chaos<br/><br/>loss of sacred<br/>order felt"]
-    RGOM["&#x27;Restore godly order&#x27;<br/>movement<br/><br/>reactionary<br/>mobilization"]
+    RGOM["'Restore godly order'<br/>movement<br/><br/>reactionary<br/>mobilization"]
     PS["Political sacralization<br/><br/>state cast as<br/>holy instrument"]
     EC["Enforcement capacity<br/><br/>power available<br/>again"]
   end
@@ -347,7 +347,7 @@ flowchart TB
     CPT["Contempt<br/><br/>moral<br/>hardening"]
     DH["Dehumanization<br/><br/>others seen as<br/>less worthy"]
     SHC["Support for harsh<br/>coercion<br/><br/>severity endorsed"]
-    SOE["&#x27;Soft on evil&#x27;<br/><br/>mercy framed<br/>as weakness"]
+    SOE["'Soft on evil'<br/><br/>mercy framed<br/>as weakness"]
     FEAR["Fear<br/><br/>danger and<br/>exposure felt"]
     DFP["Demand for punishment<br/><br/>calls for<br/>severity"]
   end

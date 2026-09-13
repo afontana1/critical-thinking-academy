@@ -46,14 +46,138 @@
         max-width: 100%;
       }
 
-      .ep-post .mermaid {
+      .ep-post .mermaid-diagram {
+        margin: 1.15em 0;
         max-width: 100%;
-        overflow-x: auto;
+        height: min(72vh, 720px);
+        min-height: 420px;
+        overflow: auto;
+        overscroll-behavior: contain;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.45rem;
+        background: #ffffff;
+        padding: 1rem;
+        cursor: grab;
+        touch-action: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .ep-post .mermaid-diagram.is-dragging,
+      .ep-post .mermaid.is-dragging {
+        cursor: grabbing;
+        user-select: none;
+      }
+
+      .ep-post .mermaid-diagram.is-dragging *,
+      .ep-post .mermaid.is-dragging * {
+        cursor: grabbing !important;
+      }
+
+      .ep-post .mermaid {
+        min-width: 760px;
+        max-width: 100%;
+        margin: 0;
+        overflow: visible;
+        color: #111111;
+        background: transparent;
+        cursor: grab;
+        touch-action: none;
       }
 
       .ep-post .mermaid svg {
         max-width: 100%;
         height: auto;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .ep-post .mermaid-zoom-controls {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: inline-flex;
+        gap: 0.35rem;
+        align-items: center;
+        margin: 0 0 0.75rem;
+        padding: 0.25rem;
+        border: 1px solid #c9c9c9;
+        border-radius: 0.4rem;
+        background: #ffffff;
+        box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.12);
+      }
+
+      .ep-post .mermaid-zoom-input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .ep-post .mermaid-zoom-controls label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2rem;
+        min-height: 2rem;
+        border: 1px solid #b8b8b8;
+        border-radius: 0.3rem;
+        padding: 0 0.45rem;
+        background: #f7f7f7;
+        color: #111111;
+        font: 700 0.9rem/1 Arial, sans-serif;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .ep-post .mermaid-zoom-controls label:hover {
+        border-color: #555555;
+        background: #eeeeee;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-75:checked ~ .mermaid-zoom-controls [data-zoom-level="75"],
+      .ep-post .mermaid-diagram > .zoom-100:checked ~ .mermaid-zoom-controls [data-zoom-level="100"],
+      .ep-post .mermaid-diagram > .zoom-125:checked ~ .mermaid-zoom-controls [data-zoom-level="125"],
+      .ep-post .mermaid-diagram > .zoom-150:checked ~ .mermaid-zoom-controls [data-zoom-level="150"],
+      .ep-post .mermaid-diagram > .zoom-200:checked ~ .mermaid-zoom-controls [data-zoom-level="200"] {
+        border-color: #111111;
+        background: #e7eef5;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-75:checked ~ .mermaid svg,
+      .ep-post .mermaid-diagram[data-zoom="75"] .mermaid svg {
+        width: 760px !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-100:checked ~ .mermaid svg,
+      .ep-post .mermaid-diagram[data-zoom="100"] .mermaid svg {
+        width: 1000px !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-125:checked ~ .mermaid svg,
+      .ep-post .mermaid-diagram[data-zoom="125"] .mermaid svg {
+        width: 1250px !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-150:checked ~ .mermaid svg,
+      .ep-post .mermaid-diagram[data-zoom="150"] .mermaid svg {
+        width: 1500px !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      .ep-post .mermaid-diagram > .zoom-200:checked ~ .mermaid svg,
+      .ep-post .mermaid-diagram[data-zoom="200"] .mermaid svg {
+        width: 2000px !important;
+        max-width: none !important;
+        height: auto !important;
       }
 
 .ep-post h1,
@@ -617,7 +741,7 @@
         }
 
         .ep-post figure,
-        .ep-post .uml-diagram,
+        .ep-post .mermaid-diagram,
         .ep-post .mermaid,
         .ep-post .math-block,
         .ep-post .mjx-container,
@@ -626,18 +750,6 @@
           max-width: 100%;
         }
 
-        .ep-post .uml-diagram {
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .ep-post .uml-diagram > a {
-          display: block;
-          width: 100%;
-          max-width: 100%;
-        }
-
-        .ep-post .uml-diagram img,
         .ep-post img,
         .ep-post video,
         .ep-post canvas,
@@ -686,6 +798,118 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: "loose",
+    theme: "base",
+    themeVariables: {
+      background: "#ffffff",
+      primaryColor: "#fdfdfd",
+      primaryTextColor: "#111111",
+      primaryBorderColor: "#333333",
+      lineColor: "#444444",
+      clusterBkg: "#fafafa",
+      clusterBorder: "#666666",
+      fontFamily: "Arial, sans-serif"
+    },
+    flowchart: {
+      curve: "basis",
+      htmlLabels: true,
+      useMaxWidth: true
+    }
+  });
+</script>
+<script>
+(function () {
+  var drag = null;
+
+  function closestDiagram(target) {
+    return target && target.closest ? target.closest(".mermaid-diagram") : null;
+  }
+
+  function shouldIgnore(target) {
+    return target && target.closest && target.closest(".mermaid-zoom-controls");
+  }
+
+  function beginDrag(figure, x, y) {
+    drag = {
+      figure: figure,
+      startX: x,
+      startY: y,
+      scrollLeft: figure.scrollLeft,
+      scrollTop: figure.scrollTop,
+    };
+    figure.classList.add("is-dragging");
+  }
+
+  function moveDrag(x, y) {
+    if (!drag) {
+      return;
+    }
+    drag.figure.scrollLeft = drag.scrollLeft - (x - drag.startX);
+    drag.figure.scrollTop = drag.scrollTop - (y - drag.startY);
+  }
+
+  function endDrag() {
+    if (!drag) {
+      return;
+    }
+    drag.figure.classList.remove("is-dragging");
+    drag = null;
+  }
+
+  document.addEventListener("mousedown", function (event) {
+    var figure = closestDiagram(event.target);
+    if (!figure || shouldIgnore(event.target) || event.button !== 0) {
+      return;
+    }
+    beginDrag(figure, event.clientX, event.clientY);
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!drag) {
+      return;
+    }
+    moveDrag(event.clientX, event.clientY);
+    event.preventDefault();
+  });
+
+  document.addEventListener("mouseup", endDrag);
+  document.addEventListener("mouseleave", endDrag);
+
+  document.addEventListener("touchstart", function (event) {
+    var touch = event.touches && event.touches[0];
+    var figure = closestDiagram(event.target);
+    if (!touch || !figure || shouldIgnore(event.target)) {
+      return;
+    }
+    beginDrag(figure, touch.clientX, touch.clientY);
+    event.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener("touchmove", function (event) {
+    var touch = event.touches && event.touches[0];
+    if (!drag || !touch) {
+      return;
+    }
+    moveDrag(touch.clientX, touch.clientY);
+    event.preventDefault();
+  }, { passive: false });
+
+  document.addEventListener("touchend", endDrag);
+  document.addEventListener("touchcancel", endDrag);
+
+  window.addEventListener("load", function () {
+    document.querySelectorAll(".mermaid-diagram").forEach(function (figure) {
+      figure.scrollLeft = 0;
+      figure.scrollTop = 0;
+    });
+  });
+})();
+</script>
 <script>
 (function () {
   if (!document.querySelector('meta[name="viewport"]')) {
@@ -2967,8 +3191,118 @@
 <li>Anti-pluralist authority structures (dissent = rebellion)</li>
 </ul><h4 id="diagram-1-core-reinforcing-loops-r1-r5">
     Diagram 1 — Core reinforcing loops (R1–R5)
-  </h4><figure class="uml-diagram">
-<a href="https://www.plantuml.com/plantuml/svg/TLXDSnmr4Btlhr2P0r3410SIA0uKpguTkygEjxo6SF15dkcTLJmZJKaQEmj55Vy1VY6_XDSjQJ_6PdsHUZHlMjslNtVoSuZQnw5h9z7rAZfrvs9qdQgDfoeQPoVXtjXUUzsfErtTDzuDjfwwrddrk3AHTfxNjDH36q-TZUzrH-hO6ztkFk-DElh-cnsBTJK5wjMRNQFNzfwDF-mQUrtNnZRgwDMEyTXxzvXy-Umx-OqVtgnCTMyf17NqzQlNUtZLlMve4TSjARwgjarBuzVvAWlpEwcZ7vvz96_VkRRUUHfDR6dpugjlddvqY_hcwKFrnqIfjyxNvFFDtiYFhQFuVtPwp7zuCdBcpybkEClb4l8JZ1d_ZR_vhVnWlKv7lIMlZbwNJsNdyHsvhS81KjTaxDBvYjDquLmVr1VNH__-zVVrwoydatAxW-iZzUzV_-2Dq9bAFMgluigJZWeljvePTo2ERjq-I6SF-UmIDmB-hRsrNmHTUTt2bLfL3Y-RAggMRFZoGEcWfXzEzr7cv2io3pYTFYWOPAbRgzw3XROYzLBLE4q-GSnlzX7USYoqntc7ZnKtca5xeQRpSULgzsaD65EJHMZM2UZjV1_eQeY7d8HUhLo8fiL1WUfSkP2sKJVEcj0bXAjtP_iGvpQIJnZbyWBXUh8gk0gL1uV4qsWgRAfMXrK2EtyttGUxFJXvO8yhkZrGRWd4aXp1t4JNqo4YLpD6xvrR9hYJNwSV9W14nDNXuKy8c_fHVGK35hn_EyzxB7YFksG3hzW2XxA5LsnXp6oI9TiOdqr_xhBfbR3faWEdEcSTBhnME5oR4FqG8g-HNkhwYDpZPc31Snmx-LIrGp0FYBXwUMkxVS0xQWqjEHYVEukzin0DqwoYagBvFCNXjtt8v9JRvBgun30khiW75GZPmgkLytw0XxOHfCkhsJxKAO7xICm6Z35otVJCwvuB1oKKmN-pD1G4v_JgtJxEOkXxq5IXJ7Ce92OsUjSo99SlgILHAncEt08UIB0Mqn5fJjBf3aHNbKP6m68r1AePo0yjXHSgQ2jD14kkiJ3u17Oo_UN_Aa9ACGegye0TegQPcK3b1iGqvZwLlSxLSRqFTvD24qnZTHl4eIrieN0gTG6uMJ21JtuJdY7wcNgyOWlYc2syOWkYaIsy4iPEVoc4nIhn_7h3ysknt2oo0OjTt3r6VokCdW-UurcK1jTT8HJ8SGjbVSBUhRRbqWVNX9byzSJbcghMM9OuOn7HEr6T97EB4TlojrzAZ5blHPQHJ1H1pWJyQWUniYAJqamK7QbEYDF5Y7SW23LEHz799PnvC90uoSnTAm21ayNYx71WIHREXqoyaNkB5IXy2FdhS9N3ee4fF0muMFOUrU66PgKe5JQNF8CzqRuBi06zhQK6GjdfIfHO3v1o2G9Abco3QhNvRXSNe-PKg0_79LkaUecVbBblj3M_I_oG0sQUuMaaTQZv_DcuRtAUopb1mH77V5MqhRiKxFavanTPJEexBIJZLUBgRCFLT6Qn5Tn5KToBYsp1GjHsNcIRLu8yFo_8M8bbCNlAt--4loZeu0RuMQi7191qRg-q9EzXz2Jc9qm-qqZhIzLuGm-bx8tzEFZr2xKQEh1MWla2TP33U3RIk6EEaYGHD1BzKXJG0VDiWJUEt--_COFiepAsVkun7NGAAn4EqACnp55WV8IG2zZiryLpib-HZne9NBEASHrn1n9AG84jetqSweQnxe93AL6RYl5oBBCpmhKt94fILWySrrJNh8vrQHopqPJmmRGe-aO6OF0p9Fc_jIljeQBRgmd1a17X7rZRfJ54C3yipaOyFGSPJHmogKjB7GMhr5zO1zmzfUfyoamzIn9w_3wp2GlU8v3Pm2iHuet8NcQHdPN9OPO61_OjMsGfmyHcbaZld3sZiQ-5enVuvmiFNDpo5KB2SsI7MDTXZp4ZXkw-nTm4dq6QzNwrjkvH31vjJoYuREcJsH7TY_ER_vFmMkW8tOOdaDGjbHXuookPqyJT90Epon5pfgv33-zC80MzTqvUTq08qaXIbmyOkuVKHQTZZroh_GxlUeVRSJENM56gfVdLM0ztfj7SZ7X-zDnADXKulHgLu7cUbtTcyq3jyd2GFf0f3lN8dQjmSnp46N4yqdYp6xMUN8_d6BVka_CU4tPuB2rcTYh4H4wIh26KHUbuAN9OXjffFdDLz99NSkAg49fNmiJoJiR5PmfzJxFevYCWPz7XF3sNRMPlsPQFJF9iNIQ8l2s2F2apI9wzopRNngGCthcUSZMLmNoIAwTqYRpTW1Vvp-1bMoQWIHcIIYlAqqw-sQG4hBoUjvklbsBF8IzgaBUJagJyD4SIiviy_HcJ0_zlndy" rel="noopener noreferrer" target="_blank"><img alt="Diagram 1 — Core reinforcing loops (R1–R5)" loading="lazy" src="https://www.plantuml.com/plantuml/svg/TLXDSnmr4Btlhr2P0r3410SIA0uKpguTkygEjxo6SF15dkcTLJmZJKaQEmj55Vy1VY6_XDSjQJ_6PdsHUZHlMjslNtVoSuZQnw5h9z7rAZfrvs9qdQgDfoeQPoVXtjXUUzsfErtTDzuDjfwwrddrk3AHTfxNjDH36q-TZUzrH-hO6ztkFk-DElh-cnsBTJK5wjMRNQFNzfwDF-mQUrtNnZRgwDMEyTXxzvXy-Umx-OqVtgnCTMyf17NqzQlNUtZLlMve4TSjARwgjarBuzVvAWlpEwcZ7vvz96_VkRRUUHfDR6dpugjlddvqY_hcwKFrnqIfjyxNvFFDtiYFhQFuVtPwp7zuCdBcpybkEClb4l8JZ1d_ZR_vhVnWlKv7lIMlZbwNJsNdyHsvhS81KjTaxDBvYjDquLmVr1VNH__-zVVrwoydatAxW-iZzUzV_-2Dq9bAFMgluigJZWeljvePTo2ERjq-I6SF-UmIDmB-hRsrNmHTUTt2bLfL3Y-RAggMRFZoGEcWfXzEzr7cv2io3pYTFYWOPAbRgzw3XROYzLBLE4q-GSnlzX7USYoqntc7ZnKtca5xeQRpSULgzsaD65EJHMZM2UZjV1_eQeY7d8HUhLo8fiL1WUfSkP2sKJVEcj0bXAjtP_iGvpQIJnZbyWBXUh8gk0gL1uV4qsWgRAfMXrK2EtyttGUxFJXvO8yhkZrGRWd4aXp1t4JNqo4YLpD6xvrR9hYJNwSV9W14nDNXuKy8c_fHVGK35hn_EyzxB7YFksG3hzW2XxA5LsnXp6oI9TiOdqr_xhBfbR3faWEdEcSTBhnME5oR4FqG8g-HNkhwYDpZPc31Snmx-LIrGp0FYBXwUMkxVS0xQWqjEHYVEukzin0DqwoYagBvFCNXjtt8v9JRvBgun30khiW75GZPmgkLytw0XxOHfCkhsJxKAO7xICm6Z35otVJCwvuB1oKKmN-pD1G4v_JgtJxEOkXxq5IXJ7Ce92OsUjSo99SlgILHAncEt08UIB0Mqn5fJjBf3aHNbKP6m68r1AePo0yjXHSgQ2jD14kkiJ3u17Oo_UN_Aa9ACGegye0TegQPcK3b1iGqvZwLlSxLSRqFTvD24qnZTHl4eIrieN0gTG6uMJ21JtuJdY7wcNgyOWlYc2syOWkYaIsy4iPEVoc4nIhn_7h3ysknt2oo0OjTt3r6VokCdW-UurcK1jTT8HJ8SGjbVSBUhRRbqWVNX9byzSJbcghMM9OuOn7HEr6T97EB4TlojrzAZ5blHPQHJ1H1pWJyQWUniYAJqamK7QbEYDF5Y7SW23LEHz799PnvC90uoSnTAm21ayNYx71WIHREXqoyaNkB5IXy2FdhS9N3ee4fF0muMFOUrU66PgKe5JQNF8CzqRuBi06zhQK6GjdfIfHO3v1o2G9Abco3QhNvRXSNe-PKg0_79LkaUecVbBblj3M_I_oG0sQUuMaaTQZv_DcuRtAUopb1mH77V5MqhRiKxFavanTPJEexBIJZLUBgRCFLT6Qn5Tn5KToBYsp1GjHsNcIRLu8yFo_8M8bbCNlAt--4loZeu0RuMQi7191qRg-q9EzXz2Jc9qm-qqZhIzLuGm-bx8tzEFZr2xKQEh1MWla2TP33U3RIk6EEaYGHD1BzKXJG0VDiWJUEt--_COFiepAsVkun7NGAAn4EqACnp55WV8IG2zZiryLpib-HZne9NBEASHrn1n9AG84jetqSweQnxe93AL6RYl5oBBCpmhKt94fILWySrrJNh8vrQHopqPJmmRGe-aO6OF0p9Fc_jIljeQBRgmd1a17X7rZRfJ54C3yipaOyFGSPJHmogKjB7GMhr5zO1zmzfUfyoamzIn9w_3wp2GlU8v3Pm2iHuet8NcQHdPN9OPO61_OjMsGfmyHcbaZld3sZiQ-5enVuvmiFNDpo5KB2SsI7MDTXZp4ZXkw-nTm4dq6QzNwrjkvH31vjJoYuREcJsH7TY_ER_vFmMkW8tOOdaDGjbHXuookPqyJT90Epon5pfgv33-zC80MzTqvUTq08qaXIbmyOkuVKHQTZZroh_GxlUeVRSJENM56gfVdLM0ztfj7SZ7X-zDnADXKulHgLu7cUbtTcyq3jyd2GFf0f3lN8dQjmSnp46N4yqdYp6xMUN8_d6BVka_CU4tPuB2rcTYh4H4wIh26KHUbuAN9OXjffFdDLz99NSkAg49fNmiJoJiR5PmfzJxFevYCWPz7XF3sNRMPlsPQFJF9iNIQ8l2s2F2apI9wzopRNngGCthcUSZMLmNoIAwTqYRpTW1Vvp-1bMoQWIHcIIYlAqqw-sQG4hBoUjvklbsBF8IzgaBUJagJyD4SIiviy_HcJ0_zlndy"/></a>
+  </h4><figure class="mermaid-diagram">
+<input class="mermaid-zoom-input zoom-75" id="mermaid-zoom-1-75" name="mermaid-zoom-1" type="radio">
+<input class="mermaid-zoom-input zoom-100" id="mermaid-zoom-1-100" name="mermaid-zoom-1" type="radio" checked>
+<input class="mermaid-zoom-input zoom-125" id="mermaid-zoom-1-125" name="mermaid-zoom-1" type="radio">
+<input class="mermaid-zoom-input zoom-150" id="mermaid-zoom-1-150" name="mermaid-zoom-1" type="radio">
+<input class="mermaid-zoom-input zoom-200" id="mermaid-zoom-1-200" name="mermaid-zoom-1" type="radio">
+<div class="mermaid-zoom-controls" aria-label="Diagram zoom controls"><label data-zoom-level="75" for="mermaid-zoom-1-75">75%</label><label data-zoom-level="100" for="mermaid-zoom-1-100">100%</label><label data-zoom-level="125" for="mermaid-zoom-1-125">125%</label><label data-zoom-level="150" for="mermaid-zoom-1-150">150%</label><label data-zoom-level="200" for="mermaid-zoom-1-200">200%</label></div>
+<pre class="mermaid">flowchart TB
+  %% Core Reinforcing Loops (R1–R5)
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG1_1["R1 — Cosmic war threat inflation"]
+    CWF["Cosmic-war framing&lt;br/&gt;&lt;br/&gt;(sacralized conflict lens)"]
+    PT["Perceived threat&lt;br/&gt;&lt;br/&gt;(enemy presence / danger)"]
+    BP["Boundary policing&lt;br/&gt;&lt;br/&gt;(guarding orthodoxy / identity)"]
+    OGH["Out-group hostility&lt;br/&gt;&lt;br/&gt;(moralized antagonism)"]
+    IGC["Intergroup conflict&lt;br/&gt;&lt;br/&gt;(open social or political clash)"]
+    EVCW["'Evidence' of cosmic war&lt;br/&gt;&lt;br/&gt; (conflict re-read as proof)"]
+  end
+  subgraph SG1_2["R2 — Moral monopoly -&amp;gt; distrust -&amp;gt; preemptive coercion"]
+    EX["Exclusivism /&lt;br/&gt;moral monopoly belief&lt;br/&gt;&lt;br/&gt;'only one right order'"]
+    MOD["Moral out-group distrust&lt;br/&gt;&lt;br/&gt;others seen as corrupting"]
+    FOG["Fear of out-group&lt;br/&gt;&lt;br/&gt;threat perception intensifies"]
+    SCC["Support for coercive control&lt;br/&gt;&lt;br/&gt;force feels protective"]
+    ECU["Enforcement capacity used&lt;br/&gt;&lt;br/&gt;rules, sanctions, pressure"]
+    OGR["Out-group resentment /&lt;br/&gt;resistance&lt;br/&gt;&lt;br/&gt;backlash to control"]
+    TS["Threat signals&lt;br/&gt;&lt;br/&gt;resentment read as danger"]
+  end
+  subgraph SG1_3["R3 — Purity policing cohesion loop"]
+    PSD["Perceived social disorder&lt;br/&gt;&lt;br/&gt;moral decline / instability"]
+    PCS["Purity / contamination salience&lt;br/&gt;&lt;br/&gt;pollution frame activated"]
+    SCD["Scapegoating of deviants&lt;br/&gt;&lt;br/&gt;blame assigned to offenders"]
+    SIGC["Short-term in-group cohesion&lt;br/&gt;&lt;br/&gt;unity through exclusion"]
+    LL["Leader legitimacy&lt;br/&gt;&lt;br/&gt;authority strengthened"]
+    CPP["Capacity to police purity&lt;br/&gt;&lt;br/&gt;organizational readiness"]
+    PPI["Purity policing intensity&lt;br/&gt;&lt;br/&gt;stronger enforcement"]
+  end
+  subgraph SG1_4["R4 — Outsourced vengeance / deferred revenge"]
+    HG["Harm / grievance&lt;br/&gt;&lt;br/&gt;injury, humiliation, loss"]
+    AN["Anger&lt;br/&gt;&lt;br/&gt;affective escalation"]
+    DVS["Divine vengeance salience&lt;br/&gt;&lt;br/&gt;punishment imagined as just"]
+    MCC["Moral certainty /&lt;br/&gt;contempt&lt;br/&gt;&lt;br/&gt;opponent judged absolutely"]
+    DH["Dehumanization&lt;br/&gt;&lt;br/&gt;reduced moral standing"]
+    WSHP["Willingness to support&lt;br/&gt;harsh punishment&lt;br/&gt;&lt;br/&gt;severity normalized"]
+    IC["Institutional coercion&lt;br/&gt;&lt;br/&gt;punishment through systems"]
+  end
+  subgraph SG1_5["R5 — Literalism / hard commands escalation"]
+    LIT["Literalism /&lt;br/&gt;inerrancy intensity&lt;br/&gt;&lt;br/&gt;low interpretive flexibility"]
+    PDMC["Perceived divine&lt;br/&gt;mandate certainty&lt;br/&gt;&lt;br/&gt;certainty of command"]
+    CT["Compromise taboo&lt;br/&gt;&lt;br/&gt;concession feels sinful"]
+    POL["Polarization&lt;br/&gt;&lt;br/&gt;positions harden"]
+    CON["Conflict&lt;br/&gt;&lt;br/&gt;social confrontation"]
+    IT["Identity threat&lt;br/&gt;&lt;br/&gt;self-understanding destabilized"]
+    DFC["Demand for certainty&lt;br/&gt;&lt;br/&gt;people seek harder answers"]
+  end
+
+  CWF --&gt;|+| PT
+  PT --&gt;|+| BP
+  BP --&gt;|+| OGH
+  OGH --&gt;|+| IGC
+  IGC --&gt;|+| EVCW
+  EVCW --&gt;|+| CWF
+  EX --&gt;|+| MOD
+  MOD --&gt;|+| FOG
+  FOG --&gt;|+| SCC
+  SCC --&gt;|+| ECU
+  ECU --&gt;|+| OGR
+  OGR --&gt;|+| TS
+  TS --&gt;|+| FOG
+  PSD --&gt;|+| PCS
+  PCS --&gt;|+| SCD
+  SCD --&gt;|+| SIGC
+  SIGC --&gt;|+| LL
+  LL --&gt;|+| CPP
+  CPP --&gt;|+| PPI
+  PPI --&gt;|+| PSD
+  HG --&gt;|+| AN
+  AN --&gt;|+| DVS
+  DVS --&gt;|+| MCC
+  MCC --&gt;|+| DH
+  DH --&gt;|+| WSHP
+  WSHP --&gt;|+| IC
+  IC --&gt;|+| HG
+  LIT --&gt;|+| PDMC
+  PDMC --&gt;|+| CT
+  CT --&gt;|+| POL
+  POL --&gt;|+| CON
+  CON --&gt;|+| IT
+  IT --&gt;|+| DFC
+  DFC --&gt;|+| LIT
+  IGC --&gt;|+| PT
+  IGC --&gt;|+| HG
+  IGC --&gt;|+| CON
+  PT --&gt;|+| FOG
+  PT --&gt;|+| PSD
+  ECU --&gt;|+| BP
+  ECU --&gt;|+| IC
+  OGH --&gt;|+| DH
+  DH --&gt;|+| OGH
+  IC --&gt;|+| IGC
+  IC --&gt;|+| PSD
+  PPI --&gt;|+| BP
+  PPI --&gt;|+| ECU
+  FOG --&gt;|+| PCS
+  TS --&gt;|+| PT
+  POL --&gt;|+| BP
+  POL --&gt;|+| OGH
+  MCC --&gt;|+| CT
+  DVS --&gt;|+| CT
+  IT --&gt;|+| PT
+  DFC --&gt;|+| EX
+
+  class CWF,PT,BP,OGH,IGC,EVCW,EX,MOD,FOG,SCC,ECU,OGR,TS,PSD,PCS,SCD,SIGC,LL,CPP,PPI,HG,AN,DVS,MCC,DH,WSHP,IC,LIT,PDMC,CT,POL,CON,IT,DFC node;</pre>
 </figure><h3 id="balancing-loops-inside-the-religion-and-why-they-often-fail">
     Balancing loops inside the religion (and why they often fail)
   </h3><h4 id="b1-mercy-enemy-love-forgiveness-loop-intended-balancer">
@@ -3075,8 +3409,93 @@
     </li>
 </ol><h4 id="diagram-2-balancing-loops-b1-b3-and-failure-modes">
     Diagram 2 — Balancing loops (B1–B3) and failure modes
-  </h4><figure class="uml-diagram">
-<a href="https://www.plantuml.com/plantuml/svg/XLV1Sjis4BthAp3EmUsaRcExIJCzT29PjgKPIzP8Ya--GEHAGaq2B0ZAetGoatzelp1VqhS0A9DKEh4lm0BxiDYtRq5zA9sqhigpdZE5S4QiZ7Cc5wcob3XbTAzyKhgGLkPY9PEdZJMLJgzCPgnutYf7ZVMKrhBAt8tHRYfp4dshPDPSBvGu_-rDmw9DIYKLubtJQAL-OkFxfh6GQQhqHfnVD8nzQyrpYENLh_wlkxZSgkH9KrcAyvylthRmaYUveONRPoJugb9lCkgwyrKMwXE9y_VVNFBUAvEbZLMdN4O7nuitnuU-eBuxNXH_zuGO69kIZJTxv__Osid_gvi-_sEb4ypdNZETzUK2yX76aF-xPrxwFrZdOQlLPCNvs_ge63pEyRS5QYPrmlpS6LEKueV1-TSl_mmkVnHIfsAv9MN5ZLHPPKbCcFDUhxxkoU1SVFtohvYGJVRY5q6QylrPPdQ4oThOZTeH4tZYmt-vp4bmqCRcvQD-r9PAPwNIxgT7tN33x0NnHCXIJAPjd3avcId9jIvKNbHPIHuGKK83aCIZ1h9w8b__7c8-RaECjIFBMIr4OlGwKubZ10a1uHgbIQ03OUoZBaocd4emazh9ZT6gp3tY-FQg3Jd3xGZUgN1RIzBZfLWZe2W-hh28cuFs_hDbstt0j4cx5tmY4yF-YCrPamcbMQgaIthKPYqyxnvbCEi1PZ8LPsT_u9BYTt769J3sSuG8msiOUCIMsJ8QCE3vO1Rd6F0SG8pmkKtsEjP1pdLmnAeF7BVEcLqEsW-4qTcUgu4lNoh4MuQ09rqYIXHanMb1Zb7_c67CE8LLE-ae0ACgYcg5p8YY0WVRdBGBFCpQW4lA2sE1nGcp6Bo4fCspXwdzHGRuaCVby8ZCaX8V5fjDsY74qXfAnQqbAg-aR7qM-GdSpXki32PrZYSTLkA6SKt2UDOc9QulXt6EmV_GEgzfdJTfRj5uuJKxgdA5WcRP-gWJYtJ_LT4HguUD1xckPPQfbJUoK9wGpOpI3QN-ogEEHYUUWuIiOuNZl9WcgpPRHwOgMUe-euSjScKggCOyQt2CkFP1_5UBUHjwIDigbrfzadMb6BS5NwXFd9aXkXGO6olJ6Djmr0POL0LAn75rGlqeZGXJaqi00Fs1N4q98eKmFTJYfgFwgqRtY6q3lQVQO3787iM_LXIA_-f-oeKn2hpopQ9W_P1jmr5a4WEUuxneu15RW14jF6BBw1kYlVYEQ0Cz29pZ2wLzkesKduh2elNYxYso0XjtdJ9HPALDjdkHoCBXl0xI2jh96OefUPOs5MP5gIBG7igcayu5PHHwi2mAX7UWk8Q4hC4zcFMDiAnMw8LAGySXlaM_ZTUltDROKF27atrpCSzu7sMvptDo5ZN3TOvNvLEicVvzfo74hYmYfywtEdvc4iSTdlW9I-ZGbcRZ9jDtjQBlcio_VjangcaU1PRxzt6EWLVqkBr_qQ_Bej_Stwg1Iw_ugT4xPJA-DuiUZpuwxFxChCyojJxMVNFxGVe7oq5XzTiTipLzQAFSqGPz9PVy3gnhVuTEBdNe9PmhT23INcC5sLoLfLfbeIhk7Zgln4CC8BxH5RSMBzmTXKSxFggTC6wjefsCVjiAakUF6_ueo6IvPS-aoYj-1RptBLCsVV09HGXHcpnYoqFCU5Y_ZRDRFvi-74lmyZiId5E2ABWxl5Jv8T6MD3ylqDAV5Hx8X4xnw8lJ-CYSXc-QgsvVp6WJlehmgm2_4l1sekrwtIW9ybEr0sDYrqWcEcvfAf2H2iz9w9UTDFOBWm-WVO4uH6KtyFN5ZsAl9rpsCgjRTlzZs_-wtYZGLgp5nm2x1y69mrSWr5IL1UcwQr_VD-YOr_gONpNeUVsoOLZJCtneiTN_wAVNjPwkxrl-dtiVS2B_cFeF" rel="noopener noreferrer" target="_blank"><img alt="Diagram 2 — Balancing loops (B1–B3) and failure modes" loading="lazy" src="https://www.plantuml.com/plantuml/svg/XLV1Sjis4BthAp3EmUsaRcExIJCzT29PjgKPIzP8Ya--GEHAGaq2B0ZAetGoatzelp1VqhS0A9DKEh4lm0BxiDYtRq5zA9sqhigpdZE5S4QiZ7Cc5wcob3XbTAzyKhgGLkPY9PEdZJMLJgzCPgnutYf7ZVMKrhBAt8tHRYfp4dshPDPSBvGu_-rDmw9DIYKLubtJQAL-OkFxfh6GQQhqHfnVD8nzQyrpYENLh_wlkxZSgkH9KrcAyvylthRmaYUveONRPoJugb9lCkgwyrKMwXE9y_VVNFBUAvEbZLMdN4O7nuitnuU-eBuxNXH_zuGO69kIZJTxv__Osid_gvi-_sEb4ypdNZETzUK2yX76aF-xPrxwFrZdOQlLPCNvs_ge63pEyRS5QYPrmlpS6LEKueV1-TSl_mmkVnHIfsAv9MN5ZLHPPKbCcFDUhxxkoU1SVFtohvYGJVRY5q6QylrPPdQ4oThOZTeH4tZYmt-vp4bmqCRcvQD-r9PAPwNIxgT7tN33x0NnHCXIJAPjd3avcId9jIvKNbHPIHuGKK83aCIZ1h9w8b__7c8-RaECjIFBMIr4OlGwKubZ10a1uHgbIQ03OUoZBaocd4emazh9ZT6gp3tY-FQg3Jd3xGZUgN1RIzBZfLWZe2W-hh28cuFs_hDbstt0j4cx5tmY4yF-YCrPamcbMQgaIthKPYqyxnvbCEi1PZ8LPsT_u9BYTt769J3sSuG8msiOUCIMsJ8QCE3vO1Rd6F0SG8pmkKtsEjP1pdLmnAeF7BVEcLqEsW-4qTcUgu4lNoh4MuQ09rqYIXHanMb1Zb7_c67CE8LLE-ae0ACgYcg5p8YY0WVRdBGBFCpQW4lA2sE1nGcp6Bo4fCspXwdzHGRuaCVby8ZCaX8V5fjDsY74qXfAnQqbAg-aR7qM-GdSpXki32PrZYSTLkA6SKt2UDOc9QulXt6EmV_GEgzfdJTfRj5uuJKxgdA5WcRP-gWJYtJ_LT4HguUD1xckPPQfbJUoK9wGpOpI3QN-ogEEHYUUWuIiOuNZl9WcgpPRHwOgMUe-euSjScKggCOyQt2CkFP1_5UBUHjwIDigbrfzadMb6BS5NwXFd9aXkXGO6olJ6Djmr0POL0LAn75rGlqeZGXJaqi00Fs1N4q98eKmFTJYfgFwgqRtY6q3lQVQO3787iM_LXIA_-f-oeKn2hpopQ9W_P1jmr5a4WEUuxneu15RW14jF6BBw1kYlVYEQ0Cz29pZ2wLzkesKduh2elNYxYso0XjtdJ9HPALDjdkHoCBXl0xI2jh96OefUPOs5MP5gIBG7igcayu5PHHwi2mAX7UWk8Q4hC4zcFMDiAnMw8LAGySXlaM_ZTUltDROKF27atrpCSzu7sMvptDo5ZN3TOvNvLEicVvzfo74hYmYfywtEdvc4iSTdlW9I-ZGbcRZ9jDtjQBlcio_VjangcaU1PRxzt6EWLVqkBr_qQ_Bej_Stwg1Iw_ugT4xPJA-DuiUZpuwxFxChCyojJxMVNFxGVe7oq5XzTiTipLzQAFSqGPz9PVy3gnhVuTEBdNe9PmhT23INcC5sLoLfLfbeIhk7Zgln4CC8BxH5RSMBzmTXKSxFggTC6wjefsCVjiAakUF6_ueo6IvPS-aoYj-1RptBLCsVV09HGXHcpnYoqFCU5Y_ZRDRFvi-74lmyZiId5E2ABWxl5Jv8T6MD3ylqDAV5Hx8X4xnw8lJ-CYSXc-QgsvVp6WJlehmgm2_4l1sekrwtIW9ybEr0sDYrqWcEcvfAf2H2iz9w9UTDFOBWm-WVO4uH6KtyFN5ZsAl9rpsCgjRTlzZs_-wtYZGLgp5nm2x1y69mrSWr5IL1UcwQr_VD-YOr_gONpNeUVsoOLZJCtneiTN_wAVNjPwkxrl-dtiVS2B_cFeF"/></a>
+  </h4><figure class="mermaid-diagram">
+<input class="mermaid-zoom-input zoom-75" id="mermaid-zoom-2-75" name="mermaid-zoom-2" type="radio">
+<input class="mermaid-zoom-input zoom-100" id="mermaid-zoom-2-100" name="mermaid-zoom-2" type="radio" checked>
+<input class="mermaid-zoom-input zoom-125" id="mermaid-zoom-2-125" name="mermaid-zoom-2" type="radio">
+<input class="mermaid-zoom-input zoom-150" id="mermaid-zoom-2-150" name="mermaid-zoom-2" type="radio">
+<input class="mermaid-zoom-input zoom-200" id="mermaid-zoom-2-200" name="mermaid-zoom-2" type="radio">
+<div class="mermaid-zoom-controls" aria-label="Diagram zoom controls"><label data-zoom-level="75" for="mermaid-zoom-2-75">75%</label><label data-zoom-level="100" for="mermaid-zoom-2-100">100%</label><label data-zoom-level="125" for="mermaid-zoom-2-125">125%</label><label data-zoom-level="150" for="mermaid-zoom-2-150">150%</label><label data-zoom-level="200" for="mermaid-zoom-2-200">200%</label></div>
+<pre class="mermaid">flowchart TB
+  %% Balancing Loops (B1–B3) and Their Failure Modes
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG2_1["B1 — Mercy / enemy-love / forgiveness"]
+    MN["Mercy norms&lt;br/&gt;&lt;br/&gt;restraint,&lt;br/&gt;forgiveness,&lt;br/&gt;enemy-love"]
+    RI["Retaliation impulses&lt;br/&gt;&lt;br/&gt;desire to&lt;br/&gt;strike back"]
+    IGC["Intergroup conflict&lt;br/&gt;&lt;br/&gt;active social or&lt;br/&gt;political antagonism"]
+    PT["Perceived threat&lt;br/&gt;&lt;br/&gt;danger&lt;br/&gt;interpretation"]
+    BP["Boundary policing&lt;br/&gt;&lt;br/&gt;control in defense&lt;br/&gt;of order"]
+  end
+  subgraph SG2_2["B1 failure modes"]
+    BM["Bounded mercy&lt;br/&gt;&lt;br/&gt;mercy only for&lt;br/&gt;insiders"]
+    IP["Institutional partition&lt;br/&gt;&lt;br/&gt;private mercy,&lt;br/&gt;public punishment"]
+    TD["Temporal deferral&lt;br/&gt;&lt;br/&gt;mercy now,&lt;br/&gt;punishment later"]
+    PR["Persecution recoding&lt;br/&gt;&lt;br/&gt;control reframed as&lt;br/&gt;self-defense"]
+  end
+  subgraph SG2_3["B2 — Humility / self-critique"]
+    HN["Humility norms&lt;br/&gt;&lt;br/&gt;fallibility&lt;br/&gt;acknowledged"]
+    MCSR["Moral certainty /&lt;br/&gt;self-righteousness&lt;br/&gt;&lt;br/&gt;certainty about&lt;br/&gt;own purity"]
+    DH["Dehumanization&lt;br/&gt;&lt;br/&gt;others morally&lt;br/&gt;downgraded"]
+    SFC["Support for coercion&lt;br/&gt;&lt;br/&gt;control endorsed as&lt;br/&gt;necessary"]
+    CON["Conflict&lt;br/&gt;&lt;br/&gt;social struggle&lt;br/&gt;intensifies"]
+  end
+  subgraph SG2_4["B2 failure modes"]
+    ML["Moral licensing&lt;br/&gt;&lt;br/&gt;'humility' proves&lt;br/&gt;righteousness"]
+    HC["Hierarchy capture&lt;br/&gt;&lt;br/&gt;'humility' becomes&lt;br/&gt;downward obedience"]
+    SA["Selective application&lt;br/&gt;&lt;br/&gt;humility demanded&lt;br/&gt;of subordinates"]
+    AO["Authority / obedience&lt;br/&gt;&lt;br/&gt;power asymmetry&lt;br/&gt;normalized"]
+    PI["Policing intensity&lt;br/&gt;&lt;br/&gt;stricter&lt;br/&gt;enforcement"]
+  end
+  subgraph SG2_5["B3 — Nonviolence / sanctity-of-life"]
+    NV["Nonviolence norms&lt;br/&gt;&lt;br/&gt;violence morally&lt;br/&gt;restrained"]
+    LVM["Legitimacy of&lt;br/&gt;violent means&lt;br/&gt;&lt;br/&gt;force seen as&lt;br/&gt;permissible"]
+    V["Violence&lt;br/&gt;&lt;br/&gt;actual coercive&lt;br/&gt;action"]
+    G["Grievance&lt;br/&gt;&lt;br/&gt;hurt and backlash&lt;br/&gt;accumulate"]
+  end
+  subgraph SG2_6["B3 failure modes"]
+    RC["Reclassification&lt;br/&gt;&lt;br/&gt;violence renamed&lt;br/&gt;'justice' or 'defense'"]
+    DV["Delegation to state /&lt;br/&gt;militia / divine violence&lt;br/&gt;&lt;br/&gt;outsourced force"]
+    AU["Apocalyptic urgency&lt;br/&gt;&lt;br/&gt;emergency&lt;br/&gt;mentality"]
+    EO["Emergency override&lt;br/&gt;&lt;br/&gt;normal restraint&lt;br/&gt;suspended"]
+  end
+
+  MN --&gt;|-| RI
+  RI --&gt;|+| IGC
+  IGC --&gt;|+| PT
+  PT --&gt;|+| BP
+  BP --&gt;|-| MN
+  MN --&gt;|+| BM
+  BM --&gt;|+| IGC
+  MN --&gt;|+| IP
+  IP --&gt;|+| BP
+  MN --&gt;|+| TD
+  TD --&gt;|+| IGC
+  IGC --&gt;|+| PR
+  PR --&gt;|+| PT
+  HN --&gt;|-| MCSR
+  MCSR --&gt;|+| DH
+  DH --&gt;|+| SFC
+  SFC --&gt;|+| CON
+  CON --&gt;|-| HN
+  HN --&gt;|+| ML
+  ML --&gt;|+| MCSR
+  HN --&gt;|+| HC
+  HC --&gt;|+| AO
+  AO --&gt;|+| PI
+  HN --&gt;|+| SA
+  SA --&gt;|+| AO
+  NV --&gt;|-| LVM
+  LVM --&gt;|+| V
+  V --&gt;|+| G
+  G --&gt;|-| NV
+  NV --&gt;|+| RC
+  RC --&gt;|+| LVM
+  NV --&gt;|+| DV
+  DV --&gt;|+| V
+  AU --&gt;|+| EO
+  EO --&gt;|+| LVM
+
+  class MN,RI,IGC,PT,BP,BM,IP,TD,PR,HN,MCSR,DH,SFC,CON,ML,HC,SA,AO,PI,NV,LVM,V,G,RC,DV,AU,EO node;</pre>
 </figure><h3 id="how-enabling-conditions-specifically-weaken-balancing-loops">
     How enabling conditions specifically weaken balancing loops
   </h3><p>The direct relationships can be summarized as follows:</p><ul>
@@ -3106,8 +3525,74 @@
     </li>
 </ul><h4 id="diagram-3-enabling-conditions-that-amplify-loops-and-weaken-restraints">
     Diagram 3 — Enabling conditions that amplify loops and weaken restraints
-  </h4><figure class="uml-diagram">
-<a href="https://www.plantuml.com/plantuml/svg/TLPDSzis4BthL-mubtOoQYB9SZCvT29BYfqPk_NOINtH1G9N92eGu02WRBdJ_zvTy4CYfL0NOe5z-tRtOQalFWWNobmFWYqWM5ZR46mEYN8eWx9cuBVA5CA97DP2RbDdIvFChROENZ8Ly6W_mOqeTVXgJVXJv0WpfuG-tYyKZ7x_U6GnDa6F1LmT6vqmMpP-EZOM8acKIM4qFZBEdBCl5PTtb_7fRtxFbDmQz1v6lusd7Jov5Ia-XRr6u5I5IJNstJcL9_M6CFfqTYjwhwrE1aVRGGMDhUVuusdK0-pLwIRyEm2ujYv1LwTs5H-szXhmxkkCVxJJO_FVCPyskmhv16F1ltxCINp8-bWTTGOTZAPDg9eynOdPmjA8jUR-pAr95El6VuRdJ0Hu5CgZXnkX30YJm3EABHfFFBGm4fqV39h4BnPM1gUCq23Mtkeog3V1M1UH-I6FY-MhrALNEuJWof21r4BbVcLMnD8H_JLAcrDKV5K-e0cammiG7fRVvrsWXTefWq2dSoRtOMMyTAe8fSEXyCFw5koGeUqQ4uN46UoEmYYIBcJeLQWv4lvYlkZYtz4DSK8hdpEsOdgKzPxX72Qbn0IKeIE5Gmu36wTaYtRtZGlSLkUQEo7S7eXXpbNwMNLkqQ7VmmSGXQNhpQyhizR25ndcUueXo3rb3WdkLCIWEg88n8R2XepV8uFRsNKN-g5qAaJejMKExBioabnJwnJ65YHgio46NAZSSl9l5QuauOZ6AS8_pEQT39TUacH8WAcI90AkZF5gGukpUSwjpvM45-7W_SfGikIqBmAPIfTYNUP4UP4wn9na05x8cb2CFt-U_JYhXnsQ55cUNBaCjMOn_5DwmevIA4gZOhzKBj8w8m8trBkDgi4NVzzsadkmcdmuhuR5-QoUQ9SAfcizoinwD7645HL2xSWy0kimMD84doP5ajIfFRqqd-xc3zqOzyfxWc0nKIQaPXyrkZAaCBhdXNr15s_JQo6CZ_gWMyijH2UZJgtB8_Pzhu1pej3qtBgGsSI-xhazdZAd6O60Xfnbx0U78D84KrrO4YoFh53wgZr_FIqx9PpbXOu5feWgml38qTOM_gICZoD8QUPm27dG2Py5Js8tQSX8N37Eu-Ycvpi-ygqp9XtHhF7X9n3ZFiIaXIZYdHbozrg-fm2JFi1b2t1GutdNoxxhz40VNQ3NU6NrOHQTnvdUTAfTJMegzZgEwf-N-de4I5S-3aeMwihyabFLzhyo0yrQed6XD2kJ_c0a8Y_8En2JmoIu7YrxcECJpApC8yXvM9cXt4ARRuKwxgDEJb2DDJjbDO-hyy0qIqdHzFMAigrm9r6Nz3M1uV0FrWzyXlU7zRYx9Xgq7Wu6z7ce3aog0-rwMgq7Tzyw-ysosQPnt0dGhAbwLG0Qg1s0PjqSQDUJse4dO2U7Ws7QCpGO1yEuRsXGQVHL69TrdlMwvSaJgHDsSF-ZarcphFCOy2Ze73WO9Zr3M-qlQ1B-O_i_" rel="noopener noreferrer" target="_blank"><img alt="Diagram 3 — Enabling conditions that amplify loops and weaken restraints" loading="lazy" src="https://www.plantuml.com/plantuml/svg/TLPDSzis4BthL-mubtOoQYB9SZCvT29BYfqPk_NOINtH1G9N92eGu02WRBdJ_zvTy4CYfL0NOe5z-tRtOQalFWWNobmFWYqWM5ZR46mEYN8eWx9cuBVA5CA97DP2RbDdIvFChROENZ8Ly6W_mOqeTVXgJVXJv0WpfuG-tYyKZ7x_U6GnDa6F1LmT6vqmMpP-EZOM8acKIM4qFZBEdBCl5PTtb_7fRtxFbDmQz1v6lusd7Jov5Ia-XRr6u5I5IJNstJcL9_M6CFfqTYjwhwrE1aVRGGMDhUVuusdK0-pLwIRyEm2ujYv1LwTs5H-szXhmxkkCVxJJO_FVCPyskmhv16F1ltxCINp8-bWTTGOTZAPDg9eynOdPmjA8jUR-pAr95El6VuRdJ0Hu5CgZXnkX30YJm3EABHfFFBGm4fqV39h4BnPM1gUCq23Mtkeog3V1M1UH-I6FY-MhrALNEuJWof21r4BbVcLMnD8H_JLAcrDKV5K-e0cammiG7fRVvrsWXTefWq2dSoRtOMMyTAe8fSEXyCFw5koGeUqQ4uN46UoEmYYIBcJeLQWv4lvYlkZYtz4DSK8hdpEsOdgKzPxX72Qbn0IKeIE5Gmu36wTaYtRtZGlSLkUQEo7S7eXXpbNwMNLkqQ7VmmSGXQNhpQyhizR25ndcUueXo3rb3WdkLCIWEg88n8R2XepV8uFRsNKN-g5qAaJejMKExBioabnJwnJ65YHgio46NAZSSl9l5QuauOZ6AS8_pEQT39TUacH8WAcI90AkZF5gGukpUSwjpvM45-7W_SfGikIqBmAPIfTYNUP4UP4wn9na05x8cb2CFt-U_JYhXnsQ55cUNBaCjMOn_5DwmevIA4gZOhzKBj8w8m8trBkDgi4NVzzsadkmcdmuhuR5-QoUQ9SAfcizoinwD7645HL2xSWy0kimMD84doP5ajIfFRqqd-xc3zqOzyfxWc0nKIQaPXyrkZAaCBhdXNr15s_JQo6CZ_gWMyijH2UZJgtB8_Pzhu1pej3qtBgGsSI-xhazdZAd6O60Xfnbx0U78D84KrrO4YoFh53wgZr_FIqx9PpbXOu5feWgml38qTOM_gICZoD8QUPm27dG2Py5Js8tQSX8N37Eu-Ycvpi-ygqp9XtHhF7X9n3ZFiIaXIZYdHbozrg-fm2JFi1b2t1GutdNoxxhz40VNQ3NU6NrOHQTnvdUTAfTJMegzZgEwf-N-de4I5S-3aeMwihyabFLzhyo0yrQed6XD2kJ_c0a8Y_8En2JmoIu7YrxcECJpApC8yXvM9cXt4ARRuKwxgDEJb2DDJjbDO-hyy0qIqdHzFMAigrm9r6Nz3M1uV0FrWzyXlU7zRYx9Xgq7Wu6z7ce3aog0-rwMgq7Tzyw-ysosQPnt0dGhAbwLG0Qg1s0PjqSQDUJse4dO2U7Ws7QCpGO1yEuRsXGQVHL69TrdlMwvSaJgHDsSF-ZarcphFCOy2Ze73WO9Zr3M-qlQ1B-O_i_"/></a>
+  </h4><figure class="mermaid-diagram">
+<input class="mermaid-zoom-input zoom-75" id="mermaid-zoom-3-75" name="mermaid-zoom-3" type="radio">
+<input class="mermaid-zoom-input zoom-100" id="mermaid-zoom-3-100" name="mermaid-zoom-3" type="radio" checked>
+<input class="mermaid-zoom-input zoom-125" id="mermaid-zoom-3-125" name="mermaid-zoom-3" type="radio">
+<input class="mermaid-zoom-input zoom-150" id="mermaid-zoom-3-150" name="mermaid-zoom-3" type="radio">
+<input class="mermaid-zoom-input zoom-200" id="mermaid-zoom-3-200" name="mermaid-zoom-3" type="radio">
+<div class="mermaid-zoom-controls" aria-label="Diagram zoom controls"><label data-zoom-level="75" for="mermaid-zoom-3-75">75%</label><label data-zoom-level="100" for="mermaid-zoom-3-100">100%</label><label data-zoom-level="125" for="mermaid-zoom-3-125">125%</label><label data-zoom-level="150" for="mermaid-zoom-3-150">150%</label><label data-zoom-level="200" for="mermaid-zoom-3-200">200%</label></div>
+<pre class="mermaid">flowchart TB
+  %% Enabling Conditions: What Raises Gain and Weakens Balancers
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG3_1["Doctrinal absolutization"]
+    ETC["Exclusive truth claims&lt;br/&gt;&lt;br/&gt;error becomes existential"]
+    DCD["Divine command /&lt;br/&gt;scripture-as-directive&lt;br/&gt;&lt;br/&gt;obedience overrides hesitation"]
+    LI["Literalism /&lt;br/&gt;inerrancy&lt;br/&gt;&lt;br/&gt;reduced interpretive friction"]
+  end
+  subgraph SG3_2["Boundary criminalization"]
+    HAB["Heresy / apostasy /&lt;br/&gt;blasphemy framing&lt;br/&gt;&lt;br/&gt;deviation treated as threat"]
+    PAC["Purity / abomination&lt;br/&gt;categories&lt;br/&gt;&lt;br/&gt;difference moralized as contamination"]
+  end
+  subgraph SG3_3["Eschatological intensification"]
+    CWAU["Cosmic war +&lt;br/&gt;apocalyptic urgency&lt;br/&gt;&lt;br/&gt;disagreement sacralized"]
+    DVH["Divine vengeance /&lt;br/&gt;hell-as-justice&lt;br/&gt;&lt;br/&gt;punitive imagination sanctified"]
+  end
+  subgraph SG3_4["Political sacralization"]
+    SLCP["Sacred land /&lt;br/&gt;chosenness politicization&lt;br/&gt;&lt;br/&gt;territory and identity sacralized"]
+    MU["Missionary universalism&lt;br/&gt;under power&lt;br/&gt;&lt;br/&gt;expansion takes coercive form"]
+    COSE["Centralized orthodoxy +&lt;br/&gt;scalable enforcement&lt;br/&gt;&lt;br/&gt;ideas become apparatus"]
+  end
+  subgraph SG3_5["Amplified reinforcing loops"]
+    R1G["R1 gain&lt;br/&gt;&lt;br/&gt;cosmic war loop strengthens"]
+    R2G["R2 gain&lt;br/&gt;&lt;br/&gt;coercive distrust loop strengthens"]
+    R3G["R3 gain&lt;br/&gt;&lt;br/&gt;purity-policing loop strengthens"]
+    R4G["R4 gain&lt;br/&gt;&lt;br/&gt;vengeance loop strengthens"]
+    R5G["R5 gain&lt;br/&gt;&lt;br/&gt;certainty / literalism loop strengthens"]
+  end
+  subgraph SG3_6["Weakened balancing loops"]
+    B1E["B1 effectiveness&lt;br/&gt;(mercy)&lt;br/&gt;&lt;br/&gt;lower ability to damp retaliation"]
+    B2E["B2 effectiveness&lt;br/&gt;(humility)&lt;br/&gt;&lt;br/&gt;lower ability to check certainty"]
+    B3E["B3 effectiveness&lt;br/&gt;(nonviolence)&lt;br/&gt;&lt;br/&gt;lower ability to restrain force"]
+  end
+
+  ETC --&gt;|+| R1G
+  ETC --&gt;|+| R2G
+  ETC --&gt;|-| B2E
+  DCD --&gt;|+| R3G
+  DCD --&gt;|+| R5G
+  LI --&gt;|+| R3G
+  LI --&gt;|+| R5G
+  HAB --&gt;|+| R2G
+  HAB --&gt;|-| B1E
+  PAC --&gt;|+| R3G
+  PAC --&gt;|-| B1E
+  PAC --&gt;|-| B3E
+  CWAU --&gt;|+| R1G
+  CWAU --&gt;|+| R5G
+  CWAU --&gt;|-| B1E
+  CWAU --&gt;|-| B2E
+  CWAU --&gt;|-| B3E
+  DVH --&gt;|+| R4G
+  DVH --&gt;|-| B1E
+  SLCP --&gt;|+| R1G
+  MU --&gt;|+| R2G
+  MU --&gt;|+| R3G
+  COSE --&gt;|+| R2G
+  COSE --&gt;|+| R3G
+  COSE --&gt;|-| B2E
+
+  class ETC,DCD,LI,HAB,PAC,CWAU,DVH,SLCP,MU,COSE,R1G,R2G,R3G,R4G,R5G,B1E,B2E,B3E node;</pre>
 </figure><h3 id="interventions-that-strengthen-balancing-loops-and-why-they-can-fail-endogenously">
     Interventions that strengthen balancing loops (and why they can fail
     endogenously)
@@ -3180,12 +3665,152 @@
     to prevent “contamination,” reducing contact and restoring dehumanization.
   </p><h4 id="diagram-4a-structural-and-interpretive-interventions-with-backlash">
     Diagram 4A — Structural and interpretive interventions with backlash
-  </h4><figure class="uml-diagram">
-<a href="https://www.plantuml.com/plantuml/svg/TLVDRjiu4BxxAOZqa4FWRlutsCEYZfoa1kf6Y8tsaWijZIqY4YcGL59tiS0-n3vXdwGpGygMb4I-a4FEn_dvPYRvvBoqlgdAaSja2UBuuyNLo9jQU2DMndjJYLnPoBmoUkIUbAwbbPLOoUnfOqsZyyIKnegNGddedEUmbatfRutsNsK5OcALBBldjH8dfySTYJOvEAZ5ULTefNuYuSL5HrZBF5Tw8wuwiecrvYMOyk6Sl-7Xib3PamRdnCd7upvSzYGtiF1RT9yybNfJmgXpmojV0hcoK3z1d5o-LjuVdWtVtH-zifUF-DcLAVFNgEAVaH3NnkPWeskN_95q4FyFjnFwuSa0zD-k8pll0l8hZ2dzXc-UyOVIXt3LQh2Ok_Qfw3M-ms4IKoKtzDRvHFpwxt-nyBR9V6DbAQJEnKnxiBK5hvuXR9v14xUSU56-O9jAwOhHg8t1mUn478c7IqRhgLV862j9cQ5NKVM0dTkxUl2EqYF-ClG0VlW6hRCWYLMFsfcr1xJ7getAbTyU2Ed4RDx7_89qHv-KgmYca3ON4GX1mNgfTDJyCblsLUTehFGWTjU28LM5SYVM00WXLywKZGT6c2TzWCHKjJMLSY2yN1aJ7ScGsnGBGd2FUYqndYNA62DP3Z7qkbIP9ztQbD9Y6dFq7RErmGj1v_xhgAzr-1qDjrHxkNdH0Y_xuf0WEgbm02X0zHLuAxUoPAplqu41ivpoxhV25nXvjgCqM9nctGqCyW_xas-24yD8Je5Y9jPugnTCIWToT4LyHS_0KLARJU4PPNgRa5kpkHYF_wRqYB_460Mq8iayGS4H2d11-sGPzqaunx2mO8-1piKhj2B9h1L4J7mp2cYrV_U8wcRFz5DY-f_CzBHi0hy4vjg7_kkOvmwonbBaNAqiXNT0zpSrAIn8wCA72ACaKu2KmQYhIddCPwKq9v1ZbAPzpEiGogr0hgYComHpx3rKjQT9OS5vOo4Kb3KXvzS3a1GisSuiGIDovHnGQJhEisdycBfHpPHijE9oHU0QZGs4JAVtVSJbZZivIi2Y8jWCwfqVoyy31dzJJgrKIU5Z4zPhi24EH68BecvMw242XIZ68lvsFttbImPeO4vkSBTairibxYPS1JbaSXkj7q24B4hzGq7R1BINRHwmWa7Qe3bvEnlZVJOgymmLHfFppCa8rPXRD39cOqwnI5EcttKQMNyTzXZQI51QaMJvEGfmmJU2nXu2On9lq2g0x332VjBk9_7HUHJGgWFQAu8pAe8hBeAaQ6nMZAa50FAUXjYktNUzVBVrlmCGWeqf98fb4jzMb04BUPD17fhVOj67Mk2VHt9L4aEqSaKRR8OUam7KFq5ZCyeu4uooIDzkk-8FiS76z2mZzT1CJrvnyb1v1v3SlT_os87W34utvngaBnvm5pTK3g9RZTXuJWV5C3SqbhD26jVjlqvcbfnXMkCuAOCfwN0E7Jw4gXSRavTOJtJzS4X5oVq7oKe7L7a_zrtcuUv-C5PJ9BHN66asGhQtTu76P3aC59fR67nIyS3Q1IiTfEncdurEbcdWlQ1ZybagpYZMwGPd1qFSy6p0v3Cz5ssLB0Bbaxjs5DorRVrqtzTFmntKZONImgIxaPB6cKAUHn4l-TQYlHIqRbgbcwG7ZCL28wXJex52uqHfAthIsqKJek5HSL2NWs4r-WGwf_yCVWC" rel="noopener noreferrer" target="_blank"><img alt="Diagram 4A — Structural and interpretive interventions with backlash" loading="lazy" src="https://www.plantuml.com/plantuml/svg/TLVDRjiu4BxxAOZqa4FWRlutsCEYZfoa1kf6Y8tsaWijZIqY4YcGL59tiS0-n3vXdwGpGygMb4I-a4FEn_dvPYRvvBoqlgdAaSja2UBuuyNLo9jQU2DMndjJYLnPoBmoUkIUbAwbbPLOoUnfOqsZyyIKnegNGddedEUmbatfRutsNsK5OcALBBldjH8dfySTYJOvEAZ5ULTefNuYuSL5HrZBF5Tw8wuwiecrvYMOyk6Sl-7Xib3PamRdnCd7upvSzYGtiF1RT9yybNfJmgXpmojV0hcoK3z1d5o-LjuVdWtVtH-zifUF-DcLAVFNgEAVaH3NnkPWeskN_95q4FyFjnFwuSa0zD-k8pll0l8hZ2dzXc-UyOVIXt3LQh2Ok_Qfw3M-ms4IKoKtzDRvHFpwxt-nyBR9V6DbAQJEnKnxiBK5hvuXR9v14xUSU56-O9jAwOhHg8t1mUn478c7IqRhgLV862j9cQ5NKVM0dTkxUl2EqYF-ClG0VlW6hRCWYLMFsfcr1xJ7getAbTyU2Ed4RDx7_89qHv-KgmYca3ON4GX1mNgfTDJyCblsLUTehFGWTjU28LM5SYVM00WXLywKZGT6c2TzWCHKjJMLSY2yN1aJ7ScGsnGBGd2FUYqndYNA62DP3Z7qkbIP9ztQbD9Y6dFq7RErmGj1v_xhgAzr-1qDjrHxkNdH0Y_xuf0WEgbm02X0zHLuAxUoPAplqu41ivpoxhV25nXvjgCqM9nctGqCyW_xas-24yD8Je5Y9jPugnTCIWToT4LyHS_0KLARJU4PPNgRa5kpkHYF_wRqYB_460Mq8iayGS4H2d11-sGPzqaunx2mO8-1piKhj2B9h1L4J7mp2cYrV_U8wcRFz5DY-f_CzBHi0hy4vjg7_kkOvmwonbBaNAqiXNT0zpSrAIn8wCA72ACaKu2KmQYhIddCPwKq9v1ZbAPzpEiGogr0hgYComHpx3rKjQT9OS5vOo4Kb3KXvzS3a1GisSuiGIDovHnGQJhEisdycBfHpPHijE9oHU0QZGs4JAVtVSJbZZivIi2Y8jWCwfqVoyy31dzJJgrKIU5Z4zPhi24EH68BecvMw242XIZ68lvsFttbImPeO4vkSBTairibxYPS1JbaSXkj7q24B4hzGq7R1BINRHwmWa7Qe3bvEnlZVJOgymmLHfFppCa8rPXRD39cOqwnI5EcttKQMNyTzXZQI51QaMJvEGfmmJU2nXu2On9lq2g0x332VjBk9_7HUHJGgWFQAu8pAe8hBeAaQ6nMZAa50FAUXjYktNUzVBVrlmCGWeqf98fb4jzMb04BUPD17fhVOj67Mk2VHt9L4aEqSaKRR8OUam7KFq5ZCyeu4uooIDzkk-8FiS76z2mZzT1CJrvnyb1v1v3SlT_os87W34utvngaBnvm5pTK3g9RZTXuJWV5C3SqbhD26jVjlqvcbfnXMkCuAOCfwN0E7Jw4gXSRavTOJtJzS4X5oVq7oKe7L7a_zrtcuUv-C5PJ9BHN66asGhQtTu76P3aC59fR67nIyS3Q1IiTfEncdurEbcdWlQ1ZybagpYZMwGPd1qFSy6p0v3Cz5ssLB0Bbaxjs5DorRVrqtzTFmntKZONImgIxaPB6cKAUHn4l-TQYlHIqRbgbcwG7ZCL28wXJex52uqHfAthIsqKJek5HSL2NWs4r-WGwf_yCVWC"/></a>
+  </h4><figure class="mermaid-diagram">
+<input class="mermaid-zoom-input zoom-75" id="mermaid-zoom-4-75" name="mermaid-zoom-4" type="radio">
+<input class="mermaid-zoom-input zoom-100" id="mermaid-zoom-4-100" name="mermaid-zoom-4" type="radio" checked>
+<input class="mermaid-zoom-input zoom-125" id="mermaid-zoom-4-125" name="mermaid-zoom-4" type="radio">
+<input class="mermaid-zoom-input zoom-150" id="mermaid-zoom-4-150" name="mermaid-zoom-4" type="radio">
+<input class="mermaid-zoom-input zoom-200" id="mermaid-zoom-4-200" name="mermaid-zoom-4" type="radio">
+<div class="mermaid-zoom-controls" aria-label="Diagram zoom controls"><label data-zoom-level="75" for="mermaid-zoom-4-75">75%</label><label data-zoom-level="100" for="mermaid-zoom-4-100">100%</label><label data-zoom-level="125" for="mermaid-zoom-4-125">125%</label><label data-zoom-level="150" for="mermaid-zoom-4-150">150%</label><label data-zoom-level="200" for="mermaid-zoom-4-200">200%</label></div>
+<pre class="mermaid">flowchart TB
+  %% Diagram 4A — Structural and Interpretive Interventions with Backlash
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG4_1["I1 + R6 — Interpretive moderation and backlash"]
+    IM["Interpretive moderation&lt;br/&gt;&lt;br/&gt;contextual reading&lt;br/&gt;softens rigidity"]
+    LIT["Literalism&lt;br/&gt;&lt;br/&gt;hard textual&lt;br/&gt;certainty"]
+    MC["Mandate certainty&lt;br/&gt;&lt;br/&gt;commands feel&lt;br/&gt;absolute"]
+    CT["Compromise taboo&lt;br/&gt;&lt;br/&gt;concession feels&lt;br/&gt;faithless"]
+    CON["Conflict&lt;br/&gt;&lt;br/&gt;polarized&lt;br/&gt;struggle"]
+    WDT["'Watering down truth'&lt;br/&gt;&lt;br/&gt;moderation seen&lt;br/&gt;as betrayal"]
+    IT["Identity threat&lt;br/&gt;&lt;br/&gt;loss of certainty&lt;br/&gt;or status"]
+    DFC["Demand for certainty&lt;br/&gt;&lt;br/&gt;harder boundaries&lt;br/&gt;sought"]
+  end
+  subgraph SG4_2["I2 + R7 — Pluralism protections and security spiral"]
+    PP["Pluralism protections&lt;br/&gt;&lt;br/&gt;rights of conscience&lt;br/&gt;limit domination"]
+    BP["Boundary policing&lt;br/&gt;&lt;br/&gt;attempt to restore&lt;br/&gt;control"]
+    PDO["Persecution of dissenters&lt;br/&gt;or out-group&lt;br/&gt;&lt;br/&gt;punitive response"]
+    TH["Threat&lt;br/&gt;&lt;br/&gt;danger&lt;br/&gt;perception"]
+    VOD["Visibility of difference&lt;br/&gt;&lt;br/&gt;more public&lt;br/&gt;plurality"]
+    PD["Perceived disorder&lt;br/&gt;&lt;br/&gt;plurality read&lt;br/&gt;as decay"]
+    PA["Purity anxiety&lt;br/&gt;&lt;br/&gt;contamination&lt;br/&gt;fear"]
+    BPM["Boundary-policing&lt;br/&gt;movement&lt;br/&gt;&lt;br/&gt;restoration drive"]
+  end
+  subgraph SG4_3["I3 + R8 — Church-state separation and restoration backlash"]
+    CSS["Church-state separation&lt;br/&gt;&lt;br/&gt;coercive capacity&lt;br/&gt;reduced"]
+    SP["Scalable punishment&lt;br/&gt;&lt;br/&gt;state-backed&lt;br/&gt;enforcement"]
+    CG["Conflict / grievance&lt;br/&gt;&lt;br/&gt;hurt and&lt;br/&gt;resentment"]
+    DFC2["Demand for coercion&lt;br/&gt;&lt;br/&gt;pressure for&lt;br/&gt;stronger control"]
+    PMC["Moral chaos&lt;br/&gt;&lt;br/&gt;loss of sacred&lt;br/&gt;order felt"]
+    RGOM["'Restore godly order'&lt;br/&gt;movement&lt;br/&gt;&lt;br/&gt;reactionary&lt;br/&gt;mobilization"]
+    PS["Political sacralization&lt;br/&gt;&lt;br/&gt;state cast as&lt;br/&gt;holy instrument"]
+    EC["Enforcement capacity&lt;br/&gt;&lt;br/&gt;power available&lt;br/&gt;again"]
+  end
+
+  IM --&gt;|-| LIT
+  LIT --&gt;|+| MC
+  MC --&gt;|+| CT
+  CT --&gt;|+| CON
+  IM --&gt;|+| WDT
+  WDT --&gt;|+| IT
+  IT --&gt;|+| DFC
+  DFC --&gt;|+| LIT
+  PP --&gt;|-| BP
+  BP --&gt;|+| PDO
+  PDO --&gt;|+| TH
+  TH --&gt;|-| PP
+  PP --&gt;|+| VOD
+  VOD --&gt;|+| PD
+  PD --&gt;|+| PA
+  PA --&gt;|+| BPM
+  BPM --&gt;|-| PP
+  CSS --&gt;|-| SP
+  SP --&gt;|+| CG
+  CG --&gt;|+| DFC2
+  DFC2 --&gt;|-| CSS
+  CSS --&gt;|+| PMC
+  PMC --&gt;|+| RGOM
+  RGOM --&gt;|+| PS
+  PS --&gt;|+| EC
+  EC --&gt;|-| CSS
+  CON --&gt;|+| TH
+  TH --&gt;|+| IT
+  BP --&gt;|+| PA
+  BP --&gt;|+| PMC
+  CG --&gt;|+| TH
+  PA --&gt;|+| BPM
+  IT --&gt;|+| DFC
+
+  class IM,LIT,MC,CT,CON,WDT,IT,DFC,PP,BP,PDO,TH,VOD,PD,PA,BPM,CSS,SP,CG,DFC2,PMC,RGOM,PS,EC node;</pre>
 </figure><h4 id="diagram-4b-punishment-contact-and-intervention-erosion">
     Diagram 4B — Punishment, contact, and intervention erosion
-  </h4><figure class="uml-diagram">
-<a href="https://www.plantuml.com/plantuml/svg/XLRDZjis4BxxAGQRGmwxJdUTtI3jeSZQNiDRO5l3NhGNNMXfBB6MI86ax2X1WJv4dx1FqXbIicGvGUqBEII_-VlcipzP9uohYdnaOv4ZtBvx-3XokWIdOQkTqmKaqc3if5OZkvUg54OKi1NnFZMwKibCvzh0CPCEU-S9xaILkuLMxbTH83mQAVB-UIdXRdBRioYTeCKIxlj68zIUZGyFFMCfaaIg53xsR8_6w6C8vSsz_mmFNpCPxnLQ2tVlRi_Xuhr8SUDgIfyp5IhDSTIxuQJBaLFPo2y8Tnyk7tU7xuT-kwEBUFsHTxlLUJAwX8Ml8u2fDWcQ9hSF_iFMGGFUB1xvIoS3rB_wkAVq0l85nfo_Gv_l_OUiwt3LA3JKlDPLapRvyNM2kHGf-xgVmhz__mEhIacR5QZS3SpeleXf8LG2VsGrF2k7va1dn2uBJuOuC1groLyztyCrh7_qC6kqJXlXv07Xpyew6QD7OIBcmcPNFgCklwjlF8XKf5o6b5LQWzxHxL984obze8JAKvnN82oiVtaznvlBWrG856oAGZ6O5Rb45M3vjNSb2v5A9JWXZpF_VNEEmpN0edJygg00yqXbWggjYDB-nMmrz8nPLGWbltXKVgSf2sF18Yfw4QcSQNtKncLrSBeyHzXKPKcdiADsaZERHIhMQE86pY8LGBeQK2NQM4myo6Ov6vt3lDtedGEj00yoV-iJ890QTjHkJ295Zuue_905XD-UpW4MA0m_IsXF9QV-HGe_bzfM1c67UIZzukbnFQn0mRtcyBisCH19LcxPtYKH2h1OSUpKH1YFV-Ocm4ym9Wkls4959iirMNZbxomR0oruJ-bxGm-6ycdky8ej76fZyaiFj5YrIBJgt5_pY7JSVc1ktzrwSlinu4ai8GuZuhbjCJMO-gv_d-UNRxamVSQ0o-WufQOJMsc4wRulqlFivUd_c6Q9BfX0CBkweHezqIbTQvWoNqw-tMUXFaiaNecjhfoVFV3KFRLvydsUzWdAYHcTzubcnGwRPcyMGw9EMQY4OK8x6dA32YjZVKGnYOA5qkWTpQjA8xKp_YVk86qxijD1LJQzDlp0e-vdPHjyIBHjXDmsAbOLjmEqcd9SNEQ6OPEMXRHgwJFfyITOAP-MUQUtqvPvqx0dx9QAj6ABlnhWMrDmUCwx5tHYdDHA53Bst3kI3Cip6KQMuGkUJKNEiiUoGpLLAVLHSIyY4Yug9UjOWcFaVn6T-aq7ulUSi1DNZucIADo9rGoJQsAMZuGQvfes1wK8T7sTNYefioBNkcHEKltbGRWG54Ng1A7LDn0QTiDqJA2b4hceZ6e4TpRGcnSgW0aDzyMm8SskIEJJifM86gC7eL7YxWHreL2Rxl0gwCriVHASMH2AbxQdRO-3I56tJbhI4QIZnqbpMdbfbQeHhhRhBSaQOMDMzMFZL_tzAQnMhJh3ydpVSB79bSMnjsreIEpzHByc_B_oFm" rel="noopener noreferrer" target="_blank"><img alt="Diagram 4B — Punishment, contact, and intervention erosion" loading="lazy" src="https://www.plantuml.com/plantuml/svg/XLRDZjis4BxxAGQRGmwxJdUTtI3jeSZQNiDRO5l3NhGNNMXfBB6MI86ax2X1WJv4dx1FqXbIicGvGUqBEII_-VlcipzP9uohYdnaOv4ZtBvx-3XokWIdOQkTqmKaqc3if5OZkvUg54OKi1NnFZMwKibCvzh0CPCEU-S9xaILkuLMxbTH83mQAVB-UIdXRdBRioYTeCKIxlj68zIUZGyFFMCfaaIg53xsR8_6w6C8vSsz_mmFNpCPxnLQ2tVlRi_Xuhr8SUDgIfyp5IhDSTIxuQJBaLFPo2y8Tnyk7tU7xuT-kwEBUFsHTxlLUJAwX8Ml8u2fDWcQ9hSF_iFMGGFUB1xvIoS3rB_wkAVq0l85nfo_Gv_l_OUiwt3LA3JKlDPLapRvyNM2kHGf-xgVmhz__mEhIacR5QZS3SpeleXf8LG2VsGrF2k7va1dn2uBJuOuC1groLyztyCrh7_qC6kqJXlXv07Xpyew6QD7OIBcmcPNFgCklwjlF8XKf5o6b5LQWzxHxL984obze8JAKvnN82oiVtaznvlBWrG856oAGZ6O5Rb45M3vjNSb2v5A9JWXZpF_VNEEmpN0edJygg00yqXbWggjYDB-nMmrz8nPLGWbltXKVgSf2sF18Yfw4QcSQNtKncLrSBeyHzXKPKcdiADsaZERHIhMQE86pY8LGBeQK2NQM4myo6Ov6vt3lDtedGEj00yoV-iJ890QTjHkJ295Zuue_905XD-UpW4MA0m_IsXF9QV-HGe_bzfM1c67UIZzukbnFQn0mRtcyBisCH19LcxPtYKH2h1OSUpKH1YFV-Ocm4ym9Wkls4959iirMNZbxomR0oruJ-bxGm-6ycdky8ej76fZyaiFj5YrIBJgt5_pY7JSVc1ktzrwSlinu4ai8GuZuhbjCJMO-gv_d-UNRxamVSQ0o-WufQOJMsc4wRulqlFivUd_c6Q9BfX0CBkweHezqIbTQvWoNqw-tMUXFaiaNecjhfoVFV3KFRLvydsUzWdAYHcTzubcnGwRPcyMGw9EMQY4OK8x6dA32YjZVKGnYOA5qkWTpQjA8xKp_YVk86qxijD1LJQzDlp0e-vdPHjyIBHjXDmsAbOLjmEqcd9SNEQ6OPEMXRHgwJFfyITOAP-MUQUtqvPvqx0dx9QAj6ABlnhWMrDmUCwx5tHYdDHA53Bst3kI3Cip6KQMuGkUJKNEiiUoGpLLAVLHSIyY4Yug9UjOWcFaVn6T-aq7ulUSi1DNZucIADo9rGoJQsAMZuGQvfes1wK8T7sTNYefioBNkcHEKltbGRWG54Ng1A7LDn0QTiDqJA2b4hceZ6e4TpRGcnSgW0aDzyMm8SskIEJJifM86gC7eL7YxWHreL2Rxl0gwCriVHASMH2AbxQdRO-3I56tJbhI4QIZnqbpMdbfbQeHhhRhBSaQOMDMzMFZL_tzAQnMhJh3ydpVSB79bSMnjsreIEpzHByc_B_oFm"/></a>
+  </h4><figure class="mermaid-diagram">
+<input class="mermaid-zoom-input zoom-75" id="mermaid-zoom-5-75" name="mermaid-zoom-5" type="radio">
+<input class="mermaid-zoom-input zoom-100" id="mermaid-zoom-5-100" name="mermaid-zoom-5" type="radio" checked>
+<input class="mermaid-zoom-input zoom-125" id="mermaid-zoom-5-125" name="mermaid-zoom-5" type="radio">
+<input class="mermaid-zoom-input zoom-150" id="mermaid-zoom-5-150" name="mermaid-zoom-5" type="radio">
+<input class="mermaid-zoom-input zoom-200" id="mermaid-zoom-5-200" name="mermaid-zoom-5" type="radio">
+<div class="mermaid-zoom-controls" aria-label="Diagram zoom controls"><label data-zoom-level="75" for="mermaid-zoom-5-75">75%</label><label data-zoom-level="100" for="mermaid-zoom-5-100">100%</label><label data-zoom-level="125" for="mermaid-zoom-5-125">125%</label><label data-zoom-level="150" for="mermaid-zoom-5-150">150%</label><label data-zoom-level="200" for="mermaid-zoom-5-200">200%</label></div>
+<pre class="mermaid">flowchart TB
+  %% Diagram 4B — Punishment, Contact, and Why Interventions Erode
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG5_1["I4 + R9 — Restorative justice and backlash"]
+    RJT["Restorative justice&lt;br/&gt;&lt;br/&gt;theology of repair&lt;br/&gt;over punishment"]
+    DVS["Divine vengeance&lt;br/&gt;salience&lt;br/&gt;&lt;br/&gt;punitive imagination"]
+    CPT["Contempt&lt;br/&gt;&lt;br/&gt;moral&lt;br/&gt;hardening"]
+    DH["Dehumanization&lt;br/&gt;&lt;br/&gt;others seen as&lt;br/&gt;less worthy"]
+    SHC["Support for harsh&lt;br/&gt;coercion&lt;br/&gt;&lt;br/&gt;severity endorsed"]
+    SOE["'Soft on evil'&lt;br/&gt;&lt;br/&gt;mercy framed&lt;br/&gt;as weakness"]
+    FEAR["Fear&lt;br/&gt;&lt;br/&gt;danger and&lt;br/&gt;exposure felt"]
+    DFP["Demand for punishment&lt;br/&gt;&lt;br/&gt;calls for&lt;br/&gt;severity"]
+  end
+  subgraph SG5_2["I5 + R10 — Intergroup contact and segregation backlash"]
+    ICME["Intergroup contact&lt;br/&gt;&lt;br/&gt;humanization through&lt;br/&gt;encounter"]
+    DH2["Dehumanization&lt;br/&gt;&lt;br/&gt;shared humanity&lt;br/&gt;less recognized"]
+    FEAR2["Fear&lt;br/&gt;&lt;br/&gt;anxiety about&lt;br/&gt;the other"]
+    SFC["Support for coercion&lt;br/&gt;&lt;br/&gt;control framed&lt;br/&gt;as safety"]
+    BE["Boundary entrepreneurs&lt;br/&gt;&lt;br/&gt;actors profiting&lt;br/&gt;from division"]
+    SPB["Segregation /&lt;br/&gt;purity boundaries&lt;br/&gt;&lt;br/&gt;contact reduced"]
+  end
+  subgraph SG5_3["Meta-dynamic — why interventions erode"]
+    BS["Balancers strengthened&lt;br/&gt;&lt;br/&gt;initial&lt;br/&gt;de-escalation"]
+    ITB["Identity-threat backlash&lt;br/&gt;&lt;br/&gt;loss interpreted&lt;br/&gt;as danger"]
+    CPCR["Control loops reactivated&lt;br/&gt;&lt;br/&gt;certainty, purity,&lt;br/&gt;and control return"]
+    ME["Moderation erodes&lt;br/&gt;&lt;br/&gt;intervention loses&lt;br/&gt;force"]
+  end
+
+  RJT --&gt;|-| DVS
+  DVS --&gt;|+| CPT
+  CPT --&gt;|+| DH
+  DH --&gt;|+| SHC
+  RJT --&gt;|+| SOE
+  SOE --&gt;|+| FEAR
+  FEAR --&gt;|+| DFP
+  DFP --&gt;|+| DVS
+  ICME --&gt;|-| DH2
+  DH2 --&gt;|+| FEAR2
+  FEAR2 --&gt;|+| SFC
+  ICME --&gt;|+| BE
+  BE --&gt;|+| SPB
+  SPB --&gt;|-| ICME
+  SPB --&gt;|+| DH2
+  BS --&gt;|+| ITB
+  ITB --&gt;|+| CPCR
+  CPCR --&gt;|+| ME
+  ME --&gt;|-| BS
+  FEAR --&gt;|+| FEAR2
+  FEAR2 --&gt;|+| FEAR
+  DFP --&gt;|+| SHC
+  DH --&gt;|+| DH2
+  DH2 --&gt;|+| DH
+  SFC --&gt;|+| ITB
+  SHC --&gt;|+| ITB
+  CPCR --&gt;|+| DVS
+  CPCR --&gt;|+| DH
+  CPCR --&gt;|+| BE
+  BS --&gt;|+| RJT
+  BS --&gt;|+| ICME
+
+  class RJT,DVS,CPT,DH,SHC,SOE,FEAR,DFP,ICME,DH2,FEAR2,SFC,BE,SPB,BS,ITB,CPCR,ME node;</pre>
 </figure><h3 id="putting-it-all-together-a-meta-loop-view">
     Putting it all together: a “meta-loop” view
   </h3><h4 id="the-core-dynamic">The core dynamic</h4><p>

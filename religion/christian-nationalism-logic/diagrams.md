@@ -2,602 +2,400 @@
 
 ## Diagram 1 — Core reinforcing loops (R1–R5)
 
-```plantuml
-@startuml
-top to bottom direction
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam dpi 170
-skinparam nodesep 60
-skinparam ranksep 80
-skinparam padding 12
-skinparam ArrowColor #444444
-skinparam ArrowThickness 1.25
-skinparam packageStyle rectangle
-skinparam ArrowFontSize 18
-skinparam ArrowFontStyle bold
-skinparam titleFontSize 20
-skinparam packageFontSize 16
-skinparam package {
-  BorderColor #666666
-  BackgroundColor #FAFAFA
-  FontStyle bold
-}
+```mermaid
+flowchart TB
+  %% Core Reinforcing Loops (R1–R5)
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG1_1["R1 — Cosmic war threat inflation"]
+    CWF["Cosmic-war framing<br/><br/>(sacralized conflict lens)"]
+    PT["Perceived threat<br/><br/>(enemy presence / danger)"]
+    BP["Boundary policing<br/><br/>(guarding orthodoxy / identity)"]
+    OGH["Out-group hostility<br/><br/>(moralized antagonism)"]
+    IGC["Intergroup conflict<br/><br/>(open social or political clash)"]
+    EVCW["'Evidence' of cosmic war<br/><br/> (conflict re-read as proof)"]
+  end
+  subgraph SG1_2["R2 — Moral monopoly -&gt; distrust -&gt; preemptive coercion"]
+    EX["Exclusivism /<br/>moral monopoly belief<br/><br/>'only one right order'"]
+    MOD["Moral out-group distrust<br/><br/>others seen as corrupting"]
+    FOG["Fear of out-group<br/><br/>threat perception intensifies"]
+    SCC["Support for coercive control<br/><br/>force feels protective"]
+    ECU["Enforcement capacity used<br/><br/>rules, sanctions, pressure"]
+    OGR["Out-group resentment /<br/>resistance<br/><br/>backlash to control"]
+    TS["Threat signals<br/><br/>resentment read as danger"]
+  end
+  subgraph SG1_3["R3 — Purity policing cohesion loop"]
+    PSD["Perceived social disorder<br/><br/>moral decline / instability"]
+    PCS["Purity / contamination salience<br/><br/>pollution frame activated"]
+    SCD["Scapegoating of deviants<br/><br/>blame assigned to offenders"]
+    SIGC["Short-term in-group cohesion<br/><br/>unity through exclusion"]
+    LL["Leader legitimacy<br/><br/>authority strengthened"]
+    CPP["Capacity to police purity<br/><br/>organizational readiness"]
+    PPI["Purity policing intensity<br/><br/>stronger enforcement"]
+  end
+  subgraph SG1_4["R4 — Outsourced vengeance / deferred revenge"]
+    HG["Harm / grievance<br/><br/>injury, humiliation, loss"]
+    AN["Anger<br/><br/>affective escalation"]
+    DVS["Divine vengeance salience<br/><br/>punishment imagined as just"]
+    MCC["Moral certainty /<br/>contempt<br/><br/>opponent judged absolutely"]
+    DH["Dehumanization<br/><br/>reduced moral standing"]
+    WSHP["Willingness to support<br/>harsh punishment<br/><br/>severity normalized"]
+    IC["Institutional coercion<br/><br/>punishment through systems"]
+  end
+  subgraph SG1_5["R5 — Literalism / hard commands escalation"]
+    LIT["Literalism /<br/>inerrancy intensity<br/><br/>low interpretive flexibility"]
+    PDMC["Perceived divine<br/>mandate certainty<br/><br/>certainty of command"]
+    CT["Compromise taboo<br/><br/>concession feels sinful"]
+    POL["Polarization<br/><br/>positions harden"]
+    CON["Conflict<br/><br/>social confrontation"]
+    IT["Identity threat<br/><br/>self-understanding destabilized"]
+    DFC["Demand for certainty<br/><br/>people seek harder answers"]
+  end
 
-skinparam rectangle {
-  BackgroundColor #FDFDFD
-  BorderColor #333333
-  RoundCorner 15
-  FontSize 16
-}
+  CWF -->|+| PT
+  PT -->|+| BP
+  BP -->|+| OGH
+  OGH -->|+| IGC
+  IGC -->|+| EVCW
+  EVCW -->|+| CWF
+  EX -->|+| MOD
+  MOD -->|+| FOG
+  FOG -->|+| SCC
+  SCC -->|+| ECU
+  ECU -->|+| OGR
+  OGR -->|+| TS
+  TS -->|+| FOG
+  PSD -->|+| PCS
+  PCS -->|+| SCD
+  SCD -->|+| SIGC
+  SIGC -->|+| LL
+  LL -->|+| CPP
+  CPP -->|+| PPI
+  PPI -->|+| PSD
+  HG -->|+| AN
+  AN -->|+| DVS
+  DVS -->|+| MCC
+  MCC -->|+| DH
+  DH -->|+| WSHP
+  WSHP -->|+| IC
+  IC -->|+| HG
+  LIT -->|+| PDMC
+  PDMC -->|+| CT
+  CT -->|+| POL
+  POL -->|+| CON
+  CON -->|+| IT
+  IT -->|+| DFC
+  DFC -->|+| LIT
+  IGC -->|+| PT
+  IGC -->|+| HG
+  IGC -->|+| CON
+  PT -->|+| FOG
+  PT -->|+| PSD
+  ECU -->|+| BP
+  ECU -->|+| IC
+  OGH -->|+| DH
+  DH -->|+| OGH
+  IC -->|+| IGC
+  IC -->|+| PSD
+  PPI -->|+| BP
+  PPI -->|+| ECU
+  FOG -->|+| PCS
+  TS -->|+| PT
+  POL -->|+| BP
+  POL -->|+| OGH
+  MCC -->|+| CT
+  DVS -->|+| CT
+  IT -->|+| PT
+  DFC -->|+| EX
 
-title Core Reinforcing Loops (R1–R5)
-
-package "R1 — Cosmic war threat inflation" {
-  rectangle "Cosmic-war framing\n\n(sacralized conflict lens)" as CWF
-  rectangle "Perceived threat\n\n(enemy presence / danger)" as PT
-  rectangle "Boundary policing\n\n(guarding orthodoxy / identity)" as BP
-  rectangle "Out-group hostility\n\n(moralized antagonism)" as OGH
-  rectangle "Intergroup conflict\n\n(open social or political clash)" as IGC
-  rectangle "\"Evidence\" of cosmic war\n\n(conflict re-read as proof)" as EVCW
-
-  CWF --> PT : +
-  PT --> BP : +
-  BP --> OGH : +
-  OGH --> IGC : +
-  IGC --> EVCW : +
-  EVCW --> CWF : +
-}
-
-package "R2 — Moral monopoly -> distrust -> preemptive coercion" {
-  rectangle "Exclusivism /\nmoral monopoly belief\n\n'only one right order'" as EX
-  rectangle "Moral out-group distrust\n\nothers seen as corrupting" as MOD
-  rectangle "Fear of out-group\n\nthreat perception intensifies" as FOG
-  rectangle "Support for coercive control\n\nforce feels protective" as SCC
-  rectangle "Enforcement capacity used\n\nrules, sanctions, pressure" as ECU
-  rectangle "Out-group resentment /\nresistance\n\nbacklash to control" as OGR
-  rectangle "Threat signals\n\nresentment read as danger" as TS
-
-  EX --> MOD : +
-  MOD --> FOG : +
-  FOG --> SCC : +
-  SCC --> ECU : +
-  ECU --> OGR : +
-  OGR --> TS : +
-  TS --> FOG : +
-}
-
-package "R3 — Purity policing cohesion loop" {
-  rectangle "Perceived social disorder\n\nmoral decline / instability" as PSD
-  rectangle "Purity / contamination salience\n\npollution frame activated" as PCS
-  rectangle "Scapegoating of deviants\n\nblame assigned to offenders" as SCD
-  rectangle "Short-term in-group cohesion\n\nunity through exclusion" as SIGC
-  rectangle "Leader legitimacy\n\nauthority strengthened" as LL
-  rectangle "Capacity to police purity\n\norganizational readiness" as CPP
-  rectangle "Purity policing intensity\n\nstronger enforcement" as PPI
-
-  PSD --> PCS : +
-  PCS --> SCD : +
-  SCD --> SIGC : +
-  SIGC --> LL : +
-  LL --> CPP : +
-  CPP --> PPI : +
-  PPI --> PSD : +
-}
-
-package "R4 — Outsourced vengeance / deferred revenge" {
-  rectangle "Harm / grievance\n\ninjury, humiliation, loss" as HG
-  rectangle "Anger\n\naffective escalation" as AN
-  rectangle "Divine vengeance salience\n\npunishment imagined as just" as DVS
-  rectangle "Moral certainty /\ncontempt\n\nopponent judged absolutely" as MCC
-  rectangle "Dehumanization\n\nreduced moral standing" as DH
-  rectangle "Willingness to support\nharsh punishment\n\nseverity normalized" as WSHP
-  rectangle "Institutional coercion\n\npunishment through systems" as IC
-
-  HG --> AN : +
-  AN --> DVS : +
-  DVS --> MCC : +
-  MCC --> DH : +
-  DH --> WSHP : +
-  WSHP --> IC : +
-  IC --> HG : +
-}
-
-package "R5 — Literalism / hard commands escalation" {
-  rectangle "Literalism /\ninerrancy intensity\n\nlow interpretive flexibility" as LIT
-  rectangle "Perceived divine\nmandate certainty\n\ncertainty of command" as PDMC
-  rectangle "Compromise taboo\n\nconcession feels sinful" as CT
-  rectangle "Polarization\n\npositions harden" as POL
-  rectangle "Conflict\n\nsocial confrontation" as CON
-  rectangle "Identity threat\n\nself-understanding destabilized" as IT
-  rectangle "Demand for certainty\n\npeople seek harder answers" as DFC
-
-  LIT --> PDMC : +
-  PDMC --> CT : +
-  CT --> POL : +
-  POL --> CON : +
-  CON --> IT : +
-  IT --> DFC : +
-  DFC --> LIT : +
-}
-
-IGC --> PT : +
-IGC --> HG : +
-IGC --> CON : +
-
-PT --> FOG : +
-PT --> PSD : +
-
-ECU --> BP : +
-ECU --> IC : +
-
-OGH --> DH : +
-DH --> OGH : +
-
-IC --> IGC : +
-IC --> PSD : +
-
-PPI --> BP : +
-PPI --> ECU : +
-
-FOG --> PCS : +
-TS --> PT : +
-
-POL --> BP : +
-POL --> OGH : +
-
-MCC --> CT : +
-DVS --> CT : +
-
-IT --> PT : +
-DFC --> EX : +
-
-@enduml
+  class CWF,PT,BP,OGH,IGC,EVCW,EX,MOD,FOG,SCC,ECU,OGR,TS,PSD,PCS,SCD,SIGC,LL,CPP,PPI,HG,AN,DVS,MCC,DH,WSHP,IC,LIT,PDMC,CT,POL,CON,IT,DFC node;
 ```
 
 ## Diagram 2 — Balancing loops (B1–B3) and failure modes
 
-```plantuml
-@startuml
-top to bottom direction
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam dpi 170
-skinparam nodesep 60
-skinparam ranksep 80
-skinparam padding 12
-skinparam ArrowColor #444444
-skinparam ArrowThickness 1.25
-skinparam packageStyle rectangle
-skinparam ArrowFontSize 18
-skinparam ArrowFontStyle bold
-skinparam titleFontSize 20
-skinparam packageFontSize 16
-skinparam package {
-  BorderColor #666666
-  BackgroundColor #FAFAFA
-  FontStyle bold
-}
+```mermaid
+flowchart TB
+  %% Balancing Loops (B1–B3) and Their Failure Modes
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG2_1["B1 — Mercy / enemy-love / forgiveness"]
+    MN["Mercy norms<br/><br/>restraint,<br/>forgiveness,<br/>enemy-love"]
+    RI["Retaliation impulses<br/><br/>desire to<br/>strike back"]
+    IGC["Intergroup conflict<br/><br/>active social or<br/>political antagonism"]
+    PT["Perceived threat<br/><br/>danger<br/>interpretation"]
+    BP["Boundary policing<br/><br/>control in defense<br/>of order"]
+  end
+  subgraph SG2_2["B1 failure modes"]
+    BM["Bounded mercy<br/><br/>mercy only for<br/>insiders"]
+    IP["Institutional partition<br/><br/>private mercy,<br/>public punishment"]
+    TD["Temporal deferral<br/><br/>mercy now,<br/>punishment later"]
+    PR["Persecution recoding<br/><br/>control reframed as<br/>self-defense"]
+  end
+  subgraph SG2_3["B2 — Humility / self-critique"]
+    HN["Humility norms<br/><br/>fallibility<br/>acknowledged"]
+    MCSR["Moral certainty /<br/>self-righteousness<br/><br/>certainty about<br/>own purity"]
+    DH["Dehumanization<br/><br/>others morally<br/>downgraded"]
+    SFC["Support for coercion<br/><br/>control endorsed as<br/>necessary"]
+    CON["Conflict<br/><br/>social struggle<br/>intensifies"]
+  end
+  subgraph SG2_4["B2 failure modes"]
+    ML["Moral licensing<br/><br/>'humility' proves<br/>righteousness"]
+    HC["Hierarchy capture<br/><br/>'humility' becomes<br/>downward obedience"]
+    SA["Selective application<br/><br/>humility demanded<br/>of subordinates"]
+    AO["Authority / obedience<br/><br/>power asymmetry<br/>normalized"]
+    PI["Policing intensity<br/><br/>stricter<br/>enforcement"]
+  end
+  subgraph SG2_5["B3 — Nonviolence / sanctity-of-life"]
+    NV["Nonviolence norms<br/><br/>violence morally<br/>restrained"]
+    LVM["Legitimacy of<br/>violent means<br/><br/>force seen as<br/>permissible"]
+    V["Violence<br/><br/>actual coercive<br/>action"]
+    G["Grievance<br/><br/>hurt and backlash<br/>accumulate"]
+  end
+  subgraph SG2_6["B3 failure modes"]
+    RC["Reclassification<br/><br/>violence renamed<br/>'justice' or 'defense'"]
+    DV["Delegation to state /<br/>militia / divine violence<br/><br/>outsourced force"]
+    AU["Apocalyptic urgency<br/><br/>emergency<br/>mentality"]
+    EO["Emergency override<br/><br/>normal restraint<br/>suspended"]
+  end
 
-skinparam rectangle {
-  BackgroundColor #FDFDFD
-  BorderColor #333333
-  RoundCorner 15
-  FontSize 16
-}
+  MN -->|-| RI
+  RI -->|+| IGC
+  IGC -->|+| PT
+  PT -->|+| BP
+  BP -->|-| MN
+  MN -->|+| BM
+  BM -->|+| IGC
+  MN -->|+| IP
+  IP -->|+| BP
+  MN -->|+| TD
+  TD -->|+| IGC
+  IGC -->|+| PR
+  PR -->|+| PT
+  HN -->|-| MCSR
+  MCSR -->|+| DH
+  DH -->|+| SFC
+  SFC -->|+| CON
+  CON -->|-| HN
+  HN -->|+| ML
+  ML -->|+| MCSR
+  HN -->|+| HC
+  HC -->|+| AO
+  AO -->|+| PI
+  HN -->|+| SA
+  SA -->|+| AO
+  NV -->|-| LVM
+  LVM -->|+| V
+  V -->|+| G
+  G -->|-| NV
+  NV -->|+| RC
+  RC -->|+| LVM
+  NV -->|+| DV
+  DV -->|+| V
+  AU -->|+| EO
+  EO -->|+| LVM
 
-title Balancing Loops (B1–B3) and Their Failure Modes
-
-package "B1 — Mercy / enemy-love / forgiveness" {
-  rectangle "Mercy norms\n\nrestraint,\nforgiveness,\nenemy-love" as MN
-  rectangle "Retaliation impulses\n\ndesire to\nstrike back" as RI
-  rectangle "Intergroup conflict\n\nactive social or\npolitical antagonism" as IGC
-  rectangle "Perceived threat\n\ndanger\ninterpretation" as PT
-  rectangle "Boundary policing\n\ncontrol in defense\nof order" as BP
-
-  MN --> RI : -
-  RI --> IGC : +
-  IGC --> PT : +
-  PT --> BP : +
-  BP --> MN : -
-}
-
-package "B1 failure modes" {
-  rectangle "Bounded mercy\n\nmercy only for\ninsiders" as BM
-  rectangle "Institutional partition\n\nprivate mercy,\npublic punishment" as IP
-  rectangle "Temporal deferral\n\nmercy now,\npunishment later" as TD
-  rectangle "Persecution recoding\n\ncontrol reframed as\nself-defense" as PR
-
-  MN --> BM : +
-  BM --> IGC : +
-  MN --> IP : +
-  IP --> BP : +
-  MN --> TD : +
-  TD --> IGC : +
-  IGC --> PR : +
-  PR --> PT : +
-}
-
-package "B2 — Humility / self-critique" {
-  rectangle "Humility norms\n\nfallibility\nacknowledged" as HN
-  rectangle "Moral certainty /\nself-righteousness\n\ncertainty about\nown purity" as MCSR
-  rectangle "Dehumanization\n\nothers morally\ndowngraded" as DH
-  rectangle "Support for coercion\n\ncontrol endorsed as\nnecessary" as SFC
-  rectangle "Conflict\n\nsocial struggle\nintensifies" as CON
-
-  HN --> MCSR : -
-  MCSR --> DH : +
-  DH --> SFC : +
-  SFC --> CON : +
-  CON --> HN : -
-}
-
-package "B2 failure modes" {
-  rectangle "Moral licensing\n\n'humility' proves\nrighteousness" as ML
-  rectangle "Hierarchy capture\n\n'humility' becomes\ndownward obedience" as HC
-  rectangle "Selective application\n\nhumility demanded\nof subordinates" as SA
-  rectangle "Authority / obedience\n\npower asymmetry\nnormalized" as AO
-  rectangle "Policing intensity\n\nstricter\nenforcement" as PI
-
-  HN --> ML : +
-  ML --> MCSR : +
-  HN --> HC : +
-  HC --> AO : +
-  AO --> PI : +
-  HN --> SA : +
-  SA --> AO : +
-}
-
-package "B3 — Nonviolence / sanctity-of-life" {
-  rectangle "Nonviolence norms\n\nviolence morally\nrestrained" as NV
-  rectangle "Legitimacy of\nviolent means\n\nforce seen as\npermissible" as LVM
-  rectangle "Violence\n\nactual coercive\naction" as V
-  rectangle "Grievance\n\nhurt and backlash\naccumulate" as G
-
-  NV --> LVM : -
-  LVM --> V : +
-  V --> G : +
-  G --> NV : -
-}
-
-package "B3 failure modes" {
-  rectangle "Reclassification\n\nviolence renamed\n'justice' or 'defense'" as RC
-  rectangle "Delegation to state /\nmilitia / divine violence\n\noutsourced force" as DV
-  rectangle "Apocalyptic urgency\n\nemergency\nmentality" as AU
-  rectangle "Emergency override\n\nnormal restraint\nsuspended" as EO
-
-  NV --> RC : +
-  RC --> LVM : +
-  NV --> DV : +
-  DV --> V : +
-  AU --> EO : +
-  EO --> LVM : +
-}
-@enduml
+  class MN,RI,IGC,PT,BP,BM,IP,TD,PR,HN,MCSR,DH,SFC,CON,ML,HC,SA,AO,PI,NV,LVM,V,G,RC,DV,AU,EO node;
 ```
 
 ## Diagram 3 — Enabling conditions that amplify loops and weaken restraints
 
-```plantuml
-@startuml
-top to bottom direction
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam dpi 170
-skinparam nodesep 60
-skinparam ranksep 80
-skinparam padding 12
-skinparam ArrowColor #444444
-skinparam ArrowThickness 1.25
-skinparam packageStyle rectangle
-skinparam ArrowFontSize 18
-skinparam ArrowFontStyle bold
+```mermaid
+flowchart TB
+  %% Enabling Conditions: What Raises Gain and Weakens Balancers
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG3_1["Doctrinal absolutization"]
+    ETC["Exclusive truth claims<br/><br/>error becomes existential"]
+    DCD["Divine command /<br/>scripture-as-directive<br/><br/>obedience overrides hesitation"]
+    LI["Literalism /<br/>inerrancy<br/><br/>reduced interpretive friction"]
+  end
+  subgraph SG3_2["Boundary criminalization"]
+    HAB["Heresy / apostasy /<br/>blasphemy framing<br/><br/>deviation treated as threat"]
+    PAC["Purity / abomination<br/>categories<br/><br/>difference moralized as contamination"]
+  end
+  subgraph SG3_3["Eschatological intensification"]
+    CWAU["Cosmic war +<br/>apocalyptic urgency<br/><br/>disagreement sacralized"]
+    DVH["Divine vengeance /<br/>hell-as-justice<br/><br/>punitive imagination sanctified"]
+  end
+  subgraph SG3_4["Political sacralization"]
+    SLCP["Sacred land /<br/>chosenness politicization<br/><br/>territory and identity sacralized"]
+    MU["Missionary universalism<br/>under power<br/><br/>expansion takes coercive form"]
+    COSE["Centralized orthodoxy +<br/>scalable enforcement<br/><br/>ideas become apparatus"]
+  end
+  subgraph SG3_5["Amplified reinforcing loops"]
+    R1G["R1 gain<br/><br/>cosmic war loop strengthens"]
+    R2G["R2 gain<br/><br/>coercive distrust loop strengthens"]
+    R3G["R3 gain<br/><br/>purity-policing loop strengthens"]
+    R4G["R4 gain<br/><br/>vengeance loop strengthens"]
+    R5G["R5 gain<br/><br/>certainty / literalism loop strengthens"]
+  end
+  subgraph SG3_6["Weakened balancing loops"]
+    B1E["B1 effectiveness<br/>(mercy)<br/><br/>lower ability to damp retaliation"]
+    B2E["B2 effectiveness<br/>(humility)<br/><br/>lower ability to check certainty"]
+    B3E["B3 effectiveness<br/>(nonviolence)<br/><br/>lower ability to restrain force"]
+  end
 
-skinparam titleFontSize 20
-skinparam packageFontSize 16
-skinparam package {
-  BorderColor #666666
-  BackgroundColor #FAFAFA
-  FontStyle bold
-}
+  ETC -->|+| R1G
+  ETC -->|+| R2G
+  ETC -->|-| B2E
+  DCD -->|+| R3G
+  DCD -->|+| R5G
+  LI -->|+| R3G
+  LI -->|+| R5G
+  HAB -->|+| R2G
+  HAB -->|-| B1E
+  PAC -->|+| R3G
+  PAC -->|-| B1E
+  PAC -->|-| B3E
+  CWAU -->|+| R1G
+  CWAU -->|+| R5G
+  CWAU -->|-| B1E
+  CWAU -->|-| B2E
+  CWAU -->|-| B3E
+  DVH -->|+| R4G
+  DVH -->|-| B1E
+  SLCP -->|+| R1G
+  MU -->|+| R2G
+  MU -->|+| R3G
+  COSE -->|+| R2G
+  COSE -->|+| R3G
+  COSE -->|-| B2E
 
-skinparam rectangle {
-  BackgroundColor #FDFDFD
-  BorderColor #333333
-  RoundCorner 15
-  FontSize 16
-}
-
-title Enabling Conditions: What Raises Gain and Weakens Balancers
-
-package "Doctrinal absolutization" {
-  rectangle "Exclusive truth claims\n\nerror becomes existential" as ETC
-  rectangle "Divine command /\nscripture-as-directive\n\nobedience overrides hesitation" as DCD
-  rectangle "Literalism /\ninerrancy\n\nreduced interpretive friction" as LI
-}
-
-package "Boundary criminalization" {
-  rectangle "Heresy / apostasy /\nblasphemy framing\n\ndeviation treated as threat" as HAB
-  rectangle "Purity / abomination\ncategories\n\ndifference moralized as contamination" as PAC
-}
-
-package "Eschatological intensification" {
-  rectangle "Cosmic war +\napocalyptic urgency\n\ndisagreement sacralized" as CWAU
-  rectangle "Divine vengeance /\nhell-as-justice\n\npunitive imagination sanctified" as DVH
-}
-
-package "Political sacralization" {
-  rectangle "Sacred land /\nchosenness politicization\n\nterritory and identity sacralized" as SLCP
-  rectangle "Missionary universalism\nunder power\n\nexpansion takes coercive form" as MU
-  rectangle "Centralized orthodoxy +\nscalable enforcement\n\nideas become apparatus" as COSE
-}
-
-package "Amplified reinforcing loops" {
-  rectangle "R1 gain\n\ncosmic war loop strengthens" as R1G
-  rectangle "R2 gain\n\ncoercive distrust loop strengthens" as R2G
-  rectangle "R3 gain\n\npurity-policing loop strengthens" as R3G
-  rectangle "R4 gain\n\nvengeance loop strengthens" as R4G
-  rectangle "R5 gain\n\ncertainty / literalism loop strengthens" as R5G
-}
-
-package "Weakened balancing loops" {
-  rectangle "B1 effectiveness\n(mercy)\n\nlower ability to damp retaliation" as B1E
-  rectangle "B2 effectiveness\n(humility)\n\nlower ability to check certainty" as B2E
-  rectangle "B3 effectiveness\n(nonviolence)\n\nlower ability to restrain force" as B3E
-}
-
-ETC --> R1G : +
-ETC --> R2G : +
-ETC --> B2E : -
-
-DCD --> R3G : +
-DCD --> R5G : +
-
-LI --> R3G : +
-LI --> R5G : +
-
-HAB --> R2G : +
-HAB --> B1E : -
-
-PAC --> R3G : +
-PAC --> B1E : -
-PAC --> B3E : -
-
-CWAU --> R1G : +
-CWAU --> R5G : +
-CWAU --> B1E : -
-CWAU --> B2E : -
-CWAU --> B3E : -
-
-DVH --> R4G : +
-DVH --> B1E : -
-
-SLCP --> R1G : +
-
-MU --> R2G : +
-MU --> R3G : +
-
-COSE --> R2G : +
-COSE --> R3G : +
-COSE --> B2E : -
-
-@enduml
+  class ETC,DCD,LI,HAB,PAC,CWAU,DVH,SLCP,MU,COSE,R1G,R2G,R3G,R4G,R5G,B1E,B2E,B3E node;
 ```
 ## Diagram 4A — Structural and interpretive interventions with backlash
 
-```plantuml
-@startuml
-scale 0.58
-top to bottom direction
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam dpi 120
-skinparam nodesep 40
-skinparam ranksep 55
-skinparam padding 8
-skinparam ArrowColor #444444
-skinparam ArrowThickness 1.05
-skinparam packageStyle rectangle
+```mermaid
+flowchart TB
+  %% Diagram 4A — Structural and Interpretive Interventions with Backlash
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG4_1["I1 + R6 — Interpretive moderation and backlash"]
+    IM["Interpretive moderation<br/><br/>contextual reading<br/>softens rigidity"]
+    LIT["Literalism<br/><br/>hard textual<br/>certainty"]
+    MC["Mandate certainty<br/><br/>commands feel<br/>absolute"]
+    CT["Compromise taboo<br/><br/>concession feels<br/>faithless"]
+    CON["Conflict<br/><br/>polarized<br/>struggle"]
+    WDT["'Watering down truth'<br/><br/>moderation seen<br/>as betrayal"]
+    IT["Identity threat<br/><br/>loss of certainty<br/>or status"]
+    DFC["Demand for certainty<br/><br/>harder boundaries<br/>sought"]
+  end
+  subgraph SG4_2["I2 + R7 — Pluralism protections and security spiral"]
+    PP["Pluralism protections<br/><br/>rights of conscience<br/>limit domination"]
+    BP["Boundary policing<br/><br/>attempt to restore<br/>control"]
+    PDO["Persecution of dissenters<br/>or out-group<br/><br/>punitive response"]
+    TH["Threat<br/><br/>danger<br/>perception"]
+    VOD["Visibility of difference<br/><br/>more public<br/>plurality"]
+    PD["Perceived disorder<br/><br/>plurality read<br/>as decay"]
+    PA["Purity anxiety<br/><br/>contamination<br/>fear"]
+    BPM["Boundary-policing<br/>movement<br/><br/>restoration drive"]
+  end
+  subgraph SG4_3["I3 + R8 — Church-state separation and restoration backlash"]
+    CSS["Church-state separation<br/><br/>coercive capacity<br/>reduced"]
+    SP["Scalable punishment<br/><br/>state-backed<br/>enforcement"]
+    CG["Conflict / grievance<br/><br/>hurt and<br/>resentment"]
+    DFC2["Demand for coercion<br/><br/>pressure for<br/>stronger control"]
+    PMC["Moral chaos<br/><br/>loss of sacred<br/>order felt"]
+    RGOM["'Restore godly order'<br/>movement<br/><br/>reactionary<br/>mobilization"]
+    PS["Political sacralization<br/><br/>state cast as<br/>holy instrument"]
+    EC["Enforcement capacity<br/><br/>power available<br/>again"]
+  end
 
-skinparam titleFontSize 16
-skinparam packageFontSize 13
-skinparam ArrowFontSize 18
-skinparam ArrowFontStyle bold
-skinparam package {
-  BorderColor #666666
-  BackgroundColor #FAFAFA
-  FontStyle bold
-}
+  IM -->|-| LIT
+  LIT -->|+| MC
+  MC -->|+| CT
+  CT -->|+| CON
+  IM -->|+| WDT
+  WDT -->|+| IT
+  IT -->|+| DFC
+  DFC -->|+| LIT
+  PP -->|-| BP
+  BP -->|+| PDO
+  PDO -->|+| TH
+  TH -->|-| PP
+  PP -->|+| VOD
+  VOD -->|+| PD
+  PD -->|+| PA
+  PA -->|+| BPM
+  BPM -->|-| PP
+  CSS -->|-| SP
+  SP -->|+| CG
+  CG -->|+| DFC2
+  DFC2 -->|-| CSS
+  CSS -->|+| PMC
+  PMC -->|+| RGOM
+  RGOM -->|+| PS
+  PS -->|+| EC
+  EC -->|-| CSS
+  CON -->|+| TH
+  TH -->|+| IT
+  BP -->|+| PA
+  BP -->|+| PMC
+  CG -->|+| TH
+  PA -->|+| BPM
+  IT -->|+| DFC
 
-skinparam rectangle {
-  BackgroundColor #FDFDFD
-  BorderColor #333333
-  RoundCorner 12
-  FontSize 13
-}
-
-title Diagram 4A — Structural and Interpretive Interventions with Backlash
-
-package "I1 + R6 — Interpretive moderation and backlash" {
-  rectangle "Interpretive moderation\n\ncontextual reading\nsoftens rigidity" as IM
-  rectangle "Literalism\n\nhard textual\ncertainty" as LIT
-  rectangle "Mandate certainty\n\ncommands feel\nabsolute" as MC
-  rectangle "Compromise taboo\n\nconcession feels\nfaithless" as CT
-  rectangle "Conflict\n\npolarized\nstruggle" as CON
-
-  rectangle "'Watering down truth'\n\nmoderation seen\nas betrayal" as WDT
-  rectangle "Identity threat\n\nloss of certainty\nor status" as IT
-  rectangle "Demand for certainty\n\nharder boundaries\nsought" as DFC
-
-  IM --> LIT : -
-  LIT --> MC : +
-  MC --> CT : +
-  CT --> CON : +
-
-  IM --> WDT : +
-  WDT --> IT : +
-  IT --> DFC : +
-  DFC --> LIT : +
-}
-
-package "I2 + R7 — Pluralism protections and security spiral" {
-  rectangle "Pluralism protections\n\nrights of conscience\nlimit domination" as PP
-  rectangle "Boundary policing\n\nattempt to restore\ncontrol" as BP
-  rectangle "Persecution of dissenters\nor out-group\n\npunitive response" as PDO
-  rectangle "Threat\n\ndanger\nperception" as TH
-
-  rectangle "Visibility of difference\n\nmore public\nplurality" as VOD
-  rectangle "Perceived disorder\n\nplurality read\nas decay" as PD
-  rectangle "Purity anxiety\n\ncontamination\nfear" as PA
-  rectangle "Boundary-policing\nmovement\n\nrestoration drive" as BPM
-
-  PP --> BP : -
-  BP --> PDO : +
-  PDO --> TH : +
-  TH --> PP : -
-
-  PP --> VOD : +
-  VOD --> PD : +
-  PD --> PA : +
-  PA --> BPM : +
-  BPM --> PP : -
-}
-
-package "I3 + R8 — Church-state separation and restoration backlash" {
-  rectangle "Church-state separation\n\ncoercive capacity\nreduced" as CSS
-  rectangle "Scalable punishment\n\nstate-backed\nenforcement" as SP
-  rectangle "Conflict / grievance\n\nhurt and\nresentment" as CG
-  rectangle "Demand for coercion\n\npressure for\nstronger control" as DFC2
-
-  rectangle "Moral chaos\n\nloss of sacred\norder felt" as PMC
-  rectangle "'Restore godly order'\nmovement\n\nreactionary\nmobilization" as RGOM
-  rectangle "Political sacralization\n\nstate cast as\nholy instrument" as PS
-  rectangle "Enforcement capacity\n\npower available\nagain" as EC
-
-  CSS --> SP : -
-  SP --> CG : +
-  CG --> DFC2 : +
-  DFC2 --> CSS : -
-
-  CSS --> PMC : +
-  PMC --> RGOM : +
-  RGOM --> PS : +
-  PS --> EC : +
-  EC --> CSS : -
-}
-
-CON --> TH : +
-TH --> IT : +
-BP --> PA : +
-BP --> PMC : +
-CG --> TH : +
-PA --> BPM : +
-IT --> DFC : +
-
-@enduml
+  class IM,LIT,MC,CT,CON,WDT,IT,DFC,PP,BP,PDO,TH,VOD,PD,PA,BPM,CSS,SP,CG,DFC2,PMC,RGOM,PS,EC node;
 ```
 
 ## Diagram 4B — Punishment, contact, and intervention erosion
 
-```plantuml
-@startuml
-scale 0.58
-top to bottom direction
-skinparam backgroundColor white
-skinparam defaultFontName Arial
-skinparam dpi 120
-skinparam nodesep 40
-skinparam ranksep 55
-skinparam padding 8
-skinparam ArrowColor #444444
-skinparam ArrowThickness 1.05
-skinparam packageStyle rectangle
+```mermaid
+flowchart TB
+  %% Diagram 4B — Punishment, Contact, and Why Interventions Erode
+  classDef node fill:#FDFDFD,stroke:#333333,stroke-width:1px;
+  subgraph SG5_1["I4 + R9 — Restorative justice and backlash"]
+    RJT["Restorative justice<br/><br/>theology of repair<br/>over punishment"]
+    DVS["Divine vengeance<br/>salience<br/><br/>punitive imagination"]
+    CPT["Contempt<br/><br/>moral<br/>hardening"]
+    DH["Dehumanization<br/><br/>others seen as<br/>less worthy"]
+    SHC["Support for harsh<br/>coercion<br/><br/>severity endorsed"]
+    SOE["'Soft on evil'<br/><br/>mercy framed<br/>as weakness"]
+    FEAR["Fear<br/><br/>danger and<br/>exposure felt"]
+    DFP["Demand for punishment<br/><br/>calls for<br/>severity"]
+  end
+  subgraph SG5_2["I5 + R10 — Intergroup contact and segregation backlash"]
+    ICME["Intergroup contact<br/><br/>humanization through<br/>encounter"]
+    DH2["Dehumanization<br/><br/>shared humanity<br/>less recognized"]
+    FEAR2["Fear<br/><br/>anxiety about<br/>the other"]
+    SFC["Support for coercion<br/><br/>control framed<br/>as safety"]
+    BE["Boundary entrepreneurs<br/><br/>actors profiting<br/>from division"]
+    SPB["Segregation /<br/>purity boundaries<br/><br/>contact reduced"]
+  end
+  subgraph SG5_3["Meta-dynamic — why interventions erode"]
+    BS["Balancers strengthened<br/><br/>initial<br/>de-escalation"]
+    ITB["Identity-threat backlash<br/><br/>loss interpreted<br/>as danger"]
+    CPCR["Control loops reactivated<br/><br/>certainty, purity,<br/>and control return"]
+    ME["Moderation erodes<br/><br/>intervention loses<br/>force"]
+  end
 
-skinparam titleFontSize 16
-skinparam packageFontSize 13
-skinparam ArrowFontSize 18
-skinparam ArrowFontStyle bold
+  RJT -->|-| DVS
+  DVS -->|+| CPT
+  CPT -->|+| DH
+  DH -->|+| SHC
+  RJT -->|+| SOE
+  SOE -->|+| FEAR
+  FEAR -->|+| DFP
+  DFP -->|+| DVS
+  ICME -->|-| DH2
+  DH2 -->|+| FEAR2
+  FEAR2 -->|+| SFC
+  ICME -->|+| BE
+  BE -->|+| SPB
+  SPB -->|-| ICME
+  SPB -->|+| DH2
+  BS -->|+| ITB
+  ITB -->|+| CPCR
+  CPCR -->|+| ME
+  ME -->|-| BS
+  FEAR -->|+| FEAR2
+  FEAR2 -->|+| FEAR
+  DFP -->|+| SHC
+  DH -->|+| DH2
+  DH2 -->|+| DH
+  SFC -->|+| ITB
+  SHC -->|+| ITB
+  CPCR -->|+| DVS
+  CPCR -->|+| DH
+  CPCR -->|+| BE
+  BS -->|+| RJT
+  BS -->|+| ICME
 
-skinparam package {
-  BorderColor #666666
-  BackgroundColor #FAFAFA
-  FontStyle bold
-}
-
-skinparam rectangle {
-  BackgroundColor #FDFDFD
-  BorderColor #333333
-  RoundCorner 12
-  FontSize 13
-}
-
-title Diagram 4B — Punishment, Contact, and Why Interventions Erode
-
-package "I4 + R9 — Restorative justice and backlash" {
-  rectangle "Restorative justice\n\ntheology of repair\nover punishment" as RJT
-  rectangle "Divine vengeance\nsalience\n\npunitive imagination" as DVS
-  rectangle "Contempt\n\nmoral\nhardening" as CPT
-  rectangle "Dehumanization\n\nothers seen as\nless worthy" as DH
-  rectangle "Support for harsh\ncoercion\n\nseverity endorsed" as SHC
-
-  rectangle "'Soft on evil'\n\nmercy framed\nas weakness" as SOE
-  rectangle "Fear\n\ndanger and\nexposure felt" as FEAR
-  rectangle "Demand for punishment\n\ncalls for\nseverity" as DFP
-
-  RJT --> DVS : -
-  DVS --> CPT : +
-  CPT --> DH : +
-  DH --> SHC : +
-
-  RJT --> SOE : +
-  SOE --> FEAR : +
-  FEAR --> DFP : +
-  DFP --> DVS : +
-}
-
-package "I5 + R10 — Intergroup contact and segregation backlash" {
-  rectangle "Intergroup contact\n\nhumanization through\nencounter" as ICME
-  rectangle "Dehumanization\n\nshared humanity\nless recognized" as DH2
-  rectangle "Fear\n\nanxiety about\nthe other" as FEAR2
-  rectangle "Support for coercion\n\ncontrol framed\nas safety" as SFC
-
-  rectangle "Boundary entrepreneurs\n\nactors profiting\nfrom division" as BE
-  rectangle "Segregation /\npurity boundaries\n\ncontact reduced" as SPB
-
-  ICME --> DH2 : -
-  DH2 --> FEAR2 : +
-  FEAR2 --> SFC : +
-
-  ICME --> BE : +
-  BE --> SPB : +
-  SPB --> ICME : -
-  SPB --> DH2 : +
-}
-
-package "Meta-dynamic — why interventions erode" {
-  rectangle "Balancers strengthened\n\ninitial\nde-escalation" as BS
-  rectangle "Identity-threat backlash\n\nloss interpreted\nas danger" as ITB
-  rectangle "Control loops reactivated\n\ncertainty, purity,\nand control return" as CPCR
-  rectangle "Moderation erodes\n\nintervention loses\nforce" as ME
-
-  BS --> ITB : +
-  ITB --> CPCR : +
-  CPCR --> ME : +
-  ME --> BS : -
-}
-
-FEAR --> FEAR2 : +
-FEAR2 --> FEAR : +
-DFP --> SHC : +
-DH --> DH2 : +
-DH2 --> DH : +
-SFC --> ITB : +
-SHC --> ITB : +
-CPCR --> DVS : +
-CPCR --> DH : +
-CPCR --> BE : +
-BS --> RJT : +
-BS --> ICME : +
-
-@enduml
+  class RJT,DVS,CPT,DH,SHC,SOE,FEAR,DFP,ICME,DH2,FEAR2,SFC,BE,SPB,BS,ITB,CPCR,ME node;
 ```
