@@ -1,0 +1,913 @@
+<title>Summarizing the Explanation Series</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<div class="ep-post"><div class="toc">
+<div class="toc-title">Table of Contents</div>
+<ol>
+<li><a href="#summarizing-the-explanation-series">Summarizing the Explanation Series</a></li>
+<li><a href="#the-unifying-thesis-of-the-series">The unifying thesis of the series</a></li>
+</ol>
+</div><h2 id="summarizing-the-explanation-series">
+  Summarizing the Explanation Series
+</h2><p>The series can be read as four connected strands: the foundations and standards of explanation; the psychology and social epistemology of explanatory appeal; the different causal forms explanations can take; and the way those ideas come together in economics and complexity.</p><h3 id="summary-foundations">I. Foundations and standards of explanation</h3><h4 id="what-philosophers-mean-by-explanation-and-how-it-relates-to-what-is-explained">
+  What philosophers mean by “explanation” and how it relates to what is
+  explained
+</h4><p>
+  In our discussion, explanation was treated not as a mere statement of fact,
+  but as a relation between two elements: the <strong>explanans</strong>, or the
+  body of information doing the explaining, and the
+  <strong>explanandum</strong>, or the phenomenon to be explained. The explanans
+  may consist of causes, mechanisms, constraints, patterns, or models, and its
+  task is to render the explanandum intelligible in a way that supports
+  inference. This means that explanation is valuable not simply because it
+  states something true, but because it enables counterfactual reasoning,
+  prediction, intervention, unification, or understanding.
+</p><p>
+  A recurring theme was that explanations are best understood as structured
+  answers to questions. Often those questions are implicitly contrastive, taking
+  the form “Why P rather than Q?” In that sense, explanation is not just about
+  attaching one proposition to another, but about identifying the dependence
+  relations that matter for the question being asked.
+</p><h4 id="explanation-is-distinct-from-description-labeling-and-pseudo-explanation">
+  Explanation is distinct from description, labeling, and pseudo-explanation
+</h4><p>
+  We repeatedly emphasized that explanation must actually do explanatory work.
+  It is not enough to rename a phenomenon by invoking broad or prestigious terms
+  such as neoliberalism, entropy, genes, or vibes. Nor is it enough to restate
+  the phenomenon in different words, as when one says that inflation is high
+  because prices are rising. Similarly, merely gesturing toward an explanatory
+  category, such as calling something a mechanism, does not yet amount to a
+  genuine explanation.
+</p><p>
+  What distinguishes pseudo-explanation is that it produces the feeling of
+  understanding without supporting the right inferences. It may be too elastic,
+  able to fit almost any case, or it may conceal the absence of serious
+  alternatives. It can also borrow the authority of causal language without
+  accepting the accountability that genuine causal claims require. In that way,
+  pseudo-explanation simulates explanatory success while failing to provide it.
+</p><h4 id="evaluation-what-makes-a-good-explanation">
+  Evaluation: what makes a “good” explanation?
+</h4><p>
+  Rather than adopting one universal checklist, we developed a multi-dimensional
+  account of explanatory quality. Some criteria were epistemic or ontic, having
+  to do with whether the explanation tracks reality. A good explanation captures
+  a genuine dependence relation, often causal. It cites factors that are
+  relevant to the specific question or contrast at issue. It makes clear its
+  scope and boundary conditions, showing where it applies and where it fails. It
+  must also be robust or adequate, meaning that it cannot leave out major
+  factors that would alter the explanatory story. Finally, it should
+  discriminate among plausible alternatives, not merely coexist with them
+  untested.
+</p><p>
+  Other criteria were representational. A good explanation involves the right
+  abstraction or idealization for the task at hand. Simplification is often
+  necessary, but it must be legitimate relative to the explanatory aim.
+  Likewise, level matters: sometimes the right explanation is micro-level,
+  sometimes macro-level, sometimes structural. There is no universally
+  privileged level apart from the question being asked.
+</p><p>
+  We also considered pragmatic and social criteria. A good explanation should be
+  comprehensible, but it must avoid seductive clarity, where the mere feeling of
+  clarity masks explanatory weakness. It should also be actionable, offering
+  handles for intervention rather than just an attractive story. This was
+  especially important in our discussion of mechanisms, cascades, constraints,
+  and patterns, because different causal structures require different standards
+  of explanatory excellence.
+</p><h4 id="indeterminacy-and-pluralism-can-there-be-multiple-equally-good-explanations">
+  Indeterminacy and pluralism: can there be multiple equally good explanations?
+</h4><p>
+  We concluded that there can indeed be multiple equally good explanations, but
+  only in principled ways. One reason is that different explanatory questions
+  bring different contrasts into view. Asking “Why P rather than Q?” can shift
+  what counts as relevant. Another reason is that explanations can operate at
+  different levels: a proximate explanation and an ultimate explanation, or a
+  micro-mechanistic one and a macro-structural one, may both be correct without
+  competing. A third reason is that explanatory aims vary. An explanation
+  designed for prediction, one designed for control, one designed for
+  unification, and one designed for policy design may all emphasize different
+  aspects of the same phenomenon.
+</p><p>
+  This is not a license for “anything goes.” It is a structured pluralism
+  according to which multiple explanations may be valid because they capture
+  different causal patterns or answer different explanatory tasks.
+</p><h3 id="summary-psychology">II. Psychology, narrative, and social epistemology</h3><h4 id="the-psychology-of-explanation-why-bad-explanations-feel-good">
+  The psychology of explanation: why bad explanations feel good
+</h4><p>
+  A major theme in our discussion was that human beings are often drawn to
+  explanations for psychological reasons that are not themselves epistemically
+  reliable. People seek closure, order, narrative coherence, and relief from
+  uncertainty. We connected this tendency to the need for cognitive closure,
+  where people seize on a quick explanation and then freeze on it, as well as to
+  intolerance of ambiguity and premature convergence on the first
+  satisfactory-sounding account.
+</p><p>
+  We also discussed the illusion of explanatory depth. People often overestimate
+  their understanding of complex systems because they confuse recognition,
+  verbal fluency, or narrative coherence with genuine mechanistic knowledge. The
+  larger lesson is that felt understanding is not a dependable sign of
+  explanatory quality, especially in complicated domains where true
+  understanding requires much more than a smooth or familiar narrative.
+</p><h4 id="narrative-vs-explanation-whats-the-difference-and-why-it-matters">
+  Narrative vs explanation: what’s the difference and why it matters?
+</h4><p>
+  We distinguished narrative from explanation by noting that narratives are
+  often organized around agents, motives, conflict, and moral legibility. They
+  are typically strong at producing coherence and persuasion. Explanations, by
+  contrast, in the more rigorous epistemic sense, are structured to support
+  counterfactual discrimination and evidential assessment.
+</p><p>
+  Narratives can still be explanatorily useful, especially as scaffolds for
+  communication. However, their persuasiveness can become epistemically
+  dangerous when narrative coherence substitutes for causal discrimination,
+  adequacy constraints, and the testing of alternatives. A story may feel
+  satisfying, but that alone does not make it an explanation in the stronger
+  sense.
+</p><h4 id="identity-protection-anecdotes-and-anchored-narratives">
+  Identity protection, anecdotes, and “anchored narratives”
+</h4><p>
+  We explored how narrative explanation is often entangled with identity
+  protection, group membership, and social epistemic environments. In this
+  context, anecdotes frequently function not just as bits of evidence, but as
+  tools of identity reinforcement, trust signaling, and group alignment. They
+  can serve as persuasive rhetorical anchors that stabilize a preferred
+  interpretation.
+</p><p>
+  At the same time, anecdotes need not be epistemically worthless. They can
+  legitimately contribute to explanation if they are treated as data points
+  within a broader evidential structure rather than as proof in themselves. They
+  may help generate hypotheses that are later tested and triangulated. This
+  connected to our discussion of anchored narratives and legal argumentation
+  theory, where structured stories help make sense of evidence but must be
+  firmly tied to facts and evaluated against alternatives if they are not to
+  become mere just-so rationalizations.
+</p><h4 id="social-epistemology-clarity-can-be-weaponized">
+  Social epistemology: “clarity” can be weaponized
+</h4><p>
+  Our discussion also developed a social-epistemic dimension. Explanations are
+  not evaluated only in terms of their internal coherence or truth-tracking
+  properties; they are also shaped by the environments and incentives in which
+  they circulate. In hostile or pernicious epistemic environments, cognitive
+  vulnerabilities can be exploited. The feeling of clarity can itself become an
+  instrument of manipulation.
+</p><p>
+  We examined how narrow source environments and in-group confirmation can trap
+  groups inside self-reinforcing explanatory loops. In this sense, explanations
+  can become socially satisfying and identity-stabilizing while remaining
+  epistemically poor. This sharpened the broader concern that explanatory
+  success in a social setting may diverge sharply from explanatory quality in an
+  epistemic one.
+</p><h3 id="summary-causal-forms">III. Causal forms and explanatory fit</h3><h4 id="contrastive-explanation">Contrastive explanation</h4><p>
+  A particularly important point was that explanation is often contrastive, and
+  not merely a matter of binary counterfactual dependence. Good explanations
+  frequently answer not just “Why did this happen?” but “Why did this happen
+  rather than that alternative?” Their quality therefore depends in part on
+  selecting the appropriate contrast class.
+</p><p>
+  This idea helped bridge more abstract philosophical theories of explanation
+  with everyday disputes about real-world explanation. Many disagreements that
+  appear to be about causes are in fact disagreements about what contrast is
+  being asked about. Clarifying that contrast can therefore clarify what would
+  count as a good explanation.
+</p><h4 id="mechanistic-explanation-what-it-is-and-how-to-evaluate-it">
+  Mechanistic explanation: what it is, and how to evaluate it
+</h4><p>
+  We then turned to mechanistic explanation more specifically. Mechanisms were
+  understood as organized entities and activities that produce a phenomenon. We
+  considered their hierarchical and multi-level character, clarified what
+  mechanisms are not, and examined how mechanistic explanations work.
+</p><p>
+  A good mechanistic explanation, on our account, requires more than naming
+  components. It must specify non-vacuous parts and activities, show how they
+  are organized in space, time, and control relations, and provide evidence
+  supporting the causal or constitutive claims involved. It must also give the
+  right level of detail for the question being asked. Too little detail yields
+  emptiness; too much can obscure what matters.
+</p><h4 id="yes-but-whats-the-mechanism-bullock-green">
+  “Yes, but what’s the mechanism?” (Bullock &amp; Green)
+</h4><p>
+  We also considered Bullock and Green’s discussion of mechanism, especially in
+  disciplinary contexts where “mechanism” is often used to mean mediators or
+  transmission paths. This helped show why merely running mediation regressions
+  can be misleading unless strong identification assumptions are satisfied.
+</p><p>
+  The larger lesson for our discussion was that mechanism talk can easily become
+  rhetorical rather than substantive. To claim a mechanism responsibly, one must
+  earn the claim through methodological discipline, design, and defensible
+  assumptions. Labeling something a mechanism is not enough.
+</p><h4 id="rosss-causal-pluralism-pathways-cascades-constraints-and-structures">
+  Ross’s causal pluralism: pathways, cascades, constraints, and structures
+</h4><p>
+  Ross became a key resource for demonstrating that mechanisms are not the only
+  causal structures with explanatory power. We distinguished pathways from
+  mechanisms by noting that pathways often track sequences, flows, and
+  connectivity while abstracting away from fine-grained productive detail. Even
+  without full mechanistic completeness, pathway explanations can still be
+  genuinely explanatory.
+</p><p>
+  Cascades were treated as another important explanatory form. They are
+  characterized by triggers, sequential amplification, and stable propagation,
+  often across levels and across systems. A cascade explanation can be excellent
+  even if the underlying mechanisms vary, because what matters explanatorily is
+  the topology of amplification and the dynamics of propagation.
+</p><p>
+  We also examined structural and constraint-based explanations. These work by
+  shaping the space of feasible trajectories, guiding outcomes rather than
+  directly triggering them, and functioning as stable external conditions. This
+  line of thought proved especially useful later in our discussion of
+  misinformation, where structure influences diffusion pathways without
+  necessarily acting as a direct push on each individual case.
+</p><h4 id="misinformation-why-cascade-structural-explanations-fit-better-than-mechanistic-ones">
+  Misinformation: why cascade/structural explanations fit better than
+  mechanistic ones
+</h4><p>
+  Misinformation provided a concrete case study for comparing explanatory forms.
+  At the micro-level, mechanisms involving cognition, persuasion, or algorithmic
+  ranking internals can explain local steps in the process. But cascade
+  explanations are often better suited to explaining how a small trigger becomes
+  large-scale diffusion. Structural constraint explanations, meanwhile, show why
+  the environment systematically enables certain trajectories by means of
+  low-friction sharing, incentive gradients, and network topology.
+</p><p>
+  From this, we developed comparative rubrics for evaluating explanatory fit.
+  The standards one should demand from a mechanism explanation differ from those
+  appropriate to a cascade explanation or a structural explanation. Explanatory
+  quality depends in part on matching the phenomenon to the right causal form.
+</p><h3 id="summary-integration">IV. Integrating the framework</h3><h4 id="potochnik-causal-patterns-adequacy-and-eight-other-questions">
+  Potochnik: causal patterns, adequacy, and “eight other questions”
+</h4><p>
+  Potochnik supplied an important meta-framework for tying these threads
+  together. One of her main contributions was the emphasis on
+  <strong>causal patterns</strong>. Explanations, on this view, often succeed
+  not by presenting complete causal histories but by depicting patterns of
+  dependence together with their scope.
+</p><p>
+  Her notion of an adequacy constraint was equally important. Abstraction is
+  permissible, but only up to a point: one cannot abstract away from features to
+  which the phenomenon is highly sensitive. This provides a minimum bar that
+  guards against cherry-picked causes passing themselves off as explanations.
+</p><p>
+  We also used her “eight other questions” as an audit tool for thinking about
+  explanation more broadly. These questions concern communication,
+  understanding, psychology, representation, abstraction and idealization, the
+  relationship between explanation and prediction, ontological priority, and
+  levels. They helped us show how public narratives about misinformation can be
+  psychologically compelling and communicatively effective while still being
+  explanatorily weak.
+</p><h4 id="economics-why-false-but-useful-models-arent-necessarily-failures">
+  Economics: why “false but useful” models aren’t necessarily failures
+</h4><p>
+  You introduced the economist’s perspective, which helped clarify that
+  explanatory success is often task-dependent. We discussed benchmark models as
+  reference points, the relaxation of assumptions as a controlled strategy for
+  exploring frictions and strategic interaction, and econometrics as a
+  credibility-driven way of identifying difference-making causes.
+</p><p>
+  This led us to reframe the issue in terms of different explanatory jobs. Some
+  models serve benchmark or contrastive explanation. Others provide structural
+  how-possibly explanation. Still others aim at causal-pattern explanation or
+  identification-backed counterfactual explanation. The contrast between
+  economists and the broader public also connected back to our psychological and
+  social-epistemic themes: for the public, a “good explanation” often means
+  identity-stabilizing closure, whereas for economists it often means
+  disciplined causal claims with explicit scope conditions and robustness
+  checks.
+</p><h4 id="complexity-economics-and-systems-thinking">
+  Complexity economics and systems thinking
+</h4><p>
+  We ended by situating complexity approaches within this broader framework.
+  Complexity economics and systems thinking are not anti-abstraction; rather,
+  they practice selective abstraction that foregrounds interactions, networks,
+  heterogeneity, and out-of-equilibrium dynamics. These approaches are often
+  evaluated in terms of generative adequacy, robustness and interpretability,
+  empirical anchoring, and leverage-point insight.
+</p><p>
+  This fit well with both Ross and Potochnik. Different causal structures, such
+  as networks, cascades, and constraints, call for different explanatory
+  standards. Explanatory quality therefore depends not on whether an account is
+  micro-level or reducible to closed-form expression, but on whether it has the
+  right scope and adequacy for the phenomenon in question.
+</p><h2 id="the-unifying-thesis-of-the-series">
+  The unifying thesis of the series
+</h2><p>
+  The unifying conclusion of the discussion is that explanations are tools for
+  making dependence intelligible, but they are also psychological and social
+  artifacts. Because of this, a good explanation cannot be identified simply
+  with coherence, plausibility, or even the mere truth of a causal claim.
+</p><p>
+  A genuinely good explanation is one that matches the appropriate causal
+  structure of the phenomenon, whether that structure is mechanistic, cascading,
+  constraining, or patterned. It supports the right inferences, including
+  counterfactuals, interventions, and discrimination among alternatives. It is
+  abstracted appropriately, with clear scope and boundary conditions. It resists
+  the seductions of clarity and the pressures of identity-driven closure. And it
+  remains credible in light of the social-epistemic environment and the
+  incentives that shape how explanations are produced, circulated, and accepted.
+</p></div>

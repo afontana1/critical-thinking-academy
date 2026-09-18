@@ -1,0 +1,769 @@
+<title>Models, Narratives, and Systems: What Counts as an Economic Explanation?</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<div class="ep-post">
+<div class="toc">
+<div class="toc-title">Table of Contents</div>
+<ol>
+<li><a href="#what-models-explain">What does a model actually explain?</a></li>
+<li><a href="#satisfaction-and-adequacy">Why satisfying explanations differ from adequate ones</a></li>
+<li><a href="#economics-and-narrative">Why economics invites narrative explanations</a></li>
+<li><a href="#beliefs-as-causes">When explanations become part of what needs explaining</a></li>
+<li><a href="#explaining-systems">What kind of model can explain a system like this?</a></li>
+<li><a href="#what-economics-teaches">What economics teaches us about explanation</a></li>
+<li><a href="#further-reading">Further reading</a></li>
+</ol>
+</div>
+<h1>Models, Narratives, and Systems: What Counts as an Economic Explanation?</h1>
+<p class="chapter-lead">In the first two posts, we examined what makes an explanation good, why some explanations feel more satisfying than they deserve to, and why different phenomena may require different causal structures. Economics provides a particularly interesting setting in which to bring these questions together.</p>
+<p>Economists routinely construct models that they know are false in important respects. A model of perfectly competitive markets, for example, is not necessarily intended as a literal description of any particular market. It may instead serve as a benchmark, allowing us to isolate the consequences of relaxing particular assumptions. An empirical investigation, meanwhile, might establish that a particular intervention caused a particular outcome without fully explaining the processes through which that effect occurred. These are different explanatory tasks, and we should not evaluate them as though they were identical.</p>
+<p>The difficulty becomes more interesting when we turn to economic explanations outside the discipline. People encounter economic phenomena directly: prices rise, wages change, businesses close, and employment becomes uncertain. Yet the causes of these events are often dispersed across institutions, markets, and interactions that are difficult to observe. Economic events therefore invite narratives that connect visible outcomes to familiar actors, intentions, and moral categories. These narratives can produce a powerful sense of understanding without necessarily identifying the relationships that generated the phenomenon.</p>
+<p>There is a further complication. Economic narratives need not remain passive interpretations of the world. People act on their beliefs about inflation, markets, and economic institutions. Their beliefs can influence expectations and decisions, and those decisions may in turn contribute to the economic outcomes being explained. The explanations people hold can themselves become part of the system we are trying to understand.</p>
+<p>That creates a set of connected problems: What does a model accomplish when it simplifies reality? Why do explanations that satisfy people sometimes differ from those supported by disciplined causal inquiry? How do the beliefs people hold become relevant to economic outcomes? And what kinds of models are needed when a phenomenon depends on interactions, feedback, and emergent behavior?</p>
+<div class="core-claim"><strong>The argument of this post:</strong> explanatory adequacy depends on whether a representation captures the relationships that matter for the question being asked. A useful benchmark need not explain a particular event. A satisfying narrative need not track the world's causal structure. And a model capable of generating a complex pattern need not establish that the same process produced the pattern in reality.</div>
+<p>Economics makes these distinctions unusually visible, but the underlying problem is more general. To keep the questions connected, I will periodically return to one illustrative phenomenon: rising prices. The examples below pose possible explanatory questions; they are not claims about the causes of any particular inflation episode.</p>
+
+<h2 id="what-models-explain">I. What does a model actually explain?</h2>
+<p class="chapter-lead">The first distinction is between what a model <em>does</em> and what it establishes about the world.</p>
+<h3 id="model-and-explanation">A model is not automatically an explanation</h3>
+<p>A <strong>model</strong> is a representational artifact. It can clarify a concept, discipline our thinking, specify a possible mechanism, generate predictions, furnish a benchmark, or help us reason about a counterfactual. An <strong>explanation</strong>, in the stronger sense used throughout this series, is a success claim: the representation adequately answers a particular why/how question under standards appropriate to that question. The two categories overlap, but they are not interchangeable.</p>
+<p>This distinction helps make sense of economists' tolerance for idealization. Standard microeconomic models may impose strong assumptions about rationality, information, and market structure. Sometimes the point is not to assert that the assumptions are literally true, but to construct a controlled comparison. If a competitive benchmark predicts one outcome and the observed market departs from it, we can investigate which friction, institutional rule, information problem, or strategic interaction might account for the departure. Relaxing an assumption is an organized way to ask a new question, not in itself evidence that the revised model describes the world.</p>
+<p>For instance, a simple model might show how changes in demand can affect prices under specified supply conditions. A different model might make pricing power or expectations central. Each can reveal a possible dependence relation. Neither, on its own, establishes which relation explains a particular period of inflation. That requires evidence about the period, the relevant population and markets, and alternative accounts.</p>
+<h3 id="different-model-jobs">Different models do different explanatory jobs</h3>
+<p>The original question, “Does this model explain?”, becomes more tractable once we specify what kind of explanatory claim is being made.</p>
+<div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Use of a model</th><th>What it can establish—and what remains open</th></tr></thead><tbody>
+<tr><td data-label="Use of a model"><strong>Benchmark or contrastive use</strong></td><td data-label="What it can establish—and what remains open">A deliberately simplified baseline makes deviations intelligible: why this outcome rather than the benchmark outcome? The baseline need not be a literal description of the target market, and a deviation does not identify its own cause.</td></tr>
+<tr><td data-label="Use of a model"><strong>Mechanism or how-possibly use</strong></td><td data-label="What it can establish—and what remains open">A model shows a coherent pathway through which an outcome <em>could</em> arise—for example, through incentives, strategic interaction, or information. Showing possibility does not yet show that this pathway operated in the observed case.</td></tr>
+<tr><td data-label="Use of a model"><strong>Pattern use</strong></td><td data-label="What it can establish—and what remains open">A model isolates a qualitative dependence, such as a threshold, a comparative static, strategic complementarity, or multiple equilibria. Its explanatory reach depends on whether that dependence is robust and applies to the target phenomenon.</td></tr>
+<tr><td data-label="Use of a model"><strong>World-anchored causal use</strong></td><td data-label="What it can establish—and what remains open">Theory and empirical design support a claim about a cause or intervention in a defined setting. Identifying a difference-making effect need not, by itself, reveal every mediator or transmission process.</td></tr>
+</tbody></table></div>
+<p>These uses are not mutually exclusive. A theoretical model may generate testable predictions; an empirical analysis depends on assumptions and often on theory; a structural model may combine behavioral assumptions with data. It is therefore misleading to contrast “models” with “evidence” as though economists must choose one or the other.</p>
+<h3 id="from-possible-to-actual">From a possible explanation to an explanation of this event</h3>
+<p>The important boundary is between establishing that something <em>could</em> happen and establishing that it <em>did</em> happen for the proposed reasons. Game theory, for example, can demonstrate how strategic behavior might produce an observed regularity. Econometric identification can support a more specific difference-making claim under an explicit design and its assumptions. Further evidence—about heterogeneous effects, transmission channels, timing, and alternative explanations—may be needed to determine which structure is actually operative.</p>
+<p>That is why theory and empirics can provide different kinds of explanatory authority without one being dispensable. Theory maps possible structures and reveals implications. Empirical inquiry constrains which structures can credibly be applied to the world. When the question is a policy counterfactual, world anchoring is especially important; when it concerns a recurring qualitative pattern, the structure of the dependence may be central. In either case, the <em>explanandum</em>—the precise phenomenon or contrast to be explained—comes first.</p>
+<p>Angela Potochnik's emphasis on causal patterns and adequacy is helpful here. Idealizations can reveal a relevant pattern, but their legitimacy depends on what has been simplified away. If a model removes a factor to which the phenomenon is highly sensitive, it may be useful for another purpose while failing as an explanation of this one. The same problem can arise when the model assumes the wrong unit of analysis: an individual household when the relevant process is network diffusion, for example, or an isolated firm when the relevant structure is institutional.</p>
+<p class="chapter-transition">Once we distinguish a model's usefulness from its explanatory success, a parallel distinction appears outside the discipline: an account can be <em>satisfying</em> without being <em>adequate</em>. That is the point at which the psychology and social life of explanation enter the picture.</p>
+
+<h2 id="satisfaction-and-adequacy">II. Why satisfying explanations differ from adequate ones</h2>
+<p class="chapter-lead">People do not evaluate explanations only by testing their causal claims. Explanations also produce understanding, reduce uncertainty, and circulate within communities. Those are important functions, but they are not the same function.</p>
+<h3 id="three-questions">Three questions that should not be collapsed</h3>
+<div class="table-wrap"><table class="two-col"><thead><tr><th>Question</th><th>What it asks</th></tr></thead><tbody>
+<tr><td data-label="Question"><strong>Explanatory quality</strong><br/>Epistemic</td><td data-label="What it asks">Does the account capture the relevant dependencies, specify its scope, withstand plausible alternatives, and support the inferences demanded by the question?</td></tr>
+<tr><td data-label="Question"><strong>Explanatory satisfaction</strong><br/>Psychological</td><td data-label="What it asks">Does the account feel coherent, intelligible, complete, or reassuring to someone trying to make sense of an event?</td></tr>
+<tr><td data-label="Question"><strong>Explanatory acceptance</strong><br/>Social-epistemic</td><td data-label="What it asks">Why is this account trusted, repeated, defended, or treated as authoritative within a group or institution?</td></tr>
+</tbody></table></div>
+<p>An account can be satisfying without being epistemically adequate; an adequate explanation can initially seem unsatisfying because it is conditional, complicated, or uncertain. An account can also become widely accepted because of the social setting in which it circulates. These distinctions recall the earlier posts on cognitive closure, the illusion of explanatory depth, narrative coherence, and social epistemology. I do not need to reproduce that psychology here. I want to examine what the distinctions reveal about economics.</p>
+<h3 id="economists-and-public">Economists and the public often ask different things of an explanation</h3>
+<p>There can be a substantial gap between the kinds of accounts that satisfy non-specialists and those economists regard as justified. Professional economic work often asks for a clearly specified question or estimand, an identification strategy appropriate to a causal claim, explicit assumptions, and scope conditions. A model may be accepted as a benchmark without being treated as a description of reality. An estimate of a policy's effect may be credible within a specific population and period even when its mechanism or external validity remains uncertain.</p>
+<p>In public discussion, an economic explanation may also be asked to reduce uncertainty, identify responsible actors, orient moral judgment, or signal membership in a community. Those are not necessarily irrational functions: people have to understand events, communicate, and decide what matters to them. The difficulty arises when an account's success at those functions is treated as sufficient evidence that its proposed causal structure is correct.</p>
+<p>There is no clean divide between a rational profession and a narrative-driven public. Economists can become attached to elegant models or favored causal stories, and non-specialists can reason carefully with evidence. The more defensible distinction concerns <strong>the standards imposed on a particular explanatory claim</strong>, not an inherent cognitive difference between groups. This also means that an econometric result, however carefully identified, is not a complete explanation of every aspect of the phenomenon; its authority has a specified scope.</p>
+<p>Consider rising prices. One person may ask, “Who is responsible for making my groceries more expensive?” An economist may ask, “What explains the change in this price index over a given interval, relative to a specified counterfactual?” The questions overlap, but their contrasts, units of analysis, and standards of evidence differ. Some disagreements about explanations are actually disagreements about what needs explaining.</p>
+<p class="chapter-transition">This distinction is not yet a theory of why particular stories catch on. To understand that, we need to ask what makes economic phenomena inviting targets for narrative interpretation in the first place.</p>
+
+<h2 id="economics-and-narrative">III. Why economics invites narrative explanations</h2>
+<p class="chapter-lead">Economic events are immediately experienced but their causes are often only indirectly observed. The gap between visible outcomes and less visible dependencies makes coherent stories especially attractive.</p>
+<h3 id="narrative-folk-belief-model">Narratives, folk beliefs, and models are not synonyms</h3>
+<p>A <strong>narrative</strong> arranges events into an intelligible sequence, often through actors, intentions, conflict, and moral meaning. A <strong>folk-economic belief</strong> is an intuitive assumption about how the economy works: for example, an intuition about zero-sum exchange, fairness, reciprocity, or why prices change. A <strong>model</strong> makes selected relationships explicit and examines their implications. The categories can overlap. A narrative may contain a genuine causal explanation; a folk belief can be encoded as a behavioral rule; a mathematical model can formalize an appealing but unsupported story.</p>
+<p>The problem, then, is not “narrative versus science.” Narrative can be a useful scaffold for communicating causal relationships and even for generating hypotheses. It becomes explanatorily suspect when its coherence substitutes for discrimination among alternatives, evidence, or attention to scope. The feeling that all the pieces fit is not the same as a demonstration that the pieces describe the right dependence relation.</p>
+<h3 id="narrative-affordances">Why the economy is a hospitable setting for stories</h3>
+<div class="table-wrap"><table class="two-col"><thead><tr><th>Feature of economic experience</th><th>Its explanatory consequence</th></tr></thead><tbody>
+<tr><td data-label="Feature of economic experience"><strong>Causal opacity</strong></td><td data-label="Its explanatory consequence">Price changes, wages, and employment are visible; dispersed, delayed, or multi-step causes are harder to observe directly.</td></tr>
+<tr><td data-label="Feature of economic experience"><strong>Confounded everyday observation</strong></td><td data-label="Its explanatory consequence">A vivid local episode can seem decisive even when several candidate causes produce similar visible outcomes.</td></tr>
+<tr><td data-label="Feature of economic experience"><strong>Moral and distributive stakes</strong></td><td data-label="Its explanatory consequence">Accounts of economic events can simultaneously make claims about what happened and about fairness, responsibility, or who bears the cost.</td></tr>
+<tr><td data-label="Feature of economic experience"><strong>Scale mismatch</strong></td><td data-label="Its explanatory consequence">Intuitions suited to interpersonal exchange may not readily represent markets, institutions, feedback, or aggregate outcomes.</td></tr>
+</tbody></table></div>
+<p>These features reinforce one another. We directly experience a price increase, but cannot directly inspect every relevant supply chain, contracting decision, expectation, or market condition. A story that names a familiar actor and supplies a motive can bridge that gap quickly. Because the outcome affects people's lives and raises questions of distribution, the account may also acquire moral and social significance. It can feel like an explanation precisely because it makes a complicated, diffuse process legible.</p>
+<p>Take a narrative that attributes inflation to corporate greed. It is not automatically true or automatically false: firms' pricing behavior and market power can be legitimate objects of empirical inquiry. The question is what the proposed account predicts, what alternatives it distinguishes, and what evidence would establish the contribution of a particular mechanism in a particular setting. A morally legible story does not settle those questions merely by being compelling.</p>
+<h3 id="folk-economics-and-identity">Folk economics, identity, and explanatory acceptance</h3>
+<p>Work on <strong>folk-economic beliefs</strong> addresses the intuitions people bring to economic questions rather than treating every disagreement as a simple failure to remember an economics textbook. Pascal Boyer and collaborators, for example, examine the cognitive foundations of such intuitions, while Bryan Caplan's analysis of survey evidence documents systematic differences between economists' and the broader public's stated economic beliefs. These are different research approaches, but both invite us to treat intuitive economic reasoning as a phenomenon worth explaining in its own right.</p>
+<p>Identity-protective cognition introduces another, related question: why might someone accept, resist, or defend a particular account once it has acquired social meaning? Dan Kahan's work on motivated reasoning in contested policy and risk contexts is relevant to that question. It should not, however, be treated as proof that any given person's economic judgment is merely an expression of identity. The content of a belief, the psychological appeal of an explanation, and its social acceptance are distinct things to investigate.</p>
+<p>Here the article connects to the earlier psychology-of-explanation discussion without simply repeating it. That discussion asks why clarity and closure can be seductive. The present question is more domain-specific: why do particular intuitions and stories arise around economic phenomena, what causal claims do they make, and how should those claims be assessed? Economics provides a setting in which the costs of confusing a compelling account with an adequate one can be consequential.</p>
+<p class="chapter-transition">But treating folk-economic beliefs only as mistaken or compelling <em>accounts of</em> economic events misses another possibility. Because people make economic decisions, the accounts they believe may themselves become inputs into the processes that produce economic outcomes.</p>
+
+<h2 id="beliefs-as-causes">IV. When explanations become part of what needs explaining</h2>
+<p class="chapter-lead">Here the direction of inquiry changes. Instead of asking only why people believe a given explanation, we ask what happens when people act on it.</p>
+<h3 id="explanation-becomes-variable">From an account of the economy to a variable within the economy</h3>
+<p>A person may believe prices will rise further, perhaps partly because of a widely circulated account of inflation. That belief might affect a purchasing decision or wage negotiation. A firm's expectations might affect pricing or investment. Whether these responses occur, how large they are, and whether they reinforce or offset one another are empirical questions. The conceptual point is that an interpretation of the economy can become one influence on behavior within the economy.</p>
+<p>This is different from the <em>psychology of explanation</em>. The psychological question is why an account produces felt understanding or gains acceptance. The economic question is how the account, once held, may alter choices and interactions. We could study the first without the second, or the second without claiming to know why the belief was initially attractive. Keeping them separate allows us to connect them without conflating them.</p>
+<div class="concept-callout"><strong>A possible feedback loop:</strong> economic conditions are interpreted through beliefs and narratives → beliefs affect some individual decisions → those decisions interact through markets and institutions → aggregate outcomes may alter subsequent conditions and beliefs. This is a modeling possibility, not a claim that this loop explains any particular historical episode.</div>
+<h3 id="modeling-beliefs">Modeling economies in which agents hold folk beliefs</h3>
+<p>I've constructed a model along these lines. The idea is to represent folk-economic beliefs as part of agents' behavioral rules, then examine the consequences of those rules when agents interact. This sits at the intersection of folk economics, behavioral modeling, and agent-based modeling (ABM). An ABM can represent heterogeneous agents, local interaction, networks, institutions, and adaptation without assuming that every agent reasons through the same optimizing calculation. Robert L. Axtell's overview of agent-based modeling in economics and finance describes the appeal of relaxing conventional assumptions and studying aggregate patterns generated by micro-level rules.</p>
+<p>Conceptually, the process is sequential:</p>
+<ol>
+<li><strong>Elicit beliefs.</strong> Use surveys or experiments to identify relevant intuitions—for example, beliefs about inflation, trade, fairness, or zero-sum competition. The aim is to measure beliefs rather than impute them from an outcome.</li>
+<li><strong>Specify decision rules.</strong> Translate those beliefs into explicit, inspectable hypotheses about expectations, spending, saving, wage demands, pricing, or information sharing. Belief content alone does not tell us how strongly someone will act on it.</li>
+<li><strong>Represent interaction and institutions.</strong> Place heterogeneous agents in markets, firms, information networks, and institutional settings. Specify who interacts with whom and how beliefs or actions can change over time.</li>
+<li><strong>Examine emergent outcomes.</strong> Investigate whether the specified rules and interactions generate persistence, thresholds, volatility, diffusion, or other patterns—and whether those patterns survive changes to the assumptions.</li>
+</ol>
+<p>In this setup, <strong>folk explanations can become state variables</strong>: what an agent believes at one moment may affect what they do next, which information they encounter, and how they revise that belief. But encoding a plausible intuition is only the start. It does not establish that the intuition is common, that the proposed behavioral response is accurate, or that the simulated aggregate pattern corresponds to the real economy.</p>
+<h3 id="why-belief-modeling-is-hard">What this adds—and what it does not prove</h3>
+<p>The advantage of this approach is conceptual as well as computational. We can ask whether an aggregate regularity might arise even when individuals use different, imperfect, or socially influenced decision rules. We can ask whether information-network structure matters, whether belief distributions matter, and whether feedback amplifies or dampens an initial change. This brings a new set of explananda into focus: not simply whether a particular narrative is persuasive, but whether belief-guided interaction is relevant to a system-level outcome.</p>
+<p>The costs are equally important. More realistic-sounding behavioral assumptions do not guarantee realism; adding adjustable rules can make a model opaque or capable of generating many different outcomes. A simulation that reproduces a pattern may offer a how-possibly explanation, but to establish a how-actually explanation we still need credible information about beliefs, behavior, institutions, and the target pattern. Internal tests can tell us which rules drive a model's result; they cannot by themselves identify the causes of the observed event.</p>
+<p class="chapter-transition">This is where systems and complexity explanations enter the argument. If beliefs, behavior, institutions, and information feed back on one another, our model must preserve enough of their interaction structure to make the relevant dependencies visible.</p>
+
+<h2 id="explaining-systems">V. What kind of model can explain a system like this?</h2>
+<p class="chapter-lead">The issue is not whether to simplify an economy, but <em>which features we can simplify without losing the phenomenon we are trying to explain</em>.</p>
+<h3 id="selective-abstraction">Complexity is a different choice about abstraction</h3>
+<p>Complexity economics should not be understood as a rejection of abstraction. It uses simplified agents, institutions, decision rules, and environments, often extensively. Its distinctive move is to preserve features such as heterogeneity, networks, adaptation, nonlinear feedback, and out-of-equilibrium dynamics when those features matter for the explanandum. Some conventional benchmarks simplify these features to obtain tractable results; other economic models, including game-theoretic, network, and heterogeneous-agent models, can represent them too. The meaningful distinction concerns what a <em>particular model</em> preserves, not a rigid opposition between conventional and complexity economics.</p>
+<p>Return to the illustrative inflation case. If our question is how one specified change affects prices under a defined set of assumptions, a relatively compact model may suffice. If our question is whether heterogeneous beliefs circulate through information networks and influence aggregate outcomes, treating all agents as identical or suppressing feedback might eliminate the very dependency of interest. A more elaborate representation is justified only if those additional features do explanatory work.</p>
+<h3 id="generative-explanation">From characterizing an outcome to generating it</h3>
+<p>One form of theoretical explanation characterizes an outcome as an equilibrium or derives how it changes under specified assumptions. A <strong>generative explanation</strong> asks how a pattern can arise through a sequence of decentralized interactions over time. Joshua M. Epstein's memorable maxim, “If you didn't grow it, you didn't explain it,” captures the motivation for the generative approach. But Epstein also cautions that generating a phenomenon is not sufficient to explain it well: a model might reproduce a pattern for implausible reasons.</p>
+<p>A generative model can reveal a threshold, a propagation process, or an emergent regularity that is difficult to see from the isolated behavior of one agent. It may illuminate how a local change becomes a system-wide outcome. Yet the earlier distinction remains intact: showing that a set of rules <em>can</em> produce the pattern does not establish that those rules <em>did</em> produce the corresponding observed pattern.</p>
+<h3 id="causal-forms">Mechanisms, cascades, and constraints</h3>
+<p>This is also where the causal pluralism discussed earlier in the series becomes useful. An account of an individual decision may specify a <strong>mechanism</strong> involving beliefs, incentives, and behavior. An account of how a shock spreads across firms or a belief spreads through a network may emphasize a <strong>pathway or cascade</strong>: connectivity, amplification, and timing. An account of why some outcomes are possible and others are not may emphasize <strong>structural constraints</strong> such as market design, institutional rules, or network topology.</p>
+<p>These forms are not substitutes in every case and need not compete. A model can contain individual mechanisms embedded in networks subject to institutional constraints. What matters is matching explanatory form to the question. If the phenomenon depends on propagation, tracing only the initial trigger is insufficient. If it depends on constraints, adding more details about an individual's motives may not resolve the central question. And if a simulated cascade reproduces a data pattern, we must still ask whether the assumed network and behavioral rules resemble the actual system.</p>
+<h3 id="earning-trust">How a systems explanation earns its credibility</h3>
+<p>A good complexity explanation needs more than visual similarity between a simulated pattern and an observed one. I would group the standards into three linked demands:</p>
+<div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Demand</th><th>What to investigate</th></tr></thead><tbody>
+<tr><td data-label="Demand"><strong>Generative and structural adequacy</strong></td><td data-label="What to investigate">Can the model generate the target phenomenon from intelligible, defensible rules? Does it preserve the relevant heterogeneity, interactions, constraints, and time scales? Which simplifications are consequential?</td></tr>
+<tr><td data-label="Demand"><strong>Internal identification and robustness</strong></td><td data-label="What to investigate">Which components produce the simulated result? Use ablations, parameter sweeps, sensitivity analyses, and alternative specifications to distinguish essential dependencies from adjustable details.</td></tr>
+<tr><td data-label="Demand"><strong>External anchoring and scope</strong></td><td data-label="What to investigate">Are the relevant beliefs, rules, and structures empirically plausible? Does the model reproduce multiple patterns or yield discriminating implications, and where are its boundary conditions? How does it fare against alternative explanations?</td></tr>
+</tbody></table></div>
+<p>Internal identification deserves special emphasis. If removing a belief-updating rule causes an aggregate simulation result to disappear, that tells us something about the rule's role <em>inside the model</em>. It does not show that belief updating caused the corresponding outcome in the world. Calibration, validation against distinct patterns, independent micro-level evidence, and credible empirical strategies are needed to narrow that gap. The challenge of identifying causal responsibility within a flexible simulation is real, not a technicality to wave away.</p>
+<p>Systems explanations may also reveal intervention points: changing connectivity, information flow, feedback, or institutional constraints might alter a modeled trajectory. Such counterfactuals can be informative, but their application outside the model depends on how well those dependencies are established. A model's ability to generate many outcomes is not automatically a strength; without discriminating implications, it risks becoming a sophisticated story-generating device.</p>
+<h3 id="return-to-first-question">Back to the first question: when does the model explain?</h3>
+<p>We can now return to the standards introduced at the beginning. The same three questions apply to a benchmark, a narrative expressed as a causal claim, or an agent-based simulation:</p>
+<div class="table-wrap"><table class="two-col"><thead><tr><th>Dimension</th><th>Diagnostic question</th></tr></thead><tbody>
+<tr><td data-label="Dimension"><strong>Pattern capture</strong></td><td data-label="Diagnostic question">What dependence does the account reveal? Does it specify the conditions under which that relationship holds?</td></tr>
+<tr><td data-label="Dimension"><strong>World anchoring</strong></td><td data-label="Diagnostic question">What evidence supports the relevant dependencies in the target setting? What alternative accounts remain viable?</td></tr>
+<tr><td data-label="Dimension"><strong>Structural adequacy</strong></td><td data-label="Diagnostic question">Is the relevant unit and causal form right for this phenomenon—individual mechanism, institutional constraint, network pathway, cascade, or some combination?</td></tr>
+</tbody></table></div>
+<p>No single dimension mechanically settles every question. Different explanatory aims legitimately place different demands on a representation. But the questions keep us from mistaking the elegance of a model, the persuasiveness of a story, or the success of a simulation for a stronger claim about what actually explains a particular phenomenon.</p>
+
+<h2 id="what-economics-teaches">What economics teaches us about explanation</h2>
+<p>Economics illustrates a general problem in scientific explanation: making a phenomenon intelligible is not the same as establishing why it occurred. Models can isolate relationships and reveal possible mechanisms without establishing that those mechanisms operated in the world. Narratives can organize information into compelling accounts without adequately distinguishing among alternatives. Simulations can generate complex patterns without establishing that the corresponding real-world patterns arose through the same processes.</p>
+<p>Yet none of these limitations makes models, narratives, or simulations inherently unhelpful. Each can contribute when its role is understood and its claims are evaluated under appropriate standards. Economics adds a further complication: people's interpretations of the world can influence their behavior within it. Beliefs may shape decisions; decisions interact through markets and institutions; and the resulting outcomes may reinforce or undermine the beliefs that helped generate them. Explaining such phenomena may require moving between individual cognition, social interaction, and system-level dynamics.</p>
+<div class="core-claim"><strong>The broader lesson for this series:</strong> no single explanatory form fits every phenomenon. Sometimes the relevant structure is mechanistic, sometimes cascading or constraining, and sometimes a pattern emerges from many interacting components. What matters is whether an account captures the relevant dependencies, specifies its scope, and supports the inferences we want to draw from it.</div>
+<p>The challenge is to resist confusing the usefulness of a representation, the satisfaction it produces, or the patterns it can generate with the stronger claim that it explains the world.</p>
+
+<h2 id="further-reading">Further reading</h2>
+<p>These are the reading links retained from the original post, grouped by the questions they inform.</p>
+<h3 id="reading-folk-economics">Folk economics, identity, and behavioral modeling</h3>
+<ul>
+<li><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/folkeconomic-beliefs-an-evolutionary-cognitive-model/7D84E452710ACCC6A35D49B8590B614F?">“Folk-economic beliefs: An evolutionary cognitive model”</a></li>
+<li><a href="https://econfaculty.gmu.edu/bcaplan/pdfs/systematicallybiased.pdf?">“Systematically Biased Beliefs about Economics”</a></li>
+<li><a href="https://ndg.asc.upenn.edu/wp-content/uploads/2017/08/Ideology-motivated-reasoning.pdf?">“Ideology, motivated reasoning, and cognitive reflection”</a></li>
+<li><a href="https://oms-inet.files.svdcdn.com/staging/files/JEL-v2.0.pdf?">“Agent-Based Modeling in Economics and Finance”</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8262124/?">“Advances in the agent-based modeling of economic and ...”</a></li>
+</ul>
+<h3 id="reading-complexity">Complexity, generative explanation, and validation</h3>
+<ul>
+<li><a href="https://sites.santafe.edu/~wbarthur/Papers/Nature_Phys_Revs.pdf?">“Foundations of complexity economics”</a></li>
+<li><a href="https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/RemarksFoundationsABM.JEpstein2006.pdf?">“Remarks on the foundations of agent-based generative ...”</a></li>
+<li><a href="https://cdanfort.w3.uvm.edu/csc-reading-group/epstein-complexity-1999.pdf?">“Agent-based computational models and generative social ...”</a></li>
+<li><a href="https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/RethinkingEconomicsABM.Gallegati2012.pdf?">“Reconstructing Economics: Agent Based Models and ...”</a></li>
+<li><a href="https://wiki.santafe.edu/images/3/3b/Epstein_-_Agent-based_Generative_Social_Science.pdf?">“Epstein - Agent-based Generative Social Science”</a></li>
+<li><a href="https://www.jasss.org/26/2/9.html?">“Inverse Generative Social Science: Backward to the Future”</a></li>
+<li><a href="https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/EmpValid.htm?">“Empirical Validation and Verification of Agent-Based Models”</a></li>
+<li><a href="https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/?">“Leverage Points: Places to Intervene in a System”</a></li>
+<li><a href="https://sites.santafe.edu/~wbarthur/complexityeconomics.htm?">“Complexity Economics”</a></li>
+</ul>
+</div>

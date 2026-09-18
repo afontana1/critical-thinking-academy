@@ -582,6 +582,61 @@
       .ep-post .checkpoint-block + header.ep-part-banner {
         margin-top: 3.8em;
       }
+
+      /* Local hierarchy for the revised misinformation case study. */
+      .ep-post .cascade-example h5 {
+        font-size: 1.06em;
+        line-height: 1.35;
+        margin: 1.45em 0 0.4em;
+        font-weight: 700;
+      }
+
+      /* Semantic alternatives to tables: readable terms, explanations, and checks. */
+      .ep-post .ep-definition-list {
+        margin: 1.1em 0 1.45em;
+        padding: 0;
+      }
+      .ep-post .ep-definition-item {
+        margin: 0;
+        padding: 0.85em 0.95em;
+        border-left: 3px solid color-mix(in srgb, currentColor 26%, transparent);
+      }
+      .ep-post .ep-definition-item + .ep-definition-item {
+        border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+      }
+      .ep-post .ep-definition-list dt {
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 0 0 0.24em;
+      }
+      .ep-post .ep-definition-list dd {
+        margin: 0;
+        line-height: 1.65;
+      }
+      .ep-post .ep-definition-list dd p {
+        margin: 0;
+      }
+      .ep-post .ep-editorial-list {
+        margin: 0.85em 0 1.4em 1.4em;
+        padding: 0;
+      }
+      .ep-post .ep-editorial-list li {
+        padding-left: 0.28em;
+        margin: 0 0 0.57em;
+        line-height: 1.65;
+      }
+      .ep-post .ep-editorial-list li::marker {
+        font-weight: 650;
+      }
+      @media (max-width: 720px) {
+        .ep-post .ep-definition-item {
+          padding: 0.72em 0.75em;
+        }
+        .ep-post .ep-editorial-list {
+          margin-left: 1.2em;
+        }
+      }
+
 </style>
 <script>
       window.MathJax = {
@@ -609,7 +664,7 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<div class="ep-post"><div class="toc-box"><p><strong>Table of Contents</strong></p><ul><li><a href="#part-i-general-standards">I. General Standards for Good Explanation</a><ul><li><a href="#explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</a></li><li><a href="#contrastive-explanations">Contrastive Explanations</a></li></ul></li><li><a href="#mechanisms">II. Mechanistic Explanation</a><ul><li><a href="#good-mechanistic-explanation">Good Mechanistic Explanation</a></li><li><a href="#yes-but-whats-the-mechanism">Yes, But What's the Mechanism?</a></li><li><a href="#how-to-identify-mechanisms">How to Identify Mechanisms</a></li><li><a href="#keeping-mechanism-meaningful">Keeping Mechanism Meaningful</a></li></ul></li><li><a href="#other-causal-structures">III. Beyond Mechanisms: Other Causal Structures</a><ul><li><a href="#pathways-vs-mechanisms">Pathways vs Mechanisms</a></li><li><a href="#cascades-vs-mechanisms">Cascades vs Mechanisms</a></li><li><a href="#social-structural-explanation-and-causal-constraints">Social Structural Explanation and Causal Constraints</a></li></ul></li><li><a href="#part-iv-explanatory-pluralism">IV. Explanatory Pluralism</a><ul><li><a href="#non-mechanistic-explanatory-styles">Causal Patterns and Non-Mechanistic Explanatory Styles</a></li><li><a href="#eight-other-questions-about-explanation">Eight Other Questions about Explanation</a></li></ul></li></ul></div><p>This is the second post in a two-part series on explanation. The first post defined what an <em>explanation</em> is and distinguished it from related concepts such as argument. It then established a baseline for evaluating explanations, examined the psychological and cognitive mechanisms that pull us away from ideal criteria, and closed with the social epistemology of explanation: explanations are evaluated in social environments whose incentives, identities, and information structures matter.</p><p>This post returns to what makes an explanation <em>good</em>, with particular attention to causal and mechanistic explanation. It begins by distinguishing explanation from pseudo-explanation and clarifying the role of contrastive questions; then develops mechanistic explanation and its evidential standards; broadens to pathways, cascades, and structural constraints; and finally uses explanatory pluralism to integrate these different standards.</p><h2 id="part-i-general-standards">I. General Standards for Good Explanation</h2><h3 id="explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</h3><p>
+<div class="ep-post"><div class="toc-box"><p><strong>Table of Contents</strong></p><ul><li><a href="#part-i-general-standards">I. General Standards for Good Explanation</a><ul><li><a href="#explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</a></li><li><a href="#contrastive-explanations">Contrastive Explanations</a></li></ul></li><li><a href="#mechanisms">II. Mechanistic Explanation</a><ul><li><a href="#good-mechanistic-explanation">Good Mechanistic Explanation</a></li><li><a href="#yes-but-whats-the-mechanism">Yes, But What's the Mechanism?</a></li><li><a href="#how-to-identify-mechanisms">How to Identify Mechanisms</a></li><li><a href="#disciplinary-approaches-to-mechanism-discovery">Mechanism Discovery Across Disciplines</a></li><li><a href="#keeping-mechanism-meaningful">Keeping Mechanism Meaningful</a></li></ul></li><li><a href="#other-causal-structures">III. Beyond Mechanisms: Other Causal Structures</a><ul><li><a href="#pathways-vs-mechanisms">Pathways vs Mechanisms</a></li><li><a href="#cascades-vs-mechanisms">Cascades vs Mechanisms</a></li><li><a href="#social-structural-explanation-and-causal-constraints">Social Structural Explanation and Causal Constraints</a></li></ul></li><li><a href="#part-iv-explanatory-pluralism">IV. Explanatory Pluralism</a><ul><li><a href="#non-mechanistic-explanatory-styles">Causal Patterns and Non-Mechanistic Explanatory Styles</a></li><li><a href="#eight-other-questions-about-explanation">Eight Other Questions about Explanation</a></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul></div><p>This is the second post in a two-part series on explanation. The first post defined what an <em>explanation</em> is and distinguished it from related concepts such as argument. It then established a baseline for evaluating explanations, examined the psychological and cognitive mechanisms that pull us away from ideal criteria, and closed with the social epistemology of explanation: explanations are evaluated in social environments whose incentives, identities, and information structures matter.</p><p>This post returns to what makes an explanation <em>good</em>, with particular attention to causal and mechanistic explanation. It begins by distinguishing explanation from pseudo-explanation and clarifying the role of contrastive questions; then develops mechanistic explanation and its evidential standards; broadens to pathways, cascades, and structural constraints; and finally uses explanatory pluralism to integrate these different standards.</p><h2 id="part-i-general-standards">I. General Standards for Good Explanation</h2><h3 id="explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</h3><p>
   An explanation needs to "do work". It does this when it
   <strong>adds epistemically useful structure</strong>—it doesn’t just rename
   the phenomenon, list features, or tell a coherent story. Philosophers and
@@ -620,18 +675,10 @@
   <strong>the feeling</strong> of understanding without adding that inferential
   power. Here are the main requirements that distinguish explanations from
   pseudo-explanations, grouped by what they <em>must provide</em> and what
-  pseudo-explanations <em>typically lack</em>.</p><p></p><div class="table-wrap"><table class="two-col long-table"><thead><tr><th>General criterion</th><th>What it requires</th></tr></thead><tbody><tr><td data-label="General criterion">It must cite an explanatory relation, not just restate the explanandum</td><td data-label="What it requires">The explanans must stand in a recognized explanatory relation to the explanandum, such as causal, mechanistic, nomological, mathematical or structural, grounding, or reason-giving. If replacing the explanans with the explanandum, or with a synonym of it, changes nothing, then the account is not explanatory. Pseudo-explanations include circular restatements like “It happened because it was destined to happen,” labels treated as causes, such as “He did it because he has impulsivity,” when the label merely redescribes the behavior, and tautological dispositions like “It dissolves because it’s soluble,” unless the disposition is unpacked in terms of microstructure and relevant conditions.</td></tr><tr><td data-label="General criterion">It must be difference-making relative to a contrast</td><td data-label="What it requires">Explanations should answer a contrastive question: why this rather than that? A good explanation identifies factors that made the difference between the actual outcome and a relevant alternative, tracking <b>e rather than E and c rather than C</b> instead of offering an undifferentiated “because.” It should indicate what would have to change to get the alternative outcome. Pseudo-explanations include factors present in both the actual case and the relevant alternative, such as citing oxygen as the cause of a fire when oxygen is present in both fire and no-fire scenarios, or catch-all causes like “society” or “human nature” that fail to discriminate among outcomes.</td></tr><tr><td data-label="General criterion">It must support counterfactuals or interventions where causal explanation is at issue</td><td data-label="What it requires">For causal explanations, a good explanation tells us what would change under interventions or relevant counterfactual variations. It should let us answer, with non-handwavy specificity, questions like: “If we changed X, would Y still occur?” Pseudo-explanations include claims that predict or narrate the outcome without giving any handle on manipulation, such as “It happened because it was his karma,” as well as post hoc stories that fit the facts but do not constrain what would happen in nearby cases.</td></tr><tr><td data-label="General criterion">It must provide mechanism or lawful/structural constraints, not just a black box</td><td data-label="What it requires">A good explanation opens the black box to the degree appropriate to the question. Mechanistic explanations identify intermediate steps, components, or organization; nomological or statistical explanations cite laws, stable regularities, and boundary conditions; structural or mathematical explanations appeal to constraints, symmetries, optimization, or proofs in non-causal cases. Pseudo-explanations include mystery tokens like “quantum,” “energy,” “vibrations,” “toxins,” or “manifestation” used as explanatory garnish without specifying a mechanism, constraint, or testable implication, as well as irrelevant neuroscience gloss that signals scientific depth without improving explanatory relevance.</td></tr><tr><td data-label="General criterion">It must be anchored in diagnostic evidential support, not mere compatibility</td><td data-label="What it requires">Evidence should do more than fit the explanation; it should discriminate against plausible competitors by raising the probability of this explanation more than rival explanations. A useful test is to name two plausible alternatives and ask what evidence would count more for one than the other. Pseudo-explanations include just-so stories that are coherent after the fact but unsupported by evidence that would look different if the story were false, and Barnum-style explanations that “fit everything” because they are vague.</td></tr><tr><td data-label="General criterion">It must handle alternatives and defeaters</td><td data-label="What it requires">Good explanations are defeasible: they can say what would undermine them, and they can respond to counterevidence without ad hoc patches. A real explanation must be able to lose; if no possible evidence could count against it, it is not explaining. Pseudo-explanations include immunizing moves like “Any counterexample proves it’s hidden” or “If you doubt it, that shows it’s working,” as well as unfalsifiable flexibility where the story can always be adjusted to fit anything.</td></tr><tr><td data-label="General criterion">It must reduce complexity in a non-cheating way</td><td data-label="What it requires">Explanations compress many facts into an organizing dependence, but the compression must preserve the relevant structure. A good explanation generalizes appropriately in scope without becoming so broad that it turns vacuous. Pseudo-explanations include overcompression into slogans like “It’s all capitalism,” “It’s all trauma,” or “It’s all greed” when the phenomenon varies widely under that label, as well as overfitted narratives that explain one case in detail but lack generalizable constraints.</td></tr><tr><td data-label="General criterion">It must be appropriately precise, not vague in a way that masquerades as depth</td><td data-label="What it requires">Precision does not always require mathematics, but it does require specifying variables, conditions, kinds of effects, kinds of dependence, and the relevant context or contrast. A useful test is whether the explanation can be turned into a simple model: under conditions A, factor X increases the probability of, or produces, Y through pathway P. Pseudo-explanations include Barnum-style claims about people, such as “You’re independent but value relationships,” and appeals to “multi-factor” complexity that merely list factors without specifying their roles, interactions, or relative importance. </td></tr></tbody></table></div><p></p><p>When you hear an explanation, try these six questions:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>No.</th><th>Diagnostic question</th></tr></thead><tbody><tr><td data-label="No.">1</td><td data-label="Diagnostic question"><strong>What’s the contrast?</strong> Why this rather than what?</td></tr><tr><td data-label="No.">2</td><td data-label="Diagnostic question">
-<strong>What’s the dependence claim?</strong> Cause, mechanism, constraint,
-    grounding, reasons?
-  </td></tr><tr><td data-label="No.">3</td><td data-label="Diagnostic question">
-<strong>What would change the outcome?</strong> (Counterfactual/intervention
-    handle)
-  </td></tr><tr><td data-label="No.">4</td><td data-label="Diagnostic question">
-<strong>What’s inside the black box?</strong> At least one intermediate
-    step.
-  </td></tr><tr><td data-label="No.">5</td><td data-label="Diagnostic question">
-<strong>What would count against it?</strong> (Defeaters / loss conditions)
-  </td></tr><tr><td data-label="No.">6</td><td data-label="Diagnostic question"><strong>How does the evidence discriminate it from rivals?</strong></td></tr></tbody></table></div><p>
+  pseudo-explanations <em>typically lack</em>.</p><p></p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>It must cite an explanatory relation, not just restate the explanandum</dt><dd>The explanans must stand in a recognized explanatory relation to the explanandum, such as causal, mechanistic, nomological, mathematical or structural, grounding, or reason-giving. If replacing the explanans with the explanandum, or with a synonym of it, changes nothing, then the account is not explanatory. Pseudo-explanations include circular restatements like “It happened because it was destined to happen,” labels treated as causes, such as “He did it because he has impulsivity,” when the label merely redescribes the behavior, and tautological dispositions like “It dissolves because it’s soluble,” unless the disposition is unpacked in terms of microstructure and relevant conditions.</dd></div><div class="ep-definition-item"><dt>It must be difference-making relative to a contrast</dt><dd>Explanations should answer a contrastive question: why this rather than that? A good explanation identifies factors that made the difference between the actual outcome and a relevant alternative, tracking <b>e rather than E and c rather than C</b> instead of offering an undifferentiated “because.” It should indicate what would have to change to get the alternative outcome. Pseudo-explanations include factors present in both the actual case and the relevant alternative, such as citing oxygen as the cause of a fire when oxygen is present in both fire and no-fire scenarios, or catch-all causes like “society” or “human nature” that fail to discriminate among outcomes.</dd></div><div class="ep-definition-item"><dt>It must support counterfactuals or interventions where causal explanation is at issue</dt><dd>For causal explanations, a good explanation tells us what would change under interventions or relevant counterfactual variations. It should let us answer, with non-handwavy specificity, questions like: “If we changed X, would Y still occur?” Pseudo-explanations include claims that predict or narrate the outcome without giving any handle on manipulation, such as “It happened because it was his karma,” as well as post hoc stories that fit the facts but do not constrain what would happen in nearby cases.</dd></div><div class="ep-definition-item"><dt>It must provide mechanism or lawful/structural constraints, not just a black box</dt><dd>A good explanation opens the black box to the degree appropriate to the question. Mechanistic explanations identify intermediate steps, components, or organization; nomological or statistical explanations cite laws, stable regularities, and boundary conditions; structural or mathematical explanations appeal to constraints, symmetries, optimization, or proofs in non-causal cases. Pseudo-explanations include mystery tokens like “quantum,” “energy,” “vibrations,” “toxins,” or “manifestation” used as explanatory garnish without specifying a mechanism, constraint, or testable implication, as well as irrelevant neuroscience gloss that signals scientific depth without improving explanatory relevance.</dd></div><div class="ep-definition-item"><dt>It must be anchored in diagnostic evidential support, not mere compatibility</dt><dd>Evidence should do more than fit the explanation; it should discriminate against plausible competitors by raising the probability of this explanation more than rival explanations. A useful test is to name two plausible alternatives and ask what evidence would count more for one than the other. Pseudo-explanations include just-so stories that are coherent after the fact but unsupported by evidence that would look different if the story were false, and Barnum-style explanations that “fit everything” because they are vague.</dd></div><div class="ep-definition-item"><dt>It must handle alternatives and defeaters</dt><dd>Good explanations are defeasible: they can say what would undermine them, and they can respond to counterevidence without ad hoc patches. A real explanation must be able to lose; if no possible evidence could count against it, it is not explaining. Pseudo-explanations include immunizing moves like “Any counterexample proves it’s hidden” or “If you doubt it, that shows it’s working,” as well as unfalsifiable flexibility where the story can always be adjusted to fit anything.</dd></div><div class="ep-definition-item"><dt>It must reduce complexity in a non-cheating way</dt><dd>Explanations compress many facts into an organizing dependence, but the compression must preserve the relevant structure. A good explanation generalizes appropriately in scope without becoming so broad that it turns vacuous. Pseudo-explanations include overcompression into slogans like “It’s all capitalism,” “It’s all trauma,” or “It’s all greed” when the phenomenon varies widely under that label, as well as overfitted narratives that explain one case in detail but lack generalizable constraints.</dd></div><div class="ep-definition-item"><dt>It must be appropriately precise, not vague in a way that masquerades as depth</dt><dd>Precision does not always require mathematics, but it does require specifying variables, conditions, kinds of effects, kinds of dependence, and the relevant context or contrast. A useful test is whether the explanation can be turned into a simple model: under conditions A, factor X increases the probability of, or produces, Y through pathway P. Pseudo-explanations include Barnum-style claims about people, such as “You’re independent but value relationships,” and appeals to “multi-factor” complexity that merely list factors without specifying their roles, interactions, or relative importance.</dd></div></dl><p></p><p>When you hear an explanation, try these six questions:</p><ol class="ep-editorial-list"><li><strong>What’s the contrast?</strong> Why this rather than what?</li><li><strong>What’s the dependence claim?</strong> Cause, mechanism, constraint,
+    grounding, reasons?</li><li><strong>What would change the outcome?</strong> (Counterfactual/intervention
+    handle)</li><li><strong>What’s inside the black box?</strong> At least one intermediate
+    step.</li><li><strong>What would count against it?</strong> (Defeaters / loss conditions)</li><li><strong>How does the evidence discriminate it from rivals?</strong></li></ol><p>
   Pseudo-explanations succeed because they deliver
   <strong>psychological goods</strong> (clarity, closure, identity fit,
   coherence) without paying the <strong>epistemic costs</strong> (mechanism,
@@ -675,23 +722,17 @@
   If we’re building a general rubric for “good explanations,” Schaffer motivates
   adding a distinct dimension: contrastive adequacy. A good explanation should
   make clear:
-</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Contrastive element</th><th>Question to make explicit</th></tr></thead><tbody><tr><td data-label="Contrastive element">Explanandum contrast (E vs E*)</td><td data-label="Question to make explicit">
- What outcome are we
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Explanandum contrast (E vs E*)</dt><dd>What outcome are we
     explaining <em>instead of what</em>? “Why did the window shatter
     <strong>rather than remain intact</strong>?” is different from “Why did the
     window shatter <strong>rather than crack</strong>?” These demand different
-    explanatory resources.
-  </td></tr><tr><td data-label="Contrastive element">Explanans contrast (C vs C*)</td><td data-label="Question to make explicit">
- What factor are we treating
+    explanatory resources.</dd></div><div class="ep-definition-item"><dt>Explanans contrast (C vs C*)</dt><dd>What factor are we treating
     as the difference-maker <em>relative to which alternative(s)</em>? “Moderate
     smoking rather than abstaining…” vs “moderate smoking rather than heavy
     smoking…” (Schaffer uses Hitchcock here to show the causal valence flips
-    with the contrast).
-  </td></tr><tr><td data-label="Contrastive element">Background field (what’s being held fixed)</td><td data-label="Question to make explicit">
- The context
+    with the contrast).</dd></div><div class="ep-definition-item"><dt>Background field (what’s being held fixed)</dt><dd>The context
     sets what’s “in the field” and what’s backgrounded—what alternatives are
-    live.
-  </td></tr></tbody></table></div><p>
+    live.</dd></div></dl><p>
   Binary counterfactual tests can be trivially satisfied or fail for the wrong
   reason if you choose the wrong “not-c” and “not-e.” Schaffer’s point is:
   specify the alternatives explicitly and the dependence structure becomes
@@ -752,28 +793,16 @@
       (This is the contrastive analogue of Boyd’s “narrow source base” problem:
       narrow <em>informational</em> range often pairs with narrow
       <em>contrast</em> range.)
-    </p></div><p>Integrating Schaffer into the earlier criteria for a good explanation gives the following contrastive checks:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Contrastive check</th><th>What to ask</th></tr></thead><tbody><tr><td data-label="Contrastive check">State the explanandum contrast explicitly</td><td data-label="What to ask">
- e rather than
-    what?
-  </td></tr><tr><td data-label="Contrastive check">State the explanans contrast explicitly</td><td data-label="What to ask">
- c rather than
-    what?
-  </td></tr><tr><td data-label="Contrastive check">Check robustness across reasonable contrasts</td><td data-label="What to ask">
- If you swap
+    </p></div><p>Integrating Schaffer into the earlier criteria for a good explanation gives the following contrastive checks:</p><ul class="ep-editorial-list"><li><strong>State the explanandum contrast explicitly</strong> — e rather than
+    what?</li><li><strong>State the explanans contrast explicitly</strong> — c rather than
+    what?</li><li><strong>Check robustness across reasonable contrasts</strong> — If you swap
     in other plausible C* or E*, does the explanation still look good, or does
-    it collapse?
-  </td></tr><tr><td data-label="Contrastive check">Measure impact at the right grain</td><td data-label="What to ask">
- Does it explain the
+    it collapse?</li><li><strong>Measure impact at the right grain</strong> — Does it explain the
     coarse event (e vs far E*) or merely the manner (m vs m′)? Schaffer’s
-    “contrasts measure impact” idea is key here.
-  </td></tr><tr><td data-label="Contrastive check">Audit the context/background</td><td data-label="What to ask">
- What got held fixed, and is
-    that appropriate to the inquiry?
-  </td></tr><tr><td data-label="Contrastive check">Locate indeterminacy properly</td><td data-label="What to ask">
- If you feel torn between
+    “contrasts measure impact” idea is key here.</li><li><strong>Audit the context/background</strong> — What got held fixed, and is
+    that appropriate to the inquiry?</li><li><strong>Locate indeterminacy properly</strong> — If you feel torn between
     explanations, is it because the causal facts are underdetermined—or because
-    the contrast sets are underspecified?
-  </td></tr></tbody></table></div><p>
+    the contrast sets are underspecified?</li></ul><p>
   A high-quality explanation is one that
   <strong>wins a well-defined contrastive contest</strong>—it shows what made
   the difference between <strong>this</strong> and <strong>that</strong>, under
@@ -810,39 +839,34 @@
   What are the parts of a mechanism? Mechanists standardly parse mechanisms into
   <strong>four components</strong>: (1) phenomenon, (2) parts, (3) causings, (4)
   organization.
-</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Component</th><th>Role in a mechanism</th></tr></thead><tbody><tr><td data-label="Component">Entities (parts)</td><td data-label="Role in a mechanism">These are the <strong>things</strong> in the mechanism:
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Entities (parts)</dt><dd>These are the <strong>things</strong> in the mechanism:
     molecules, cells, organs, components of a device, agents in a social
     mechanism, etc. A common requirement is that parts have some
     <strong>robustness</strong>—they can often be characterized as entities with
-    stable properties (though there’s debate for “ephemeral” biochemical cases).
-  </td></tr><tr><td data-label="Component">Activities (what the entities do)</td><td data-label="Role in a mechanism">Activities are the
+    stable properties (though there’s debate for “ephemeral” biochemical cases).</dd></div><div class="ep-definition-item"><dt>Activities (what the entities do)</dt><dd>Activities are the
     <strong>doings</strong>: binding, firing, pumping, depolarizing, catalyzing,
     inhibiting, signaling, etc. The distinctively mechanistic thought here is:
     you don’t just list entities; you specify what they <em>do</em> and how
-    those doings connect.
-  </td></tr><tr><td data-label="Component">Interactions</td><td data-label="Role in a mechanism">Activities are rarely isolated. Mechanisms work through
+    those doings connect.</dd></div><div class="ep-definition-item"><dt>Interactions</dt><dd>Activities are rarely isolated. Mechanisms work through
     <strong>interactions</strong> among parts—often including feedback,
     inhibition, and “double prevention” patterns common in biology and special
-    sciences.
-  </td></tr></tbody></table></div><p>
+    sciences.</dd></div></dl><p>
   Mechanists don’t all define “cause” the same way. The SEP entry lays out
   several approaches, but the shared orientation is causation is
   <strong>not just regular succession</strong> (anti-Humean in spirit), and it
   must be broad enough to cover the special sciences, where conserved-quantity
   “push-pull” pictures often don’t fit. Here are two dominant “cause”
   conceptions within mechanistic thinking:
-</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Conception of causation</th><th>Core idea</th></tr></thead><tbody><tr><td data-label="Conception of causation">Productive/activities-based causation</td><td data-label="Core idea">Some mechanists (inspired by G. E.
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Productive/activities-based causation</dt><dd>Some mechanists (inspired by G. E.
     M. Anscombe) treat causation as fundamentally
     <strong>productive activity</strong>—magnetic attraction, hydrogen bonding,
     enzyme catalysis, etc. On this view, to cite a cause in a mechanism is often
-    to cite an <strong>activity-type</strong> that does the producing.
-  </td></tr><tr><td data-label="Conception of causation">Difference-making / interventionist causation</td><td data-label="Core idea">Others—especially those
+    to cite an <strong>activity-type</strong> that does the producing.</dd></div><div class="ep-definition-item"><dt>Difference-making / interventionist causation</dt><dd>Others—especially those
     focused on explanation—lean toward James Woodward–style interventionism: a
     variable is causally relevant if ideal interventions on it would change the
     effect variable. This meshes naturally with experimentation: removal,
     stimulation, blocking, and modulation of components are ways of probing
-    mechanistic causation.
-  </td></tr></tbody></table></div><p>
+    mechanistic causation.</dd></div></dl><p>
   Mechanistic explanations often combine both intuitions. Mechanisms involve
   <em>productive activities</em> in the world, and good mechanistic models
   capture <em>difference-makers</em> (what you can change to change the
@@ -890,26 +914,14 @@
   </li>
 <li>not necessarily linear/sequential (feedback and cycles are common)</li>
 <li>not necessarily neatly localizable (distributed mechanisms exist)</li>
-</ul><p>The SEP entry gives a very direct list of what mechanisms are not:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Not a mechanism</th><th>Why not</th></tr></thead><tbody><tr><td data-label="Not a mechanism">Entities/objects by themselves</td><td data-label="Why not">
- aren’t mechanisms
-    (mechanisms <em>do things</em>—they’re tied to a phenomenon).
-  </td></tr><tr><td data-label="Not a mechanism">Correlations</td><td data-label="Why not">
- (or mere temporal sequences) aren’t
-    mechanisms.
-  </td></tr><tr><td data-label="Not a mechanism">Inferences/arguments/reasons</td><td data-label="Why not">
- aren’t mechanisms (logical
+</ul><p>The SEP entry gives a very direct list of what mechanisms are not:</p><ul class="ep-editorial-list"><li><strong>Entities/objects by themselves</strong> — aren’t mechanisms
+    (mechanisms <em>do things</em>—they’re tied to a phenomenon).</li><li><strong>Correlations</strong> — (or mere temporal sequences) aren’t
+    mechanisms.</li><li><strong>Inferences/arguments/reasons</strong> — aren’t mechanisms (logical
     relations aren’t the same as causal/mechanistic relations—though there can
-    be mechanisms <em>of</em> reasoning).
-  </td></tr><tr><td data-label="Not a mechanism">Symmetries</td><td data-label="Why not">
- aren’t mechanisms (highly general structural
-    facts, not organized productive systems).
-  </td></tr><tr><td data-label="Not a mechanism">Fundamental laws/fundamental causal relations</td><td data-label="Why not">
- aren’t
-    mechanisms (if fundamental, there’s no deeper mechanism “for” them).
-  </td></tr><tr><td data-label="Not a mechanism">Logical/mathematical necessities</td><td data-label="Why not">
- aren’t mechanisms (true in
-    all possible worlds, not dependent on this world’s causal organization).
-  </td></tr></tbody></table></div><p>
+    be mechanisms <em>of</em> reasoning).</li><li><strong>Symmetries</strong> — aren’t mechanisms (highly general structural
+    facts, not organized productive systems).</li><li><strong>Fundamental laws/fundamental causal relations</strong> — aren’t
+    mechanisms (if fundamental, there’s no deeper mechanism “for” them).</li><li><strong>Logical/mathematical necessities</strong> — aren’t mechanisms (true in
+    all possible worlds, not dependent on this world’s causal organization).</li></ul><p>
   This is a crucial demarcation: mechanisms are
   <em>worldly causal organization</em>, not mere patterns, summaries, or
   abstractions (unless those abstractions are explicitly used to represent
@@ -932,20 +944,12 @@
   mechanistic explanation is pseudo-ish when it stays at “how-possibly” (or
   black-box functional labels) but is treated as “how-actually” without
   evidential anchoring.
-</p><p>Mechanisms give you the “work” explanations must do:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Explanatory payoff</th><th>What mechanism knowledge supplies</th></tr></thead><tbody><tr><td data-label="Explanatory payoff">difference-making</td><td data-label="What mechanism knowledge supplies">
-: which components matter, how
-    interventions change outcomes
-  </td></tr><tr><td data-label="Explanatory payoff">constraint</td><td data-label="What mechanism knowledge supplies">
-: which outcomes are ruled in/out by the
-    organization
-  </td></tr><tr><td data-label="Explanatory payoff">multi-level integration</td><td data-label="What mechanism knowledge supplies">
-: how different scientific
-    descriptions relate (organs ↔ cells ↔ molecules)
-  </td></tr><tr><td data-label="Explanatory payoff">prediction + control</td><td data-label="What mechanism knowledge supplies">
-: once you know the organized
+</p><p>Mechanisms give you the “work” explanations must do:</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>difference-making</dt><dd>which components matter, how
+    interventions change outcomes</dd></div><div class="ep-definition-item"><dt>constraint</dt><dd>which outcomes are ruled in/out by the
+    organization</dd></div><div class="ep-definition-item"><dt>multi-level integration</dt><dd>how different scientific
+    descriptions relate (organs ↔ cells ↔ molecules)</dd></div><div class="ep-definition-item"><dt>prediction + control</dt><dd>once you know the organized
     activities, you can often predict what happens under perturbations and
-    design interventions
-  </td></tr></tbody></table></div><h3 id="good-mechanistic-explanation">Good Mechanistic Explanation</h3><p>
+    design interventions</dd></div></dl><h3 id="good-mechanistic-explanation">Good Mechanistic Explanation</h3><p>
   A mechanistic explanation is “good” when it does more than tell a plausible
   story about what might be going on—it
   <strong>correctly represents enough of the mechanism’s parts, activities, and
@@ -1141,13 +1145,9 @@
     </p></div><p>
   So a good mechanistic explanation (applied in the correct context) consists of
   the following:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>No.</th><th>Quick-reference criterion</th></tr></thead><tbody><tr><td data-label="No.">1</td><td data-label="Quick-reference criterion">Defines the phenomenon + relevant contrast(s).</td></tr><tr><td data-label="No.">2</td><td data-label="Quick-reference criterion">Identifies entities and activities that are genuinely productive.</td></tr><tr><td data-label="No.">3</td><td data-label="Quick-reference criterion">Specifies organization (spatiotemporal + control structure).</td></tr><tr><td data-label="No.">4</td><td data-label="Quick-reference criterion">Shows multi-level relations where relevant (decompose/recompose).</td></tr><tr><td data-label="No.">5</td><td data-label="Quick-reference criterion">
-    Is <strong>how-actually-enough</strong>: anchored by discriminating evidence
-    and correct mapping to real components.
-  </td></tr><tr><td data-label="No.">6</td><td data-label="Quick-reference criterion">
-    Supports counterfactual/intervention reasoning and states boundary
-    conditions.
-  </td></tr><tr><td data-label="No.">7</td><td data-label="Quick-reference criterion">Competes successfully against plausible alternative mechanisms.</td></tr></tbody></table></div><p>
+</p><ul class="ep-editorial-list"><li>Defines the phenomenon + relevant contrast(s).</li><li>Identifies entities and activities that are genuinely productive.</li><li>Specifies organization (spatiotemporal + control structure).</li><li>Shows multi-level relations where relevant (decompose/recompose).</li><li>Is <strong>how-actually-enough</strong>: anchored by discriminating evidence
+    and correct mapping to real components.</li><li>Supports counterfactual/intervention reasoning and states boundary
+    conditions.</li><li>Competes successfully against plausible alternative mechanisms.</li></ul><p>
   Pseudo-mechanistic explanation consists of mostly labels (“X causes Y”),
   unspecified arrows, missing organization, unfalsifiable flexibility, and
   little intervention-relevant structure. Mechanistic explanation is one of the
@@ -1212,21 +1212,14 @@
   So, in their discipline’s terms, a <em>good mechanistic explanation</em> has
   to do at least three things (and these are exactly the
   obstacles/recommendations they emphasize):
-</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Identification problem</th><th>What a credible design must do</th></tr></thead><tbody><tr><td data-label="Identification problem">Rule out confounding of the mediator–outcome link</td><td data-label="What a credible design must do">
- (or
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Rule out confounding of the mediator–outcome link</dt><dd>(or
     justify why it’s absent), because otherwise the “mechanism” is statistically
-    and causally ambiguous.
-  </td></tr><tr><td data-label="Identification problem">Show that any experimental manipulation aimed at the mediator isolates
-      that mediator</td><td data-label="What a credible design must do">
-
-    (doesn’t shift other mediators/cognitive states), because otherwise you
-    haven’t identified <em>which</em> mechanism is operating.
-  </td></tr><tr><td data-label="Identification problem">Handle the fact that mediation estimates may be local/conditional and can
-      break under heterogeneity</td><td data-label="What a credible design must do">
-—they stress that indirect effects may apply to an unknown subset of
+    and causally ambiguous.</dd></div><div class="ep-definition-item"><dt>Show that any experimental manipulation aimed at the mediator isolates
+      that mediator</dt><dd>(doesn’t shift other mediators/cognitive states), because otherwise you
+    haven’t identified <em>which</em> mechanism is operating.</dd></div><div class="ep-definition-item"><dt>Handle the fact that mediation estimates may be local/conditional and can
+      break under heterogeneity</dt><dd>—they stress that indirect effects may apply to an unknown subset of
     participants (akin to compliance problems) and can be distorted when effects
-    vary across people.
-  </td></tr></tbody></table></div><p>
+    vary across people.</dd></div></dl><p>
   Putting it together: they’re saying that, in practice,
   <strong>“mechanism” talk should be earned by design + argument</strong>, not
   just by running a mediation regression. That’s why they push the idea that
@@ -1330,251 +1323,19 @@
   success. Mechanism discovery, on this view, is not just about building one
   possible account, but about showing why that account deserves to be preferred
   over others.
-</p><h4 id="biology-how-scientists-discover-mechanisms-in-paradigm-mechanistic-sciences">
-  Biology: how scientists discover mechanisms in “paradigm mechanistic” sciences
-</h4><p>
-  Biology and neuroscience are often treated as the paradigm cases of
-  mechanistic explanation in contemporary philosophy of science, especially in
-  the tradition associated with Machamer, Darden, and Craver and the work that
-  followed them. These fields provide especially vivid examples of how
-  mechanisms are discovered because they regularly investigate organized systems
-  made up of parts, activities, and interactions that can be experimentally
-  manipulated and traced. For that reason, philosophy of mechanism frequently
-  turns to biology and neuroscience as showcase disciplines when explaining what
-  mechanistic discovery looks like in practice.
-</p><p>
-<strong>A. “Break it and see”: perturbation experiments</strong> are among the
-  most important tools in biological mechanism discovery. These include knockout
-  and knockdown methods, gene editing techniques that remove a gene or reduce
-  its expression, pharmacological blockade, lesions, optogenetic stimulation,
-  and similar interventions. What makes these methods so valuable is that they
-  help identify <strong>difference-making parts</strong> of a system. By
-  disrupting or modifying a candidate component and observing the consequences,
-  scientists can determine whether that part is genuinely involved in producing
-  the phenomenon. These experiments are especially useful for separating
-  <strong>mere correlates</strong> from
-  <strong>constitutive components</strong>. A variable may correlate with a
-  phenomenon without being part of the mechanism that generates it, but
-  perturbation methods help reveal whether the component is actually playing an
-  essential mechanistic role.
-</p><p>
-<strong>B. Tracing and localization</strong> are equally central. In biology
-  and neuroscience, scientists use methods such as imaging, labeling, tract
-  tracing, microscopy, and time-resolved measurement of signals to determine
-  where relevant parts are, how they are connected, and when they are active.
-  The goal is not simply to show that some component exists, but to establish
-  that the right parts are <strong>present</strong>,
-  <strong>connected in the right way</strong>, and
-  <strong>active at the appropriate time</strong> for the phenomenon to occur.
-  This is the localization side of the classic decomposition-and-localization
-  strategy. Once a phenomenon has been decomposed into component operations,
-  tracing and localization help assign those operations to actual physical
-  structures and processes within the biological system.
-</p><p>
-<strong>C. Mechanism assembly via pathway reconstruction</strong> is another
-  major feature of biological discovery. Scientists often piece together
-  mechanisms by reconstructing a sequence or network of interactions that links
-  components into an organized pathway. In molecular biology, this may involve
-  discovering chains of binding, catalysis, and inhibition. In neuroscience, it
-  may involve identifying circuit motifs, feedback loops, and signaling
-  pathways. This process often relies on forward and backward chaining.
-  Researchers may reason forward from a known component to ask what downstream
-  effects it could generate, or backward from an observed phenomenon to ask what
-  intermediate steps must exist for the effect to be produced. For example, if a
-  phenomenon depends on X and somehow influences Y, then there must be some
-  organized process that transmits X’s effect to Y, and mechanism discovery
-  involves finding that process.
-</p><p>
-<strong>D. Omics plus functional follow-up</strong> captures an important
-  feature of contemporary biology. High-throughput methods such as genomics,
-  proteomics, and metabolomics are extremely powerful for identifying broad
-  patterns and associations, but by themselves they often function mainly as
-  <strong>pattern finders</strong>. They generate correlations, clusters, and
-  candidate relationships, but those patterns do not become mechanistic
-  explanations on their own. They become mechanistically significant only when
-  paired with more focused follow-up work, especially targeted perturbations and
-  experiments that validate specific causal roles. The philosophical lesson is
-  that -omics screens are often best understood as
-  <strong>mechanism generators</strong> or hypothesis factories rather than
-  mechanism confirmers. They are valuable because they suggest where to look,
-  but they require anchoring in interventions and organizational analysis before
-  they can support a genuinely mechanistic account.
-</p><p>
-  From a philosophical perspective, what counts as
-  <strong>mechanism discovery in biology</strong> is the transition from a
-  merely plausible model to one that is adequately constrained by evidence. More
-  specifically, one moves from <strong>how-possibly</strong> models, which show
-  only that a phenomenon could in principle be produced in a certain way, to
-  <strong>how-actually-enough</strong> models, which are supported by
-  interventions, localization, and evidence about organized activities. In that
-  shift, biological inquiry moves from speculative possibility to a sufficiently
-  evidence-based account of how the phenomenon is in fact produced for the
-  explanatory purposes at hand.
-</p><h4 id="epidemiology-mechanisms-under-constraints-of-ethics-scale-and-confounding">
-  Epidemiology: mechanisms under constraints of ethics, scale, and confounding
-</h4><p>
-  Epidemiology is deeply concerned with mechanisms because it seeks to
-  understand what causes disease, through what pathways those causes operate,
-  and which interventions are effective. At the same time, it works under
-  distinctive constraints. Unlike some laboratory sciences, epidemiology often
-  cannot directly manipulate exposures through controlled experimental
-  perturbation, because doing so may be unethical, infeasible, or impossible at
-  population scale. Those constraints do not eliminate mechanistic inquiry, but
-  they do force epidemiologists to rely on more indirect strategies for
-  discovering and supporting causal and mechanistic claims.
-</p><p>
-<strong>A. Causal inference frameworks, especially potential outcomes and directed
-    acyclic graphs (DAGs),</strong>
-  play a central role in modern epidemiology because they provide tools for
-  extracting causal structure from noisy, messy, and confounded observational
-  data. Much of epidemiologic methodology is devoted to carefully defining
-  interventions, specifying which variables count as confounders, adjusting for
-  those confounders appropriately, using graphical reasoning through DAGs to
-  represent assumptions about causal structure, and conducting sensitivity
-  analyses to test how robust the conclusions are to violations of those
-  assumptions. In this style of reasoning, one is not directly manipulating the
-  world in a fully randomized way, but instead trying to recover causal
-  structure by making assumptions explicit and reasoning systematically about
-  what would have happened under different exposure conditions. Hernán and
-  Robins’ <em>Causal Inference: What If</em> is a central reference point for
-  this entire approach.
-</p><p>
-<strong>B. Instrumental variables (IV) methods</strong> function as a kind of
-  quasi-experimental lever when randomized experiments are unavailable. The
-  basic idea is to use an instrument that shifts exposure while, ideally,
-  affecting the outcome only through that exposure. If such an instrument can be
-  identified, it may allow researchers to estimate causal effects even in the
-  presence of confounding that would defeat more straightforward observational
-  analysis. However, epidemiology-focused discussions, especially those
-  associated with Hernán, emphasize how demanding the assumptions behind IV
-  methods are. In particular, exclusion restrictions and related conditions are
-  often difficult to justify in real-world settings. For that reason,
-  instrumental variable methods can seem highly attractive, even “dreamlike,” in
-  their promise of causal leverage, while also remaining fragile and vulnerable
-  if the assumptions do not genuinely hold.
-</p><p>
-<strong>C. Natural experiments and policy shocks</strong> are another
-  important indirect strategy in epidemiology. Researchers often rely on
-  exogenous events such as policy changes, disasters, supply disruptions, or
-  other externally imposed variations that approximate random assignment for
-  certain exposures. These events create opportunities to study whether outcomes
-  shift in the ways predicted by mechanistic or causal hypotheses. The logic is
-  that when a naturally occurring event alters exposure independently of the
-  usual confounding factors, it can serve as a real-world analogue to
-  experiment. Epidemiologists then examine whether the resulting outcome
-  patterns align with what would be expected if the hypothesized mechanism or
-  causal pathway were genuine.
-</p><p>
-<strong>D. Triangulation, or combining methods with distinct bias profiles,</strong>
-  has become increasingly important because every observational design comes
-  with its own vulnerabilities. A cohort study, a case-control study, a natural
-  experiment, or a negative control design may each be threatened by different
-  forms of confounding, selection bias, or measurement error. Because of this,
-  epidemiologists often emphasize the importance of triangulating across
-  multiple methods whose weaknesses do not fully overlap. If different
-  approaches, each with different bias structures, converge on the same
-  conclusion, confidence in the causal or mechanistic claim increases. Hernán
-  and Robins explicitly present triangulation as a practical necessity rather
-  than a methodological luxury, given the unavoidable limitations of any single
-  observational strategy.
-</p><p>
-<strong>E. Mediation analysis, the more explicitly mechanism-probing move,</strong>
-  is a special tactic used when epidemiologists try to estimate pathways
-  connecting an exposure to an outcome. The question is often framed as whether
-  X affects Y partly through some mediator M. This makes mediation analysis
-  especially mechanism-adjacent, because it tries to say something not just
-  about whether a cause has an effect, but about <em>how</em> that effect is
-  transmitted. However, mediation analysis is also especially assumption-heavy.
-  Its conclusions depend on strong assumptions about measurement quality, the
-  absence of confounding between mediator and outcome, and correct temporal
-  ordering. For that reason, there is an important mechanistic caution here:
-  mediation estimates are easy to overinterpret as identifying “the mechanism,”
-  when in reality they often provide only partial and model-dependent evidence
-  about one possible pathway. They can contribute to mechanistic understanding,
-  but they rarely settle it on their own.
-</p><h4 id="economics-mechanisms-as-causal-pathways-institutional-structure-often-without-direct-access-to-parts">
-  Economics: mechanisms as causal pathways + institutional structure (often
-  without direct access to parts)
-</h4><p>
-  Economics provides an interesting contrast case for mechanism discovery
-  because it is deeply concerned with causal mechanisms, yet often lacks direct
-  access to the “parts” in the way biology or neuroscience does. The mechanisms
-  economists study typically involve agents, institutions, incentives,
-  information, and constraints, and these mechanisms are often strategic, shaped
-  by feedback, and highly sensitive to context. Rather than focusing on tangible
-  components linked by physical interactions, economics frequently studies
-  organized systems in which behavior emerges from the interaction of beliefs,
-  rules, opportunities, and responses to policy. For that reason, economists
-  often frame their work in terms of <strong>identification strategies</strong>:
-  methods for isolating causal effects from observational data. This style of
-  thinking was especially popularized by Angrist and Pischke, who emphasized how
-  empirical designs can approximate the inferential strength of experiments even
-  in settings where controlled manipulation is limited.
-</p><p>
-<strong>A. Randomized controlled trials, both in the lab and in the field,</strong>
-  are one of the clearest ways economics studies causal effects. Laboratory
-  experiments offer tight control over variables and allow researchers to
-  examine stylized mechanisms under simplified conditions. Field randomized
-  controlled trials, by contrast, are valued for their policy relevance and
-  their ability to capture real-world behavioral responses in natural settings.
-  Both forms of experimentation can identify causal effects and can also test
-  specific mechanism predictions, for example by varying incentives, altering
-  available information, or changing the framing of choices. However, moving
-  from an observed effect to a claim about the underlying mechanism still
-  requires additional structure. Economists typically need further evidence
-  about mediators, heterogeneity across individuals or groups, and the
-  behavioral theory linking the intervention to the outcome. An RCT may show
-  that a treatment works, but explaining <em>how</em> it works requires more
-  than the treatment effect alone.
-</p><p>
-<strong>B. Natural experiments and the broader “credibility revolution”
-    toolkit</strong>
-  are central to modern empirical economics when randomization is not available.
-  Core methods in this toolkit include difference-in-differences, regression
-  discontinuity designs, instrumental variables, and event studies. These
-  methods are designed to exploit naturally occurring or institutionally created
-  variation in ways that approximate the “experimental ideal.” Angrist and
-  Pischke present them as strategies for recovering causal effects from
-  observational settings by leveraging discontinuities, policy timing, exogenous
-  shocks, or other forms of quasi-random variation. In this respect, economics
-  often approaches mechanism through careful design logic: it first tries to
-  establish that a causal effect exists under credible identification, and only
-  then asks how that effect is produced. These methods do not automatically
-  reveal the mechanism, but they often provide the causal foothold needed for
-  more refined mechanistic inquiry.
-</p><p>
-<strong>C. Structural modeling and what might be called mechanism
-    discipline</strong>
-  represent a different style of mechanistic reasoning in economics. Economists
-  frequently build structural models, such as demand systems, dynamic models, or
-  game-theoretic models, in which the mechanism is encoded in the relations
-  among preferences, constraints, beliefs, technologies, and strategic
-  interaction. In these cases, the explanatory mechanism is not primarily a
-  decomposition into physical parts, but an organized system of incentives and
-  constraints that generates the observed pattern of behavior, often through
-  equilibrium feedback. Estimation and counterfactual simulation then allow
-  economists to ask what would happen if some policy were changed. This is
-  mechanistic explanation in a different register: it identifies the structure
-  that organizes responses rather than a sequence of physical component
-  activities. The mechanism is the institutional and strategic architecture
-  through which behavior is produced and transformed.
-</p><p>
-<strong>D. Mechanism discovery through heterogeneity and “mechanism
-    experiments”</strong>
-  is another important strategy in economics. Economists often probe competing
-  explanations by designing targeted variations that isolate specific channels,
-  such as information versus incentives, norms versus material payoffs, salience
-  manipulations, differential treatment intensity, or subgroup responses
-  predicted by rival theories. The idea is to intervene not just on an overall
-  treatment, but on a particular link in the causal chain, in order to see which
-  explanatory story remains viable. If one theory predicts that only information
-  matters while another predicts that incentives matter, varying those channels
-  separately can help determine which mechanism is doing the work. Likewise, if
-  competing theories predict different subgroup responses, heterogeneity can
-  itself become evidence about mechanism. In that sense, economists often
-  discover mechanisms indirectly by testing which channel-specific predictions
-  survive targeted interventions and comparative design.
-</p><h4 id="how-these-methods-relate-to-explanation-quality-and-the-psychological-hazards">
+</p><h4 id="disciplinary-approaches-to-mechanism-discovery">Mechanism discovery across disciplines</h4>
+<p>Scientists look for causal structure in different ways depending on what they can observe, manipulate, and ethically study. The following comparison summarizes the approaches developed above without treating every causal pathway as a fully established mechanism.</p>
+<div class="table-wrap"><table class="three-col long-table comparison-table"><thead><tr><th>Discipline</th><th>High-level approach</th><th>Evidence and limits</th></tr></thead><tbody>
+<tr><td data-label="Discipline"><strong>Biology and neuroscience</strong></td><td data-label="High-level approach">Decompose a phenomenon into interacting components and activities, then trace how their spatial and temporal organization produces or maintains it. Experiments perturb components; imaging, tracing, and functional follow-up help reconstruct the process.</td><td data-label="Evidence and limits">Converging localization, intervention, and pathway evidence can distinguish an actual working mechanism from a merely plausible story. An observed molecular or neural association alone does not establish that mechanism. <a href="#disciplinary-ref-1">[1]</a> <a href="#disciplinary-ref-2">[2]</a></td></tr>
+<tr><td data-label="Discipline"><strong>Epidemiology</strong></td><td data-label="High-level approach">Investigate how exposures affect health outcomes and which pathways may transmit those effects, often using observational data and natural experiments when randomization is unethical or impractical. Causal diagrams, explicit assumptions, and multiple study designs help identify effects.</td><td data-label="Evidence and limits">Confounding, selection, and measurement can complicate inference. Instrumental variables and mediation analyses may probe causal links or pathways, but an estimated effect or mediator is not, by itself, a complete mechanism. <a href="#disciplinary-ref-3">[3]</a> <a href="#disciplinary-ref-4">[4]</a></td></tr>
+<tr><td data-label="Discipline"><strong>Economics</strong></td><td data-label="High-level approach">Study how incentives, information, institutions, and strategic interactions shape outcomes. Field experiments and quasi-experimental designs identify effects; structural models and targeted comparisons articulate and test proposed channels.</td><td data-label="Evidence and limits">Credible identification can establish an effect without uniquely revealing how it arose. Channel-specific tests and model-based counterfactuals can strengthen a mechanism account, subject to their design and modeling assumptions. <a href="#disciplinary-ref-5">[5]</a></td></tr>
+</tbody></table></div>
+<h5 id="disciplinary-overview-references">References and further reading</h5>
+<ol><li id="disciplinary-ref-1"><a href="https://plato.stanford.edu/archives/fall2016/entries/science-mechanisms/">Mechanisms in Science - Stanford Encyclopedia of Philosophy</a></li>
+<li id="disciplinary-ref-2"><a href="https://www.cambridge.org/core/journals/philosophy-of-science/article/thinking-about-mechanisms/CF5B6D178B59809DBED15FF80D22A1EF">Thinking about Mechanisms | Philosophy of Science</a></li>
+<li id="disciplinary-ref-3"><a href="https://content.sph.harvard.edu/wwwhsph/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf">Causal Inference: What If</a></li>
+<li id="disciplinary-ref-4"><a href="https://pubmed.ncbi.nlm.nih.gov/16755261/">Instruments for causal inference: an epidemiologist's dream?</a></li>
+<li id="disciplinary-ref-5"><a href="https://www.dsecoaching.com/pdf/2008%20Angrist%20Pischke%20MostlyHarmlessEconometrics.pdf">Mostly Harmless Econometrics: An Empiricist's Companion</a></li></ol><h4 id="how-these-methods-relate-to-explanation-quality-and-the-psychological-hazards">
   How these methods relate to explanation quality</h4><p>
   This section ties the earlier discussion of explanation quality directly to
   methodology by showing that many scientific methods can be understood as
@@ -1632,44 +1393,16 @@
   dependence that explains the phenomenon and supports systematic “what if”
   reasoning. What changes from field to field is not the general explanatory
   logic, but the form that organization, parts, and testing must take.
-</p><p>When a discipline claims a mechanism, ask:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Check</th><th>Question</th></tr></thead><tbody><tr><td data-label="Check">Decomposition</td><td data-label="Question">
-: What are the proposed
-    components/sub-operations?
-  </td></tr><tr><td data-label="Check">Organization</td><td data-label="Question">
-: How are they connected (timing, feedback,
-    structure)?
-  </td></tr><tr><td data-label="Check">Intervention handle</td><td data-label="Question">
-: What manipulation would change the
-    phenomenon, and in what direction?
-  </td></tr><tr><td data-label="Check">Tracing / signatures</td><td data-label="Question">
-: What observable footprint should the
-    mechanism leave?
-  </td></tr><tr><td data-label="Check">Alternative competition</td><td data-label="Question">
-: What rival mechanisms are
-    plausible, and what evidence discriminates?
-  </td></tr><tr><td data-label="Check">Triangulation</td><td data-label="Question">
-: Do multiple methods with different bias
-    profiles converge?
-  </td></tr></tbody></table></div><p>
+</p><p>When a discipline claims a mechanism, ask:</p><ul class="ep-editorial-list"><li><strong>Decomposition</strong> — What are the proposed
+    components/sub-operations?</li><li><strong>Organization</strong> — How are they connected (timing, feedback,
+    structure)?</li><li><strong>Intervention handle</strong> — What manipulation would change the
+    phenomenon, and in what direction?</li><li><strong>Tracing / signatures</strong> — What observable footprint should the
+    mechanism leave?</li><li><strong>Alternative competition</strong> — What rival mechanisms are
+    plausible, and what evidence discriminates?</li><li><strong>Triangulation</strong> — Do multiple methods with different bias
+    profiles converge?</li></ul><p>
   And in general, when someone is proposing an explanation, think of these
   fundamental questions.
-</p><details class="sources-box"><summary>Sources and further reading</summary><ul>
-<li>
-<a href="https://plato.stanford.edu/archives/fall2016/entries/science-mechanisms/">Mechanisms in Science - Stanford Encyclopedia of Philosophy</a>
-</li>
-<li>
-<a href="https://www.cambridge.org/core/journals/philosophy-of-science/article/thinking-about-mechanisms/CF5B6D178B59809DBED15FF80D22A1EF">Thinking about Mechanisms | Philosophy of Science</a>
-</li>
-<li>
-<a href="https://content.sph.harvard.edu/wwwhsph/sites/1268/2024/01/hernanrobins_WhatIf_2jan24.pdf">Causal Inference: What If</a>
-</li>
-<li>
-<a href="https://pubmed.ncbi.nlm.nih.gov/16755261/">Instruments for causal inference: an epidemiologist's dream?</a>
-</li>
-<li>
-<a href="https://www.dsecoaching.com/pdf/2008%20Angrist%20Pischke%20MostlyHarmlessEconometrics.pdf">Mostly Harmless Econometrics: An Empiricist's Companion</a>
-</li>
-</ul></details><h3 id="keeping-mechanism-meaningful">Keeping Mechanism Meaningful</h3><p>
+</p><h3 id="keeping-mechanism-meaningful">Keeping Mechanism Meaningful</h3><p>
   On Lauren M. Ross’s view (in
   <em>Causation in neuroscience: Keeping Mechanism Meaningful</em>),
   “mechanistic explanation” in neuroscience is both
@@ -1695,33 +1428,21 @@
   not merely semantic. It’s that the field’s <em>evaluative</em> and
   <em>communicative</em> practices can get distorted when a prestige term floats
   between incompatible roles.
-</p><p>Ross distinguishes three broad uses, ordered by increasing breadth:</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Use of “mechanism”</th><th>What it means / why it matters</th></tr></thead><tbody><tr><td data-label="Use of “mechanism”">1</td><td data-label="What it means / why it matters">
-<p>
-      Mechanism as a <em>particular kind of causal system</em> (narrow /
+</p><p>Ross distinguishes three broad uses, ordered by increasing breadth:</p><ol class="ep-editorial-list"><li>Mechanism as a <em>particular kind of causal system</em> (narrow /
       constrained) - This is the “default expected” meaning. Mechanism-language
       is tied to <strong>machine-like causal organization</strong> and often to
       assumptions about fine-grained causal detail (often biophysical or
       otherwise “how it unfolds”). She treats this as historically primary and
-      communicatively informative.
-    </p>
-</td></tr><tr><td data-label="Use of “mechanism”">2</td><td data-label="What it means / why it matters">
-<p>
-      Mechanism as <em>any causal system</em> (broad / umbrella) - Here
+      communicatively informative.</li><li>Mechanism as <em>any causal system</em> (broad / umbrella) - Here
       “mechanism” collapses into “causal structure” or “causal system.” Ross’s
       worry is that this meaning can at best mark the causal/non-causal
       boundary, but it “cannot do much more”—it can’t discriminate kinds of
       causal organization, and it drains the term of the extra content
-      scientists often intend (“how,” intermediates, detail, etc.).
-    </p>
-</td></tr><tr><td data-label="Use of “mechanism”">3</td><td data-label="What it means / why it matters">
-<p>
-      Mechanism used for <em>non-causal</em> structures (widest / most
+      scientists often intend (“how,” intermediates, detail, etc.).</li><li>Mechanism used for <em>non-causal</em> structures (widest / most
       dangerous) - Ross flags a third, explicitly non-causal usage—e.g.,
       “topological mechanisms” (where explanatory power is
       mathematical/structural rather than causal), or “mechanism” used for
-      correlates/realizers/constitutive relations rather than causes.
-    </p>
-</td></tr></tbody></table></div><p>
+      correlates/realizers/constitutive relations rather than causes.</li></ol><p>
   Her evaluation here is blunt: if the term is supposed to convey causal
   information, that third usage is “clearly disadvantageous” because it can
   <em>mislead</em> by sounding causal while not being causal.
@@ -1743,31 +1464,17 @@
 </p><p>
   Based on her recommendations, Ross’s assessment implies that a mechanistic
   explanation is better (higher quality) to the extent that it:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Quality criterion</th><th>Implication</th></tr></thead><tbody><tr><td data-label="Quality criterion">Disambiguates its explanatory kind</td><td data-label="Implication">
- (causal vs constitutive
-    vs mathematical/topological) and doesn’t trade on ambiguity.
-  </td></tr><tr><td data-label="Quality criterion">Earns causal talk via causal standards</td><td data-label="Implication">
-
-    (intervention/difference-making, etc.), rather than labeling
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Disambiguates its explanatory kind</dt><dd>(causal vs constitutive
+    vs mathematical/topological) and doesn’t trade on ambiguity.</dd></div><div class="ep-definition-item"><dt>Earns causal talk via causal standards</dt><dd>(intervention/difference-making, etc.), rather than labeling
     correlates/realizers as “mechanisms” in a way that invites causal
-    misreading.
-  </td></tr><tr><td data-label="Quality criterion">Matches the causal structure to the explanandum</td><td data-label="Implication">
-—using
+    misreading.</dd></div><div class="ep-definition-item"><dt>Matches the causal structure to the explanandum</dt><dd>—using
     “mechanism” only when the machine-analogy features are genuinely doing
     explanatory work, and otherwise using more fitting causal concepts (pathway,
-    cascade, circuit, network, etc.).
-  </td></tr><tr><td data-label="Quality criterion">Is level-appropriate rather than reflexively reductive</td><td data-label="Implication">
-,
-    recognizing that different levels can be legitimate explanatory frameworks.
-  </td></tr><tr><td data-label="Quality criterion">Resists status-term distortion</td><td data-label="Implication">
-: it invites appraisal of the
+    cascade, circuit, network, etc.).</dd></div><div class="ep-definition-item"><dt>Is level-appropriate rather than reflexively reductive</dt><dd>recognizing that different levels can be legitimate explanatory frameworks.</dd></div><div class="ep-definition-item"><dt>Resists status-term distortion</dt><dd>it invites appraisal of the
     model’s actual causal content and empirical support rather than relying on
-    the honorific “mechanistic.”
-  </td></tr><tr><td data-label="Quality criterion">Improves communication</td><td data-label="Implication">
- by preventing audiences from
+    the honorific “mechanistic.”</dd></div><div class="ep-definition-item"><dt>Improves communication</dt><dd>by preventing audiences from
     inferring biophysical detail when only higher-level structure has been shown
-    (or inferring causation when only correlation/constitution is at issue).
-  </td></tr></tbody></table></div><p>
+    (or inferring causation when only correlation/constitution is at issue).</dd></div></dl><p>
   Ross’s paper fits cleanly into the pattern we’ve been developing. The term
   “mechanism” can produce a <strong>feeling of depth</strong> (“this is serious,
   causal, deep!”) even when it’s being used in an overly broad or non-causal
@@ -2216,146 +1923,28 @@
     </p></div><p>
   Here are two lists you can use to quickly identify the adequacy of each type
   of structure.
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Mechanism explanation</th><th>Cascade explanation</th></tr></thead><tbody><tr><td data-label="Mechanism explanation">phenomenon/contrast + boundary</td><td data-label="Cascade explanation">escalation contrast (explode vs fizzle)</td></tr><tr><td data-label="Mechanism explanation">entities</td><td data-label="Cascade explanation">trigger identification</td></tr><tr><td data-label="Mechanism explanation">activities</td><td data-label="Cascade explanation">amplification structure (branching/multipliers)</td></tr><tr><td data-label="Mechanism explanation">organization</td><td data-label="Cascade explanation">stability/self-reinforcement</td></tr><tr><td data-label="Mechanism explanation">intervention predictions</td><td data-label="Cascade explanation">leverage points (early and midstream)</td></tr><tr><td data-label="Mechanism explanation">evidence mapping (how-actually-enough)</td><td data-label="Cascade explanation">diffusion evidence (networks/time-series)</td></tr><tr><td data-label="Mechanism explanation">boundaries/defeaters</td><td data-label="Cascade explanation">suppression/failure conditions</td></tr><tr><td data-label="Mechanism explanation">alternatives</td><td data-label="Cascade explanation">cross-context invariance (when mechanisms vary)</td></tr></tbody></table></div><h4 id="applying-ross-to-misinformation">Applying Ross’s Framework to a Misinformation Cascade</h4><div class="section-sequence"><h4 id="misinformation-cascade-step-1">Step 1: What’s the phenomenon/contrast?</h4><p>
-      A cascade-apt explanandum isn’t “why did person X believe claim Y?”
-      (mechanism). It’s:
-    </p><ul>
-<li>
-<strong>Why did this misinformation story spread widely rather than remain
-          local or die out?</strong>
-</li>
-<li>
-<strong>Why did it accelerate quickly / jump communities / persist over
-          time?</strong>
-</li>
-<li>
-<strong>Why did it spill into offline behavior or institutional
-          responses?</strong>
-</li>
-</ul><p>
-      Those are classic cascade contrasts: <em>growth vs non-growth</em>,
-      <em>containment vs spillover</em>, <em>fizzle vs runaway</em>.
-    </p><h4 id="misinformation-cascade-step-2">Step 2: Build the misinformation cascade explanation</h4><p>(a) Trigger</p><p>A misinformation cascade typically begins with a trigger such as:</p><ul>
-<li>a high-visibility post by a prominent account,</li>
-<li>a breaking-news vacuum (high uncertainty),</li>
-<li>a salient event that “primes” an existing narrative template,</li>
-<li>
-        or an algorithmic surfacing event (platform recommendation boost).
-      </li>
-</ul><p>
-      A cascade explanation earns its keep when it identifies what counts as the
-      initiating condition <strong>and</strong> why it crosses a threshold
-      (e.g., enough initial exposures to get branching going).
-    </p><p>(b) Sequential amplification (the heart)</p><p>
-      You then specify the amplification path(s). In misinformation,
-      amplification often comes from multiple sequential multipliers:
-    </p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Multiplier</th><th>Amplification effect</th></tr></thead><tbody><tr><td data-label="Multiplier">Cognitive multiplier</td><td data-label="Amplification effect">
- emotional salience → higher share
-        probability
-      </td></tr><tr><td data-label="Multiplier">Social multiplier</td><td data-label="Amplification effect">
- identity signaling → group
-        endorsement and repetition
-      </td></tr><tr><td data-label="Multiplier">Algorithmic multiplier</td><td data-label="Amplification effect">
- engagement → recommender boosts
-        → more exposure
-      </td></tr><tr><td data-label="Multiplier">Media multiplier</td><td data-label="Amplification effect">
- online buzz → coverage → legitimacy
-        halo → more spread
-      </td></tr><tr><td data-label="Multiplier">Cross-platform multiplier</td><td data-label="Amplification effect">
- migration → new audience
-        segments → renewed growth
-      </td></tr></tbody></table></div><p>
-      This is cascade logic: small initial perturbation becomes large via
-      repeated gain at each stage.
-    </p><p>(c) Stable propagation / momentum</p><p>“Stable progression” shows up as:</p><ul>
-<li>feedback loops (engagement → promotion → engagement),</li>
-<li>reputational lock-in (influencers double down),</li>
-<li>
-        identity-protective dynamics (counterevidence increases commitment),
-      </li>
-<li>
-        and saturation dynamics (it eventually slows when audiences saturate or
-        platforms intervene).
-      </li>
-</ul><p>
-      A good cascade explanation makes clear
-      <strong>why it was hard to stop once it started</strong>, and what the
-      momentum-maintaining loops were.
-    </p><p>(d) Spillover (cross-level effects)</p><p>
-      Misinformation cascades often “spill” beyond the originating community:
-    </p><ul>
-<li>from niche forums → mainstream platforms,</li>
-<li>online belief → offline behavior,</li>
-<li>public discourse → institutional reaction → further discourse.</li>
-</ul><p>
-      This is exactly the kind of “not bounded to one discrete system”
-      propagation that makes cascade models natural.
-    </p><h4 id="misinformation-cascade-step-3">Step 3: Why this cascade explanation can be more suited than a
-      mechanistic one</h4><p>A mechanistic explanation here would often aim at:</p><ul>
-<li>
-        individual cognitive mechanisms (motivated reasoning, heuristic
-        processing),
-      </li>
-<li>micro-interactions (who persuades whom),</li>
-<li>algorithmic mechanisms (ranking function details),</li>
-<li>etc.</li>
-</ul><p>
-      Those can be real and important—but they’re not always the right
-      explanatory level for the <strong>spread</strong> phenomenon.
-    </p><p>
-      Here’s Ross’s key insight translated: a cascade explanation can do
-      explanatory work
-      <strong>even when the underlying micro-mechanisms vary across contexts</strong>.
-    </p><ul>
-<li>One community spreads it via identity signaling.</li>
-<li>Another spreads it via fear and uncertainty.</li>
-<li>Another spreads it due to elite cues.</li>
-<li>
-        Another spreads it because the platform’s recommender happened to catch
-        it.
-      </li>
-</ul><p>The <em>mechanisms differ</em>, but what might remain invariant is:</p><ul>
-<li>branching amplification,</li>
-<li>threshold triggering,</li>
-<li>feedback stabilization,</li>
-<li>network bridge crossings.</li>
-</ul><p>
-      So if your explanatory aim is to understand and control the
-      <strong>large-scale growth pattern</strong>, it may be more explanatory to
-      model:
-    </p><ul>
-<li>the branching factors,</li>
-<li>the feedback loops,</li>
-<li>the early threshold conditions,</li>
-<li>
-        and the choke points, than to insist on a single unified
-        cognitive/algorithmic micro-mechanism.
-      </li>
-</ul><h4 id="misinformation-cascade-step-4">Step 4: What counts as a good misinformation-cascade
-      explanation</h4><p><strong>Cascade explanation of misinformation includes:</strong></p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Cascade criterion</th><th>What it should show</th></tr></thead><tbody><tr><td data-label="Cascade criterion">Trigger threshold</td><td data-label="What it should show">
-: identifies the initiating conditions
-        and why they crossed “ignite” threshold.
-      </td></tr><tr><td data-label="Cascade criterion">Amplification chain</td><td data-label="What it should show">
-: specifies sequential multipliers
-        (human + algorithm + social).
-      </td></tr><tr><td data-label="Cascade criterion">Stability loops</td><td data-label="What it should show">
-: identifies feedback maintaining
-        spread.
-      </td></tr><tr><td data-label="Cascade criterion">Fizzle conditions</td><td data-label="What it should show">
-: shows when/why similar stories die
-        (no bridge nodes; low affect; platform friction).
-      </td></tr><tr><td data-label="Cascade criterion">Leverage points</td><td data-label="What it should show">
-: predicts interventions that reduce
-        spread (rate-limits, friction, inoculation, deplatforming, reducing
-        recommendation boost, targeting bridge nodes).
-      </td></tr><tr><td data-label="Cascade criterion">Evidence</td><td data-label="What it should show">
-: time-series diffusion + network traces +
-        intervention comparisons (e.g., when friction is introduced, growth
-        curves change).
-      </td></tr><tr><td data-label="Cascade criterion">Cross-context generalization</td><td data-label="What it should show">
-: distinguishes what’s
-        structural vs what’s local mechanism-specific.
-      </td></tr></tbody></table></div></div><p>Ross’s framework does not say “never use mechanisms.” It says not to force every explanatory problem into a mechanism-shaped account. A powerful strategy is a <strong>hybrid</strong>: use a cascade model at the macro level to explain spread dynamics, thresholds, and leverage points, while using local mechanisms to explain why particular multipliers exist—for example, why identity increases sharing probability, why ranking changes increase exposure, or why certain narratives capture attention. This avoids both mechanism fetishism, which demands micro-detail everywhere, and cascade simplification, which gives up causal accountability.</p><h3 id="social-structural-explanation-and-causal-constraints">
+</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Mechanism explanation</th><th>Cascade explanation</th></tr></thead><tbody><tr><td data-label="Mechanism explanation">phenomenon/contrast + boundary</td><td data-label="Cascade explanation">escalation contrast (explode vs fizzle)</td></tr><tr><td data-label="Mechanism explanation">entities</td><td data-label="Cascade explanation">trigger identification</td></tr><tr><td data-label="Mechanism explanation">activities</td><td data-label="Cascade explanation">amplification structure (branching/multipliers)</td></tr><tr><td data-label="Mechanism explanation">organization</td><td data-label="Cascade explanation">stability/self-reinforcement</td></tr><tr><td data-label="Mechanism explanation">intervention predictions</td><td data-label="Cascade explanation">leverage points (early and midstream)</td></tr><tr><td data-label="Mechanism explanation">evidence mapping (how-actually-enough)</td><td data-label="Cascade explanation">diffusion evidence (networks/time-series)</td></tr><tr><td data-label="Mechanism explanation">boundaries/defeaters</td><td data-label="Cascade explanation">suppression/failure conditions</td></tr><tr><td data-label="Mechanism explanation">alternatives</td><td data-label="Cascade explanation">cross-context invariance (when mechanisms vary)</td></tr></tbody></table></div><h4 id="applying-ross-to-misinformation">Applying Ross’s Framework to a Misinformation Cascade</h4>
+<p>Consider a hypothetical false claim that begins in a small online community and later reaches a much wider audience. The question here is not primarily <em>why one person believed it</em>, but <strong>why the claim spread widely rather than remaining local or fading out</strong>. That contrast makes the pattern of propagation—its trigger, amplification, and momentum—the focus of the explanation. It does not imply that every misinformation story becomes a cascade.</p>
+<div class="section-sequence cascade-example">
+<h5 id="misinformation-cascade-step-1">1. Start with the outcome to be explained</h5>
+<p>We might want to explain the claim’s rapid growth, its movement between communities, or its persistence after the initial attention has passed. These are related but different outcomes. Specifying which one matters helps determine what evidence to seek and prevents an account of individual belief from being mistaken for an account of population-level spread.</p>
+<h5 id="misinformation-cascade-step-2">2. Trace the cascade from trigger to consequences</h5>
+<p>Ross characterizes cascades by an initiating trigger, sequential amplification, and relatively stable progression. In this <em>illustrative</em> case, those features could appear as follows. The rows are questions to investigate, not stages that every rumor must pass through.</p>
+<div class="table-wrap"><table class="three-col dense"><thead><tr><th>Feature</th><th>Possible role in the spread</th><th>What to look for</th></tr></thead><tbody>
+<tr><td data-label="Feature"><strong>Trigger</strong></td><td data-label="Possible role in the spread">A prominent post or a timely event gives the claim its initial exposure.</td><td data-label="What to look for">The timing and reach of the first consequential posts.</td></tr>
+<tr><td data-label="Feature"><strong>Amplification</strong></td><td data-label="Possible role in the spread">Early sharing brings new exposure; further sharing, recommendations, or coverage may multiply that reach.</td><td data-label="What to look for">Successive increases in reach and the channels responsible for them.</td></tr>
+<tr><td data-label="Feature"><strong>Momentum</strong></td><td data-label="Possible role in the spread">Repeated exposure or feedback may sustain circulation after the initial trigger.</td><td data-label="What to look for">Continued spread, repeat sharing, and evidence of reinforcing loops.</td></tr>
+<tr><td data-label="Feature"><strong>Spillover</strong></td><td data-label="Possible role in the spread">The claim may cross community or platform boundaries, or prompt responses beyond the original discussion.</td><td data-label="What to look for">Cross-community links, reposting sequences, and any documented downstream responses.</td></tr>
+<tr><td data-label="Feature"><strong>Slowdown or containment</strong></td><td data-label="Possible role in the spread">Audience saturation or changes in exposure and resharing conditions may interrupt growth.</td><td data-label="What to look for">When the trajectory changes and which conditions change with it.</td></tr>
+</tbody></table></div>
+<p>The explanatory point is the <strong>connection between stages</strong>, not a list of possible influences. For example, a proposed account might trace an early post to increased sharing, then to wider recommendation-driven exposure, then to circulation in new communities. Each link needs support; the sequence is a hypothesis until the evidence establishes it.</p>
+<h5 id="misinformation-cascade-step-3">3. Ask what would distinguish this account from alternatives</h5>
+<p>A convincing story about virality is not yet a good explanation. Time-stamped sharing data, network traces, and information about recommendations or platform changes—where available—can help establish the order and contribution of different links. Comparisons with similar claims that <em>did not</em> spread can be especially informative: did they lack an early trigger, an amplification channel, or a bridge into other communities?</p>
+<p>The account must also be open to revision. If a claim was already spreading rapidly before recommendation-driven exposure increased, recommendations should not simply be assumed to have <em>initiated</em> the wave. If cross-community sharing happened only after most growth, it might explain the wave’s breadth but not its early acceleration. Observational traces can still leave several explanations compatible with the evidence, so causal claims should be no stronger than the available comparisons and assumptions permit.</p>
+<h5 id="misinformation-cascade-step-4">4. Use the explanatory level that answers the question</h5>
+<p>A cascade account explains the <strong>trajectory of spread</strong>: where it began, how its reach grew, and why it continued or stopped. Local mechanistic accounts can explain particular links—for instance, why a person reshares a post or how a ranking system changes exposure. The next section adds a complementary question about <strong>structural constraints</strong>: how relatively stable features such as network connections and platform rules enable some propagation paths while restricting others.</p>
+<p>These approaches need not compete. The cascade maps the spreading process; mechanisms investigate selected links within it; structural explanation identifies the conditions in which that process unfolds. What matters is choosing the explanatory structure that fits the outcome and then showing, with evidence, that the proposed dependencies actually hold.</p>
+</div><h3 id="social-structural-explanation-and-causal-constraints">
   Social Structural Explanation and Causal Constraints
 </h3><p>
   Ross’s project in <strong>social structural explanation</strong> is, at
@@ -2544,31 +2133,19 @@
 </p><p>
   Ross’s framework therefore supports a concise grading rubric for
   <strong>high-quality social structural explanation</strong>:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>General structural criterion</th><th>Standard</th></tr></thead><tbody><tr><td data-label="General structural criterion">It names the structure non-vacuously</td><td data-label="Standard">
- The explanation
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>It names the structure non-vacuously</dt><dd>The explanation
     identifies a policy, institution, or resource topology rather than relying
-    on slogans or prestige labels.
-  </td></tr><tr><td data-label="General structural criterion">It shows genuine constraint behavior</td><td data-label="Standard">
- The explanation
+    on slogans or prestige labels.</dd></div><div class="ep-definition-item"><dt>It shows genuine constraint behavior</dt><dd>The explanation
     demonstrates that the structure limits the outcome space and guides outcomes
-    rather than merely triggering them.
-  </td></tr><tr><td data-label="General structural criterion">It establishes difference-making</td><td data-label="Standard">
- The explanation is
+    rather than merely triggering them.</dd></div><div class="ep-definition-item"><dt>It establishes difference-making</dt><dd>The explanation is
     supported by plausible counterfactual evidence, whether comparative,
-    quasi-experimental, or intervention-based.
-  </td></tr><tr><td data-label="General structural criterion">It clarifies the relation to agency</td><td data-label="Standard">
- The explanation shows
+    quasi-experimental, or intervention-based.</dd></div><div class="ep-definition-item"><dt>It clarifies the relation to agency</dt><dd>The explanation shows
     how structure reshapes feasible options and probabilities without erasing
-    the role of choice altogether.
-  </td></tr><tr><td data-label="General structural criterion">It states scope and boundary conditions</td><td data-label="Standard">
- The explanation
+    the role of choice altogether.</dd></div><div class="ep-definition-item"><dt>It states scope and boundary conditions</dt><dd>The explanation
     specifies when the constraint binds, when it loosens, and where its
-    influence is strongest or weakest.
-  </td></tr><tr><td data-label="General structural criterion">It beats plausible alternatives</td><td data-label="Standard">
- The explanation accounts
+    influence is strongest or weakest.</dd></div><div class="ep-definition-item"><dt>It beats plausible alternatives</dt><dd>The explanation accounts
     for patterns that rival individualistic or purely proximal-cause stories
-    struggle to explain.
-  </td></tr></tbody></table></div><p>
+    struggle to explain.</dd></div></dl><p>
   Taken together, these points show what Ross is trying to achieve. Social
   structural explanation, on her view, is not a fallback for when finer-grained
   explanation is unavailable, nor is it a rhetorical substitute for real causal
@@ -2785,55 +2362,31 @@
   A high-quality structural explanation of misinformation spread should satisfy
   several distinct conditions. Here, a numbered list is helpful because the
   criteria are explicitly evaluative:
-</p><div class="table-wrap"><table class="two-col long-table"><thead><tr><th>Misinformation criterion</th><th>Good vs. weak performance</th></tr></thead><tbody><tr><td data-label="Misinformation criterion">Structural specificity (the anti-slogan test)</td><td data-label="Good vs. weak performance">
-<p>
- A good
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Structural specificity (the anti-slogan test)</dt><dd>A good
       explanation identifies concrete structural features such as a ranking
       rule, moderation policy, friction affordance, or network segregation
       pattern. A bad explanation falls back on vague claims like “capitalism,”
-      “modernity,” or “polarization” did it, without any operational handle.
-    </p>
-</td></tr><tr><td data-label="Misinformation criterion">Constraint articulation</td><td data-label="Good vs. weak performance">
-<p>
- A good explanation states what
+      “modernity,” or “polarization” did it, without any operational handle.</dd></div><div class="ep-definition-item"><dt>Constraint articulation</dt><dd>A good explanation states what
       trajectories are made easy, difficult, or impossible. For example, it may
       show that one design makes rapid resharing cheap, or that a certain
       network topology blocks cross-community spread unless bridge nodes
       activate. A bad explanation says only that “structure shapes behavior”
-      without specifying what that shaping amounts to.
-    </p>
-</td></tr><tr><td data-label="Misinformation criterion">Difference-making evidence</td><td data-label="Good vs. weak performance">
-<p>
- A good explanation points to
+      without specifying what that shaping amounts to.</dd></div><div class="ep-definition-item"><dt>Difference-making evidence</dt><dd>A good explanation points to
       real or quasi-interventions showing that when the structure changes,
       diffusion changes. A bad explanation merely asserts structural influence
-      without testing it against counterfactuals.
-    </p>
-</td></tr><tr><td data-label="Misinformation criterion">Level-appropriate scope</td><td data-label="Good vs. weak performance">
-<p>
- A good explanation aims at
+      without testing it against counterfactuals.</dd></div><div class="ep-definition-item"><dt>Level-appropriate scope</dt><dd>A good explanation aims at
       population-level patterns and does not pretend to be a full theory of
       individual belief adoption. A bad explanation overreaches by implying that
-      structure alone explains every individual cognitive response.
-    </p>
-</td></tr><tr><td data-label="Misinformation criterion">Rival explanation competition</td><td data-label="Good vs. weak performance">
-<p>
- A good explanation
+      structure alone explains every individual cognitive response.</dd></div><div class="ep-definition-item"><dt>Rival explanation competition</dt><dd>A good explanation
       distinguishes itself from purely individual-bias stories, purely
       content-based virality stories, and purely elite-cue stories by showing
       what those alternatives fail to explain, such as cross-platform
       differences or time-varying bursts after rule changes. A bad explanation
-      can be stretched to explain anything after the fact.
-    </p>
-</td></tr><tr><td data-label="Misinformation criterion">Leverage points and policy relevance</td><td data-label="Good vs. weak performance">
-<p>
- A good explanation
+      can be stretched to explain anything after the fact.</dd></div><div class="ep-definition-item"><dt>Leverage points and policy relevance</dt><dd>A good explanation
       identifies where changing constraints would likely change outcomes, for
       example by increasing friction, disrupting bridge nodes, reducing
       engagement incentives, or improving trusted institutional channels. A bad
-      explanation offers no actionable counterfactuals.
-    </p>
-</td></tr></tbody></table></div><p>
+      explanation offers no actionable counterfactuals.</dd></div></dl><p>
   These criteria show how one can distinguish a genuinely explanatory structural
   account from one that merely sounds sociological or critical without doing
   disciplined causal work.
@@ -2845,29 +2398,19 @@
   micro-mechanism for every individual act of belief update. Instead, it would
   explain the spread by identifying the relevant trigger, the surrounding
   constraint regime, and the amplification dynamics that made the wave possible.
-</p><p>In such a case, the explanation might proceed by identifying:</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Element of the worked explanation</th><th>Illustration</th></tr></thead><tbody><tr><td data-label="Element of the worked explanation">trigger condition</td><td data-label="Illustration">, such as a high-centrality account
-    posting during a period of uncertainty;
-  </td></tr><tr><td data-label="Element of the worked explanation">constraint regime</td><td data-label="Illustration">, such as low-friction resharing
-    combined with engagement-ranked feeds;
-  </td></tr><tr><td data-label="Element of the worked explanation">amplification process</td><td data-label="Illustration">, where engagement loops accelerate
+</p><p>In such a case, the explanation might proceed by identifying:</p><ul class="ep-editorial-list"><li><strong>Trigger condition</strong> — such as a high-centrality account
+    posting during a period of uncertainty</li><li><strong>Constraint regime</strong> — such as low-friction resharing
+    combined with engagement-ranked feeds</li><li><strong>Amplification process</strong> — where engagement loops accelerate
     early spread and recommendation systems surface the content beyond the
-    original audience;
-  </td></tr><tr><td data-label="Element of the worked explanation">network structure</td><td data-label="Illustration">, in which clustered communities plus a
+    original audience</li><li><strong>Network structure</strong> — in which clustered communities plus a
     few bridge nodes allow the rumor to jump across groups once those bridges
-    repost;
-  </td></tr><tr><td data-label="Element of the worked explanation">5</td><td data-label="Illustration">
-    a source of <strong>stability</strong>, such as identity signaling that
+    repost</li><li>a source of <strong>stability</strong>, such as identity signaling that
     makes retractions costly and encourages counterevidence to be reinterpreted
-    as hostile propaganda;
-  </td></tr><tr><td data-label="Element of the worked explanation">6</td><td data-label="Illustration">
-    an account of <strong>why the rumor did not fizzle</strong>, namely that the
+    as hostile propaganda;</li><li>an account of <strong>why the rumor did not fizzle</strong>, namely that the
     structure failed to provide early damping because friction was too low and
-    algorithmic amplification too strong; and
-  </td></tr><tr><td data-label="Element of the worked explanation">7</td><td data-label="Illustration">
-    clear <strong>leverage points</strong>, such as adding friction, limiting
+    algorithmic amplification too strong; and</li><li>clear <strong>leverage points</strong>, such as adding friction, limiting
     forwarding, reducing recommender boosts, targeting bridge nodes, or
-    inoculating highly exposed clusters.
-  </td></tr></tbody></table></div><p>
+    inoculating highly exposed clusters.</li></ul><p>
   What is important about this style of explanation is what it makes
   intelligible. It explains the <strong>speed</strong> of the spread, its
   <strong>breadth</strong>, its ability to make
@@ -2888,14 +2431,10 @@
   “deriving from laws” nor as “always giving mechanisms,” but as
   <strong>depicting causal patterns</strong>. She argues that two ingredients
   are jointly central:
-</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Ingredient</th><th>Role in explanation</th></tr></thead><tbody><tr><td data-label="Ingredient">Causal dependence</td><td data-label="Role in explanation">
-: the phenomenon happened
-    <em>because of</em> certain causal factors.
-  </td></tr><tr><td data-label="Ingredient">Scope / pattern / regularity</td><td data-label="Role in explanation">
-: explanation also shows the
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Causal dependence</dt><dd>the phenomenon happened
+    <em>because of</em> certain causal factors.</dd></div><div class="ep-definition-item"><dt>Scope / pattern / regularity</dt><dd>explanation also shows the
     <strong>range of circumstances</strong> in which that causal dependence
-    holds (how general it is, where it breaks, what variants it has).
-  </td></tr></tbody></table></div><p>
+    holds (how general it is, where it breaks, what variants it has).</dd></div></dl><p>
   Her claim is not just “causes matter.” It’s:
   <strong>explanation = causes + the pattern of when/how those causes matter.</strong>
   That’s why she explicitly endorses “causal patterns” as the central
@@ -2935,31 +2474,24 @@
 </p><p>
   Potochnik’s contribution is to insist that biology’s explanatory repertoire
   includes many non-mechanistic causal patterns:
-</p><div class="table-wrap"><table class="two-col long-table"><thead><tr><th>Explanatory style</th><th>What it contributes</th></tr></thead><tbody><tr><td data-label="Explanatory style">1</td><td data-label="What it contributes">
-    Mechanistic explanations (component-and-process): These give causal +
+</p><ul class="ep-editorial-list"><li><strong>Mechanistic explanations (component-and-process):</strong> These give causal +
     organizational detail—classic “how it works” stories, e.g., biochemical
     pathways for photosynthesis. Mechanistic explanations typically answer What
     are the parts/activities? How are they organized? How do successive steps
-    produce the phenomenon?
-  </td></tr><tr><td data-label="Explanatory style">2</td><td data-label="What it contributes">
-    Functional / optimality explanations (role-based, selective advantage): She
+    produce the phenomenon?</li><li><strong>Functional / optimality explanations (role-based, selective advantage):</strong> She
     treats classic optimality explanations as a kind of functional explanation,
     traits are explained via the fitness-conferring role they play under
     selection. This is causal, but it often abstracts away from detailed causal
     production (developmental genetics, etc.) in order to capture a
-    <em>selection-based causal pattern</em>.
-  </td></tr><tr><td data-label="Explanatory style">3</td><td data-label="What it contributes">
-    Equilibrium explanations (stability-focused; process-omitting): She
+    <em>selection-based causal pattern</em>.</li><li><strong>Equilibrium explanations (stability-focused; process-omitting):</strong> She
     emphasizes evolutionary game theory as a major explanatory strategy and
     describes it as fruitfully construed as
     <strong>equilibrium explanation</strong>—explaining via stability points
     rather than tracing the full causal history. Equilibrium explanations can be
     broadly causal (they reflect causal patterns), yet they may
     <strong>omit the causal process leading to equilibrium</strong>, and still
-    be explanatory for the relevant aims.
-  </td></tr><tr><td data-label="Explanatory style">4</td><td data-label="What it contributes">
-    Large-scale and structural-cause explanations (context, distance, background
-    shaping): <strong>Large-scale causes</strong> are spatially or temporally
+    be explanatory for the relevant aims.</li><li><strong>Large-scale and structural-cause explanations (context, distance, background
+    shaping):</strong> <strong>Large-scale causes</strong> are spatially or temporally
     distant influences. <strong>Structural causes</strong> are contextual
     influences that shape a phenomenon
     <em>without changing to precipitate it</em>. She insists these can be “just
@@ -2967,8 +2499,7 @@
     aligns very closely with Ross on
     <strong>constraints and structure</strong>—though Potochnik’s framing is
     broader: “mechanism” is only one kind of causal-pattern depiction; context
-    and large-scale influences are also legitimate causal patterns.
-  </td></tr></tbody></table></div><p>
+    and large-scale influences are also legitimate causal patterns.</li></ul><p>
   Potochnik’s position is basically they <em>don’t</em> all fit neatly into
   “mechanism,” and trying to force them to can mislead. She notes a recurring
   dispute: mechanists will either (i) stretch “mechanism” to include
@@ -3001,28 +2532,16 @@
 </p><p>
   What makes an explanation “good” on Potochnik’s view? Potochnik doesn’t give a
   single universal checklist, but her framework yields fairly crisp criteria.
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Evaluation dimension</th><th>Question</th></tr></thead><tbody><tr><td data-label="Evaluation dimension">1</td><td data-label="Question">
-    Causal dependence: does it correctly identify what makes a difference? An
+</p><ul class="ep-editorial-list"><li><strong>Causal dependence:</strong> does it correctly identify what makes a difference? An
     explanation must latch onto genuine dependence relations (not mere
-    correlations or labels).
-  </td></tr><tr><td data-label="Evaluation dimension">2</td><td data-label="Question">
-    Scope: does it correctly characterize the range of circumstances? Good
+    correlations or labels).</li><li><strong>Scope:</strong> does it correctly characterize the range of circumstances? Good
     explanations don’t just cite a cause; they show where/how it
-    generalizes—what else it would explain, when it would fail.
-  </td></tr><tr><td data-label="Evaluation dimension">3</td><td data-label="Question">
-    Pattern selection is justified by the research question (aim-sensitivity):
-    The “right” causal pattern depends on what you’re trying to understand; she
+    generalizes—what else it would explain, when it would fail.</li><li><strong>Pattern selection is justified by the research question (aim-sensitivity):</strong> The “right” causal pattern depends on what you’re trying to understand; she
     repeatedly interprets biological disagreements as disagreements about
-    explanatory projects rather than metaphysical worldviews.
-  </td></tr><tr><td data-label="Evaluation dimension">4</td><td data-label="Question">
-    Strategic abstraction/idealization is legitimate when it serves the pattern:
-    Omissions aren’t defects if they are the <em>means</em> by which the model
-    captures the targeted causal pattern.
-  </td></tr><tr><td data-label="Evaluation dimension">5</td><td data-label="Question">
-    Don’t over-demand mechanistic detail: Lack of component/process detail is
+    explanatory projects rather than metaphysical worldviews.</li><li><strong>Strategic abstraction/idealization is legitimate when it serves the pattern:</strong> Omissions aren’t defects if they are the <em>means</em> by which the model
+    captures the targeted causal pattern.</li><li><strong>Don’t over-demand mechanistic detail:</strong> Lack of component/process detail is
     not automatically “non-explanatory” if the explanation is doing different
-    explanatory work (e.g., equilibrium, selection-pattern, structural-cause).
-  </td></tr></tbody></table></div><p>
+    explanatory work (e.g., equilibrium, selection-pattern, structural-cause).</li></ul><p>
   Potochnik gives a <strong>normative defense</strong> of non-mechanistic
   explanation (structural/large-scale/general patterns) that complements Ross’s
   more fine-grained taxonomy. She explains why “mechanism hunger” is
@@ -3054,22 +2573,16 @@
   how it connects to the things we have been building: explanation quality,
   psychological satisfaction/closure, mechanisms vs cascades/structures,
   underdetermination/pluralism, and the “seductions of clarity.”
-</p><p>Potochnik is trying to do three things with the eight questions:</p><div class="table-wrap"><table class="two-col"><thead><tr><th>What Potochnik is doing</th><th>Why it matters</th></tr></thead><tbody><tr><td data-label="What Potochnik is doing">Decouple</td><td data-label="Why it matters">
- philosophical debates: you can disagree about
+</p><p>Potochnik is trying to do three things with the eight questions:</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Decouple</dt><dd>philosophical debates: you can disagree about
     abstraction, understanding, idealization, or levels
     <em>without</em> disagreeing about whether explanation is
-    causal/mechanistic/law-like.
-  </td></tr><tr><td data-label="What Potochnik is doing">Legitimize non-ontic issues</td><td data-label="Why it matters">
-: she pushes back on the idea
+    causal/mechanistic/law-like.</dd></div><div class="ep-definition-item"><dt>Legitimize non-ontic issues</dt><dd>she pushes back on the idea
     that “the only real question” is what in the world explains. She wants
     communicative, psychological, and representational issues to be treated as
-    <em>central</em>, not “mere pragmatics.”
-  </td></tr><tr><td data-label="What Potochnik is doing">Make room for explanation pluralism</td><td data-label="Why it matters">
-: different legitimate
+    <em>central</em>, not “mere pragmatics.”</dd></div><div class="ep-definition-item"><dt>Make room for explanation pluralism</dt><dd>different legitimate
     explanatory aims → different standards → multiple good explanations. This
     connects directly to questions about indeterminacy and competing
-    explanations.
-  </td></tr></tbody></table></div><p>
+    explanations.</dd></div></dl><p>
   Below are the eight questions. I will apply the questions to the concrete
   example we have been tracking throughout the post: misinformation spread.
   The popular explanation/story is “Misinformation spreads because people are
@@ -3289,9 +2802,7 @@
 </p><p>
   Potochnik is building a conceptual framework that <em>explains why</em> there
   seems to be new criteria for every type of explanation:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>No.</th><th>Explanatory dimension / virtue</th></tr></thead><tbody><tr><td data-label="No.">1</td><td data-label="Explanatory dimension / virtue">mechanistic virtues (parts/activities/organization),</td></tr><tr><td data-label="No.">2</td><td data-label="Explanatory dimension / virtue">cascade virtues (trigger/amplification/stability),</td></tr><tr><td data-label="No.">3</td><td data-label="Explanatory dimension / virtue">structural virtues (constraints/opportunity-sets),</td></tr><tr><td data-label="No.">4</td><td data-label="Explanatory dimension / virtue">
-    social-epistemic virtues (source diversity, anti-clarity exploitation),
-  </td></tr><tr><td data-label="No.">5</td><td data-label="Explanatory dimension / virtue">psychological fit vs epistemic fit (closure vs truth-tracking).</td></tr></tbody></table></div><p>
+</p><ul class="ep-editorial-list"><li>mechanistic virtues (parts/activities/organization)</li><li>cascade virtues (trigger/amplification/stability)</li><li>structural virtues (constraints/opportunity-sets)</li><li>social-epistemic virtues (source diversity, anti-clarity exploitation)</li><li>psychological fit vs epistemic fit (closure vs truth-tracking).</li></ul><p>
   Her eight questions say: these are
   <strong>different dimensions of explanation</strong>, and philosophers too
   often pretend only one dimension (explanatory dependence) matters.
@@ -3314,15 +2825,9 @@
   constraints of the misinformation spread (what we saw earlier). When you
   include this type of explanation and evaluate the explanation against the
   eight questions, you can see it covers more:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>No.</th><th>What the Ross-style account contributes</th></tr></thead><tbody><tr><td data-label="No.">1</td><td data-label="What the Ross-style account contributes">Q8 (level): it matches the macro diffusion explanandum.</td></tr><tr><td data-label="No.">2</td><td data-label="What the Ross-style account contributes">
-    Q4–5 (representation): it represents the spread-relevant causal pattern
-    (amplification + constraints).
-  </td></tr><tr><td data-label="No.">3</td><td data-label="What the Ross-style account contributes">
-    Q6 (aims): it generates intervention handles (increase friction, target
-    bridge nodes, reduce recommender amplification).
-  </td></tr><tr><td data-label="No.">4</td><td data-label="What the Ross-style account contributes">
-    Q7 (ontic): it targets dependencies that more directly govern diffusion.
-  </td></tr></tbody></table></div><p>
+</p><ul class="ep-editorial-list"><li>Q8 (level): it matches the macro diffusion explanandum.</li><li>Q4–5 (representation): it represents the spread-relevant causal pattern
+    (amplification + constraints).</li><li>Q6 (aims): it generates intervention handles (increase friction, target
+    bridge nodes, reduce recommender amplification).</li><li>Q7 (ontic): it targets dependencies that more directly govern diffusion.</li></ul><p>
   And it can still incorporate the “bias” story—but as one local multiplier
   inside the cascade, not the whole explanation.
 </p><p>
@@ -3332,17 +2837,12 @@
   and includes the philosophical requirements we discussed at the beginning of
   the last post. When you’re evaluating an explanation (e.g., of misinformation
   spread), you can ask:
-</p><div class="table-wrap"><table class="two-col dense"><thead><tr><th>Final evaluation dimension</th><th>Question to ask</th></tr></thead><tbody><tr><td data-label="Final evaluation dimension">Ontic</td><td data-label="Question to ask">
-: What dependence is claimed (causal? mechanistic?
-    structural constraint? cascade)?
-  </td></tr><tr><td data-label="Final evaluation dimension">Level</td><td data-label="Question to ask">
-: Is the level appropriate to the explanandum and
-    contrast?
-  </td></tr><tr><td data-label="Final evaluation dimension">Representation</td><td data-label="Question to ask">
-: What’s omitted or idealized, and is that
-    omission responsible?
-  </td></tr><tr><td data-label="Final evaluation dimension">Communication &amp; psychology</td><td data-label="Question to ask">
-: Is it satisfying because
+</p><dl class="ep-definition-list"><div class="ep-definition-item"><dt>Ontic</dt><dd>What dependence is claimed (causal? mechanistic?
+    structural constraint? cascade)?</dd></div><div class="ep-definition-item"><dt>Level</dt><dd>Is the level appropriate to the explanandum and
+    contrast?</dd></div><div class="ep-definition-item"><dt>Representation</dt><dd>What’s omitted or idealized, and is that
+    omission responsible?</dd></div><div class="ep-definition-item"><dt>Communication &amp; psychology</dt><dd>Is it satisfying because
     it’s true/pattern-revealing—or because it exploits
-    closure/identity/narrative preferences?
-  </td></tr></tbody></table></div></div>
+    closure/identity/narrative preferences?</dd></div></dl><h2 id="conclusion">Conclusion</h2>
+<p>A good explanation is not just a fluent account of what happened. It identifies the phenomenon and the relevant alternative, makes a definite claim about dependence, and earns that claim with evidence that can discriminate it from plausible rivals. When the question is causal, it should also clarify what would change under appropriate counterfactuals or interventions. These demands help separate genuine understanding from the reassuring feeling of understanding.</p>
+<p>No single explanatory template fits every question. Mechanisms illuminate organized parts and activities; pathways trace routes of influence; cascades reveal how effects propagate and amplify; and structural explanations show how constraints shape the possibilities available. Biology, epidemiology, and economics illustrate why the methods used to investigate these dependencies vary with the phenomenon, the available evidence, and the limits on intervention. The right level of detail is the level that answers the question without claiming more than the evidence establishes.</p>
+<p>The practical lesson of explanatory pluralism is therefore disciplined flexibility: <strong>ask what is being explained, what kind of dependence is proposed, why the evidence favors it over alternatives, and where the account might fail.</strong> A compelling story may be a useful starting point, but an explanation becomes trustworthy through its explicit assumptions, appropriate scope, responsiveness to counterevidence, and capacity to improve our understanding of what makes a difference.</p></div>
