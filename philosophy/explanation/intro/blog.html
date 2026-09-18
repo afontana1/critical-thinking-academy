@@ -1,5 +1,5 @@
 <title>Part I — What Makes Something an Explanation?</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -582,6 +582,122 @@
       .ep-post .checkpoint-block + header.ep-part-banner {
         margin-top: 3.8em;
       }
+
+
+/* Essay layout: keep a centered, equal-margin reading column rather than
+   constraining individual paragraphs inside a wider container. */
+.ep-post {
+  width: min(100%, 980px);
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+/* All prose shares the SAME width and alignment, including headings and lists. */
+.ep-post > p:not(.ep-chapter-bridge),
+.ep-post .ep-concept-entry > p,
+.ep-post .ep-labeled-item > p,
+.ep-post .ep-paired-panel > p,
+.ep-post .ep-framework-layer > p { max-width: none; }
+.ep-post p { margin: 0.95em 0 1.15em; }
+.ep-post h2 { margin-top: 2.4em; }
+.ep-post h3 { margin-top: 2.05em; font-size: 1.25rem; line-height: 1.34; }
+.ep-post h4 { margin: 1.65em 0 0.7em; font-size: 1.09rem; line-height: 1.37; }
+.ep-post h5 { margin: 1.45em 0 0.6em; font-size: 1.04rem; font-weight: 700; line-height: 1.4; }
+.ep-post li { margin: 0.4em 0; }
+.ep-post .ep-roadmap { margin: 1.15em 0 1.55em; font-style: italic; opacity: 0.88; }
+/* Chapter bridges are ordinary transitional paragraphs, not highlighted boxes. */
+.ep-post .ep-chapter-bridge {
+  margin: 1.55em 0 1.05em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-style: normal;
+  line-height: inherit;
+}
+.ep-post .ep-cluster-heading {
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  padding-bottom: 0.3em;
+  margin-top: 2.2em;
+}
+.ep-post .ep-concept-entry { margin: 1.3em 0 1.75em; }
+.ep-post .ep-concept-entry h5 { margin-bottom: 0.55em; }
+.ep-post .ep-concept-entry p { margin: 0.7em 0 1.1em; }
+/* Comparisons read as successive essay sections, never compressed columns. */
+.ep-post .ep-paired-comparison { display: block; margin: 1.4em 0 1.65em; }
+.ep-post .ep-paired-panel {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0 0 1.45em;
+  min-width: 0;
+}
+.ep-post .ep-paired-panel h5 {
+  padding: 0;
+  border: 0;
+  margin: 1.2em 0 0.5em;
+}
+.ep-post .ep-paired-panel ul { margin-left: 1.35em; }
+.ep-post .ep-labeled-rows { margin: 1.2em 0 1.7em; }
+.ep-post .ep-labeled-item {
+  padding: 0;
+  margin: 0 0 1.15em;
+  border: 0;
+}
+.ep-post .ep-labeled-item h5 { margin: 0 0 0.45em; }
+.ep-post .ep-labeled-item > p { margin: 0.6em 0 1.05em; }
+/* Conclusion reads as essay subsections instead of tightly packed cards. */
+.ep-post .ep-framework-layer {
+  display: block;
+  margin: 1.75em 0 2em;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.ep-post .ep-framework-layer h4 { margin: 1.6em 0 0.65em; }
+.ep-post .ep-framework-layer p { margin: 0.85em 0 1.15em; }
+.ep-post .ep-framework-layer ol { margin-top: 0.8em; }
+.ep-post .ep-ending { margin: 2em 0 2.6em; padding-top: 1em;
+  border-top: 1px solid color-mix(in srgb,currentColor 22%,transparent); font-weight: 500; }
+/* Single-column, unobtrusive essay contents. */
+.ep-post .toc-container {
+  border: 0;
+  border-top: 1px solid color-mix(in srgb,currentColor 17%,transparent);
+  border-bottom: 1px solid color-mix(in srgb,currentColor 17%,transparent);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.1em 0 1.25em;
+  margin: 1.4em 0 2.2em;
+}
+.ep-post .ep-toc-label { margin: 0 0 0.8em; font-weight: 700; letter-spacing: normal; }
+.ep-post .ep-toc-list { columns: 1; margin: 0 0 0 1.3em; padding: 0; }
+.ep-post .ep-toc-part { margin: 0.8em 0; padding-left: 0; font-weight: 700; break-inside: auto; }
+.ep-post .ep-toc-sublinks {
+  margin: 0.5em 0 0.8em 0.65em;
+  padding: 0;
+  list-style: none;
+  font-size: 0.96em;
+  font-weight: 400;
+}
+.ep-post .ep-toc-sublinks li { margin: 0.32em 0; }
+.ep-post .ep-toc-sublinks a { text-decoration: none; }
+.ep-post .ep-toc-sublinks a:hover,
+.ep-post .ep-toc-sublinks a:focus { text-decoration: underline; }
+.ep-post .example-groups { margin: 1.3em 0; }
+.ep-post .example-groups > h4 { margin-top: 1.8em; padding-bottom: 0.32em;
+  border-bottom: 1px solid color-mix(in srgb,currentColor 15%,transparent); }
+.ep-post .example-entry { margin: 1.2em 0 1.7em; }
+.ep-post .example-entry .example-title { margin-bottom: 0.45em; }
+.ep-post .example-entry .example-title + p { margin-top: 0.5em; }
+@media (max-width: 720px) {
+  .ep-post { width: 100%; max-width: 100%; margin: 0 auto; padding: 0 1rem; line-height: 1.68; }
+  .ep-post .toc-container { padding: 1em 0; }
+}
 </style>
 <script>
       window.MathJax = {
@@ -609,14 +725,14 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post"><nav aria-label="Table of contents" class="toc-container"><p><strong>Table of Contents</strong></p><div class="toc-part"><a href="#part-i"><strong>Part I — What Makes Something an Explanation?</strong></a><div class="toc-sublinks"><a href="#a-philosophical-perspective">A Philosophical Perspective</a></div></div><div class="toc-part"><a href="#part-ii"><strong>Part II — Why Explanations Feel Satisfying</strong></a><div class="toc-sublinks"><a href="#psychological-aspects-of-explanation">Psychological Aspects of Explanation</a><a href="#more-examples-from-cognitive-science">Additional Examples from Cognitive Science</a></div></div><div class="toc-part"><a href="#part-iii"><strong>Part III — Narrative, Identity, and Explanation</strong></a><div class="toc-sublinks"><a href="#explanation-vs-story-narrative">Explanation vs. Story and Narrative</a><a href="#narratives-are-connected-to-identity-protective-cognition">Narrative and Identity-Protective Cognition</a><a href="#just-so-stories-and-the-barnum-effect">Just-So Stories and the Barnum Effect</a><a href="#anchored-narratives">Anchored Narratives</a></div></div><div class="toc-part"><a href="#part-iv"><strong>Part IV — Explanation in a Social Environment</strong></a><div class="toc-sublinks"><a href="#social-epistemology">Social Epistemology</a></div></div><div class="toc-part"><a href="#part-v"><strong>Part V — A Practical Evaluation Framework</strong></a><div class="toc-sublinks"><a href="#general-summary">General Summary</a></div></div><div class="toc-part"><a href="#sources"><strong>Sources</strong></a></div></nav><p>Have you ever come across an explanation for a phenomenon, event, entity, occurrence, or fact and wondered how anyone could possibly find it satisfying? I increasingly find myself asking that question. It became especially noticeable while I was writing about the strategic use of bad arguments for propagandistic purposes. That post focused on argument, but I realized that much the same problem applies to explanation. Rather than simply cataloguing bad explanations and their rhetorical uses, I want to ask a more basic set of questions: <em>What constitutes an explanation? How can we identify and evaluate one? Are there general criteria for judging explanatory quality?</em> My aim is to identify what makes an explanation good so that we have better tools for evaluating the plethora of shit explanations we encounter in the wild.</p><h2 id="part-i">Part I — What Makes Something an Explanation?</h2><h3 id="a-philosophical-perspective">A Philosophical Perspective</h3>
+<article class="ep-post"><p>Have you ever come across an explanation for a phenomenon, event, entity, occurrence, or fact and wondered how anyone could possibly find it satisfying? I increasingly find myself asking that question. It became especially noticeable while I was writing about the strategic use of bad arguments for propagandistic purposes. That post focused on argument, but I realized that much the same problem applies to explanation. Rather than simply cataloguing bad explanations and their rhetorical uses, I want to ask a more basic set of questions: <em>What constitutes an explanation? How can we identify and evaluate one? Are there general criteria for judging explanatory quality?</em> My aim is to identify what makes an explanation good so that we have better tools for evaluating the plethora of shit explanations we encounter in the wild.</p><p class="ep-roadmap">The route is from philosophical standards, through psychological and narrative satisfaction, to the social conditions of inquiry—and finally to a practical way to evaluate an explanation.</p><nav aria-label="Table of contents" class="toc-container"><p class="ep-toc-label">Contents</p><ol class="ep-toc-list"><li class="ep-toc-part"><a href="#part-i">Part I — What Makes Something an Explanation?</a><ul class="ep-toc-sublinks"><li><a href="#a-philosophical-perspective">What explanations are—and what makes them good</a></li><li><a href="#multiple-explanations">When more than one explanation can be good</a></li><li><a href="#philosophical-checklist">Putting the philosophical standards to work</a></li></ul></li><li class="ep-toc-part"><a href="#part-ii">Part II — Why Explanations Feel Satisfying</a><ul class="ep-toc-sublinks"><li><a href="#psychological-aspects-of-explanation">Why satisfaction and explanatory quality can diverge</a></li><li><a href="#uncertainty-reduction">Explanation as uncertainty reduction</a></li><li><a href="#a-bit-more-on-illusion-of-explanatory-depth">The illusion of explanatory depth</a></li><li><a href="#strength-vs-satisfaction">Explanatory strength vs. explanatory satisfaction</a></li><li><a href="#closure-and-ambiguity">Closure, ambiguity, and premature stopping</a></li><li><a href="#seizing-and-freezing">How accepted explanations become sticky</a></li><li><a href="#search-space">How motivation narrows the search space</a></li><li><a href="#more-examples-from-cognitive-science">The patterns in cognitive-science research</a></li><li><a href="#practical-safeguards">Practical safeguards</a></li></ul></li><li class="ep-toc-part"><a href="#part-iii">Part III — Narrative, Identity, and Explanation</a><ul class="ep-toc-sublinks"><li><a href="#narrative-intelligibility">How narratives make events intelligible</a></li><li><a href="#narrative-failure-modes">When a convincing story is mistaken for an explanation</a></li><li><a href="#narrative-accountability">Making narratives answerable to evidence</a></li></ul></li><li class="ep-toc-part"><a href="#part-iv">Part IV — Explanation in a Social Environment</a><ul class="ep-toc-sublinks"><li><a href="#social-epistemology">Why the social environment matters</a></li><li><a href="#engineered-clarity">Engineered clarity and stopping rules</a></li><li><a href="#groups-and-dependence">Groups, echo chambers, and epistemic dependence</a></li><li><a href="#epistemic-injustice">Epistemic injustice and who gets to explain</a></li><li><a href="#network-effects">Network effects and local rationality</a></li><li><a href="#social-evaluation-criteria">Evaluating explanations in their social context</a></li></ul></li><li class="ep-toc-part"><a href="#part-v">Part V — A Practical Evaluation Framework</a><ul class="ep-toc-sublinks"><li><a href="#general-summary">Putting the three layers together</a></li></ul></li><li class="ep-toc-part"><a href="#sources">Sources</a></li></ol></nav><h2 id="part-i">Part I — What Makes Something an Explanation?</h2><h3 id="a-philosophical-perspective">What explanations are—and what makes them good</h3>
 <p>Philosophers do not treat “explanation” as a single thing. Instead, they treat it as a family of practices with a common aim: making something intelligible by showing how or why it happens, or why it is the case. What counts as an explanation—and what makes one good—depends partly on the kind of “why?” question being asked (causal, mathematical, mechanistic, metaphysical, and so on) and partly on what the audience is trying to do with the answer (predict, intervene, understand, justify, or unify). Even so, several cross-cutting criteria recur across the literature.</p>
 <p>The core structure of an explanation is the relation between the <strong>explanandum</strong> and the <strong>explanans</strong>. The explanandum is what is to be explained—a fact, event, pattern, lawlike regularity, or outcome. The explanans is what does the explaining: causes, laws, mechanisms, mathematical facts, grounding facts, and so on. An explanation succeeds when the explanans stands in the <em>right explanatory relation</em> to the explanandum. “Right” here means more than mere association: the relation must answer the relevant “why?” question.</p>
 <p>
   How does an explanation stand in relation to what it explains? Different
   theories propose different “explanatory relations.” Here are the major ones.
 </p>
-<div class="table-wrap"><table class="two-col wide-table long-table"><thead><tr><th>Explanatory relation</th><th>Description</th></tr></thead><tbody><tr><td data-label="Explanatory relation"><strong>Covering-law / derivational relation (Hempel-style)</strong></td><td data-label="Description"><div>
+<section class="ep-entry-series"><h4 class="ep-cluster-heading">Ways explanations connect phenomena to what explains them</h4><section class="ep-concept-entry"><h5 id="relation-1">Covering-law / derivational relation (Hempel-style)</h5><div>
 <p>On the
       <strong>Deductive–Nomological (DN)</strong> picture, to explain an event
       is (roughly) to show it was to be expected from general laws plus initial
@@ -627,7 +743,7 @@
       type is logical/nomological entailment (or high-probability support in
       statistical variants).
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Causal relation</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-2">Causal relation</h5><div>
 <p>A great deal of contemporary work argues that (many)
       explanations work by identifying <strong>causes</strong> or
       <strong>causal structure</strong>—not just regularities. Modern causal
@@ -636,7 +752,7 @@
       causation (often understood via counterfactuals/interventions or
       mechanisms).
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Unification relation</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-3">Unification relation</h5><div>
 <p>Another tradition says explanation unifies: you
       explain by showing how diverse phenomena follow from a small set of
       argument patterns or principles. (Think: “this reduces many facts to one
@@ -646,7 +762,7 @@
       competitor to purely causal accounts. This relation type is the
       integration of many facts under fewer explanatory patterns.
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Counterfactual / interventionist relation</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-4">Counterfactual / interventionist relation</h5><div>
 <p>an explanation tells you
       <strong>what would change if you changed certain factors</strong>. The
       explanans matters if it supports the right counterfactuals (“if X were
@@ -654,7 +770,7 @@
       thinking about causal explanation. This type of relation is stable
       counterfactual dependence under interventions (or “difference-making”).
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Non-causal explanations (especially mathematical)</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-5">Non-causal explanations (especially mathematical)</h5><div>
 <p>Many philosophers think
       some real explanations are <strong>non-causal</strong>—especially in
       mathematics and sometimes in science when mathematics explains a
@@ -663,7 +779,7 @@
       The types of relations here are mathematical/structural dependence,
       constraints, proofs, symmetry/optimization facts, etc.
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Metaphysical / grounding explanations</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-6">Metaphysical / grounding explanations</h5><div>
 <p>Beyond science, philosophers talk
       about <strong>metaphysical explanation</strong>; explaining a fact in
       virtue of more fundamental facts (often discussed in terms of “grounding”
@@ -671,7 +787,7 @@
       virtue of these more basic facts.” The relation type is metaphysical
       dependence (grounding, constitution, essence, etc.).
     </p>
-</div></td></tr><tr><td data-label="Explanatory relation"><strong>Pragmatic / question-relative relation</strong></td><td data-label="Description"><div>
+</div></section><section class="ep-concept-entry"><h5 id="relation-7">Pragmatic / question-relative relation</h5><div>
 <p>explanation is often
       <strong>contrastive and context-sensitive</strong>. We rarely ask “Why P?”
       in a vacuum; we ask “Why P <em>rather than</em> Q?” and we care about some
@@ -682,14 +798,14 @@
       information that appropriately answers the <em>specific</em> why-question
       asked (often implicitly contrastive).
     </p>
-</div></td></tr></tbody></table></div>
+</div></section></section>
 <p>
   What makes an explanation good? There isn’t one universally accepted checklist
   that applies identically to <em>every</em> domain (physics vs. history vs.
   metaphysics), but philosophers converge on a cluster of evaluative virtues.
   Think of them as dimensions along which explanations can be better or worse.
 </p>
-<div class="table-wrap"><table class="two-col wide-table long-table"><thead><tr><th>Evaluative virtue</th><th>What it requires</th></tr></thead><tbody><tr><td data-label="Evaluative virtue"><strong>Truth or credibility of the explanans</strong></td><td data-label="What it requires"><div>
+<section class="ep-entry-series"><h4 class="ep-cluster-heading">Tracking what actually explains the phenomenon</h4><section class="ep-concept-entry"><h5 id="virtue-1">Truth or credibility of the explanans</h5><div>
 <p>
  A good explanation
       must be grounded in claims that are true, or at least sufficiently
@@ -706,7 +822,7 @@
       a serious defect, because an explanation built on false premises cannot
       genuinely reveal what is responsible for the phenomenon.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Explanatory relevance, rather than mere correlation</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-2">Explanatory relevance, rather than mere correlation</h5><div>
 <p>
  A
       good explanation does more than point to something regularly associated
@@ -722,7 +838,7 @@
       explanation cites what is responsible for the phenomenon, not merely what
       happens to accompany it.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Modal or counterfactual support</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-3">Modal or counterfactual support</h5><div>
 <p>
  Many philosophers regard
       this as one of the central marks of a strong explanation. A good
@@ -738,7 +854,22 @@
       illuminating the patterns of dependence that extend beyond the single
       observed case.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Depth</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-9">Non-circularity and explanatory asymmetry</h5><div>
+<p>
+ A good
+      explanation should not simply restate the explanandum in different words,
+      nor should it presuppose what it is supposed to explain. Circularity
+      undermines explanation because it fails to provide any independent basis
+      for understanding the phenomenon. Relatedly, many philosophers stress that
+      explanation is often asymmetric. Even if two facts are logically or
+      mathematically connected, one may explain the other without the reverse
+      being true. The classic example is that the height of a flagpole explains
+      the length of its shadow under certain lighting conditions, but the shadow
+      length does not explain the flagpole’s height. This asymmetry shows that
+      explanation cannot be reduced to mere derivability or logical entailment.
+      A good explanation must track the right direction of dependence.
+    </p>
+</div></section><h4 class="ep-cluster-heading">How much understanding the explanation provides</h4><section class="ep-concept-entry"><h5 id="virtue-4">Depth</h5><div>
 <p>
  A good explanation has depth when it goes beyond
       surface description and reveals the underlying structure that makes the
@@ -754,7 +885,7 @@
       relations. Depth matters because it increases our sense that we are not
       just observing a pattern, but seeing why the pattern holds.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Scope and unification</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-5">Scope and unification</h5><div>
 <p>
  An explanation is often better
       when it can account for a wider range of phenomena using the same
@@ -769,7 +900,7 @@
       explanation can illuminate not only this case, but many related ones,
       without requiring a separate ad hoc story for each.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Simplicity or parsimony, though not at any cost</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-6">Simplicity or parsimony, though not at any cost</h5><div>
 <p>
 
       Simplicity is widely treated as an explanatory virtue because explanations
@@ -785,7 +916,7 @@
       parsimony is a genuine virtue, but it is a subordinate one: valuable when
       all else is roughly equal, not decisive in every case.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Precision and informativeness</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-7">Precision and informativeness</h5><div>
 <p>
  A good explanation should
       provide enough detail to be genuinely informative. Vague or overly generic
@@ -801,7 +932,7 @@
       sounds plausible, but gives us substantive insight into how and why the
       explanandum comes about.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Coherence with the rest of what we know</strong></td><td data-label="What it requires"><div>
+</div></section><h4 class="ep-cluster-heading">How it fits what we know and what was asked</h4><section class="ep-concept-entry"><h5 id="virtue-8">Coherence with the rest of what we know</h5><div>
 <p>
  Other things
       being equal, explanations that fit well with established background
@@ -818,22 +949,7 @@
       explanation unless there are stronger reasons to depart from existing
       theory.
     </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Non-circularity and explanatory asymmetry</strong></td><td data-label="What it requires"><div>
-<p>
- A good
-      explanation should not simply restate the explanandum in different words,
-      nor should it presuppose what it is supposed to explain. Circularity
-      undermines explanation because it fails to provide any independent basis
-      for understanding the phenomenon. Relatedly, many philosophers stress that
-      explanation is often asymmetric. Even if two facts are logically or
-      mathematically connected, one may explain the other without the reverse
-      being true. The classic example is that the height of a flagpole explains
-      the length of its shadow under certain lighting conditions, but the shadow
-      length does not explain the flagpole’s height. This asymmetry shows that
-      explanation cannot be reduced to mere derivability or logical entailment.
-      A good explanation must track the right direction of dependence.
-    </p>
-</div></td></tr><tr><td data-label="Evaluative virtue"><strong>Responsiveness to the question, or pragmatic fit</strong></td><td data-label="What it requires"><div>
+</div></section><section class="ep-concept-entry"><h5 id="virtue-10">Responsiveness to the question, or pragmatic fit</h5><div>
 <p>
  An
       explanation can be accurate and yet still fail as an explanation if it
@@ -849,7 +965,7 @@
       helps explain why multiple different explanations of the same phenomenon
       can all be good, provided each addresses a distinct explanatory demand.
     </p>
-</div></td></tr></tbody></table></div>
+</div></section></section>
 <p>
   A concise way to put the overall point is this: good explanations are usually
   assessed along three broad dimensions. First, they must track genuine
@@ -859,7 +975,7 @@
   question being asked. A strong explanation is therefore not just true, but
   illuminating, informative, and appropriately targeted.
 </p>
-<p>Explanations can also be indeterminate in the sense that more than one explanation may be equally good. There are several reasons this can happen, and it is not always a problem. One is <em>contextual plurality</em>: two explanations can both be good because they answer <strong>different contrastive questions</strong>. For example:</p>
+<h3 id="multiple-explanations">When more than one explanation can be good</h3><p>Explanations can also be indeterminate in the sense that more than one explanation may be equally good. There are several reasons this can happen, and it is not always a problem. One is <em>contextual plurality</em>: two explanations can both be good because they answer <strong>different contrastive questions</strong>. For example:</p>
 <ul>
 <li>
 <p>“Why did the window break?”</p>
@@ -944,7 +1060,7 @@
   explanatory projects; sometimes evidence and virtues fail to pick a unique
   winner (underdetermination).
 </p>
-<p>So if you’re handed an “explanation,” try asking:</p>
+<h3 id="philosophical-checklist">Putting the philosophical standards to work</h3><p>So if you’re handed an “explanation,” try asking:</p>
 <ol>
 <li>
 <strong>What exactly is the explanandum?</strong> (What is being
@@ -973,9 +1089,7 @@
       could break the tie?</strong>
 </li>
 </ol>
-<h2 id="part-ii">Part II — Why Explanations Feel Satisfying</h2><span id="psyhcological-aspects-of-explanation"></span><h3 id="psychological-aspects-of-explanation">
-  Psychological Aspects of Explanation
-</h3>
+<p class="ep-chapter-bridge">The philosophical criteria tell us what an explanation should accomplish. They do not, by themselves, explain why an account that falls short can still feel entirely satisfying. That is the psychological problem.</p><h2 id="part-ii">Part II — Why Explanations Feel Satisfying</h2><span id="psyhcological-aspects-of-explanation"></span><h3 id="psychological-aspects-of-explanation">Why satisfaction and explanatory quality can diverge</h3>
 <p>Explanations can feel correct, plausible, and satisfying even when they are badly mistaken. We appear to crave explanations, and the mere availability of one can bring a sense of relief. That reaction is closely connected to uncertainty reduction, cognitive closure, preference for order, and intolerance of ambiguity. These factors affect not only how we evaluate explanations, but also how long we search for alternatives and how willing we are to reconsider an answer once we have accepted it.</p><p>The philosophical discussion treated explanation primarily as an epistemic tool: a way of tracking real dependence through causes, mechanisms, mathematical constraints, grounding relations, and similar structures. The psychological question is different. Here the issue is explanation as a <em>psychological product</em>: how an account can produce felt understanding, relieve tension, and restore a sense of order. Much of the craving for explanation arises because <em>felt understanding</em> is partly driven by motivational and affective systems that are only loosely coupled to truth-tracking.</p>
 <p>
   When something happens that violates expectation (“Why did that happen?”), you
@@ -1030,7 +1144,134 @@
   uncertainty by actually tracking structure), or comfort-conducive (reducing
   uncertainty by <em>feeling</em> coherent).
 </p>
-<h4 id="closure-and-ambiguity">Closure, ambiguity, and premature stopping</h4><p>The <strong>Need for Cognitive Closure (NFC)</strong> often favors comfort-conducive explanations and changes what counts, psychologically, as a “good” explanation. NFC is the motivation to reach a definite answer rather than remain uncertain. Kruglanski’s theory emphasizes two tendencies: <strong>urgency</strong> (obtain closure as quickly as possible) and <strong>permanence</strong> (preserve that closure for as long as possible). Together they produce the characteristic pattern: seize on an explanation early, then stick with the resulting judgment. NFC is also measured as a disposition involving preferences for order and structure, discomfort with ambiguity, decisiveness, and close-mindedness. Under higher NFC, people tend to overweight <strong>speed, definiteness, simplicity, and coherence</strong>—traits that yield closure—and underweight <strong>calibration, depth, evidential sensitivity, and exploration of alternatives</strong>, which keep uncertainty alive longer. A “good explanation” can then become <strong>one that ends the question</strong> rather than one that best survives adversarial testing. Kruglanski’s model predicts that heightened closure motivation can reduce <strong>information processing</strong> and <strong>hypothesis generation</strong> while increasing confidence. The pathway looks like earlier stopping, stronger primacy effects, less critical probing, and confidence inflation. This is one reason plausible-but-wrong explanations can dominate: NFC can privilege <em>decisiveness</em> over <em>diagnosticity</em>.</p>
+<h4 id="a-bit-more-on-illusion-of-explanatory-depth">The illusion of explanatory depth</h4><p>
+  The <strong>illusion of explanatory depth</strong> is the reliable finding
+  that people
+  <strong>think they understand complex mechanisms far better than they actually
+    do</strong>—and they only realize the gap when they’re forced to <em>produce</em> a
+  detailed explanation rather than merely <em>recognize</em> one. Rozenblit
+  &amp; Keil’s classic experiments had people rate how well they understood
+  everyday devices/phenomena, then explain them step-by-step, then re-rate;
+  confidence typically <strong>drops sharply after explaining</strong>. IOED is
+  strongest for <strong>explanatory / causal-mechanistic knowledge</strong> (how
+  systems work) and is weaker for other kinds of knowledge like simple facts or
+  procedures.
+</p><p>I want to linger on this mechanism because it is somewhat more differentiated than cognitive closure, preference for order, or fluency effects. IOED concerns what we accept as sufficient to fill an explanatory gap; in that sense, it bears directly on what we treat as a good explanation. It appears to bias the application of criteria such as simplicity, coherence, scope, mechanistic detail, and counterfactual power in predictable directions.</p><p>
+  IOED functions as a <em>psychological engine</em> that lets shallow
+  explanations feel like deep understanding—so it’s tightly linked to
+  <strong>uncertainty reduction</strong> and <strong>need for closure</strong>.
+  Explanations reduce uncertainty <em>psychologically</em> before they reduce it
+  <em>epistemically</em>. A quick, coherent “because-story” often reduces the
+  uncomfortable feeling of not knowing. IOED makes that easy: you get the
+  <em>feeling</em> of understanding from a rough sketch, and you don’t notice
+  the missing steps until you’re challenged to cash it out. So IOED acts like a
+  <strong>fast, low-effort closure mechanism</strong>. This pairs naturally with
+  <strong>seizing and freezing</strong>: grabbing the first satisfying story
+  (seizing), then sticking with it because it already delivered relief
+  (freezing). The NFC framework describes exactly these urgency/permanence
+  tendencies.
+</p><p>
+  One reason IOED happens is that people evaluate their understanding at the
+  wrong “resolution.” Alter, Oppenheimer, &amp; Zemla argue IOED occurs because
+  people use an <strong>inappropriately abstract construal</strong> when judging
+  understanding—focusing on the gist/purpose (“what it does”) instead of the
+  mechanism (“how it does it”). Abstract construals feel simpler, cleaner, more
+  coherent, and less ambiguous. So if you have a strong preference for order,
+  you’re even more likely to accept high-level stories as “good enough,” which
+  amplifies IOED.
+</p><p>IOED involves a systematic underuse of explanatory standards—the kinds of checks philosophers and scientists treat as depth-producing, such as:</p><ul>
+<li>specifying <strong>mechanistic steps</strong> (not just labels),</li>
+<li>
+    identifying <strong>difference-makers</strong> (what changes the outcome),
+  </li>
+<li>stating <strong>boundary conditions</strong> (when it stops working),</li>
+<li>
+    supporting <strong>counterfactuals</strong> (“what if X were different?”),
+  </li>
+<li>
+    being able to answer
+    <strong>follow-up ‘how exactly?’ questions</strong> without collapsing.
+  </li>
+</ul><p>
+  In everyday cognition, people often
+  <em>don’t spontaneously apply those standards</em>. IOED is what you get when
+  “I can tell a coherent story / recognize a story” is mistaken for “I can meet
+  the deeper standards.” Rozenblit &amp; Keil describe several contributors to
+  the initial feeling of knowing, including confusing <em>labels</em> with
+  mechanisms and confusing <em>environmental support</em> (having the object
+  around, or being able to look things up) with internal understanding. So IOED
+  is a
+  <strong>predictable mismatch between the standards people <em>use</em> to judge
+    their understanding and the standards that actually track explanatory
+    depth</strong>.
+</p><p>
+  How do people come to overestimate their understanding of complex mechanisms?
+  There are a few big mechanisms.
+</p><ol>
+<li>
+<p>
+      “Gist-to-depth” confusion (abstract summary feels like a full model):
+      People often possess a <strong>functional schema</strong> (“toilets flush
+      waste; the lever triggers water”) and mistake that for a
+      <strong>causal model</strong> (“here’s how the valve, siphon, and tank
+      dynamics produce the flush”). Until you’re forced to generate steps, your
+      mind treats the gist as evidence of depth. This is exactly what the
+      construal-level account predicts: abstract representations inflate
+      perceived understanding.
+    </p>
+</li>
+<li>
+<p>
+      “Visibility” and environmental scaffolding (the world lends you
+      understanding you don’t actually have): For many artifacts, mechanisms
+      look perceptually obvious (“working parts are right there”), which tempts
+      you to think you’ve internalized the causal structure. Rozenblit &amp;
+      Keil explicitly discuss confusing
+      <strong>environmental support</strong> (what the environment provides on
+      demand) with what you actually know. Modern version: Google/YouTube/AI can
+      make this even stronger—because access feels like possession.
+    </p>
+</li>
+<li>
+<p>
+      Division of cognitive labor (you know <em>that</em> someone knows, so it
+      feels like <em>you</em> know): A lot of what we call “my understanding” is
+      socially distributed: I know <strong>who</strong> could explain it (a
+      mechanic, an engineer) and I can use the artifact successfully. That
+      practical familiarity can be misread as explanatory mastery.
+    </p>
+</li>
+<li>
+<p>
+      Fluency and familiarity get misread as depth: If a topic is familiar, it
+      feels easy to think about; that ease often gets interpreted as “I
+      understand it.” Mills &amp; Keil show people can miscalibrate explanatory
+      understanding and become more accurate after trying to explain—suggesting
+      the act of explanation reveals what fluency was hiding.
+    </p>
+</li>
+<li>
+<p>
+      Closure motivation reduces “stress-testing”: When people want closure,
+      they’re less likely to do the things that would puncture IOED: generate
+      alternative explanations, run counterfactual checks, seek disconfirming
+      evidence, and demand mechanistic detail. NFC doesn’t just make you accept
+      weaker evidence; it makes you
+      <em>stop asking the questions that would expose shallowness</em>.
+    </p>
+</li>
+</ol><p>
+  IOED isn’t just a cute “you don’t know how a zipper works” fact. It can affect
+  <strong>confidence calibration</strong> (high certainty with shallow support),
+  and <strong>polarization/extremity</strong> (especially when people
+  <em>feel</em> they understand complex policy mechanisms). A famous example:
+  Fernbach et al. found that political extremism can be supported by an illusion
+  of understanding, and that prompting people to explain mechanisms (rather than
+  merely justify positions) can reduce perceived understanding and sometimes
+  moderation follows. This is basically IOED and closure dynamics in the wild:
+  mechanistic explanation prompts force a higher explanatory standard, breaking
+  the “feels right” lock-in.
+</p><h4 id="strength-vs-satisfaction">Explanatory strength vs. explanatory satisfaction</h4><p>Truth-tracking explanations emphasize the virtues philosophers foreground: relevance and difference-making, depth, counterfactual support, evidential fit, and robustness. Psychologically satisfying explanations are often evaluated by a different set of cues: coherence, simplicity, narrative completeness, reduced ambiguity, restored control or meaning, and a metacognitive feeling of “rightness.” Under low stress, high curiosity, and strong accountability norms, the first set of criteria can dominate. Under threat, time pressure, fatigue, identity stakes, or high dispositional NFC, the second can dominate without the evaluator noticing the shift. People who tolerate ambiguity may therefore be better positioned for comparative evaluation because they can sustain partial explanations, probability distributions, model uncertainty, and iterative updating. If the evidence supports several models, they can keep several alive; NFC and ambiguity intolerance make that continued openness psychologically costly.</p><h4 id="closure-and-ambiguity">Closure, ambiguity, and premature stopping</h4><p>The <strong>Need for Cognitive Closure (NFC)</strong> often favors comfort-conducive explanations and changes what counts, psychologically, as a “good” explanation. NFC is the motivation to reach a definite answer rather than remain uncertain. Kruglanski’s theory emphasizes two tendencies: <strong>urgency</strong> (obtain closure as quickly as possible) and <strong>permanence</strong> (preserve that closure for as long as possible). Together they produce the characteristic pattern: seize on an explanation early, then stick with the resulting judgment. NFC is also measured as a disposition involving preferences for order and structure, discomfort with ambiguity, decisiveness, and close-mindedness. Under higher NFC, people tend to overweight <strong>speed, definiteness, simplicity, and coherence</strong>—traits that yield closure—and underweight <strong>calibration, depth, evidential sensitivity, and exploration of alternatives</strong>, which keep uncertainty alive longer. A “good explanation” can then become <strong>one that ends the question</strong> rather than one that best survives adversarial testing. Kruglanski’s model predicts that heightened closure motivation can reduce <strong>information processing</strong> and <strong>hypothesis generation</strong> while increasing confidence. The pathway looks like earlier stopping, stronger primacy effects, less critical probing, and confidence inflation. This is one reason plausible-but-wrong explanations can dominate: NFC can privilege <em>decisiveness</em> over <em>diagnosticity</em>.</p>
 <p>
   Intolerance of ambiguity and preference for order are other drivers of this
   phenomena. Budner’s definition: intolerance of ambiguity is the tendency to
@@ -1101,195 +1342,24 @@
   products—it’s a force that shapes
   <em>which products ever make it to the shelf</em>.
 </p>
-<h4 id="strength-vs-satisfaction">Explanatory strength vs. explanatory satisfaction</h4><p>Truth-tracking explanations emphasize the virtues philosophers foreground: relevance and difference-making, depth, counterfactual support, evidential fit, and robustness. Psychologically satisfying explanations are often evaluated by a different set of cues: coherence, simplicity, narrative completeness, reduced ambiguity, restored control or meaning, and a metacognitive feeling of “rightness.” Under low stress, high curiosity, and strong accountability norms, the first set of criteria can dominate. Under threat, time pressure, fatigue, identity stakes, or high dispositional NFC, the second can dominate without the evaluator noticing the shift. People who tolerate ambiguity may therefore be better positioned for comparative evaluation because they can sustain partial explanations, probability distributions, model uncertainty, and iterative updating. If the evidence supports several models, they can keep several alive; NFC and ambiguity intolerance make that continued openness psychologically costly.</p>
-<h4 id="practical-safeguards">Practical safeguards</h4><p>
-  If you want tools that directly counter seizing/freezing and ambiguity
-  aversion, the best ones are those that
-  <strong>force delayed commitment</strong> and
-  <strong>make alternatives cheap</strong>:
-</p>
-<ul>
-<li>
-<strong>Explicitly write the contrast question</strong>: “Why P rather than
-    Q?” (prevents generic closure answers).
-  </li>
-<li>
-<strong>Generate 2–4 competing explanations first</strong> (even if you like
-    one).
-  </li>
-<li>
-<strong>Pre-commit to disconfirmers</strong>: “What observation would change
-    my mind?”
-  </li>
-<li>
-<strong>Separate plausibility from support</strong>: Plausible story ≠
-    strong evidence.
-  </li>
-<li>
-<strong>Mechanism test</strong>: “Could I explain the causal chain
-    step-by-step?” (IOED antidote).
-  </li>
-<li>
-<strong>Accountability/accuracy prompts</strong> reduce premature closure
-    effects in the NFC framework (they lower the benefits of quick closure).
-  </li>
-</ul>
-<h4 id="a-bit-more-on-illusion-of-explanatory-depth">Illusion of Explanatory Depth in More Detail</h4>
-<p>
-  The <strong>illusion of explanatory depth</strong> is the reliable finding
-  that people
-  <strong>think they understand complex mechanisms far better than they actually
-    do</strong>—and they only realize the gap when they’re forced to <em>produce</em> a
-  detailed explanation rather than merely <em>recognize</em> one. Rozenblit
-  &amp; Keil’s classic experiments had people rate how well they understood
-  everyday devices/phenomena, then explain them step-by-step, then re-rate;
-  confidence typically <strong>drops sharply after explaining</strong>. IOED is
-  strongest for <strong>explanatory / causal-mechanistic knowledge</strong> (how
-  systems work) and is weaker for other kinds of knowledge like simple facts or
-  procedures.
-</p>
-<p>I want to linger on this mechanism because it is somewhat more differentiated than cognitive closure, preference for order, or fluency effects. IOED concerns what we accept as sufficient to fill an explanatory gap; in that sense, it bears directly on what we treat as a good explanation. It appears to bias the application of criteria such as simplicity, coherence, scope, mechanistic detail, and counterfactual power in predictable directions.</p>
-<p>
-  IOED functions as a <em>psychological engine</em> that lets shallow
-  explanations feel like deep understanding—so it’s tightly linked to
-  <strong>uncertainty reduction</strong> and <strong>need for closure</strong>.
-  Explanations reduce uncertainty <em>psychologically</em> before they reduce it
-  <em>epistemically</em>. A quick, coherent “because-story” often reduces the
-  uncomfortable feeling of not knowing. IOED makes that easy: you get the
-  <em>feeling</em> of understanding from a rough sketch, and you don’t notice
-  the missing steps until you’re challenged to cash it out. So IOED acts like a
-  <strong>fast, low-effort closure mechanism</strong>. This pairs naturally with
-  <strong>seizing and freezing</strong>: grabbing the first satisfying story
-  (seizing), then sticking with it because it already delivered relief
-  (freezing). The NFC framework describes exactly these urgency/permanence
-  tendencies.
-</p>
-<p>
-  One reason IOED happens is that people evaluate their understanding at the
-  wrong “resolution.” Alter, Oppenheimer, &amp; Zemla argue IOED occurs because
-  people use an <strong>inappropriately abstract construal</strong> when judging
-  understanding—focusing on the gist/purpose (“what it does”) instead of the
-  mechanism (“how it does it”). Abstract construals feel simpler, cleaner, more
-  coherent, and less ambiguous. So if you have a strong preference for order,
-  you’re even more likely to accept high-level stories as “good enough,” which
-  amplifies IOED.
-</p>
-<p>IOED involves a systematic underuse of explanatory standards—the kinds of checks philosophers and scientists treat as depth-producing, such as:</p>
-<ul>
-<li>specifying <strong>mechanistic steps</strong> (not just labels),</li>
-<li>
-    identifying <strong>difference-makers</strong> (what changes the outcome),
-  </li>
-<li>stating <strong>boundary conditions</strong> (when it stops working),</li>
-<li>
-    supporting <strong>counterfactuals</strong> (“what if X were different?”),
-  </li>
-<li>
-    being able to answer
-    <strong>follow-up ‘how exactly?’ questions</strong> without collapsing.
-  </li>
-</ul>
-<p>
-  In everyday cognition, people often
-  <em>don’t spontaneously apply those standards</em>. IOED is what you get when
-  “I can tell a coherent story / recognize a story” is mistaken for “I can meet
-  the deeper standards.” Rozenblit &amp; Keil describe several contributors to
-  the initial feeling of knowing, including confusing <em>labels</em> with
-  mechanisms and confusing <em>environmental support</em> (having the object
-  around, or being able to look things up) with internal understanding. So IOED
-  is a
-  <strong>predictable mismatch between the standards people <em>use</em> to judge
-    their understanding and the standards that actually track explanatory
-    depth</strong>.
-</p>
-<p>
-  How do people come to overestimate their understanding of complex mechanisms?
-  There are a few big mechanisms.
-</p>
-<ol>
-<li>
-<p>
-      “Gist-to-depth” confusion (abstract summary feels like a full model):
-      People often possess a <strong>functional schema</strong> (“toilets flush
-      waste; the lever triggers water”) and mistake that for a
-      <strong>causal model</strong> (“here’s how the valve, siphon, and tank
-      dynamics produce the flush”). Until you’re forced to generate steps, your
-      mind treats the gist as evidence of depth. This is exactly what the
-      construal-level account predicts: abstract representations inflate
-      perceived understanding.
-    </p>
-</li>
-<li>
-<p>
-      “Visibility” and environmental scaffolding (the world lends you
-      understanding you don’t actually have): For many artifacts, mechanisms
-      look perceptually obvious (“working parts are right there”), which tempts
-      you to think you’ve internalized the causal structure. Rozenblit &amp;
-      Keil explicitly discuss confusing
-      <strong>environmental support</strong> (what the environment provides on
-      demand) with what you actually know. Modern version: Google/YouTube/AI can
-      make this even stronger—because access feels like possession.
-    </p>
-</li>
-<li>
-<p>
-      Division of cognitive labor (you know <em>that</em> someone knows, so it
-      feels like <em>you</em> know): A lot of what we call “my understanding” is
-      socially distributed: I know <strong>who</strong> could explain it (a
-      mechanic, an engineer) and I can use the artifact successfully. That
-      practical familiarity can be misread as explanatory mastery.
-    </p>
-</li>
-<li>
-<p>
-      Fluency and familiarity get misread as depth: If a topic is familiar, it
-      feels easy to think about; that ease often gets interpreted as “I
-      understand it.” Mills &amp; Keil show people can miscalibrate explanatory
-      understanding and become more accurate after trying to explain—suggesting
-      the act of explanation reveals what fluency was hiding.
-    </p>
-</li>
-<li>
-<p>
-      Closure motivation reduces “stress-testing”: When people want closure,
-      they’re less likely to do the things that would puncture IOED: generate
-      alternative explanations, run counterfactual checks, seek disconfirming
-      evidence, and demand mechanistic detail. NFC doesn’t just make you accept
-      weaker evidence; it makes you
-      <em>stop asking the questions that would expose shallowness</em>.
-    </p>
-</li>
-</ol>
-<p>
-  IOED isn’t just a cute “you don’t know how a zipper works” fact. It can affect
-  <strong>confidence calibration</strong> (high certainty with shallow support),
-  and <strong>polarization/extremity</strong> (especially when people
-  <em>feel</em> they understand complex policy mechanisms). A famous example:
-  Fernbach et al. found that political extremism can be supported by an illusion
-  of understanding, and that prompting people to explain mechanisms (rather than
-  merely justify positions) can reduce perceived understanding and sometimes
-  moderation follows. This is basically IOED and closure dynamics in the wild:
-  mechanistic explanation prompts force a higher explanatory standard, breaking
-  the “feels right” lock-in.
-</p>
-<p>If you want to know whether you <em>really</em> understand something:</p>
-<ol>
-<li>Rate your understanding.</li>
-<li>
-<strong>Explain it step-by-step</strong> (mechanism, not just purpose).
-  </li>
-<li>Specify <strong>two failure cases</strong> (when it wouldn’t work).</li>
-<li>
-    Answer one <strong>counterfactual</strong> (“what if X were
-    removed/changed?”).
-  </li>
-<li>Re-rate your understanding.</li>
-</ol>
-<p>
-  That procedure forces the standards people otherwise underuse—and it’s exactly
-  why IOED reliably collapses when explanation is required.
-</p>
-<h3 id="more-examples-from-cognitive-science">Additional Examples from Cognitive Science</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="more-examples-from-cognitive-science">The patterns in cognitive-science research</h3>
 <p>
   Cognitive science is full of examples where we accept
   <strong>explanation-shaped</strong> cognition (coherent, fluent,
@@ -1436,18 +1506,62 @@
     </p>
 </div></div>
 <p>Across these literatures, the recurring pattern is:</p>
-<div class="table-wrap"><table class="comparison-table two-col"><thead><tr><th>Satisfaction cues</th><th>Strength cues</th></tr></thead><tbody><tr><td data-label="Satisfaction cues">
+<div class="ep-paired-comparison"><section class="ep-paired-panel"><h5>Satisfaction cues</h5>
 Coherence, simplicity, vividness,
     technical gloss, purpose/agency, closure, identity fit.
-  </td><td data-label="Strength cues">
+  </section><section class="ep-paired-panel"><h5>Strength cues</h5>
 Discriminating evidence, mechanism detail,
     counterfactual support, boundary conditions, robustness to alternatives.
-  </td></tr></tbody></table></div>
+  </section></div>
 <p>
   The concepts we discussed earlier—<strong>need for closure, seizing/freezing, intolerance of ambiguity</strong>—tilt people toward the first set of cues, which is exactly why weak
   explanations can be psychologically “sticky.”
 </p>
-<h2 id="part-iii">Part III — Narrative, Identity, and Explanation</h2><h3 id="explanation-vs-story-narrative">Explanation vs. Story and Narrative</h3>
+<h4 id="practical-safeguards">Practical safeguards</h4><p>
+  If you want tools that directly counter seizing/freezing and ambiguity
+  aversion, the best ones are those that
+  <strong>force delayed commitment</strong> and
+  <strong>make alternatives cheap</strong>:
+</p><ul>
+<li>
+<strong>Explicitly write the contrast question</strong>: “Why P rather than
+    Q?” (prevents generic closure answers).
+  </li>
+<li>
+<strong>Generate 2–4 competing explanations first</strong> (even if you like
+    one).
+  </li>
+<li>
+<strong>Pre-commit to disconfirmers</strong>: “What observation would change
+    my mind?”
+  </li>
+<li>
+<strong>Separate plausibility from support</strong>: Plausible story ≠
+    strong evidence.
+  </li>
+<li>
+<strong>Mechanism test</strong>: “Could I explain the causal chain
+    step-by-step?” (IOED antidote).
+  </li>
+<li>
+<strong>Accountability/accuracy prompts</strong> reduce premature closure
+    effects in the NFC framework (they lower the benefits of quick closure).
+  </li>
+</ul><p>If you want to know whether you <em>really</em> understand something:</p><ol>
+<li>Rate your understanding.</li>
+<li>
+<strong>Explain it step-by-step</strong> (mechanism, not just purpose).
+  </li>
+<li>Specify <strong>two failure cases</strong> (when it wouldn’t work).</li>
+<li>
+    Answer one <strong>counterfactual</strong> (“what if X were
+    removed/changed?”).
+  </li>
+<li>Re-rate your understanding.</li>
+</ol><p>
+  That procedure forces the standards people otherwise underuse—and it’s exactly
+  why IOED reliably collapses when explanation is required.
+</p><p class="ep-chapter-bridge">The preceding mechanisms describe how felt understanding can outrun actual understanding. Narrative offers one especially powerful way to supply the coherence, meaning, and closure those mechanisms reward.</p><h2 id="part-iii">Part III — Narrative, Identity, and Explanation</h2><h3 id="narrative-intelligibility">How narratives make events intelligible</h3><h4 id="explanation-vs-story-narrative">Explanation vs. Story and Narrative</h4>
 <p>
   Explanation and story/narrative overlap, but they’re not the same. Explanation
   is primarily about a <em>dependence relation</em> that answers a
@@ -1583,7 +1697,7 @@ Discriminating evidence, mechanism detail,
   because transportation and coherence cues can reduce scrutiny and inflate
   confidence.
 </p>
-<h3 id="narratives-are-connected-to-identity-protective-cognition">Narrative and Identity-Protective Cognition</h3>
+<h3 id="narrative-failure-modes">When a convincing story is mistaken for an explanation</h3><h4 id="narratives-are-connected-to-identity-protective-cognition">Narrative and Identity-Protective Cognition</h4>
 <ol>
 <li>
 <strong>Narrative explanation</strong> is a powerful way to make events
@@ -1664,7 +1778,7 @@ Discriminating evidence, mechanism detail,
   Does that mean anecdotes can’t <em>legitimately</em> explain? No—but
   “anecdote” has two different meanings.
 </p>
-<div class="table-wrap"><table class="comparison-table two-col"><thead><tr><th>Anecdote as exemplar</th><th>Anecdote as case</th></tr></thead><tbody><tr><td data-label="Anecdote as exemplar">
+<div class="ep-paired-comparison"><section class="ep-paired-panel"><h5>Anecdote as exemplar</h5>
 <p>
       Anecdote as an <em>exemplar</em> (weak for truth, strong for
       persuasion/identity): This is the “I know a guy” story used to infer
@@ -1672,7 +1786,7 @@ Discriminating evidence, mechanism detail,
       motivated cherry-picking. It can be meaningful, but it’s typically
       <strong>low-grade evidence</strong> for general claims.
     </p>
-</td><td data-label="Anecdote as case">
+</section><section class="ep-paired-panel"><h5>Anecdote as case</h5>
 <p>
       Anecdote as a <em>case</em> (can be genuinely explanatory under the right
       methodology): A single case can sometimes carry real explanatory weight if
@@ -1683,7 +1797,7 @@ Discriminating evidence, mechanism detail,
       mechanism), not just that outcome. This is explicitly presented as a way
       to make causal inferences by examining diagnostic steps inside a case.
     </p>
-</td></tr></tbody></table></div>
+</section></div>
 <p>
   An anecdote can be explanatory when it’s not just a story, but a
   <em>mechanism-revealing trace</em>. Anecdotes can be explanatory under
@@ -1707,9 +1821,9 @@ Discriminating evidence, mechanism detail,
   <em>by default</em> in contested domains, unless strong norms (methods,
   accountability, adversarial testing) force them into a truth-tracking role.
 </p>
-<h3 id="just-so-stories-and-the-barnum-effect">
+<h4 id="just-so-stories-and-the-barnum-effect">
   Just-So Stories and the Barnum Effect
-</h3>
+</h4>
 <p>
 <strong>“Just-so stories”</strong> and the
   <strong>Barnum (Forer) effect</strong> are very much in the same family as the
@@ -1780,7 +1894,7 @@ Discriminating evidence, mechanism detail,
   self into a stable-seeming self-model. This is comforting—and that comfort is
   <em>part of</em> why they bypass quality control.
 </p>
-<h3 id="anchored-narratives">Anchored Narratives</h3>
+<h3 id="narrative-accountability">Making narratives answerable to evidence</h3><h4 id="anchored-narratives">Anchored Narratives</h4>
 <p>Anchored narratives provide one of the clearest meeting points between <em>legal psychology</em>, <em>argumentation theory</em>, and the themes developed above. We <strong>need stories to make sense of evidence</strong>, but stories can also <strong>seduce us into premature closure</strong> unless they are disciplined by explicit evidential and argumentative constraints. The anchored-narratives tradition asks how legal stories can retain their cognitive usefulness while being forced to answer to evidence, warrants, alternatives, and defeaters.</p>
 <p>
   In real trials, fact-finders don’t just add up isolated bits of evidence. They
@@ -1890,7 +2004,7 @@ Discriminating evidence, mechanism detail,
   itself).
 </p>
 <p>This framework directly connects narrative satisfaction to the earlier distinction between psychological closure and epistemic quality.</p>
-<h4 id="explanation-quality-vs-narrative-satisfaction">Explanation Quality vs. Narrative Satisfaction</h4>
+<h5 id="explanation-quality-vs-narrative-satisfaction">Explanation Quality vs. Narrative Satisfaction</h5>
 <ul>
 <li>
 <strong>Narrative virtues</strong> (coherence, vividness, closure, moral
@@ -1958,14 +2072,14 @@ Discriminating evidence, mechanism detail,
 </li>
 </ol>
 <p>This can be operationalized as a practical synthesis of <em>epistemic</em> and <em>psychological</em> evaluation:</p>
-<div class="table-wrap"><table class="comparison-table two-col"><thead><tr><th>Story quality (narrative plausibility)</th><th>Anchor quality (evidential / argumentative support)</th></tr></thead><tbody><tr><td data-label="Story quality (narrative plausibility)">
+<div class="ep-paired-comparison"><section class="ep-paired-panel"><h5>Story quality (narrative plausibility)</h5>
 <ul>
 <li>Internal coherence (no contradictions)</li>
 <li>Completeness (key episodes accounted for)</li>
 <li>Temporal/causal intelligibility (why transitions happen)</li>
 <li>Fit to an appropriate story scheme (if applicable)</li>
 </ul>
-</td><td data-label="Anchor quality (evidential / argumentative support)">
+</section><section class="ep-paired-panel"><h5>Anchor quality (evidential / argumentative support)</h5>
 <ul>
 <li>For each key story step: what evidence supports it?</li>
 <li>What generalization/warrant links evidence → story claim?</li>
@@ -1975,10 +2089,28 @@ Discriminating evidence, mechanism detail,
         competition)?
       </li>
 </ul>
-</td></tr></tbody></table></div>
-<h2 id="part-iv">Part IV — Explanation in a Social Environment</h2><h3 id="social-epistemology">Social Epistemology</h3>
-<p>Most of what we “understand” is socially mediated. We inherit explanations from teachers, institutions, media ecosystems, disciplines, and communities. Those social structures can <strong>improve</strong> inquiry through division of cognitive labor, error-correction, and adversarial testing, or <strong>deform</strong> it through echo chambers, propaganda, identity-protective cognition, and the strategic production of “clarity.” Social epistemology studies how agents pursue truth with the help of—and sometimes in the face of—other people, including inquiry by groups and institutions. Explanation is therefore not merely a relation between a theory and a phenomenon. It is also a <strong>product</strong> of social processes, a <strong>tool</strong> for coordinating groups, and an <strong>object of trust</strong>. This shifts attention toward a second-order set of questions about who explains, who is trusted, and which social arrangements make explanation reliable.</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Question</th><th>Primary concern</th></tr></thead><tbody><tr><td data-label="Question">Who gets to explain? Who is heard as an explainer?</td><td data-label="Primary concern">Power and testimony</td></tr><tr><td data-label="Question">Which social structures make explanation reliable?</td><td data-label="Primary concern">Institutions and norms</td></tr><tr><td data-label="Question">Which structures make “fake understanding” feel irresistible?</td><td data-label="Primary concern">Clarity, propaganda, and echo chambers</td></tr><tr><td data-label="Question">Can groups understand? Can groups explain?</td><td data-label="Primary concern">Collective epistemology</td></tr></tbody></table></div>
-<h4 id="engineered-clarity">Engineered clarity and stopping rules</h4><p>
+</section></div>
+<p class="ep-chapter-bridge">Narratives are not only constructed and judged by individuals: they move through communities that establish whom to trust, which stories to repeat, and what kinds of criticism to admit.</p><h2 id="part-iv">Part IV — Explanation in a Social Environment</h2><h3 id="social-epistemology">Why the social environment matters</h3>
+<p>Most of what we “understand” is socially mediated. We inherit explanations from teachers, institutions, media ecosystems, disciplines, and communities. Those social structures can <strong>improve</strong> inquiry through division of cognitive labor, error-correction, and adversarial testing, or <strong>deform</strong> it through echo chambers, propaganda, identity-protective cognition, and the strategic production of “clarity.” Social epistemology studies how agents pursue truth with the help of—and sometimes in the face of—other people, including inquiry by groups and institutions. Explanation is therefore not merely a relation between a theory and a phenomenon. It is also a <strong>product</strong> of social processes, a <strong>tool</strong> for coordinating groups, and an <strong>object of trust</strong>. This shifts attention toward a second-order set of questions about who explains, who is trusted, and which social arrangements make explanation reliable.</p><div class="ep-labeled-rows"><section class="ep-labeled-item"><h5>Who gets to explain? Who is heard as an explainer?</h5>Power and testimony</section><section class="ep-labeled-item"><h5>Which social structures make explanation reliable?</h5>Institutions and norms</section><section class="ep-labeled-item"><h5>Which structures make “fake understanding” feel irresistible?</h5>Clarity, propaganda, and echo chambers</section><section class="ep-labeled-item"><h5>Can groups understand? Can groups explain?</h5>Collective epistemology</section></div>
+<p>
+  Testimony, expertise, and epistemic dependence show how explanation is often “outsourced.” A lot of social epistemology begins with a sober fact:
+  <strong>you can’t personally verify most things you believe</strong>. Modern
+  knowledge is built on epistemic dependence (especially on experts and
+  institutions). Hardwig’s classic “Epistemic Dependence” is one of the
+  canonical statements of that problem: individuals rationally rely on expert
+  communities because no individual can possess all the supporting evidence.
+  Goldman’s <em>Knowledge in a Social World</em> develops “veritistic” social
+  epistemology: evaluate social practices/institutions by how well they promote
+  knowledge/truth (media norms, science, law, democracy). This creates a deep
+  vulnerability. Because explanation is often received via testimony,
+  <strong>the quality of explanation is entangled with the quality of social trust
+    networks</strong>. “Good explanation” can’t just mean internal features (coherence,
+  simplicity); it must include <strong>social-epistemic features</strong>:
+  source reliability, diversity of critical scrutiny, independence of evidence,
+  institutional incentives. Nguyen’s echo chambers paper explicitly links the
+  danger to “manipulation of trust” and emphasizes epistemic interdependence as
+  unavoidable—echo chambers “prey on our epistemic interdependence.”
+</p><h4 id="engineered-clarity">Engineered clarity and stopping rules</h4><p>
   In "Seductions of Clarity", Nguyen describes explanation as a
   <em>felt</em> stopping rule. He treats <strong>clarity</strong> as an
   <em>epistemic feeling</em> that we use as a
@@ -2028,25 +2160,7 @@ Discriminating evidence, mechanism detail,
   they’re framed as <em>corrupt</em>, <em>naive</em>, or
   <em>enemy propaganda</em>.
 </p>
-<p>
-  Testimony, expertise, and epistemic dependence show how explanation is often “outsourced.” A lot of social epistemology begins with a sober fact:
-  <strong>you can’t personally verify most things you believe</strong>. Modern
-  knowledge is built on epistemic dependence (especially on experts and
-  institutions). Hardwig’s classic “Epistemic Dependence” is one of the
-  canonical statements of that problem: individuals rationally rely on expert
-  communities because no individual can possess all the supporting evidence.
-  Goldman’s <em>Knowledge in a Social World</em> develops “veritistic” social
-  epistemology: evaluate social practices/institutions by how well they promote
-  knowledge/truth (media norms, science, law, democracy). This creates a deep
-  vulnerability. Because explanation is often received via testimony,
-  <strong>the quality of explanation is entangled with the quality of social trust
-    networks</strong>. “Good explanation” can’t just mean internal features (coherence,
-  simplicity); it must include <strong>social-epistemic features</strong>:
-  source reliability, diversity of critical scrutiny, independence of evidence,
-  institutional incentives. Nguyen’s echo chambers paper explicitly links the
-  danger to “manipulation of trust” and emphasizes epistemic interdependence as
-  unavoidable—echo chambers “prey on our epistemic interdependence.”
-</p>
+
 <h4 id="epistemic-injustice">Epistemic injustice and who gets to explain</h4><p>
   Epistemic injustice is also relevant; it describes who gets to explain, who
   gets believed, and who gets understanding-resources. Fricker’s
@@ -2093,14 +2207,14 @@ Discriminating evidence, mechanism detail,
   Nguyen’s warning: if the system gives you easy explanatory facility, you feel
   done—whether or not the system is truth-tracking.
 </p>
-<h4 id="social-evaluation-criteria">Social-epistemic evaluation criteria</h4><p>
+<h4 id="social-evaluation-criteria">Evaluating explanations in their social context</h4><p>
   Traditional criteria (fit with evidence, causal/mechanistic adequacy,
   simplicity, unification, counterfactual robustness) are still relevant. Social
   epistemology adds <em>higher-order</em> and
   <em>social</em> criteria—especially important when explanation is socially
   transmitted.
 </p>
-<div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Criterion family</th><th>Questions to ask</th></tr></thead><tbody><tr><td data-label="Criterion family"><strong>Source-structure criteria</strong></td><td data-label="Questions to ask"><div>
+<div class="ep-labeled-rows"><section class="ep-labeled-item"><h5>Source-structure criteria</h5><div>
 <ul>
 <li>
 <strong>Independence</strong>: are the supporting sources genuinely
@@ -2115,7 +2229,7 @@ Discriminating evidence, mechanism detail,
         clarity/theater/loyalty?
       </li>
 </ul>
-</div></td></tr><tr><td data-label="Criterion family"><strong>Trust-health criteria</strong></td><td data-label="Questions to ask"><div>
+</div></section><section class="ep-labeled-item"><h5>Trust-health criteria</h5><div>
 <ul>
 <li>
         Are trust relations calibrated, or manipulated (echo chamber dynamics)?
@@ -2125,7 +2239,7 @@ Discriminating evidence, mechanism detail,
         (Nguyen’s echo chamber mechanism)?
       </li>
 </ul>
-</div></td></tr><tr><td data-label="Criterion family"><strong>Phenomenology-control criteria</strong></td><td data-label="Questions to ask"><div>
+</div></section><section class="ep-labeled-item"><h5>Phenomenology-control criteria</h5><div>
 <ul>
 <li>Does the system generate <strong>clarity too cheaply</strong>?</li>
 <li>
@@ -2133,7 +2247,7 @@ Discriminating evidence, mechanism detail,
         diagnosis)?
       </li>
 </ul>
-</div></td></tr><tr><td data-label="Criterion family"><strong>Justice and inclusion criteria</strong></td><td data-label="Questions to ask"><div>
+</div></section><section class="ep-labeled-item"><h5>Justice and inclusion criteria</h5><div>
 <ul>
 <li>
         Are some explainers systematically discredited (testimonial injustice)?
@@ -2143,9 +2257,9 @@ Discriminating evidence, mechanism detail,
         “unexplainable” or easily misexplained (hermeneutical injustice)?
       </li>
 </ul>
-</div></td></tr></tbody></table></div>
-<p>Nguyen and Boyd bring into focus that explanation is not only a cognitive achievement but also a <strong>social technology</strong>. Embedded in communities with strong critical norms, it can be epistemically virtuous: it can produce real understanding and support reliable prediction or intervention. Embedded in echo chambers or groupstrapping dynamics, the same basic technology can be epistemically weaponized, producing intense felt clarity and closure while insulating itself from correction.</p>
-<h4 id="environmental-conditions">Environmental Conditions and Epistemic Reliability</h4>
+</div></section></div>
+
+<h5 id="environmental-conditions">How environments make explanations reliable or misleading</h5>
 <p>
   Social epistemologists tend to grade explanations based on two criteria.
   <strong>The explanation as a piece of content</strong> (does it actually
@@ -2161,7 +2275,7 @@ Discriminating evidence, mechanism detail,
   epistemologists would rank explanations. It shows how it connects to hostile
   epistemology, groupstrapping, and engineered clarity.
 </p>
-<div class="table-wrap"><table class="two-col wide-table"><thead><tr><th>Evaluation level</th><th>What to examine</th></tr></thead><tbody><tr><td data-label="Evaluation level"><strong>Internal explanatory virtues (content-level)</strong></td><td data-label="What to examine"><div>
+<div class="ep-labeled-rows"><section class="ep-labeled-item"><h5>Internal explanatory virtues (content-level)</h5><div>
 <p>
       These are closer to philosophy of science / traditional epistemology, and
       social epistemologists usually keep them:
@@ -2193,7 +2307,7 @@ Discriminating evidence, mechanism detail,
       Social epistemology doesn’t reject these; it asks:
       <em>why are people so often satisfied without them?</em>
 </p>
-</div></td></tr><tr><td data-label="Evaluation level"><strong>Social-epistemic virtues (environment-level)</strong></td><td data-label="What to examine"><div>
+</div></section><section class="ep-labeled-item"><h5>Social-epistemic virtues (environment-level)</h5><div>
 <p>
       These are “higher-order” features:
       <em>the reliability of the social process producing the explanation.</em>
@@ -2203,7 +2317,7 @@ Discriminating evidence, mechanism detail,
       social epistemology: evaluate social practices by how truth-conducive they
       are (how they promote true belief / knowledge).
     </p>
-</div></td></tr></tbody></table></div>
+</div></section></div>
 <p>
   Nguyen defines <strong>hostile epistemology</strong> as the study of how
   environmental features exploit our cognitive vulnerabilities, especially
@@ -2246,9 +2360,9 @@ Discriminating evidence, mechanism detail,
   <em>anti-hostile</em> and <em>anti-groupstrapping</em> epistemic ecology.
 </p>
 <p>Sperber’s “epistemic vigilance” program argues that humans have cognitive mechanisms for evaluating testimony and guarding against misinformation because reliance on other people is unavoidable. Nguyen’s hostile-epistemology framework highlights the complementary danger: <em>those vigilance mechanisms can be overloaded or hacked by the environment</em>. Social epistemologists therefore increasingly treat a “good explanation” as one that does not demand heroic vigilance from ordinary agents. They value explanations that come with traceable sources, accessible checks, clear uncertainty markers, and institutional or accountability scaffolding.</p>
-<h2 id="part-v">Part V — A Practical Evaluation Framework</h2><h3 id="general-summary">General Summary</h3>
+<p>Nguyen and Boyd bring into focus that explanation is not only a cognitive achievement but also a <strong>social technology</strong>. Embedded in communities with strong critical norms, it can be epistemically virtuous: it can produce real understanding and support reliable prediction or intervention. Embedded in echo chambers or groupstrapping dynamics, the same basic technology can be epistemically weaponized, producing intense felt clarity and closure while insulating itself from correction.</p><p class="ep-chapter-bridge">The preceding parts supply three distinct kinds of checks: tests of the explanation itself, tests of our response to it, and tests of the social process that produced and stabilized it.</p><h2 id="part-v">Part V — A Practical Evaluation Framework</h2><h3 id="general-summary">Putting the three layers together</h3>
 <p>A practical evaluation framework has three layers: the quality of the explanatory content, the psychology of the evaluator, and the social process that produced and stabilized the explanation.</p>
-<div class="table-wrap"><table class="two-col wide-table long-table"><thead><tr><th>Layer</th><th>Evaluation</th></tr></thead><tbody><tr><td data-label="Layer"><strong>1. Explanatory content</strong></td><td data-label="Evaluation">
+<div class="ep-final-framework"><section class="ep-framework-layer"><h4 id="evaluation-layer-1">1. Explanatory content — Does the explanation actually explain?</h4>
 <p>
 <strong>A</strong>: Mechanistic/difference-making, counterfactuals clear,
       boundaries stated, rivals addressed, evidence strong. <strong>C</strong>:
@@ -2256,7 +2370,7 @@ Discriminating evidence, mechanism detail,
       ignores key alternatives. <strong>F</strong>: “Explains everything,”
       unfalsifiable, mostly vibes/labels, no real dependence relation.
     </p>
-</td></tr><tr><td data-label="Layer"><strong>2. Evaluator psychology</strong></td><td data-label="Evaluation"><p>Check whether coherence, fluency, closure, narrative completion, identity fit, intolerance of ambiguity, or an illusion of explanatory depth is substituting for evidential support. The key distinction is between an explanation that reduces uncertainty by tracking real structure and one that reduces uncertainty mainly by producing a feeling of understanding.</p></td></tr><tr><td data-label="Layer"><strong>3. Social production</strong></td><td data-label="Evaluation">
+</section><section class="ep-framework-layer"><h4 id="evaluation-layer-2">2. Evaluator psychology — Why am I inclined to accept it?</h4><p>Check whether coherence, fluency, closure, narrative completion, identity fit, intolerance of ambiguity, or an illusion of explanatory depth is substituting for evidential support. The key distinction is between an explanation that reduces uncertainty by tracking real structure and one that reduces uncertainty mainly by producing a feeling of understanding.</p></section><section class="ep-framework-layer"><h4 id="evaluation-layer-3">3. Social production — How was the explanation produced and tested?</h4>
 <p>
       Key questions (with typical social-epistemology inspiration in
       parentheses):
@@ -2288,14 +2402,14 @@ Discriminating evidence, mechanism detail,
         exploit clarity, outrage, identity, or information overload? (Nguyen)
       </li>
 </ol>
-</td></tr></tbody></table></div>
+</section></div>
 <p>
 <strong>Overall grade</strong> is a combination: a content-A can be socially
   fragile (e.g., correct claim arrived at by conspiracy-style methods), and a
   content-C can be socially valuable if it’s part of a healthy error-correcting
   pipeline.
 </p>
-<h2 id="sources">Sources</h2>
+<p class="ep-ending">The original question, then, is not simply whether an explanation makes sense to us. It is whether the account identifies the relevant dependence, withstands our own tendency toward premature satisfaction, and remains open to correction within the communities that sustain it.</p><h2 id="sources">Sources</h2>
 <h3 id="philosophy">Philosophy</h3>
 <ul>
 <li>
