@@ -1,0 +1,683 @@
+<!-- Blogger HTML view: paste this complete fragment into the post editor. -->
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+.ep-post .ep-toc { padding: 0.9em 1.1em; border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: 0.65rem; background: color-mix(in srgb, currentColor 3%, transparent); }
+.ep-post .ep-toc h2 { margin: 0 0 0.6em; font-size: 1.15rem; border: 0; padding: 0; }
+.ep-post .ep-toc ol { margin: 0.4em 0 0.3em 1.35em; }
+.ep-post .ep-toc li { margin: 0.35em 0; }
+.ep-post h2[id] { scroll-margin-top: 1rem; }
+.ep-post .essay-subtitle { margin-top: 0.45em; opacity: 0.82; font-weight: 500; }
+</style>
+<article class="ep-post" aria-labelledby="essay-title">
+<h1 id="essay-title">Counting Possibilities, Reifying Mind</h1>
+<h3 class="essay-subtitle">A Critique of Joshua Rasmussen’s Counting Argument</h3><nav aria-label="Table of contents" class="ep-toc" id="contents"><h2 class="ep-toc-heading">Contents</h2><ol><li><a href="#section-1">1. Introduction: When Mathematics Becomes Metaphysics</a></li><li><a href="#section-2">2. Rasmussen’s Argument: From Cantor to the Priority of Mind</a></li><li><a href="#section-3">3. The Representation Problem: Cognition as Selective Modeling</a></li><li><a href="#section-4">4. What Are We Counting? The Problem of Individuation</a></li><li><a href="#section-5">5. Possibility, Complexity, and the Reification of Mathematical Abstractions</a></li><li><a href="#section-6">6. Conclusion: A Quasi-Logical Argument for Mind?</a></li></ol></nav>
+<h2 id="section-1">1. Introduction: When Mathematics Becomes Metaphysics</h2>
+<p>Can a mathematical fact about the number of possible representations tell us what reality is fundamentally made of? In his <a href="https://worldviewdesign.substack.com/p/a-new-counting-argument-for-mind">counting argument for mind-first metaphysics</a>, philosopher Joshua Rasmussen suggests that mind is metaphysically prior to matter because it encompasses a greater range of possible realities. Drawing on Cantor’s theorem, he argues that possible mental realities outnumber possible nonmental realities, and that this numerical abundance provides a reason to regard mind as the fundamental basis of existence.</p>
+<p>The argument is intriguing because it appears to transform a contentious metaphysical question into a mathematical problem. Yet the mathematical relationship itself does not establish the metaphysical conclusion. Rasmussen must additionally show that arbitrary collections of physical properties correspond to distinct conceivable mental properties, that mental and physical possibilities can be meaningfully compared, and that the cardinality of a possibility space bears upon ontological fundamentality.</p>
+<p>This essay challenges those assumptions by drawing on mathematical modeling, cognitive science, and complexity theory. It argues that mental representation is characteristically selective: cognition makes complex realities tractable through abstraction and the allocation of limited cognitive resources, rather than by exhaustively reproducing their possible configurations. Moreover, even if Rasmussen’s proposed numerical correspondence were established, it would not follow that mind is ontologically prior to matter. The argument risks reifying mathematical and representational abstractions into claims about the fundamental structure of reality.</p>
+<p>The issue, then, is not the validity of Cantor’s theorem, but whether its application to metaphysics can bear the philosophical weight Rasmussen places upon it.</p>
+<h2 id="section-2">2. Rasmussen’s Argument: From Cantor to the Priority of Mind</h2>
+<p>Rasmussen’s argument develops in two stages. In his <a href="https://joshualrasmussen.com/articles/building-thoughts-from-dust.pdf">2015 paper, <em>Building Thoughts from Dust: A Cantorian Puzzle</em></a>, he advances a counting argument against a particular form of reductive physicalism. He begins with the premise that, for any plurality of physical properties, there is a corresponding conceivable mental property: thinking that those properties are physical. Distinct pluralities, he proposes, determine distinct mental properties.</p>
+<p>Let <span class="math-inline" role="math">\(P\)</span> denote a set of physical properties, and let <span class="math-inline" role="math">\(\mathcal{P}(P)\)</span> denote its power set, comprising all subsets of <span class="math-inline" role="math">\(P\)</span>. Cantor’s theorem establishes that:</p>
+<div class="math-block" role="math">$$
+|\mathcal{P}(P)|&gt;|P|
+$$</div>
+<p>If every subset of physical properties determines a <em>different</em> conceivable mental property, then the mental properties so identified outnumber the members of <span class="math-inline" role="math">\(P\)</span>. Rasmussen concludes that not every mental property can be identical with a physical property. His 2015 argument targets a particular reductive identity theory; it does not by itself establish that mind is metaphysically fundamental. The correspondence between subsets and distinct mental properties is a philosophical premise, not a consequence of Cantor’s theorem.</p>
+<p>In his <a href="https://worldviewdesign.substack.com/p/a-new-counting-argument-for-mind">2024 essay, <em>Mind Makes More</em></a>, Rasmussen proposes a stronger, preliminary argument. He describes fundamental reality as the basis of the greatest amount of “stuff,” using that term in connection with a domain’s possible divisions or states. He argues that a possible nonmental reality can be mentally represented and that conceptual combinations yield further possible mental realities. On this basis he concludes that mind has the wider range of possibilities and is therefore fundamental.</p>
+<p>Two questions must be kept distinct. <strong>First</strong>, does every relevant physical plurality determine a distinct conceivable mental property, allowing the cardinality comparison? <strong>Second</strong>, even if mental possibilities outnumber physical ones, why should the larger range identify what grounds reality? A third question—whether the domains are counted on comparable terms—concerns the move between them. The mathematics settles none of these questions on its own.</p>
+<h2 id="section-3">3. The Representation Problem: Cognition as Selective Modeling</h2>
+<p>Rasmussen’s counting argument relies on a possible mental property for each arbitrary plurality of physical properties. What, however, does it mean for a mind to represent a physical reality? Scientific modeling and cognitive science give us reason to distinguish <em>referring to</em> something, <em>modeling</em> selected aspects of it, and <em>encoding</em> enough detail to discriminate it from alternatives.</p>
+<p>Consider an NVIDIA A100 GPU. Its possible configurations involve memory contents, processing states, instruction sequences, and interactions between components. For a simplified system with <span class="math-inline" role="math">\(n\)</span> independently variable components, its configuration space is:</p>
+<div class="math-block" role="math">$$
+|\Omega|=\prod_{i=1}^{n}|X_i|
+$$</div>
+<p>where <span class="math-inline" role="math">\(X_i\)</span> is the set of states available to component <span class="math-inline" role="math">\(i\)</span>. A cluster of GPUs introduces additional network, scheduling, and synchronization possibilities. Engineers do not mentally enumerate every configuration; they use simulations, specifications, and models that isolate the dimensions relevant to a task.</p>
+<p>This is more than a complaint about insufficient human brainpower. Mathematical models often succeed <em>by omitting detail</em>. The <a href="https://plato.stanford.edu/entries/models-science/"><em>Stanford Encyclopedia of Philosophy</em>’s discussion of scientific models</a> describes abstraction and idealization as ways of making complex systems tractable. A GPU-performance model might map physical configurations onto descriptions involving throughput, power, and temperature:</p>
+<div class="math-block" role="math">$$
+f:\Omega\rightarrow Z
+$$</div>
+<p>Distinct configurations can share a modeled description:</p>
+<div class="math-block" role="math">$$
+x_1\ne x_2\qquad\text{while}\qquad f(x_1)=f(x_2)
+$$</div>
+<p>The model has not ceased to represent the GPU because it fails to preserve every physical distinction. Its selectivity is part of what makes it useful.</p>
+<p>A parallel insight appears in cognitive science. Herbert Simon’s <a href="https://www.nobelprize.org/uploads/2018/06/simon-lecture.pdf">account of bounded rationality</a> explains why agents adopt tractable procedures instead of evaluating every alternative. John Vervaeke, Timothy Lillicrap, and Blake Richards’ work on <a href="https://contrastiveconvergence.net/~timothylillicrap/files/articles/relevance%20realization%20as%20an%20emerging%20framework%20in%20cogsci.pdf">relevance realization</a> addresses how a cognitive system determines which features and relations matter. Dan Sperber and Deirdre Wilson’s <a href="https://www.dan.sperber.fr/?p=93">relevance theory</a> relates cognitive effects to processing effort, while Falk Lieder and Thomas Griffiths’ <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/abs/resourcerational-analysis-understanding-human-cognition-as-the-optimal-use-of-limited-computational-resources/586866D9AD1D1EA7A1EECE217D392F4A">resource-rational analysis</a> examines the allocation of limited computational resources. These are distinct theories, not a single account of representation, but each makes selection or computational constraint philosophically salient.</p>
+<p>Rasmussen has an important reply available. His <a href="https://joshualrasmussen.com/articles/building-thoughts-from-dust.pdf">2015 paper</a> expressly separates <em>conceivability</em> from <em>physical realizability</em>: he need not claim that any human brain could instantiate a thought about every physical property. Cognitive science cannot show that every logically possible mind is bounded as we are. Nor must a mind enumerate an infinite set to describe it compactly. The GPU example therefore does <strong>not</strong> disprove his premise by exhibiting human limitations.</p>
+<p>Its force is more precise. Our familiar capacities for reference and modeling do not justify the unrestricted claim that each arbitrary plurality determines its own conceivable mental property. I can refer to “the GPU’s exact state at noon” without encoding that state, and I can describe a state space without possessing a separately specified thought about each of its subsets. Rasmussen may individuate thoughts by what they are <em>about</em>, rather than by how much information they internally carry. But then the differences being counted may be supplied by the physical referents used to classify the thoughts, not by an independently demonstrated richness of cognitive representation. That is a problem for the proposed correspondence, distinct from the empirical question of what actual brains can do.</p>
+<h2 id="section-4">4. What Are We Counting? The Problem of Individuation</h2>
+<p>Even granting that arbitrary pluralities can figure in thought, Rasmussen needs distinct pluralities to determine <strong>distinct mental properties</strong>. Cantor’s theorem tells us that a set has more subsets than members; it does not tell us what counts as one mental or physical property. In the <a href="https://joshualrasmussen.com/articles/building-thoughts-from-dust.pdf">2015 paper</a>, Rasmussen explicitly treats thoughts about different pluralities as different mental properties. That principle requires defense, not merely mathematical notation.</p>
+<p>One concern is asymmetry. Physical properties are counted on one side, while mental properties are distinguished through arbitrary collections of those properties on the other. Physical systems also admit configurations, relations, and higher-order descriptions. Rasmussen anticipates a parallel construction using unrestricted physical conjunctions and argues that it runs into a Russell-style contradiction. His reply blocks that <em>particular</em> parody; it does not settle which physical and mental domains should be compared, or whether appropriately restricted higher-order physical descriptions deserve consideration.</p>
+<p>A second concern is <strong>definability</strong>. Rasmussen proposes a systematic procedure: given physical properties, define the mental property of thinking about them. But a schema using an arbitrary plurality as a parameter is not the same as an individual definition of every plurality. In a fixed countable formal language with finite expressions, there are only countably many such expressions. By contrast:</p>
+<div class="math-block" role="math">$$
+|\mathcal{P}(\mathbb{N})|=2^{\aleph_0}&gt;\aleph_0
+$$</div>
+<p>Most subsets of the natural numbers are thus not individually definable in that language. The point is conditional: it neither proves that mental properties are countable nor rules out richer languages, semantic reference, or possible thoughts that are not finitely expressible. It asks what licenses the move from a <em>uniform description with a parameter</em> to a distinct intelligible mental property for <strong>every</strong> value of that parameter. Saying “thinking about <span class="math-inline" role="math">\(S\)</span>” leaves the question of how <span class="math-inline" role="math">\(S\)</span> is picked out—and how a distinct thought is secured—unanswered.</p>
+<p>A defender might instead regard intentional contents as distinct whenever their referents differ, whether or not we can specify them individually. That is a substantive theory of content, and the counting argument may be conditional upon it. But even if it supplies the requisite numerical result, it need not show that minds have greater representational capacities, still less that their referents depend on mind for their existence. The correspondence, the cardinality result, and the metaphysical inference are three separate claims.</p>
+<h2 id="section-5">5. Possibility, Complexity, and the Reification of Mathematical Abstractions</h2>
+<p>Suppose, for the sake of argument, that Rasmussen’s counting succeeds: possible mental properties really do outnumber physical properties. Why should a greater <em>number</em> of possibilities indicate metaphysical priority? In <a href="https://worldviewdesign.substack.com/p/a-new-counting-argument-for-mind"><em>Mind Makes More</em></a>, Rasmussen offers two considerations for his foundational principle. A reality explainable through a single fundamental kind seems theoretically simpler than one requiring several basic kinds; and it may seem strange for “more stuff” to arise from “less stuff.” He describes the latter idea as intuitive and acknowledges that it needs further development. These are reasons to consider the principle, but neither establishes that grounding must preserve or maximize cardinality.</p>
+<p>Simplicity of <em>fundamental kinds</em> and size of a <em>possibility space</em> are different measures. One underlying kind might support many configurations without there being correspondingly many fundamental kinds. Likewise, the intuition that more cannot come from less needs an account of what is being counted: fundamental properties, divisions, configurations, or possible experiences? Without a fixed measure and a rule connecting it to grounding, the ordering principle remains uncertain.</p>
+<p>Systems engineering makes the modal distinction vivid. Engineers can distinguish conceivable configurations, feasible designs constrained by physical requirements, alternatives in a trade study, and the system eventually built. The largest possibility space may exceed the realizable and actual spaces by orders of magnitude. Yet a mathematical description of every conceivable aircraft does not establish that the actual aircraft is constituted by that description. Rasmussen specifies <em>logical</em> possibility; logical describability must still be connected by argument to what exists and what grounds it.</p>
+<div class="math-block" role="math">$$
+\text{Modal abundance}\not\Rightarrow\text{ontological priority}
+$$</div>
+<p>Complexity provides a second check on the intuition, though not a decisive counterexample to his precise metaphysical principle. A system of <span class="math-inline" role="math">\(n\)</span> independent binary components has:</p>
+<div class="math-block" role="math">$$
+|\Omega|=2^n
+$$</div>
+<p>possible configurations. This compares elementary component states with configurations, <strong>not</strong> the total number of fundamental properties with the total number of grounded properties. It therefore does not refute Rasmussen by itself. It does show why we should resist inferring that a basis must already contain, as separate fundamentals, every distinction generated through combination. His principle needs an additional argument explaining why his chosen measure of “stuff” behaves differently.</p>
+<p>Finally, a representation is not a ground. A model represents a GPU without constituting the GPU; a computer simulation represents a hurricane without making that hurricane depend on the simulation for its existence. Even an injection from physical possibilities to possible thoughts would establish a correspondence, not an ontological dependence relation. Rasmussen needs to explain why <em>being representable by mind</em> entails <em>being based in mind</em>.</p>
+<p>This is the essay’s reification concern, stated carefully rather than as an automatic fallacy verdict. <strong>First</strong>, the ability to construct expressions of the form “a thought about <span class="math-inline" role="math">\(S\)</span>” risks being treated as sufficient evidence for a fully populated domain of distinct conceivable mental properties. <strong>Second</strong>, the cardinality of that proposed domain risks being treated as evidence that mind grounds the realities it represents. The first transition raises questions about definition and individuation; the second raises questions about grounding. Neither is supplied by Cantor’s theorem, even if the formal counting conditional is impeccable.</p>
+<h2 id="section-6">6. Conclusion: A Quasi-Logical Argument for Mind?</h2>
+<p>Rasmussen’s argument can be read through Chaïm Perelman and Lucie Olbrechts-Tyteca’s concept of <em>quasi-logical argumentation</em>. In <a href="https://undpress.nd.edu/9780268001919/the-new-rhetoric/"><em>The New Rhetoric</em></a>, they examine forms of argument that gain persuasive force from their resemblance to formal demonstration while requiring substantive interpretive choices to apply those forms to a subject. Calling Rasmussen’s argument quasi-logical is not a claim that Cantor’s theorem is invalid or that his premises cannot form a valid conditional deduction. It locates the dispute over what the mathematical terms are taken to mean and what follows from their application.</p>
+<p>Three steps remain distinct: establishing a conceivable mental property for every physical plurality, showing that these properties outnumber the appropriately specified physical domain, and explaining why a larger modal range identifies what is metaphysically fundamental. Mathematical modeling and cognitive science challenge an easy inference to the first; questions of individuation complicate the second; neither the mathematical result nor the appeal to simplicity establishes the third.</p>
+<p>None of this demonstrates that idealism is false or physicalism true. It supports the narrower conclusion that the counting argument, as presented, does not yet establish the metaphysical priority of mind. If mind is fundamental, the case requires an independently defended account of representation, possibility, and grounding. Counting alone cannot provide it.</p>
+
+</article>
