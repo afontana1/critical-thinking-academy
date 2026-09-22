@@ -1,4 +1,5 @@
 <!-- Blogger HTML view: paste this complete fragment into the post editor. -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -615,6 +616,26 @@
 .ep-post .ep-toc li { margin: 0.35em 0; }
 .ep-post h2[id] { scroll-margin-top: 1rem; }
 .ep-post .essay-subtitle { margin-top: 0.45em; opacity: 0.82; font-weight: 500; }
+.ep-post mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 720px) {
+  .ep-post {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    overflow-x: hidden;
+  }
+  .ep-post h1 { font-size: clamp(1.65rem, 8vw, 2rem); }
+  .ep-post .ep-toc { padding: 0.8em; }
+  .ep-post .ep-toc ol { margin-left: 1.1em; padding-left: 0.3em; }
+}
 </style>
 <article class="ep-post" aria-labelledby="essay-title">
 <h1 id="essay-title">Counting Possibilities, Reifying Mind</h1>
