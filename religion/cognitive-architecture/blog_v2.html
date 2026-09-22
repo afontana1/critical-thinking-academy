@@ -1,0 +1,1218 @@
+<!-- Blogger-ready HTML: paste into the post HTML editor. -->
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+/* Supplemental presentation styles; the supplied stylesheet above is unchanged. */
+.ep-post .ep-subtitle { font-size: 1.1em; line-height: 1.5; opacity: .83; margin: .65em 0 1.55em; }
+.ep-post .ep-toc a { overflow-wrap: anywhere; }
+.ep-post :target { scroll-margin-top: 1.5rem; }
+.ep-post .table-wrap:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+</style>
+<article aria-label="Why Would God Design Minds Like Ours?" class="ep-post"><h1>Why Would God Design Minds Like Ours?</h1>
+<p class="ep-subtitle"><em>Evolution, Cognitive Error, Religious Disagreement, and the Problem of Divine Psychology</em></p>
+<nav aria-label="Table of contents" class="ep-toc"><h2>Contents</h2><ul>
+<li><a href="#introduction">Introduction: The predator behind the bush</a></li>
+<li><a href="#part-i">Part I — Evolution, reliability, and divine intentions</a>
+<ul>
+<li><a href="#chapter-1">1. Evolution, truth, and cognitive reliability</a></li>
+<li><a href="#chapter-2">2. Divine intentions and the limits of reliability</a></li>
+</ul>
+</li>
+<li><a href="#part-ii">Part II — The problem of cognitive design</a>
+<ul>
+<li><a href="#chapter-3">3. Evolutionary constraints and adaptive error</a></li>
+<li><a href="#chapter-4">4. Consequential mistakes and cognitive self-correction</a></li>
+<li><a href="#chapter-5">5. The counterfactual cognitive-design laboratory</a></li>
+<li><a href="#chapter-6">6. The unequal distribution of cognitive opportunities</a></li>
+<li><a href="#chapter-7">7. Omniscience, omnipotence, and perfect goodness</a></li>
+<li><a href="#chapter-8">8. Theological responses and the demands of explanation</a></li>
+</ul>
+</li>
+<li><a href="#part-iii">Part III — Recognizing revelation</a>
+<ul>
+<li><a href="#chapter-9">9. From ordinary cognition to recognizing revelation</a></li>
+<li><a href="#chapter-10">10. Competing revelations and religious disagreement</a></li>
+<li><a href="#chapter-11">11. Geography and unequal access to religious evidence</a></li>
+<li><a href="#chapter-12">12. The <em>sensus divinitatis</em> and divine assistance</a></li>
+<li><a href="#chapter-13">13. Freedom, faith, and divine hiddenness</a></li>
+</ul>
+</li>
+<li><a href="#part-iv">Part IV — Divine psychology and the limits of explanation</a>
+<ul>
+<li><a href="#chapter-14">14. The knowability dilemma</a></li>
+</ul>
+</li>
+<li><a href="#references">References</a></li>
+</ul></nav>
+
+<p><a id="section-i"></a>
+<a id="introduction"></a></p>
+<h2>Introduction: The predator behind the bush</h2>
+<p>Imagine an early human moving through the African savannah. A sudden rustling in the bushes catches her attention. There may be a predator concealed in the vegetation, or the movement may be nothing more than the wind. She has only a moment to decide whether to flee or remain where she is. Without sufficient information to establish the presence of a predator, she must rely on an imperfect judgment about the danger she faces.</p>
+<p>The consequences of her decision are asymmetric. If she flees when no predator is present, she wastes energy and perhaps abandons an opportunity to obtain food. If she remains when a predator is present, the consequences could be fatal. Under these conditions, a defensive system that frequently responds to harmless stimuli may nevertheless provide an adaptive advantage. An organism need not correctly identify every stimulus to make decisions that improve its prospects of survival; importantly, a false alarm in action does not itself show that the organism held a false belief.</p>
+<p>This illustrates what evolutionary biologist and psychiatrist Randolph Nesse calls the smoke detector principle: when the cost of a defensive response is relatively small compared with the potential consequences of failing to respond to a genuine threat, natural selection can favor mechanisms that generate numerous false alarms (<a href="#ref-nesse">Nesse, 2005</a>).</p>
+<p>What initially appears to be a defect in cognition may therefore be intelligible as a response to the particular costs, uncertainties, and constraints under which organisms evolved. Yet this explanation introduces a further question. Why must the organism confront the situation with such limited information and cognitive resources in the first place? Why can it not perceive the predator more accurately, evaluate the evidence more effectively, or reach an appropriate decision without the vulnerabilities associated with its existing cognitive architecture?</p>
+<p>From an evolutionary perspective, these questions concern the historical processes and constraints that shaped the organism. Natural selection operates on available variation and favors traits according to their consequences for reproductive success, not according to an independent objective of producing perfectly rational creatures. Yet when we introduce an omniscient, omnipotent, and perfectly good creator, the explanatory problem changes. A divine designer would presumably know the consequences of the creature's cognitive limitations and would not be subject to the ordinary biological constraints that help explain their evolutionary origins. We must therefore ask why such a creator would choose, or permit the development of, this particular cognitive architecture rather than some alternative.</p>
+<p>The significance of this question extends far beyond encounters with predators. Human beings rely on their cognitive faculties to evaluate evidence, interpret other people's intentions, anticipate consequences, and make decisions affecting themselves and others. Although these faculties enable extraordinary achievements, their limitations can also contribute to serious mistakes and suffering. The same faculties are involved when we evaluate competing religious claims, interpret purported revelations, and attempt to determine whether God exists at all. If God intends human beings to acquire particular religious truths, the reliability of the faculties through which we identify those truths becomes especially important.</p>
+<p>This brings us to an interesting philosophical reversal. In his evolutionary argument against naturalism, Alvin Plantinga contends that combining naturalism with evolution undermines our confidence in the reliability of human cognition. Evan Fales challenges this argument, maintaining that neo-Darwinian evolution provides reasons to expect generally reliable cognitive faculties, whereas the probability of cognitive reliability given theism is unknowable (<a href="#ref-fales">Fales, 1996</a>).</p>
+<p>Fales's objection opens three connected questions. First, what reasons does evolution give us for expecting minds that are generally reliable? Second, even if a perfectly good God would value reliability, why would God choose or permit minds with our particular limitations and their foreseeable consequences? Third, if a theological model holds that God wants people to recognize a particular revelation, how are these minds and their unequal opportunities for acquiring evidence suited to that purpose? These questions concern not simply whether humans sometimes err, but what an omniscient, omnipotent, perfectly good creator's independently justified purposes would lead us to expect. The inquiry begins with Plantinga's argument and Fales's response, then turns to cognitive design and, finally, the recognition of revelation.</p>
+<a id="part-i"></a><header aria-label="Part I: Evolution, reliability, and divine intentions" class="ep-part-banner"><span class="ep-part-kicker">Part I</span><h2 class="ep-part-title">Evolution, reliability, and divine intentions</h2><p class="ep-part-summary">To assess what divine design explains, we must first establish what the evolutionary debate does—and does not—say about the reliability of our faculties.</p></header>
+
+
+<a id="chapter-1"></a>
+<h2 class="ep-source-section">1. Evolution, truth, and cognitive reliability</h2>
+<a id="section-ii"></a>
+<h3>Plantinga’s evolutionary argument against naturalism</h3>
+<p>The reliability of human cognition raises a foundational epistemological question: what reason do we have to trust the faculties through which we form beliefs about the world? Perception, memory, and reasoning enable us to evaluate evidence and distinguish truth from falsehood. Yet our attempts to assess those faculties must themselves rely on them. If we acquire a serious reason to doubt their reliability, that doubt may extend to the very beliefs through which we arrived at it.</p>
+<p>Alvin Plantinga develops this concern in his <em>evolutionary argument against naturalism</em> (EAAN). In chapter 12 of <em>Warrant and Proper Function</em>, he argues that a person who accepts both metaphysical naturalism and an evolutionary account of human cognition may acquire an undefeated <em>defeater</em> for those commitments: a reason that undermines their rational acceptability, rather than a proof that they are false (<a href="#ref-plantinga-1993">Plantinga, 1993, pp. 216–238</a>).</p>
+<p>For a simplified reconstruction, let <strong>N</strong> stand for metaphysical naturalism, <strong>E</strong> for the proposition that our cognitive faculties arose through evolutionary processes, and <strong>R</strong> for the proposition that those faculties are generally reliable—that they produce substantially more true than false beliefs across a relevant range of circumstances. Plantinga's central question concerns the probability that our faculties are generally reliable, <strong>given both naturalism and evolution</strong>.</p>
+<p>Plantinga contends that this probability is <em>low or inscrutable</em>: either naturalism and evolution make reliability improbable, or we cannot reasonably estimate its probability. His 1993 presentation further conditions the probability on a description of the faculties we possess and the beliefs they produce; the simplified formulation here leaves out that qualification (<a href="#ref-plantinga-1993">Plantinga, 1993</a>).</p>
+<p>The argument begins with a distinction between <strong>adaptive behavior</strong> and <strong>true belief</strong>. Natural selection favors heritable traits through their effects on reproductive success. It does not inspect propositions and reward them simply for being true. A creature that escapes a predator may survive whether it flees because it correctly believes the predator is dangerous or because some unusual combination of mistaken beliefs and desires happens to produce the same action. Plantinga's imagined combinations are deliberately strange, but their immediate point is limited and intelligible: successful behavior does not <em>logically entail</em> accurate belief.</p>
+<p>He also questions whether evolutionary selection for the physical properties of our cognitive systems can explain the truth of the <em>contents</em> of our beliefs. On a view sometimes called <strong>semantic epiphenomenalism</strong>, the neurophysiological properties associated with a belief influence behavior, but its semantic content—the proposition it represents—does no causal work as content. If selection is sensitive to the physical processes that generate adaptive actions but not to what the associated beliefs mean, then selection for successful behavior need not be selection for true representations. This is a conditional challenge to certain accounts of the mind, not an assumption that every naturalist must accept semantic epiphenomenalism (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>These considerations are intended to motivate Plantinga's probability claim, but the argument's distinctive conclusion depends on a further epistemological step. A <strong>defeater</strong> need not show that a belief is false; it can instead remove the grounds on which one is entitled to hold it. Plantinga argues that a naturalist who accepts evolution <em>and recognizes</em> that the relevant probability is low or inscrutable thereby acquires a defeater for R. If one has an undefeated defeater for the general reliability of one's faculties, one also has reason to withhold confidence in other beliefs produced by them—including the belief in naturalism and evolution themselves (<a href="#ref-plantinga-1993">Plantinga, 1993</a>; <a href="#ref-plantinga-2000">Plantinga, 2000</a>). The proposed reasoning can be stated without conflating epistemic defeat with logical inconsistency:</p>
+<ol>
+<li>The probability of R, conditional on N and E, is low or inscrutable.</li>
+<li>Someone who accepts N and E and recognizes this fact acquires a defeater for R.</li>
+<li>An undefeated defeater for R extends to beliefs formed by the faculties in question, including N and E.</li>
+<li>Therefore, on Plantinga's argument, a reflective adherent of evolutionary naturalism cannot rationally retain that conjunction without resolving the defeater.</li>
+</ol>
+<p>The conclusion is <strong>not</strong> that naturalism and evolution entail their own falsity. It is that, if Plantinga's probability estimate and defeater principles are sound, their conjunction undermines a person's entitlement to believe it. Both components are open to challenge: one can dispute the probability claim, or question whether a low or unknown conditional probability supplies the sweeping defeater Plantinga describes.</p>
+<p>The argument is also directed at <em>evolutionary naturalism</em>, not evolution by itself. A theist can accept that human cognitive faculties developed through evolution while also proposing that God intended that process to yield generally reliable minds. But the mere possibility of such an intention does not yet establish how probable reliable cognition is under theism. That question will become important after we examine Evan Fales's reply. Fales first challenges Plantinga's treatment of the relation between truth and adaptive success; his response then opens the further question of what, exactly, an appeal to divine design explains.</p>
+<a id="section-iii"></a>
+<h3>Fales’s response: why evolution can favor reliable cognition</h3>
+<p>Plantinga's argument depends on the claim that evolutionary success provides insufficient grounds for expecting cognitive reliability. In his 1996 paper, Plantinga's Case Against Naturalistic Epistemology, Evan Fales challenges this claim by examining the relationship between accurate representation, inference, and adaptive behavior. His response is not simply that true beliefs are sometimes useful. Rather, he argues that the capacity to form generally accurate representations of the environment provides an important advantage for organisms whose survival depends on flexible, sophisticated cognition. This gives us evolutionary reasons to expect cognitive reliability rather than regard it as an improbable coincidence (<a href="#ref-fales">Fales, 1996</a>).</p>
+<p>The starting point is a distinction between the logical possibility of adaptive misbelief and the evolutionary plausibility of a generally unreliable cognitive system. Plantinga's imagined creatures demonstrate that a particular behavior can be produced by unusual combinations of false beliefs and desires. But establishing that a false belief can produce adaptive behavior in an isolated case does not establish that an organism possessing mostly false beliefs could reliably navigate a complex and changing environment. The latter claim requires an explanation of how a generally unreliable representational system could consistently produce successful behavior across an indefinite range of circumstances.</p>
+<p>Consider an organism that must navigate its environment, locate food, avoid predators, recognize members of its own species, and respond to unfamiliar situations. These activities require more than the production of a fixed behavioral response to a particular stimulus. Information acquired in one context must be retained, combined with other information, and applied to circumstances the organism has not previously encountered. A cognitive system capable of representing environmental relationships accurately can use the same information and inferential procedures across many different situations.</p>
+<p>The importance of truth becomes particularly apparent when we consider inference. Valid deductive reasoning preserves truth: when its premises are true, its conclusion must also be true. Consequently, a cognitive system that begins with accurate information can employ general inferential rules to generate further accurate conclusions. This provides a systematic way of extending an organism's knowledge beyond what it immediately perceives.</p>
+<p>False premises do not provide the same guarantee. Although valid reasoning from false premises can sometimes yield true conclusions, it provides no general assurance that the conclusions will be true. A creature whose representations are systematically mistaken might still behave successfully in particular circumstances, but maintaining that success across a wide range of novel situations would require some additional explanation of how its mistaken representations are consistently translated into appropriate actions.</p>
+<p>This is the central asymmetry in Fales's response. Broadly accurate representations, combined with reliable inferential procedures, provide a general-purpose solution to the problem of directing behavior. A system built around largely inaccurate representations would need some alternative mechanism capable of compensating for those inaccuracies. Plantinga's hypothetical belief–desire combinations establish that such compensation is possible in particular cases, but they do not demonstrate the existence of a comparably general and evolutionarily plausible alternative to truth-tracking cognition (<a href="#ref-fales">Fales, 1996</a>).</p>
+<p>Fales also challenges the suggestion that sophisticated cognition could be evolutionarily maintained while making no meaningful contribution to adaptive behavior. Complex cognitive machinery is biologically costly. It requires resources for its development, maintenance, and operation. If such machinery made no contribution to an organism's behavioral success, its evolutionary persistence would itself require explanation. Selection for effective information processing therefore provides reason to expect that the relevant cognitive mechanisms make a difference to how organisms interact with their environments.</p>
+<p>This does not, by itself, resolve the further question concerning semantic content. Plantinga's concern is that selection might favor the neurophysiological properties responsible for adaptive behavior without favoring the truth of the beliefs associated with those properties. Fales's response depends on resisting an overly sharp separation between a representational system's physical organization and its capacity to represent the world. On a naturalistic account in which representational content is systematically connected to an organism's causal interactions with its environment, selection for effective information processing can also favor mechanisms that represent relevant environmental relationships accurately. The evolutionary advantage of such a system need not depend on natural selection evaluating propositions as propositions.</p>
+<p>The result is a challenge to Plantinga's proposed probability judgment. Fales maintains that neo-Darwinian evolution supplies positive reasons to expect generally reliable cognitive faculties. In the terminology introduced earlier, he argues that <strong>general reliability is relatively probable given naturalism and evolution</strong>, rather than improbable or inscrutable (<a href="#ref-fales">Fales, 1996</a>).</p>
+<p>This conclusion should not be confused with the stronger claim that evolution produces perfectly reliable cognition. Natural selection may favor a mechanism that produces occasional false beliefs, and certain systematic errors may themselves be adaptive when their costs are lower than those of alternative mistakes. Nor does the argument establish that every domain of human cognition is equally reliable. The evolutionary value of accurately representing immediate environmental conditions does not automatically extend to abstract metaphysics, sophisticated mathematics, or questions about ultimate reality. These qualifications will become important when we examine the particular limitations of human cognition later in this essay.</p>
+<p>The philosophical significance of Fales's response is that it challenges the inference from evolution's concern with reproductive success to the alleged improbability of truth-tracking cognition. Fitness and truth are distinct, but this distinction does not make them independent. Accurate representations can contribute to fitness precisely because they allow organisms to respond effectively to the environments in which they live.</p>
+<p>Fales's argument does not conclusively settle every issue raised by Plantinga. In particular, questions remain about the relationship between neurophysiology and semantic content, the reliability of different cognitive domains, and whether the evolutionary considerations Fales identifies are sufficient to defeat Plantinga's broader skeptical argument. Nevertheless, it provides a substantive naturalistic explanation for why generally reliable cognition should be expected.</p>
+<p>Fales then introduces a second, distinct challenge. Even if theism permits an explanation of cognitive reliability through divine design, why should we assume that God would choose to create reliable cognitive faculties? The existence of a being capable of producing a particular outcome does not establish the probability that the being would intend to produce it. Fales accordingly argues that, while evolution supplies reasons for expecting general cognitive reliability, its probability relative to theism is unknowable (<a href="#ref-fales">Fales, 1996</a>).</p>
+<a id="chapter-2"></a>
+<h2 class="ep-source-section">2. Divine intentions and the limits of reliability</h2>
+<a id="section-iv"></a>
+<h3>Would God want reliable minds?</h3>
+<p>Fales's second challenge shifts attention from what God <em>could</em> create to what we have grounds to expect God <em>would</em> create. Even if God possesses the power to produce reliable cognitive faculties, divine ability alone does not establish a particular intention. What, then, justifies expecting God to give human beings generally reliable minds?</p>
+<p>This is an instance of the broader problem of divine psychology. As I argued in <a href="https://afontana1.github.io/critical-thinking-academy/religion/divine-psychology/blog.html">When an Explanation Explains Too Much</a>, explanations involving intelligent agency depend not merely on what an agent is capable of doing, but also on what the agent has reason to do. In ordinary circumstances, our explanations of human behavior draw upon background knowledge concerning an individual's motivations, preferences, circumstances, and limitations. These constraints allow us to distinguish actions we would expect the individual to perform from those we would regard as surprising. By contrast, attributing an outcome to an agent with virtually unlimited causal power does little to explain why that outcome occurred unless we also possess an independently justified account of the agent's intentions.</p>
+<p>The distinction is particularly important when assessing Plantinga's proposed contrast between naturalism and theism. Under evolutionary naturalism, the reliability of cognition is to be explained through the relationship between accurate representation, adaptive behavior, and natural selection. A theistic explanation can instead appeal to the intentions of a divine creator. But this appeal does not eliminate the need for explanation. It relocates the explanatory burden from the evolutionary origins of cognition to the reasons a divine agent would have for producing it.</p>
+<p>To appreciate the problem, consider the additional assumptions required to move from God's existence to the reliability of human cognition. We must suppose that God values creatures possessing true beliefs, that God would choose to realize this value through generally reliable cognitive faculties, and that this intention would not be overridden by other divine purposes. Each assumption may be theologically defensible, but none follows merely from the proposition that a divine creator exists.</p>
+<p>The same distinction can be expressed without assuming that we know God's intentions. To estimate how probable reliable cognition is under theism, we would have to consider the different purposes God might have and how strongly our theological commitments support each of them. Reliability might be highly expected under one independently justified account of divine purposes and less expected under another. We cannot derive the probability under the broader hypothesis merely by selecting the account most favorable to the outcome we observe.</p>
+<p>Suppose we specify a particular divine intention according to which God strongly values reliable human cognition and chooses to provide it. We might then have grounds for assigning a high probability to reliability under that more specific hypothesis. But establishing that result does not establish that reliability is highly probable under theism generally. We would also need some justification for assigning substantial probability to the relevant intention in the first place.</p>
+<p>This distinction exposes a potential problem in the explanatory use of divine agency. If we begin with the observation that human beings possess generally reliable minds and subsequently attribute to God an intention to create reliable minds, the resulting explanation may be coherent without establishing that the original theistic hypothesis made cognitive reliability especially probable. We have shown how the observation could fit a particular account of God's purposes, but we have not yet established why that account should have been expected independently of the observation.</p>
+<p>The objection does not require denying that classical perfect-being theism constrains divine intentions. Omniscience, omnipotence, and perfect goodness are substantive attributes, and a defender of theism might argue that they provide grounds for expecting God to value truth and create beings capable of acquiring knowledge. Such an argument deserves consideration. The question is whether those attributes determine the relevant intentions sufficiently to justify the proposed probability judgment.</p>
+<p>Perfect goodness, for example, might give God reason to value human knowledge. But knowledge may not be the only good God values. A theist might also attribute significance to freedom, intellectual development, dependence, moral responsibility, or other goods that could influence the capacities God chooses to provide. Even if these goods are mutually compatible in some circumstances, their relationship does not automatically determine how much cognitive reliability God would provide or which limitations God would permit.</p>
+<p>Consequently, theism supplemented by a particular account of divine intentions may generate meaningful expectations even when the broader hypothesis remains insufficiently specified. This does not make such supplementary assumptions illegitimate. Their explanatory value depends on whether they are independently justified and whether they genuinely constrain the range of outcomes we should expect.</p>
+<p>Nor does uncertainty about divine intentions establish that cognitive reliability is improbable under theism. An unknown probability is not a low probability. The immediate difficulty is instead that the claimed explanatory advantage remains unestablished until the relevant intentions are justified.</p>
+<p>These distinctions become especially important when we move from the general reliability of human cognition to its actual configuration. Even if a theist successfully argues that God would want human beings to possess broadly reliable faculties, this leaves open how reliable those faculties should be, in which domains they should operate effectively, and what limitations they should possess.</p>
+<p>A mind that generally represents its environment accurately may nevertheless exhibit systematic biases, poorly calibrated confidence, limited processing capacity, and vulnerabilities that contribute to serious mistakes. These characteristics are not incompatible with general reliability, but neither are they explained merely by establishing that reliable cognition is valuable.</p>
+<p>The question is therefore more demanding than whether God would want creatures capable of acquiring true beliefs. We must ask whether the intentions attributed to God give us reason to expect this particular combination of cognitive reliability and limitation, rather than some alternative architecture that preserves the benefits of cognition while reducing its harmful consequences.</p>
+<p>This is where the problem of divine psychology becomes a problem of cognitive design. The appeal to a creator does not end the inquiry into why our minds are structured as they are. It introduces a further question about why an omniscient, omnipotent, and perfectly good agent would choose or permit the particular cognitive architecture we actually possess.</p>
+<a id="section-v"></a>
+<h3>Reliable enough for what?</h3>
+<p>The distinction between general cognitive reliability and the particular architecture of human cognition requires further clarification. A mind can be reliable in one respect while exhibiting substantial limitations in another. Consequently, establishing that evolution favors generally reliable cognition does not establish that our faculties are equally reliable across every domain, that our confidence accurately reflects our likelihood of being correct, or that our reasoning consistently produces decisions that promote our well-being. These are different properties, and their relationship is central to understanding what requires explanation.</p>
+<div aria-label="Table: Dimension, The question it answers" class="table-wrap" role="region" tabindex="0"><table class="two-col">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>The question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Dimension">General accuracy</td>
+<td data-label="The question it answers">Do the faculties produce substantially more true than false beliefs in a relevant range?</td>
+</tr>
+<tr>
+<td data-label="Dimension">Domain-specific reliability</td>
+<td data-label="The question it answers">In which environments and subjects do those faculties work well?</td>
+</tr>
+<tr>
+<td data-label="Dimension">Confidence calibration</td>
+<td data-label="The question it answers">Does confidence track the evidence or the chance of being right?</td>
+</tr>
+<tr>
+<td data-label="Dimension">Practical rationality</td>
+<td data-label="The question it answers">Does an agent decide appropriately given information, aims, and uncertainty?</td>
+</tr>
+<tr>
+<td data-label="Dimension">Epistemic opportunity</td>
+<td data-label="The question it answers">Does a person have access to the evidence and corrective resources needed to exercise those faculties?</td>
+</tr>
+</tbody>
+</table></div>
+<p>The first four distinctions are developed below; the fifth becomes central in the discussion of cognitive opportunity. These dimensions interact, but their questions must not be conflated.</p>
+<p>Consider perceptual reliability. Our visual systems ordinarily allow us to navigate the environment, recognize objects, and respond to potential dangers. Their effectiveness in these activities provides good practical reasons to regard them as broadly reliable. Yet perceptual success does not imply that our visual systems reproduce the environment without distortion, nor does it establish that our faculties are similarly reliable when evaluating complex statistical evidence, interpreting other people's intentions, or investigating abstract metaphysical questions.</p>
+<p>The distinction is particularly important for Fales's argument. Evolutionary considerations may provide substantial grounds for expecting accurate representations of features of the environment relevant to an organism's survival and reproduction. However, those considerations do not automatically establish reliability in every domain of human inquiry. A faculty's adaptive value depends partly on the circumstances in which it operates and the consequences of the behavior it produces. The evolutionary pressures associated with navigating physical environments need not be identical to those associated with evaluating philosophical arguments or assessing competing religious claims.</p>
+<p>A second distinction concerns calibration: the relationship between our confidence in a judgment and the probability that the judgment is correct. A person may possess generally reliable faculties while nevertheless being excessively confident in particular circumstances. Conversely, someone may reach accurate conclusions while remaining unnecessarily uncertain about them. The reliability of the resulting beliefs and the accuracy of the person's confidence are therefore separable. This distinction matters because the consequences of cognitive error depend not only on whether a belief is false, but also on how confidently it is held and how that confidence influences subsequent decisions.</p>
+<p>A third distinction concerns practical rationality. Accurate beliefs can contribute to effective decision-making, but possessing true beliefs does not guarantee that an individual will choose actions that promote their interests or values. Decisions also depend on preferences, available alternatives, uncertainty, and the capacity to evaluate consequences. Furthermore, reproductive success and individual welfare are not equivalent objectives. A cognitive mechanism could contribute to evolutionary fitness while imposing costs on the individual, particularly when it operates in circumstances different from those in which it developed.</p>
+<p>These distinctions complicate any straightforward identification of cognitive reliability with optimal cognitive design. Research on ecological rationality, for example, demonstrates that simple heuristics can sometimes outperform more computationally demanding strategies. Their effectiveness depends on the structure of the environment and the nature of the decision problem. As <a href="#ref-gigerenzer">Gigerenzer and Brighton (2009)</a> explain, less information and computation can sometimes improve inferential accuracy rather than diminish it.</p>
+<p>The point is not that heuristics are inherently defective or that more sophisticated reasoning would always produce better outcomes. Rather, the adequacy of a cognitive mechanism must be evaluated relative to the tasks it performs, the conditions under which it operates, and the consequences of its errors.</p>
+<p>This brings us to the distinction that will guide the remainder of the essay. A cognitive architecture can be sufficiently reliable to support evolutionary success without being the architecture that minimizes preventable suffering or provides the greatest attainable access to truth. General reliability establishes neither optimality nor the absence of significant, systematic vulnerabilities.</p>
+<p>For evolutionary naturalism, the task is to explain how particular cognitive capacities developed under the relevant historical and biological conditions. For classical perfect-being theism, an additional question arises: why would a creator possessing unlimited knowledge and power, and characterized by perfect goodness, choose or permit this particular combination of cognitive capacities and limitations?</p>
+<a id="part-ii"></a><header aria-label="Part II: The problem of cognitive design" class="ep-part-banner"><span class="ep-part-kicker">Part II</span><h2 class="ep-part-title">The problem of cognitive design</h2><p class="ep-part-summary">The question now shifts from whether our faculties are generally reliable to why they have this particular combination of capabilities, vulnerabilities, and opportunities for correction.</p></header>
+
+
+<a id="chapter-3"></a>
+<h2 class="ep-source-section">3. Evolutionary constraints and adaptive error</h2>
+<a id="section-vi"></a>
+<p class="chapter-lead">Evolutionary theory explains cognitive limitations by identifying the processes and constraints that shaped them. Natural selection sometimes yields imperfect outcomes, but the more informative question is <em>why</em> organisms possess the particular characteristics they do. Those mechanisms matter when we ask which constraints apply to evolutionary processes and which, if any, would constrain a creator possessing the classical divine attributes.</p>
+<p>Natural selection is a historical process. It operates on heritable variation within populations, favoring characteristics according to their effects on reproductive success in particular environments. It does not begin with a complete specification of an ideal organism and construct that organism from first principles. Instead, evolutionary change modifies existing biological systems, and the available pathways depend on the structures inherited from earlier generations. A potentially advantageous characteristic may fail to evolve because the necessary variation is unavailable, because its development would interfere with other functions, or because intermediate changes would be disadvantageous. Evolutionary biologists distinguish these limitations in terms of genetic variation, historical constraints, and trade-offs (<a href="#ref-garland">Garland et al., 2022</a>).</p>
+<p>These considerations have important implications for cognition. More sophisticated information processing may improve an organism's ability to respond to its environment, but neural systems require resources for their development, maintenance, and operation. Increasing cognitive capacity can therefore involve costs that must be considered alongside its potential benefits. Moreover, the evolutionary advantage of a cognitive improvement depends on whether it increases reproductive success under the conditions in which it arises. An improvement that would benefit an individual in some abstract sense need not spread through a population if it provides no corresponding selective advantage.</p>
+<p>Evolutionary explanations must also account for the relationship between cognitive mechanisms and their environments. A mechanism that performs effectively under one set of conditions may perform less effectively when those conditions change. This does not necessarily mean that the mechanism was poorly adapted to the environment in which it developed. Its limitations may become apparent only when it encounters unfamiliar circumstances or when the costs associated with its characteristic errors change.</p>
+<p>Research on ecological rationality is particularly relevant here. <a href="#ref-gigerenzer">Gigerenzer and Brighton (2009)</a> argue that the effectiveness of a heuristic depends partly on the structure of the environment in which it operates. Strategies that ignore some available information can sometimes produce more accurate predictions than more computationally demanding alternatives, particularly when additional information introduces noise or encourages overfitting. Cognitive sophistication cannot therefore be evaluated simply by measuring how much information a system processes or how complicated its reasoning procedures are.</p>
+<p>An evolutionary explanation can therefore account for a cognitive mechanism by identifying the constraints and selection pressures that shaped it without establishing that the resulting architecture is optimal according to every possible objective. The mechanism may represent a successful evolutionary outcome while still generating errors, imposing costs on individuals, or producing undesirable consequences under different circumstances.</p>
+<p>This distinction becomes philosophically significant when we introduce divine agency. If a theist maintains that God created human beings through evolutionary processes, the evolutionary explanation remains available. The theist need not deny that natural selection operated on inherited structures, that neural systems face resource constraints, or that particular heuristics developed in response to asymmetric risks.</p>
+<p>However, accepting those explanations introduces a further question concerning the relationship between the creator and the process through which cognition developed. An omnipotent creator would not ordinarily be understood as subject to the same limitations as natural selection. God would not lack foresight, be restricted to whatever genetic variation happened to arise, or be unable to anticipate the consequences of particular evolutionary pathways. Even if God chose to create through evolution, the choice of that process and the conditions under which it operates would themselves become relevant to the explanation.</p>
+<p>This does not establish that an omnipotent creator could produce every imaginable cognitive improvement without cost. Some proposed alternatives may involve genuine logical or functional incompatibilities. Nor does the existence of evolutionary constraints establish that those constraints were avoidable within every possible world that preserves the goods a theist might regard as important.</p>
+<p>The distinction is instead one of explanatory responsibility. A constraint that explains why natural selection produced a particular cognitive architecture does not automatically explain why an omniscient and omnipotent creator would choose or permit that architecture. To make the latter inference, we need additional reasons for believing that God would value the relevant evolutionary process, its constraints, or the goods associated with its outcomes.</p>
+<p>Evolutionary theory thus provides resources for understanding why our cognitive faculties possess particular characteristics. But the same explanation, when incorporated into a theistic account, raises questions about why those characteristics and their foreseeable consequences would be permitted by a divine creator.</p>
+<a id="section-vii"></a>
+<h3>Threat detection: when false alarms can be adaptive</h3>
+<p>Return to the early human who hears movement behind a bush. She must decide whether to flee or remain, despite uncertainty about whether a predator is present. The consequences of her decision depend on both the actual state of the environment and the action she chooses. The situation can be represented by a simple decision matrix:</p>
+<div aria-label="Table: Decision, Predator present, Predator absent" class="table-wrap" role="region" tabindex="0"><table class="three-col">
+<thead>
+<tr>
+<th>Decision</th>
+<th>Predator present</th>
+<th>Predator absent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Decision">Flee</td>
+<td data-label="Predator present">Potentially avoids serious harm</td>
+<td data-label="Predator absent">Incurs an unnecessary cost</td>
+</tr>
+<tr>
+<td data-label="Decision">Remain</td>
+<td data-label="Predator present">Risks serious harm</td>
+<td data-label="Predator absent">Avoids unnecessary flight</td>
+</tr>
+</tbody>
+</table></div>
+<p>The decision can be described without mathematical notation. Assume that fleeing reliably avoids a predator, that fleeing unnecessarily has a relatively small cost, and that remaining in the presence of a predator carries a potentially catastrophic cost. Fleeing is preferable when the chance of a genuine predator, weighted by the cost of failing to respond, exceeds the chance of a false alarm, weighted by the cost of fleeing unnecessarily. As the cost of missing a genuine threat increases relative to the cost of a false alarm, even a small assessed chance of danger can justify flight.</p>
+<p>Because the cost of missing a genuine threat can greatly exceed the cost of a false alarm, the threshold for defensive behavior can be very low. A system can therefore respond to many harmless stimuli while still performing effectively under the relevant conditions.</p>
+<p>This is the central insight of Randolph Nesse's smoke detector principle: natural selection can favor defensive systems that generate frequent false alarms when the response is relatively inexpensive and the danger is severe (<a href="#ref-nesse">Nesse, 2005</a>). Such a pattern can be adaptive without implying that every false alarm is beneficial or that the system is optimally regulated.</p>
+<p>The example also exposes an important distinction between belief accuracy and decision quality. An organism may reasonably flee because a predator is sufficiently likely, even if none is present. That unnecessary flight need not involve a false belief: the organism might correctly judge that a threat is possible and act prudently given the costs of error. A mistaken belief about the predator and a rational precaution under uncertainty are different phenomena.</p>
+<p>A false alarm is therefore not automatically evidence of defective cognition: a system that waits until danger is virtually certain could perform considerably worse than one that sometimes responds unnecessarily. Nevertheless, the rule is effective <em>given</em> uncertainty, incomplete information, limited processing time, and the relative costs of alternative actions; its effectiveness does not establish that those conditions are unavoidable or desirable. An organism with more accurate threat detection might avoid unnecessary defensive responses without becoming more vulnerable to genuine predators, although greater accuracy could involve costs or functional trade-offs. Evolutionary theory helps explain why such improvements may not arise through natural selection, but it does not independently establish that an omnipotent creator could not provide them. The philosophical distinction is between a decision rule that is adaptive under specified constraints and a cognitive architecture whose constraints still require explanation.</p>
+<a id="chapter-4"></a>
+<h2 class="ep-source-section">4. Consequential mistakes and cognitive self-correction</h2>
+<h3>Medical diagnosis: when limitations can cause harm</h3>
+<p>Medical diagnosis presents a different cognitive problem: clinicians must integrate symptoms, patient histories, examination findings, and test results while distinguishing among competing explanations. The information is frequently incomplete, and many conditions share similar features. Clinicians must therefore reason under uncertainty, sometimes while facing substantial time pressure.</p>
+<p>Consider a hypothetical patient who presents with symptoms commonly associated with a relatively minor condition but also consistent with a more serious illness. A clinician may initially favor the familiar diagnosis and interpret subsequent findings in its light. If insufficient attention is given to alternative explanations, the more serious condition may be overlooked.</p>
+<p>This example illustrates a possible mechanism of diagnostic error, not a claim that diagnostic mistakes are always caused by cognitive bias. Errors can also arise from inadequate information, communication failures, unavailable tests, organizational problems, or limitations in medical knowledge.</p>
+<p>The distinction matters empirically. The National Academies' 2015 report Improving Diagnosis in Health Care describes diagnosis as a complex, collaborative process and identifies diagnostic errors as a significant source of patient harm. Its analysis emphasizes that improving diagnosis requires attention to both individual cognition and the broader healthcare system (<a href="#ref-diagnosis">National Academies of Sciences, Engineering, and Medicine, 2015</a>).</p>
+<p>External assistance can sometimes improve reasoning. In a systematic review and meta-analysis, <a href="#ref-staal">Staal and colleagues (2022)</a> examined the effectiveness of cognitive reasoning tools intended to improve diagnostic accuracy among medical students and professionals. Their analysis included 29 studies involving 2,732 participants. After excluding three studies involving additional training immediately before assessment, the researchers found a small improvement in diagnostic accuracy associated with the use of these tools. They also emphasized the limitations of the evidence and the need for further evaluation in clinical practice (<a href="#ref-staal">Staal et al., 2022</a>).</p>
+<p>These findings do not establish that diagnostic errors can be eliminated through better reasoning, or that every improvement in diagnostic accuracy necessarily produces a corresponding reduction in patient suffering. They do, however, provide evidence that some limitations in clinical reasoning can be addressed through deliberate interventions.</p>
+<p>That observation has a distinct philosophical significance. Human beings possess cognitive faculties capable of identifying certain weaknesses in their own operation and developing techniques to compensate for them. Structured reasoning, deliberate consideration of alternative diagnoses, and other corrective methods can sometimes improve performance beyond what unaided judgment achieves.</p>
+<p>These tools do not make cognition perfect. They do, however, raise the question of why our architecture requires correction in the first place, particularly when failures can have serious consequences.</p>
+<p>A naturalistic explanation can appeal to the limits of evolved information processing, the difficulty of the diagnostic environment, and the historical development of medical knowledge. These considerations help explain why human reasoning does not automatically possess all the capacities needed for accurate diagnosis.</p>
+<p>But a theory of intentional divine design introduces a further question. If a creator knew the consequences of these limitations and possessed the power to provide different cognitive capacities, what reasons would justify selecting or permitting the actual arrangement?</p>
+<p>The answer might involve goods associated with intellectual development, cooperation, learning, or the exercise of responsibility. Those possibilities deserve consideration. Yet their existence alone does not establish that the particular limitations responsible for serious diagnostic mistakes are necessary for realizing those goods.</p>
+<h3>What the two cases establish</h3>
+<p>Taken together, the cases show why cognitive error and human welfare cannot be reduced to a simple opposition between accurate and inaccurate thinking. In the predator example, occasional errors can be part of an adaptive decision strategy. In medical diagnosis, particular errors can contribute to serious harm, and some can be reduced through corrective methods. Neither case establishes that all cognitive limitations are evolutionary defects, nor that a cognitively superior alternative could be implemented without any trade-offs.</p>
+<p>What they establish is a more specific explanatory problem. Our cognitive faculties operate under conditions that make some errors understandable, while possessing limitations whose consequences can sometimes be identified and mitigated.</p>
+<p>The distinction between evolutionary adequacy and benevolent design becomes especially important at this point. An evolutionary explanation asks why certain mechanisms developed and persisted under particular conditions. An explanation invoking a perfectly good creator must also address why those mechanisms, their constraints, and their foreseeable consequences would be chosen or permitted.</p>
+<p>The existence of an evolutionary explanation for a cognitive limitation does not, by itself, constitute a moral justification for that limitation.</p>
+<p>This becomes particularly significant when we consider that human beings can recognize some of their cognitive vulnerabilities and develop methods to overcome them. Our capacity for self-correction suggests that the limitations of unaided cognition are not always fixed boundaries on what we can know or accomplish. It also raises a further question: why would creatures capable of identifying and correcting some of their own harmful cognitive deficiencies need to discover those corrections through processes that can themselves involve costly mistakes?</p>
+<a id="section-viii"></a>
+<h3>Correction beyond the clinic: science and metacognition</h3>
+<p>The medical example also reveals a constructive feature of human cognition: although our faculties are susceptible to error, we can identify some of their vulnerabilities and develop ways to compensate for them. Human beings do not rely exclusively on their unaided perceptual and inferential capacities. We construct instruments, formulate rules of reasoning, develop mathematical systems, and establish institutions intended to improve the reliability of our judgments. These activities allow us to achieve forms of knowledge that would be difficult or impossible to acquire through individual cognition alone.</p>
+<p>This capacity for self-correction introduces a further dimension to the problem of cognitive design. Our limitations are not always fixed boundaries on what we can know. Some can be reduced through the development of additional cognitive resources, raising questions about why those resources must be discovered, learned, and distributed through historically contingent processes rather than being more extensively incorporated into our original cognitive capacities.</p>
+<p>Consider the development of scientific methodology. Individual researchers may misinterpret evidence, overlook alternative explanations, or reach conclusions influenced by their prior expectations. Scientific inquiry attempts to address these vulnerabilities through practices such as experimental controls, statistical analysis, independent criticism, and replication. Rather than assuming that individual judgment is sufficiently reliable in every circumstance, these methods establish procedures through which conclusions can be tested and corrected.</p>
+<p>The National Academies' report Reproducibility and Replicability in Science (2019) identifies replication as an important means of building confidence in scientific results. When independent investigations employing appropriate methods produce consistent findings, researchers acquire additional grounds for confidence that their conclusions reflect genuine phenomena rather than errors arising from a particular investigation (<a href="#ref-replicability">National Academies, 2019</a>).</p>
+<p>The significance of these practices is not that science eliminates human error. Scientific institutions are themselves operated by fallible individuals, and their procedures can fail. Rather, scientific inquiry illustrates how the limitations of individual cognition can sometimes be mitigated through organized systems of error detection and correction.</p>
+<p>This observation connects to a broader philosophical discussion concerning the relationship between individual and collective cognition. Research on socially extended scientific knowledge examines how collaboration, instruments, and shared practices can contribute to epistemic achievements that are not adequately explained by considering individual reasoning in isolation (<a href="#ref-pritchard">Pritchard, 2022</a>).</p>
+<p>Human cognitive reliability, in other words, is not determined exclusively by the capacities of an isolated brain. It can also depend on the external resources and social arrangements through which individuals acquire and evaluate information.</p>
+<p>A related phenomenon occurs at the individual level through metacognition: our capacity to monitor and evaluate aspects of our own thinking. We can recognize uncertainty, reconsider an inference, or acknowledge that our confidence exceeds the available evidence. However, metacognitive judgments are themselves imperfect. As <a href="#ref-fleming">Fleming (2024)</a> explains, judgments about our own performance depend on representations of both the world and our cognitive processes, and those representations can diverge from actual performance.</p>
+<p>Thus, our capacity to correct errors is itself limited by cognitive processes that may require further correction. We possess neither complete insight into our own reasoning nor an infallible mechanism for identifying every mistake. Nevertheless, the existence of metacognitive capacities and external corrective methods demonstrates that the reliability of human judgment can sometimes be improved beyond its initial level.</p>
+<p>The philosophical importance of this observation becomes clearer when we distinguish two questions. The first concerns why human beings developed these corrective capacities. A naturalistic account can investigate how learning, cooperation, communication, and cumulative cultural development enable organisms to improve their ability to acquire and use information. The second concerns why a perfectly knowledgeable and powerful creator would choose or permit a cognitive architecture in which important improvements depend on such processes.</p>
+<p>A theist might reasonably argue that discovering knowledge and learning to correct mistakes are themselves valuable activities. Intellectual development can involve curiosity, perseverance, cooperation, and the cultivation of epistemic virtues. A world in which creatures already possessed every truth might lack certain opportunities for discovery and understanding.</p>
+<p>This response identifies goods that deserve consideration. However, establishing that intellectual development is valuable does not establish that every limitation encountered during that development is necessary for realizing its benefits. Nor does it establish that those benefits require the particular consequences associated with our actual cognitive vulnerabilities.</p>
+<p>We can imagine, for example, creatures who retain the capacity to discover new truths while possessing a greater ability to recognize when they are mistaken, evaluate evidence accurately, or identify the consequences of their decisions. Such creatures would not need to be omniscient. Their knowledge could remain incomplete, and they could continue to engage in meaningful inquiry. The proposed improvement would concern the reliability of their cognitive processes rather than the elimination of every opportunity for learning.</p>
+<p>Whether such an architecture could be realized without sacrificing other important goods remains a substantive question. The mere ability to describe an improvement does not establish its feasibility, and a more capable cognitive system might involve trade-offs that are not immediately apparent. Nevertheless, our development of corrective methods provides a reason to investigate these alternatives rather than assume that the actual architecture represents the only possible arrangement compatible with intellectual development.</p>
+<p>Correction also has a distributive dimension: access to reliable information, education, scientific instruments, and opportunities for intellectual development is not uniform across human lives. Some individuals can benefit from sophisticated methods of error correction, while others encounter circumstances in which those resources are unavailable. The significance of this unequal access will become especially important when we examine the distribution of cognitive opportunities and the conditions under which people attempt to identify religious truth.</p>
+<p>For now, the relevant conclusion is more limited. Human beings possess cognitive faculties that are sufficiently sophisticated to recognize and sometimes correct their own deficiencies, yet those corrective capacities remain incomplete and dependent on additional resources. This arrangement can be investigated through naturalistic accounts of cognition and cultural development. Under a theory of intentional divine design, it also raises a question about why the creator would provide this particular relationship between initial cognitive capacity, opportunities for improvement, and exposure to consequential error.</p>
+<a id="chapter-5"></a>
+<h2 class="ep-source-section">5. The counterfactual cognitive-design laboratory</h2>
+<a id="section-ix"></a>
+<p class="chapter-lead">Our ability to correct some cognitive weaknesses suggests that the present architecture is not the only conceivable arrangement supporting knowledge, learning, and meaningful action. Yet conceivability alone does not show that a less harmful architecture could actually be created. A counterfactual approach asks how specific changes might affect belief formation and decision-making, including the goods preserved, errors reduced, and trade-offs introduced. The relevant question is not whether God could have created omniscient human beings, but whether an omnipotent creator could have provided finite creatures with somewhat different capacities that would reduce substantial suffering while preserving meaningful freedom, intellectual development, and other goods.</p>
+<h3>What would a better cognitive architecture look like?</h3>
+<div aria-label="Table: Possible change, Potential benefit, Important unresolved trade-off" class="table-wrap" role="region" tabindex="0"><table class="three-col">
+<thead>
+<tr>
+<th>Possible change</th>
+<th>Potential benefit</th>
+<th>Important unresolved trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Possible change">Better confidence calibration</td>
+<td data-label="Potential benefit">Less unwarranted certainty and better recognition of when to investigate</td>
+<td data-label="Important unresolved trade-off">Whether and how it changes other cognitive functions</td>
+</tr>
+<tr>
+<td data-label="Possible change">Stronger reasoning about consequences</td>
+<td data-label="Potential benefit">Better recognition of alternatives and foreseeable harms</td>
+<td data-label="Important unresolved trade-off">Costs of additional processing or interference with other capacities</td>
+</tr>
+<tr>
+<td data-label="Possible change">More accurate social interpretation</td>
+<td data-label="Potential benefit">Fewer misunderstandings based on available evidence</td>
+<td data-label="Important unresolved trade-off">Preserving privacy and autonomy without introducing new costs</td>
+</tr>
+</tbody>
+</table></div>
+<p>These are candidates for analysis, not established improvements that can be obtained without sacrifice. Each must be assessed for possibility, consequences, and independently supported trade-offs.</p>
+<p>Consider first the possibility of improved confidence calibration. Human beings can distinguish varying degrees of uncertainty, but our confidence does not always accurately reflect the strength of our evidence. Someone may hold a mistaken belief with great certainty or remain excessively uncertain despite possessing strong evidence. These discrepancies can influence whether individuals reconsider their conclusions, seek additional information, or act on potentially dangerous assumptions.</p>
+<p>Imagine instead a cognitive system in which confidence more consistently corresponds to the evidential support for a belief. Such a system would not necessarily produce more true beliefs directly, nor would it eliminate uncertainty. It would improve the individual's ability to recognize when further investigation is warranted. A person might still reach an incorrect conclusion, but would be less likely to mistake weak evidence for decisive proof.</p>
+<p>This improvement could have consequences for interpersonal conflict, medical decisions, and other situations in which unwarranted certainty contributes to harmful behavior. Importantly, better calibration need not eliminate freedom or intellectual development. Individuals could remain free to act against their own judgments, and they would still need to investigate questions for which the available evidence is insufficient.</p>
+<p>A second possibility concerns the ability to evaluate consequences. Human beings frequently make decisions whose outcomes depend on several interacting factors, including uncertainty, competing objectives, and consequences that emerge over time. Our capacity to evaluate these relationships is limited, and we sometimes fail to recognize how our actions might harm ourselves or others.</p>
+<p>A creature with greater reasoning capacity might identify relevant alternatives more effectively, recognize inconsistencies in its judgments, or better understand the probable consequences of its decisions. Such improvements would not necessarily determine which actions the creature chooses. Understanding that an action is harmful is different from being compelled to avoid it.</p>
+<p>This distinction becomes important for the free-will defense considered later. If meaningful freedom requires the ability to choose among alternatives, it does not immediately follow that freedom requires poor reasoning about those alternatives. Indeed, a defender of theism might argue that greater understanding can enhance an agent's capacity to exercise freedom responsibly.</p>
+<p>A third possibility concerns social cognition. Human beings must infer other people's beliefs, intentions, and emotional states from incomplete information. Misunderstandings can contribute to conflict, distrust, and harmful decisions. An architecture that allowed individuals to interpret social evidence more accurately might therefore reduce some forms of interpersonal suffering.</p>
+<p>Yet this proposal illustrates why counterfactual improvements require careful examination. Perfect access to another person's thoughts might eliminate privacy or undermine forms of autonomy that depend on individuals controlling what they disclose. A more modest improvement in interpreting available social evidence might avoid these consequences, but whether it could do so without introducing other costs remains an open question. The objective is therefore not to assume that every imaginable cognitive enhancement would be beneficial. It is to identify particular improvements and examine their consequences as precisely as possible.</p>
+<h3>The problem of trade-offs</h3>
+<p>There are empirical reasons to be cautious about treating cognitive enhancement as a straightforward process of increasing desirable capacities. <a href="#ref-colzato">Colzato, Hommel, and Beste (2021)</a> argue that attempts to improve one cognitive function can involve costs to others, emphasizing neural competition and nonlinear relationships between interventions and performance. Their discussion concerns interventions in actual human cognitive systems, where modifying one process can affect other processes that depend on the same underlying mechanisms (<a href="#ref-colzato">Colzato et al., 2021</a>).</p>
+<p>This is an important qualification. A system with greater processing capacity might consume more resources, increased attention to some information might reduce attention elsewhere, and improvements in one kind of performance might interfere with another. We cannot simply assume that an enhancement would preserve every existing advantage while adding new ones.</p>
+<p>However, the existence of trade-offs within actual biological systems does not establish that the same trade-offs are unavoidable across every possible cognitive architecture. A limitation arising from neural competition in the human brain may reflect features of that particular system rather than a logical necessity applicable to all conceivable minds.</p>
+<p>This distinction is especially significant when evaluating the implications of omnipotence. An omnipotent creator would not ordinarily be understood as capable of realizing logically contradictory states of affairs. But neither should the biological limitations of existing organisms automatically be treated as necessary features of every possible organism.</p>
+<p>The relevant inquiry is whether a proposed improvement involves an unavoidable incompatibility with some important good, rather than merely a cost associated with the way our present cognitive systems happen to operate.</p>
+<h3>Better alternatives and the problem of divine choice</h3>
+<p>We can now formulate the counterfactual challenge more precisely. Suppose there is a possible cognitive architecture that would reduce some substantial forms of error-generated suffering while preserving the goods associated with the actual architecture. If such an alternative were available to an omnipotent creator, why would a perfectly good creator choose the actual arrangement instead?</p>
+<p>This does not require claiming that our world must be the best of all possible worlds. Philosophers discussing the problem of evil have long distinguished the claim that a better world is conceivable from the more demanding claim that God has permitted suffering without a morally sufficient reason. The absence of a uniquely best possible world, for example, does not by itself resolve questions about whether particular instances of suffering could have been prevented without sacrificing comparable goods (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>The same distinction applies to cognition. It would be unreasonable to infer from the mere possibility of a marginal improvement that the actual architecture is incompatible with perfect goodness. There may be trade-offs, alternative goods, or broader consequences that we have failed to consider.</p>
+<p>But neither does the possibility of unknown trade-offs automatically explain why the actual architecture was selected. A substantive explanation must identify, or provide independent grounds for expecting, some consideration that makes the proposed alternative less desirable than it initially appears.</p>
+<p>This is where the problem of divine psychology reappears. Suppose someone argues that God deliberately permits imperfect confidence calibration because the experience of uncertainty encourages intellectual humility. That hypothesis might identify a genuine good. Nevertheless, its explanatory force depends on whether we have independent reason to attribute that priority to God and whether humility actually requires the particular degree of miscalibration human beings possess.</p>
+<p>Alternatively, someone might maintain that improved reasoning would diminish our opportunities for intellectual development. But it is not obvious that a creature capable of reasoning more accurately would lack opportunities to learn. Such a creature could still encounter unfamiliar problems, discover new truths, and develop intellectual virtues. The proposal therefore requires an account of why the actual limitation is necessary or preferable, rather than merely an assertion that limitation can sometimes be valuable.</p>
+<p>These responses need not be dismissed as inherently ad hoc. An independently motivated theological account may provide genuine reasons for expecting certain cognitive limitations. What matters is whether the proposed reasons constrain the explanation or are introduced primarily to accommodate whatever architecture happens to be observed.</p>
+<p>The counterfactual exercise consequently does not establish that God could have created a better world, still less that classical theism is logically inconsistent with human cognitive limitations. Its contribution is to make the explanatory challenge more specific. Rather than asking vaguely why God did not create perfect minds, we can ask why particular improvements—such as better-calibrated confidence, more effective reasoning, or more accurate social understanding—would be unavailable, undesirable, or incompatible with the goods God is supposed to value.</p>
+<p>This also shifts attention from cognitive capacities considered in isolation to the circumstances under which those capacities are exercised. Even if substantial improvements were possible, the benefits of those improvements would depend partly on whether individuals had access to reliable information and opportunities to develop their abilities.</p>
+<a id="chapter-6"></a>
+<h2 class="ep-source-section">6. The unequal distribution of cognitive opportunities</h2>
+<a id="section-x"></a>
+<p class="chapter-lead">The counterfactual discussion has focused on whether human beings could possess different cognitive capacities. But the effectiveness of cognition depends on more than the architecture of an individual's mind. It also depends on the circumstances in which that mind develops and operates. Access to information, education, reliable testimony, and opportunities for correcting mistakes can significantly influence what a person is able to know and how effectively they can reason about consequential decisions.</p>
+<p>This introduces a further dimension to the problem of cognitive design. Even if we grant that some degree of cognitive limitation is necessary for intellectual development or meaningful freedom, we must still ask why opportunities to overcome those limitations are distributed so unevenly.</p>
+<p>Consider two individuals who possess broadly similar cognitive capacities and are equally motivated to make responsible decisions. One grows up in an environment where reliable information is accessible, intellectual curiosity is encouraged, and errors can be identified through education and informed criticism. The other has limited educational opportunities, receives unreliable information, and lacks access to people or institutions capable of correcting mistaken beliefs. Their opportunities to acquire knowledge and avoid harmful decisions may differ substantially, despite neither having chosen the circumstances in which their cognitive faculties developed.</p>
+<p>This distinction is important because the possession of a cognitive capacity is not equivalent to having an adequate opportunity to exercise it. A person may possess the ability to reason effectively while lacking the information necessary to reach an accurate conclusion. Likewise, someone may have the potential to develop sophisticated reasoning skills without encountering the educational resources needed to cultivate them.</p>
+<p>The significance of these differences is supported by educational research. The OECD's PISA 2022 Results found that socioeconomic background was associated with substantial differences in educational performance across participating countries. Among OECD countries, socioeconomically advantaged students scored an average of 93 points higher in mathematics than disadvantaged students. The report also found considerable variation between education systems, indicating that the relationship between background and educational achievement is not uniform or inevitable (<a href="#ref-oecd">OECD, 2023</a>).</p>
+<p>These findings do not establish that educational disadvantage necessarily produces unreliable cognition, nor do they allow us to attribute differences in achievement to a single cause. They do, however, illustrate that opportunities to acquire knowledge and develop intellectual capacities depend partly on circumstances beyond an individual's control.</p>
+<p>The philosophical implications extend beyond education. Much of what we know depends on testimony, cooperation, and access to the accumulated knowledge of others. Social epistemology examines how these relationships can support knowledge while also introducing vulnerabilities through misinformation, exclusion, and failures to recognize credible testimony. Miranda Fricker's account of epistemic injustice, for example, identifies ways in which people can be disadvantaged specifically in their capacities as knowers, including having their testimony unfairly discounted or lacking shared interpretive resources needed to understand their experiences (<a href="#ref-fricker">Fricker, 2007</a>).</p>
+<p>Such difficulties reveal that epistemic opportunity is not reducible to the reliability of an individual's underlying faculties. Even a highly capable thinker can be misled by unreliable testimony or prevented from acquiring knowledge by an impoverished informational environment.</p>
+<p>This distinction also complicates appeals to free will and personal responsibility. A person may be free to choose among available alternatives while lacking the information necessary to evaluate those alternatives effectively. Greater access to reliable information could improve the conditions under which freedom is exercised without necessarily determining the choice itself.</p>
+<p>A theist might respond that differences in knowledge and opportunity arise through the exercise of human freedom, including decisions concerning education, resource distribution, and the organization of societies. This explanation may account for some disparities. It would be unreasonable to attribute every socially produced disadvantage directly to divine intention.</p>
+<p>Nevertheless, the broader question concerns why a creator with foreknowledge of these circumstances would choose or permit a world in which access to important knowledge is distributed in this manner. A possible response is that overcoming disadvantage creates opportunities for cooperation, generosity, justice, and intellectual development. Whether these goods justify the actual distribution of epistemic opportunities, however, is a further question that cannot be settled merely by identifying their possibility.</p>
+<p>The problem becomes especially significant when access to knowledge bears on matters that a particular theology regards as morally or spiritually important. If God intends human beings to recognize specific religious truths, differences in access to relevant evidence, testimony, and interpretive resources may have consequences extending beyond ordinary practical decisions. We will return to this issue when examining religious disagreement and the problem of revelation.</p>
+<p>For now, the argument has established two distinct explanatory questions. The first concerns why human beings possess cognitive limitations that can contribute to consequential errors. The second concerns why opportunities to overcome those limitations depend so heavily on circumstances that individuals often do not choose.</p>
+<p>Neither question establishes that classical theism is false. Together, however, they clarify what a theistic explanation of human cognition must address. It must account not only for the capacities human beings possess, but also for the conditions under which those capacities develop, the consequences of their limitations, and the distribution of opportunities to overcome them.</p>
+<p>The problem of cognitive design therefore concerns both the architecture of our minds and the world in which those minds must operate. With these distinctions established, we can examine more directly how the classical divine attributes bear on the existence of cognitive limitations and the suffering to which they contribute.</p>
+<a id="chapter-7"></a>
+<h2 class="ep-source-section">7. Omniscience, omnipotence, and perfect goodness</h2>
+<a id="section-xi"></a>
+<p class="chapter-lead">Our faculties are generally reliable yet limited in particular domains; some vulnerabilities contribute to serious suffering, and opportunities for correction are unequally distributed. Evolutionary theory helps explain how these conditions arise under historical and biological constraints. Classical perfect-being theism introduces a different question: what does the actual arrangement imply when considered alongside God’s knowledge, power, and goodness?</p>
+<p>Classical theism attributes omniscience, omnipotence, and perfect goodness to God. These attributes introduce distinct considerations concerning the origin and persistence of cognitive limitations. Omniscience concerns what God would know about those limitations and their consequences. Omnipotence concerns what alternatives God could bring about. Perfect goodness concerns what reasons could justify choosing or permitting the actual arrangement. The philosophical difficulty emerges from the combination of these attributes rather than from any one considered independently.</p>
+<p>This is a particular application of the traditional problem of evil, which asks whether the suffering and other undesirable conditions found in the world are compatible with, or evidence against, the existence of an omniscient, omnipotent, and perfectly good creator. The problem can be formulated either as a claim of logical incompatibility or as an evidential argument concerning what we should expect under theism. Our argument concerns the latter question: whether the particular characteristics of human cognition are what we should expect from a being possessing the classical divine attributes (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<h3>Omniscience: The consequences would be known</h3>
+<p>An omniscient creator would possess complete knowledge of the cognitive architecture human beings would develop and the consequences of that architecture. God would know how our perceptual systems operate, which circumstances produce systematic errors, and how those errors interact with human behavior and environmental conditions.</p>
+<p>This has an important implication for the explanations available under classical theism. Human designers frequently produce systems whose harmful consequences they fail to anticipate. A medication may have unforeseen side effects, an engineering decision may produce an unexpected failure, or a technological innovation may introduce risks that become apparent only after widespread adoption. Such outcomes can be explained partly by limitations in the designer's knowledge.</p>
+<p>That explanation is unavailable to an omniscient creator. If God created human beings directly, God would know the consequences of their cognitive architecture. If God instead created through evolutionary processes, God would know the consequences of those processes as well. The distinction between direct creation and theistic evolution therefore changes the proposed mechanism of creation without eliminating the question of divine foreknowledge.</p>
+<p>This does not mean that God must desire every consequence that God foresees. There is an important distinction between intending an outcome for its own sake and knowingly permitting that outcome in pursuit of another purpose. A perfectly good agent might foresee an undesirable consequence while permitting it for the sake of some sufficiently important good.</p>
+<p>The relevant implication of omniscience is narrower but significant: the harmful consequences of human cognitive limitations could not be attributed to divine ignorance or a failure of foresight. If those consequences are permitted, their permission must be consistent with whatever intentions and justifications are attributed to God.</p>
+<h3>Omnipotence: The limits of possible design</h3>
+<p>Omnipotence introduces a different consideration. The evolutionary explanation of cognition appeals partly to constraints imposed by inherited biological structures, available genetic variation, energetic costs, and the historical pathways through which organisms develop. These constraints explain why evolutionary processes cannot simply construct an ideal cognitive architecture from first principles.</p>
+<p>An omnipotent creator, however, would not ordinarily be understood as subject to those same limitations. God would not be restricted to modifying whatever neural structures happened to exist, nor would divine creative power depend on the availability of particular mutations. Even if God chose to employ evolutionary processes, the decision to employ those processes and establish their governing conditions would itself be relevant to the explanation.</p>
+<p>There is nevertheless an important qualification. Omnipotence is generally understood in contemporary philosophical discussions as maximal power, not as the ability to realize contradictions or logically impossible states of affairs. The precise analysis of omnipotence is disputed, but a proposed alternative must at least be sufficiently coherent for the claim that God could realize it to have content (<a href="#ref-omnipotence">“Omnipotence”</a>).</p>
+<p>Consequently, our argument cannot simply assume that God could create minds possessing every desirable characteristic without any trade-offs. Some cognitive improvements might be incompatible with other capacities or goods. Complete access to another person's thoughts, for example, might conflict with privacy, while eliminating every possibility of error could transform the nature of finite inquiry.</p>
+<p>But the existence of possible trade-offs does not establish that every limitation of our actual architecture is necessary. A constraint arising from the physical organization of human brains is not automatically a logical constraint applicable to every possible cognitive system.</p>
+<p>The relevant question is therefore whether particular improvements could be realized without sacrificing goods sufficient to justify the actual limitations. Greater confidence calibration, more effective recognition of consequential reasoning errors, or improved access to reliable information may provide candidates for such improvements. Their feasibility and consequences require examination, but their dismissal cannot rest solely on the observation that existing biological systems face constraints.</p>
+<p>Omnipotence thus shifts the explanatory burden. The question is not merely why evolution produced the cognitive architecture we possess, but why God would choose or permit a process and set of conditions that produce it when alternative arrangements may be possible.</p>
+<h3>Omnibenevolence: The question of sufficient justification</h3>
+<p>The third attribute introduces the moral dimension of the problem. If God possesses perfect goodness, what reasons would justify creating or permitting cognitive limitations that contribute to substantial, foreseeable suffering?</p>
+<p>A straightforward argument might maintain that a perfectly good being would prevent every instance of suffering within its power. That principle, however, is too strong without further qualification. Some undesirable experiences may be necessary for important goods, and preventing particular harms may involve sacrificing other goods or permitting different harms. The philosophical problem of evil therefore frequently concerns suffering that could be prevented without forfeiting an outweighing good or permitting an equally serious or greater evil (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>Applied to cognition, the question is not whether a perfectly good creator must eliminate every possibility of mistaken belief. Error may be compatible with valuable forms of learning, freedom, and intellectual development. Rather, we must ask whether the actual degree and distribution of cognitive vulnerability are justified by goods that could not be obtained through a less harmful arrangement.</p>
+<p>Consider a creature whose reasoning is substantially more reliable than ours but who remains capable of making meaningful choices, acquiring new knowledge, and developing intellectual virtues. If such a creature were possible, and if its improved faculties would prevent serious suffering without sacrificing comparable goods, the choice of our actual architecture would require further explanation.</p>
+<p>The crucial premise is conditional. We have not established that every proposed improvement is genuinely available without relevant costs. Nor can we infer that no divine justification exists merely because we have not identified one.</p>
+<p>Nevertheless, the possibility of unknown justifications should be distinguished from an independently supported explanation. A theist might argue that cognitive limitations contribute to humility, intellectual development, moral responsibility, or other important goods. Those proposals identify possible reasons for divine permission. Their explanatory force depends on whether the proposed goods actually require the relevant limitations and whether we possess grounds for believing that God would prioritize them in the manner suggested.</p>
+<p>This is where the problem of divine psychology becomes especially important. The claim that God has a sufficient reason for permitting cognitive limitations may be compatible with classical theism. But compatibility alone does not establish that our particular architecture is probable under that hypothesis. To establish an expectation, we need some justified account of the divine purposes that would favor the actual arrangement over relevant alternatives.</p>
+<h3>The combined problem of cognitive design</h3>
+<p>We can now state the argument more precisely. Human cognition possesses limitations that contribute to substantial, foreseeable suffering. An omniscient creator would know the consequences of those limitations. An omnipotent creator would possess the power to realize any genuinely possible alternative. A perfectly good creator would have reason to avoid unnecessary suffering, although other goods might justify permitting some suffering.</p>
+<p>The evidential challenge therefore concerns whether there are alternative cognitive architectures that would preserve the relevant goods while preventing significant harms, and whether classical theism provides independent reasons for expecting God to select the actual architecture instead.</p>
+<p>This formulation does not establish a logical contradiction between human cognitive limitations and the divine attributes. A theist could consistently maintain that the actual architecture serves goods that would be unavailable under the proposed alternatives. But the mere possibility of such goods does not, by itself, demonstrate that the observed architecture is what we should expect.</p>
+<p>There is also an important distinction between challenging classical perfect-being theism and challenging the individual divine attributes. An omniscient and omnipotent being who lacked perfect goodness might knowingly create creatures with harmful cognitive limitations. A perfectly good being with limited power might be unable to prevent them. The particular problem developed here concerns the conjunction of unlimited knowledge, unlimited power, and perfect goodness. The argument consequently places pressure on the explanatory relationship between these attributes and the world we observe, rather than establishing that any one attribute is independently incoherent.</p>
+<p>Free will, intellectual development, creaturely finitude, and theistic evolution each provide possible responses. Their significance depends not simply on whether they can make the existence of cognitive limitations compatible with God, but on whether they explain why a perfectly good creator would choose or permit this particular arrangement rather than a less harmful alternative.</p>
+<a id="chapter-8"></a>
+<h2 class="ep-source-section">8. Theological responses and the demands of explanation</h2>
+<a id="section-xii"></a>
+<p class="chapter-lead">The problem of cognitive design does not establish that the limitations of human cognition are incompatible with classical theism. A defender of theism may argue that those limitations serve purposes that would be frustrated by a different arrangement. Several established theological responses are relevant here, including appeals to free will, intellectual and moral development, creaturely finitude, and the value of an autonomous evolutionary creation.</p>
+<p>These responses should be examined as substantive explanatory proposals rather than dismissed merely because they introduce additional divine purposes. The relevant question is whether the proposed purposes explain why God would choose or permit our particular cognitive architecture, including its foreseeable contribution to suffering.</p>
+<p>An important distinction governs this inquiry. A defense against the logical problem of evil may only need to establish that God could have a morally sufficient reason for permitting evil. A theodicy undertakes the more ambitious task of identifying reasons that actually justify divine permission. An evidential argument, such as the one developed here, also raises questions about how probable those proposed reasons are and whether they make the observed conditions expected under theism (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<h3>Free will and the conditions of informed choice</h3>
+<p>One familiar response appeals to the value of free will. According to this approach, a world containing creatures capable of making morally significant choices may possess goods that would be unavailable in a world where every action was determined by God. If creatures possess the freedom to choose wrongly, God may have reason to permit the suffering that results from their decisions.</p>
+<p>Alvin Plantinga's free-will defense is an influential example. Plantinga argues that it is possible for God and moral evil to coexist because there may be circumstances in which God cannot actualize a world containing significantly free creatures who always choose rightly. The defense is primarily intended to answer a claim of logical incompatibility; it does not establish that every actual instance of suffering results from the exercise of freedom or that the actual world contains the best possible distribution of freedom and suffering (<a href="#ref-plantinga-1974">Plantinga, 1974</a>) (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>The problem of cognitive design introduces a different consideration. Freedom to make a choice is not equivalent to the capacity to understand the choice being made. A person may possess meaningful freedom while having an inaccurate understanding of the relevant circumstances, failing to recognize important consequences, or reasoning poorly about available alternatives.</p>
+<p>Consider two agents who possess the same freedom of action. One can identify relevant evidence, assess uncertainty accurately, and understand the probable consequences of different choices. The other systematically misjudges risks and fails to recognize consequences that the first agent would readily understand. Both may remain free to act well or badly, but their opportunities to exercise that freedom intelligently differ substantially.</p>
+<p>The comparison raises a further question: why permit the second architecture when the first might allow more informed choice? Greater understanding does not obviously eliminate freedom. An individual who recognizes that an action will harm another person may still choose to perform it. Likewise, someone who understands that a decision is self-destructive may remain free to pursue it. Improved cognition could therefore reduce some harmful mistakes without eliminating the possibility of deliberate wrongdoing.</p>
+<p>This does not establish that every form of cognitive enhancement is compatible with every conception of freedom. A defender of libertarian free will might argue that particular forms of knowledge, motivation, or psychological organization would undermine the conditions required for genuinely open alternatives. But that claim needs to be developed. The mere assertion that freedom is valuable does not specify how much cognitive unreliability freedom requires.</p>
+<p>A further distinction concerns freedom and the power to inflict harm. Even if significantly free creatures must be able to choose wrongly, it does not immediately follow that they must be able to produce every harmful consequence associated with their choices. A creator might conceivably permit an agent to make a wrongful decision while limiting the damage that decision can cause. Philosophical discussions of free-will theodicies accordingly distinguish the value of freedom itself from the value, if any, of possessing the capacity to cause serious harm (<a href="#ref-evil">“The Problem of Evil”</a>). Applied to cognition, the question is whether the goods associated with freedom require not only the possibility of mistaken choice, but the particular vulnerabilities that make serious mistakes foreseeable. The free-will response may therefore explain an important feature of moral agency without, by itself, explaining why God would choose our actual cognitive architecture.</p>
+<h3>Soul-making and intellectual development</h3>
+<p>A second response appeals to the value of development through difficulty. Rather than creating creatures who already possess every desirable characteristic, God might create beings capable of developing virtues through experience, effort, and the exercise of responsibility.</p>
+<p>John Hick's influential soul-making theodicy develops this approach. Drawing on an Irenaean tradition, Hick argues that the world can be understood as an environment in which human beings develop morally and spiritually through confronting challenges, making decisions, and responding to suffering. On this view, the purpose of creation is not simply to maximize immediate comfort, but to provide conditions under which persons can develop mature character (<a href="#ref-hick">Hick, 1966</a>) (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>The approach has a natural application to cognition. Intellectual virtues such as humility, perseverance, intellectual honesty, and openness to criticism may develop through recognizing mistakes and learning to correct them. A creature that never encountered uncertainty or difficulty might lack certain opportunities to exercise these capacities.</p>
+<p>This is a substantive consideration. The ability to discover knowledge can itself be valuable, independently of the possession of knowledge. Similarly, learning to recognize one's mistakes may contribute to intellectual maturity in ways that differ from simply receiving correct answers.</p>
+<p>The value of intellectual development does not, however, establish that our actual degree of cognitive vulnerability is necessary for it. A person could presumably develop intellectual humility while possessing better-calibrated confidence. Greater capacity to recognize faulty reasoning need not eliminate opportunities for investigation or discovery. Nor does the ability to learn from mistakes establish that every serious consequence of those mistakes is necessary for learning to occur.</p>
+<p>Consider again the medical example. A clinician might become more careful after making a diagnostic mistake. But it does not follow that a patient's suffering was necessary for the clinician to acquire that virtue. The relevant lesson might have been learned through simulation, supervised practice, or other forms of experience that did not expose a patient to the same harm.</p>
+<p>This raises a further moral question concerning whose development is supposed to justify whose suffering. An explanation according to which one person's suffering contributes to another person's moral growth must address whether the sufferer is being treated with appropriate regard, rather than merely as an instrument for someone else's improvement.</p>
+<p>The problem is particularly significant when severe suffering prevents rather than facilitates intellectual or moral development. Some individuals may benefit from confronting difficulty, while others encounter conditions that deprive them of the opportunity to learn, develop, or exercise their capacities. The value of soul-making therefore does not automatically explain the actual distribution or severity of suffering (<a href="#ref-evil">“The Problem of Evil”</a>). A more developed soul-making explanation would need to identify why the relevant goods require this particular cognitive architecture and why less harmful alternatives would be insufficient.</p>
+<h3>Creaturely finitude: Why not more capable finite minds?</h3>
+<p>A third response emphasizes the distinction between creator and creature. God is omniscient, while human beings are finite. Human cognition must therefore possess limitations, and expecting creatures to reason without error might be said to misunderstand the nature of created intelligence.</p>
+<p>This response identifies a genuine distinction. Finite cognition is not equivalent to divine omniscience, and incomplete knowledge need not indicate a defect. A creature can possess reliable faculties while lacking knowledge of matters it has never encountered or cannot access.</p>
+<p>However, the distinction between finite and infinite knowledge does not determine how capable finite cognition must be. There is an enormous conceptual distance between ordinary human reasoning and omniscience. A creature could possess substantially greater processing capacity, better perception, or more reliable inferential faculties while remaining finite in every relevant respect. Consequently, creaturely finitude can explain why human beings might lack unlimited knowledge without automatically explaining why they possess our particular limitations. A related proposal is that excessive cognitive capacity would make creatures too much like God, undermining humility, dependence, or some appropriate relationship between creator and creation.</p>
+<p>Such an explanation might be developed within a particular theological framework, but it requires additional premises. Why would greater intelligence undermine humility? Why would a more accurate understanding of the world diminish a creature's dependence on God? And why would God prefer a particular degree of cognitive limitation if that limitation predictably contributes to substantial suffering? These questions do not establish that the proposal is false. They identify the further account of divine purposes required for it to possess explanatory force.</p>
+<p>The problem of divine psychology therefore remains relevant: the fact that God could value creaturely dependence does not establish how that value would determine the cognitive capacities God chooses to provide.</p>
+<h3>Theistic evolution and the choice of a developmental process</h3>
+<p>A fourth response changes the proposed relationship between God and human cognition. Rather than maintaining that God directly designed each cognitive mechanism, a theistic evolutionist may hold that God created a world in which human beings developed through evolutionary processes.</p>
+<p>On this account, the evolutionary explanations discussed earlier remain available. Human cognition may reflect inherited biological structures, energetic trade-offs, environmental pressures, and the historical contingencies of evolutionary development. A theist need not deny these mechanisms in order to maintain that the evolutionary process belongs within a divinely created order.</p>
+<p>This is important because naturalism and evolution are not identical propositions. Theism and evolutionary theory can be combined, although the resulting theological models differ in how they understand divine action and providence.</p>
+<p>The explanatory question then shifts. Instead of asking why God directly designed each cognitive limitation, we ask why God would choose or permit a developmental process that produces those limitations.</p>
+<p>One possible response is that an autonomous creation has value. God might prefer a world possessing stable laws and genuine developmental processes over one in which every outcome is produced through continuous intervention. Such a world could possess forms of order, independence, and creative development that a different arrangement would lack.</p>
+<p>The proposal connects with broader theodicies that appeal to the value of a law-governed world. These accounts suggest that stable natural processes may be important for meaningful agency, learning, and the development of complex forms of life (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>But the existence of these goods leaves further questions. Why would the relevant processes need to produce this particular pattern of cognitive limitations? Could a law-governed world support different developmental pathways or organisms with more reliable faculties? Would reducing some sources of cognitive suffering necessarily require the elimination of evolutionary autonomy?</p>
+<p>The appeal to evolution also cannot simply be treated as a complete justification for every consequence of evolution. If God knowingly selects or permits a process, the foreseeable characteristics of that process remain relevant to evaluating the choice.</p>
+<p>A naturalistic explanation may identify why a particular mechanism evolved under the conditions that actually obtained. A theistic explanation must additionally address why those conditions and processes were chosen or permitted.</p>
+<h3>The Fall and the possibility of damaged cognition</h3>
+<p>A related Christian response attributes some cognitive limitations not to God's original creative intention, but to the consequences of sin. In <em>Warranted Christian Belief</em>, Plantinga develops an extended Aquinas/Calvin model according to which sin has cognitive as well as moral consequences. These noetic effects of sin are especially significant for knowledge of God, ourselves, and other people. Within the model, the sensus divinitatis, a faculty through which human beings can form beliefs about God, has been damaged, and its restoration is associated with the work of the Holy Spirit (<a href="#ref-plantinga-2000">Plantinga, 2000</a>, chs. 7–8).</p>
+<p>This account is particularly relevant because it distinguishes God's original cognitive design from the faculties human beings currently possess. The existence of present cognitive limitations need not, on this model, establish that God originally intended those limitations.</p>
+<p>Nevertheless, the explanation introduces further questions about the relationship between sin, inherited cognitive conditions, and divine permission. If cognitive damage is a consequence of sin, why would its effects extend to individuals who did not choose the original wrongdoing? Why would the consequences include limitations that can impair people's ability to understand their circumstances or identify religious truth?</p>
+<p>Plantinga explicitly distinguishes the damage associated with sin from the claim that each affected individual is personally responsible for that damage. His model therefore should not be represented as attributing every person's cognitive limitations to their own misconduct (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>A Fall-based explanation must also address its relationship to evolutionary history. If human cognitive limitations arose through processes operating before the emergence of human beings, an account attributing those limitations to a historical human Fall requires further clarification. Christian philosophers have developed different interpretations of the Fall and original sin, including proposals intended to reconcile those doctrines with evolutionary accounts of human origins (<a href="#ref-evil">“The Problem of Evil”</a>).</p>
+<p>These difficulties do not establish that every Fall-based account is incoherent. They show that appealing to sin introduces a more specific theological model whose historical, metaphysical, and explanatory assumptions require independent support. The account becomes especially important later in this essay, when we examine whether purportedly damaged religious cognition can explain disagreement concerning divine revelation.</p>
+<h3>What would count as a successful explanation?</h3>
+<p>The responses considered here identify several possible goods associated with human cognitive limitations: meaningful freedom, intellectual development, creaturely finitude, an autonomous creation, and a theological account of the consequences of sin. They are not mutually exclusive. A theist could maintain that several such considerations jointly explain the world we observe. Nor is it inherently illegitimate to supplement a broad theological hypothesis with additional commitments about divine purposes.</p>
+<p>The explanatory question is what those commitments establish. A response may show that a particular limitation is compatible with God's goodness without establishing that the limitation was necessary, preferable, or probable given God's attributes. A more ambitious explanation would identify why relevant alternatives are unavailable or would sacrifice goods sufficient to justify the actual arrangement.</p>
+<p>This distinction returns us to Fales's original objection. Establishing that God could intend to create reliable minds does not establish that God probably would. Likewise, establishing that God could have a reason for permitting cognitive limitations does not establish that those limitations are what theism leads us to expect. The central issue is whether the proposed divine purposes are independently justified and sufficiently specific to distinguish our actual cognitive architecture from plausible alternatives.</p>
+<p>The same problem becomes more consequential when cognitive limitations affect not only practical decisions and human welfare, but also our ability to identify religious truth. If God intends human beings to recognize genuine revelation, the distribution of cognitive capacities and opportunities for acquiring knowledge becomes relevant to the success of that intention.</p>
+<p>The next application concerns revelation: if identifying a divine message matters, what opportunities and faculties would a creator be expected to provide? The broader consequences of uncertainty about divine intentions will return in the concluding knowability dilemma.</p>
+<a id="part-iii"></a><header aria-label="Part III: Recognizing revelation" class="ep-part-banner"><span class="ep-part-kicker">Part III</span><h2 class="ep-part-title">Recognizing revelation</h2><p class="ep-part-summary">A further application arises when a theological model holds that recognizing God or a particular revelation matters. General success in ordinary environments alone does not establish how reliably we can receive, authenticate, and interpret divine communication.</p></header>
+
+
+<a id="chapter-9"></a>
+<h2 class="ep-source-section">9. From ordinary cognition to recognizing revelation</h2>
+<a id="section-xiii"></a>
+<p class="chapter-lead">If we cannot confidently infer what kinds of minds God would intend creatures to possess, we should also be cautious about assuming what those minds would be equipped to recognize. This problem takes a distinct form when the object of cognition is not an ordinary environmental feature or a medical condition but a purported communication from God.</p>
+<p>The predator example provides a limited analogy: both detecting a threat and assessing a purported revelation involve judgment under uncertainty. But the adaptive value of a low threshold for defensive action does not determine how a person should evaluate a claim to divine authority.</p>
+<p>Consider a person who encounters a purported revelation. The experience may take the form of a reported miracle, a sacred text, a prophetic claim, a religious experience, or testimony from someone who believes God has spoken. The person must determine whether the claim is genuine, what it means, and whether accepting it is warranted. These tasks involve uncertainty, but evolutionary pressures that favored recognizing predators do not establish that the same cognitive mechanisms are suited to evaluating divine communication. The assessment itself involves three distinct questions:</p>
+<div aria-label="Table: Stage, What must happen, A difficulty that may remain" class="table-wrap" role="region" tabindex="0"><table class="three-col">
+<thead>
+<tr>
+<th>Stage</th>
+<th>What must happen</th>
+<th>A difficulty that may remain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Stage">Reception</td>
+<td data-label="What must happen">The purported message reaches a person.</td>
+<td data-label="A difficulty that may remain">It may never arrive, or may arrive through incomplete transmission.</td>
+</tr>
+<tr>
+<td data-label="Stage">Authentication</td>
+<td data-label="What must happen">The person has grounds to identify its source.</td>
+<td data-label="A difficulty that may remain">Sincere testimony or an intense experience need not settle whether the source is divine.</td>
+</tr>
+<tr>
+<td data-label="Stage">Interpretation</td>
+<td data-label="What must happen">The person understands its content.</td>
+<td data-label="A difficulty that may remain">A message may be received and even authenticated while its meaning remains disputed.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reception concerns whether a purported message reaches a person at all; authentication concerns whether its source can be identified as divine rather than human, mistaken, or otherwise nondivine; and interpretation concerns what it communicates. The stages can come apart: someone might receive an accurate report of a purported revelation but have difficulty assessing its source, or correctly identify a message as authoritative while misunderstanding its content.</p>
+<p>This distinction prevents us from placing every difficulty on the same footing. A text can be transmitted inaccurately because of ordinary historical processes. A testimony can be sincere but mistaken. A religious experience can be vivid without its significance being unambiguous to the person undergoing it. Even if God successfully communicates something to one individual, other individuals may encounter that communication only through testimony, translation, and interpretation. Explaining the existence of an original revelation is therefore not identical to explaining how its intended recipients could reliably recognize and understand it.</p>
+<p>The epistemology of religion makes these difficulties especially salient because religious belief can involve testimony, personal experience, arguments, and alleged divine inspiration, while disagreements may persist even among informed and sincere inquirers. Philosophers dispute how much weight such disagreements should carry: some argue that disagreement between comparably situated thinkers should reduce confidence, while others maintain that a person may reasonably retain a belief on the basis of evidence or experience not shared by the other party. The existence of disagreement alone does not decide which response is correct (<a href="#ref-religious-diversity">“Religious Diversity (Pluralism)”</a>).</p>
+<p>The question for the present argument is more specific. Suppose a theological model holds that God intends human beings to recognize a particular revelation and that recognizing it matters significantly for their relationship with God. We can then ask why the cognitive and evidential conditions under which people investigate that revelation would be arranged as they are. If reliable recognition is an important divine objective, we might expect some account of how that objective is served despite differences in access to testimony, interpretive resources, and confidence in competing claims.</p>
+<p>This is a conditional challenge, not an assumption that every theistic tradition assigns the same importance to identifying one exclusively correct creed. A theology might hold that revelation is progressive, that several traditions convey genuine insight, that explicit religious belief is not required for salvation, or that God primarily seeks a moral or relational response rather than agreement on detailed doctrines. Different accounts generate different expectations. Precisely because divine intentions matter to the explanation, they cannot be treated as interchangeable.</p>
+<p>Plantinga's account supplies an important alternative to the assumption that religious recognition depends entirely on ordinary evidence assessment. In his Aquinas/Calvin model, the sensus divinitatis is a belief-producing faculty through which belief in God can arise without being inferred from other beliefs. His extended model proposes that specifically Christian belief can receive warrant through the work of the Holy Spirit. On these models, God may provide a means of religious knowledge that is not reducible to the reliability of faculties selected for ordinary environmental tasks (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>That possibility limits what can be inferred from the predator analogy. We cannot establish that humans are poorly equipped to recognize revelation merely by observing that evolution did not select their ordinary faculties for that purpose. A theist could maintain that religious knowledge depends on an additional faculty, divine assistance, or a mode of disclosure distinct from ordinary perception and inference.</p>
+<p>Yet this response makes the question of cognitive design more precise rather than eliminating it. If a special faculty or divine assistance is proposed, we must ask how it operates, under what conditions it succeeds, and what explains failures of recognition. Plantinga's model, for example, attributes damage to the sensus divinitatis to sin and describes its restoration through the Holy Spirit. That is a substantive theological explanation, but its relevance to the observed distribution of religious belief depends on the further claims of the model, including its account of why the faculty is damaged and how its operation can be distinguished from competing religious experiences (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>There is also a crucial difference between asserting that God could make revelation recognizable and establishing that God would do so in a particular way. A divine communication might be unmistakable to its intended recipient, deliberately open to interpretation, or accessible only through a process of inquiry and trust. Which arrangement we should expect depends on God's purposes. Appealing to a desire for free choice, intellectual development, or faith may offer reasons for allowing uncertainty, but those reasons must be examined rather than assumed.</p>
+<p>The predator analogy thus brings us back to the problem of divine psychology. Evolutionary considerations can help explain why our ordinary faculties are reliable enough for many practical purposes without guaranteeing accurate judgments in every domain. A theistic account that assigns importance to revelation must address a different question: what reasons would God have to provide, withhold, or supplement the capacities needed to distinguish genuine divine communication from competing claims?</p>
+<a id="chapter-10"></a>
+<h2 class="ep-source-section">10. Competing revelations and religious disagreement</h2>
+<a id="section-xiv"></a>
+<p class="chapter-lead">The existence of multiple religious traditions is not, by itself, a problem for divine revelation. A single God could communicate with different communities at different times, and those communications could convey different but compatible truths. Nor does the existence of disagreement establish that all religious claims are equally well supported. The more difficult problem arises when traditions claim divine authority for propositions that cannot all be true in the same sense.</p>
+<p>Consider a concrete example. The Nicene Creed affirms that Jesus was crucified, died, and rose again. Paul likewise presents Jesus's death, burial, and resurrection as central to the message he received and transmitted in 1 Corinthians 15:3–4. By contrast, Qur'an 4:157 states that Jesus's opponents did not kill or crucify him, although interpretations of the passage and its implications differ among commentators. On the familiar readings represented by these sources, the accounts make incompatible claims about a consequential event. They cannot both be accurate descriptions of that event in precisely the same respect (<a href="#ref-nicene">Nicene Creed</a>; <a href="#ref-corinthians">1 Corinthians 15:3–4</a>; <a href="#ref-quran">Qur’an 4:157</a>).</p>
+<p>The philosophical point does not depend on deciding which account is correct. It concerns the predicament of an inquirer who encounters both traditions and must evaluate their claims to divine authority. Each claim reaches the inquirer through humanly accessible evidence: texts, testimony, historical arguments, interpretive traditions, and sometimes reported religious experiences. The inquirer must use cognitive faculties to determine which sources are trustworthy and what they actually establish.</p>
+<p>This is more demanding than recognizing that a person has reported receiving a revelation. A sincere witness can accurately report an experience while being mistaken about its source or meaning. A later community can faithfully transmit a text while disagreeing about its interpretation. And a claimant can invoke divine authority without thereby establishing that the claim originated with God. The problem is therefore not confined to transmission; it also concerns authentication and interpretation.</p>
+<p>Religious diversity matters here because conflicting claims can be defended by people who appear sincere, informed, and concerned with truth. The philosophical literature does not treat this observation as a straightforward refutation of religious belief. Rather, it asks whether encountering apparently credible disagreement gives a believer reason to reconsider a conclusion, reduce confidence, suspend judgment, or maintain the original belief in light of evidence the believer considers decisive. These responses remain contested, especially where individuals appeal to religious experiences or sources of warrant that others do not share (<a href="#ref-religious-diversity">“Religious Diversity (Pluralism)”</a>).</p>
+<p>The difficulty is not that every disagreement must produce suspension of judgment. Some disagreements can be resolved by better evidence, and two disputants need not be equally well situated simply because each is confident. The difficulty is determining which considerations reliably distinguish genuine revelation from a competing claim to revelation. If the criterion is that a text is authoritative because it is divinely inspired, the inquirer still needs grounds for identifying the inspired text. If the criterion is the testimony of an established religious community, competing communities may offer testimony on behalf of incompatible doctrines. If the criterion is a powerful religious experience, an account is needed of how the experience's source and content can be assessed.</p>
+<p>These questions are not necessarily unanswerable. Historical evidence, textual analysis, philosophical argument, and reflection on experience may provide reasons to prefer one claim over another. But saying that such reasons could exist is different from establishing that human beings are generally positioned to recognize them. A theological model according to which God intends widespread recognition of a particular revelation must explain how that intention relates to the actual conditions under which people investigate competing claims.</p>
+<p>Several theological responses deserve attention. A religious exclusivist may maintain that one tradition contains a decisive revelation and that other traditions preserve partial truths, misunderstand earlier communications, or include mistaken claims. This position can explain why revelations appear inconsistent without treating God as the author of contradictory propositions. It does not, however, settle how a person who has not already identified the true tradition should determine which purported revelation is decisive.</p>
+<p>A religious inclusivist might hold that people can respond appropriately to God without possessing explicit knowledge of every doctrinal truth. A pluralist might argue that different traditions offer partial or culturally mediated understandings of a transcendent reality. These approaches can change the practical significance of disagreement, particularly if correct identification of one tradition is not a condition of salvation or a right relationship with God. They do not automatically remove every contradiction between specific historical or metaphysical claims, but they may deny that resolving all such contradictions is God's primary purpose in revelation. Philosophical treatments of religious diversity distinguish these positions and emphasize that their implications depend on the particular account being defended (<a href="#ref-religious-diversity">“Religious Diversity (Pluralism)”</a>).</p>
+<p>These alternatives show why the argument must remain conditional on divine intentions. If God intends only to make certain broad moral or spiritual truths accessible, disagreement about other doctrines may be less surprising. If God intends human beings to recognize a specific revelation containing indispensable truths, persistent disagreement about those truths becomes more directly relevant. We cannot move between these models without acknowledging that they generate different expectations.</p>
+<p>A further response appeals to divine assistance. God might enable a person to recognize genuine revelation through a special faculty, the work of the Holy Spirit, or another form of grace. Such an account need not assume that ordinary faculties shaped by evolution are sufficient for religious knowledge. It does, however, introduce questions about the scope and operation of that assistance. Does it provide recognition to everyone, to some people, or only under particular conditions? If people who sincerely seek religious truth reach incompatible conclusions, what explains the difference? How can an inquirer distinguish genuine divine assistance from a mistaken conviction that assistance has occurred?</p>
+<p>None of these questions establishes that divine assistance is impossible. They clarify what the explanation must supply if it is to do more than make an observed disagreement compatible with theism.</p>
+<p>The connection to cognitive design is now clear. The earlier sections asked why creatures equipped to navigate ordinary environments possess faculties that can also mislead them in consequential situations. Competing claims to revelation extend the concern into a domain where, under some theologies, the stakes are exceptionally high. Human beings must decide not only what a purported divine message says, but whether it is divine at all, using faculties and evidence whose reliability in this domain are disputed.</p>
+<p>The presence of incompatible claims does not show that no revelation is genuine. It raises a more specific question: if recognizing a particular revelation is an important divine objective, why are the means of recognizing it arranged so that sincere inquiry can lead to incompatible conclusions? The answer may depend on divine purposes we have not yet established, on evidence that has not been adequately considered, or on a theology in which explicit doctrinal agreement is less important than the question assumes.</p>
+<p>The next section examines a further complication: people do not approach these competing claims from a common starting point. The religious traditions, testimony, and interpretive resources available to them are substantially shaped by where and among whom they are born.</p>
+<a id="chapter-11"></a>
+<h2 class="ep-source-section">11. Geography and unequal access to religious evidence</h2>
+<a id="section-xv"></a>
+<p class="chapter-lead">The previous section examined the difficulty of distinguishing between incompatible claims to divine revelation. That difficulty is not encountered under uniform conditions. People do not begin their religious inquiries with the same texts, testimony, experiences, or interpretive resources. The traditions they encounter first—and often those they come to regard as authoritative—depend substantially on the families and societies into which they are born. The problem of recognizing revelation therefore has a distributive dimension: if identifying a particular revelation matters, why are opportunities to encounter and assess it so unevenly distributed?</p>
+<p>The geographical pattern of religious affiliation is striking. Pew Research Center’s estimates for 2020 indicate that 99% of the world’s Hindus and 98% of its Buddhists lived in the Asia-Pacific region. Christianity was more geographically dispersed, with substantial populations in sub-Saharan Africa, Latin America and the Caribbean, Europe, and elsewhere. Pew also estimated that 80% of the world’s population lived in a country where most people shared their broad religious identity. These figures describe where people who identify with religious groups live. They do not, by themselves, show what an individual believes, which rival claims that individual has encountered, how much evidence is accessible, or why the person identifies as they do. They nevertheless illustrate how religious environments vary by location (<a href="#ref-pew-global">Pew Research Center, 2025b</a>).</p>
+<p>Childhood formation adds another dimension. In a 2016 study of religious upbringing in the United States, Pew found that adults raised in families with a single religious background frequently retained that identity, although retention varied by tradition and family circumstances. The study also found that adults whose parents came from different religious backgrounds followed a wider range of paths. These are findings about American adults, not universal rates of religious inheritance. They support the more limited point that family environment can be strongly associated with subsequent religious identification (<a href="#ref-pew-upbringing">Pew Research Center, 2016</a>).</p>
+<p>More recent evidence shows both the persistence and the variability of these patterns. In a 2025 analysis of surveys from 36 countries, Pew reported that at least 95% of adults in India, Israel, Nigeria, and Thailand still identified with the broad religious category in which they were raised. Religious switching was considerably more common in several other surveyed countries, including South Korea and the Netherlands. The report explicitly cautions that its 36-country sample is not representative of the entire world. Religious formation is therefore influential without being determinative: people convert, disaffiliate, reinterpret inherited traditions, and sometimes adopt beliefs at odds with their surrounding communities (<a href="#ref-pew-switching">Pew Research Center, 2025a</a>).</p>
+<p>These observations do not imply that a religion is false because its adherents are geographically concentrated, nor that a person’s beliefs are unjustified because they were learned from parents or a religious community. Religious affiliation, exposure to a claim, and a fair opportunity to evaluate its supporting evidence are distinct: survey data about the first cannot establish the other two on their own. Nearly everyone acquires much of their knowledge through testimony, education, and social relationships. Dependence on one’s environment is an ordinary feature of human knowledge, not a defect peculiar to religion.</p>
+<p>The philosophical difficulty arises when geographical and familial circumstances influence access to evidence that a theological model regards as indispensable. Imagine two equally sincere inquirers who are born in different communities. One encounters a particular revelation through trusted teachers, familiar language, and a tradition with institutions devoted to explaining it. The other encounters it only indirectly, perhaps through a hostile description, an unfamiliar translation, or no meaningful presentation at all. Even if both possess broadly reliable cognitive faculties, they are not assessing the same evidence under the same conditions.</p>
+<p>This difference should not be confused with a claim that the second inquirer is incapable of recognizing the truth or that the first necessarily has better grounds for belief. Familiarity can facilitate understanding, but it can also discourage critical scrutiny; unfamiliarity can impede inquiry, but it can also prompt careful examination. The point is narrower: a person’s opportunities to investigate a purported revelation are partly shaped by circumstances that the person did not choose.</p>
+<p>A further complication concerns the standards of recognition themselves. Religious communities often teach their members not only which claims to accept but also how to evaluate religious testimony, interpret sacred texts, and understand religious experience. An inquirer may consequently assess a purported revelation using criteria acquired within the very tradition whose authority is under consideration. This need not make the inquiry hopelessly circular; interpretive practices can be examined critically, compared with alternatives, and revised. But it means that access to a message alone does not guarantee equal opportunities to assess its source and meaning.</p>
+<p>What follows for divine design depends on the theology under consideration. Suppose a model holds that God intends every person to recognize a specific historical revelation and that explicit recognition has exceptional spiritual importance. On that model, uneven access to the revelation and to the resources needed to evaluate it calls for explanation. Why would a perfectly knowledgeable and powerful creator permit the success of an important divine communication to depend so heavily on a person’s birthplace, family, language, or historical period?</p>
+<p>A defender of the model might argue that God supplies each person with sufficient evidence or assistance, even when that assistance is not publicly observable. Another might maintain that sincere seekers can recognize divine truth through conscience, religious experience, or a special faculty. These proposals are relevant responses, but they differ in their commitments. A claim that everyone receives sufficient help needs an account of what that help consists in, while an appeal to a special faculty must explain its operation alongside persistent disagreement. Neither proposal can be inferred solely from God’s ability to provide such assistance.</p>
+<p>Other theological models alter the problem more substantially. An inclusivist might hold that people can respond appropriately to God without explicit knowledge of a particular revelation. A pluralist might regard several traditions as vehicles of genuine religious insight. A theology that places little weight on assent to specific doctrines may see geographical variation as less troubling than one that makes such assent central. These differences matter: an argument against unequal access to indispensable religious knowledge has less force against a model that denies the knowledge is indispensable.</p>
+<p>At the same time, reducing the consequences of religious disagreement does not automatically explain the distribution of religious evidence. If God intends to communicate with humanity, it remains reasonable to ask what that intention leads us to expect about the accessibility and recognizability of the communication. A theology may have a compelling answer, but the answer must be supplied rather than assumed.</p>
+<p>There is a useful parallel with the earlier discussion of education and cognitive opportunity. A person can possess the capacity to learn while lacking access to the materials needed to learn a particular subject. Likewise, a person could possess faculties capable of recognizing genuine revelation while lacking a fair opportunity to encounter it in a form they can understand and assess. Improving the faculties alone would not necessarily resolve the second problem; the informational environment would matter as well.</p>
+<p>Geographical variation does not establish that God has failed to reveal anything, or that no individual can reasonably identify a genuine revelation. It sharpens the explanatory question. If recognizing a particular divine message is among God’s important purposes for humanity, what accounts for the marked differences in the circumstances under which people must attempt that recognition?</p>
+<a id="chapter-12"></a>
+<h2 class="ep-source-section">12. The <em>sensus divinitatis</em> and divine assistance</h2>
+<a id="section-xvi"></a>
+<p class="chapter-lead">The preceding sections have raised a question that cannot be answered simply by appealing to the general reliability of human cognition. If God intends people to recognize divine revelation, why do they so often reach incompatible conclusions about what God has revealed? One response is that religious knowledge does not depend exclusively on the faculties we use to perceive the physical world, assess testimony, or draw ordinary inferences. God might provide a distinct means of knowing God, and failures of religious recognition might reflect damage to that means rather than a defect in God's original design.</p>
+<p>Alvin Plantinga develops a sophisticated version of this response in Warranted Christian Belief. His account deserves careful attention because it offers more than the assertion that God could somehow make religious belief reasonable. It proposes a model of how such belief could possess warrant—the positive epistemic status that, when added to true belief, is sufficient for knowledge. Plantinga's aim is to challenge the claim that religious belief must be irrational or unwarranted merely because it is not inferred from arguments or publicly available evidence (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<h3>A faculty for knowledge of God</h3>
+<p>Plantinga's Aquinas/Calvin model proposes that human beings possess a sensus divinitatis, a cognitive mechanism that produces beliefs about God in a variety of circumstances. A person might become aware of God's presence when contemplating the natural world, recognizing wrongdoing, or experiencing gratitude or danger. On the model, the resulting belief need not be inferred from premises. It can be properly basic: held rationally and with warrant without depending for its warrant on an argument from other beliefs (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>This is an important response to an overly restrictive account of religious knowledge. Much of our ordinary knowledge is not acquired by first constructing an argument. We generally form perceptual and memory beliefs through cognitive processes that operate without conscious inference. Plantinga proposes that belief in God could arise through another properly functioning process of this kind.</p>
+<p>The model also introduces a distinction between the truth of a religious belief and the warrant it might enjoy. Plantinga argues that, if theism is true, belief in God is likely to have warrant through a mechanism resembling the one he describes. That is a conditional claim about the epistemic status religious belief could possess, not an independent demonstration that theism is true or that the sensus divinitatis exists (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>For the problem of cognitive design, the proposal changes the question. We cannot simply argue that evolution selected our faculties for ordinary survival tasks and therefore left us without the means to recognize God. If Plantinga's model is correct, God has supplied a further means of religious knowledge. The remaining questions concern why that means functions as it does and how its operation relates to the religious disagreement we observe.</p>
+<h3>Sin and damaged religious cognition</h3>
+<p>Plantinga does not maintain that the sensus divinitatis operates without difficulty in every human being. In his account, sin has noetic effects: it can impair cognition, particularly our knowledge of God. The faculty may be weakened, suppressed, or otherwise prevented from functioning as intended. This explains, within the model, how human beings could have been created with a capacity for knowing God yet fail to exercise that capacity reliably in their present condition (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>This response is more specific than a general appeal to human fallibility. It proposes a theological explanation for a particular class of cognitive failures. The difficulty is not that God designed a faculty incapable of achieving its purpose, but that the faculty has been damaged.</p>
+<p>The explanation also creates a question about responsibility. Plantinga's model does not require that every individual who lacks belief in God has personally chosen to damage their own religious faculties. It appeals to the broader consequences of sin within a Christian account of the human condition. The model should therefore not be reduced to the claim that every nonbeliever is consciously resisting evidence or deliberately choosing error (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>Nevertheless, distinguishing original design from subsequent damage does not settle the problem of divine permission. An omniscient creator would foresee the damage and its consequences. If recognizing God matters greatly, why would the effects of sin impair the very faculty through which people are supposed to recognize God? Why would those effects extend to individuals whose opportunities for religious inquiry are already limited by historical and geographical circumstances?</p>
+<p>A Fall-based explanation can make impaired religious cognition intelligible within a particular theological history. To explain why a perfectly good creator would permit that history, however, it needs a further account of the goods at stake and the reasons the consequences could not be prevented or mitigated in a less harmful way.</p>
+<h3>The extended model and the work of the Holy Spirit</h3>
+<p>Plantinga's response does not end with damaged natural knowledge of God. His extended Aquinas/Calvin model addresses specifically Christian beliefs concerning such matters as the incarnation, resurrection, and salvation. Here, Scripture, faith, and the internal work of the Holy Spirit play central roles. On the model, the Holy Spirit enables a believer to recognize the truth of the Christian message, and the resulting beliefs can possess warrant sufficient for knowledge (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>This matters for the challenge posed by incompatible revelations. Plantinga need not claim that a person can identify Christianity as true solely by comparing historical documents or applying a religiously neutral test to competing traditions. His model allows for divine assistance that gives a believer warrant beyond what those methods, considered alone, could provide.</p>
+<p>A fair evaluation must acknowledge the strength of this possibility. If God really does produce true Christian belief through the Holy Spirit, the absence of an argument that persuades every observer would not automatically show that the believer lacks knowledge. Nor would the existence of people who disagree necessarily defeat that knowledge. Plantinga examines religious pluralism explicitly and argues that awareness of intelligent and serious adherents of other traditions need not constitute a defeater for Christian belief (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<p>But the extended model also clarifies the limits of what has been established. Showing how Christian belief could be warranted if the relevant Christian claims are true does not independently establish those claims against incompatible religious accounts. A person evaluating several alleged revelations still needs to consider whether the proposed divine assistance is actually occurring and whether their interpretation of it is correct. A model that explains a believer's warrant from within Christianity is not, merely by being coherent, a publicly decisive method for choosing Christianity over its competitors.</p>
+<p>That distinction is not a refutation of Plantinga's project. His central aim is to resist objections to Christian belief's epistemic standing that purport to succeed independently of whether Christianity is true. The challenge developed in this essay is different. It asks what a particular theological account of God's intentions leads us to expect about the distribution and recognizability of religious truth (<a href="#ref-plantinga-2000">Plantinga, 2000</a>).</p>
+<h3>Can the explanation distinguish success from failure?</h3>
+<p>The problem of divine psychology returns at this point. Suppose someone recognizes a purported revelation and attributes that recognition to the Holy Spirit. Suppose another person, equally sincere in their own assessment, reaches an incompatible religious conclusion. A theological model may explain the difference by appealing to genuine divine assistance in one case and cognitive damage, misinterpretation, or another cause in the other.</p>
+<p>Such an explanation may be correct. But its evidential value depends on what grounds we have for identifying which process occurred in which case. If the distinction is made solely by assuming in advance that one's preferred revelation is true, the explanation may illuminate how that revelation could be known without providing independent evidence that it is the genuine one.</p>
+<p>The issue is not that religious knowledge must always be established by criteria acceptable to everyone. Plantinga's account specifically challenges that demand. Rather, the issue is what explanatory expectations follow when we attribute to God a desire that people recognize a particular message. If a special faculty is widespread but damaged, or divine assistance is available but not uniformly effective, what independently motivated account explains those conditions?</p>
+<p>The sensus divinitatis and the noetic effects of sin provide substantive possibilities for religious knowledge and religious error. They do not, by themselves, determine why God would permit the actual pattern of recognition, disagreement, and unequal access. Answering that question requires further claims about divine purposes, the consequences of sin, the provision of grace, and the importance of explicit belief.</p>
+<p>Those claims lead directly to the next problem. If God wants human beings to know God, why not make divine revelation clearer—or provide more reliable means of recognizing it? A serious answer must consider whether greater clarity would undermine freedom, faith, or other goods, while distinguishing those proposed benefits from the particular uncertainty and disagreement that human beings actually experience.</p>
+<a id="chapter-13"></a>
+<h2 class="ep-source-section">13. Freedom, faith, and divine hiddenness</h2>
+<a id="section-xvii"></a>
+<p class="chapter-lead">The preceding sections have identified several obstacles to recognizing purported revelation: incompatible religious claims, unequal access to testimony and interpretive resources, and uncertainty about whether an apparent religious experience or conviction has a divine source. A theist may respond that these difficulties are not accidental failures of communication. Perhaps God has reasons to remain less than fully evident, or to disclose religious truth in ways that leave room for uncertainty.</p>
+<p>This response brings the problem of cognitive design into contact with the philosophical debate over divine hiddenness. The questions are related but not identical. One concerns whether people have adequate grounds for believing that God exists. Another concerns whether they can identify a particular communication as divine and interpret it correctly. Clear evidence of God’s existence would not, by itself, settle disagreements about Christianity, Islam, or any other tradition. Nevertheless, both questions concern what we should expect if God wishes human beings to know God or recognize a particular revelation.</p>
+<h3>The argument from nonresistant nonbelief</h3>
+<p>J. L. Schellenberg’s influential argument begins with the idea of a perfectly loving God who is open to a conscious, reciprocal relationship with finite persons. Schellenberg maintains that a person capable of such a relationship cannot enter it while lacking belief in God’s existence through no resistance of their own. If there are capable, nonresistant nonbelievers, their existence therefore presents a challenge to the claim that a perfectly loving God exists. The argument turns on contested premises about perfect love, the conditions of personal relationship, and the existence of nonresistant nonbelief; it is not simply the observation that some people are atheists or agnostics (<a href="#ref-schellenberg">Schellenberg, 1993</a>; <a href="#ref-hiddenness">“Hiddenness of God”</a>).</p>
+<p>Our inquiry is both narrower and, in another respect, more demanding. We need not assume that perfect love entails unmistakable evidence of God’s existence for every person at every moment. We can instead ask whether a theological model that assigns great importance to recognizing a specific revelation gives us reason to expect that revelation to be more accessible and less difficult to authenticate than it appears to be.</p>
+<p>The distinction matters. Someone might believe that God exists while remaining uncertain about whether any sacred text expresses God’s intentions. Conversely, someone might participate meaningfully in a religious community while remaining uncertain about particular doctrines. The degree of clarity required depends on what the theological model says God wants human beings to recognize.</p>
+<h3>Would greater clarity undermine freedom?</h3>
+<p>One response holds that unmistakable revelation would interfere with human freedom. If God’s existence or authority were overwhelmingly evident, people might feel unable to reject God, undertake independent moral inquiry, or develop a freely chosen relationship. Versions of this concern appear in discussions of epistemic distance, including responses associated with John Hick. Philosophers disagree, however, about which freedom such distance is supposed to protect and whether hiddenness is necessary to protect it (<a href="#ref-hiddenness">“Hiddenness of God”</a>).</p>
+<p>The argument requires several distinctions. Believing that someone exists is not the same as loving that person. Recognizing an authority is not the same as approving of or obeying it. Understanding the consequences of a choice is not the same as being compelled to make that choice. Clearer evidence of God’s existence could reduce uncertainty about existence while leaving substantial room for trust, resentment, commitment, resistance, and disagreement about what God asks of us.</p>
+<p>There may nevertheless be ways in which revelation could threaten freedom. A manifestation accompanied by overwhelming power or the immediate prospect of punishment might produce compliance through fear. A defender of hiddenness could argue that some forms of disclosure would distort the relationship God seeks, even if they established God’s existence beyond reasonable doubt.</p>
+<p>But this does not establish that every substantial increase in clarity would have that effect. Evidence could be more accessible without being accompanied by threats; a message could be easier to authenticate without forcing its recipient to accept its demands. To explain the actual degree of religious uncertainty, the freedom-based response must therefore identify which improvements in clarity would undermine which valuable freedoms, and why less restrictive alternatives would not preserve them. The criticism that clearer evidence need not eliminate the freedom to enter a relationship is developed, for example, in N. N. Trakakis’s examination of Hick’s response to hiddenness (<a href="#ref-trakakis">Trakakis, 2007</a>).</p>
+<h3>Could uncertainty make faith more valuable?</h3>
+<p>A related response proposes that uncertainty creates opportunities for faith, trust, humility, perseverance, or the pursuit of God. On this view, a relationship developed through searching might possess goods that would be absent if every religious question were settled immediately.</p>
+<p>There is a plausible starting point here. Discovering something through inquiry can be valuable in ways that merely receiving an answer is not. Trust may also involve commitment under conditions where not everything is known. Robert McKim describes responses to religious ambiguity that appeal to possible “goods of mystery,” while also asking how those goods should be weighed against the benefits of clarity (<a href="#ref-mckim">McKim, 2001</a>).</p>
+<p>The difficulty is determining how much uncertainty these goods require. Faith need not be identical to belief without adequate evidence. A person who knows that a friend exists can still need trust when the friend’s intentions are unclear or circumstances are difficult. Likewise, someone who has good grounds for believing that God exists might still face demanding questions about commitment, moral responsibility, and the meaning of particular experiences.</p>
+<p>Nor does uncertainty affect everyone in the same way. For some, religious searching may encourage reflection and intellectual growth. For others, limited access to evidence or persistent confusion may obstruct the very relationship that uncertainty is supposed to enrich. A successful explanation would need to address both possibilities rather than treating the value of searching as sufficient to justify every resulting difficulty.</p>
+<h3>The explanatory significance of unknown divine reasons</h3>
+<p>A further response is that we should not expect to understand all of God’s reasons for remaining hidden. Perhaps apparent religious ambiguity serves goods beyond our ability to identify. This appeal connects divine hiddenness to skeptical theism, which cautions against inferring that God has no sufficient reason for permitting some condition merely because we cannot discern one (<a href="#ref-skeptical">“Skeptical Theism”</a>).</p>
+<p>The caution is legitimate as far as it goes: not knowing a reason is not the same as knowing that no reason exists. But it is equally important to distinguish that point from a positive explanation of the evidence. An unknown reason may preserve the possibility that hiddenness is justified without telling us how likely the observed degree of hiddenness was under theism.</p>
+<p>There is a further complication. In her evidential treatment of divine hiddenness, Charity Anderson argues that God's existence being less obvious than expected <strong>can count as evidence against theism</strong>, without thereby making atheism the warranted conclusion. Assessing that evidence requires comparing how likely the hiddenness is under theism and its alternative, and considering the total evidence rather than treating hiddenness as decisive on its own (<a href="#ref-anderson">Anderson, 2025</a>).</p>
+<p>This is why the account of divine intentions matters so much. We cannot assign an evidential significance to religious ambiguity merely by announcing that a loving God would obviously reveal more—or by announcing that an inscrutable God might reveal any amount.</p>
+<p>The same standard applies to proposals about freedom and faith. They may provide independently motivated reasons for expecting some uncertainty, but they become explanatory only when they give us grounds for expecting something about its extent, form, or distribution. Otherwise, they risk accommodating clear revelation and obscure revelation equally well.</p>
+<p>The result is not a demonstration that God would necessarily provide more evidence, nor a demonstration that present religious uncertainty is justified. It is a more precise statement of the unresolved question. If God intends people to recognize God or a particular revelation, what independently supported account of divine purposes explains why recognition depends on faculties, evidence, and circumstances that permit such persistent and consequential disagreement?</p>
+<a id="part-iv"></a><header aria-label="Part IV: Divine psychology and the limits of explanation" class="ep-part-banner"><span class="ep-part-kicker">Part IV</span><h2 class="ep-part-title">Divine psychology and the limits of explanation</h2><p class="ep-part-summary">The final question concerns the standard applied throughout: what can appeals to divine intentions explain when those intentions are partly uncertain?</p></header>
+
+
+<a id="chapter-14"></a>
+<h2 class="ep-source-section">14. The knowability dilemma: divine psychology and the limits of explanation</h2>
+<a id="section-xviii"></a>
+<p class="chapter-lead">We began with Plantinga’s evolutionary argument against naturalism. If evolution selects for adaptive behavior rather than truth as such, Plantinga argues, the naturalist has reason to doubt whether human cognition is reliable. Fales challenges that inference: accurate representations and truth-conducive reasoning can contribute to flexible, adaptive behavior, giving evolution a positive role in explaining general cognitive reliability. Fales then reverses the explanatory question. Although theism allows God to create reliable minds, how do we know that God would choose to do so? His conclusion is that the likelihood of general cognitive reliability relative to theism is unknowable (<a href="#ref-fales">Fales, 1996</a>).</p>
+<p>The inquiry developed in this essay extends that question in two directions. First, it asks why a perfectly good creator would choose or permit our particular cognitive architecture: broadly capable, yet vulnerable to consequential errors and dependent on unequally distributed opportunities for correction. Second, it asks why creatures equipped with these faculties must use them to distinguish among competing claims to divine revelation. Neither question is answered merely by establishing that God could have reasons for the arrangement we observe. The resulting problem is not that divine purposes are necessarily unknowable; it is that an explanation must be consistent about when it claims to know them.</p>
+<h3>Compatibility is not prediction</h3>
+<p>Suppose we observe that human cognition is generally reliable. A theist might explain this by proposing that God values truth and wishes creatures to understand their world. That proposal is intelligible and may be independently supported within a particular theology. But the observation’s compatibility with such a purpose does not establish that reliability was probable under theism before the observation was considered.</p>
+<p>Now suppose we turn to a different feature of cognition: the biases, failures of judgment, and unequal epistemic opportunities that contribute to suffering. A theist might propose that God permits these limitations because they enable freedom, intellectual development, dependence, or goods beyond our understanding. Some of these proposals identify genuine possibilities, and the preceding sections have examined why they deserve serious consideration. The methodological question is whether they also give us independent grounds for expecting the extent and distribution of the limitations we actually find.</p>
+<p>A theological model can legitimately appeal to several divine purposes. There is no requirement that God value only truth, only freedom, or only intellectual growth. The difficulty arises if those purposes are adjusted after each observation in such a way that virtually any cognitive architecture becomes unsurprising. Broad reliability is explained by God’s desire for knowledge; systematic error is explained by God’s desire for development; unequal access to reliable evidence is explained by God’s desire for diverse paths; and any remaining difficulty is assigned to unknown reasons. Taken individually, these explanations may be possible. Taken together without further constraints, they risk leaving us unable to say which alternative cognitive arrangements the model would have led us to expect.</p>
+<p>This is the distinction developed in <a href="https://afontana1.github.io/critical-thinking-academy/religion/divine-psychology/blog.html">When an Explanation Explains Too Much</a>: an agent’s capacity to bring about an outcome does not establish the probability that the agent would choose it. A sufficiently flexible account of an agent’s intentions can accommodate many outcomes without explaining why the observed one was to be expected.</p>
+<p>The same issue applies to revelation. Clear, widely recognizable revelation could be explained by God’s desire to be known. Ambiguous revelation could be explained by God’s desire to preserve freedom or encourage inquiry. Religious disagreement could be explained by the effects of sin, the limits of human understanding, or the value of different religious experiences. These possibilities are not automatically false or ad hoc. But if a model can accommodate both clear and obscure revelation with equal ease, it cannot claim that either outcome strongly confirms the model without further argument.</p>
+<h3>What Bayesian reasoning can—and cannot—settle</h3>
+<p>The distinction can be stated in probabilistic terms without assigning numerical values. Whether the observed pattern of cognitive reliability, limitation, and religious disagreement favors a specified theistic hypothesis over a specified alternative depends on <strong>how likely that pattern is under each hypothesis</strong>, in light of the same background information. It also depends on the starting plausibility assigned to each hypothesis. An account that establishes only that God <em>might</em> permit the observed cognitive architecture has not established how strongly the observation favors theism.</p>
+<p>Nor can we estimate that likelihood merely by selecting a favorable description of divine intentions. If the broader theistic hypothesis leaves God's intentions uncertain, the assessment must account for the different purposes that are genuinely supported and for what each would lead us to expect. This is a schematic point about reasoning under uncertainty, not a claim that God's intentions are random or that all conceivable intentions deserve equal weight. Explaining the observation under one possible intention does not establish its likelihood under the broader hypothesis; failing to identify a divine reason does not establish a low likelihood either. As Anderson's treatment of hiddenness illustrates, an observation may count against theism while the total evidence still leaves theistic belief reasonable (<a href="#ref-anderson">Anderson, 2025</a>).</p>
+<p>These distinctions also prevent an overstatement of the argument’s conclusion. Uncertainty about one likelihood does not logically entail that every aspect of a posterior probability is unknowable. Other evidence, independently justified priors, or bounds on the uncertain likelihood might still support meaningful conclusions. Likewise, the failure to construct a reliable probability model does not mean the correct probability is one-half. It means that a precise assignment has not been earned.</p>
+<h3>Skeptical theism and the cost of inscrutability</h3>
+<p>This issue becomes particularly sharp in skeptical theism. Skeptical theists challenge the inference from our inability to identify a sufficient divine reason for suffering to the conclusion that no such reason exists. Given the difference between human and divine understanding, our knowledge of possible goods and their relationships may be too limited to support that inference. The position is a response to arguments from evil, not a claim that suffering is unreal or that every proposed theodicy is correct (<a href="#ref-skeptical">“Skeptical Theism”</a>).</p>
+<p>In a 2025 chapter titled “If We Can’t Tell What Theism Predicts, We Can’t Tell Whether God Exists,” Nevin Climenhaga examines a probabilistic version of this response. He argues that if skeptical theists maintain that the likelihood of observed evil under theism is inscrutable, the resulting uncertainty also undermines their ability to determine the probability of theism given that evil and their other evidence. On his account, this creates a case for agnosticism rather than a straightforward evidential victory for theism (<a href="#ref-climenhaga">Climenhaga, 2025</a>).</p>
+<p>Climenhaga’s argument concerns Bayesian arguments from evil. The application to cognitive architecture and religious disagreement developed here is an extension of that issue, not a claim that he has already established this essay’s conclusions. The extension is motivated by a common structure: an observation appears to raise a question about what a perfectly good God would permit, and the response appeals to uncertainty about divine purposes.</p>
+<p>Such an appeal may block an overly confident negative inference. But the uncertainty cannot be treated as cost-free. If we lack grounds for judging what God would permit, that limitation also affects positive claims that God’s goodness makes the observed arrangement likely. The precise consequences depend on the theological hypothesis, the evidence, and the strength of the skeptical claim. A modest acknowledgment that we cannot discern every divine reason need not defeat all theological expectations. A sweeping claim that we cannot reliably judge what God would do has much more extensive implications.</p>
+<p>This is the knowability dilemma. To use divine intentions to explain why our minds are reliable, why their limitations are justified, or why revelation takes its particular form, we need some warranted understanding of those intentions. But when unfavorable observations arise, an unrestricted appeal to their inscrutability threatens the very expectations that gave the earlier explanations evidential force. The dilemma does not prohibit mystery; it requires that appeals to what is known and unknown about God be applied consistently.</p>
+<h3>What the argument establishes</h3>
+<p>The cumulative argument is deliberately narrower than a demonstration that God does not exist. Fales provides evolutionary reasons for expecting generally reliable cognition, but those reasons do not establish reliability in every domain. Our examination of cognitive errors identifies limitations that can be understood in evolutionary terms, but it does not prove that a superior architecture could preserve every relevant good without cost. Religious disagreement and unequal access to purported revelation raise further questions for theologies that attach great importance to recognizing specific religious truths, but they do not establish that every revelation is false or that all theological models generate the same expectations.</p>
+<p>These qualifications are not concessions external to the argument. They follow from its central methodological principle: evidential conclusions must not exceed what the relevant hypotheses, observations, and justified assumptions support.</p>
+<p>The positive result is a clearer account of what an explanation of human cognition under classical theism would need to accomplish. It would need to specify the divine purposes relevant to cognition; explain why those purposes favor or permit the actual combination of reliability and limitation; address plausible improvements without assuming that all trade-offs are either avoidable or unavoidable; and clarify what God’s intentions imply for the accessibility and recognition of revelation. Such an account could appeal to freedom, soul-making, theistic evolution, or divine assistance. Its strength would depend on the independent support and explanatory constraints those proposals provide.</p>
+<p>Evolutionary naturalism faces its own unfinished questions, especially about the reliability of cognition outside the domains in which accurate representation contributes to adaptive behavior. But the mere existence of those questions does not establish that divine design supplies a more predictive explanation. The two accounts must be evaluated according to what each actually gives us reason to expect, not according to whether either can be made compatible with an observation after the fact.</p>
+<p>We can therefore return to the question posed in the title: Why would God design minds like ours? It is possible to construct theological explanations of their reliability, limitations, capacity for self-correction, and difficulties with revelation. The more demanding task is to show why a creator with the stipulated attributes and independently justified purposes would choose this arrangement rather than relevant alternatives.</p>
+<p>Until that task is met, the appeal to divine psychology remains an open explanatory proposal rather than an established solution. The proper conclusion is neither that every proposed divine reason fails nor that unknown reasons settle the matter. It is that the evidential force of divine design depends on how much we can responsibly claim to know about what God would intend—and on whether those claims remain consistent when the observed world does not match our initial expectations.</p>
+<a id="references"></a>
+<h2>References</h2>
+<p>The references below are linked from the corresponding passages in the essay. Biblical and Qur’anic passages are cited by chapter and verse.</p>
+<h3>Scholarly and empirical sources</h3>
+<ul>
+<li><a id="ref-anderson"></a>Anderson, Charity. (2025). <em><a href="https://doi.org/10.1093/9780198973041.001.0001">Divine Hiddenness and Evidence for God</a>.</em> Oxford University Press.</li>
+<li><a id="ref-climenhaga"></a>Climenhaga, Nevin. (2025). “<a href="https://doi.org/10.1093/9780198954712.003.0008">If We Can’t Tell What Theism Predicts, We Can’t Tell Whether God Exists: Skeptical Theism and Bayesian Arguments from Evil</a>.” In Lara Buchak and Dean W. Zimmerman (eds.), <em>Oxford Studies in Philosophy of Religion</em>, vol. 11, pp. 191–218. Oxford University Press.</li>
+<li><a id="ref-colzato"></a>Colzato, Lorenza S., Bernhard Hommel, and Christian Beste. (2021). “<a href="https://doi.org/10.1177/1073858420945971">The Downsides of Cognitive Enhancement</a>.” <em>The Neuroscientist</em>, 27(4), 322–330.</li>
+<li><a id="ref-fales"></a>Fales, Evan. (1996). “<a href="https://doi.org/10.1086/289920">Plantinga’s Case Against Naturalistic Epistemology</a>.” <em>Philosophy of Science</em>, 63(3), 432–451.</li>
+<li><a id="ref-fleming"></a>Fleming, Stephen M. (2024). “<a href="https://doi.org/10.1146/annurev-psych-022423-032425">Metacognition and Confidence: A Review and Synthesis</a>.” <em>Annual Review of Psychology</em>, 75, 241–268.</li>
+<li><a id="ref-fricker"></a>Fricker, Miranda. (2007). <em><a href="https://doi.org/10.1093/acprof:oso/9780198237907.001.0001">Epistemic Injustice: Power and the Ethics of Knowing</a>.</em> Oxford University Press.</li>
+<li><a id="ref-garland"></a>Garland, Theodore, Jr., Cynthia J. Downs, and Anthony R. Ives. (2022). “<a href="https://doi.org/10.1086/717897">Trade-Offs (and Constraints) in Organismal Biology</a>.” <em>Physiological and Biochemical Zoology</em>, 95(1), 82–112.</li>
+<li><a id="ref-gigerenzer"></a>Gigerenzer, Gerd, and Henry Brighton. (2009). “<a href="https://doi.org/10.1111/j.1756-8765.2008.01006.x">Homo Heuristicus: Why Biased Minds Make Better Inferences</a>.” <em>Topics in Cognitive Science</em>, 1(1), 107–143.</li>
+<li><a id="ref-hick"></a>Hick, John. (1966). <em>Evil and the God of Love.</em> Macmillan.</li>
+<li><a id="ref-mckim"></a>McKim, Robert. (2001). <em><a href="https://doi.org/10.1093/0195128354.001.0001">Religious Ambiguity and Religious Diversity</a>.</em> Oxford University Press.</li>
+<li><a id="ref-diagnosis"></a>National Academies of Sciences, Engineering, and Medicine. (2015). <em><a href="https://doi.org/10.17226/21794">Improving Diagnosis in Health Care</a>.</em> Edited by Erin P. Balogh, Bryan T. Miller, and John R. Ball. National Academies Press.</li>
+<li><a id="ref-replicability"></a>National Academies of Sciences, Engineering, and Medicine. (2019). <em><a href="https://doi.org/10.17226/25303">Reproducibility and Replicability in Science</a>.</em> National Academies Press.</li>
+<li><a id="ref-nesse"></a>Nesse, Randolph M. (2005). “<a href="https://doi.org/10.1016/j.evolhumbehav.2004.08.002">Natural Selection and the Regulation of Defenses: A Signal Detection Analysis of the Smoke Detector Principle</a>.” <em>Evolution and Human Behavior</em>, 26(1), 88–105.</li>
+<li><a id="ref-oecd"></a>OECD. (2023). <em><a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en.html">PISA 2022 Results (Volume I): The State of Learning and Equity in Education</a>.</em> OECD Publishing.</li>
+<li><a id="ref-pew-upbringing"></a>Pew Research Center. (2016, October 26). “<a href="https://www.pewresearch.org/religion/2016/10/26/links-between-childhood-religious-upbringing-and-current-religious-identity/">Links Between Childhood Religious Upbringing and Current Religious Identity</a>.” U.S. adult survey.</li>
+<li><a id="ref-pew-switching"></a>Pew Research Center. (2025a, March 26). “<a href="https://www.pewresearch.org/religion/2025/03/26/around-the-world-many-people-are-leaving-their-childhood-religions/">Around the World, Many People Are Leaving Their Childhood Religions</a>.” Survey of 36 countries.</li>
+<li><a id="ref-pew-global"></a>Pew Research Center. (2025b, June 9). “<a href="https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/">How the Global Religious Landscape Changed From 2010 to 2020</a>.” Population estimates refer to 2020.</li>
+<li><a id="ref-plantinga-1974"></a>Plantinga, Alvin. (1974). <em>God, Freedom, and Evil.</em> William B. Eerdmans.</li>
+<li><a id="ref-plantinga-1993"></a>Plantinga, Alvin. (1993). “<a href="https://doi.org/10.1093/0195078640.003.0012">Is Naturalism Irrational?</a>” In <em>Warrant and Proper Function</em>, pp. 216–238. Oxford University Press.</li>
+<li><a id="ref-plantinga-2000"></a>Plantinga, Alvin. (2000). <em><a href="https://doi.org/10.1093/0195131932.001.0001">Warranted Christian Belief</a>.</em> Oxford University Press.</li>
+<li><a id="ref-pritchard"></a>Pritchard, Duncan. (2022). “<a href="https://doi.org/10.3389/fpsyg.2022.894738">Socially Extended Scientific Knowledge</a>.” <em>Frontiers in Psychology</em>, 13, article 894738.</li>
+<li><a id="ref-schellenberg"></a>Schellenberg, J. L. (1993). <em>Divine Hiddenness and Human Reason.</em> Cornell University Press.</li>
+<li><a id="ref-evil"></a><em>Stanford Encyclopedia of Philosophy.</em> “<a href="https://plato.stanford.edu/entries/evil/">The Problem of Evil</a>.” (Entry covering logical and evidential arguments, defenses, and theodicies.)</li>
+<li><a id="ref-hiddenness"></a><em>Stanford Encyclopedia of Philosophy.</em> “<a href="https://plato.stanford.edu/entries/divine-hiddenness/">Hiddenness of God</a>.” (Entry on nonresistant nonbelief and responses.)</li>
+<li><a id="ref-omnipotence"></a><em>Stanford Encyclopedia of Philosophy.</em> “<a href="https://plato.stanford.edu/entries/omnipotence/">Omnipotence</a>.” (Entry on maximal power and possible states of affairs.)</li>
+<li><a id="ref-religious-diversity"></a><em>Stanford Encyclopedia of Philosophy.</em> “<a href="https://plato.stanford.edu/entries/religious-pluralism/">Religious Diversity (Pluralism)</a>.” (Entry on disagreement, exclusivism, inclusivism, and pluralism.)</li>
+<li><a id="ref-skeptical"></a><em>Stanford Encyclopedia of Philosophy.</em> “<a href="https://plato.stanford.edu/entries/skeptical-theism/">Skeptical Theism</a>.” (Entry on limits of inferring divine reasons from our own understanding.)</li>
+<li><a id="ref-staal"></a>Staal, Justine, Jacky Hooftman, Sabrina T. G. Gunput, Sílvia Mamede, Maarten A. Frens, Walter W. van den Broek, Jelmer Alsma, and Laura Zwaan. (2022). “<a href="https://doi.org/10.1136/bmjqs-2022-014865">Effect on Diagnostic Accuracy of Cognitive Reasoning Tools for the Workplace Setting: Systematic Review and Meta-Analysis</a>.” <em>BMJ Quality &amp; Safety</em>, 31(12), 899–910.</li>
+<li><a id="ref-trakakis"></a>Trakakis, Nick. (2007). “<a href="https://doi.org/10.1111/j.1468-2265.2007.00313.x">An Epistemically Distant God? A Critique of John Hick’s Response to the Problem of Divine Hiddenness</a>.” <em>The Heythrop Journal</em>, 48(2), 214–226.</li>
+</ul>
+<h3>Primary religious texts</h3>
+<ul>
+<li><a id="ref-nicene"></a><em>The Nicene Creed.</em> <a href="https://www.vatican.va/content/catechism/en/part_one/section_one/chapter_three/article_2/the_credo.html">English text in the Vatican’s <em>The Credo</em></a>.</li>
+<li><a id="ref-corinthians"></a><em>1 Corinthians 15:3–4.</em> <a href="https://www.biblegateway.com/passage/?search=1+Corinthians+15%3A3-4&amp;version=NRSVUE">New Revised Standard Version Updated Edition</a>.</li>
+<li><a id="ref-quran"></a><em>Qur’an 4:157.</em> <a href="https://corpus.quran.com/translation.jsp?chapter=4&amp;verse=157">Parallel English translations in the Qur’anic Arabic Corpus</a>; the essay discusses the passage’s familiar denial-of-crucifixion readings without assuming that all exegetes interpret it identically.</li>
+</ul>
+<h3>Related essay</h3>
+<ul>
+<li>Critical Thinking Academy. “<a href="https://afontana1.github.io/critical-thinking-academy/religion/divine-psychology/blog.html">When an Explanation Explains Too Much</a>.” The author’s earlier discussion of divine psychology, discussed in Part I, Chapter 2.</li>
+</ul>
+</article>
