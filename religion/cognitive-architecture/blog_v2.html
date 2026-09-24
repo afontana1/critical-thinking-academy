@@ -1,4 +1,5 @@
 <!-- Blogger-ready HTML: paste into the post HTML editor. -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
       /* Scoped styles for Blogger dark themes. No white table backgrounds. */
       .ep-post {
@@ -614,6 +615,26 @@
 .ep-post .ep-toc a { overflow-wrap: anywhere; }
 .ep-post :target { scroll-margin-top: 1.5rem; }
 .ep-post .table-wrap:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.ep-post mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 720px) {
+  .ep-post {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    overflow-x: hidden;
+  }
+  .ep-post h1 { font-size: clamp(1.65rem, 8vw, 2rem); }
+  .ep-post .ep-toc { padding: 0.8em; }
+  .ep-post .ep-toc ul { margin-left: 1.1em; padding-left: 0.3em; }
+}
 </style>
 <article aria-label="Why Would God Design Minds Like Ours?" class="ep-post"><h1>Why Would God Design Minds Like Ours?</h1>
 <p class="ep-subtitle"><em>Evolution, Cognitive Error, Religious Disagreement, and the Problem of Divine Psychology</em></p>
