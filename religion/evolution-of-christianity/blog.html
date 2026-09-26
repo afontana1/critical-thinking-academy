@@ -1,0 +1,1583 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Provenance-Based Generative Methodology for Evaluating Historical Evidence</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+
+
+      /* Mobile rendering hardening */
+      html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        margin: 0;
+        min-width: 0;
+        overflow-x: hidden;
+      }
+
+      .ep-post {
+        min-width: 0;
+      }
+
+      .ep-post p,
+      .ep-post li,
+      .ep-post td,
+      .ep-post th,
+      .ep-post a,
+      .ep-post code {
+        overflow-wrap: anywhere;
+      }
+
+      .ep-post iframe,
+      .ep-post object,
+      .ep-post embed {
+        max-width: 100%;
+      }
+
+      .ep-post .MathJax,
+      .ep-post mjx-container {
+        max-width: 100%;
+      }
+
+      .ep-post mjx-container[display="true"] {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.15rem;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post {
+          width: 100%;
+          padding-left: 0.85rem;
+          padding-right: 0.85rem;
+        }
+
+        .ep-post h1,
+        .ep-post h2,
+        .ep-post h3,
+        .ep-post h4 {
+          overflow-wrap: anywhere;
+        }
+
+        .ep-post h1 {
+          font-size: clamp(1.45rem, 7vw, 1.65rem);
+        }
+
+        .ep-post h2 {
+          font-size: clamp(1.2rem, 5.8vw, 1.28rem);
+        }
+
+        .ep-post blockquote {
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0.8rem;
+        }
+
+        .ep-post pre {
+          max-width: 100%;
+          padding: 0.8rem;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .ep-post .ep-part-banner {
+          margin-top: 2.3em;
+          padding: 0.75em 0.8em;
+        }
+
+        .ep-post .ep-part-banner .ep-part-title {
+          font-size: 1.42rem;
+        }
+
+        .ep-post .chapter-guide,
+        .ep-post .checkpoint-block,
+        .ep-post .learning-insight-block {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .ep-post {
+          padding-left: 0.7rem;
+          padding-right: 0.7rem;
+          font-size: 0.96rem;
+        }
+
+        .ep-post td {
+          padding: 0.5em 0.6em;
+        }
+      }
+</style>
+<script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["\\(", "\\)"],
+            ["$", "$"],
+          ],
+          displayMath: [
+            ["\\[", "\\]"],
+            ["$$", "$$"],
+          ],
+          processEscapes: true,
+        },
+        options: {
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+        },
+      };
+    </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <article class="ep-post">
+<h1 id="a-provenance-based-generative-methodology-for-evaluating-historical-evidence">A Provenance-Based Generative Methodology for Evaluating Historical Evidence</h1>
+<h2 id="introduction">Introduction</h2>
+<p class="chapter-lead">Historical inquiry is often described as the interpretation of surviving evidence concerning past events. That description is correct but incomplete because it can encourage the impression that historians begin with a body of &ldquo;evidence&rdquo; already given in a relatively transparent form and merely ask what it implies. In reality, the surviving material available to historians is itself the product of history.</p>
+<p>A document available to a modern researcher may be the terminal output of a long sequence involving perception, interpretation, memory, oral communication, composition, editing, copying, translation, institutional selection, accidental survival, deliberate preservation, ideological suppression, scholarly reconstruction, and modern interpretation. Archaeological evidence likewise passes through processes of deposition, disturbance, preservation, excavation, classification, and interpretation. The historian therefore confronts not the past itself, but a <strong>historically generated dataset</strong>.</p>
+<p>The central methodological principle of this framework is:</p>
+<blockquote class="core-claim">
+<p><strong>Before a surviving source can be used to explain the past, the historical process that generated, transformed, selected, transmitted, and preserved that source must itself become part of the explanation.</strong></p>
+</blockquote>
+<p>This approach may be called a <strong>provenance-based generative methodology for historical evidence</strong>. It combines traditional source criticism with concepts drawn from data provenance, data lineage, causal inference, archival theory, sociology, political economy, information theory, and probabilistic reasoning. Its purpose is neither maximal skepticism nor credulous acceptance, but <strong>calibrated historical inference</strong>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#i-epistemic-foundations">I. Epistemic Foundations</a></li>
+<li><a href="#ii-claim-decomposition-and-hypothesis-specification">II. Claim Decomposition and Hypothesis Specification</a></li>
+<li><a href="#iii-source-level-criticism">III. Source-Level Criticism</a></li>
+<li><a href="#iv-data-provenance-and-historical-lineage">IV. Data Provenance and Historical Lineage</a></li>
+<li><a href="#v-the-social-and-cultural-data-generating-environment">V. The Social and Cultural Data-Generating Environment</a></li>
+<li><a href="#vi-selection-preservation-and-archival-formation">VI. Selection, Preservation, and Archival Formation</a></li>
+<li><a href="#vii-evidential-quality-as-a-multidimensional-vector">VII. Evidential Quality as a Multidimensional Vector</a></li>
+<li><a href="#viii-comparative-and-probabilistic-inference">VIII. Comparative and Probabilistic Inference</a></li>
+<li><a href="#ix-a-practical-analytical-workflow">IX. A Practical Analytical Workflow</a></li>
+<li><a href="#x-common-analytical-errors">X. Common Analytical Errors</a></li>
+<li><a href="#xi-applied-examples">XI. Applied Examples</a></li>
+<li><a href="#xii-toward-a-historical-evidence-architecture">XII. Toward a Historical Evidence Architecture</a></li>
+<li><a href="#xiii-core-methodological-principles">XIII. Core Methodological Principles</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h1 id="i-epistemic-foundations">I. Epistemic Foundations</h1>
+<h2 id="a-past-events-and-surviving-observations">A. Past events and surviving observations</h2>
+<p>Historical events are not directly available to researchers. What survives are traces: texts, inscriptions, artifacts, architecture, human remains, coins, administrative records, oral traditions, artistic representations, and later historical narratives. These traces are not identical with the events from which they arose.</p>
+<p>A useful abstraction is:</p>
+<p>$$
+H \rightarrow D
+$$</p>
+<p>where (H) is some historical state, event, or process and (D) is the surviving data. Historical reasoning attempts to infer (H) from (D), but the connection is rarely direct. A more realistic representation is:</p>
+<p>$$
+H
+\rightarrow
+P
+\rightarrow
+I
+\rightarrow
+M
+\rightarrow
+C
+\rightarrow
+T
+\rightarrow
+R
+\rightarrow
+S
+\rightarrow
+D
+$$</p>
+<p>Here the intermediate stages might include perception, interpretation, memory, communication, textualization, replication or redaction, and selection or survival. The historian observes only the downstream product. At minimum, therefore, historical inquiry must distinguish <strong>the event or condition itself</strong>, <strong>the process that generated surviving traces</strong>, and <strong>the modern interpretation of those traces</strong>.</p>
+<p>This prevents <strong>event-data collapse</strong>: the treatment of a surviving representation as though it were simply the historical event rendered into words.</p>
+<p>$$
+\text{surviving statement}
+\neq
+\text{historical event}
+$$</p>
+<p>That distinction is not skepticism for its own sake. It is recognition that historical information is mediated.</p>
+<h2 id="b-historical-sources-as-generated-data">B. Historical sources as generated data</h2>
+<p>A historical source should be understood as something produced by a process. Different production processes generate different kinds of error and preserve different kinds of information. A triumphal inscription commissioned by a king and a quartermaster's inventory from the same campaign may be equally authentic and contemporary, yet they are generated by very different institutional needs.</p>
+<p>The triumphal inscription may be shaped by royal ideology, expectations of kingship, commemorative convention, public legitimacy, and propaganda. The logistical record may instead be shaped by accounting conventions, bureaucratic incentives, clerical mistakes, and administrative routines. The proper question is therefore not simply, &ldquo;Which source is more trustworthy?&rdquo; but <strong>which data-generating process is likely to preserve which kinds of information accurately?</strong></p>
+<p>A royal inscription may be poor evidence for casualty figures but excellent evidence for political ideology. An inventory may be strong evidence for resource consumption but weak evidence for symbolic meaning. Historical quality is therefore <strong>domain-specific rather than global</strong>.</p>
+<h2 id="c-evidence-as-a-product-of-transformation">C. Evidence as a product of transformation</h2>
+<p>Information can change as it moves through a historical system. Some transformations are intentional&mdash;translation, editing, adaptation, propaganda, harmonization, abbreviation&mdash;while others are unintentional, such as memory distortion, scribal error, physical damage, linguistic drift, and misunderstanding.</p>
+<p>Transformations need not always degrade information. A later historian may preserve earlier archival material now lost to us. A translator may clarify an otherwise inaccessible source. The relevant task is therefore not simply to locate an &ldquo;original source,&rdquo; but to reconstruct the sequence of transformations connecting the surviving record to the underlying event and to ask what each transformation may have preserved, obscured, or altered.</p>
+<h2 id="d-epistemic-symmetry">D. Epistemic symmetry</h2>
+<p>The framework requires <strong>epistemic symmetry</strong>. Historical claims should not receive different evidential standards merely because they belong to different traditions or because the researcher finds their conclusions attractive or unattractive. Egyptian royal inscriptions, Roman imperial propaganda, Christian texts, Jewish texts, Greek miracle narratives, Mesopotamian omens, medieval chronicles, and modern memoirs all require source-sensitive analysis.</p>
+<p>This does not mean treating all genres identically. A tax register and an epic poem are generated by different systems and therefore require different analytic expectations. Epistemic symmetry means that the governing principle remains constant:</p>
+<blockquote class="core-claim">
+<p><strong>Evaluate the mechanism connecting the source to the proposition, not the ideological desirability of the proposition.</strong></p>
+</blockquote>
+<p>A scholar who readily sociologizes a rival tradition but suspends equivalent analysis for a preferred tradition introduces an asymmetry requiring justification. The reverse error&mdash;automatically discounting religious evidence while treating political memoirs na&iuml;vely&mdash;is equally problematic.</p>
+<h2 id="e-calibrated-rather-than-maximal-skepticism">E. Calibrated rather than maximal skepticism</h2>
+<p>Historical inquiry cannot demand certainty. A rule such as &ldquo;no proposition should be accepted without multiple independent contemporary eyewitnesses&rdquo; would eliminate enormous portions of ancient history. Historical inference instead works in degrees: evidence may make a proposition substantially more likely, somewhat more likely, approximately unchanged, somewhat less likely, or substantially less likely.</p>
+<p>This is compatible with ordinary historical judgments such as <strong>strongly supported</strong>, <strong>probable</strong>, <strong>plausible</strong>, <strong>possible</strong>, <strong>underdetermined</strong>, <strong>doubtful</strong>, and <strong>unsupported</strong>. The aim is calibration: weak evidence should not be treated as decisive, but neither should unattainable standards of proof be imposed on fragmentary ancient datasets.</p>
+<h1 id="ii-claim-decomposition-and-hypothesis-specification">II. Claim Decomposition and Hypothesis Specification</h1>
+<h2 id="a-why-claims-must-be-decomposed">A. Why claims must be decomposed</h2>
+<p>Historical disputes often become confused because several propositions are compressed into a single sentence. Suppose an ancient text says that a king received a message from a god before battle. This may involve at least six distinguishable propositions: a surviving text contains the claim; its author intended readers to believe it; the king publicly claimed divine communication; the king sincerely believed he experienced divine communication; the king underwent an unusual subjective experience; an external supernatural agent actually communicated with him.</p>
+<p>These propositions are not epistemically interchangeable. Evidence strongly supporting one may provide little support for another. Rigorous analysis therefore begins by <strong>decomposing the claim into discrete propositions</strong>.</p>
+<h2 id="b-observation-statements-and-historical-hypotheses">B. Observation statements and historical hypotheses</h2>
+<p>A useful distinction is between an <strong>observation statement</strong> and a <strong>historical hypothesis</strong>. &ldquo;Manuscript M contains sentence S&rdquo; is an observation about the surviving record. &ldquo;Event H occurred&rdquo; is a historical hypothesis about the past. The first may be highly secure while the second remains uncertain. The inference connecting them must therefore be made explicit rather than concealed in ordinary language.</p>
+<h2 id="c-define-the-target-variable">C. Define the target variable</h2>
+<p>Evidential quality is relational rather than intrinsic:</p>
+<p>$$
+Q(E,H)
+$$</p>
+<p>where (E) is the evidence and (H) is the hypothesis under evaluation.</p>
+<p>A royal inscription may be excellent evidence for official ideology, moderate evidence for the existence of a campaign, weak evidence for precise casualty figures, and very weak evidence for divine intervention. Asking whether a source is simply &ldquo;reliable&rdquo; therefore compresses several distinct questions. The better formulation is:</p>
+<blockquote class="core-claim">
+<p><strong>Reliable for what proposition?</strong></p>
+</blockquote>
+<h2 id="d-granularity-and-specificity">D. Granularity and specificity</h2>
+<p>Historical propositions vary in granularity. Consider an execution narrative: one may ask whether a person existed, was arrested, was executed, died by a particular method, was condemned by a particular official, had the remains handled by a named individual, or was buried in a specific location. Evidence sufficient for the third proposition may be inadequate for the seventh.</p>
+<p>The methodological rule is straightforward:</p>
+<blockquote class="core-claim">
+<p><strong>Increasing specificity increases evidential burden.</strong></p>
+</blockquote>
+<p>General contextual evidence may constrain broad possibilities without establishing highly specific event-level details.</p>
+<h2 id="e-evidence-for-belief-versus-evidence-for-reality">E. Evidence for belief versus evidence for reality</h2>
+<p>A source can be powerful evidence that someone believed something while being much weaker evidence that the belief was true. An early text describing expectation of imminent cosmic transformation may strongly establish the existence of that expectation; it does not thereby establish that the cosmic event was actually imminent.</p>
+<p>The same distinction applies across religious, political, and military contexts. A royal omen inscription may be excellent evidence for the role of omen interpretation in kingship without being comparable evidence for supernatural causation. Historians must avoid silently converting <strong>evidence for belief</strong> into <strong>evidence for the object of belief</strong>.</p>
+<h2 id="f-testimony-and-nested-claims">F. Testimony and nested claims</h2>
+<p>Testimony frequently has a nested structure. If an author says, &ldquo;Three hundred soldiers told me they saw the god appear,&rdquo; the surviving datum is not three hundred surviving testimonies. It is one author reporting that three hundred people made a claim.</p>
+<p>The structure is:</p>
+<p>$$
+\text{surviving author}
+\rightarrow
+\text{reported witnesses}
+\rightarrow
+\text{alleged event}
+$$</p>
+<p>Each arrow requires separate evaluation: Did the people exist? Did they make the statement? Did the author hear them directly? Were their experiences independent? Did they use the same interpretation? What did &ldquo;appearance&rdquo; mean in that cultural setting? The numerical size of the group cannot simply be treated as the number of independent testimonies available to the historian.</p>
+<h2 id="g-information-evidence-and-evidential-inertia">G. Information, evidence, and evidential inertia</h2>
+<p>The word <em>evidence</em> can be used broadly, so that almost any relevant datum qualifies, or more strictly, so that a statement counts as evidence only when some justified relationship connects it to the proposition. The terminology matters less than the underlying distinction.</p>
+<p>An anonymous medieval chronicle may claim that an event occurred a thousand years earlier. If no information pathway connects the chronicler to the ancient event, the statement may be informative about medieval tradition while contributing almost nothing to the ancient proposition. In that sense, it is <strong>evidentially inert</strong> with respect to the original event.</p>
+<p>A useful formalization is:</p>
+<p>$$
+P(E\mid H)
+\approx
+P(E\mid \neg H)
+$$</p>
+<p>If the same observation is about equally expected whether (H) is true or false, it has little discriminatory power. This explains why some impressive-sounding claims may contribute little once their provenance is examined.</p>
+<h1 id="iii-source-level-criticism">III. Source-Level Criticism</h1>
+<h2 id="a-authorship">A. Authorship</h2>
+<p>Authorship matters because it can affect access, temporal proximity, institutional position, personal involvement, and incentives. Yet authorship must itself be established. The historian should ask whether the source names its author, whether the attribution is original or later, whether external witnesses identify the author, whether linguistic evidence fits, whether pseudonymous writing was common in the genre, and whether authorship materially changes access to the event.</p>
+<p>An important distinction follows:</p>
+<p>$$
+\text{authentic authorship}
+\not\Rightarrow
+\text{factual accuracy}
+$$</p>
+<p>An authentic autobiography can exaggerate; an authentic royal inscription can propagandize; an authentic private letter can misunderstand. Authenticity establishes producer identity, not truth.</p>
+<h2 id="b-dating">B. Dating</h2>
+<p>Dating affects the error structure of a source. Greater temporal proximity may imply fewer transmission stages, less opportunity for legendary development, more surviving participants, and greater possibility of contradiction by contemporaries. Yet proximity does not eliminate propaganda, confusion, strategic deception, ideological framing, or memory error. A commander may misinterpret a battle while it occurs; a propagandist may lie immediately; a later historian may accurately preserve earlier documents.</p>
+<p>Dating therefore modifies evidential expectations. It does not mechanically determine reliability.</p>
+<h2 id="c-provenance-of-information">C. Provenance of information</h2>
+<p>One of the strongest source-critical questions is:</p>
+<blockquote class="core-claim">
+<p><strong>How did this information enter the source?</strong></p>
+</blockquote>
+<p>Possible pathways include direct observation, participation, interview, named informants, anonymous informants, official archives, earlier texts, oral tradition, rumor, inference, revelation, or literary borrowing. These pathways differ greatly in traceability.</p>
+<p>A statement such as &ldquo;I was present&rdquo; provides more information about claimed access than &ldquo;it is said,&rdquo; but self-claimed eyewitness status itself remains a claim requiring evaluation. The task is to reconstruct the information pathway rather than merely label a source &ldquo;primary&rdquo; or &ldquo;secondary.&rdquo;</p>
+<h2 id="d-access-and-opportunity-to-know">D. Access and opportunity to know</h2>
+<p>Source identity and source access are not the same thing. A court historian may understand diplomatic policy while knowing little about battlefield details; a soldier may know local combat but not imperial strategy; a priest may know ritual practice but not provincial administration; a later compiler may possess archival access unavailable to ordinary contemporaries.</p>
+<p>The key question is:</p>
+<blockquote class="core-claim">
+<p><strong>Was this source structurally positioned to know this particular fact?</strong></p>
+</blockquote>
+<h2 id="e-genre">E. Genre</h2>
+<p>Genre establishes conventions that influence the expected relationship between language and reality. Administrative inventories, diplomatic letters, legal records, chronicles, victory inscriptions, epic poetry, biography, apocalypse, liturgy, hagiography, satire, and polemic do not generate information in the same way.</p>
+<p>Genre affects acceptable exaggeration, symbolism, narrative compression, use of speeches, chronology, conventional motifs, and theological or ideological interpretation. It is not a binary truth detector. An epic can preserve real historical memories, while a bureaucratic document can contain false figures. Genre analysis identifies the kinds of transformations and distortions that are most plausible.</p>
+<h2 id="f-rhetorical-purpose">F. Rhetorical purpose</h2>
+<p>Texts are interventions in social situations. They may attempt to persuade, defend, accuse, authorize, commemorate, mobilize, glorify, instruct, negotiate, justify war, establish doctrine, or secure patronage. A productive question is:</p>
+<blockquote class="core-claim">
+<p><strong>What would success for this document have looked like?</strong></p>
+</blockquote>
+<p>A succession inscription may emphasize dynastic legitimacy; a polemical letter may exaggerate disagreement with rivals; a temple dedication may magnify divine favor. Purpose does not invalidate a source. It helps explain why the source looks the way it does.</p>
+<h2 id="g-audience-constraints">G. Audience constraints</h2>
+<p>Claims are made to audiences, and audiences can constrain what authors can plausibly say. Relevant variables include geographic proximity, familiarity with the people involved, access to competing information, shared ideology, whether communication was public or private, and whether dissenters had incentives or opportunities to respond.</p>
+<p>A claim addressed to an audience positioned to refute it may be somewhat more constrained than one made to distant admirers. But this principle must not be overstated. Audiences can be poorly informed, ideologically aligned, unable to investigate, or tolerant of exaggeration. &ldquo;Someone could have checked&rdquo; is not equivalent to &ldquo;someone did check.&rdquo;</p>
+<h2 id="h-incentives-and-distortion">H. Incentives and distortion</h2>
+<p>The question &ldquo;Why would the author lie?&rdquo; is too narrow. The more useful question is:</p>
+<blockquote class="core-claim">
+<p><strong>What incentive structure shaped the author's perception, memory, selection, and presentation?</strong></p>
+</blockquote>
+<p>Distortion can emerge through ideological commitment, social identity, patronage, fear, prestige, institutional loyalty, competition, reputation management, economic interest, or theological expectation. It need not involve conscious fabrication. Humans can sincerely interpret ambiguous events in ways favorable to prior beliefs, selectively remember events supporting current authority, or preserve traditions that reinforce community identity.</p>
+<p>The relevant category is therefore <strong>distortion risk</strong>, not simply dishonesty.</p>
+<h2 id="i-known-and-unknown-incentives">I. Known and unknown incentives</h2>
+<p>Ancient incentive structures are often only partially recoverable. The appropriate judgment may simply be <strong>unknown</strong>. Researchers should resist turning &ldquo;we cannot identify a motive to distort&rdquo; into &ldquo;therefore no motive existed.&rdquo; Absence of evidence for motive is not evidence of absence, particularly when the surrounding social record is fragmentary.</p>
+<h2 id="j-internal-and-external-criticism">J. Internal and external criticism</h2>
+<p>Internal criticism examines chronology, vocabulary, duplicated episodes, tensions between passages, ideological shifts, signs of interpolation, and possible composite authorship. These features do not automatically falsify a source; they may reveal layering, redaction, or development.</p>
+<p>External criticism compares the source with archaeology, inscriptions, coins, geography, material culture, environmental data, administrative records, and independent narratives. Agreement can strengthen confidence when independence is genuine. Conflict can reveal error, exaggeration, chronological confusion, or different perspectives. External fit is especially useful where outside evidence constrains details the author would not easily have controlled.</p>
+<h1 id="iv-data-provenance-and-historical-lineage">IV. Data Provenance and Historical Lineage</h1>
+<h2 id="a-historical-provenance">A. Historical provenance</h2>
+<p>In data engineering, provenance describes where data came from and how it was transformed. Applied historically, provenance asks:</p>
+<blockquote class="core-claim">
+<p><strong>Where did this claim come from, and what happened to it before it reached us?</strong></p>
+</blockquote>
+<p>A typical lineage may look like:</p>
+<p>$$
+\text{event}
+\rightarrow
+\text{perception}
+\rightarrow
+\text{interpretation}
+\rightarrow
+\text{memory}
+\rightarrow
+\text{oral communication}
+\rightarrow
+\text{written source}
+\rightarrow
+\text{editing}
+\rightarrow
+\text{copying}
+\rightarrow
+\text{selection}
+\rightarrow
+\text{survival}
+\rightarrow
+\text{reconstruction}
+\rightarrow
+\text{translation}
+$$</p>
+<p>Every arrow is a potential transformation point. Provenance analysis makes those transformations visible instead of treating the final text as a pristine observation.</p>
+<h2 id="b-provenance-as-epistemic-metadata">B. Provenance as epistemic metadata</h2>
+<p>Ideally, a historical claim should carry metadata such as earliest known attestation, approximate date, authorship status, information source, genre, dependencies, manuscript history, institutional setting, and preservation history. Without this metadata, a reader can easily encounter an ancient statement as though it were a direct observation.</p>
+<p>The function of provenance metadata is therefore epistemic: it prevents uncertainty about the source's history from disappearing when the claim is quoted.</p>
+<h2 id="c-lineage-as-a-graph">C. Lineage as a graph</h2>
+<p>Historical information frequently branches and recombines. One source may feed several later sources; multiple earlier sources may be combined into a later compilation.</p>
+<p>For example:</p>
+<p>$$
+A \rightarrow B
+$$</p>
+<p>$$
+A \rightarrow C
+$$</p>
+<p>$$
+B + C \rightarrow D
+$$</p>
+<p>This structure is better represented as a <strong>directed acyclic graph (DAG)</strong> than as a simple chain. The graph model matters because evidential agreement depends on independence.</p>
+<h2 id="d-correlated-evidence">D. Correlated evidence</h2>
+<p>Suppose three later chronicles all report the same event but all derive from the same lost royal archive. They are not three independent confirmations. They are three downstream expressions of one information source.</p>
+<p>Thus:</p>
+<p>$$
+\text{number of texts}
+\neq
+\text{number of independent information pathways}
+$$</p>
+<p>This is analogous to duplicated data in a statistical dataset: three copies of the same record do not create three measurements. Historical analysis should therefore <strong>count information pathways, not merely documents</strong>.</p>
+<h2 id="e-direct-and-indirect-dependency">E. Direct and indirect dependency</h2>
+<p>Dependency is not limited to literal copying. Two sources may share an oral tradition, teacher, liturgy, bureaucracy, propaganda system, archival source, or cultural script. The question &ldquo;Did B copy A?&rdquo; may therefore be too narrow. The broader question is:</p>
+<blockquote class="core-claim">
+<p><strong>What informational ancestors do A and B share?</strong></p>
+</blockquote>
+<h2 id="f-transformation-operations">F. Transformation operations</h2>
+<p>Each stage of lineage can be treated as a transformation operation: paraphrase, translation, expansion, abbreviation, harmonization, redaction, reinterpretation, interpolation, scribal normalization, or literary adaptation. Some transformations preserve semantic content while changing wording; others alter the meaning or emphasis.</p>
+<p>The historian should therefore ask not only what the surviving version says, but what transformations were necessary for it to become this version and what each transformation plausibly did to the information.</p>
+<h2 id="g-lifecycle-modeling">G. Lifecycle modeling</h2>
+<p>A generalized lifecycle can be represented compactly:</p>
+<div class="table-wrap"><table class="two-col long-table">
+<thead>
+<tr>
+<th>Stage</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Stage"><strong>T₀</strong></td>
+<td data-label="Function">Underlying event or condition</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₁</strong></td>
+<td data-label="Function">Immediate perception</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₂</strong></td>
+<td data-label="Function">Interpretation through available concepts</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₃</strong></td>
+<td data-label="Function">Memory formation</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₄</strong></td>
+<td data-label="Function">Interpersonal or oral transmission</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₅</strong></td>
+<td data-label="Function">Textual composition</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₆</strong></td>
+<td data-label="Function">Editorial transformation</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₇</strong></td>
+<td data-label="Function">Replication and derivative versions</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₈</strong></td>
+<td data-label="Function">Institutional curation</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₉</strong></td>
+<td data-label="Function">Differential preservation and loss</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₁₀</strong></td>
+<td data-label="Function">Scholarly reconstruction</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₁₁</strong></td>
+<td data-label="Function">Translation and publication</td>
+</tr>
+<tr>
+<td data-label="Stage"><strong>T₁₂</strong></td>
+<td data-label="Function">Contemporary interpretation</td>
+</tr>
+</tbody>
+</table></div>
+<p>A major epistemic danger arises when the modern reader encounters T₁₂ and psychologically experiences it as though it were T₀.</p>
+<h2 id="h-provenance-collapse">H. Provenance collapse</h2>
+<p>This compression may be called <strong>provenance collapse</strong>. The modern reader sees &ldquo;the king said,&rdquo; &ldquo;the prophet saw,&rdquo; or &ldquo;the witness reported&rdquo; and experiences the sentence as nearly direct contact with an ancient moment. In reality, the statement may stand at the end of several uncertain transformations.</p>
+<p>Provenance-aware analysis reopens that compressed pipeline.</p>
+<h2 id="i-uncertainty-propagation">I. Uncertainty propagation</h2>
+<p>Uncertainty at one stage can propagate downstream. If authorship, dating, source dependence, manuscript reconstruction, and interpretation are all uncertain, the final inference should reflect the cumulative structure of those uncertainties. Ancient history rarely permits defensible numerical multiplication of probabilities, but uncertainties should remain visible rather than disappearing as the analysis progresses.</p>
+<h1 id="v-the-social-and-cultural-data-generating-environment">V. The Social and Cultural Data-Generating Environment</h1>
+<h2 id="a-why-source-criticism-is-not-enough">A. Why source criticism is not enough</h2>
+<p>Even a perfectly reconstructed source must be situated within the environment that produced it. Historical actors do not interpret the world without conceptual mediation. They possess culturally learned categories for causation, agency, morality, disease, divinity, politics, identity, dreams, death, and authority.</p>
+<p>Context is therefore not supplementary background added after reading the source. It is part of the <strong>causal mechanism that generated the source</strong>.</p>
+<h2 id="b-cultural-repertoires-and-hypothesis-spaces">B. Cultural repertoires and hypothesis spaces</h2>
+<p>Every society supplies a repertoire of available explanations. An unexpected celestial event may be understood as an omen, divine judgment, royal legitimation, or natural phenomenon. An unusual dream may be interpreted as prophecy, ancestral communication, divine revelation, or psychological experience.</p>
+<p>Historical actors do not sample randomly from every logically possible explanation. They disproportionately select from culturally available concepts. Accordingly, historical reasoning should ask how common and socially intelligible a particular category of explanation was.</p>
+<p>Formally:</p>
+<p>$$
+P(E\mid C)
+$$</p>
+<p>where (C) represents ordinary cultural mechanisms, may be much higher than a modern reader intuitively assumes. If a culture routinely produces revelation, omen, miracle, or prophecy claims, another such report is less diagnostically surprising.</p>
+<h2 id="c-comparative-claim-ecology">C. Comparative claim ecology</h2>
+<p>Claims must be situated within their actual historical comparison class. A miracle report should be compared with other miracle traditions; a royal omen with contemporary omen systems; an apparition claim with surrounding beliefs about visions, dreams, resurrection, divine intervention, and apotheosis.</p>
+<p>This does not establish that all claims in a category are false. It provides the correct baseline for assessing how unusual a particular report is and how readily ordinary cultural mechanisms could generate it.</p>
+<h2 id="d-social-identity">D. Social identity</h2>
+<p>Groups generate and preserve information partly through identity maintenance. Stories may define insiders and outsiders, justify authority, explain suffering, establish moral norms, or connect present communities to a foundational past. Traditions performing important identity functions may become more stable and more frequently transmitted even without conscious fabrication.</p>
+<p>Thus social usefulness can affect survival and narrative stability independently of factual accuracy.</p>
+<h2 id="e-political-and-economic-structures">E. Political and economic structures</h2>
+<p>Political systems shape information through monarchy, empire, bureaucracy, censorship, legal institutions, succession crises, warfare, and diplomacy. Economic structures shape it through literacy, scribal labor, writing materials, transportation, patronage, archives, and institutional wealth.</p>
+<p>The result is epistemically important: the archive disproportionately represents groups with the resources to produce and preserve records. Rulers, temples, elites, and bureaucracies are often overrepresented relative to peasants, enslaved populations, itinerant laborers, and marginal groups. <strong>Economic inequality becomes archival inequality.</strong></p>
+<h2 id="f-institutional-incentives">F. Institutional incentives</h2>
+<p>Institutions generate records according to their needs. A tax office produces information optimized for revenue collection; a temple for cultic administration and legitimacy; an army for command and logistics; a religious movement for doctrine, identity, worship, and authority. A useful question is:</p>
+<blockquote class="core-claim">
+<p><strong>What problem was this institution solving when it produced this record?</strong></p>
+</blockquote>
+<p>That question often explains both what a source records and what it omits.</p>
+<h2 id="g-competition-and-authority">G. Competition and authority</h2>
+<p>Competing dynasties, priesthoods, philosophical schools, religious teachers, political factions, and bureaucratic offices may produce claims strategically. Statements about lineage, revelation, succession, orthodoxy, legitimacy, or victory can function simultaneously as descriptions and as instruments of competition.</p>
+<p>A claim's social function does not necessarily make it false, but it changes what kinds of distortion or emphasis should be expected.</p>
+<h2 id="h-memory-and-oral-transmission">H. Memory and oral transmission</h2>
+<p>Memory is reconstructive rather than mechanically reproductive. Later knowledge, narrative expectations, emotional salience, and social reinforcement can alter recollection. Confidence can increase while accuracy decreases, and collective memory may stabilize around socially meaningful narratives.</p>
+<p>Oral transmission is similarly neither perfect preservation nor uncontrolled invention. Formulaic repetition may stabilize some information, while simplification, elaboration, conflation, narrative smoothing, and adaptation alter other information. The relevant question is therefore not simply &ldquo;Was this oral?&rdquo; but:</p>
+<blockquote class="core-claim">
+<p><strong>What kind of oral system existed, and what types of information was it good or poor at preserving?</strong></p>
+</blockquote>
+<h2 id="i-reflexivity-and-reactivity">I. Reflexivity and reactivity</h2>
+<p>Historical actors are participants in the systems generating the evidence. Beliefs can alter behavior; prophecies can influence decisions; rumors can change alliances; religious claims can generate movements that later preserve the claims themselves.</p>
+<p>This creates reflexive loops such as:</p>
+<p>$$
+\text{belief}
+\rightarrow
+\text{behavior}
+\rightarrow
+\text{new evidence}
+\rightarrow
+\text{reinforced belief}
+$$</p>
+<p>Historians must therefore remain alert to cases in which a belief helps create the later circumstances that appear to confirm it.</p>
+<h1 id="vi-selection-preservation-and-archival-formation">VI. Selection, Preservation, and Archival Formation</h1>
+<h2 id="a-selection-begins-before-preservation">A. Selection begins before preservation</h2>
+<p>Not every event becomes a record. The first filter is <strong>production bias</strong>. Ancient societies were more likely to document taxation, law, warfare, diplomacy, property, elite activity, and religion than the routine lives of ordinary people. Limited literacy further means that written archives are structurally skewed toward particular classes, occupations, genders, and institutions.</p>
+<p>Consequently, absence from the written record cannot automatically be interpreted as absence from historical reality.</p>
+<h2 id="b-preservation-bias">B. Preservation bias</h2>
+<p>Not everything written survives. Survival depends upon material, climate, storage, copying, institutional continuity, language change, accident, and conflict. A stone monument, papyrus letter, cuneiform tablet, and repeatedly copied religious text have radically different survival probabilities.</p>
+<p>The modern archive therefore reflects both what ancient people produced and what subsequent environments permitted to survive.</p>
+<h2 id="c-institutional-curation-and-canonization">C. Institutional curation and canonization</h2>
+<p>Institutions actively shape the archive by deciding what to copy, preserve, catalog, cite, teach, and canonize. This does not require conspiracy. Routine institutional behavior is enough to produce powerful selection effects.</p>
+<p>Canonization is an especially strong form of curation because canonical status increases copying, translation, commentary, teaching, and preservation. Noncanonical materials may consequently disappear at higher rates. Modern archival dominance therefore cannot automatically be projected backward as evidence of original numerical or ideological dominance.</p>
+<h2 id="d-suppression-and-destruction">D. Suppression and destruction</h2>
+<p>Some materials disappear deliberately through censorship, proscription, book burning, political purges, or doctrinal suppression. Such mechanisms must be demonstrated historically rather than assumed. The existence of censorship in one period does not justify inventing specific lost documents in another.</p>
+<p>The proper inference is limited:</p>
+<blockquote class="core-claim">
+<p><strong>Documented suppression reduces confidence in archival completeness; it does not reveal what the missing documents said.</strong></p>
+</blockquote>
+<h2 id="e-survivorship-bias-and-missing-not-at-random-data">E. Survivorship bias and missing-not-at-random data</h2>
+<p>The archive is a selected sample because:</p>
+<p>$$
+P(\text{survival}\mid\text{source type})
+$$</p>
+<p>is not constant.</p>
+<p>Royal inscriptions, tax records, private letters, canonical scriptures, dissident tracts, and oral traditions all have different probabilities of preservation. In statistical terms, the evidence resembles <strong>missing-not-at-random (MNAR)</strong> data: the probability that information is missing depends on properties of the source and the institutions surrounding it.</p>
+<p>Suppose all surviving texts from a movement endorse doctrine X. Several processes could produce that observation: X may genuinely have been universal; X may have become dominant and its supporters preserved their texts; competing materials may have ceased to be copied; later institutions may have selectively transmitted one branch. The surviving distribution cannot automatically be equated with the original distribution.</p>
+<h2 id="f-selection-increases-uncertainty-not-knowledge-of-the-missing">F. Selection increases uncertainty, not knowledge of the missing</h2>
+<p>A crucial methodological restraint follows. From &ldquo;the surviving record is biased,&rdquo; one cannot infer &ldquo;the missing record probably supported my reconstruction.&rdquo; Selection bias justifies broader uncertainty, not imaginative reconstruction.</p>
+<p>In practical terms:</p>
+<blockquote class="core-claim">
+<p><strong>Archival bias widens the confidence interval; it does not fill in the missing rows.</strong></p>
+</blockquote>
+<h1 id="vii-evidential-quality-as-a-multidimensional-vector">VII. Evidential Quality as a Multidimensional Vector</h1>
+<h2 id="a-why-reliability-is-too-crude">A. Why &ldquo;reliability&rdquo; is too crude</h2>
+<p>Calling a source &ldquo;reliable&rdquo; compresses multiple dimensions. A document may be textually well preserved but rhetorically biased, securely dated but dependent on poor informants, anonymous yet strongly corroborated, or authentically authored while narratively tendentious.</p>
+<p>A better model treats evidential quality as a <strong>vector of attributes</strong> rather than a single score.</p>
+<h2 id="b-evidential-quality-dimensions">B. Evidential quality dimensions</h2>
+<div class="table-wrap"><table class="two-col long-table">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Core question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Dimension"><strong>Temporal proximity</strong></td>
+<td data-label="Core question">How close is the source to the alleged event?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Authorship confidence</strong></td>
+<td data-label="Core question">How securely is the producer identified?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Provenance traceability</strong></td>
+<td data-label="Core question">Can the information pathway be reconstructed?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Access</strong></td>
+<td data-label="Core question">Was the producer positioned to know?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Textual integrity</strong></td>
+<td data-label="Core question">How confidently can the relevant wording be reconstructed?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Transmission distance</strong></td>
+<td data-label="Core question">How many uncertain transformations intervene?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Independence</strong></td>
+<td data-label="Core question">Is the source genuinely independent of other attestations?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Corroboration</strong></td>
+<td data-label="Core question">Do external sources constrain the same proposition?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Genre fitness</strong></td>
+<td data-label="Core question">Is the genre appropriate for the inference being attempted?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Rhetorical pressure</strong></td>
+<td data-label="Core question">How strongly might persuasive goals shape presentation?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Incentive distortion risk</strong></td>
+<td data-label="Core question">What incentives favored selective representation?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Audience constraint</strong></td>
+<td data-label="Core question">Could contemporaries realistically challenge the claim?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Specificity</strong></td>
+<td data-label="Core question">Is the proposition precise enough to evaluate?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Cultural-generation rate</strong></td>
+<td data-label="Core question">How readily could this type of report arise in the surrounding culture?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Selection risk</strong></td>
+<td data-label="Core question">How strongly has preservation filtered the evidence?</td>
+</tr>
+<tr>
+<td data-label="Dimension"><strong>Contradictory evidence</strong></td>
+<td data-label="Core question">Are significant countertraditions or conflicts preserved?</td>
+</tr>
+</tbody>
+</table></div>
+<p>These dimensions may be assessed qualitatively as <strong>high, medium, low, or unknown</strong>. The category <em>unknown</em> is essential. If an author's incentives cannot be reconstructed, the correct value is not &ldquo;low distortion risk&rdquo; but &ldquo;unknown distortion risk.&rdquo;</p>
+<h2 id="c-avoid-false-precision">C. Avoid false precision</h2>
+<p>Numerical scoring can sometimes aid structured research, but values such as &ldquo;73.4% reliable&rdquo; create an appearance of measurement precision the historical record rarely supports. Ordinal categories or multidimensional profiles are often more defensible because they preserve uncertainty and reveal where the evidential bottlenecks actually lie.</p>
+<h2 id="d-quality-is-hypothesis-relative">D. Quality is hypothesis-relative</h2>
+<p>A ritual inscription may provide high-quality evidence for official cultic ideology, medium-quality evidence for institutional practice, and low-quality evidence for private belief. Accordingly:</p>
+<p>$$
+Q(E,H)
+$$</p>
+<p>must remain explicit. Quality belongs to the <strong>relationship between evidence and hypothesis</strong>, not to the source in isolation.</p>
+<h2 id="e-data-quality-is-not-truth">E. Data quality is not truth</h2>
+<p>A perfectly preserved source can be wrong, and a badly preserved source can preserve accurate information. Data quality concerns confidence in what the source says and how it reached us; truth concerns whether the underlying proposition corresponds to historical reality.</p>
+<p>Likewise, confidence can vary across nested hypotheses. If a secure document says, &ldquo;We saw a sign in the sky,&rdquo; one may have high confidence that the document contains the statement, moderate confidence that witnesses reported an unusual visual event, and much lower confidence in the interpretation that the event was supernatural.</p>
+<h1 id="viii-comparative-and-probabilistic-inference">VIII. Comparative and Probabilistic Inference</h1>
+<h2 id="a-evidence-is-comparative">A. Evidence is comparative</h2>
+<p>Evidence becomes especially informative when competing hypotheses predict it differently. Suppose (H_1) and (H_2) are rival explanations. The relevant comparison is:</p>
+<p>$$
+\frac{P(E\mid H_1)}{P(E\mid H_2)}
+$$</p>
+<p>The question is not simply whether (H_1) <em>can</em> explain the evidence. Many hypotheses can be made compatible with a given observation. The stronger question is:</p>
+<blockquote class="core-claim">
+<p><strong>Under which hypothesis would this evidence be more expected?</strong></p>
+</blockquote>
+<p>If both explanations predict the evidence at approximately the same rate, the observation contributes little discriminatory power.</p>
+<h2 id="b-background-models-and-priors">B. Background models and priors</h2>
+<p>Likelihood judgments inevitably depend on background models. Military evidence requires knowledge of logistics, geography, command structures, and army organization. Religious evidence requires knowledge of testimony, visionary experience, ritual culture, group dynamics, and comparative religion.</p>
+<p>These background assumptions cannot be eliminated. The methodological goal is to make them explicit, historically grounded, and open to criticism rather than allowing them to operate invisibly.</p>
+<p>Some hypotheses also begin with different background plausibilities. Priors should therefore be informed by comparative history, known human behavior, institutional constraints, and material realities rather than arbitrary preference.</p>
+<h2 id="c-plausibility-versus-actuality">C. Plausibility versus actuality</h2>
+<p>A recurrent error is moving from &ldquo;this could have happened&rdquo; to &ldquo;this probably happened.&rdquo;</p>
+<p>$$
+P(E\mid H)&gt;0
+$$</p>
+<p>means only that the evidence is compatible with (H). It does not show that (H) is the best explanation or even that it is more likely than its alternatives.</p>
+<p>Background practices are useful because they establish contextual plausibility. If a legal procedure is independently known to exist, a narrative using that procedure becomes less anomalous. But a known practice does not prove that a particular individual underwent it. <strong>Contextual plausibility is not event-specific corroboration.</strong></p>
+<h2 id="d-alternative-explanations">D. Alternative explanations</h2>
+<p>Historical analysis should resist false binaries such as &ldquo;literally true or deliberately fabricated.&rdquo; Reports may arise through sincere misunderstanding, memory distortion, rumor, social reinforcement, symbolic storytelling, theological reinterpretation, conventional motifs, selective reporting, literary borrowing, or combinations of these mechanisms.</p>
+<p>Historical processes are frequently multicausal, and the appropriate explanation may involve several mechanisms operating simultaneously.</p>
+<h2 id="e-avoid-double-counting">E. Avoid double counting</h2>
+<p>If sources A, B, and C all report event X but B and C depend upon A, treating all three as independent likelihood updates inflates the evidence. A provenance-aware representation is:</p>
+<p>$$
+A \rightarrow {B,C}
+$$</p>
+<p>rather than:</p>
+<p>$$
+A + B + C
+$$</p>
+<p>Dependency analysis should therefore precede cumulative evidential assessment.</p>
+<h2 id="f-graded-conclusions">F. Graded conclusions</h2>
+<p>The endpoint of analysis need not be &ldquo;proven&rdquo; or &ldquo;disproven.&rdquo; More useful conclusions include <strong>very strongly supported, well supported, more likely than not, plausible but uncertain, underdetermined, weakly supported, improbable,</strong> and <strong>unsupported</strong>. The vocabulary is secondary to preserving gradation and showing how the conclusion follows from the evidential structure.</p>
+<h1 id="ix-a-practical-analytical-workflow">IX. A Practical Analytical Workflow</h1>
+<p>The methodology can be operationalized as a repeatable workflow:</p>
+<div class="table-wrap"><table class="three-col long-table">
+<thead>
+<tr>
+<th>Step</th>
+<th>Task</th>
+<th>Central question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Step"><strong>1. Specify the proposition</strong></td>
+<td data-label="Task">Define the target hypothesis narrowly.</td>
+<td data-label="Central question">What exactly is being evaluated?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>2. Record the surviving datum</strong></td>
+<td data-label="Task">Separate the observation from the inference.</td>
+<td data-label="Central question">What actually survives?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>3. Identify the source</strong></td>
+<td data-label="Task">Record date, authorship, genre, language, audience, and institutional context.</td>
+<td data-label="Central question">What kind of source is this?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>4. Reconstruct provenance</strong></td>
+<td data-label="Task">Map how information could have reached the producer.</td>
+<td data-label="Central question">How could the source know?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>5. Construct the lineage graph</strong></td>
+<td data-label="Task">Identify borrowing, shared traditions, redaction, and manuscript descent.</td>
+<td data-label="Central question">Which attestations are genuinely independent?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>6. Reconstruct the generative environment</strong></td>
+<td data-label="Task">Model culture, political economy, institutions, and available concepts.</td>
+<td data-label="Central question">What kind of world generated this claim?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>7. Model incentives</strong></td>
+<td data-label="Task">Identify individual, group, institutional, and political pressures.</td>
+<td data-label="Central question">What could shape presentation or interpretation?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>8. Model preservation</strong></td>
+<td data-label="Task">Analyze copying, archives, canonization, material survival, and loss.</td>
+<td data-label="Central question">Why does this source survive?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>9. Build the quality vector</strong></td>
+<td data-label="Task">Evaluate the evidential dimensions without premature aggregation.</td>
+<td data-label="Central question">Where are the strongest and weakest links?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>10. Generate competing explanations</strong></td>
+<td data-label="Task">Construct historically realistic alternatives.</td>
+<td data-label="Central question">What other processes could generate the datum?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>11. Compare expectations</strong></td>
+<td data-label="Task">Ask how expected the evidence is under each explanation.</td>
+<td data-label="Central question">Which hypothesis best discriminates the evidence?</td>
+</tr>
+<tr>
+<td data-label="Step"><strong>12. State a calibrated conclusion</strong></td>
+<td data-label="Task">Separate what is observed, inferred, assumed, and unknown.</td>
+<td data-label="Central question">What confidence is actually warranted?</td>
+</tr>
+</tbody>
+</table></div>
+<p>A strong historical conclusion should leave the inferential chain visible enough that another researcher can identify where disagreement lies: in the observation, the provenance model, the contextual assumptions, the dependency structure, or the final comparison among hypotheses.</p>
+<h1 id="x-common-analytical-errors">X. Common Analytical Errors</h1>
+<p>The most frequent errors can be summarized compactly:</p>
+<div class="table-wrap"><table class="three-col long-table">
+<thead>
+<tr>
+<th>Error</th>
+<th>Faulty inference</th>
+<th>Corrective principle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Error"><strong>Text-event collapse</strong></td>
+<td data-label="Faulty inference">&ldquo;The text says X; therefore X occurred.&rdquo;</td>
+<td data-label="Corrective principle">The statement is an observation requiring explanation.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Authorship-event collapse</strong></td>
+<td data-label="Faulty inference">&ldquo;The genuine author says X; therefore X is true.&rdquo;</td>
+<td data-label="Corrective principle">Authenticity establishes identity, not accuracy.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Repetition-independence collapse</strong></td>
+<td data-label="Faulty inference">&ldquo;Four texts say X; therefore four independent witnesses exist.&rdquo;</td>
+<td data-label="Corrective principle">Establish lineage before counting attestations.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Early-eyewitness collapse</strong></td>
+<td data-label="Faulty inference">&ldquo;The tradition is early; therefore it is eyewitness testimony.&rdquo;</td>
+<td data-label="Corrective principle">Early is not the same as eyewitness, and eyewitness is not the same as accurate.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Sincerity-truth collapse</strong></td>
+<td data-label="Faulty inference">&ldquo;The witness sincerely believed X; therefore X is true.&rdquo;</td>
+<td data-label="Corrective principle">Sincerity primarily supports a claim about mental state.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Absence-of-motive reasoning</strong></td>
+<td data-label="Faulty inference">&ldquo;We know no reason to lie; therefore the source is trustworthy.&rdquo;</td>
+<td data-label="Corrective principle">Motives may be unknown, and distortion need not be conscious.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Circular credibility bootstrapping</strong></td>
+<td data-label="Faulty inference">A source authenticates itself through events known chiefly from that same source.</td>
+<td data-label="Corrective principle">Independent justification cannot be manufactured by recycling the claim.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Canonical or archival unity</strong></td>
+<td data-label="Faulty inference">Later collection implies original independence or unity.</td>
+<td data-label="Corrective principle">Collection history does not erase lineage.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Possibility-actuality confusion</strong></td>
+<td data-label="Faulty inference">&ldquo;Practice P existed; therefore individual X experienced P.&rdquo;</td>
+<td data-label="Corrective principle">Background possibility is not event-specific evidence.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Missing-data reconstruction</strong></td>
+<td data-label="Faulty inference">&ldquo;The archive is biased; therefore lost evidence supported my theory.&rdquo;</td>
+<td data-label="Corrective principle">Selection increases uncertainty; it does not reconstruct missing content.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>Author-level reliability</strong></td>
+<td data-label="Faulty inference">&ldquo;Is this author reliable?&rdquo;</td>
+<td data-label="Corrective principle">Reliability is usually claim-specific and domain-specific.</td>
+</tr>
+<tr>
+<td data-label="Error"><strong>False binary explanation</strong></td>
+<td data-label="Faulty inference">&ldquo;Either literally true or consciously invented.&rdquo;</td>
+<td data-label="Corrective principle">Numerous intermediate generative mechanisms exist.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two especially important shorthand corrections are:</p>
+<p>$$
+\text{early}
+\neq
+\text{eyewitness}
+$$</p>
+<p>$$
+\text{eyewitness}
+\neq
+\text{accurate}
+$$</p>
+<h1 id="xi-applied-examples">XI. Applied Examples</h1>
+<h2 id="a-a-reported-mass-appearance-in-an-ancient-religious-text">A. A reported mass appearance in an ancient religious text</h2>
+<p>Suppose one surviving author reports that a religious figure appeared to several hundred people. A superficial representation is &ldquo;hundreds of eyewitnesses attest the event.&rdquo; A provenance-sensitive representation is &ldquo;one surviving source reports the existence of several hundred witnesses.&rdquo; Those descriptions correspond to radically different evidential structures.</p>
+<p>The claim should be decomposed into at least the following possibilities: the surviving text contains the numerical claim; the author personally believed it; the author inherited it from an earlier tradition; the alleged group existed; members of the group independently reported an experience; they interpreted the experience similarly; an external event corresponding to the religious interpretation occurred.</p>
+<p>The source-critical questions then become concrete: Who authored the text? How close is it to the alleged event? Does the author identify the origin of the numerical claim? Are any witnesses individually identifiable? Do independent accounts survive? What did &ldquo;appearance&rdquo; mean within the relevant culture? Were visionary claims culturally common? Does the number perform rhetorical work? Could the original audience realistically verify it?</p>
+<p>The central methodological point is that the number contained <strong>inside</strong> a report is not the same thing as the number of <strong>independently surviving evidential pathways</strong>.</p>
+<h2 id="b-burial-of-an-executed-person-in-roman-judea">B. Burial of an executed person in Roman Judea</h2>
+<p>Suppose a narrative claims that a particular executed person was released for burial and placed in a specific tomb. A weak analysis asks only whether Roman authorities ever permitted burial. If the answer is yes, the narrative may then be treated as historically secure. But this confuses possibility with actuality.</p>
+<p>The proposition should instead be decomposed: the person died; the body was disposed of; burial occurred; burial occurred promptly; a particular individual requested the body; a particular official granted the request; the body was placed in a specific tomb.</p>
+<p>General Roman practice may inform the plausibility of the earlier propositions, while local Jewish burial customs may modify those background probabilities. Neither independently establishes the later, more specific claims. Conversely, evidence that some crucified individuals were exposed or dishonorably disposed of does not establish that this particular person suffered that fate.</p>
+<p>The method therefore blocks two symmetrical errors: &ldquo;burial was possible, therefore this burial happened&rdquo; and &ldquo;dishonorable disposal was common, therefore this person must have received it.&rdquo;</p>
+<h2 id="c-a-pauline-autobiographical-claim">C. A Pauline autobiographical claim</h2>
+<p>Suppose a letter attributed to Paul says that he met particular early leaders of the Jesus movement. The analysis should distinguish: the text contains the claim; the text is authentically Pauline; Paul intended the statement literally; the meeting occurred; the meeting occurred substantially as described; the named individuals supplied Paul with particular traditions; those traditions accurately describe still earlier events.</p>
+<p>Even if Pauline authorship is accepted, the downstream propositions remain inferential. An authentic letter establishes that Paul made the statement. It does not independently verify the meeting, nor does the existence of the meeting establish what information was exchanged.</p>
+<p>Thus:</p>
+<p>$$
+\text{authenticity}
+\not\Rightarrow
+\text{event verification}
+$$</p>
+<p>and:</p>
+<p>$$
+\text{meeting}
+\not\Rightarrow
+\text{specific information transfer}
+$$</p>
+<p>The example demonstrates why hidden inferential steps should be decomposed rather than treated as one continuous evidential leap.</p>
+<h2 id="d-the-battle-of-kadesh">D. The Battle of Kadesh</h2>
+<p>The Battle of Kadesh is useful because contemporary evidence survives, yet contemporaneity does not eliminate the need for generative analysis. Egyptian monumental accounts present Ramesses II heroically. A na&iuml;ve approach might reason that a contemporary inscription is therefore a direct and trustworthy military report.</p>
+<p>A generative analysis instead asks who commissioned the inscription, what political function royal victory narratives served, what conventions governed Egyptian kingship, what admitting defeat would have meant, where the inscription was displayed, what audience it targeted, what Hittite evidence survives, and what subsequent diplomacy implies about the strategic outcome.</p>
+<p>The Egyptian record may therefore be excellent evidence for Ramesside royal self-presentation, useful evidence for the existence and participants of the campaign, and much less decisive regarding exact tactical outcomes. Contemporaneity does not neutralize rhetoric, ideology, or institutional purpose.</p>
+<h2 id="e-homer-and-the-trojan-war">E. Homer and the Trojan War</h2>
+<p>The Homeric poems illustrate extreme lineage distance. Relevant questions include the historical period depicted, the date at which the surviving literary form stabilized, the oral traditions that may precede it, which elements plausibly preserve older memories, which reflect later institutions, what genre conventions shape the narrative, and what archaeological evidence exists independently.</p>
+<p>The proposition &ldquo;a major conflict occurred at or near Late Bronze Age Troy&rdquo; is very different from &ldquo;the <em>Iliad</em> accurately narrates that conflict.&rdquo; The same source can have meaningful evidential value for the former while being inappropriate as straightforward eyewitness documentation of the latter.</p>
+<h2 id="f-royal-inscriptions-and-administrative-records">F. Royal inscriptions and administrative records</h2>
+<p>Suppose a king proclaims, &ldquo;All surrounding lands submitted to me,&rdquo; while contemporary administrative records document unpaid tribute, frontier conflict, rebellious vassals, and continued military deployments. The sources need not simply be classified as one true and one false.</p>
+<p>The royal inscription may accurately reveal political ideology, ceremonial rhetoric, and dynastic aspiration; the administrative archive may better reveal routine governance and unresolved resistance. The apparent contradiction partly dissolves once the target proposition is specified. Different source types illuminate different variables.</p>
+<h2 id="g-mesopotamian-omen-literature">G. Mesopotamian omen literature</h2>
+<p>Suppose a royal archive records celestial omens associated with political events. A modern reader might ask whether the omen predicted the event. A provenance-based analysis instead asks when the omen was recorded, whether the interpretation preceded or followed the event, how broad the symbolic categories were, how failed predictions were handled, what incentives scribes had to connect celestial events with royal concerns, and what role divination played in decision-making.</p>
+<p>The analysis may therefore shift from a crude binary question&mdash;&ldquo;Was the omen supernatural?&rdquo;&mdash;toward a richer historical one: <strong>how did omen systems generate, interpret, preserve, and operationalize predictions within the political institutions of the time?</strong></p>
+<h2 id="h-christian-specific-timeline-reasoning">H. Christian Specific Timeline Reasoning</h2>
+<h3 id="early-christian-geneology">Early Christian Geneology</h3>
+<p><img alt="Geneology" src="early-christianity-geneology.png"/></p>
+<h3 id="early-christian-evolution">Early Christian Evolution</h3>
+<p><img alt="Evolution" src="early-christianity-evolution.png"/></p>
+<h3 id="medieval-christian-evolution">Medieval Christian Evolution</h3>
+<p><img alt="Medieval" src="geneology-after-early-christianity.png"/></p>
+<h3 id="medieval-christian-to-modern-catholicism">Medieval Christian to Modern Catholicism</h3>
+<p><img alt="Catholicism" src="medieval-christianity-to-catholicism.png"/></p>
+<h3 id="medieval-christian-to-modern-orthodoxy">Medieval Christian to Modern Orthodoxy</h3>
+<p><img alt="Orthodox" src="medieval-christianity-to-orthodox.png"/></p>
+<h3 id="medieval-christian-to-modern-protestantism">Medieval Christian to Modern Protestantism</h3>
+<p><img alt="Orthodox" src="medieval-christianity-to-protestantism.png"/></p>
+<h1 id="xii-toward-a-historical-evidence-architecture">XII. Toward a Historical Evidence Architecture</h1>
+<p>The methodology can be operationalized as an information architecture in which claims, sources, provenance, context, and inference are stored separately but linked.</p>
+<div class="table-wrap"><table class="two-col long-table">
+<thead>
+<tr>
+<th>Component</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Component"><strong>Claim registry</strong></td>
+<td data-label="Function">Stores discrete propositions independently of the documents that mention them.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Source registry</strong></td>
+<td data-label="Function">Stores date, authorship, genre, language, provenance, institutional origin, and manuscript status.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Evidence edges</strong></td>
+<td data-label="Function">Links sources to claims through relationships such as directly reports, implies, contradicts, contextualizes, paraphrases, or depends upon.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Lineage graph</strong></td>
+<td data-label="Function">Represents informational ancestry and prevents dependent sources from being counted as independent.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Context layer</strong></td>
+<td data-label="Function">Stores political, economic, religious, institutional, and communicative conditions surrounding source production.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Preservation layer</strong></td>
+<td data-label="Function">Records copying, archival retention, canonization, destruction, accidental loss, and material survivorship.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Quality vector</strong></td>
+<td data-label="Function">Assesses the source-claim relationship across proximity, access, independence, corroboration, rhetorical pressure, distortion risk, and related dimensions.</td>
+</tr>
+<tr>
+<td data-label="Component"><strong>Inference layer</strong></td>
+<td data-label="Function">Compares competing hypotheses only after the preceding structure has been represented.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The key architectural insight is that quality attaches primarily to the <strong>relationship between a source and a claim</strong>, not simply to a source as a whole. One document may strongly support one proposition while weakly supporting another.</p>
+<p>The full structure can be summarized as:</p>
+<p>$$
+\boxed{
+\text{Claim}
++
+\text{Source}
++
+\text{Provenance}
++
+\text{Lineage}
++
+\text{Generative Context}
++
+\text{Selection Process}
++
+\text{Quality Profile}
+\rightarrow
+\text{Calibrated Historical Inference}
+}
+$$</p>
+<h1 id="xiii-core-methodological-principles">XIII. Core Methodological Principles</h1>
+<p>The framework can be compressed into the following governing principles without losing their interdependence:</p>
+<ol>
+<li><strong>Historical sources are generated data, not transparent windows onto events.</strong></li>
+<li><strong>The existence of a statement and the truth of the statement are separate propositions.</strong></li>
+<li><strong>Evidence is hypothesis-relative; the same source can be strong evidence for one claim and weak evidence for another.</strong></li>
+<li><strong>Compound claims should be decomposed before evaluation, because apparently simple conclusions often hide multiple inferential steps.</strong></li>
+<li><strong>Authenticity, antiquity, eyewitness status, sincerity, and factual accuracy are distinct variables.</strong></li>
+<li><strong>Temporal proximity matters because it affects the information pathway, not because early sources are automatically true.</strong></li>
+<li><strong>Provenance should be reconstructed wherever possible: historians should ask how information entered the source and what transformations followed.</strong></li>
+<li><strong>Source dependence reduces effective evidential independence; count information pathways rather than documents.</strong></li>
+<li><strong>Transmission is transformational: memory, oral tradition, copying, editing, translation, and redaction can preserve some information while altering other information.</strong></li>
+<li><strong>Context is causal, not decorative. Cultural, political, religious, economic, and institutional systems help generate claims.</strong></li>
+<li><strong>Historical actors interpret experience using culturally available categories; therefore the surrounding claim ecology affects how surprising a report should be.</strong></li>
+<li><strong>Sincerity is not equivalent to factual accuracy, and distortion need not be deliberate.</strong></li>
+<li><strong>The archive is a non-random sample shaped by production, preservation, institutional curation, canonization, accidental loss, and sometimes deliberate destruction.</strong></li>
+<li><strong>Survivorship bias increases uncertainty but does not reveal the contents of missing evidence.</strong></li>
+<li><strong>Reliability should generally be assessed claim by claim and domain by domain rather than author by author.</strong></li>
+<li><strong>Data quality is multidimensional and should not normally be collapsed into a single scalar score.</strong></li>
+<li><strong>Unknown must remain unknown; missing information should not be converted silently into favorable assumptions.</strong></li>
+<li><strong>General plausibility does not establish particular actuality.</strong></li>
+<li><strong>Historical explanations should be comparative: the relevant question is not merely whether one hypothesis can explain the evidence, but whether it explains it better than plausible alternatives.</strong></li>
+<li><strong>Correlated evidence should not be double counted, and historical conclusions should remain graded in proportion to the quality and structure of the evidence.</strong></li>
+<li><strong>The modern form of a source is the endpoint of a lineage, not the beginning of inquiry.</strong></li>
+<li><strong>The surviving source itself requires historical explanation before it can responsibly be used to explain the past.</strong></li>
+</ol>
+<h1 id="conclusion">Conclusion</h1>
+<p>The central mistake this methodology seeks to prevent is <strong>provenance collapse</strong>: the psychological compression of a long and uncertain historical lineage into the impression that the modern reader is encountering an ancient event directly.</p>
+<p>The na&iuml;ve model is:</p>
+<p>$$
+\text{ancient text says X}
+\rightarrow
+X
+$$</p>
+<p>A provenance-based model is:</p>
+<p>$$
+\text{surviving datum}
+\rightarrow
+\text{claim decomposition}
+\rightarrow
+\text{source criticism}
+\rightarrow
+\text{provenance reconstruction}
+\rightarrow
+\text{lineage analysis}
+\rightarrow
+\text{generative-context analysis}
+\rightarrow
+\text{selection analysis}
+\rightarrow
+\text{quality assessment}
+\rightarrow
+\text{comparative explanation}
+\rightarrow
+\text{calibrated historical confidence}
+$$</p>
+<p>The surviving document is therefore not merely evidence <em>about</em> history. It is itself a historical phenomenon. Its language, structure, institutional location, transmission, survival, and modern form all require explanation.</p>
+<p>This perspective changes the basic questions of historical analysis. Instead of asking only &ldquo;What does this text say?&rdquo;, the researcher asks: <strong>What process generated this text? What information pathway connects it to the event? What transformations occurred along the way? What social world made this claim intelligible? Why did this version survive? What other processes could generate the same observation? How much should this datum actually change confidence in the proposition under investigation?</strong></p>
+<p>Once those questions are incorporated, historical reasoning becomes less vulnerable to na&iuml;ve literalism, indiscriminate skepticism, double counting, survivorship bias, false independence, and hidden inferential leaps. The result is not certainty, but something more useful: <strong>a transparent, auditable, and calibrated account of why a particular historical conclusion deserves the degree of confidence assigned to it.</strong></p>
+
+  </article>
+</body>
+</html>
