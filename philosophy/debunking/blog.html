@@ -615,6 +615,84 @@
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <article class="ep-post"><h1 id="top">Debunking from Off-Track Genealogy</h1><p class="chapter-lead">A practical framework for understanding when a genealogy of belief genuinely undermines justification—and when it merely explains where a belief came from.</p><p>I’ve recently been going down a rabbit hole in the philosophical literature on <strong>debunking arguments</strong>. A debunking argument tries to undermine the epistemic status of some class of beliefs by tracing those beliefs to a genealogy—an origin or explanation—that makes their truth epistemically accidental. The debunker does not have to show that the beliefs are false. The aim is instead to show that, given how the beliefs were formed, we lack justification or knowledge for holding them.</p><p>Debunking arguments can be <strong>local</strong>, targeting a restricted domain, or <strong>global</strong>, targeting very wide domains such as all normative beliefs or even the reliability of our belief-forming faculties more generally. While reading this literature, I began noticing watered-down, nontechnical versions of the same argumentative pattern in public discourse, conspiracy theories, and media commentary.</p><p>That prompted the question behind this post: can we formalize an argumentation scheme that captures the philosophical core of debunking while also helping us identify and evaluate its everyday variants? I’ll begin with the basic structure, use several authors to develop it, construct a generic scheme, and then apply that scheme to a practical case.</p><div class="core-claim"><strong>Core thesis.</strong> A genealogy does not debunk a belief merely by explaining where it came from. It becomes epistemically significant only when the genealogy is appropriately <em>off-track with respect to truth</em> and the believer lacks adequate independent vindication.</div><h2 id="contents">Contents</h2><div class="ep-toc">
 <div class="ep-toc-part"><p><a href="#part-1">I. The basic structure of debunking</a></p><ul>
 <li><a href="#basic-template">A four-step template</a></li><li><a href="#undercutting">Undercutting, not rebutting</a></li><li><a href="#local-global">Local and global forms</a></li></ul></div>

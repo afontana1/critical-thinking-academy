@@ -619,6 +619,84 @@
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <article class="ep-post" data-final-audit="phase7-pass" data-phase5="prose-edit" data-phase6="section-coherence"><h1 id="table-of-contents">Contents</h1><div class="ep-toc"><div class="ep-toc-part"><p><a href="#part-i-foundations">Part I — Foundations: What Systemic Properties Are</a></p><ul><li><a href="#chapter-1-the-terminology-problem">1. The Terminology Problem</a><ul><li><a href="#1-introduction-the-terminology-problem">1A. Introduction: The Terminology Problem</a></li><li><a href="#2-from-quality-attributes-to-systemic-properties">1B. Terminology Refinement: From “Quality Attributes” to Systemic Properties</a></li></ul></li><li><a href="#4-a-general-ontology-of-systems">2. A General Model of Systems</a></li><li><a href="#3-a-cross-disciplinary-tour-of-systems-thinking">3. Systems Thinking Across Disciplines</a></li><li><a href="#5-systemic-properties-as-emergent-properties">4. Emergence and the System-in-Context</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-ii-produced">Part II — How Systemic Properties Are Produced</a></p><ul><li><a href="#6-engineered-systems-from-need-to-architecture-to-properties">5. Engineered Systems: From Need to Architecture to Properties</a></li><li><a href="#7-non-engineered-and-complex-adaptive-systems">6. Complex Adaptive and Non-Engineered Systems</a></li><li><a href="#12-mechanisms-connecting-properties-to-design-and-architecture">7. Mechanisms: How Structure Influences Properties</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-iii-evaluated">Part III — How Systemic Properties Are Evaluated</a></p><ul><li><a href="#8-operating-context-and-lifecycle-phase">8. Context, Stakeholders, and Lifecycle</a></li><li><a href="#11-measurement-metrics-reveal-but-do-not-equal-properties">9. Measurement: Evidence Is Not the Property</a></li><li><a href="#9-trade-spaces-the-ilities-are-not-binary">10. Property Profiles and Trade Spaces</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-iv-applying">Part IV — Applying the Framework</a></p><ul><li><a href="#10-scalability-as-a-case-study">11. Scalability as a Deep Case Study</a></li><li><a href="#13-core-systemic-properties-a-taxonomy-reference-table-and-mechanism-map">12. Taxonomy of Systemic Properties</a></li><li><a href="#chapter-13-applying-the-framework">13. Applying the Framework</a><ul><li><a href="#14-applying-the-framework">13A. Analysis Method and Worked Examples</a></li><li><a href="#19-practical-thinking-toolkit">13B. Practical Thinking Toolkit</a></li></ul></li><li><a href="#15-common-reasoning-errors">14. Common Reasoning Errors</a></li></ul></div><div class="ep-toc-part"><p><a href="#reference-and-synthesis">Reference — Reference and Synthesis</a></p><ul><li><a href="#16-synthesized-diagrams">Appendix A — Synthesized Diagrams</a></li><li><a href="#17-key-definitions">Appendix B — Key Definitions</a></li><li><a href="#18-core-claims">Final Synthesis — Core Claims</a></li></ul></div></div><header aria-label="Document part" class="ep-part-banner" id="part-i-foundations" role="group"><span class="ep-part-kicker">Part I</span><h1 class="ep-part-title">Foundations: What Systemic Properties Are</h1><p class="ep-part-summary" data-phase6="part-summary">Establishes the vocabulary and conceptual model: what systemic properties are, how systems are described, how systems traditions converge on the same pattern, and why properties emerge only in context.</p></header><h1 id="chapter-1-the-terminology-problem">1. The Terminology Problem</h1><aside class="chapter-guide" data-phase6="chapter-guide"><p><strong>Chapter role: </strong>Establish the umbrella concept of systemic properties without discarding the useful software and engineering vocabularies that motivate it.</p><p class="chapter-path"><strong>Progression: </strong>familiar “-ilities” → limits of non-functional requirements and quality attributes → attribute/property distinctions → working vocabulary.</p></aside><h2 class="ep-source-section" data-original-title="1. Introduction: The Terminology Problem" data-source-section="1" id="1-introduction-the-terminology-problem">1A. Introduction: The Terminology Problem</h2><p>
         Engineers, architects, managers, and systems thinkers often describe
         systems using words like: robustness, resilience, efficiency,

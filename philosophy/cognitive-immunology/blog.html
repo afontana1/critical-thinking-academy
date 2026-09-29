@@ -609,7 +609,85 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post">
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post">
 <h1 id="top">Cognitive Immunology and Mental Immunity</h1><p class="chapter-lead">Recently, I was considering purchasing the book <em>Mental Immunity: Infectious Ideas, Mind Parasites, and the Search for a Better Way to Think</em> when I came across a review comment that struck me as highly indicative of a broader pattern of reasoning. The short answer to the question motivating this post is “no,” but the more interesting issue is why: it is not immediately clear how the methods presented by cognitive-immunity research should handle this kind of backlash.</p><p>Being interested in critical thinking, I was naturally intrigued by the idea of <a href="https://cognitiveimmunology.net/">Cognitive Immunology</a>. The basic idea is that the mind has something analogous to an immune system—something that can be trained, strengthened, and fortified to help people resist harmful influences such as misinformation, cognitive bias, maladaptive thinking patterns, and what the metaphor describes as “parasitic” beliefs. According to this research program, critical thinking by itself is insufficient to prevent us from adopting problematic beliefs.</p><p>I am generally sympathetic to the program, although I have reservations about the analogy. I do not think the community has established that there is literally an analogous structure in the mind; and if the language is intended metaphorically, it can be misappropriated. I also do not see a sharp distinction between “learning” and “strengthening cognitive immunity.” A comprehensive critical-thinking course would appear to cover much of the recommended material, so the value added may sometimes look like a scientific rebranding of critical thinking.</p><p>Nevertheless, there is enough overlap with my own goal—disseminating critical-thinking skills that help people avoid exploitation—to make the framework useful. I will first describe the recommendations I find valuable, then use one review as a case study. The deeper question is whether individual critical-thinking habits are enough when belief formation is shaped by social trust, political identity, and coordinated institutional attempts to manufacture doubt.</p><div class="core-claim"><strong>Central claim:</strong> The hardest cases for “mental immunity” are not merely cases in which a person lacks a critical-thinking tool. They are cases in which the standards for evidence, authority, and even plausibility have themselves been shaped by identity and information environments.</div><nav aria-label="Table of contents" class="ep-toc">
 <div class="ep-toc-part"><p>Contents</p>
 <ul>

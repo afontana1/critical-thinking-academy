@@ -641,7 +641,85 @@
     background: #f9f9f9;
   }
 </style>
-<article class="ep-post">
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post">
 <h1>Scientific Measurement</h1>
 <p>This topic actually spans entire academic journals, so it will be somewhat difficult to condense this rich topic into something concise. Measurement is important across pretty much every domain of science and engineering. Given the nuances specific to each domain, I'll try to capture the broad generalities that could represent how scientists "in general" think about measurement. Much of my thinking on this section comes from "Measurement Across the Sciences: Developing a Shared Concept System for Measurement".</p>
 <p>As a disclaimer, this section will be biased towards measurement considerations in the social sciences, primarily because I am an applied econometrician by training. Like I mentioned previously, the concept of "measurement" is extremely broad. For example, there is a widely research area of research in mathematics called "Measure Theory", that seeks to formalize and generalize common notions of measurement such as magnitude, mass, and probability. In contrast, there is the scientific study of measurement called "Metrology", which is less concerned with formalization, and much more concerned with establishing units of measurement, development of measurement methods/instruments, identification of measurement standards, evaluation of uncertainties, and the traceability/usability of these standards across a wider population. Mathematical theories of measure do not concern themselves with evidential grounds or success criteria associated with such methods. This culminates in products such as the International Vocabulary of Metrology standardized by ISO. If you look at broad definitions of measurement, they almost always make explicit reference to the fact that the thing being measured is physical. This begs the question "can non-physical 'things' be measured?" If something is non-physical, is it inherently incapable of being empirically investigated? Consider something like "subjective probability" in Bayesian statistics, to what extent can someone measure their "degrees of belief" about a proposition? Nevertheless, social scientists frequently make reference to "measurements" when conducting empirical research. Economists construct "Happiness Indexes", Psychologists measure "Personality", and Sociologists measure "Community Cohesion", often using sophisticated statistical methods that map observed data to unobserved "constructs". At first glance, I think it's obvious these are quite distinct from yardstick measures someone can use in a physical science lab. In many physical-science settings, there’s a well-defined quantity, and an instrument that’s been calibrated to that quantity. In a lot of social-science settings, there’s a theoretical construct, and we build a data-collection apparatus to approximate it. I'll explain this difference in detail later; for now lets dive into the fundamentals.</p>

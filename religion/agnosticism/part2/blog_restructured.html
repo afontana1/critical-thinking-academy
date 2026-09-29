@@ -609,6 +609,84 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <div class="ep-post"><h1>Agnosticism, Apologetics, and Evaluating Worldviews</h1><h2 id="introduction">Introduction: Agnosticism as an Epistemic Posture</h2><p>As I reflect more on my agnosticism, I have come to a few additional conclusions about the habits of thought it tends to encourage. I want to examine several arguments in the philosophy of religion that I find unconvincing, ask how we should evaluate the worldviews that generate and preserve those arguments, explain why much speculative argumentation seems epistemically unproductive, and reconsider how these belief systems are structured and sustained.</p><p>A little background matters because intellectual trajectories are path-dependent. I encountered a religious subculture in my late twenties without much prior involvement. By that point I had gone through undergraduate and graduate school, spent roughly a decade reading philosophy and critical argumentation, and taught myself computer science. I also had the privilege of growing up in a household that was broadly open to free thought and did not enforce a political, economic, religious, or other dogma.</p><p>I am therefore not “de-converting.” I was never formally part of a religious system and had never been particularly motivated to seek out theistic literature. At the same time, I grew up around plenty of conservative religious people and was not unfamiliar with the basic tenets of several theistic traditions. That combination matters: I am approaching these questions without a long history of personal doctrinal commitment, but with enough philosophical and analytical background to examine the central claims critically.</p><p>The examples that follow are useful not because every agnostic will react exactly as I do, but because they illustrate the pattern of inquiry I increasingly associate with agnosticism: ask what would count as evidence, compare rival explanations symmetrically, look for disconfirming as well as confirming data, and remain willing to leave a question unresolved when the available methods do not justify confidence.</p><blockquote><p><strong>Central thesis:</strong> The recurring problem I see is not merely that particular apologetic arguments fail. It is that apologetics often applies an asymmetric method of inquiry: evidence is interpreted generously when it supports an antecedently favored worldview and discounted, reclassified, or ignored when it threatens that worldview. The rest of the essay treats particular arguments as case studies of that broader epistemic pattern.</p></blockquote><h2 id="readers-guide">Reader’s Map</h2><p>The essay proceeds from a concrete case study to a general epistemic framework, tests that framework against several philosophical arguments, and then returns to the broader question of how worldviews persist and should be evaluated.</p><div class="table-wrap"><table class="two-col"><thead><tr><th>Part</th><th>Purpose</th></tr></thead><tbody><tr><td data-label="Part"><a href="#introduction" title="Jump to Introduction">Introduction</a></td><td data-label="Purpose">Defines agnosticism as an epistemic posture and states the essay’s central thesis.</td></tr><tr><td data-label="Part"><a href="#part-i" title="Jump to I. Apologetics as a Case Study">I. Apologetics as a Case Study</a></td><td data-label="Purpose">How defensive framing and “science in scripture” arguments function in practice.</td></tr><tr><td data-label="Part"><a href="#part-ii" title="Jump to II. Total Evidence and Asymmetric Inquiry">II. Total Evidence and Asymmetric Inquiry</a></td><td data-label="Purpose">The general methodological problem: selection, retrodiction, theory-ladenness, and understated evidence.</td></tr><tr><td data-label="Part"><a href="#part-iii" title="Jump to III. Philosophical Arguments">III. Philosophical Arguments</a></td><td data-label="Purpose">Applying the same standards to moral, ontological, presuppositional, and reformed-epistemology arguments.</td></tr><tr><td data-label="Part"><a href="#part-iv" title="Jump to IV. Why agnosticism?">IV. Why agnosticism?</a></td><td data-label="Purpose">Ignosticism, uncertainty, divine hiddenness, and the limits of speculative metaphysics.</td></tr><tr><td data-label="Part"><a href="#part-v" title="Jump to V. From Arguments to Worldviews">V. From Arguments to Worldviews</a></td><td data-label="Purpose">Why belief systems persist as networks, and why individual argument-refutation is often insufficient.</td></tr><tr><td data-label="Part"><a href="#conclusion" title="Jump to Conclusion: Evaluating Worldviews">Conclusion: Evaluating Worldviews</a></td><td data-label="Purpose">Synthesizes the argument into a general method for evaluating belief systems and one’s own reasoning.</td></tr><tr><td data-label="Part"><a href="#appendices" title="Jump to Appendices and Supporting Material">Appendices and Supporting Material</a></td><td data-label="Purpose">Preserves the speaker questions, conversation examples, further applications, and reading lists.</td></tr></tbody></table></div><h2 id="part-i">I. Apologetics as a Case Study in Belief Preservation</h2><h3>From creationist denial to apologetic reinterpretation</h3><p>
   I was always familiar with the pseudo-debunking arguments advanced by
   creationists. During my undergrad the Bill Nye vs. Ken Ham debate happened,

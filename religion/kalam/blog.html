@@ -604,6 +604,84 @@
 </style>
 </head>
 <body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <article class="ep-post" id="top">
 <h1 id="the-appearance-of-proof-quasi-logical-argumentation-and-cosmological-apologetics">The Appearance of Proof: Quasi-Logical Argumentation and Cosmological Apologetics</h1><nav aria-label="Table of contents" class="ep-toc" id="table-of-contents"><h2>Table of contents</h2><ol><li><a href="#introduction-why-some-arguments-look-like-proofs">Introduction — Why Some Arguments Look Like Proofs</a></li><li><a href="#i-the-framework-what-makes-an-argument-quasi-logical">I. The Framework: What Makes an Argument Quasi-Logical?</a></li><li><a href="#ii-the-anatomy-of-apparent-necessity-two-cosmological-examples">II. The Anatomy of Apparent Necessity: Two Cosmological Examples</a><ol><li><a href="#1-make-the-starting-principles-look-unavoidable">1. Make the starting principles look unavoidable</a></li><li><a href="#2-extend-those-principles-from-familiar-cases-to-the-totality">2. Extend those principles from familiar cases to the totality</a></li><li><a href="#3-make-an-ultimate-explanation-seem-inevitable">3. Make an ultimate explanation seem inevitable</a></li><li><a href="#4-make-the-unfamiliar-endpoint-feel-familiar">4. Make the unfamiliar endpoint feel familiar</a></li></ol></li><li><a href="#iii-what-the-short-form-presupposes">III. What the Short Form Presupposes</a></li><li><a href="#iv-wittgenstein-why-the-transfers-can-feel-natural">IV. Wittgenstein: Why the Transfers Can Feel Natural</a></li><li><a href="#v-the-same-repertoire-beyond-cosmology">V. The Same Repertoire Beyond Cosmology</a></li><li><a href="#vi-what-the-appearance-of-proof-accomplishes">VI. What the Appearance of Proof Accomplishes</a></li><li><a href="#conclusion-what-the-argument-has-actually-established">Conclusion — What the Argument Has Actually Established</a></li><li><a href="#sources-and-textual-anchors">Sources and textual anchors</a></li></ol></nav>
 <h2 id="introduction-why-some-arguments-look-like-proofs">Introduction — Why Some Arguments Look Like Proofs</h2>

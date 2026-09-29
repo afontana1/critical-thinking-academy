@@ -625,7 +625,85 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<div class="ep-post"><h1 id="the-market-fundamentalism-feedback-loop">The Market Fundamentalism Feedback Loop</h1>
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><div class="ep-post"><h1 id="the-market-fundamentalism-feedback-loop">The Market Fundamentalism Feedback Loop</h1>
 <p>In the first two parts of this blog series, I argued that supply-side economics is theoretically and empirically weak, then examined why the ideology nevertheless persists among the public. This post takes a somewhat more rigorous approach.</p>
 <p>I have also alluded to the way supply-side economics is commonly paired with austerity policies. We previously introduced <strong>market fundamentalism</strong>: the extension of neoliberal market ideology into broader areas of social and political life. For the purposes of this post, I will treat these concepts as equivalent and construct a system-dynamics model that captures some of the causal forces introduced in the previous installment.</p>
 <nav aria-label="Table of contents" class="ep-toc"><div class="ep-toc-title">Contents</div><ul class="ep-toc-list"><li><a href="#infrastructure-behind-market-fundamentalism">1. The infrastructure behind market fundamentalism</a><ul><li><a href="#ideological-package">The ideological package</a></li><li><a href="#atlas-and-spn">Atlas Network and State Policy Network</a></li><li><a href="#funding-architecture">Funding architecture</a></li></ul></li><li><a href="#network-influence">2. How the network produces and distributes influence</a><ul><li><a href="#network-building">Network building and organizational replication</a></li><li><a href="#expertise-policy-production">Expertise and policy production</a></li><li><a href="#multi-channel-diffusion">Multi-channel diffusion</a></li><li><a href="#cultural-institutional-diffusion">Cultural and institutional diffusion</a></li></ul></li><li><a href="#network-to-feedback-system">3. From network to feedback system</a><ul><li><a href="#two-reinforcing-mechanisms">Two reinforcing mechanisms</a></li><li><a href="#epistemic-closure">Epistemic closure and self-reinforcement</a></li><li><a href="#scale-and-reach">Scale and reach</a></li></ul></li><li><a href="#core-variables">4. Core variables in the model</a></li><li><a href="#reinforcing-loops">5. Reinforcing loops (the “engine” of propagation)</a><ul><li><a href="#r1-wealth-funding-policy-more-wealth">R1 – Wealth → funding → policy → more wealth</a></li><li><a href="#r2-network-growth-ideological-diffusion">R2 – Network growth and ideological diffusion</a></li><li><a href="#r3-career-incentives-intellectual-supply">R3 – Career incentives and intellectual supply</a></li><li><a href="#r4-narrativeidentitymedia-loop">R4 – Narrative–identity–media loop</a></li><li><a href="#r5-global-policy-diffusion-loop">R5 – Global policy diffusion loop</a></li></ul></li><li><a href="#balancing-loops">6. Balancing loops (countervailing forces and potential failure modes)</a><ul><li><a href="#b1-empirical-reality-policy-failure">B1 – Empirical reality and policy failure</a></li><li><a href="#b2-credibility-scandal-loop">B2 – Credibility and scandal loop</a></li><li><a href="#b3-regulation-transparency-loop">B3 – Regulation and transparency loop</a></li><li><a href="#b4-institutional-capture-institutional-collapse">B4 – Institutional capture → institutional collapse</a></li></ul></li><li><a href="#other-causal-influences">7. Other causal influences</a></li><li><a href="#references">8. References</a></li></ul></nav><h2 id="infrastructure-behind-market-fundamentalism">1. The infrastructure behind market fundamentalism</h2>
@@ -1023,4 +1101,3 @@ flowchart TD
     window.setTimeout(renderMermaid, 1500);
   })();
 </script>
-

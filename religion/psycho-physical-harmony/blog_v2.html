@@ -607,7 +607,85 @@
         },
       };
     </script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><article class="ep-post"><nav aria-label="Table of contents" class="ep-toc"><h2>Table of Contents</h2><div class="ep-toc-part"><p><a href="#i-the-puzzle-and-the-argument">I. The Puzzle and the Argument</a></p><ul><li><a href="#reconstructing-the-psychophysical-harmony-argument">Reconstructing the Psychophysical Harmony Argument</a><ul><li><a href="#normative-harmony">Normative Harmony</a></li><li><a href="#semantic-harmony">Semantic Harmony</a></li><li><a href="#from-harmony-to-a-probability-problem">From Harmony to a Probability Problem</a></li></ul></li></ul></div><div class="ep-toc-part"><p><a href="#ii-the-conceptual-warrant-from-correlation-to-harmony">II. The Conceptual Warrant: From Correlation to Harmony</a></p></div><div class="ep-toc-part"><p><a href="#iii-the-modal-warrant-from-harmony-to-alternative-worlds">III. The Modal Warrant: From Harmony to Alternative Worlds</a></p><ul><li><a href="#formal-representation-and-metaphysical-structure">Formal Representation and Metaphysical Structure</a></li><li><a href="#conceivability-possibility-and-probability-relevant-alternatives">Conceivability, Possibility, and Probability-Relevant Alternatives</a></li></ul></div><div class="ep-toc-part"><p><a href="#iv-the-probabilistic-warrant-from-possibility-to-improbability">IV. The Probabilistic Warrant: From Possibility to Improbability</a></p><ul><li><a href="#a-possibility-space-is-not-a-probability-measure">A Possibility Space Is Not a Probability Measure</a></li><li><a href="#independently-privileged-rarity-and-manufactured-harmonies">Independently Privileged Rarity and Manufactured Harmonies</a></li></ul></div><div class="ep-toc-part"><p><a href="#v-the-comparative-warrant-from-improbability-to-theistic-evidence">V. The Comparative Warrant: From Improbability to Theistic Evidence</a></p><ul><li><a href="#the-divine-psychology-problem">The Divine Psychology Problem</a></li><li><a href="#underdetermination-why-not-a-simulator">Underdetermination: Why Not a Simulator?</a></li></ul></div><div class="ep-toc-part"><p><a href="#vi-stress-test-gastro-phenomenological-harmony">VI. Stress Test: Gastro-Phenomenological Harmony</a></p></div><div class="ep-toc-part"><p><a href="#vii-what-a-successful-harmony-argument-would-need">VII. What a Successful Harmony Argument Would Need</a></p></div><div class="ep-toc-part"><p><a href="#viii-conclusion-from-harmony-to-probability-without-a-warrant">VIII. Conclusion: From Harmony to Probability Without a Warrant</a></p></div></nav><h1 id="i-the-puzzle-and-the-argument">I. The Puzzle and the Argument</h1>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post"><nav aria-label="Table of contents" class="ep-toc"><h2>Table of Contents</h2><div class="ep-toc-part"><p><a href="#i-the-puzzle-and-the-argument">I. The Puzzle and the Argument</a></p><ul><li><a href="#reconstructing-the-psychophysical-harmony-argument">Reconstructing the Psychophysical Harmony Argument</a><ul><li><a href="#normative-harmony">Normative Harmony</a></li><li><a href="#semantic-harmony">Semantic Harmony</a></li><li><a href="#from-harmony-to-a-probability-problem">From Harmony to a Probability Problem</a></li></ul></li></ul></div><div class="ep-toc-part"><p><a href="#ii-the-conceptual-warrant-from-correlation-to-harmony">II. The Conceptual Warrant: From Correlation to Harmony</a></p></div><div class="ep-toc-part"><p><a href="#iii-the-modal-warrant-from-harmony-to-alternative-worlds">III. The Modal Warrant: From Harmony to Alternative Worlds</a></p><ul><li><a href="#formal-representation-and-metaphysical-structure">Formal Representation and Metaphysical Structure</a></li><li><a href="#conceivability-possibility-and-probability-relevant-alternatives">Conceivability, Possibility, and Probability-Relevant Alternatives</a></li></ul></div><div class="ep-toc-part"><p><a href="#iv-the-probabilistic-warrant-from-possibility-to-improbability">IV. The Probabilistic Warrant: From Possibility to Improbability</a></p><ul><li><a href="#a-possibility-space-is-not-a-probability-measure">A Possibility Space Is Not a Probability Measure</a></li><li><a href="#independently-privileged-rarity-and-manufactured-harmonies">Independently Privileged Rarity and Manufactured Harmonies</a></li></ul></div><div class="ep-toc-part"><p><a href="#v-the-comparative-warrant-from-improbability-to-theistic-evidence">V. The Comparative Warrant: From Improbability to Theistic Evidence</a></p><ul><li><a href="#the-divine-psychology-problem">The Divine Psychology Problem</a></li><li><a href="#underdetermination-why-not-a-simulator">Underdetermination: Why Not a Simulator?</a></li></ul></div><div class="ep-toc-part"><p><a href="#vi-stress-test-gastro-phenomenological-harmony">VI. Stress Test: Gastro-Phenomenological Harmony</a></p></div><div class="ep-toc-part"><p><a href="#vii-what-a-successful-harmony-argument-would-need">VII. What a Successful Harmony Argument Would Need</a></p></div><div class="ep-toc-part"><p><a href="#viii-conclusion-from-harmony-to-probability-without-a-warrant">VIII. Conclusion: From Harmony to Probability Without a Warrant</a></p></div></nav><h1 id="i-the-puzzle-and-the-argument">I. The Puzzle and the Argument</h1>
 <p>There is something initially compelling about the idea of psychophysical harmony. Pain tends to accompany bodily damage and motivates avoidance. Pleasure tends to accompany conditions and activities that organisms pursue. Our introspective judgments about our own experiences are, at least much of the time, reasonably accurate: when we judge that we are in pain, seeing red, or experiencing an unpleasant sensation, our phenomenal states generally correspond to those judgments. More broadly, the phenomenal character of our mental lives seems remarkably well coordinated with our behavior, cognition, and physical organization.</p>
 <p>The argument from psychophysical harmony asks us to regard this coordination as philosophically surprising. Why, after all, should the phenomenal states associated with our physical and functional organization be the ones that make our behavior rationally appropriate and our introspective judgments true? Why should bodily damage be associated with an unpleasant experience that motivates withdrawal rather than, say, intense pleasure, a visual sensation of blue, an auditory buzzing, or no experience at all? Why should the physical state that disposes someone to report that they are experiencing red be associated with a red experience rather than some entirely unrelated phenomenal state?</p>
 <p>The intuitive force of the argument comes from imagining that the psychophysical relations might have been radically different. Suppose that the physical and functional facts were held fixed while the phenomenal states associated with them were permuted. An organism physically identical to us might withdraw from bodily damage while experiencing intense pleasure; it might report seeing red while undergoing an experience phenomenally like hearing a high-pitched tone; or its entire behavioral and cognitive organization might remain unchanged while the associated phenomenology consisted of an undifferentiated buzzing sensation. If such alternative mappings are genuinely possible, then the actual relationship between our physical organization and our phenomenal lives can begin to appear unusually fortunate.</p>

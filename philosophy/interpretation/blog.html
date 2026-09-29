@@ -620,6 +620,84 @@
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <article class="ep-post"><h1 id="top">An Argumentation Scheme for Interpretation</h1><p class="chapter-lead">Interpretation is often treated as a problem of recovering meaning. This essay develops a broader claim: when meaning is uncertain or contested, interpretation becomes a <strong>defeasible argumentative practice</strong>. Interpreters do not merely propose meanings; they also defend the standards by which those meanings should be judged.</p><nav aria-label="Table of contents" class="ep-toc"><h2 id="contents">Table of Contents</h2><div class="ep-toc-part"><p><a href="#part-1">I. The Problem of Interpretation</a></p></div><div class="ep-toc-part"><p><a href="#part-2">II. What Are We Doing When We Interpret?</a></p></div><div class="ep-toc-part"><p><a href="#part-3">III. Why Interpretation Requires Inference</a></p></div><div class="ep-toc-part"><p><a href="#part-4">IV. What Makes an Interpretation Better?</a></p><ul><li><a href="#hermeneutics">Hermeneutics and evaluative standards</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-5">V. Why Interpretive Standards Differ</a></p><ul class="compact-grid"><li><a href="#authorial-intent">Authorial intent and fruitfulness</a></li><li><a href="#software-analogy">A software analogy</a></li><li><a href="#meaning-and-facts">Facts and object identity</a></li><li><a href="#background-theory">Background theories of meaning</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-6">VI. Law as a Stress Test</a></p><ul><li><a href="#jurisprudence">Jurisprudence</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-7">VII. Interpretation as Argumentation</a></p><ul><li><a href="#two-level-argument">The two-level model</a></li><li><a href="#walton-macagno">Walton–Macagno framework</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-8">VIII. A Domain-General Operational Framework</a></p><ul><li><a href="#worked-example">Worked example</a></li><li><a href="#critical-questions">Critical questions</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-9">IX. Conclusion</a></p></div></nav><header class="ep-part-banner"><span class="ep-part-kicker">Part I</span><h2 class="ep-part-title" id="part-1">The Problem of Interpretation</h2><span class="ep-part-summary">From difficult philosophical texts to constitutional disputes, interpretation matters because competing meanings carry epistemic, practical, and sometimes coercive consequences.</span></header><p>Recently, I have been thinking about what it means to interpret something, and to what extent we can call an interpretation “correct.” The question arose during a conversation about Nietzsche. I was asked whether I had read any of his writings; I answered yes, but qualified the answer by noting how difficult he can be to interpret. Nietzsche is only one example. Philosophers are often difficult to understand in isolation from the rest of their work, the thinkers to whom they were responding, and the cultural circumstances in which they wrote. Wittgenstein came up for much the same reason.</p><p>That conversation made the problem more personal. In one of my previous posts, I had quoted Wittgenstein in support of an argument and then wondered whether citing a famously difficult thinker clarified my point or merely imported another layer of interpretive complexity. From there, I started thinking about interpretation as a kind of information-compression activity and, more broadly, as something embedded in communication itself—even in ordinary conversations among friends.</p><p>Shortly afterward, I was reading about the Supreme Court case <a href="https://en.wikipedia.org/wiki/Trump_v._Slaughter">Trump v. Slaughter</a>, which challenges an existing constitutional settlement concerning presidential control over independent regulatory agencies. The target is the longstanding precedent <em>Humphrey’s Executor</em> (1935), a canonical basis for Congress creating multi-member independent commissions whose members cannot be fired at will. One of the Questions Presented asks whether those removal protections are unconstitutional and whether <em>Humphrey’s Executor</em> should be overruled. Whatever the outcome, the dispute illustrates that interpretation is not merely an isolated act of identifying meaning. It is also a communicative practice that can determine who holds power and how that power may be exercised.</p><p>During a case like this, parties advance reasons for why a text should be understood in one way rather than another. The same structure appears outside law: philosophical argument frequently depends on defending a particular interpretation of a text, and those interpretations are shaped by broader frameworks involving theories of language, theories of meaning, historical traditions, institutional practices, and assumptions that often remain unstated. My central claim is that, once interpretation becomes uncertain or contested, it can be cast as a form of <strong>argumentation</strong>. That makes tools from argumentation theory useful for clarifying not only which interpretation is preferable, but also which standards should govern the dispute in the first place.</p><div class="core-claim"><strong>Thesis:</strong> interpretive disputes involve two related argumentative tasks: choosing the standards that should govern the dispute, and then evaluating candidate interpretations under those standards.</div><p class="chapter-transition">Before comparing interpretive schools, it helps to separate the different activities that the word “interpretation” can name.</p><header class="ep-part-banner"><span class="ep-part-kicker">Part II</span><h2 class="ep-part-title" id="part-2">What Are We Doing When We Interpret?</h2><span class="ep-part-summary">Interpretation is not one task. It can aim at semantic content, communicative intention, context, integration, explanation, application, or significance.</span></header><h3 id="interpretive-goals" style="text-align: left;">The Different Jobs of Interpretation</h3><div>
   Let's refer back to the objectives laid out at the beginning. What do people
   even mean when they say "interpret"? What is the goal of interpretation? What

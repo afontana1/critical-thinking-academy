@@ -664,6 +664,84 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <div class="ep-post"><div class="toc-box"><p><strong>Table of Contents</strong></p><ul><li><a href="#part-i-general-standards">I. General Standards for Good Explanation</a><ul><li><a href="#explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</a></li><li><a href="#contrastive-explanations">Contrastive Explanations</a></li></ul></li><li><a href="#mechanisms">II. Mechanistic Explanation</a><ul><li><a href="#good-mechanistic-explanation">Good Mechanistic Explanation</a></li><li><a href="#yes-but-whats-the-mechanism">Yes, But What's the Mechanism?</a></li><li><a href="#how-to-identify-mechanisms">How to Identify Mechanisms</a></li><li><a href="#disciplinary-approaches-to-mechanism-discovery">Mechanism Discovery Across Disciplines</a></li><li><a href="#keeping-mechanism-meaningful">Keeping Mechanism Meaningful</a></li></ul></li><li><a href="#other-causal-structures">III. Beyond Mechanisms: Other Causal Structures</a><ul><li><a href="#pathways-vs-mechanisms">Pathways vs Mechanisms</a></li><li><a href="#cascades-vs-mechanisms">Cascades vs Mechanisms</a></li><li><a href="#social-structural-explanation-and-causal-constraints">Social Structural Explanation and Causal Constraints</a></li></ul></li><li><a href="#part-iv-explanatory-pluralism">IV. Explanatory Pluralism</a><ul><li><a href="#non-mechanistic-explanatory-styles">Causal Patterns and Non-Mechanistic Explanatory Styles</a></li><li><a href="#eight-other-questions-about-explanation">Eight Other Questions about Explanation</a></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul></div><p>This is the second post in a two-part series on explanation. The first post defined what an <em>explanation</em> is and distinguished it from related concepts such as argument. It then established a baseline for evaluating explanations, examined the psychological and cognitive mechanisms that pull us away from ideal criteria, and closed with the social epistemology of explanation: explanations are evaluated in social environments whose incentives, identities, and information structures matter.</p><p>This post returns to what makes an explanation <em>good</em>, with particular attention to causal and mechanistic explanation. It begins by distinguishing explanation from pseudo-explanation and clarifying the role of contrastive questions; then develops mechanistic explanation and its evidential standards; broadens to pathways, cascades, and structural constraints; and finally uses explanatory pluralism to integrate these different standards.</p><h2 id="part-i-general-standards">I. General Standards for Good Explanation</h2><h3 id="explanation-vs-pseudo-explanation">Explanation vs. Pseudo-Explanation</h3><p>
   An explanation needs to "do work". It does this when it
   <strong>adds epistemically useful structure</strong>—it doesn’t just rename

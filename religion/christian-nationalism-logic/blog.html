@@ -920,7 +920,85 @@
   }
 })();
 </script>
-<article class="ep-post"><h1 id="christian-nationalism-moral-jurisdiction-and-system-dynamics">Christian Nationalism: Moral Jurisdiction, Political Power, and System Dynamics</h1><p class="chapter-lead">This essay examines Christian nationalism as more than a discrete political doctrine. Its central concern is a recurring moral logic: certainty about another person’s good can become a claim of jurisdiction over that person, and that claim can scale from interpersonal correction to institutional coercion, national identity, and state power.</p><div class="core-claim"><strong>Core claim.</strong> The argument is not simply that some believers hold objectionable views. It is that a moral structure organized around correction, sacred certainty, hierarchy, and boundary enforcement can convert sincere concern into a justification for rule—especially when grievance, threat, and institutional power reinforce one another.</div><div class="concept-callout"><strong>Scope of the argument.</strong> This is an argument about <em>affordances and feedback</em>, not inevitability. Christianity is internally heterogeneous; religious traditions do not mechanically produce authoritarian politics; and secular institutions can also become coercive. The narrower question is why some theological, psychological, and institutional configurations make domination easier to legitimate, reproduce, and intensify under particular social conditions.</div><p>I hesitate to call the worldview examined here a single “logic.” It is better understood as a collection of rules, heuristics, identities, and interpretive habits derived from a particular religious subculture and amplified by internal mechanisms. I begin with the interpersonal worldview—how adherents understand love, correction, authority, and resistance. I then trace how those habits scale into grievance, national identity, and claims about law; contrast that model with a secular-pluralist account of political legitimacy; examine the historical lineage and religious resources that make these conflicts intelligible; and finally use system dynamics and causal-loop diagrams to explain why the movement can persist even when it generates resistance.</p><h2 id="levels-of-analysis">The Argument at Four Levels</h2><div class="table-wrap"><table class="three-col lens-table wide-table">
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post"><h1 id="christian-nationalism-moral-jurisdiction-and-system-dynamics">Christian Nationalism: Moral Jurisdiction, Political Power, and System Dynamics</h1><p class="chapter-lead">This essay examines Christian nationalism as more than a discrete political doctrine. Its central concern is a recurring moral logic: certainty about another person’s good can become a claim of jurisdiction over that person, and that claim can scale from interpersonal correction to institutional coercion, national identity, and state power.</p><div class="core-claim"><strong>Core claim.</strong> The argument is not simply that some believers hold objectionable views. It is that a moral structure organized around correction, sacred certainty, hierarchy, and boundary enforcement can convert sincere concern into a justification for rule—especially when grievance, threat, and institutional power reinforce one another.</div><div class="concept-callout"><strong>Scope of the argument.</strong> This is an argument about <em>affordances and feedback</em>, not inevitability. Christianity is internally heterogeneous; religious traditions do not mechanically produce authoritarian politics; and secular institutions can also become coercive. The narrower question is why some theological, psychological, and institutional configurations make domination easier to legitimate, reproduce, and intensify under particular social conditions.</div><p>I hesitate to call the worldview examined here a single “logic.” It is better understood as a collection of rules, heuristics, identities, and interpretive habits derived from a particular religious subculture and amplified by internal mechanisms. I begin with the interpersonal worldview—how adherents understand love, correction, authority, and resistance. I then trace how those habits scale into grievance, national identity, and claims about law; contrast that model with a secular-pluralist account of political legitimacy; examine the historical lineage and religious resources that make these conflicts intelligible; and finally use system dynamics and causal-loop diagrams to explain why the movement can persist even when it generates resistance.</p><h2 id="levels-of-analysis">The Argument at Four Levels</h2><div class="table-wrap"><table class="three-col lens-table wide-table">
 <thead><tr><th>Level</th><th>Central question</th><th>What the essay examines</th></tr></thead><tbody><tr><td data-label="Level">Micro / interpersonal</td><td data-label="Central question">When does concern become a claim of authority over another person?</td><td data-label="What the essay examines">“Christian love,” correction, consent, autonomy, and the distinction between witness and jurisdiction.</td></tr><tr><td data-label="Level">Meso / institutional</td><td data-label="Central question">How do individual habits become socially durable?</td><td data-label="What the essay examines">Churches, schools, media ecosystems, boundary policing, status rewards, and the social reinforcement of moral certainty.</td></tr><tr><td data-label="Level">Macro / political</td><td data-label="Central question">How does moral correction become a theory of citizenship and law?</td><td data-label="What the essay examines">Persecution narratives, sacred national identity, Christian nationalism, and arguments for religiously grounded coercion.</td></tr><tr><td data-label="Level">Systemic / dynamic</td><td data-label="Central question">Why can conflict strengthen rather than weaken the movement?</td><td data-label="What the essay examines">Reinforcing loops, balancing loops, endogenous backlash, and the conditions that amplify or restrain coercion.</td></tr></tbody>
 </table></div><nav class="ep-toc" aria-label="Table of contents">
 <h2>Table of Contents</h2>

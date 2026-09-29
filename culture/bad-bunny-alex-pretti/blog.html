@@ -609,7 +609,85 @@
       };
     </script>
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<article class="ep-post" id="essay-top"><nav aria-label="Table of contents" class="ep-toc" id="table-of-contents"><h2 class="toc-title">Table of Contents</h2><ol class="toc-list toc-level-2"><li><a href="#bad-bunny-a-tale-of-reactionary-backlash">Bad Bunny: A Tale of Reactionary Backlash</a><ol class="toc-list toc-level-3"><li><a href="#symbolism-in-the-performance">Symbolism in the Performance</a></li><li><a href="#woke-spotting">Woke Spotting</a></li><li><a href="#brain-rot-and-patterned-responses">Brain Rot &amp; Patterned Responses</a></li><li><a href="#vulgarity-and-hypocrisy">Vulgarity and Hypocrisy</a></li><li><a href="#grievance-paranoia-persecution-and-participatory-propaganda">Grievance, Paranoia, Persecution, and Participatory Propaganda</a></li><li><a href="#more-on-patterned-responses">More on Patterned Responses</a></li></ol></li><li><a href="#alex-pretti-and-the-construction-of-evidence">Alex Pretti and the Construction of Evidence</a><ol class="toc-list toc-level-3"><li><a href="#from-evidence-to-classification">From Evidence to Classification</a></li><li><a href="#a-bayesian-model-of-the-pretti-dispute">A Bayesian Model of the Pretti Dispute</a></li><li><a href="#from-disagreement-to-epistemic-capture">From Disagreement to Epistemic Capture</a></li><li><a href="#from-frames-to-causal-scripts">From Frames to Causal Scripts</a></li><li><a href="#self-sealing-discourse-and-echo-chambers">Self-Sealing Discourse and Echo Chambers</a></li></ol></li><li><a href="#luhmann-media-selectors">Luhmann: Media Selectors</a><ol class="toc-list toc-level-3"><li><a href="#adapting-luhmann-to-computational-propaganda">Adapting Luhmann to Computational Propaganda</a></li><li><a href="#elizabeth-dubois-influencers-and-elections">Elizabeth Dubois: Influencers and Elections</a></li><li><a href="#codes-and-success-criteria">Codes &amp; Success Criteria</a></li><li><a href="#connecting-to-broader-propaganda-concepts">Connecting to Broader Propaganda Concepts</a></li></ol></li><li><a href="#what-does-all-of-this-mean">What does all of this mean?</a><ol class="toc-list toc-level-3"><li><a href="#references">References</a></li></ol></li></ol></nav><p>There is something deeply off putting about our relationship with media. People treat their preferred media as infallible golems, putting forth about zero brain power towards critical analysis, while being hyper distrustful towards anything that does not corroborate the same messages. It just seems that many people are completely media illiterate. This really isn’t surprising; I’m not aware of any public school k-12 that formally trains students to understand the structure, methods, and strategies performed by various media outlets and platforms. This is also not explicitly taught in university unless you’re choosing to specialize in something related to the topic. Many people are simply not equipped with critical thinking tools necessary to discern the messages they’re consuming. What’s worse is that many are under the impression they’re capable of discernment, creating an inertial attitude locking them in from gaining the required skills. You can observe this in the way people speak about the media: "they are biased, that’s their narrative, they’re motivated to say X because of corruption". While these certainly are important aspects of media to understand, when you probe a bit deeper to gain insight into their understanding of these concepts, you find they have little to no understanding of the use and application of the concepts. For example, when probing into “bias”, when asking for clarification, you might hear “liberal bias” instead of explicit types of biases and when they arise. When you ask what they mean by “bias”, they might reiterate “liberal bias” instead of “bias as a systematic deviation from reality that can take many forms, in many contexts, such as selection criteria, framing, or disincentives”.  My point is that people often use these words as performances for their in-group rather than as tools to assess a media ecosystem and our place within it. This surface level understanding is actually a feature not a bug; and it has serious consequences.</p>
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post" id="essay-top"><nav aria-label="Table of contents" class="ep-toc" id="table-of-contents"><h2 class="toc-title">Table of Contents</h2><ol class="toc-list toc-level-2"><li><a href="#bad-bunny-a-tale-of-reactionary-backlash">Bad Bunny: A Tale of Reactionary Backlash</a><ol class="toc-list toc-level-3"><li><a href="#symbolism-in-the-performance">Symbolism in the Performance</a></li><li><a href="#woke-spotting">Woke Spotting</a></li><li><a href="#brain-rot-and-patterned-responses">Brain Rot &amp; Patterned Responses</a></li><li><a href="#vulgarity-and-hypocrisy">Vulgarity and Hypocrisy</a></li><li><a href="#grievance-paranoia-persecution-and-participatory-propaganda">Grievance, Paranoia, Persecution, and Participatory Propaganda</a></li><li><a href="#more-on-patterned-responses">More on Patterned Responses</a></li></ol></li><li><a href="#alex-pretti-and-the-construction-of-evidence">Alex Pretti and the Construction of Evidence</a><ol class="toc-list toc-level-3"><li><a href="#from-evidence-to-classification">From Evidence to Classification</a></li><li><a href="#a-bayesian-model-of-the-pretti-dispute">A Bayesian Model of the Pretti Dispute</a></li><li><a href="#from-disagreement-to-epistemic-capture">From Disagreement to Epistemic Capture</a></li><li><a href="#from-frames-to-causal-scripts">From Frames to Causal Scripts</a></li><li><a href="#self-sealing-discourse-and-echo-chambers">Self-Sealing Discourse and Echo Chambers</a></li></ol></li><li><a href="#luhmann-media-selectors">Luhmann: Media Selectors</a><ol class="toc-list toc-level-3"><li><a href="#adapting-luhmann-to-computational-propaganda">Adapting Luhmann to Computational Propaganda</a></li><li><a href="#elizabeth-dubois-influencers-and-elections">Elizabeth Dubois: Influencers and Elections</a></li><li><a href="#codes-and-success-criteria">Codes &amp; Success Criteria</a></li><li><a href="#connecting-to-broader-propaganda-concepts">Connecting to Broader Propaganda Concepts</a></li></ol></li><li><a href="#what-does-all-of-this-mean">What does all of this mean?</a><ol class="toc-list toc-level-3"><li><a href="#references">References</a></li></ol></li></ol></nav><p>There is something deeply off putting about our relationship with media. People treat their preferred media as infallible golems, putting forth about zero brain power towards critical analysis, while being hyper distrustful towards anything that does not corroborate the same messages. It just seems that many people are completely media illiterate. This really isn’t surprising; I’m not aware of any public school k-12 that formally trains students to understand the structure, methods, and strategies performed by various media outlets and platforms. This is also not explicitly taught in university unless you’re choosing to specialize in something related to the topic. Many people are simply not equipped with critical thinking tools necessary to discern the messages they’re consuming. What’s worse is that many are under the impression they’re capable of discernment, creating an inertial attitude locking them in from gaining the required skills. You can observe this in the way people speak about the media: "they are biased, that’s their narrative, they’re motivated to say X because of corruption". While these certainly are important aspects of media to understand, when you probe a bit deeper to gain insight into their understanding of these concepts, you find they have little to no understanding of the use and application of the concepts. For example, when probing into “bias”, when asking for clarification, you might hear “liberal bias” instead of explicit types of biases and when they arise. When you ask what they mean by “bias”, they might reiterate “liberal bias” instead of “bias as a systematic deviation from reality that can take many forms, in many contexts, such as selection criteria, framing, or disincentives”.  My point is that people often use these words as performances for their in-group rather than as tools to assess a media ecosystem and our place within it. This surface level understanding is actually a feature not a bug; and it has serious consequences.</p>
 <p>My main motivation for writing this post has to do with two seemingly unrelated events that occurred recently: the murder of Alex Pretti and the Bad Bunny halftime performance. After reflecting on these two events and observing media behavior, I thought it be appropriate to diagnose our collective response as a symptom of the deeply perverse media structures that have been increasingly governing our lives. In the case of Alex Pretti, we have a clear example of how media processes can fundamentally shape how we interpret and categorize data. In the case of Bad Bunny, we have a clear example of how media exacerbate culture war nonsense so much so that it stifles our ability to even reason. I’ll be elaborating on both examples in the section to come.</p>
 <h2 id="bad-bunny-a-tale-of-reactionary-backlash">Bad Bunny: A Tale of Reactionary Backlash</h2>
 <p>Unless you live under a rock, you are probably aware of the Bad Bunny halftime performance and the "alternative" halftime performance hosted by TPUSA. Before the performance even took place conservatives were critisizing this as a DEI pick (because the presumption now is that any non-white person must have been a DEI pick to "push the liberal agenda"). They were also in outrage because Bad Bunny is "not a patriot", likely due to his criticism of Trump; because disagreement has become interpreted as treason within modern US politics. You are now "Un-American" if you have any sort of criticism of the president (and possibly a target of NSPM-7). This is a pretty classic <strong>“culture-war counterprogramming”</strong> move: take a mass-culture event, claim it’s been “captured” by liberals/DEI/anti-America forces, then build an “alternative” spectacle that signals <em>in-group identity</em> (“faith/family/country”) and <em>out-group threat</em> (immigrants, Spanish language, “wokeness,” etc.).</p>

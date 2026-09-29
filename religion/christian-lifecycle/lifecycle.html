@@ -613,7 +613,85 @@
   import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
   mermaid.initialize({ startOnLoad: true });
 </script>
-<article class="ep-post">
+
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post">
 <h1 id="creating-a-christian">Creating a Christian</h1><nav aria-label="Table of contents" class="ep-toc"><p><strong>Table of contents</strong></p><div class="ep-toc-part"><p>Part I: The puzzle and the model</p><ul><li><a href="#overview">The empirical puzzle: conversion stories versus population flows</a><ul><li><a href="#religion-as-identity-and-coalition">Religion as identity and coalition</a></li><li><a href="#family-observation-lifecycle-hypothesis">From a family observation to a lifecycle hypothesis</a></li><li><a href="#how-to-read-lifecycle-model">How to read the lifecycle model</a></li><li><a href="#systems-glossary">A small systems glossary</a></li><li><a href="#lifecycle-at-a-glance">Lifecycle at a glance</a></li></ul></li></ul></div><div class="ep-toc-part"><p>Part II: The lifecycle</p><ul><li><a href="#stage-1-05-pre-belief-installation">Stage 1 (0–5): Pre-belief installation</a><ul><li><a href="#stage-1-attachment-categories">Attachment and sacred categories</a></li><li><a href="#stage-1-ritual-authority-morality">Ritual, authority, and moral framing</a></li><li><a href="#stage-1-stories-boundaries-output">Stories, boundaries, and the stage output</a></li></ul></li><li><a href="#stage-2-612-moral-branding-community-immersion-and-competence-by-memorization">Stage 2 (6–12): Moral branding, community immersion, and “competence” by memorization</a><ul><li><a href="#stage-2-performed-competence">From inheritance to performed competence</a></li><li><a href="#stage-2-attribution-testimony">Attribution, testimony, and emotional evidence</a></li><li><a href="#stage-2-culture-enclosure">Culture curation and the beginning of enclosure</a></li></ul></li><li><a href="#stage-3-1014-epistemic-enclosure">Stage 3 (10–14): Epistemic enclosure</a><ul><li><a href="#stage-3-epistemic-lifestyle">From defaults to an epistemic lifestyle</a></li><li><a href="#stage-3-filtering-menu">Filtering the menu: media, institutions, and politics</a></li><li><a href="#stage-3-leakage-mitigation">Leakage, mitigation, and the stage output</a></li></ul></li><li><a href="#stage-4-1318-identity-lock-in-exit-costs-and-the-handoff-to-adult-roles">Stage 4 (13–18): Identity lock-in, exit costs, and the handoff to adult roles</a><ul><li><a href="#stage-4-romance-status-exit-costs">Romance, status, and exit costs</a></li><li><a href="#stage-4-zeal-calling">Zeal, calling, and adult identity</a></li><li><a href="#stage-4-institutional-handoff">The institutional handoff</a></li></ul></li><li><a href="#stage-5-1625-inoculation-identity-defense-and-building-an-adult-life-inside-the-network">Stage 5 (16–25): Inoculation, identity defense, and building an adult life inside the network</a><ul><li><a href="#stage-5-pluralism-inoculation">Pluralism and inoculation</a></li><li><a href="#stage-5-adult-embedding">Embedding adult life inside the network</a></li><li><a href="#stage-5-coalition-bible">Coalition identity and the Bible-reading loop</a></li><li><a href="#stage-5-leakage-outcomes">Leakage, mitigation, and outcomes</a></li></ul></li><li><a href="#stage-6-25-adult-maintenance-entrenchment-and-reproduction-as-system-replication">Stage 6 (25+): Adult maintenance, entrenchment, and reproduction as system replication</a><ul><li><a href="#stage-6-friction-entrenchment">Adult friction and local entrenchment</a></li><li><a href="#stage-6-infrastructure-reproduction">Church as infrastructure and reproduction</a></li><li><a href="#stage-6-meaning-credibility">Meaning, credibility, and pluralistic intimacy</a></li><li><a href="#stage-6-output-replication">Stage output: replication with drift</a></li></ul></li></ul></div><div class="ep-toc-part"><p>Part III: The system around the lifecycle</p><ul><li><a href="#outside-influences">Outside the household: three feeder systems</a><ul><li><a href="#outside-household-feeder-c-funding-and-institution-building-as-the-infrastructure-layer">Infrastructure layer: Funding and institution-building</a></li><li><a href="#outside-feeder-a-cultural-political-christianity">Pathway A: Cultural / Political Christianity</a></li><li><a href="#outside-household-feeder-b-external-recruitment-relief-linked-conversion">Pathway B: External recruitment & relief-linked conversion</a></li></ul></li></ul></div><div class="ep-toc-part"><p>Part IV: What the model explains</p><ul><li><a href="#conclusion-seeing-christianity-as-a-lifecycle-not-a-single-decision">Conclusion: What the lifecycle model explains</a><ul><li><a href="#conclusion-defaults-to-identity">From defaults to durable identity</a></li><li><a href="#conclusion-systems-language">Why systems language matters</a></li><li><a href="#conclusion-kinds-of-conversion">Different kinds of “conversion”</a></li><li><a href="#conclusion-bible-causal-account">Why “just read the Bible” is causally incomplete</a></li><li><a href="#conclusion-stability-exit">Where the model predicts stability—and exit</a></li><li><a href="#conclusion-larger-claim">The larger claim</a></li></ul></li></ul></div></nav>
 <header class="ep-part-banner"><span class="ep-part-kicker">Part I</span><span class="ep-part-title">The puzzle and the model</span><span class="ep-part-summary">Start with the population-level puzzle, move to the family observation, then define the lifecycle model and the variables it tracks.</span></header><h2 id="overview">The empirical puzzle: conversion stories versus population flows</h2>
 <p>This essay started as a numbers problem that turned into a family story. On paper, the United States does not look like a place where Christianity is constantly “winning converts” in the way Christian testimonials and apologetics often imply. The largest, best-known population surveys describe something closer to churn than conquest: lots of switching overall, but a <strong>lopsided net flow out of Christianity</strong>. Pew’s 2023–24 Religious Landscape Study finds that <strong>35% of U.S. adults have switched</strong> their religious identity since childhood. (<a href="https://www.pewresearch.org/religion/2025/02/26/religious-switching/" title="How Americans change, keep their religious identities over their lives | Pew Research Center">Pew Research Center</a>) And when you look at the balance sheet, the asymmetry is hard to miss: <strong>21.9% of U.S. adults are “former Christians,”</strong> while only <strong>3.6% are Christians who were raised something else</strong>—a roughly six-to-one ratio in the direction of exit. (<a href="https://www.pewresearch.org/religion/2025/02/26/religious-switching/" title="How Americans change, keep their religious identities over their lives | Pew Research Center">Pew Research Center</a>) The same pattern shows up in the broader “religion vs. none” accounting: <strong>20.2%</strong> were raised in a religion and are now unaffiliated, versus <strong>3.5%</strong> raised unaffiliated who now identify with a religion. (<a href="https://www.pewresearch.org/religion/2025/02/26/religious-switching/" title="How Americans change, keep their religious identities over their lives | Pew Research Center">Pew Research Center</a>)</p>

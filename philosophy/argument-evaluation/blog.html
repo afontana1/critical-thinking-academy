@@ -620,6 +620,84 @@
 <script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
 <div class="ep-post" id="article-top"><p class="reading-width">This post considers a set of useful mental tools for evaluating reasons and evidence.</p><p class="reading-width">We will begin with a Bayesian treatment of missing evidence. The central question is straightforward: if a thorough search fails to uncover evidence that we would expect to find if a claim were true, how should that absence affect our confidence in the claim?</p><nav aria-label="Article contents" class="ep-toc" id="contents"><div class="toc-title">On this page</div><ol><li><a href="#part-i-missing-evidence-and-bayesian-reasoning">Part I — Missing Evidence and Bayesian Reasoning</a><ol><li><a href="#definitions">Definitions</a></li><li><a href="#a-preliminary-probability-point">A Preliminary Probability Point</a></li><li><a href="#implications-of-the-bayesian-result">Implications of the Bayesian Result</a></li><li><a href="#critical-questions-for-evaluating-evidence">Critical Questions for Evaluating Evidence</a></li></ol></li><li><a href="#part-ii-limits-counterexamples-and-explanatory-reasoning">Part II — Limits, Counterexamples, and Explanatory Reasoning</a><ol><li><a href="#when-confirmation-can-mislead-black-swans-and-the-turkey">When Confirmation Can Mislead: Black Swans and the Turkey</a></li><li><a href="#the-raven-paradox-and-evidential-relevance">The Raven Paradox and Evidential Relevance</a></li><li><a href="#abduction-and-alternative-explanations">Abduction and Alternative Explanations</a></li><li><a href="#evidence-as-argument-and-as-story">Evidence as Argument and as Story</a></li><li><a href="#evaluating-statistical-and-research-evidence">Evaluating Statistical and Research Evidence</a></li><li><a href="#a-working-conception-of-evidence">A Working Conception of Evidence</a></li></ol></li><li><a href="#part-iii-analyzing-arguments">Part III — Analyzing Arguments</a><ol><li><a href="#step-1-clarify-and-define-terms">Step 1: Clarify and Define Terms</a></li><li><a href="#step-2-formulate-the-argument">Step 2: Formulate the Argument</a></li><li><a href="#step-3-determine-whether-the-conclusion-follows-if-the-premises-are-true">Step 3: Determine whether the conclusion follows (if the premises are true)</a></li><li><a href="#step-4-examine-each-premises-justification">Step 4: Examine Each Premise’s Justification</a></li><li><a href="#step-5-see-if-there-are-reasons-to-think-the-premises-are-false">Step 5: See if there are reasons to think the premises are false</a></li><li><a href="#step-6-be-intellectual-virtuous">Step 6: Practice Intellectual Virtue</a></li><li><a href="#additional-tips">Additional Tips</a></li></ol></li><li><a href="#part-iv-reference-toolkit">Part IV — Reference Toolkit</a><ol><li><a href="#dialogue-types">Dialogue Types</a></li><li><a href="#argumentation-schemes-and-critical-questions">Argumentation Schemes and Critical Questions</a></li></ol></li></ol></nav><h2 class="part-heading" id="part-i-missing-evidence-and-bayesian-reasoning">Part I — Missing Evidence and Bayesian Reasoning</h2><p class="section-lead reading-width">This first part develops the narrow probabilistic question before turning to the complications that arise in real-world evidential reasoning.</p><h3 class="code-line" data-line="0" dir="auto" id="definitions">
   Definitions
 </h3><ol class="code-line reading-width" data-line="1" dir="auto">

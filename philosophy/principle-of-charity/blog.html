@@ -606,7 +606,85 @@
           ],
         },
       };
-    </script><script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><article class="ep-post"><h1>The Principle of Charity</h1><p class="chapter-lead">Principles are indispensable guides for reasoning and behavior, but they are not infallible rules. This essay asks what follows when that insight is applied to the principle of charity: why charity should usually govern interpretation, where it can fail, and how to recognize the boundary cases without turning skepticism into an excuse for dismissing unfamiliar arguments.</p><div class="core-claim"><strong>Core claim.</strong> The principle of charity is best treated as a <em>rebuttable presumption</em>: begin by seeking a coherent, reasonable interpretation, then increase scrutiny when the argument is ambiguous, unsupported, structurally defective, strategically evasive, or costly to reconstruct.</div><h2 id="contents">Table of Contents</h2><nav aria-label="Table of contents" class="ep-toc"><div class="ep-toc-part"><p>Part I — Principles and Defaults</p><ul><li><a href="#principles-heuristics">Principles as heuristics</a></li><li><a href="#kinds-of-principles">Kinds of principles</a></li></ul></div><div class="ep-toc-part"><p>Part II — The Case for Charity</p><ul><li><a href="#principle-of-charity">The principle of charity</a></li><li><a href="#why-charity">Why charity matters</a></li><li><a href="#charity-distinctions">What charity does—and does not—require</a></li></ul></div><div class="ep-toc-part"><p>Part III — Boundary Conditions</p><ul><li><a href="#free-speech-analogy">free speech as an analogy</a></li><li><a href="#limits-of-charity">Where charity becomes difficult</a></li><li><a href="#plausibility-test">Why plausibility is not enough</a></li></ul></div><div class="ep-toc-part"><p>Part IV — A Practical Framework</p><ul><li><a href="#decision-procedure">Charity as a decision procedure</a></li><li><a href="#failure-modes">Common failure modes</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#further-reading">Further reading</a></li></ul></div></nav><header class="ep-part-banner" id="part-i"><span class="ep-part-kicker">Part I</span><span class="ep-part-title">Principles and Defaults</span><span class="ep-part-summary">What principles do, why we rely on them, and why their usefulness does not make them absolute.</span></header><h2 id="principles-heuristics">Principles as Heuristics</h2><div class="chapter-guide"><p><strong>Purpose: </strong>Establish the basic model: principles guide judgment without guaranteeing correctness.</p><p class="chapter-path"><strong>Path: </strong>Parsimony → conversational norms → the distinction between default rules and explicit decision principles.</p></div><p>
+    </script><script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body>
+<!-- CTA dark-mode toggle -->
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script><article class="ep-post"><h1>The Principle of Charity</h1><p class="chapter-lead">Principles are indispensable guides for reasoning and behavior, but they are not infallible rules. This essay asks what follows when that insight is applied to the principle of charity: why charity should usually govern interpretation, where it can fail, and how to recognize the boundary cases without turning skepticism into an excuse for dismissing unfamiliar arguments.</p><div class="core-claim"><strong>Core claim.</strong> The principle of charity is best treated as a <em>rebuttable presumption</em>: begin by seeking a coherent, reasonable interpretation, then increase scrutiny when the argument is ambiguous, unsupported, structurally defective, strategically evasive, or costly to reconstruct.</div><h2 id="contents">Table of Contents</h2><nav aria-label="Table of contents" class="ep-toc"><div class="ep-toc-part"><p>Part I — Principles and Defaults</p><ul><li><a href="#principles-heuristics">Principles as heuristics</a></li><li><a href="#kinds-of-principles">Kinds of principles</a></li></ul></div><div class="ep-toc-part"><p>Part II — The Case for Charity</p><ul><li><a href="#principle-of-charity">The principle of charity</a></li><li><a href="#why-charity">Why charity matters</a></li><li><a href="#charity-distinctions">What charity does—and does not—require</a></li></ul></div><div class="ep-toc-part"><p>Part III — Boundary Conditions</p><ul><li><a href="#free-speech-analogy">free speech as an analogy</a></li><li><a href="#limits-of-charity">Where charity becomes difficult</a></li><li><a href="#plausibility-test">Why plausibility is not enough</a></li></ul></div><div class="ep-toc-part"><p>Part IV — A Practical Framework</p><ul><li><a href="#decision-procedure">Charity as a decision procedure</a></li><li><a href="#failure-modes">Common failure modes</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#further-reading">Further reading</a></li></ul></div></nav><header class="ep-part-banner" id="part-i"><span class="ep-part-kicker">Part I</span><span class="ep-part-title">Principles and Defaults</span><span class="ep-part-summary">What principles do, why we rely on them, and why their usefulness does not make them absolute.</span></header><h2 id="principles-heuristics">Principles as Heuristics</h2><div class="chapter-guide"><p><strong>Purpose: </strong>Establish the basic model: principles guide judgment without guaranteeing correctness.</p><p class="chapter-path"><strong>Path: </strong>Parsimony → conversational norms → the distinction between default rules and explicit decision principles.</p></div><p>
   Recently, I was thinking about
   <a href="https://en.wikipedia.org/wiki/Category:Principles">philosophical principles</a> in the context of argumentation and communication. Very loosely, a
   principle is a guide for behavior or evaluation. Think about the
