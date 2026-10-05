@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Fine-Tuning, Psychophysical Harmony, and Metaphysical Cherry-Picking</title>
+  <style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style><style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+  <style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; padding: 0 0 3rem; }
+  .ep-post [id] { scroll-margin-top: 1rem; }
+  .ep-post .ep-toc > h2 { margin-top: 1.1em; }
+  .ep-post .ep-toc > ul { margin-bottom: 0; }
+  .ep-post .math-block { -webkit-overflow-scrolling: touch; }
+  @media (max-width: 720px) {
+    .ep-post { padding-left: 0.85rem; padding-right: 0.85rem; }
+    .ep-post .math-block { font-size: 0.94em; }
+    .ep-post .ep-part-banner { margin-top: 2.3em; padding: 0.8em 0.85em; }
+    .ep-post .ep-part-banner .ep-part-title { font-size: 1.45rem; }
+  }
+</style>
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['$$', '$$']],
+      processEscapes: true
+    },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+  <article class="ep-post">
+    <nav aria-label="Table of contents" class="ep-toc"><h2>Table of Contents</h2><ul>
+<li><a href="#part-i-the-psychophysical-tension">Part I — The Psychophysical Tension</a><ul>
+<li><a href="#i-introduction">I. Introduction</a></li>
+<li><a href="#ii-fine-tuning-and-its-hidden-psychophysical-assumption">II. Fine-Tuning and Its Hidden Psychophysical Assumption</a></li>
+<li><a href="#iii-sinhababus-electrons-in-love-objection">III. Sinhababu’s “Electrons in Love” Objection</a></li>
+<li><a href="#iv-psychophysical-harmony-and-the-reverse-pressure">IV. Psychophysical Harmony and the Reverse Pressure</a></li>
+</ul>
+</li>
+<li><a href="#part-ii-from-tension-to-model-instability">Part II — From Tension to Model Instability</a><ul>
+<li><a href="#v-the-need-for-deeper-metaphysical-commitments">V. The Need for Deeper Metaphysical Commitments</a></li>
+<li><a href="#vi-metaphysical-cherry-picking-and-model-instability">VI. Metaphysical Cherry-Picking and Model Instability</a></li>
+<li><a href="#vii-theism-is-not-a-single-predictive-hypothesis">VII. “Theism” Is Not a Single Predictive Hypothesis</a></li>
+<li><a href="#viii-divine-psychology-and-the-problem-of-theistic-prediction">VIII. Divine Psychology and the Problem of Theistic Prediction</a></li>
+</ul>
+</li>
+<li><a href="#part-iii-the-methodological-problem">Part III — The Methodological Problem</a><ul>
+<li><a href="#ix-motte-and-bailey-and-shotgun-apologetics">IX. Motte-and-Bailey and Shotgun Apologetics</a></li>
+<li><a href="#x-apologetics-commitment-structures-and-truth-tracking">X. Apologetics, Commitment Structures, and Truth-Tracking</a></li>
+<li><a href="#xi-objection-is-this-just-ordinary-theory-refinement">XI. Objection: Is This Just Ordinary Theory Refinement?</a></li>
+</ul>
+</li>
+<li><a href="#part-iv-conclusion">Part IV — Conclusion</a><ul>
+<li><a href="#xii-conclusion">XII. Conclusion</a></li>
+</ul>
+</li>
+</ul></nav>
+
+<hr/>
+<p><a id="part-i-the-psychophysical-tension"></a></p>
+<header class="ep-part-banner"><span class="ep-part-kicker">Part I</span><span class="ep-part-title">The Psychophysical Tension</span><span class="ep-part-summary">The first part isolates the central conflict. Fine-tuning gains force by narrowing the physical routes to sophisticated minds, while psychophysical harmony gains force by expanding the modal freedom of the mind–body relation.</span></header>
+
+<p><a id="i-introduction"></a></p>
+<h2 class="ep-source-section">I. Introduction</h2>
+<p>Cosmological fine-tuning and psychophysical harmony can appear to be natural allies. Each is commonly presented as a comparative argument: some feature of the world is said to be difficult to expect on an unguided picture of reality but more intelligible given purposive creation. Yet the apparent compatibility of the two arguments conceals a tension between the metaphysical assumptions that make each one persuasive.</p>
+<p>Fine-tuning gains force from the idea that conscious, intelligent life depends on a highly restricted range of physical conditions. Psychophysical harmony, by contrast, gains force from the apparent contingency of the relation between physical and phenomenal states: the same physical or functional organization could, in principle, have been associated with radically different experiences. The more freedom one grants to the psychophysical mapping, however, the less obvious it becomes that the physical constants had to be finely adjusted for conscious life to exist at all.</p>
+<p>Neil Sinhababu’s “electrons in love” objection brings the tension into focus. If God could have associated rich mentality with radically simpler physical systems under different psychophysical laws, then the usual inference from life-permitting physics to divine design is weakened. Conversely, if sophisticated mentality is tightly constrained by physical complexity, then the modal space invoked by psychophysical harmony appears narrower than its defenders often suggest. The two arguments are not formally contradictory, but they pull in opposite directions unless they are embedded within a deeper account of mind, matter, modality, and divine action.</p>
+<p>That deeper account matters because a cumulative case cannot be built simply by collecting arguments that share the word “theism” in their conclusion. If fine-tuning succeeds only under one set of metaphysical assumptions while psychophysical harmony succeeds under another, their conjunction supports a unified case only if those assumptions belong to the same coherent theory. Otherwise, auxiliary commitments are doing the explanatory work on an argument-by-argument basis. This is where the charge of <strong>metaphysical cherry-picking</strong> becomes relevant: the background metaphysics may be selected locally for its usefulness while the result is presented globally as evidence for one hypothesis.</p>
+<p>The difficulty is compounded by the fact that “theism” itself is rarely specified with enough precision to generate the relevant predictions. Different theistic models can disagree about embodiment, consciousness, divine preferences, value, natural law, and how accessible God’s reasons are to human inquiry. Fine-tuning and psychophysical harmony therefore depend not merely on the existence of a creator, but on substantive assumptions about what such a creator would value and choose. Divine psychology is not an optional afterthought to these arguments; it is part of the bridge from “God exists” to “this world is probable given God.”</p>
+<p>The argument of this essay is that Sinhababu’s tension should be understood as a case study in a broader methodological instability within philosophical apologetics. The central problem is not simply that individual premises are controversial. It is that the assumptions used to support different arguments may fail to form a stable global model. When that happens, a cumulative case can begin to resemble theoretical overfitting: rich theological assumptions are introduced when they increase the probability of favorable evidence, while a thinner and less committal conception of theism remains available when those assumptions become vulnerable to objection.</p>
+<p>The challenge, then, is not merely to show that fine-tuning and psychophysical harmony can each be reconciled with <em>some</em> form of theism. It is to show that both emerge from the same independently motivated metaphysical and theological framework. Without that prior specification, the cumulative case risks confusing post hoc accommodation with genuine predictive success.</p>
+<p><a id="ii-fine-tuning-and-its-hidden-psychophysical-assumption"></a></p>
+<h2 class="ep-source-section">II. Fine-Tuning and Its Hidden Psychophysical Assumption</h2>
+<p>The fine-tuning argument is usually framed as an argument about the apparent sensitivity of life to the fundamental constants and initial conditions of the universe. The relevant physical parameters seem to occupy a narrow range compatible with stable matter, complex chemistry, stars, planets, and eventually organisms capable of observation and reflection. Its evidential force is then supposed to arise from the contrast between the apparent improbability of such a life-permitting universe under an unguided hypothesis and its greater expectedness under theism.</p>
+<p>That framing can obscure an important background assumption. The inference from life-permitting physics to intelligent or conscious life does not follow from physics alone. It also depends on a view about what kinds of physical systems can realize sophisticated mentality. In practice, the argument treats observers as strongly constrained by complex physical organization: if the constants had prevented stars, chemistry, or biological complexity, there would have been no beings like us and, more importantly for the argument, no beings sufficiently minded to count as the relevant kind of observers.</p>
+<p>The tacit structure is roughly:</p>
+<div class="math-block">$$
+\text{No sufficiently complex physical organization}
+\rightarrow
+\text{No sophisticated conscious observers}.
+$$</div>
+<p>This conditional is rarely the explicit target of the fine-tuning argument, but it performs substantial work within it. The argument does not merely require that <em>human beings</em> depend on fine-tuned physics. That claim is comparatively uncontroversial. It needs something stronger: that the kinds of conscious, intelligent, or valuable beings relevant to the design inference could not readily have existed under radically different physical conditions.</p>
+<p>If the target were only the existence of human beings, the argument would risk becoming anthropocentric in an uninteresting sense. Of course our particular form of life depends on the conditions that produced it. The stronger and philosophically significant claim is that the universe had to occupy a narrow physical range for sophisticated mentality to exist at all, or at least for the kinds of minds a benevolent creator would plausibly value to exist.</p>
+<p>That stronger claim imports a psychophysical assumption into what can look like a purely physical argument. It presupposes that mentality cannot simply be realized independently of the structural complexity made possible by our physical laws. If rich consciousness could instead be associated with radically simpler physical systems, then the fact that our universe permits complex chemistry and biology would no longer appear necessary for the existence of minded beings. The relevant question would cease to be whether the constants are finely tuned for organisms like us and become whether those constants were required for sophisticated consciousness in any form.</p>
+<p>The force of fine-tuning therefore depends not only on the rarity of life-permitting physics, but also on how narrow the range of possible realizers of mentality is taken to be. The more tightly rich consciousness is tied to complex physical organization, the more evidential weight the physical preconditions for that organization can bear. The more flexible the relation between physical structure and mentality becomes, the less obvious the necessity of fine-tuned physical conditions.</p>
+<p>This commitment is especially important because it is not forced on the theist by theism itself. A theist already accepts at least one case in which sophisticated mentality does not depend on a complex physical brain: God. That does not by itself establish that simple created objects could host rich mental lives, but it does block any easy assumption that sophisticated mentality <em>as such</em> requires the elaborate material structures found in our universe.</p>
+<p>Fine-tuning thus contains a metaphysical dependency that can disappear from view when the argument is stated only in cosmological terms. Its conclusion concerns the explanatory significance of physical constants, but its force partly depends on a prior answer to a psychophysical question: <strong>how constrained is mentality by physical complexity?</strong> Sinhababu’s “electrons in love” objection presses directly on that hidden assumption.</p>
+<p><a id="iii-sinhababus-electrons-in-love-objection"></a></p>
+<h2 class="ep-source-section">III. Sinhababu’s “Electrons in Love” Objection</h2>
+<p>Sinhababu challenges the assumption that the physical conditions necessary for organisms like us are also necessary for intelligent or valuable mentality as such. His objection turns on the metaphysical possibility of alternative psychophysical laws—laws connecting physical states with mental states in ways radically unlike those found in our world. If such laws are possible, then even a universe hostile to chemistry, biology, or complex nervous systems might nevertheless contain sophisticated conscious beings.</p>
+<p>His memorable example is a world in which very simple physical systems are sufficient to realize rich mental states, so that something as basic as a proton and an electron could instantiate sophisticated desires or relationships: “electrons in love.” The example is deliberately strange, but the argumentative point does not depend on taking it literally as a proposal about our universe. It is meant to expose an assumption about modal space.</p>
+<p>The ordinary fine-tuning inference moves from the claim that most possible values of the physical constants would not permit familiar life-supporting structures to the conclusion that most such universes would not contain intelligent observers. Sinhababu contests that second step. Radically different constants might eliminate carbon, stars, planets, and organisms resembling anything in the actual world without eliminating consciousness <em>simpliciter</em>. Under sufficiently mind-friendly psychophysical laws, simple systems could instantiate highly sophisticated mental lives.</p>
+<p>The contrast can be stated compactly:</p>
+<div class="math-block">$$
+\text{Physics alone does not fix the possible forms of mentality if psychophysical laws can vary.}
+$$</div>
+<p>Once psychophysical laws are treated as an additional variable, a universe incapable of producing biological brains need not be incapable of producing minds. The inference from “no familiar life” to “no intelligent consciousness” therefore requires an extra metaphysical premise.</p>
+<p>This matters most at the level of comparative probability. Suppose theism is invoked to explain why the constants fall within the narrow range that permits complex embodied life. The usual intuition is that a God who values intelligent conscious beings would have reason to select constants that make such beings possible. But if the same general end could be achieved through very different psychophysical laws, then theism offers more than one route to mentality:</p>
+<div class="table-wrap"><table class="comparison-table wide-table">
+<thead>
+<tr>
+<th>Route</th>
+<th>Physical conditions</th>
+<th>Psychophysical conditions</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Route"><strong>Actual-style route</strong></td>
+<td data-label="Physical conditions">Physics permits complex chemistry, organisms, and brains</td>
+<td data-label="Psychophysical conditions">Roughly our actual psychophysical laws</td>
+<td data-label="Result">Intelligent conscious agents</td>
+</tr>
+<tr>
+<td data-label="Route"><strong>Sinhababu-style route</strong></td>
+<td data-label="Physical conditions">Physics need not permit familiar biological complexity</td>
+<td data-label="Psychophysical conditions">Much more permissive psychophysical laws</td>
+<td data-label="Result">Intelligent conscious agents</td>
+</tr>
+</tbody>
+</table></div>
+<p>If both routes are genuinely available to a divine creator, the existence of intelligent life does not strongly select the first. Fine-tuning cannot simply assume that God would need to set the physical constants within the narrow range required by our form of embodiment.</p>
+<p>The objection gains additional force from a commitment internal to theism. The theist ordinarily accepts that at least one sophisticated mind—God—exists without a complex physical brain. This makes it difficult simply to dismiss alternative psychophysical possibilities on the grounds that rich mentality <em>must</em> depend on highly complex material realization. The theist needs some further reason why created minds could not, in principle, be associated with much simpler structures.</p>
+<p>None of this establishes that electrons actually think, feel pleasure, or fall in love under the laws of our world, and the objection does not require panpsychism to be true. It is modal rather than empirical. Sinhababu needs only the claim that sufficiently different psychophysical laws are possible. If that possibility is admitted, then the necessity of finely tuned physical conditions for the existence of minds becomes much harder to maintain.</p>
+<p>A natural reply is to restrict the fine-tuning argument to universes governed by the actual psychophysical laws. Conditional on the actual relation between minds and brains, the constants may indeed need to occupy a narrow range for intelligent observers to exist. Yet this reply relocates the explanatory burden. The theist must now explain why a divine creator should be expected to choose our comparatively restrictive psychophysical arrangement rather than a more permissive one. What began as an argument from the improbability of the physical constants now depends on assumptions about why God would choose one set of psychophysical laws over another.</p>
+<p>The dispute has therefore moved beyond cosmology. It now concerns the amount of modal freedom in the relation between physical organization and consciousness. If that relation is highly flexible, fine-tuning loses much of its apparent necessity. If it is highly constrained, fine-tuning is in a stronger position. The importance of this choice becomes even clearer once psychophysical harmony is brought into the picture, because there the argumentative pressure runs in the opposite direction.</p>
+<p><a id="iv-psychophysical-harmony-and-the-reverse-pressure"></a></p>
+<h2 class="ep-source-section">IV. Psychophysical Harmony and the Reverse Pressure</h2>
+<p>Psychophysical harmony places pressure on the very assumption that protects fine-tuning from Sinhababu’s objection. Fine-tuning is strengthened when sophisticated mentality is treated as tightly constrained by physical organization. Psychophysical harmony, by contrast, derives much of its force from the claim that the connection between physical and phenomenal states is highly contingent: the same physical or functional organization could have been associated with very different experiences.</p>
+<p>Pain provides the clearest example. In the actual world, states that dispose an organism to withdraw from tissue damage are typically accompanied by experiences that feel bad. States associated with nourishment, reproduction, social attachment, and other beneficial activities are often accompanied by experiences that feel good. Perception displays a similar coordination: when an organism judges that it is seeing red, its phenomenal state is ordinarily an experience of red rather than an unrelated color or an entirely different sensation. Experience is not merely correlated with function; it appears systematically appropriate to it.</p>
+<p>The significance of that harmony depends on the possibility of disharmony. If physical or functional organization uniquely necessitated its corresponding phenomenal character, there would be little mystery in pain accompanying avoidance rather than pleasure. The relation would simply follow from the nature of the physical system. The argument becomes interesting only if the same physical state could have been paired with very different phenomenal states—pleasure, emotional neutrality, some unrelated sensory quality, or something else entirely.</p>
+<p>Against a sufficiently large space of alternative mappings, the actual arrangement looks unusually well ordered. Injury is not merely followed by avoidance; it is accompanied by an experience that gives the organism reason to avoid it. Perceptual experience tends to line up with judgment and report. Phenomenology, cognition, motivation, and behavior form a pattern that appears rationally integrated. The theistic explanation is that such a pattern is more expected if the psychophysical relation was selected by an intelligent agent with reason to create beings whose experiences appropriately guide their actions and beliefs.</p>
+<p>The central difficulty is that the modal freedom that makes harmony surprising also expands the space of possible realizers of mentality. If one physical system could support radically different phenomenal lives, it is no longer obvious why radically different physical systems could not support sophisticated consciousness under different psychophysical laws. The same looseness in the mind–body connection that generates the harmony problem can therefore reopen Sinhababu’s alternative worlds.</p>
+<p>The tradeoff is easiest to see side by side:</p>
+<div class="table-wrap"><table class="comparison-table three-col">
+<thead>
+<tr>
+<th>Assumption about psychophysical possibility</th>
+<th>Effect on Fine-Tuning</th>
+<th>Effect on Psychophysical Harmony</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Assumption about psychophysical possibility"><strong>Highly constrained</strong></td>
+<td data-label="Effect on Fine-Tuning"><strong>Stronger.</strong> Sophisticated minds require rare and demanding physical organization.</td>
+<td data-label="Effect on Psychophysical Harmony"><strong>Weaker.</strong> Fewer radically different mind–body mappings need explanation.</td>
+</tr>
+<tr>
+<td data-label="Assumption about psychophysical possibility"><strong>Highly permissive</strong></td>
+<td data-label="Effect on Fine-Tuning"><strong>Weaker.</strong> Sophisticated minds may be realizable under many more physical conditions.</td>
+<td data-label="Effect on Psychophysical Harmony"><strong>Stronger.</strong> The actual harmonious mapping is selected from a much larger space of alternatives.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The pressure can be summarized as:</p>
+<div class="math-block">$$
+\boxed{
+\text{More psychophysical freedom}
+\Rightarrow
+\text{stronger harmony argument, but weaker fine-tuning}
+}
+$$</div>
+<p>and conversely:</p>
+<div class="math-block">$$
+\boxed{
+\text{Less psychophysical freedom}
+\Rightarrow
+\text{stronger fine-tuning, but weaker harmony argument}
+}
+$$</div>
+<p>This does not show that no coherent position can support both arguments. A defender could distinguish between the conditions required for the <em>existence</em> of sophisticated consciousness and the conditions determining its <em>phenomenal character</em>. Highly complex physical organization might be necessary for sophisticated cognition even if the qualitative experiences associated with that organization remain radically contingent. Such a distinction could block the move to “electrons in love” while preserving enough psychophysical freedom to make harmony surprising.</p>
+<p>But that reconciliation cannot simply be assumed. It requires a substantive theory of which aspects of the mind–body relation are necessary, which are contingent, and why the boundary falls where it does. The defender must explain why mentality is constrained enough to make fine-tuning significant while remaining unconstrained enough to make psychophysical harmony improbable.</p>
+<blockquote class="core-claim">
+<p><strong>The tension is therefore not a formal contradiction but a demand for metaphysical specification.</strong> The two arguments can coexist only within a deeper theory that determines where psychophysical necessity ends and contingency begins.</p>
+</blockquote>
+<p>Once that requirement is explicit, the issue becomes broader than either argument individually. The question is no longer merely whether a reconciliation <em>can</em> be constructed, but whether the metaphysics that performs the reconciliation is independently motivated or introduced chiefly because it preserves two desired arguments.</p>
+<p><a id="part-ii-from-tension-to-model-instability"></a></p>
+<header class="ep-part-banner"><span class="ep-part-kicker">Part II</span><span class="ep-part-title">From Tension to Model Instability</span><span class="ep-part-summary">The second part asks what must be added to reconcile the arguments, and whether those additions belong to one independently motivated theistic model.</span></header>
+
+<p><a id="v-the-need-for-deeper-metaphysical-commitments"></a></p>
+<h2 class="ep-source-section">V. The Need for Deeper Metaphysical Commitments</h2>
+<p>Once the fine-tuning/harmony tension is acknowledged, the natural response is to add a more discriminating metaphysics. Perhaps complex physical organization is necessary for sophisticated cognition while phenomenal character remains contingent. Perhaps God could have produced minds through simpler physical systems but had independent reasons to prefer embodied agents in a stable, law-governed world. These responses are coherent. Their significance is that they change the object of evaluation.</p>
+<p>The first type of response requires an account of the mind–body relation fine-grained enough to say which psychophysical dependencies are necessary and which remain open. The second requires an account of value and divine purpose: why embodiment, causal interaction, evolutionary development, natural-law regularity, or some other feature is important enough to explain why God would choose our route to minded life rather than one of Sinhababu’s alternatives.</p>
+<p>Once those considerations are doing explanatory work, the operative hypothesis is no longer bare theism. It is something richer:</p>
+<div class="math-block">$$
+T^* = T + M + V + D,
+$$</div>
+<p>where <span class="math">\(T\)</span> is theism, <span class="math">\(M\)</span> a particular metaphysics of mind, <span class="math">\(V\)</span> a particular theory of value, and <span class="math">\(D\)</span> an account of divine motivation.</p>
+<p>This richer hypothesis may be perfectly defensible, but the evidential argument must be assessed relative to it. If fine-tuning is highly probable only on a theology in which God strongly prefers embodied, physically complex, law-governed agents, then that theology—not the bare proposition that God exists—is generating the prediction. If psychophysical harmony is highly probable only on a metaphysics in which phenomenal character is radically contingent while cognition remains physically constrained, then that metaphysics is doing indispensable work as well.</p>
+<p>The central question therefore shifts from compatibility to justification. What independent reason is there to accept this particular distribution of necessity and contingency? Why think God would value precisely the features needed to make our route to conscious life preferable? Background assumptions are not illegitimate simply because they are background assumptions; every serious philosophical argument relies on them. The concern arises when those commitments remain implicit until a problem appears and are then calibrated in the direction needed to preserve the argument.</p>
+<p>That calibration matters for a cumulative case. What initially looked like two independent pieces of evidence for theism may instead depend on a carefully specified package of metaphysical and theological auxiliaries. The more those auxiliaries are needed to reconcile the arguments, the more important it becomes to know whether they were independently motivated or selected retrospectively because they allow both arguments to survive.</p>
+<p>Before fine-tuning and psychophysical harmony can be treated as mutually reinforcing, then, their shared background theory has to be made explicit. Otherwise, one argument may be evaluated under one conception of mind and divine action, another under a different conception, and the two combined only at the level of their common conclusion. That is the setting in which the charge of <strong>metaphysical cherry-picking</strong> becomes substantive rather than merely rhetorical.</p>
+<p><a id="vi-metaphysical-cherry-picking-and-model-instability"></a></p>
+<h2 class="ep-source-section">VI. Metaphysical Cherry-Picking and Model Instability</h2>
+<p>Metaphysical cherry-picking is not simply the use of controversial premises. The stronger concern is about the <strong>selection procedure</strong> governing those premises. A restrictive picture of the relation between consciousness and physical complexity may be emphasized when defending fine-tuning; a permissive picture of psychophysical possibility may be emphasized when defending psychophysical harmony; and the space may be narrowed again when “electrons in love” threatens the first argument. Each move may be defensible in isolation. What requires justification is the combination.</p>
+<p>To make the structure explicit, let <span class="math">\(T\)</span> denote theism. Fine-tuning may actually be assessed relative to <span class="math">\(T + A_{FT}\)</span>, where <span class="math">\(A_{FT}\)</span> includes assumptions about consciousness, embodiment, value, and divine aims. Psychophysical harmony may instead be assessed relative to <span class="math">\(T + A_{PH}\)</span>, where <span class="math">\(A_{PH}\)</span> includes assumptions about psychophysical contingency, rational harmony, and divine purposes.</p>
+<p>The fact that both packages contain <span class="math">\(T\)</span> does not make them two independent confirmations of one theory. For that conclusion, the auxiliaries must either substantially overlap or be derived from a more comprehensive model that independently explains why both sets should be accepted.</p>
+<p>This is the difference between <strong>local explanatory success</strong> and <strong>global model coherence</strong>. It is possible that:</p>
+<div class="math-block">$$
+P(E_{FT}\mid T + A_{FT}) &gt; P(E_{FT}\mid N)
+$$</div>
+<p>and also that:</p>
+<div class="math-block">$$
+P(E_{PH}\mid T + A_{PH}) &gt; P(E_{PH}\mid N),
+$$</div>
+<p>without yet having shown that a single theistic theory predicts the joint evidence well. A genuinely cumulative argument requires something closer to:</p>
+<div class="math-block">$$
+P(E_{FT},E_{PH}\mid T^*) &gt; P(E_{FT},E_{PH}\mid N),
+$$</div>
+<p>where <span class="math">\(T^*\)</span> is one sufficiently specified and independently motivated model.</p>
+<p>That distinction matters because a stable theory should constrain what its defender is allowed to say across different arguments. Commitments adopted in one context should generate consequences in others, including inconvenient ones. If a restrictive view of psychophysical possibility strengthens fine-tuning but weakens psychophysical harmony, that cost should be counted. If a permissive view strengthens harmony but reopens Sinhababu’s challenge, that cost should be counted too. The tradeoff cannot be made to disappear merely by changing frameworks between debates.</p>
+<p>There is nothing objectionable about revising a theory in response to problems. Philosophy and science both advance through revision. The concern is that revisions should be constrained by considerations independent of the particular datum they are introduced to explain. An account of the mind–body relation should ideally arise from a broader philosophy of mind, not from choosing whichever version happens to strengthen the argument currently under discussion. Likewise, claims about what God values should arise from an independently defensible theology rather than being introduced only when they make an observed feature of reality more probable.</p>
+<p>The order of justification is therefore crucial. A stable model begins with a set of commitments and asks what follows from them. Cherry-picking reverses that order: the desired explanatory result is fixed first, and the surrounding commitments are adjusted until the result can be obtained. Even when each adjustment has some plausible rationale, the cumulative pattern can become unstable if no antecedent theory explains why precisely that combination of restrictions and freedoms should be accepted.</p>
+<p>The burden on cumulative natural theology is consequently stronger than showing that every relevant feature of the world is compatible with <em>some</em> form of theism. Compatibility is cheap when internal variation is large. The real question is whether a single form of theism, equipped with a stable metaphysics, makes the body of evidence comparatively expected.</p>
+<blockquote class="core-claim">
+<p><strong>A cumulative case requires cumulative coherence, not merely cumulative compatibility.</strong></p>
+</blockquote>
+<p>Fine-tuning and psychophysical harmony are useful because their tension makes the problem visible in a compact form. The same methodological question, however, immediately expands once “theism” is recognized as a family of importantly different theories rather than a single predictive hypothesis.</p>
+<p><a id="vii-theism-is-not-a-single-predictive-hypothesis"></a></p>
+<h2 class="ep-source-section">VII. “Theism” Is Not a Single Predictive Hypothesis</h2>
+<p>“Theism” is often treated as though it were a single, sufficiently specified hypothesis, when in practice it names a broad family of views. This matters because evidential arguments require enough theoretical content to generate expectations. The minimal claim that God exists does not by itself determine what kinds of worlds God would create, what forms of consciousness God would value, whether embodiment is preferable, whether psychophysical laws are freely selected or metaphysically necessary, or how much weight God would place on competing goods.</p>
+<p>The diversity is not merely denominational or peripheral. One theist may think created consciousness can exist independently of any physical substrate; another may regard embodiment as essential to creaturely mentality. One may treat psychophysical laws as freely chosen by God, another as necessary consequences of the natures of mind and matter. Theists can combine their theology with substance dualism, hylomorphism, idealism, panpsychism, or forms of physicalism compatible with creation. They can also differ about the goods God would prioritize, the extent to which divine reasons are accessible to us, and how freely God chooses among possible structures of creation.</p>
+<p>Those differences directly affect the likelihoods invoked by fine-tuning and psychophysical harmony. A theology on which God strongly values biologically embodied rational agents may make a finely tuned physical universe comparatively expected. A theology on which sophisticated minds require no complex physical realization may not. A theory on which God freely chooses psychophysical laws for the sake of rational and affective harmony may make psychophysical harmony likely; a theory on which psychophysical relations are metaphysically necessary removes much of the coincidence that the argument was supposed to explain.</p>
+<p>Writing simply</p>
+<div class="math-block">$$
+P(E\mid T)
+$$</div>
+<p>therefore risks concealing the real structure of the comparison. More realistically, “theism” may function as a disjunction of more specific theories:</p>
+<div class="math-block">$$
+T = T_1 \lor T_2 \lor T_3 \lor \cdots,
+$$</div>
+<p>where each <span class="math">\(T_i\)</span> specifies divine nature, metaphysics, values, and creative intentions differently.</p>
+<p>Suppose fine-tuning is highly expected on <span class="math">\(T_1\)</span> but not on <span class="math">\(T_2\)</span>, while psychophysical harmony is highly expected on <span class="math">\(T_2\)</span> but not on <span class="math">\(T_1\)</span>. The fact that different members of the family explain different observations does not show that the family as a whole predicts all of them well. If theism is treated as a disjunctive hypothesis, its likelihood depends on the weighted performance of its constituent models:</p>
+<div class="math-block">$$
+P(E\mid T)=\sum_i P(E\mid T_i)P(T_i\mid T).
+$$</div>
+<p>It is therefore not enough that <em>some</em> <span class="math">\(T_i\)</span> makes an observation likely. The prior weight assigned to that model and its performance on the rest of the evidence matter as well.</p>
+<p>This yields a basic distinction between <strong>accommodation</strong> and <strong>prediction</strong>. A broad family of theories may accommodate many possible outcomes. If the universe is finely tuned, one theological model can explain why. If it is not finely tuned but contains simple conscious systems, another can explain that. If psychophysical laws are contingent and harmonious, one theory can accommodate them; if they are necessary, another can accommodate that instead. Breadth makes a family hard to rule out, but the same breadth can reduce how strongly any one observation is predicted.</p>
+<p>There is thus a tradeoff between flexibility and informativeness. A highly specific theology can make strong predictions, but it becomes correspondingly more vulnerable to counterevidence. A thin conception of theism survives a wider range of possible observations precisely because it says less about what should be expected.</p>
+<p>This becomes important whenever a rich model is used to claim positive evidence and a thin model is used to resist criticism. Claims that God values conscious life, rational agency, embodied relationships, beauty, orderly natural laws, or psychophysical harmony can make particular observations look probable. Yet if difficulties arise, the defender can retreat to the claim that theism itself says relatively little about what God would create. Those two levels of specification cannot perform the same evidential function.</p>
+<p>If theism is defined minimally enough to encompass the wide variety of positions ordinarily called theistic, it may lack the predictive content required by design arguments. If it is specified richly enough to make fine-tuning or psychophysical harmony likely, then the evidence supports that more specific theology rather than theism simpliciter. The evidential conclusion should track the specificity of the hypothesis that actually generated the prediction.</p>
+<p>The demand for specification cannot stop at metaphysics. Once a theistic model is rich enough to generate expectations, it necessarily contains claims about what a divine agent is likely to value and choose. That brings divine psychology to the center of the analysis.</p>
+<p><a id="viii-divine-psychology-and-the-problem-of-theistic-prediction"></a></p>
+<h2 class="ep-source-section">VIII. Divine Psychology and the Problem of Theistic Prediction</h2>
+<p>Fine-tuning and psychophysical harmony do not follow merely from the proposition that God exists. They require claims about what God would value, what kinds of beings God would wish to create, and what means God would prefer for realizing those ends. Divine psychology therefore enters the evidential calculation at the point where bare theism is supposed to become predictive.</p>
+<p>For fine-tuning, it is not enough to posit a powerful creator. The argument needs some reason to think God would create conscious or intelligent beings, that such beings are valuable enough to be actualized, and that God would realize them through a universe containing the physical complexity permitted by our constants. Sinhababu’s challenge adds another layer: if alternative psychophysical laws could support sophisticated minds under radically different physical conditions, the defender must also explain why God would prefer complex embodied agents to those simpler alternatives.</p>
+<p>Psychophysical harmony requires parallel commitments. The defender must assume that God would value a systematic fit between phenomenology and function: pain should rationalize avoidance, pleasure should support attraction, perceptual experience should align with belief and report, and conscious states more generally should bear an intelligible relation to action and cognition. None of this follows directly from the bare claim that an omnipotent and omniscient creator exists.</p>
+<p>The relevant likelihood is therefore better represented as:</p>
+<div class="math-block">$$
+P(E\mid T,D),
+$$</div>
+<p>where <span class="math">\(D\)</span> stands for a substantive account of divine preferences and purposes.</p>
+<p>This immediately creates an epistemic burden. Comparative evidence requires some justified basis for thinking that the observed state of affairs is more likely given God than its alternatives. It is not enough that God <em>could</em> have a reason to produce a finely tuned or psychophysically harmonious world. The argument needs a basis for treating that world as sufficiently expected on theism to create a likelihood contrast with naturalism.</p>
+<p>Possibility and probability are easy to slide between here. An omnipotent agent can have possible reasons for realizing many mutually incompatible worlds. Unless there is some principled account of the relative weight of those reasons, the mere availability of a divine rationale establishes at most compatibility, not a high value for <span class="math">\(P(E\mid T)\)</span>.</p>
+<p>Sinhababu again provides a concrete example. If God wants conscious life, fine-tuned physics may be one means of obtaining it. But if alternative psychophysical laws would also permit consciousness under very different physical conditions, the end underdetermines the means. Recovering the original fine-tuning likelihood requires further assumptions about God’s preference for embodiment, physical complexity, natural-law regularity, evolutionary history, interpersonal dependence, or some related good. Every such move makes the divine psychology more specific.</p>
+<p>Psychophysical harmony faces the same difficulty. Even if a good God has reason to prefer harmonious psychophysical laws, why assume that this reason dominates every competing consideration? Other worlds might realize other goods—novelty, diversity, simplicity, autonomy, or forms of consciousness radically unlike our own. Without a more developed theory of divine value, it is difficult to justify assigning high probability to precisely the form of harmony we observe.</p>
+<p>The problem becomes sharper when natural theology alternates between confidence and skepticism about divine psychology. In favorable contexts, strong claims are made about what God would likely do: value conscious life, rational agency, moral goodness, reliable cognition, orderly natural laws, or harmonious experience. Those claims generate the likelihoods needed by positive arguments. When apparently unfavorable evidence appears—gratuitous suffering, hiddenness, disorder, evolutionary waste, or other features difficult to reconcile with perfect goodness—the response may instead emphasize our limited ability to understand God’s reasons.</p>
+<p>There can be legitimate reasons for epistemic humility about divine purposes. The difficulty is the asymmetry. If human beings are too cognitively limited to infer much about what God would prefer when the evidence looks disconfirming, that same limitation threatens the favorable likelihood judgments used by design arguments. Transparent access to divine purposes cannot simply be assumed when the evidence supports theism and suspended when it does not.</p>
+<p>The tension is straightforward:</p>
+<div class="table-wrap"><table class="comparison-table three-col">
+<thead>
+<tr>
+<th>Conception of divine psychology</th>
+<th>Evidential advantage</th>
+<th>Evidential cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Conception of divine psychology"><strong>Relatively accessible</strong></td>
+<td data-label="Evidential advantage">Makes positive predictions about what God would create easier to justify.</td>
+<td data-label="Evidential cost">Makes contrary evidence more threatening, because the same divine values constrain expectations.</td>
+</tr>
+<tr>
+<td data-label="Conception of divine psychology"><strong>Relatively inscrutable</strong></td>
+<td data-label="Evidential advantage">Makes it easier to resist objections by appealing to unknown divine reasons.</td>
+<td data-label="Evidential cost">Weakens the ability to assign high likelihoods to fine-tuning, harmony, or other favorable evidence.</td>
+</tr>
+</tbody>
+</table></div>
+<p>A predictive theology needs enough access to divine psychology to generate expectations; a defensive theology often benefits from denying that access. The more a model moves between those positions according to argumentative need, the less stable its evidential profile becomes.</p>
+<p>Once a theistic hypothesis is made specific enough to explain fine-tuning or psychophysical harmony, it acquires substantive commitments about divine value and intention. Those commitments should remain in place when the theory is assessed against the rest of the evidence. This is the point at which the problem of specification becomes a more general problem about how apologetic arguments are accumulated and defended.</p>
+<p><a id="part-iii-the-methodological-problem"></a></p>
+<header class="ep-part-banner"><span class="ep-part-kicker">Part III</span><span class="ep-part-title">The Methodological Problem</span><span class="ep-part-summary">The third part generalizes the case study. If a cumulative apologetic case is to be evidentially meaningful, the same underlying model must remain in view as the argument moves from positive evidence to objections, from one domain of evidence to another, and from local explanations to the global case.</span></header>
+
+<p><a id="ix-motte-and-bailey-and-shotgun-apologetics"></a></p>
+<h2 class="ep-source-section">IX. Motte-and-Bailey and Shotgun Apologetics</h2>
+<p>The instability described above creates a natural opening for a motte-and-bailey structure. The “bailey” is a comparatively rich and predictive conception of God. It includes substantive claims about divine values and purposes: the importance of conscious life, rational agency, embodiment, orderly natural laws, moral goods, and psychophysical harmony. These commitments make it possible to argue that particular features of the world are more probable on theism than they would otherwise be.</p>
+<p>The “motte” is thinner and less committal. It may amount to little more than the claim that there exists an omnipotent, omniscient, perfectly good creator whose reasons may exceed human understanding. This position is harder to dislodge precisely because it makes fewer predictions. For the same reason, however, it cannot generate the same strong evidential expectations as the richer theology.</p>
+<p>The contrast is worth making explicit:</p>
+<div class="table-wrap"><table class="comparison-table three-col">
+<thead>
+<tr>
+<th></th>
+<th><strong>Rich / Predictive Theism</strong></th>
+<th><strong>Thin / Defensive Theism</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Category"><strong>Divine purposes</strong></td>
+<td data-label="Rich / Predictive Theism">Relatively specific and accessible</td>
+<td data-label="Thin / Defensive Theism">Minimally specified or substantially inscrutable</td>
+</tr>
+<tr>
+<td data-label="Category"><strong>Predictive content</strong></td>
+<td data-label="Rich / Predictive Theism">High enough to make particular observations expected</td>
+<td data-label="Thin / Defensive Theism">Low enough to accommodate a wide range of outcomes</td>
+</tr>
+<tr>
+<td data-label="Category"><strong>Use in positive arguments</strong></td>
+<td data-label="Rich / Predictive Theism">Generates likelihood claims for fine-tuning, harmony, order, value, etc.</td>
+<td data-label="Thin / Defensive Theism">Generates comparatively little positive prediction</td>
+</tr>
+<tr>
+<td data-label="Category"><strong>Exposure to counterevidence</strong></td>
+<td data-label="Rich / Predictive Theism">Higher, because specific values constrain expectations</td>
+<td data-label="Thin / Defensive Theism">Lower, because fewer expectations are asserted</td>
+</tr>
+<tr>
+<td data-label="Category"><strong>Methodological risk</strong></td>
+<td data-label="Rich / Predictive Theism">Can earn evidential credit</td>
+<td data-label="Thin / Defensive Theism">Can absorb evidential liability</td>
+</tr>
+</tbody>
+</table></div>
+<p>The problem arises when apologetic reasoning moves between these levels of specification. When fine-tuning or psychophysical harmony is presented as positive evidence, God’s purposes are treated as sufficiently intelligible to make the observation expected. When contrary evidence is raised, the conception of God can contract and the defender can emphasize the complexity or inscrutability of divine reasons. If the richer model earns the evidential credit, then objections must be assessed against that richer model as well. Otherwise, the hypothesis receiving confirmation is not the same hypothesis being defended.</p>
+<p>The same issue becomes more pronounced when many apologetic arguments are “shotgunned” into a cumulative case. Such a case may include fine-tuning, psychophysical harmony, morality, consciousness, reason, religious experience, contingency, beauty, and more. There is nothing inherently suspect about using multiple lines of evidence. Independent evidence can genuinely accumulate. The difficulty arises when each argument relies on a different local specification of God.</p>
+<p>One argument may require a God who strongly values embodied rational life; another, a God who permits broad psychophysical contingency; another, a God whose reasons are substantially inscrutable. Unless these specifications are shown to be mutually compatible parts of one theory, their evidential contributions cannot simply be summed. Shared vocabulary does not guarantee shared hypothesis.</p>
+<p>The relevant requirement is not merely that each observation support <em>some</em> theistic model. It is that the observations jointly support the same model:</p>
+<div class="math-block">$$
+E_1,E_2,E_3,\ldots \quad \text{should jointly bear on the same } T^*.
+$$</div>
+<p>Without that condition, a cumulative case can become a collection of local accommodations rather than a unified explanation. Breadth creates the appearance of convergence even when each line of argument depends on a bespoke set of assumptions.</p>
+<p>Motte-and-bailey reasoning and shotgun apologetics therefore reinforce one another. The shotgun strategy multiplies locally successful arguments, while the motte-and-bailey structure allows the underlying theology to expand and contract as needed. Together they can create the appearance of cumulative support without a stable cumulative model.</p>
+<p>The methodological demand is simple: carry the same hypothesis through the entire evidential case. If positive arguments require a rich conception of God, that conception must remain in place when objections are considered. If the defender instead prefers a minimal and inscrutable theism, the evidential ambitions of the positive arguments must be reduced accordingly. The issue is not the number of arguments but whether they are genuinely cumulative rather than merely adjacent.</p>
+<p><a id="x-apologetics-commitment-structures-and-truth-tracking"></a></p>
+<h2 class="ep-source-section">X. Apologetics, Commitment Structures, and Truth-Tracking</h2>
+<p>The preceding concerns support a broader methodological criticism of philosophical apologetics, but the strongest version does not depend on attributing insincerity, bad faith, or conscious manipulation to individual apologists. A defender can be entirely sincere and still participate in a reasoning structure that systematically protects a prior commitment. The relevant question is whether the central conclusion remains fixed while the surrounding metaphysical and theological assumptions are allowed to change whenever pressure appears.</p>
+<p>This distinction matters because claims about motive are both difficult to establish and unnecessary to the argument. A framework can encourage confirmation-preserving reasoning even when everyone using it is trying to reason well. If commitment to theism is treated as effectively non-negotiable while assumptions about consciousness, value, modality, divine motivation, natural law, and human epistemic limitations remain flexible, counterevidence will tend to produce revisions in the auxiliary theory rather than revisions in the central commitment.</p>
+<p>There is nothing inherently illegitimate about revising auxiliaries. Every sophisticated theory develops through adjustment. The epistemic problem appears when no sufficiently independent constraint governs those adjustments. If the only feature that remains stable is the requirement that theism survive, while almost everything surrounding it is negotiable, it becomes difficult to identify what evidence would genuinely count against the view rather than trigger another reformulation.</p>
+<p>That is the difference between <strong>truth-tracking</strong> and <strong>commitment-preservation</strong>. A truth-tracking method exposes a theory to genuine risk. The same commitments that explain favorable evidence should also create vulnerabilities. A theory that predicts order should incur evidential cost from disorder. A theory that predicts rational psychophysical harmony should incur cost from systematic disharmony. A theory that treats divine reasons as accessible when producing positive predictions cannot invoke total inscrutability elsewhere without paying an explanatory price.</p>
+<p>A commitment-preserving structure instead permits the evidential standards themselves to shift. Positive evidence can be evaluated under a richly specified theology while negative evidence is evaluated under a minimal one. Necessity can be emphasized where contingency creates trouble, and contingency emphasized where necessity weakens an argument. Divine motives can be treated as intelligible when that generates favorable likelihoods and opaque when the same intelligibility would generate unfavorable ones.</p>
+<p>The earlier problems now appear as manifestations of a common structure. Metaphysical cherry-picking changes the auxiliary theory from one argument to another. Divine psychology opens a large space of possible explanations for why God would choose one world rather than another. The motte-and-bailey shifts the amount of theological content asserted at different moments. Shotgunning multiplies the number of routes through which some feature of reality can be classified as confirmatory. Together, these devices can make the central conclusion unusually resistant to evidential pressure.</p>
+<p>This is where the analogy to theoretical overfitting becomes useful. In statistical modeling, a sufficiently flexible model can fit an observed dataset extremely well while capturing little of the underlying structure. The problem is not fit itself; it is achieving fit by adding enough adjustable parameters that the model reproduces the data it was constructed around. An apologetic framework can face the same danger if metaphysics, divine psychology, and theology are flexible enough to make almost any observed feature of reality probable after the fact.</p>
+<p>The concern becomes clearest when no evidential defeat conditions are visible. Fine-tuned constants can be explained by divine concern for life; if consciousness existed without such fine-tuning, alternative psychophysical laws could explain that instead. Psychophysical harmony can be explained by God’s preference for harmony; severe disharmony could be absorbed by unknown higher-order reasons. Cosmic order can be evidence of divine rationality; disorder can be assigned to inscrutable purposes. A framework capable of surviving all such outcomes may be resilient, but resilience is not the same thing as predictive strength. The more outcomes it can accommodate without cost, the less informative its accommodation of the actual outcome becomes.</p>
+<p>The contrast can be stated as a difference in the direction of reasoning:</p>
+<div class="math-block">$$
+\text{Theory}
+\rightarrow
+\text{Predictions}
+\rightarrow
+\text{Comparison with evidence}
+$$</div>
+<p>versus</p>
+<div class="math-block">$$
+\text{Observed evidence}
+\rightarrow
+\text{selection of auxiliary assumptions}
+\rightarrow
+\text{favorable explanation}.
+$$</div>
+<p>The second pattern may yield an explanation for nearly any observation, but that capacity is exactly what weakens its evidential significance.</p>
+<blockquote class="core-claim">
+<p><strong>A theory earns evidential force by taking antecedent risks.</strong> Its successful fit is informative only to the extent that its prior commitments ruled out, disfavored, or made less likely some genuine alternatives.</p>
+</blockquote>
+<p>None of this makes philosophical apologetics uniquely guilty. Similar failures of constraint can occur in metaphysics, political philosophy, scientific theorizing, and any domain in which people have strong antecedent commitments. Nor does it follow that every apologetic argument is post hoc rationalization. The criticism is conditional and methodological: to the extent that a framework permits unrestricted adjustment of auxiliary commitments while protecting its central conclusion, its ability to track truth is weakened.</p>
+<p>A stronger cumulative case would therefore specify which commitments are doing the predictive work, explain how they apply across different evidential domains, and acknowledge genuine tradeoffs. If a commitment adopted to strengthen fine-tuning weakens psychophysical harmony, that cost should enter the assessment. If a theory of divine psychology makes some observations expected and others surprising, both effects matter. Most importantly, the theory must leave open the possibility of evidential failure. If no conceivable pattern of evidence could substantially reduce confidence because another auxiliary assumption can always be introduced, the framework has ceased to function as a serious comparative explanation.</p>
+<p><a id="xi-objection-is-this-just-ordinary-theory-refinement"></a></p>
+<h2 class="ep-source-section">XI. Objection: Is This Just Ordinary Theory Refinement?</h2>
+<p>A defender of natural theology can reasonably object that the preceding criticism sets the bar too high. No serious theory arrives fully specified in advance, and there is nothing inherently suspicious about refining one’s metaphysics in response to objections. Scientific theories are modified when new evidence reveals that an earlier formulation was incomplete; philosophical theories develop in much the same way. The introduction of distinctions concerning embodiment, psychophysical necessity, divine value, or consciousness therefore does not by itself show that a revision is ad hoc.</p>
+<p>That objection is correct. The issue is not whether a theory is revised, but <strong>how the revision is constrained</strong>. The relevant contrast is between constrained theory refinement and post hoc accommodation.</p>
+<div class="table-wrap"><table class="comparison-table two-col">
+<thead>
+<tr>
+<th><strong>Constrained theory refinement</strong></th>
+<th><strong>Post hoc accommodation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Constrained theory refinement">The new commitment has justification independent of the immediate problem.</td>
+<td data-label="Post hoc accommodation">The commitment is introduced mainly because it solves the immediate problem.</td>
+</tr>
+<tr>
+<td data-label="Constrained theory refinement">It generates consequences outside the local argument.</td>
+<td data-label="Post hoc accommodation">It functions primarily within the local argument.</td>
+</tr>
+<tr>
+<td data-label="Constrained theory refinement">Those consequences can count against the theory when unfavorable.</td>
+<td data-label="Post hoc accommodation">The revision mainly increases the theory’s ability to absorb objections.</td>
+</tr>
+<tr>
+<td data-label="Constrained theory refinement">It reduces future flexibility by imposing new constraints.</td>
+<td data-label="Post hoc accommodation">It increases flexibility by opening new explanatory options.</td>
+</tr>
+<tr>
+<td data-label="Constrained theory refinement">The theory accepts the costs as well as the benefits of the revision.</td>
+<td data-label="Post hoc accommodation">The theory retains the benefits while shifting away from the costs elsewhere.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Consider the response to Sinhababu that God has reason to prefer embodied, physically complex creatures over mentally sophisticated particles. That response is not automatically ad hoc. A theist might possess a broader and independently developed theology on which embodiment, interpersonal dependence, causal interaction, vulnerability, evolutionary development, and participation in a common physical world are genuine goods. If those commitments already shape the theory elsewhere, they can provide a principled response to “electrons in love.”</p>
+<p>But such a response also acquires theoretical costs. If embodiment is assigned substantial value to explain why God would choose finely tuned physics, that value must constrain the theory in other contexts. It cannot disappear whenever embodiment becomes inconvenient. Likewise, if sophisticated cognition is said to require complex physical realization, that metaphysical commitment should restrict which psychophysical possibilities can later be invoked in support of harmony.</p>
+<p>A genuine theory imposes cross-contextual constraints. A commitment adopted in one part of the system limits what can be said in another. Ad hoc accommodation occurs when assumptions are allowed to change precisely where they become inconvenient. The difference is not whether auxiliary assumptions exist; it is whether those assumptions reduce the theory’s freedom or merely supply new ways to preserve the conclusion.</p>
+<p>A defender may also object that the same criticism applies to naturalism. Naturalists disagree about consciousness, modality, value, laws of nature, and the foundations of probability. There is no single fully specified naturalistic theory either. This should be granted. An evidential comparison cannot fairly treat naturalism as perfectly precise while criticizing theism for internal diversity.</p>
+<p>The result, however, is a generalized methodological requirement rather than an escape from the problem. Both sides must be evaluated at the level of specification at which they actually generate predictions. If a fine-tuning argument compares a richly specified form of theism against a particular naturalistic cosmology, the comparison should remain at that level. What is illegitimate is allowing one side to inherit the predictive advantages of a narrow hypothesis while retaining the defensive flexibility of a broad one.</p>
+<p>The principle is:</p>
+<div class="math-block">$$
+\boxed{
+\text{Predictive strength must be assessed at the same level of theoretical specification.}
+}
+$$</div>
+<p>If theism is treated as a broad disjunction of possible theological models, its likelihoods must reflect that breadth. If it is narrowed to a theology that strongly predicts the evidence, the conclusion should concern that theology, and the additional commitments required by it must themselves be evaluated.</p>
+<p>This standard is not hostile to natural theology. It describes what a stronger natural theology would look like. The defender would begin with a comparatively unified account of God, value, mind, embodiment, and divine action, then ask what worlds that theory makes more or less probable. The resulting predictions would be allowed to succeed or fail together.</p>
+<p>Under such a model, the tension between fine-tuning and psychophysical harmony need not be fatal. A developed metaphysics might explain why complex physical organization is required for sophisticated cognition while phenomenal character remains contingent enough for harmony to be surprising. The decisive question is whether there are independent reasons to accept that metaphysics, rather than merely the fact that it preserves both apologetic arguments.</p>
+<p>The burden is therefore shifted, not eliminated. Theory refinement is legitimate when it produces a more constrained and independently motivated model. It becomes epistemically cheap when each difficulty generates a new local adjustment with no cross-contextual cost. A theory earns explanatory force not merely by fitting the world, but by taking enough antecedent risks that its successful fit is informative.</p>
+<p><a id="part-iv-conclusion"></a></p>
+<header class="ep-part-banner"><span class="ep-part-kicker">Part IV</span><span class="ep-part-title">Conclusion</span><span class="ep-part-summary"><a id="xii-conclusion"></a></span></header>
+
+<h2 class="ep-source-section">XII. Conclusion</h2>
+<p>Sinhababu’s “electrons in love” objection is valuable because it exposes a tension that is easy to miss when fine-tuning and psychophysical harmony are considered separately. Fine-tuning gains force from the idea that sophisticated conscious life depends on a narrow range of physically complex conditions. Psychophysical harmony gains force from the idea that the relation between physical organization and phenomenal consciousness could have been radically different. Increasing psychophysical freedom strengthens the latter intuition while weakening the former.</p>
+<p>That tension is not a formal contradiction. A sufficiently developed metaphysics may distinguish between the physical conditions required for sophisticated cognition and the psychophysical conditions determining phenomenal character. A theist may also offer independent reasons for thinking that God would prefer embodied, law-governed, physically complex creatures over simpler conscious systems. Yet once those distinctions are introduced, the evidential case no longer rests on fine-tuning or psychophysical harmony alone. It rests on a richer metaphysical and theological framework.</p>
+<p>The broader problem is therefore one of <strong>global model coherence</strong>. If the auxiliary assumptions required by one argument differ from those required by another, the cumulative case cannot simply count both as independent evidence for an undifferentiated hypothesis called “theism.” The defender must first show that those assumptions belong to one coherent model and that the model was not assembled retrospectively from whichever commitments make each observation easiest to explain.</p>
+<p>The appropriate evidential question is not merely whether some theistic model makes each datum likely in isolation. It is whether one sufficiently specified theory makes the joint evidence likely:</p>
+<div class="math-block">$$
+P(E_1,E_2,\ldots,E_n\mid T^*).
+$$</div>
+<p>That requirement brings divine psychology into view. Once theism is specific enough to generate predictions, it includes assumptions about what God values, what kinds of beings God would create, and what means God would prefer for realizing those goods. Those assumptions cannot generate evidential credit when convenient and disappear when they create evidential liabilities. The same theory must bear both effects.</p>
+<p>The same lesson applies to the larger structure of philosophical apologetics. A cumulative case is not strengthened merely by multiplying arguments. If each argument relies on a different auxiliary theology, a different metaphysics, or a different degree of confidence about divine motives, then the appearance of convergence may exceed the actual unity of the model. What looks like many confirmations of one theory may instead be many locally optimized explanations sharing only a very general conclusion.</p>
+<p>This is why explanation must be distinguished from prediction. A highly flexible framework may explain almost any observation after it occurs, but the flexibility that makes accommodation easy also weakens the evidential significance of the accommodation. A theory is informative when its commitments constrain what should be expected and expose it to genuine risk.</p>
+<p>The methodological ideal can therefore be stated simply:</p>
+<div class="math-block">$$
+\boxed{
+\text{Specify the theory first, then ask what it predicts.}
+}
+$$</div>
+<p>This does not require a complete theology or metaphysics before evidential reasoning can begin. It requires that the assumptions doing the explanatory work be made explicit, defended independently where possible, and applied consistently across arguments. Where those assumptions generate tradeoffs, the costs should be counted rather than removed through selective reformulation.</p>
+<p>Seen in this light, “electrons in love” is more than a localized objection to cosmological fine-tuning. It is a diagnostic case. It shows how quickly the evidential force of an argument can depend on background metaphysical assumptions that are left unstated until another argument places pressure on them. Once those assumptions are made explicit, apparent pieces of cumulative evidence can begin to pull against one another.</p>
+<p>The deeper challenge for natural theology is thus not merely to produce arguments compatible with theism. It is to show that those arguments arise from one stable and independently justified conception of God, mind, value, and creation. Without that coherence, the cumulative case risks collapsing into metaphysical cherry-picking: the theory changes where necessary while the conclusion remains fixed. At that point, what appears to be explanatory power may instead be the product of theoretical flexibility.</p>
+<p>Sinhababu’s tension therefore raises a broader epistemic question at the heart of philosophical apologetics: is theism being treated as a genuine predictive hypothesis, or as a conclusion around which a sufficiently adaptable metaphysical framework is constructed? Until that question is answered, the existence of many arguments for theism should not by itself be mistaken for a unified cumulative case.</p>
+
+  </article>
+  <script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
+</body>
+</html>

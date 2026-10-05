@@ -1,0 +1,1638 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Distributional Arguments and Model Comparison</title>
+  <style>
+/* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+  </style>
+  <style id="cta-theme-toggle-styles">
+:root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+  </style>
+  <style>
+/* Standalone-document compatibility additions. The article styling above is the supplied CSS. */
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 0; }
+.ep-post { padding-bottom: 4rem; }
+.ep-post a[id] { scroll-margin-top: 1rem; }
+.ep-post .table-wrap { contain: inline-size; }
+.ep-post .mjx-container[display="true"] { margin: 1em 0 !important; }
+@media (max-width: 720px) {
+  .ep-post { padding-left: 0.85rem; padding-right: 0.85rem; }
+  .ep-post p, .ep-post li { overflow-wrap: anywhere; }
+  .ep-post .mjx-container { font-size: 92% !important; }
+}
+  </style>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<article class="ep-post">
+<h1>Distributional Arguments and Model Comparison</h1>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#section-1">Introduction: Distribution as Evidence</a></li>
+<li><a href="#section-2">From the Genetic-Fallacy Strawman to Model Comparison</a></li>
+<li><a href="#section-3">The Naturalistic Alternative: Mechanisms, Culture, and Syncretism</a></li>
+<li><a href="#section-4">Extending the Argument to Suffering</a></li>
+<li><a href="#section-5">Theological Responses and Auxiliary Hypotheses</a></li>
+<li><a href="#section-6">Ad Hoc Explanation and Divine Psychology</a></li>
+<li><a href="#section-7">Total Evidence and Cross-Evidential Constraint</a></li>
+<li><a href="#section-8">The Comparative Asymmetry and the Unified Case</a></li>
+<li><a href="#section-9">Conclusion: Compatibility Is Not Enough</a></li>
+</ol>
+<p><a id="section-1"></a></p>
+<h2>1. Introduction: Distribution as Evidence</h2>
+<p>A number of familiar objections to theism are usually treated as separate problems: the geographical distribution of religious belief, the existence of mutually incompatible revelations, the problem of religious disagreement, divine hiddenness, and the problem of suffering. Yet there is a useful way of understanding these arguments as members of a broader family. Each concerns not merely the existence of some troublesome fact, but the <strong>distribution and structure of the evidence</strong>. The relevant question is not simply whether religious disagreement exists, whether suffering occurs, or whether revelation is sometimes ambiguous. It is why these phenomena are distributed in the particular patterned ways that we actually observe.</p>
+<p>Consider religious belief. Religious affiliation is strongly correlated with birthplace, family, language, political history, and surrounding culture. Religious traditions arise at particular historical moments, spread along identifiable social and political networks, divide into competing sects, absorb concepts and practices from neighboring traditions, and frequently reproduce themselves through ordinary mechanisms of cultural transmission. Likewise, suffering is not distributed randomly. Disease, mortality, famine, violence, and material security vary systematically with geography, economic development, political institutions, medical technology, sanitation, and historical period.</p>
+<p>These facts are not straightforward logical contradictions of theism. A sufficiently developed theological account can often be constructed that is compatible with them. But compatibility is not the only standard by which explanatory hypotheses are evaluated. A more revealing question is comparative: <strong>how expected would the observed world be if one hypothesis were true rather than another?</strong></p>
+<p>The basic structure of the argument can be represented as a comparison between two broad models. Let <span class="math-inline">\(T\)</span> represent some suitably specified form of theism and <span class="math-inline">\(N\)</span> some naturalistic alternative, while <span class="math-inline">\(E\)</span> represents the relevant body of evidence. The central question is then whether</p>
+<div class="math-block">\[
+P(E\mid T)
+\]</div>
+<p>is greater or smaller than</p>
+<div class="math-block">\[
+P(E\mid N).
+\]</div>
+<p>If the observed distribution of religious belief, suffering, revelation, and disagreement is more probable under one model than another, then those observations provide evidence favoring that model, other things being equal. Nothing in this argument requires the claim that the evidence is impossible under theism. The claim is comparative rather than deductive.</p>
+<p>This qualification is important because the relevant target is generally not <strong>bare theism</strong>, understood merely as the proposition that some God exists. Bare theism is too underspecified to generate many concrete expectations. The argument acquires force against more substantive forms of theism: views according to which God desires that human beings know important truths about him, provides revelation, intervenes in history, answers prayer, governs creation providentially, or makes salvation depend in some significant way upon human religious orientation. Such claims constrain what we might reasonably expect the world to look like.</p>
+<p>At the same time, naturalistic models do more than point toward the absence of divine intervention. They offer positive explanatory mechanisms. Cultural evolution, social learning, institutional incentives, political history, economic conditions, psychology, epidemiology, and other ordinary causal processes can potentially explain why religious belief and human suffering exhibit the patterns that they do. The relevant comparison is therefore not between “God” and “no explanation,” but between competing explanatory frameworks.</p>
+<p>The argument developed here is consequently a <strong>model-comparison argument from distributional evidence</strong>. It asks which account better predicts the particular causal texture of the world we observe. From religious geography and syncretism to historically contingent suffering and theological attempts to explain these patterns, the central issue will be not whether theism can be made consistent with each individual datum, but whether it offers a unified, independently motivated, and comparatively successful explanation of the total evidence.</p>
+<h3>Argument map</h3>
+<div class="table-wrap"><table class="wide-table">
+<thead>
+<tr>
+<th>Evidence</th>
+<th>Pattern to explain</th>
+<th>Naturalistic resources</th>
+<th>Theological pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Evidence">Religious belief</td>
+<td data-label="Pattern to explain">Geographic and historical clustering</td>
+<td data-label="Naturalistic resources">Cultural transmission, institutions, social learning, path dependence</td>
+<td data-label="Theological pressure">Why should access to important revelation track birthplace and history so strongly?</td>
+</tr>
+<tr>
+<td data-label="Evidence">Religious diversity</td>
+<td data-label="Pattern to explain">Competing revelations, schism, doctrinal divergence</td>
+<td data-label="Naturalistic resources">Cultural diffusion, syncretism, institutional fragmentation</td>
+<td data-label="Theological pressure">Why should a successful revelatory process generate this particular structure of disagreement?</td>
+</tr>
+<tr>
+<td data-label="Evidence">Suffering</td>
+<td data-label="Pattern to explain">Historical, geographic, biological, and economic patterning</td>
+<td data-label="Naturalistic resources">Epidemiology, biology, technology, institutions, political economy</td>
+<td data-label="Theological pressure">Why should morally significant harms track morally arbitrary variables so closely?</td>
+</tr>
+<tr>
+<td data-label="Evidence">Hiddenness</td>
+<td data-label="Pattern to explain">Sincere nonbelief and unequal access to evidence</td>
+<td data-label="Naturalistic resources">Ordinary informational environments and cultural inheritance</td>
+<td data-label="Theological pressure">What independently motivated divine purpose predicts this degree and distribution of ambiguity?</td>
+</tr>
+</tbody>
+</table></div>
+<p><a id="section-2"></a></p>
+<h2>2. From the Genetic-Fallacy Strawman to Model Comparison</h2>
+<h3>The genetic-fallacy objection</h3>
+<p>A common response to arguments from religious diversity is to accuse them of committing the genetic fallacy. The argument is sometimes reconstructed in roughly the following form: a Christian believes Christianity because she was raised in a Christian culture; a Muslim believes Islam because he was raised in a Muslim culture; therefore neither belief is justified, or perhaps both religions are false. Put this way, the objection is weak. The causal origin of a belief does not, by itself, determine its truth or falsity. A person may acquire a true belief through testimony, education, imitation, or cultural inheritance. Explaining why someone believes a proposition is not the same thing as showing that the proposition is false.</p>
+<p>But this reconstruction misses the stronger argument. The distributional argument is not primarily an argument about the genealogy of any one person's belief. It is an argument about the <strong>population-level pattern of religious belief</strong> and what that pattern tells us about the causal processes responsible for producing it.</p>
+<h3>From individual genealogy to population-level evidence</h3>
+<p>The relevant observation is not simply that individuals inherit beliefs from their parents. It is that religious affiliation, doctrine, practice, and religious experience are distributed in systematic ways across geography, history, language, ethnicity, political boundaries, and social institutions. People born into predominantly Catholic societies are more likely to become Catholic; those born into predominantly Muslim societies are more likely to become Muslim; religious traditions tend to reproduce themselves within families and communities; and major historical shifts in religious affiliation often follow conquest, migration, missionary activity, political patronage, institutional collapse, or other identifiable social processes. These patterns are not perfect, but neither are they incidental. The evidential claim therefore has a very different form from the genetic argument:</p>
+<div class="math-block">\[
+\text{This belief has a cultural cause}
+\;\not\Rightarrow\;
+\text{this belief is false}.
+\]</div>
+<p>Instead, the relevant inference concerns the relative expectedness of the larger pattern:</p>
+<div class="math-block">\[
+\text{Observed religious distribution}
+\;\Rightarrow\;
+\text{evidence concerning the processes that generated it}.
+\]</div>
+<p>This distinction is crucial. Suppose two competing models make different predictions about how some class of beliefs should be distributed. Under one model, a transcendent agent is actively revealing a uniquely important body of truths to humanity and desires that human beings come to know them. Under another, religious beliefs emerge and persist primarily through ordinary mechanisms of cultural transmission, social reinforcement, historical contingency, and institutional development. The fact that religious belief strongly tracks those ordinary variables is then potentially discriminating evidence between the models.</p>
+<p>An analogy with language makes the structure of the argument clearer. A child born in Japan is far more likely to grow up speaking Japanese than Portuguese, while a child born in Brazil is far more likely to grow up speaking Portuguese than Japanese. We do not regard this as mysterious because we possess a well-supported explanation: languages are transmitted socially and historically. The geographical distribution of language is therefore exactly what we should expect if linguistic development is governed largely by cultural inheritance.</p>
+<p>Religious belief displays an analogous dependence on social environment. This does not prove that religious claims are false any more than the cultural transmission of language proves that Japanese vocabulary is false. But the analogy changes once religious traditions make additional claims about <strong>divine revelation</strong>. If one religion holds that a perfectly knowledgeable and powerful God has disclosed universally important truths to humanity, then the degree to which access to those truths resembles an inherited cultural variable becomes relevant evidence. Why should one's probability of encountering the correct revelation depend so heavily on birthplace, century, language, and local political history?</p>
+<p>The same point applies to religious disagreement. Mere disagreement is not especially surprising or epistemically devastating. Scientists disagree, philosophers disagree, and competent observers can reach different conclusions from difficult bodies of evidence. The stronger argument concerns the <strong>structure of the disagreement</strong>. Religious disagreement is not distributed randomly across otherwise similar populations. It clusters geographically and historically. Communities tend to reproduce the religions already dominant within them. Doctrinal variation often follows linguistic, political, ethnic, and institutional boundaries. Religious traditions evolve through identifiable historical lineages rather than appearing independently in equivalent form across populations.</p>
+<p>This is what makes the phenomenon evidentially interesting. A naturalistic model predicts that beliefs should be strongly shaped by precisely these variables because human cognition is embedded in cultural systems. A child does not independently survey the world's religious traditions and then select among them from an epistemically neutral position. Religious concepts are normally acquired long before such comparison is possible, embedded within trusted social relationships and reinforced through ritual, authority, identity, and community. To point this out is not to declare those beliefs false because of their origins. Rather, it is to ask what sort of world we would expect to observe if religious belief were primarily generated by cultural processes, and whether that expectation resembles the world we actually inhabit.</p>
+<p>The distinction also shows why the argument has an undercutting dimension. Ordinarily, widespread religious conviction might itself be offered as evidence for theism. One might argue that the persistence of religious experience across cultures suggests that human beings are responding to some genuine transcendent reality. But if the specific content of those convictions is strongly predicted by surrounding culture, then the evidential force of the raw fact of conviction is weakened. The question becomes whether religious experience reliably tracks an external religious reality or whether similar psychological and social mechanisms can generate intense conviction in incompatible systems. The argument, then, is not:</p>
+<blockquote>
+<p>People believe different religions because of culture, therefore all religions are false.</p>
+</blockquote>
+<p>It is closer to this:</p>
+<blockquote>
+<p>The actual distribution of religious belief exhibits the kind of geographical, historical, and cultural dependence that we would expect if religious traditions were substantially produced and transmitted through ordinary human mechanisms. To the extent that this pattern is less expected under particular forms of revelatory theism, it counts as evidence against those forms of theism.</p>
+</blockquote>
+<p>Once stated this way, the charge of genetic fallacy largely falls away. The argument is not attempting to infer falsity directly from origin. It is treating the <strong>distribution of beliefs itself as evidence</strong> and asking which competing explanatory model better accounts for it.</p>
+<h3>The likelihood formulation</h3>
+<p>The strongest form of the distributional argument is not deductive but comparative. Its central question is not whether a given observation is logically compatible with theism, but whether that observation is more expected under one explanatory model than another. Let <span class="math-inline">\(T\)</span> represent some specified form of theism and <span class="math-inline">\(N\)</span> a naturalistic alternative. Let <span class="math-inline">\(E_R\)</span> represent the observed religious landscape: the geographical clustering of belief, historical dependence of traditions, mutually incompatible revelations, doctrinal fragmentation, cultural inheritance, and the persistence of sincere disagreement. The relevant comparison is then between:</p>
+<div class="math-block">\[
+P(E_R \mid T)
+\]</div>
+<p>and</p>
+<div class="math-block">\[
+P(E_R \mid N).
+\]</div>
+<p>If the observed religious landscape is more probable under <span class="math-inline">\(N\)</span> than under <span class="math-inline">\(T\)</span>, then <span class="math-inline">\(E_R\)</span> counts as evidence favoring <span class="math-inline">\(N\)</span> over <span class="math-inline">\(T\)</span>, other things being equal. In Bayesian form, the comparison can be represented by the posterior odds:</p>
+<div class="math-block">\[
+\frac{P(T\mid E_R)}{P(N\mid E_R)}
+=
+\frac{P(T)}{P(N)}
+\times
+\frac{P(E_R\mid T)}{P(E_R\mid N)}.
+\]</div>
+<p>The point of introducing this formalism is not to pretend that precise numerical values can be assigned to every theological hypothesis. Rather, it clarifies the logical structure of the argument. Evidence favors one hypothesis over another to the extent that the evidence is more expected under the former. Even rough comparative judgments can therefore matter.</p>
+<h3>Compatibility versus expectedness</h3>
+<p>This immediately exposes an important distinction between <strong>compatibility</strong> and <strong>expectedness</strong>. A theist may respond to religious diversity by showing that there is some possible reason God might permit it. Perhaps God values freedom, permits cultural development, allows human beings to distort revelation, or intends religious ambiguity to serve some greater good. Such responses may establish that religious diversity is not logically inconsistent with theism. But logical compatibility is a relatively weak achievement. The evidential question remains:</p>
+<div class="math-block">\[
+\text{How likely should we have expected this pattern to be if the hypothesis were true?}
+\]</div>
+<p>A model can accommodate an observation after the fact without having made that observation particularly probable beforehand. This distinction matters because otherwise almost any sufficiently flexible hypothesis can be protected from evidence merely by constructing a possible explanation for whatever occurs. Consider a simplified theological hypothesis:</p>
+<div class="math-block">\[
+T_R:
+\]</div>
+<p>A perfectly knowledgeable and powerful God desires that human beings know certain religious truths of great importance and has acted in history to reveal them. This is already more informative than bare theism because it generates expectations. If such a God intends successful communication, then we might expect some degree of convergence, accessibility, clarity, or cross-cultural stability in the content of revelation. Exactly how much depends on further theological assumptions, but the hypothesis is no longer neutral about every possible distribution of belief. Now compare this with a broad naturalistic hypothesis:</p>
+<div class="math-block">\[
+N_R:
+\]</div>
+<p>Religious beliefs and traditions arise, develop, and persist primarily through ordinary human psychological, cultural, political, and historical processes. Under <span class="math-inline">\(N_R\)</span>, substantial geographical clustering is unsurprising. Cultural inheritance predicts that children will disproportionately acquire the religion of their family and surrounding community. Historical contingency predicts that religions will spread unevenly, following migration, conquest, trade routes, missionary activity, political patronage, and institutional continuity. Social fragmentation predicts schisms and competing interpretations. Cultural contact predicts borrowing, adaptation, and syncretism.</p>
+<p>The resulting evidential question is not whether <span class="math-inline">\(T_R\)</span> can somehow explain these same facts. It surely can once enough additional assumptions are supplied. The question is whether the observed pattern is more natural or expected under one model than the other. This is especially important when considering not merely the existence of disagreement but its fine-grained structure. Suppose religious disagreement were distributed almost randomly: people raised in the same communities, exposed to the same traditions, and embedded in the same institutions regularly arrived at entirely independent religious systems with no identifiable relation to their cultural environment. Such a world would look different from ours.</p>
+<p>Instead, religious belief exhibits substantial historical continuity. Traditions descend from earlier traditions. Doctrines develop through identifiable controversies. Religious boundaries often overlap with linguistic, ethnic, political, and geographical boundaries. Conversion occurs, but conversion itself frequently follows identifiable networks of social contact, institutional power, migration, marriage, or political change. The evidence therefore possesses structure that a good explanatory model should account for.</p>
+<p>This point also helps clarify why the argument should not be reduced to the claim that religious people are irrational or gullible. The model-comparison argument need not make any such assumption. Human beings can be intelligent, reflective, and sincere while still being strongly influenced by the informational environments into which they are born. Indeed, cultural dependence is entirely compatible with sophisticated reasoning. One can reason carefully from premises and concepts that were themselves acquired through a historically contingent social environment.</p>
+<p>Nor does the argument require claiming that all religious traditions are equally dependent upon culture, or that no religious belief ever arises through independent reflection. The relevant claim is statistical and explanatory. If the broad distribution of religious belief tracks ordinary cultural variables to a substantial degree, then that pattern itself becomes evidence to be accounted for.</p>
+<h3>Religious experience as distributional evidence</h3>
+<p>The same reasoning applies to allegedly revelatory experiences. Suppose adherents of incompatible traditions report experiences that they interpret as confirmation of their respective religions. A Christian may experience Christ, a Hindu may experience a deity within a Hindu framework, and members of other traditions may report correspondingly tradition-specific encounters. The existence of such experiences may initially seem to support a supernatural interpretation. But their evidential force depends partly on how expected their distribution is under competing models.</p>
+<p>If religious experiences tend to take forms strongly shaped by prior cultural concepts and expectations, then a naturalistic account gains explanatory leverage. The fact that people experience what their surrounding tradition has prepared them to recognize is precisely the kind of pattern one might expect if psychological and cultural mechanisms substantially structure the experience. Again, this does not establish that every such experience is non-veridical. It instead changes the evidential comparison. The distributional argument is therefore best understood as a likelihood argument. It asks not:</p>
+<blockquote>
+<p>Can theism survive the existence of religious diversity?</p>
+</blockquote>
+<p>but:</p>
+<blockquote>
+<p>Which model better predicts the particular form that religious diversity actually takes?</p>
+</blockquote>
+<p>That shift is significant. Once the debate is framed in terms of expectedness rather than bare consistency, merely producing a possible theological explanation is no longer sufficient. The explanation must improve the model's fit to the evidence without relying on unconstrained assumptions introduced solely to accommodate what is already known. This will become especially important when considering the positive naturalistic mechanisms that generate religious diversity. The force of the alternative hypothesis does not rest merely on the fact that religions differ. It rests on the fact that we possess independently observable processes capable of producing many of the patterns that the distributional argument seeks to explain.</p>
+<p><a id="section-3"></a></p>
+<h2>3. The Naturalistic Alternative: Mechanisms, Culture, and Syncretism</h2>
+<h3>From correlation to mechanism</h3>
+<p>The distributional argument becomes considerably stronger once it moves beyond the observation that religious belief correlates with culture and identifies mechanisms capable of producing those correlations. It is one thing to note that religions differ across societies. It is another to possess a causal account of how those differences arise, persist, and transform over time.</p>
+<p>A naturalistic model has access to a wide range of independently studied processes: cultural transmission, conformity, prestige-biased learning, institutional reinforcement, migration, political coercion, demographic change, doctrinal reinterpretation, schism, cultural diffusion, and syncretism. These mechanisms do not merely make religious diversity possible. They can help explain why particular traditions take the forms they do and why their distributions change in historically intelligible ways.</p>
+<h3>Syncretism as a generative mechanism</h3>
+<p>Syncretism is especially important in this respect. Religious traditions rarely develop in complete isolation. When communities come into sustained contact, beliefs, rituals, symbols, institutions, and theological categories can be borrowed, reinterpreted, or incorporated into existing systems. A tradition may absorb practices from neighboring religions, reinterpret older festivals within a new theological framework, adopt philosophical vocabulary from another intellectual culture, or transform local deities and customs into forms compatible with a broader religious system. The evidential significance of this is not simply that religions influence one another. It is that syncretism provides a <strong>generative mechanism</strong> for religious development.</p>
+<p>Suppose two traditions come into sustained contact and we later observe overlapping ritual forms, theological vocabulary, or narrative structures. A cultural model predicts that such overlap may emerge through ordinary processes of transmission and adaptation. If historical evidence reveals the relevant contact, pathways of influence, and gradual transformation, then the explanation acquires further support. The explanatory structure is something like:</p>
+<div class="math-block">\[
+\text{contact} + \text{transmission} + \text{reinterpretation}
+\rightarrow
+\text{doctrinal or ritual convergence}.
+\]</div>
+<p>The same logic applies to schism. Religious traditions frequently divide along political, linguistic, institutional, or interpretive lines. Once competing authorities emerge, differences can become self-reinforcing. Separate communities develop distinct institutions, educational systems, liturgies, commentarial traditions, and mechanisms of group identity. What may begin as a relatively narrow disagreement can therefore produce increasingly divergent religious systems.</p>
+<p>Again, this is not merely a statement that disagreement occurs. It identifies processes through which disagreement can become historically entrenched.</p>
+<p>Cultural evolution also helps explain why certain religious ideas persist while others disappear. Beliefs that are easily remembered, socially reinforced, institutionally protected, or connected to group identity may have transmission advantages independent of their truth. Rituals can strengthen group cohesion. Norms may persist because they coordinate behavior. Doctrines may become durable because they are embedded within powerful institutions or repeated through education and liturgy.</p>
+<p>None of this requires the assumption that religious people are consciously manipulating one another or that religious traditions are deliberately fabricated. Cultural evolution can operate without centralized design. Ideas can be selected, retained, modified, and transmitted through countless local decisions made by sincere participants. This matters because it gives the naturalistic model explanatory depth. The claim is not simply:</p>
+<blockquote>
+<p>Religion is caused by culture.</p>
+</blockquote>
+<p>That would be too vague to do much explanatory work. The stronger claim is that identifiable social and psychological mechanisms can generate many of the observed features of religious history:</p>
+<div class="math-block">\[
+\text{social learning}
++
+\text{institutional selection}
++
+\text{historical contingency}
++
+\text{cultural interaction}
+\rightarrow
+\text{structured religious diversity}.
+\]</div>
+<p>These mechanisms also possess an important epistemic advantage: they are supported independently of their application to religion. We know cultural transmission occurs because it is observable in language, customs, political ideology, technology, fashion, morality, and social norms. We know conformity and prestige effects influence belief formation in secular contexts. We know institutions shape what information is preserved and transmitted. We know migration and political power alter cultural distributions. We know ideas change through contact between groups.</p>
+<p>The naturalistic model is therefore not inventing these mechanisms solely to explain an otherwise puzzling religious landscape. It is applying processes already established elsewhere to a domain in which they appear to operate in recognizably similar ways. That point becomes important when comparing naturalistic and theological explanations. Consider two claims:</p>
+<blockquote>
+<p>Religious beliefs cluster because beliefs are transmitted through families, communities, institutions, and social networks.</p>
+</blockquote>
+<p>and:</p>
+<blockquote>
+<p>God permits religious beliefs to cluster because this particular degree of religious diversity serves some divine purpose.</p>
+</blockquote>
+<p>Both claims might, in principle, be true. But they occupy different explanatory positions. The first invokes a mechanism for which we have extensive independent evidence and whose effects can be studied across multiple domains. The second introduces an intentional explanation whose evidential basis may depend largely on the very phenomenon it is being used to explain. This does not automatically make the second explanation false. It does, however, raise a question of comparative explanatory economy.</p>
+<p>The same issue arises with religious experience. If a person's interpretation of an unusual experience is strongly shaped by prior expectations, religious vocabulary, community narratives, and available conceptual categories, then the naturalistic model possesses a mechanism for explaining why experiences differ across traditions. A person does not encounter an uninterpreted experience and only afterward select from every possible theological description. Experience is filtered through existing cognitive and cultural frameworks. This allows the naturalistic model to explain not only why religious experiences occur, but why they so often possess tradition-specific content.</p>
+<h3>Truth-insensitive belief formation</h3>
+<p>At this point an important distinction should be drawn between <strong>explaining a belief</strong> and <strong>explaining it away</strong>. The mere existence of a causal explanation for a belief does not undermine its truth. Every belief has some causal history. A mathematician's belief in a theorem can be explained through education, cognition, and social transmission without thereby becoming epistemically suspect. The skeptical force arises when the proposed mechanism is sufficiently <strong>truth-insensitive</strong>.</p>
+<p>A mechanism is truth-insensitive when it would tend to produce a belief whether or not the proposition believed were true. If being born into a particular community strongly predicts adherence to that community's religion regardless of which religion, if any, is actually divinely revealed, then the mechanism responsible for producing the belief may weaken its evidential force. The point can be expressed schematically. Suppose some mechanism <span class="math-inline">\(M\)</span> tends to generate belief <span class="math-inline">\(B\)</span> both when <span class="math-inline">\(B\)</span> is true and when <span class="math-inline">\(B\)</span> is false:</p>
+<div class="math-block">\[
+P(B \mid M,\text{truth})
+\approx
+P(B \mid M,\text{falsity}).
+\]</div>
+<p>Then the fact that a person possesses <span class="math-inline">\(B\)</span> provides less discrimination between the truth and falsity of <span class="math-inline">\(B\)</span> than it would if the belief-forming process were highly sensitive to truth. This becomes particularly relevant when structurally similar mechanisms generate mutually incompatible convictions. If Catholics, Muslims, Hindus, Protestants, and members of other traditions can all acquire profound confidence in incompatible religious systems through broadly similar processes of cultural formation, then the existence of confidence alone becomes weaker evidence for any one system.</p>
+<p>The cumulative significance of these mechanisms is therefore not that they logically exclude revelation. A theist can always maintain that God works through cultural processes or that genuine revelation is later transmitted through ordinary human institutions. The stronger point is comparative. Once independently established naturalistic mechanisms can explain a substantial amount of the observed religious pattern, the explanatory burden on the theistic model increases. The theist must show not merely that divine revelation remains possible, but that the specifically theological component of the explanation adds enough predictive or explanatory value to justify its inclusion.</p>
+<p>The alternative hypothesis thus gains strength not from a bare appeal to “culture,” but from the existence of a network of empirically grounded mechanisms that generate many of the features we actually observe. Religious diversity is not only correlated with human history. To a considerable extent, it appears to be produced through the same kinds of processes by which other cultural systems emerge, spread, fragment, and change.</p>
+<p><a id="section-4"></a></p>
+<h2>4. Extending the Argument to Suffering</h2>
+<h3>The distribution of suffering</h3>
+<p>The same style of reasoning can be extended beyond religious disagreement to the problem of suffering. Traditional formulations of the problem of evil often focus on the existence or quantity of suffering: if a perfectly good and powerful God exists, why is there so much apparently pointless pain? But a distributional approach asks a somewhat different question. It asks why suffering is distributed across the world in the particular ways that it is. Let <span class="math-inline">\(E_S\)</span> represent not merely the existence of suffering, but its observed structure: who suffers, from what causes, under what historical conditions, and with what dependence on geography, technology, wealth, political institutions, and biological circumstance. The relevant comparison is then:</p>
+<div class="math-block">\[
+P(E_S \mid T)
+\]</div>
+<p>versus</p>
+<div class="math-block">\[
+P(E_S \mid N).
+\]</div>
+<p>Once again, the issue is not whether the observed pattern is logically compatible with theism. The issue is whether it is comparatively expected. Human suffering is strikingly patterned. Rates of infant mortality, infectious disease, famine, violent death, and preventable illness vary dramatically across time and place. A person born in one century may face dangers that are largely absent for someone born a few centuries later. A child born into a wealthy society with clean water, vaccination, stable political institutions, and modern medicine faces radically different risks from a child born into poverty, war, famine, or a region without basic sanitation.</p>
+<p>These differences are often explicable in ordinary causal terms. Cholera follows contaminated water. Malaria tracks ecological conditions and mosquito populations. Famine is shaped by agricultural systems, climate, political institutions, war, and distribution networks. Mortality falls with vaccination, antibiotics, improved nutrition, sanitation, and medical infrastructure. Earthquakes follow geology. Hurricanes follow atmospheric and oceanic processes. Violence tracks political instability, institutions, material incentives, and historical conflict.</p>
+<p>The result is not merely a world containing suffering. It is a world in which suffering exhibits a strong <strong>natural causal structure</strong>. This matters because under a naturalistic model such structure is unsurprising. If there is no providential agent distributing suffering according to moral or spiritual purposes, then we should expect human welfare to depend heavily upon biological vulnerability, physical environment, historical contingency, and the institutions human beings manage to construct. The broad structure might be represented as:</p>
+<div class="math-block">\[
+\text{biology}
++
+\text{environment}
++
+\text{institutions}
++
+\text{technology}
++
+\text{history}
+\rightarrow
+\text{distribution of suffering}.
+\]</div>
+<p>The remarkable fact is how much of the actual distribution can be explained in precisely these terms. This generates an argument distinct from simply pointing to some especially horrifying event. Even if a theist can supply a possible justification for one instance of suffering, there remains a broader question about why suffering systematically tracks morally arbitrary variables.</p>
+<p>Why should the century into which one is born matter so much? Why should access to basic goods depend so heavily on geography, political history, inherited wealth, or the accidental availability of medical knowledge? Why should improvements in sanitation or vaccination dramatically alter outcomes that, on many forms of providential theism, occur under the governance of a perfectly good and powerful agent? The skeptical pressure comes from the fact that these variables are not obviously related to moral deservingness, spiritual development, or divine purpose. They are often simply features of causal history.</p>
+<p>This does not mean that theism predicts equal levels of suffering for everyone. Few sophisticated theistic models entail such a claim. Human freedom, environmental regularity, and the possibility of stable natural laws may all introduce variation. The point is more modest: the more extensively the actual distribution of suffering is predicted by ordinary causal processes, the less explanatory work seems to remain for providential hypotheses.</p>
+<h3>Intervention, technology, and causal structure</h3>
+<p>This becomes particularly striking when comparing historical periods. Consider the enormous difference between living before and after the development of germ theory, antibiotics, vaccination, anesthesia, modern obstetrics, and sanitation. Many forms of suffering once regarded as unavoidable features of human life became preventable through human discovery. The decline of a disease after the introduction of an effective intervention is exactly what a natural causal model predicts. Remove the relevant cause or interrupt the causal pathway, and the suffering declines. The pattern is roughly:</p>
+<div class="math-block">\[
+\text{causal mechanism identified}
+\rightarrow
+\text{human intervention}
+\rightarrow
+\text{reduction in suffering}.
+\]</div>
+<p>This has an important evidential implication. If suffering were strongly governed by independent divine purposes, one might expect the distribution to depart in some detectable way from what ordinary natural causes predict. Instead, improvement often occurs when human beings alter the relevant natural or institutional conditions.</p>
+<p>Clean the water and waterborne disease declines. Develop an effective vaccine and infection rates fall. Improve food distribution and famine risk decreases. Establish more stable institutions and some forms of violence diminish. The world behaves, to a striking degree, as though these ordinary causes are doing the explanatory work.</p>
+<p>This need not imply that God could not act through natural causes. A theist may argue that providence operates through precisely these mechanisms. But this move changes the explanatory question rather than eliminating it. If both the naturalistic and theistic model predict that ordinary causes will operate in the same way, then the specifically theological component has not yet explained why the observed pattern should favor theism.</p>
+<h3>Historical path dependence and the parallel with religion</h3>
+<p>The distributional problem becomes sharper when suffering is considered together with religious belief. There is a notable parallel between the two domains. Access to religious traditions depends heavily upon where and when one is born. So does exposure to disease, famine, violence, and medical care. Religious knowledge is historically distributed; so is protection from suffering. A person's epistemic and material fortunes are therefore both deeply influenced by circumstances over which that person has little or no control.</p>
+<p>One might represent the parallel this way:</p>
+<div class="math-block">\[
+\text{birthplace} + \text{historical period}
+\rightarrow
+\begin{cases}
+\text{religious environment} \\
+\text{material and medical environment}
+\end{cases}
+\]</div>
+<p>This generates a broader question for providential forms of theism. If God is concerned with both human welfare and human knowledge of important religious truths, why are both distributed so heavily through morally arbitrary historical conditions? A person born into one society may receive extensive exposure to what a particular religion regards as saving revelation while another may never encounter it in a recognizable form. Likewise, one person may live after the development of life-saving medical technologies while another dies centuries earlier from an easily preventable infection. The point is not that any single inequality logically contradicts divine goodness. It is that the overall pattern appears deeply <strong>path dependent</strong>.</p>
+<p>Path dependence means that present outcomes are strongly shaped by earlier historical events. Once a society acquires certain institutions, technologies, religious traditions, or political structures, those inheritances affect what later generations receive. Small differences at earlier points can produce enormous downstream consequences. Under naturalism, this is exactly what one would expect. Human beings inherit both advantages and disadvantages from prior causal history.</p>
+<p>Under providential theism, however, the same pattern requires additional explanation. If God possesses the ability to intervene, guide events, reveal truths, answer prayers, or protect individuals, then the extent to which outcomes track ordinary historical pathways becomes evidentially relevant. This is especially so when theological explanations appeal to highly individualized purposes. A given instance of suffering may be explained as soul-making, discipline, the consequence of free will, or the precondition for some greater good. Yet the aggregate pattern often appears more closely aligned with epidemiology, economics, geography, and institutional capacity than with any visible moral or spiritual structure. The question is therefore not simply:</p>
+<blockquote>
+<p>Why did this person suffer?</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p>Why does suffering, across populations and historical periods, distribute itself according to the kinds of variables that would govern it if ordinary natural and social causes were doing most of the work?</p>
+</blockquote>
+<p>This shift from isolated cases to population-level structure mirrors the earlier move in the discussion of religious belief. Just as the argument from religious diversity is stronger when it focuses on the patterned geography and history of belief rather than on one believer's upbringing, the problem of suffering becomes stronger when it examines the systematic distribution of harm rather than relying exclusively on individual tragedies. The cumulative force comes from the similarity between the domains. Religious belief, disease, prosperity, mortality, institutional stability, and access to knowledge all exhibit strong dependence upon historical and social context. These patterns are intelligible through independently supported causal mechanisms.</p>
+<p>This does not by itself establish naturalism. But it strengthens the comparative case. The more comprehensively the observed world can be generated by ordinary biological, physical, historical, and social mechanisms, the more a providential model must explain why divine governance produces a world whose distributional structure so closely resembles what we would expect in its absence.</p>
+<p><a id="section-5"></a></p>
+<h2>5. Theological Responses and Auxiliary Hypotheses</h2>
+<h3>Auxiliaries are legitimate in principle</h3>
+<p>At this stage, a theist can reasonably object that the comparison has been made too quickly. A theological model need not consist only of the bare claim that God exists. It may contain further commitments about divine purposes, human freedom, the value of stable natural laws, the role of suffering in moral development, the dangers of coercive revelation, or the possibility that human beings distort genuine revelation. These additional claims can alter what the model predicts.</p>
+<p>This is an important point. There is nothing inherently illegitimate about introducing auxiliary assumptions into an explanatory theory. Every serious model contains them.</p>
+<p>Naturalism, for example, does not explain religious diversity simply by asserting that no God exists. It relies on more specific theories concerning psychology, cultural transmission, institutional behavior, demography, political history, economics, and social learning. Likewise, explanations of suffering depend on epidemiology, geology, evolutionary biology, public health, economics, and political institutions. So the issue cannot simply be that theism requires additional assumptions. The real question is what kind of assumptions are being introduced, how independently justified they are, how much explanatory work they perform, and whether they remain coherent when applied across the total body of evidence.</p>
+<p>Consider divine hiddenness. Suppose the initial theological model is something like:</p>
+<div class="math-block">\[
+T_0:
+\]</div>
+<p>A perfectly loving God desires a meaningful relationship with human beings. One might initially expect such a God to make his existence reasonably clear. Yet widespread sincere nonbelief and religious ambiguity seem to complicate that expectation. The theist may then introduce an auxiliary hypothesis:</p>
+<div class="math-block">\[
+A_1:
+\]</div>
+<p>God values epistemic freedom and therefore avoids making his existence overwhelmingly obvious. The combined model becomes:</p>
+<div class="math-block">\[
+T_1 = T_0 + A_1.
+\]</div>
+<p>This modified model may make divine hiddenness more expected than it was under <span class="math-inline">\(T_0\)</span> alone. Similarly, the problem of suffering might invite another auxiliary:</p>
+<div class="math-block">\[
+A_2:
+\]</div>
+<p>God permits suffering because certain forms of moral or spiritual development require adversity. Or religious diversity might be addressed with:</p>
+<div class="math-block">\[
+A_3:
+\]</div>
+<p>God reveals truth through human cultures and therefore permits revelation to become historically fragmented and culturally conditioned. Again, there is nothing automatically illegitimate about any of these additions. They may even be true.</p>
+<h3>Prediction rather than mere accommodation</h3>
+<p>But once they are added, the explanatory burden shifts. The relevant question is no longer merely whether the auxiliary produces compatibility with the troublesome evidence. We must ask whether there are reasons to believe the auxiliary <strong>independently of its usefulness in rescuing the theory</strong>. This distinction matters because almost any observation can be reconciled with a sufficiently flexible intentional hypothesis. Suppose we observe religious clarity. The theist might say that God values making himself known.</p>
+<p>Each response may be possible considered in isolation. But a model that can move effortlessly between opposed divine motivations risks becoming difficult to test. The problem is therefore not the mere presence of auxiliary assumptions but <strong>unconstrained flexibility</strong>.</p>
+<p>A useful explanatory auxiliary should normally do more than repair a local difficulty. It should be supported by reasons that do not depend entirely upon the problematic observation itself. It should generate expectations elsewhere. And once introduced, it should constrain the theory rather than disappearing as soon as another datum is considered. This gives us a preliminary distinction between two kinds of modification. A relatively well-motivated auxiliary might have a structure such as:</p>
+<div class="math-block">\[
+\text{independent evidence for } A
+\rightarrow
+A \text{ predicts } E
+\rightarrow
+E \text{ is observed}.
+\]</div>
+<p>A more suspicious modification has the reverse structure:</p>
+<div class="math-block">\[
+E \text{ is observed}
+\rightarrow
+A \text{ is invented to make } E \text{ compatible with the theory}.
+\]</div>
+<h3>What a good auxiliary should do</h3>
+<p>Of course, scientific reasoning sometimes legitimately proceeds in the second direction. Unexpected evidence can motivate the discovery of a new hypothesis. The fact that an auxiliary is proposed after observing the evidence does not by itself make it ad hoc. What matters is what happens next. Does the new assumption gain independent support? Does it explain more than the single datum that motivated it?</p>
+<p>Does it generate novel predictions? Does it fit naturally with the rest of the theory? Does it restrict what the theory can say about other observations? Or does it function mainly as a device for preserving the original theory from apparent counterevidence? These questions become particularly important in theology because many explanations appeal to divine intentions that are not independently observable.</p>
+<p>When a naturalistic explanation appeals to cultural transmission, one can study cultural transmission directly. When it appeals to pathogens, demographic change, institutional incentives, or social networks, those mechanisms can be investigated independently of the particular case under dispute. A theological auxiliary often has a different structure. It may appeal to claims such as:</p>
+<p>These are not merely claims about what God can do. They are claims about what God wants, what God values, how God ranks competing goods, and which possible outcomes God regards as preferable. In other words, they are claims about <strong>divine psychology</strong>. Once this is recognized, such explanations should be treated as substantive theoretical commitments rather than cost-free possibilities.</p>
+<p>If a theist says that God permits ambiguity because epistemic freedom is extremely valuable, that claim becomes part of the model. It should therefore affect predictions elsewhere. The model cannot appeal to divine concern for epistemic freedom only when explaining hiddenness and then ignore that preference when considering coercive religious institutions, threats attached to disbelief, or traditions that strongly discourage doubt. Likewise, if suffering is explained through soul-making, then the proposed relationship between suffering and moral development should have some systematic content. One would want to know whether the actual distribution of suffering resembles what that hypothesis predicts rather than merely whether some suffering can be retrospectively associated with some good.</p>
+<p>This is the methodological point that matters most. Auxiliary hypotheses should not merely <strong>increase flexibility</strong>. They should increase explanatory structure. A theory becomes more informative when additional assumptions narrow the range of outcomes it predicts. It becomes less informative when every unexpected observation simply produces another reason why an unconstrained agent might have wanted precisely that outcome. The distinction can be summarized as follows:</p>
+<div class="math-block">\[
+\text{Good auxiliary assumption}
+\approx
+\text{greater explanatory power}
++
+\text{greater constraint}.
+\]</div>
+<p>Whereas:</p>
+<div class="math-block">\[
+\text{Ad hoc auxiliary assumption}
+\approx
+\text{greater compatibility}
++
+\text{little additional constraint}.
+\]</div>
+<p>This sets up the deeper issue of ad hocness. The problem is not that theological models contain auxiliary assumptions. The problem arises when those assumptions are weakly supported, introduced primarily to neutralize counterevidence, and sufficiently flexible that they can accommodate nearly any possible observation. The next question, then, is what exactly it means for an explanation to be ad hoc, and why excessive accommodation can weaken rather than strengthen a model.</p>
+<p><a id="section-6"></a></p>
+<h2>6. Ad Hoc Explanation and Divine Psychology</h2>
+<h3>What “ad hoc” should mean</h3>
+<p>Calling an explanation “ad hoc” can easily become rhetorical unless the term is made precise. The mere fact that a hypothesis is introduced in response to troublesome evidence does not make it illegitimate. Scientific inquiry frequently proceeds by revising theories in light of unexpected observations. A new auxiliary may begin as a response to apparent counterevidence and later prove independently fruitful. The problem arises when a modification improves a theory’s fit to known evidence without adding corresponding explanatory constraint. Suppose a theory begins as:</p>
+<div class="math-block">\[
+T
+\]</div>
+<p>and encounters evidence <span class="math-inline">\(E_1\)</span> that appears surprising under it. An auxiliary assumption <span class="math-inline">\(A_1\)</span> is introduced:</p>
+<div class="math-block">\[
+T_1 = T + A_1.
+\]</div>
+<p>Later, another observation <span class="math-inline">\(E_2\)</span> creates difficulty, so another assumption is added:</p>
+<div class="math-block">\[
+T_2 = T + A_1 + A_2.
+\]</div>
+<p>The process continues:</p>
+<div class="math-block">\[
+T^\ast = T + A_1 + A_2 + A_3 + \cdots + A_n.
+\]</div>
+<p>There is nothing formally wrong with such theoretical development. The important question is whether the resulting model has become genuinely more explanatory or merely more adaptable.</p>
+<h3>Overfitting and discriminative power</h3>
+<p>A sufficiently flexible model can always fit existing data. If each troublesome observation can be met with a new assumption designed specifically to accommodate it, then retrospective fit becomes cheap. The model succeeds not because it strongly predicted the observed evidence, but because it possesses enough adjustable components to reproduce almost any possible outcome. This is closely related to the familiar problem of overfitting. A model can match the data already observed extremely well while possessing little ability to discriminate among future possibilities. What matters is not merely how well a theory can be made to fit what we already know, but how much it constrains what we should expect before the evidence is observed.</p>
+<p>An ad hoc auxiliary therefore tends to display several related features. First, it has <strong>little independent motivation</strong>. Its principal reason for being believed is that it prevents some observation from counting against the theory. Second, it possesses weak predictive content. It explains the datum that motivated it but does not generate clear expectations beyond that datum.</p>
+<p>Third, it is highly flexible. If the world had turned out differently, a slightly altered version of the same auxiliary could have been invoked with comparable ease. Fourth, it does not meaningfully constrain other parts of the theory. It functions locally, solving one problem while carrying few implications elsewhere. Finally, several such auxiliaries may conflict with one another when the theory is evaluated against the total evidence.</p>
+<h3>A practical test for ad hocness</h3>
+<div class="table-wrap"><table class="two-col comparison-table">
+<thead>
+<tr>
+<th>Strong auxiliary</th>
+<th>Ad hoc auxiliary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Strong auxiliary">Has independent motivation</td>
+<td data-label="Ad hoc auxiliary">Is motivated mainly by troublesome evidence</td>
+</tr>
+<tr>
+<td data-label="Strong auxiliary">Explains more than the datum that prompted it</td>
+<td data-label="Ad hoc auxiliary">Repairs one local difficulty</td>
+</tr>
+<tr>
+<td data-label="Strong auxiliary">Generates further expectations</td>
+<td data-label="Ad hoc auxiliary">Adds little predictive content</td>
+</tr>
+<tr>
+<td data-label="Strong auxiliary">Constrains the theory elsewhere</td>
+<td data-label="Ad hoc auxiliary">Can be adjusted easily when contrary evidence appears</td>
+</tr>
+<tr>
+<td data-label="Strong auxiliary">Exposes the model to possible failure</td>
+<td data-label="Ad hoc auxiliary">Mainly protects the model from failure</td>
+</tr>
+<tr>
+<td data-label="Strong auxiliary">Helps unify several observations</td>
+<td data-label="Ad hoc auxiliary">Adds another special-purpose patch</td>
+</tr>
+</tbody>
+</table></div>
+<p>These features can be understood through the distinction between <strong>prediction and accommodation</strong>. Suppose hypothesis <span class="math-inline">\(H\)</span> independently predicts evidence <span class="math-inline">\(E\)</span>. Then observing <span class="math-inline">\(E\)</span> confirms <span class="math-inline">\(H\)</span> to the extent that <span class="math-inline">\(E\)</span> was more likely under <span class="math-inline">\(H\)</span> than under relevant alternatives. But if <span class="math-inline">\(H\)</span> is modified only after <span class="math-inline">\(E\)</span> is known, producing <span class="math-inline">\(H^\ast\)</span> specifically so that <span class="math-inline">\(E\)</span> becomes likely, the evidential situation is different. The mere fact that</p>
+<div class="math-block">\[
+P(E\mid H^\ast)
+\]</div>
+<p>is high tells us relatively little if <span class="math-inline">\(H^\ast\)</span> was constructed precisely in order to ensure that result. The relevant question becomes how plausible <span class="math-inline">\(H^\ast\)</span> was independently of <span class="math-inline">\(E\)</span>. In Bayesian terms, auxiliary assumptions do not enter a model for free. If a theological response requires adding an assumption <span class="math-inline">\(A\)</span>, then what matters is not merely:</p>
+<div class="math-block">\[
+P(E\mid T,A).
+\]</div>
+<p>One must also consider how plausible the combined model is:</p>
+<div class="math-block">\[
+P(T,A).
+\]</div>
+<p>A theory can increase the likelihood of the evidence by adding increasingly specific assumptions while simultaneously lowering the prior plausibility of the overall package. Better fit does not automatically mean better explanation. This point is particularly important when the auxiliary concerns the intentions of an unseen agent. Intentional explanations are extraordinarily flexible because almost any outcome can be associated with some possible motive. The problem is not that any particular explanation is impossible. It is that the space of possible divine intentions is so large that almost any observation can potentially be assigned a retrospective purpose.</p>
+<p>A model of this kind risks losing discriminative power. For an explanation to be informative, some observations must count against it. If every possible outcome can be interpreted as consistent with a different divine intention, then the model may approach a state in which:</p>
+<div class="math-block">\[
+P(E\mid T)
+\]</div>
+<p>is treated as substantial for almost every conceivable <span class="math-inline">\(E\)</span>. But a hypothesis that regards nearly every possible observation as unsurprising predicts very little in particular. This is why saying that “God could have a reason” is not yet a sufficient response to a distributional argument. Possibility establishes only compatibility. Model comparison requires something stronger: a reason to think that the proposed motive is actually characteristic of the hypothesized God and that it makes the observed evidence more probable than relevant alternatives. The contrast with a stronger auxiliary can be made clear.</p>
+<p>Suppose some independent theological doctrine gives us good reason to believe that God strongly values a particular good <span class="math-inline">\(G\)</span>. Suppose further that this commitment existed prior to confronting some observation <span class="math-inline">\(E\)</span> and that <span class="math-inline">\(G\)</span> genuinely predicts that <span class="math-inline">\(E\)</span> should occur. Then the auxiliary has explanatory legitimacy. Its structure is approximately:</p>
+<div class="math-block">\[
+\text{independent reason for }G
+\rightarrow
+\text{prediction of }E
+\rightarrow
+\text{observation of }E.
+\]</div>
+<p>By contrast, the suspicious pattern is:</p>
+<div class="math-block">\[
+E
+\rightarrow
+\text{search for some divine preference }G_E
+\rightarrow
+\text{claim that }G_E\text{ explains }E.
+\]</div>
+<p>The latter method can be repeated indefinitely because the possible preferences of an unconstrained supernatural agent are themselves difficult to delimit. This also shows why merely appealing to a divine attribute such as goodness does not solve the problem. “God is good” is too abstract to determine what God should do in many particular situations. To explain concrete observations, the theist typically needs a much more specific preference ordering. For example:</p>
+<div class="math-block">\[
+\text{epistemic freedom}
+&gt;
+\text{greater evidential clarity}.
+\]</div>
+<p>Or:</p>
+<div class="math-block">\[
+\text{soul-making through adversity}
+&gt;
+\text{prevention of certain suffering}.
+\]</div>
+<p>Or:</p>
+<div class="math-block">\[
+\text{stable natural regularity}
+&gt;
+\text{frequent intervention to prevent harm}.
+\]</div>
+<p>These are considerably more substantive than the generic claim that God is good. They tell us something about how God supposedly weighs competing values. They therefore require justification. Moreover, the more detailed the preference ordering becomes, the more vulnerable it should become to evidence elsewhere. This is precisely what theoretical constraint means.</p>
+<p>A genuine auxiliary therefore creates <strong>risk</strong> for the theory. It does not merely protect the theory from one observation; it exposes the model to possible failure elsewhere. That is a mark of explanatory seriousness. An assumption that says only enough to remove a local difficulty while generating no wider consequences is methodologically weaker than one that integrates multiple observations within a single constrained framework. We can express the difference schematically:</p>
+<div class="math-block">\[
+\text{explanatory improvement}
+=
+\text{better fit}
++
+\text{independent support}
++
+\text{new constraints}.
+\]</div>
+<p>Whereas ad hoc accommodation looks more like:</p>
+<div class="math-block">\[
+\text{apparent improvement}
+=
+\text{better fit}
+-
+\text{little independent support}
+-
+\text{little new constraint}.
+\]</div>
+<p>This is especially important for the broader argument developed here. The skeptical case does not depend on insisting that theism must remain maximally simple or that no theological elaboration is permitted. The question is whether the elaborations required to explain religious diversity, hiddenness, suffering, revelation, miracles, and institutional behavior form a coherent and independently motivated theory. If each observation receives its own locally tailored account, then the resulting theology may become extremely resistant to falsification while simultaneously becoming less explanatorily impressive.</p>
+<p>The central methodological challenge is therefore not merely whether theism can survive modification. Almost any sufficiently flexible theory can. The deeper issue is whether the modifications produce a model that predicts and unifies the evidence, or merely one that can accommodate it after the fact.</p>
+<h3>Divine psychology as a substantive commitment</h3>
+<p>Such explanations typically contain claims of the following form:</p>
+<div class="math-block">\[
+\text{God values } X,
+\]</div>
+<p>or:</p>
+<div class="math-block">\[
+\text{God values } X \text{ more strongly than } Y,
+\]</div>
+<p>or:</p>
+<div class="math-block">\[
+\text{God regards option } O_1 \text{ as preferable to } O_2.
+\]</div>
+<p>But claims of this kind are considerably more substantive than they can initially appear. They are not merely consequences of saying that God is perfectly good. They specify how God ranks competing goods, which costs God is willing to permit, what constraints govern divine action, and which alternatives God regards as acceptable. To see the difference, consider the statement:</p>
+<blockquote>
+<p>God is perfectly good.</p>
+</blockquote>
+<p>By itself, this provides only limited information about what God should do in a complicated world. A great many goods may conflict. Freedom may conflict with safety. Evidential clarity may conflict with some conception of freely chosen faith. Stable natural laws may conflict with intervention. The development of certain virtues may conflict with the immediate prevention of suffering.</p>
+<p>A concrete theodicy therefore usually requires a much more detailed claim:</p>
+<div class="math-block">\[
+\text{preserving epistemic freedom}
+&gt;
+\text{providing greater evidential clarity},
+\]</div>
+<p>or:</p>
+<div class="math-block">\[
+\text{allowing soul-making}
+&gt;
+\text{preventing certain instances of suffering}.
+\]</div>
+<p>Once stated this way, the explanatory burden becomes clearer. Why should we believe that this is in fact God’s preference ordering? The danger is that the preference can be inferred entirely from the outcome it is intended to explain. We observe that God, if he exists, is not unambiguously manifest. We then infer that God must value hiddenness, noncoercion, epistemic distance, or some related good strongly enough to permit that ambiguity. But the reasoning can become circular:</p>
+<div class="math-block">\[
+\text{God permits } E
+\rightarrow
+\text{God must value some good that justifies } E
+\rightarrow
+\text{that good explains why God permits } E.
+\]</div>
+<p>Unless we possess independent reason for the middle premise, the explanation risks simply translating the observation into a statement about divine preferences.</p>
+<h3>The divine option space</h3>
+<p>The problem becomes especially acute because the option space available to a traditionally omnipotent and omniscient God is extraordinarily large. When human agents face tragic choices, we often understand why they permit some harm: they are limited by knowledge, power, resources, or available alternatives. A surgeon may cause pain because no painless treatment exists. A government may accept some risk because eliminating it would impose prohibitive costs elsewhere. But those limitations cannot simply be transferred to an omnipotent agent.</p>
+<p>Suppose a theodicy claims that God permits some evil because it produces valuable good <span class="math-inline">\(G\)</span>. Establishing that <span class="math-inline">\(G\)</span> can result from the evil is not yet enough. The relevant question is whether God could have produced <span class="math-inline">\(G\)</span> by some alternative means involving less suffering. The comparison is not merely:</p>
+<div class="math-block">\[
+E \rightarrow G.
+\]</div>
+<p>It is between available worlds:</p>
+<div class="math-block">\[
+W_1 = G + E
+\]</div>
+<p>and:</p>
+<div class="math-block">\[
+W_2 = G + E^\prime,
+\]</div>
+<p>where <span class="math-inline">\(E^\prime\)</span> represents less severe or less extensive suffering. If an omnipotent God can actualize <span class="math-inline">\(W_2\)</span>, then the existence of some connection between <span class="math-inline">\(E\)</span> and <span class="math-inline">\(G\)</span> does not yet explain why <span class="math-inline">\(W_1\)</span> was preferred. A successful defense therefore requires claims not only about divine values but also about the <strong>divine option space</strong>. It must establish, or at least make plausible, that the relevant good could not be achieved by a morally superior alternative. The same issue arises with religious hiddenness.</p>
+<h3>Epistemic freedom as a case study</h3>
+<p>Suppose God desires genuine relationship with human beings but does not make his existence overwhelmingly evident because overwhelming evidence would threaten epistemic freedom. Even granting that epistemic freedom has value, several further questions arise. Why would greater evidence eliminate freedom rather than simply eliminate uncertainty?</p>
+<p>Human beings know with great confidence that other persons exist without thereby losing the freedom to love, reject, ignore, or oppose them. Knowledge that some authority exists does not entail obedience to it. Likewise, knowledge that God exists would not obviously determine whether one loves God, resents God, worships God, or refuses God’s demands. The defense therefore needs more than the statement that freedom is valuable. It requires a particular account of the relationship between evidence and freedom:</p>
+<div class="math-block">\[
+\text{greater certainty of divine existence}
+\rightarrow
+\text{unacceptable loss of some valuable freedom}.
+\]</div>
+<p>That causal and normative relationship needs justification. Moreover, the amount of ambiguity itself requires explanation. Even if some epistemic distance were valuable, why this amount? Why a world containing persistent disagreement among sincere investigators, geographically unequal access to alleged revelation, competing miracle traditions, doctrinal fragmentation, and widespread nonbelief? The auxiliary must therefore become increasingly specific:</p>
+<div class="math-block">\[
+\text{God values precisely enough epistemic distance}
+\]</div>
+<p>to permit the observed degree of ambiguity while still satisfying whatever goals revelation is supposed to achieve. At that point, one might reasonably ask whether the explanation is predicting the evidence or simply being calibrated to it. Similar problems arise with appeals to stable natural laws. A theist may argue that God refrains from routinely preventing suffering because a law-governed world is necessary for rational agency. But again, this general principle leaves open an enormous range of possible worlds.</p>
+<p>A world with stable natural regularities need not contain exactly our rates of childhood cancer, infectious disease, natural disaster, congenital disability, or animal suffering. There are indefinitely many conceivable law-governed worlds containing different levels and distributions of harm. So the explanatory task is not merely to show:</p>
+<div class="math-block">\[
+\text{stable laws are valuable}.
+\]</div>
+<p>It is to show why that value favors something resembling the particular system we observe over relevant alternatives. This is one place where the distinction between <strong>possible justification</strong> and <strong>comparative explanation</strong> becomes crucial. A possible justification asks whether one can imagine some morally sufficient reason God might permit a feature of the world. A comparative explanation asks whether we possess good reason to expect a perfectly good God actually to make the relevant choice rather than one of the alternatives. The former is considerably easier.</p>
+<p>Given sufficient ingenuity, one can propose possible goods associated with almost any state of affairs. Religious uncertainty may foster humility. Religious certainty may foster relationship. Suffering may produce courage. Prosperity may enable generosity. Divine intervention may communicate care. Divine nonintervention may preserve regularity.</p>
+<p>The difficulty is that these goods can support contradictory predictions. If both <span class="math-inline">\(E\)</span> and <span class="math-inline">\(\neg E\)</span> can readily be given a divine rationale, then the appeal to divine purposes contributes little discriminating information:</p>
+<div class="math-block">\[
+P(E\mid T) \approx P(\neg E\mid T).
+\]</div>
+<p>The model may remain compatible with either outcome, but it has become less useful for explaining why one rather than the other occurs. This concern becomes especially serious when the same theological tradition provides evidence pointing in different directions concerning the alleged divine preference. The relevant point is not that any one such feature straightforwardly refutes the theological model. It is that these observations become evidence about the proposed divine preference. If the explanation of hiddenness is:</p>
+<div class="math-block">\[
+A_F:
+\text{God places unusually high value on epistemic freedom},
+\]</div>
+<p>then evidence of divinely sanctioned epistemic coercion should lower our confidence in <span class="math-inline">\(A_F\)</span>. An auxiliary cannot legitimately function as a one-way ratchet, increasing the probability of theism whenever it explains a difficult observation while remaining immune to observations that would otherwise undermine it. This reveals a deeper methodological requirement. Claims about divine psychology must be <strong>evidentially accountable</strong>. If theology wishes to infer God’s preferences from scripture, tradition, philosophical reasoning, or moral theory, then those sources should provide a relatively stable picture of those preferences. The resulting model should then make some observations more expected and others less expected.</p>
+<p>But if divine preferences are instead inferred independently for each troublesome datum, then their flexibility becomes a liability. God values freedom when hiddenness needs explaining, justice when punishment needs explaining, mercy when forgiveness needs explaining, natural regularity when intervention is absent, and intervention when miracles are reported. Perhaps all of these values can coexist. The issue is not that God can value only one thing. The issue is whether we possess a principled account of how those values are ranked when they conflict. A theory of divine action requires something like a decision structure:</p>
+<div class="math-block">\[
+\text{divine values}
++
+\text{relative weights}
++
+\text{available options}
+\rightarrow
+\text{divine choice}.
+\]</div>
+<p>Without some constraint on each component, observed divine behavior cannot easily be predicted.</p>
+<h3>Mysterious reasons and evidential symmetry</h3>
+<p>This is why appeals to mysterious divine reasons can create an additional problem. If human beings are so poorly positioned to understand God’s preferences that almost any apparently surprising observation may result from an unknown divine reason, then our ability to derive positive predictions from divine goodness is correspondingly weakened. One cannot easily maintain both:</p>
+<div class="math-block">\[
+\text{We know enough about divine goodness to predict behavior when it supports theism}
+\]</div>
+<p>and:</p>
+<div class="math-block">\[
+\text{We know too little about divine reasons for contrary observations to count against theism}.
+\]</div>
+<p>The more radically opaque divine psychology becomes, the less explanatory leverage theological claims provide in either direction. The central objection, then, is not that hypotheses about divine purposes are forbidden. It is that they should be held to the same explanatory standards applied elsewhere. They require justification, they should constrain expectations, and they must be evaluated against alternatives that God could presumably have chosen. A defense that explains some observation by attributing a previously unspecified preference to God has not yet completed its work. It has merely relocated the explanatory question:</p>
+<blockquote>
+<p>Why should we believe that God possesses that preference, ranks it as the defense requires, and could not achieve the relevant good through some better alternative?</p>
+</blockquote>
+<p>Once those questions are taken seriously, claims about divine psychology cease to be free explanatory resources. They become substantive components of the model and must be assessed alongside the rest of the evidence.</p>
+<p><a id="section-7"></a></p>
+<h2>7. Total Evidence and Cross-Evidential Constraint</h2>
+<h3>Local success, global constraint</h3>
+<p>A major weakness in many theological defenses is that they are evaluated locally rather than globally. An auxiliary assumption is introduced to explain one difficult observation, judged successful insofar as it renders that observation compatible with theism, and then effectively set aside when the next problem is considered. But if the auxiliary is genuinely part of the theological model, it cannot function only where it is convenient. It should alter expectations across the rest of the evidence. This is simply a consequence of treating theology as a unified explanatory model rather than as a collection of disconnected responses. Suppose divine hiddenness is addressed by introducing the following assumption:</p>
+<div class="math-block">\[
+A_F:
+\text{God places a very high value on preserving epistemic freedom.}
+\]</div>
+<p>Perhaps this increases the expectedness of religious ambiguity. If overwhelming evidence of God’s existence would somehow compromise a valuable form of free religious response, then the existence of nonbelief and uncertainty may become less surprising. In isolation, this may look like a successful response. But once <span class="math-inline">\(A_F\)</span> is added to the model, it should generate expectations concerning other features of the religious world. If God places unusually high value on epistemic freedom, we might expect this concern to appear elsewhere in divine revelation and religious institutions. We might expect sincere questioning to be treated sympathetically, investigation to be encouraged, belief to be relatively insulated from coercive pressures, and the consequences attached to intellectual error to be limited.</p>
+<p>At minimum, we should not be surprised if those features accompany a divine commitment to epistemic autonomy. Now suppose the tradition under consideration contains apparently contrary features: severe warnings against disbelief, depictions of doubt as morally corrupt or demonically inspired, strong commands of doctrinal submission, punishment for apostasy, eternal stakes attached to belief, or institutions claiming divinely sanctioned authority over permissible interpretation. The issue is not that these observations automatically disprove <span class="math-inline">\(A_F\)</span>. The issue is that they constitute additional evidence that must be incorporated into the same model. The auxiliary that improves the fit with one observation may worsen the fit with another. Formally, we might have:</p>
+<div class="math-block">\[
+P(E_1\mid T,A_F)
+&gt;
+P(E_1\mid T),
+\]</div>
+<p>where <span class="math-inline">\(E_1\)</span> is divine hiddenness. But at the same time:</p>
+<div class="math-block">\[
+P(E_2\mid T,A_F)
+&lt;
+P(E_2\mid T),
+\]</div>
+<p>where <span class="math-inline">\(E_2\)</span> is a pattern of divinely sanctioned epistemic coercion. The explanatory gain cannot therefore be assessed by looking only at <span class="math-inline">\(E_1\)</span>. What ultimately matters is something closer to:</p>
+<div class="math-block">\[
+P(E_1,E_2\mid T,A_F).
+\]</div>
+<p>This point generalizes. Suppose a theist explains the rarity of obvious divine intervention by arguing that God strongly values stable natural laws:</p>
+<div class="math-block">\[
+A_L:
+\text{God ordinarily avoids intervention in order to preserve natural regularity.}
+\]</div>
+<p>This may help explain why preventable harms usually unfold according to ordinary physical causes. But now consider reports of miracles, providential interventions, answered prayers, and scriptural narratives in which God repeatedly alters ordinary events. If these are also treated as evidence for theism, then <span class="math-inline">\(A_L\)</span> cannot simply be invoked without qualification. The theory must explain when God values natural regularity strongly enough not to intervene and when other values override that preference. Once again, the auxiliary creates constraints. Similarly, suppose suffering is explained through soul-making:</p>
+<div class="math-block">\[
+A_S:
+\text{God permits suffering because adversity is necessary for important moral development.}
+\]</div>
+<p>This might make certain forms of hardship less surprising. But it also generates questions about suffering that appears to destroy rather than cultivate agency: suffering in infancy, extreme trauma, cognitive deterioration, deaths that occur before any apparent moral development, or suffering in nonhuman animals. If soul-making is the relevant divine purpose, then the distribution of suffering should bear some relationship to the alleged developmental function. The auxiliary therefore cannot be evaluated simply by identifying some cases in which adversity appears to contribute to character. The appropriate evidential object is the total pattern:</p>
+<div class="math-block">\[
+P(E_{\text{suffering}}\mid T,A_S),
+\]</div>
+<p>not merely the probability of a carefully selected subset of cases in which the proposed rationale happens to fit. This illustrates a general principle:</p>
+<blockquote>
+<p><strong>An explanatory auxiliary must be globally accountable to the evidence it helps generate.</strong></p>
+</blockquote>
+<p>Theological explanations cannot legitimately operate as independent local patches if they are supposed to describe the preferences of one and the same agent.</p>
+<h3>Cross-evidential tensions</h3>
+<p>This creates the possibility of <strong>cross-evidential tension</strong>. An assumption introduced to solve one theological problem may create or intensify another. Consider the following cluster:</p>
+<div class="math-block">\[
+A_1:
+\text{God values epistemic freedom.}
+\]</div>
+<div class="math-block">\[
+A_2:
+\text{God urgently desires correct belief.}
+\]</div>
+<div class="math-block">\[
+A_3:
+\text{God sometimes provides unmistakable revelation.}
+\]</div>
+<div class="math-block">\[
+A_4:
+\text{God ordinarily avoids overwhelming evidence.}
+\]</div>
+<p>Each assumption might be invoked in a different apologetic context. Epistemic freedom may explain hiddenness. The urgency of correct belief may explain missionary commands or consequences attached to unbelief. Unmistakable revelation may explain miracles or dramatic conversion experiences. Avoidance of overwhelming evidence may explain why miracles are rare or ambiguous.</p>
+<p>There is no immediate logical contradiction among these propositions. A sufficiently detailed theory might reconcile them. But reconciliation now requires a further account of <strong>how these values are ordered and under what conditions one overrides another</strong>. The model therefore becomes more complex:</p>
+<div class="math-block">\[
+T^\ast
+=
+T
++
+A_1
++
+A_2
++
+A_3
++
+A_4
++
+R,
+\]</div>
+<p>where <span class="math-inline">\(R\)</span> is some additional rule governing the interaction among the auxiliaries. The addition of <span class="math-inline">\(R\)</span> may itself require justification. This reveals how apparent explanatory successes can accumulate hidden theoretical costs. Each defense considered independently may appear plausible. Yet once assembled into a single model, the defenses must coexist. The question is not:</p>
+<blockquote>
+<p>Can I construct a possible reason why God permits this particular phenomenon?</p>
+</blockquote>
+<p>It is:</p>
+<blockquote>
+<p>Can I construct one relatively simple, independently motivated, and internally coherent account of divine purposes that makes the entire pattern of evidence reasonably expected?</p>
+</blockquote>
+<p>That is a much more demanding standard.</p>
+<h3>The joint evidence, not isolated patches</h3>
+<p>The importance of total evidence can be represented more generally. Suppose we have observations:</p>
+<div class="math-block">\[
+E_1,E_2,E_3,\ldots,E_n.
+\]</div>
+<p>A local apologetic strategy considers them separately:</p>
+<div class="math-block">\[
+P(E_1\mid T,A_1),
+\]</div>
+<div class="math-block">\[
+P(E_2\mid T,A_2),
+\]</div>
+<div class="math-block">\[
+P(E_3\mid T,A_3),
+\]</div>
+<p>and so on. But if the auxiliaries are all genuinely part of the theological theory, the relevant model is:</p>
+<div class="math-block">\[
+T^\ast=T+A_1+A_2+\cdots+A_n,
+\]</div>
+<p>and the proper evidential question becomes:</p>
+<div class="math-block">\[
+P(E_1,E_2,E_3,\ldots,E_n\mid T^\ast).
+\]</div>
+<p>This is not equivalent to showing that each datum can be individually accommodated. The joint distribution matters. A model may explain each observation separately through different assumptions while making their conjunction strained, complicated, or improbable. The point is analogous to fitting multiple constraints simultaneously. A proposed explanation cannot be judged successful simply because one parameter can be adjusted for each observation independently. The resulting parameter settings must coexist within one coherent system.</p>
+<p>This is particularly important in theology because many disputed observations concern the behavior of the same agent. Claims about divine purposes must therefore form some reasonably stable picture of divine action. This gives force to the intuition that a defense cannot simply “have it both ways.” If the ambiguity of revelation is evidence that God values epistemic freedom, then that commitment should constrain how we interpret evidence of coercive revelation. If the absence of intervention is explained by God’s respect for natural law, then reported interventions cannot simultaneously be treated as cost-free evidence of providence. If religious diversity is explained by God’s willingness to permit extensive cultural mediation, then the existence of widespread religious agreement cannot automatically be treated as strong evidence of supernatural guidance without further argument.</p>
+<p>A methodological asymmetry otherwise emerges. Evidence favorable to theism is attributed directly to God. Evidence unfavorable to theism is attributed to some auxiliary reason why God would permit appearances to look otherwise. The model can then become evidentially asymmetric:</p>
+<div class="math-block">\[
+\text{apparently favorable evidence}
+\rightarrow
+\text{confirmation of theism},
+\]</div>
+<p>while:</p>
+<div class="math-block">\[
+\text{apparently unfavorable evidence}
+\rightarrow
+\text{new divine rationale}.
+\]</div>
+<p>Such a structure makes disconfirmation extremely difficult. A robust model should instead permit evidence to move probability in both directions. This does not mean that every contrary observation must strongly disconfirm theism. It means that theological commitments should have genuine empirical or evidential consequences. If the model says God strongly prefers <span class="math-inline">\(X\)</span>, then evidence systematically inconsistent with <span class="math-inline">\(X\)</span> should count for something. The total-evidence approach also changes how one should think about individual theodicies.</p>
+<div class="math-block">\[
+E_1+E_2+E_3.
+\]</div>
+<p>This is why the concept of <strong>total evidence</strong> is indispensable. The relevant question is not whether theism possesses an answer to each objection considered separately. It is whether there exists some coherent specification of theism under which the complete pattern becomes reasonably expected without requiring an increasingly elaborate collection of unmotivated qualifications. This standard should apply equally to naturalistic models. Naturalism does not win simply by default. Its proposed mechanisms must also fit the total evidence, cohere with one another, and possess independent support.</p>
+<p>But this is precisely where the model comparison becomes interesting. Cultural transmission, institutional dynamics, epidemiology, economics, biology, geography, and historical path dependence can often operate together within a relatively unified causal picture. The same mechanisms that explain one domain frequently generate predictions in others. Theological explanations, by contrast, risk fragmenting when each difficult observation requires a different specification of divine intention. The resulting challenge can be stated simply:</p>
+<blockquote>
+<p>Once an auxiliary assumption is introduced, it becomes a real constraint on the model.</p>
+</blockquote>
+<p>It cannot be invoked only when useful and ignored when inconvenient. A preference strong enough to explain one feature of the world should leave traces elsewhere. A theological model that appeals to divine purposes must therefore explain not merely why each individual datum is possible, but why one coherent ordering of divine values produces the total pattern that we observe. This is where model comparison becomes substantially more demanding than compatibility testing. The question is no longer whether each troublesome fact can be given a possible theological story. It is whether the stories form one theory.</p>
+<p><a id="section-8"></a></p>
+<h2>8. The Comparative Asymmetry and the Unified Case</h2>
+<h3>Independent mechanisms and explanatory reuse</h3>
+<p>At this point an important asymmetry emerges between many naturalistic explanations and many theological ones. The asymmetry is not that naturalism uses no auxiliary assumptions while theism does. Both frameworks require substantial background theory. The difference concerns the <strong>independent evidential status and constraint</strong> of those auxiliaries.</p>
+<p>Naturalistic explanations of religious belief appeal to mechanisms such as cultural transmission, conformity, prestige effects, institutional reinforcement, migration, syncretism, political coercion, demographic change, and historical path dependence. These mechanisms are not inferred solely from the existence of religious diversity. They are observable in many other domains.</p>
+<p>We see cultural transmission in language, social norms, ideology, education, and customs. We see institutional incentives shape behavior in politics, economics, law, and organizations. We see ideas spread through social networks. We observe populations changing through migration and demographic replacement. We observe cultural borrowing and syncretism outside religion as well as within it. Their evidential basis is therefore partly independent of the phenomena they are invoked to explain.</p>
+<p>The same is true in the case of suffering. Epidemiology, geology, economics, public health, evolutionary biology, political science, and demography provide independently supported mechanisms for explaining why suffering is distributed as it is. We can investigate the causal role of sanitation in disease transmission, the influence of institutions on famine, or the relationship between tectonic activity and earthquakes without first assuming naturalism. The explanatory structure is therefore often:</p>
+<div class="math-block">\[
+\text{independently established mechanism}
+\rightarrow
+\text{application to disputed phenomenon}
+\rightarrow
+\text{successful explanation}.
+\]</div>
+<p>This matters because independent support reduces the freedom of the model to simply invent whatever mechanism is needed after observing the evidence. Cultural transmission does not predict just anything. It predicts clustering, continuity, dependence on social contact, and historical inheritance. Epidemiological models do not predict just anything. They constrain which interventions should reduce disease and under what conditions.</p>
+<p>Geology does not merely declare earthquakes explicable after they occur. It identifies structures that predict where seismic activity is more likely. The mechanisms carry information because they restrict expectations. Many theological auxiliaries have a less favorable structure. Consider a claim such as:</p>
+<p>Or:</p>
+<p>Such claims might be true. The problem is that their evidential basis can be difficult to separate from the phenomena they were introduced to explain. If the principal reason for believing that God values precisely this degree of epistemic ambiguity is that precisely this degree of ambiguity exists, then the explanation risks becoming self-confirming:</p>
+<div class="math-block">\[
+E
+\rightarrow
+\text{infer divine preference }D_E
+\rightarrow
+D_E\text{ explains }E.
+\]</div>
+<p>This does not add much explanatory information unless <span class="math-inline">\(D_E\)</span> can be supported independently or used to successfully predict further observations. The contrast can be illustrated with two schematic explanations. The first says:</p>
+<div class="math-block">\[
+\text{Religious clustering}
+\leftarrow
+\text{cultural transmission}.
+\]</div>
+<p>The second says:</p>
+<div class="math-block">\[
+\text{Religious clustering}
+\leftarrow
+\text{God’s preference for culturally mediated revelation}.
+\]</div>
+<p>The naturalistic mechanism is independently observable. We can study cultural transmission even if we temporarily set religious questions aside. We can measure its effects, identify conditions under which transmission succeeds or fails, and use the theory in unrelated domains. The theological preference is more difficult to access independently. Unless some separate argument establishes that God strongly prefers culturally mediated revelation, the observed clustering may itself constitute most of the evidence for the proposed preference. That difference matters in model comparison.</p>
+<p>An explanation has greater force when its central mechanism was not constructed specifically to reproduce the datum under discussion. This is why syncretism is particularly instructive. Suppose historical investigation reveals that a religious tradition acquired certain practices or concepts after prolonged contact with another culture. We may be able to trace linguistic borrowing, institutional contact, ritual adaptation, political incentives, or documentary development. The naturalistic account then possesses explanatory detail:</p>
+<div class="math-block">\[
+\text{contact}
+\rightarrow
+\text{borrowing}
+\rightarrow
+\text{reinterpretation}
+\rightarrow
+\text{new religious form}.
+\]</div>
+<p>The same mechanism can be observed repeatedly in different contexts. A theological model could respond that God intentionally reveals truth through such cultural processes. That is possible. But once the ordinary process already explains the observed historical transformation, the theological addition must justify its explanatory role. What further prediction does divine guidance generate? What feature of the evidence would be different if the process were purely cultural?</p>
+<p>What observation specifically requires the additional theological component? If there is no identifiable difference, then the theological element risks becoming explanatorily idle. This can be stated in terms of comparative sufficiency. Suppose a naturalistic model <span class="math-inline">\(N\)</span> and an enriched theological model <span class="math-inline">\(T^\ast\)</span> both explain some evidence <span class="math-inline">\(E\)</span>:</p>
+<div class="math-block">\[
+P(E\mid N)
+\]</div>
+<p>and</p>
+<div class="math-block">\[
+P(E\mid T^\ast)
+\]</div>
+<p>are both reasonably high. But suppose <span class="math-inline">\(T^\ast\)</span> requires additional assumptions about hidden divine intentions:</p>
+<div class="math-block">\[
+T^\ast = T + A_1 + A_2 + A_3.
+\]</div>
+<p>If those assumptions lack independent support and do not generate additional successful predictions, then the greater complexity of <span class="math-inline">\(T^\ast\)</span> does not obviously improve its comparative standing. The point is not simply to invoke a crude principle that “simpler is always better.” Complex theories can be well justified when the evidence requires complexity. The relevant question is whether the added structure <strong>earns its explanatory cost</strong>. A useful auxiliary earns that cost by doing things such as:</p>
+<div class="math-block">\[
+\text{explaining multiple phenomena}
++
+\text{generating novel expectations}
++
+\text{possessing independent support}
++
+\text{constraining future explanations}.
+\]</div>
+<p>An auxiliary that merely says why an already observed result was divinely desirable does much less.</p>
+<h3>Explanatory unification</h3>
+<p>This also explains why naturalistic mechanisms can gain cumulative support across domains. Suppose cultural transmission helps explain language, political ideology, moral norms, and religion. Its application to religion is then part of a broader explanatory pattern. Suppose institutional capacity predicts health outcomes, famine resilience, education, and the persistence of religious traditions. Again, explanatory support accumulates across independent bodies of evidence. The same mechanism proves useful repeatedly.</p>
+<p>This produces something like explanatory unification:</p>
+<div class="math-block">\[
+M
+\rightarrow
+E_1,E_2,E_3,\ldots,E_n.
+\]</div>
+<p>A single mechanism <span class="math-inline">\(M\)</span> contributes to the explanation of many observations. By contrast, a fragmented theological strategy may have the structure:</p>
+<div class="math-block">\[
+A_1\rightarrow E_1,
+\]</div>
+<div class="math-block">\[
+A_2\rightarrow E_2,
+\]</div>
+<div class="math-block">\[
+A_3\rightarrow E_3,
+\]</div>
+<p>where each <span class="math-inline">\(A_i\)</span> is a distinct claim about an otherwise inaccessible divine purpose. The difference is not merely the number of assumptions. It is the degree of <strong>unification</strong>. A model is generally more impressive when a relatively small number of independently motivated principles explain a wide range of phenomena than when each phenomenon requires its own special-purpose rationale.</p>
+<p>This is also why naturalistic explanations can be vulnerable in productive ways. Cultural theories can fail. Epidemiological models can make incorrect predictions. Economic models can misidentify causes. Historical hypotheses can be overturned by new evidence. Their mechanisms are constrained enough to be wrong.</p>
+<p>That vulnerability is a virtue rather than a defect. A model capable of failure has genuine empirical content. Theological auxiliaries become methodologically weaker when their flexibility makes comparable failure difficult. If both outcomes are equally easy to accommodate by assigning a different divine motivation, then theological explanation has less predictive structure than the naturalistic alternatives with which it is being compared. This does not mean that theology can never possess independent constraints. It may derive them from philosophical arguments about divine perfection, from a systematic doctrine of divine action, from scripture, or from a broader metaphysical framework.</p>
+<p>But if such constraints are invoked, they must be applied consistently. A theological account that independently establishes that God strongly values some good <span class="math-inline">\(G\)</span> may gain genuine predictive content:</p>
+<div class="math-block">\[
+G
+\rightarrow
+\text{expectations about divine action}.
+\]</div>
+<p>Once those expectations are in place, however, observations contrary to them must be allowed to count against the model. The asymmetry is therefore not absolute. It is conditional. The naturalistic model enjoys an advantage to the extent that its relevant mechanisms are independently established, empirically constrained, and explanatorily reusable. The theological model loses ground to the extent that its auxiliaries consist of flexible, post hoc claims about divine intentions inferred primarily from the evidence they are supposed to explain.</p>
+<p>This is especially significant in the context of distributional arguments because the naturalistic alternative does not merely explain isolated observations. It explains why the observations exhibit a common causal texture. Religious affiliation depends on culture. Religious traditions change through history. Syncretism follows contact. Doctrinal boundaries follow institutions.</p>
+<p>Disease follows biology. Mortality responds to technology. Material welfare responds to economic and political conditions. Suffering tracks geography and historical circumstance. These phenomena differ enormously in content, yet they repeatedly exhibit dependence upon ordinary causal mechanisms. The resulting naturalistic picture has a certain unifying character:</p>
+<div class="math-block">\[
+\text{human beings embedded in natural and historical systems}
+\rightarrow
+\text{the observed distributions}.
+\]</div>
+<p>The theological model may incorporate all of these same mechanisms. It can maintain that God works through culture, natural law, institutions, and history. But doing so creates an additional comparative question. If the observable distribution is already extensively predicted by ordinary mechanisms, what distinctive explanatory work is being performed by the claim of providential governance? To answer that question, the theological model must identify features of the evidence that become substantially more expected once divine agency is included. Otherwise, the theology risks becoming compatible with the naturalistic explanation without improving upon it.</p>
+<p>This is the deeper significance of the asymmetry. Naturalism need not explain every fact perfectly in order to gain evidential support. It needs to show that independently supported mechanisms make the observed patterns relatively unsurprising. Theism, similarly, need not provide certainty. But if its distinctive explanatory contribution consists largely of post hoc claims about hidden divine purposes, then its flexibility may reduce rather than increase its evidential force.</p>
+<p>The central issue is therefore not whether both models can tell a story about the data. Both can. The question is which model explains the data through mechanisms and principles that were independently motivated, sufficiently constrained, reusable across domains, and capable of being tested against observations that could have turned out otherwise.</p>
+<h3>A unified distributional case</h3>
+<p>The preceding arguments are strongest when they are not treated as isolated objections. Religious diversity, hiddenness, syncretism, suffering, institutional development, and historical contingency are often discussed separately, each with its own specialized literature and corresponding theological response. But from the standpoint of model comparison, their cumulative significance lies partly in the fact that they exhibit a common structure. Across these domains, human outcomes are strongly mediated by ordinary causal processes.</p>
+<p>Religious belief depends heavily upon geography, family, language, institutions, political history, and social transmission. Religious traditions develop through identifiable historical pathways, borrow from neighboring cultures, fragment through schism, and change in response to shifting social conditions. Access to alleged revelation is unevenly distributed across time and place.</p>
+<p>Suffering displays a similar dependence upon natural and historical circumstances. Disease follows biological mechanisms. Mortality changes with sanitation, medicine, and technology. Famine depends upon ecology, political institutions, war, and distribution systems. Exposure to violence, poverty, and preventable illness varies substantially according to the society and historical period into which one happens to be born.</p>
+<p>These are very different phenomena. Yet they repeatedly exhibit what might be called a common <strong>causal texture</strong>. The world appears deeply structured by:</p>
+<div class="math-block">\[
+\text{biology}
++
+\text{geography}
++
+\text{culture}
++
+\text{institutions}
++
+\text{historical contingency}.
+\]</div>
+<p>These variables do not merely correlate with human religious and material outcomes. In many cases, we possess well-supported mechanisms connecting them. This is what gives the cumulative argument its force. The skeptic need not rely on any single observation as decisive. Instead, a broad body of evidence can be evaluated together. Let the total relevant evidence be represented as:</p>
+<div class="math-block">\[
+E =
+E_R
++
+E_H
++
+E_S
++
+E_I
++
+E_D,
+\]</div>
+<p>where <span class="math-inline">\(E_R\)</span> represents the distribution of religious belief, <span class="math-inline">\(E_H\)</span> divine hiddenness, <span class="math-inline">\(E_S\)</span> the distribution of suffering, <span class="math-inline">\(E_I\)</span> institutional and historical development, and <span class="math-inline">\(E_D\)</span> doctrinal diversity and disagreement. The relevant comparison is therefore not simply:</p>
+<div class="math-block">\[
+P(E_R\mid T)
+\]</div>
+<p>versus</p>
+<div class="math-block">\[
+P(E_R\mid N),
+\]</div>
+<p>but something closer to:</p>
+<div class="math-block">\[
+P(E_R,E_H,E_S,E_I,E_D\mid T)
+\]</div>
+<p>versus:</p>
+<div class="math-block">\[
+P(E_R,E_H,E_S,E_I,E_D\mid N).
+\]</div>
+<p>The point is not that naturalism automatically assigns high probability to every individual fact. Naturalistic models also require specification, and some features of human experience may be difficult to explain under them. Rather, the claim is that a relatively unified naturalistic framework appears capable of generating many of these patterns using mechanisms already established in other domains. That matters because evidence can accumulate not only by quantity but by <strong>coherence</strong>.</p>
+<p>Suppose an explanatory model successfully accounts for religious clustering through cultural transmission. It then explains syncretism through cultural contact, doctrinal persistence through institutions, and religious fragmentation through historical path dependence. The same general framework of socially embedded human cognition is doing repeated explanatory work. Similarly, the naturalistic explanation of suffering does not require a completely different metaphysical theory. Human beings remain organisms embedded in a physical environment, vulnerable to biological processes, dependent on institutions, and shaped by inherited historical conditions. The explanatory picture is continuous.</p>
+<p>One can represent this unification schematically as:</p>
+<div class="math-block">\[
+N + M
+\rightarrow
+E_1,E_2,E_3,\ldots,E_n,
+\]</div>
+<p>where <span class="math-inline">\(M\)</span> represents a relatively limited family of natural, psychological, cultural, and institutional mechanisms. The evidential attractiveness of such a model comes partly from the fact that the mechanisms recur. One does not need to introduce a fundamentally new explanatory principle every time a new phenomenon appears. By contrast, many theological responses risk becoming fragmented.</p>
+<p>Again, none of these claims is necessarily false. Nor is the mere existence of multiple explanatory principles itself a defect. Complex realities may require complex explanations. The problem arises when the theological principles do not appear to derive from a single independently motivated account of divine action. The skeptical concern is that we repeatedly begin with an observation and then identify some divine value capable of rendering that observation intelligible:</p>
+<div class="math-block">\[
+E_i
+\rightarrow
+A_i
+\rightarrow
+\text{compatibility with }T.
+\]</div>
+<p>The cumulative theological model becomes:</p>
+<div class="math-block">\[
+T^\ast
+=
+T
++
+A_1
++
+A_2
++
+A_3
++
+\cdots
++
+A_n.
+\]</div>
+<p>If the <span class="math-inline">\(A_i\)</span> are independently supported, mutually coherent, and capable of generating further successful predictions, then this may represent genuine theoretical progress. But if they are primarily local responses to observations that initially appeared surprising, the cumulative model risks becoming increasingly accommodative rather than increasingly explanatory. This is why the total evidence matters more than any isolated “problem.” The challenge emerges when these explanations are combined.</p>
+<h3>Path dependence and the common causal texture</h3>
+<p>This is especially important because the naturalistic explanation does not need to claim that the world is maximally orderly or predictable. Historical contingency is itself part of the model. Naturalism can readily accommodate the fact that human societies develop unevenly, that ideas spread unpredictably, that institutions collapse, and that technological progress occurs at different rates. Indeed, path dependence is exactly what we should expect in a world governed by historical causation. A religion founded in one region rather than another will inherit different conceptual resources. An empire that adopts one religion may alter the future religious distribution of entire populations.</p>
+<p>A disease appearing before the development of modern medicine will produce consequences radically different from the same disease appearing afterward. A society that develops effective institutions may avoid harms that another society cannot. Present conditions depend upon previous states:</p>
+<div class="math-block">\[
+S_{t+1}=f(S_t,\text{local causes},\text{contingent events}).
+\]</div>
+<p>Over long periods, this produces enormous divergence. Under naturalism, there is no particular reason to expect morally important goods to be distributed independently of these processes. Nature does not select birthplace according to desert. Cultural evolution does not guarantee equal access to truth. Pathogens do not distinguish saints from sinners. Historical contingencies do not automatically distribute welfare according to moral worth.</p>
+<p>The resulting inequalities may therefore be tragic, but they are not puzzling in the same way. Under providential theism, however, those same facts acquire an additional dimension. If reality is ultimately governed by an omniscient, powerful, morally perfect agent with purposes concerning human beings, then one might expect the ordinary causal order to reflect those purposes in some discernible way. Exactly what reflection should be expected depends on the theology. But that is precisely the point: a theological model must specify enough about divine purposes to generate expectations. The distributional argument becomes stronger when the observable world repeatedly resembles what would arise if ordinary causal processes operated without obvious adjustment toward theological ends.</p>
+<p>Consider revelation. Its distribution largely follows human communication networks. Consider suffering. Its distribution largely follows natural vulnerability and institutional capacity. Consider religious institutions. Their successes and failures often follow recognizable political and organizational dynamics.</p>
+<p>Consider doctrinal development. It often follows historical controversy, linguistic change, philosophical borrowing, and cultural contact. At each point, the phenomenon appears integrated into the broader causal order rather than standing clearly apart from it.</p>
+<h3>Metaphysical compatibility versus explanatory detectability</h3>
+<p>This does not show that God is absent from those processes. A theist can maintain that God acts providentially through ordinary causes. But this response introduces an important distinction between <strong>metaphysical compatibility</strong> and <strong>explanatory detectability</strong>. If a world governed by providence and a world governed entirely by ordinary natural and historical processes are expected to display essentially the same observable patterns, then those patterns cannot provide much evidence for providence. More importantly for the present argument, if some theological model initially gave us reason to expect a different distribution, then saying that God simply chose to work through exactly the processes naturalism predicts may look less like an independent explanation and more like accommodation. The skeptic's cumulative argument can therefore be summarized without claiming deductive certainty:</p>
+<div class="math-block">\[
+\text{many independent observations}
++
+\text{shared naturalistic causal structure}
++
+\text{independently supported mechanisms}
++
+\text{theological auxiliary costs}
+\rightarrow
+\text{comparative evidence for naturalism}.
+\]</div>
+<p>The strength of the argument depends on each component. If a particular theology independently predicts religious diversity, hiddenness, and the observed distribution of suffering, then the skeptical force decreases. If naturalistic mechanisms prove inadequate to explain important features of the evidence, naturalism loses comparative strength. If theological auxiliaries possess substantial independent justification and successfully unify the observations, then the charge of ad hocness weakens. The argument therefore does not prejudge the outcome. It establishes a framework for comparison.</p>
+<p>But within that framework, one broad feature of the evidence becomes difficult to ignore: the world exhibits a remarkably continuous causal structure. Across otherwise distinct evidential domains, the same natural and historical order repeatedly reappears. The cumulative skeptical case is therefore not merely that there are many “problems” for theism. A collection of isolated objections could always invite a collection of isolated answers. The deeper argument is that the observations appear to participate in one broad explanatory pattern. The world looks historically inherited, culturally generated, biologically constrained, institutionally mediated, and causally continuous.</p>
+<p>A providential theology can accommodate the same appearance, but only by explaining why divine governance so consistently operates through, permits, or conceals itself behind precisely those mechanisms that would have governed the world in the absence of such providence. It is this convergence of apparently independent evidential domains that transforms a collection of familiar objections into a unified distributional argument.</p>
+<p><a id="section-9"></a></p>
+<h2>9. Conclusion: Compatibility Is Not Enough</h2>
+<p>The distributional argument is neither a genetic argument against religion nor a deductive version of the problem of evil. It does not say that culturally transmitted beliefs are false because they are culturally transmitted, and it does not say that suffering is logically inconsistent with God. Its claim is comparative: the geographical, historical, institutional, and biological structure of the evidence can favor one explanatory model over another when that structure is more expected under the former. The relevant comparison is therefore between the likelihood of the total evidence under a specified form of theism and under a naturalistic alternative:</p>
+<div class="math-block">\[
+P(E\mid T)
+\quad\text{versus}\quad
+P(E\mid N).
+\]</div>
+<p>Here, <span class="math-inline">\(E\)</span> is not a single isolated fact. It includes the cultural and geographical distribution of religious belief, doctrinal disagreement and syncretism, sincere nonbelief and hiddenness, the historical distribution of suffering, and the dependence of human outcomes on ordinary biological, economic, institutional, and technological causes. The argument is strongest against substantive forms of theism that make claims about revelation, providence, intervention, answered prayer, salvation, or a divine desire for relationship; a deistic God who makes few such commitments generates correspondingly fewer distributional expectations.</p>
+<p>The naturalistic side of the comparison gains force because many of its mechanisms are independently observable and explanatorily reusable. Cultural transmission, social learning, institutional selection, political history, epidemiology, biology, geography, and technological development are not invoked only when religion or suffering needs to be explained. They already constrain expectations in other domains, and they can fail. Their explanatory value comes partly from that vulnerability.</p>
+<p>Theological auxiliaries are not illegitimate merely because they are additional assumptions. A serious theology may have independent reasons for claiming that God values freedom, stable natural regularity, soul-making, culturally mediated revelation, or other goods. But once such a claim enters the model, it must earn its place: it should possess independent motivation, increase explanatory structure rather than merely flexibility, and constrain what the theology predicts elsewhere. Claims about divine preferences, decision criteria, and the available divine option space are substantive theoretical commitments, not cost-free possibilities.</p>
+<p>That requirement becomes especially important when the total evidence is considered. An explanation that helps with one datum can generate pressure elsewhere. A commitment to epistemic freedom must coexist with whatever the same theology says about coercive revelation or the consequences of unbelief; a commitment to natural regularity must coexist with miracle and providence claims; a soul-making account must confront the actual distribution of suffering rather than only cases in which adversity appears developmentally useful. The relevant question is not whether a separate story can be supplied for each observation, but whether those stories form one coherent theory.</p>
+<p>This is the cumulative force of the distributional case. Religious ideas behave in important respects like other culturally transmitted ideas; religious institutions exhibit ordinary institutional dynamics; suffering responds to ordinary biological and socioeconomic causes; historical advantages and disadvantages accumulate through path-dependent processes; and human interventions alter outcomes when they successfully engage the relevant causal mechanisms. Across otherwise different domains, the same natural and historical order repeatedly reappears.</p>
+<p>None of this establishes naturalism by deduction, nor does it show that every form of theism is equally threatened. It instead changes the standard by which a proposed theological response should be assessed. The question is not simply whether some possible divine intention can be constructed that renders the evidence compatible with God. The question is whether a relatively simple, independently motivated, internally coherent theological model makes this total distributional structure more expected than its naturalistic alternatives.</p>
+<p>That is the methodological point on which the argument turns. A hypothesis should not be judged merely by whether it can survive whatever evidence happens to appear. It should be judged by the expectations it generates, the constraints it accepts, the explanatory work performed by its auxiliaries, and its comparative fit with the world we actually observe. <strong>Compatibility is not enough.</strong></p>
+
+</article>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
+</body>
+</html>
