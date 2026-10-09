@@ -10,20 +10,13 @@
         "part5": "The Nature of Agnosticism Part 5: Religious Experience, Miracles, and Revelation",
         "part6": "The Nature of Agnosticism Part 6: An Argument for Strong Agnosticism"
     },
-    "apologetics": {
-        "blog.html": "The Social Epistemology of Apologetics: A Functional Analysis of Belief Maintenance, Uncertainty Reduction, and Epistemic Control",
-        "appendix.html": "The Social Epistemology of Apologetics: Appendix"
-    },
     "against-design": "A Systems Engineering Critique of Divine Design",
     "auschwitz": "After Auschwitz - World War II as a Stress Test for Theism",
-    "christian-lifecycle": "How to Create a Christian",
     "cognitive-architecture": "How Plantingas EEAN Relies on Divine Psychology & Exposes Inconsistent Omni-Traits",
     "christian-nationalism-logic": "The Logic of a Christian Nationalist",
     "divine-psychology": "Unconstrained Explanations, Ad Hoc Reasoning, and Divine Psychology",
     "divine-design-implications": "A Systems-Engineering Argument Against Perfect-Being Theism",
     "dogmatic-belief": "21 Indications of Dogmatic Belief",
-    "distribution-argument": "Distributional Arguments Against Theism",
-    "evolution-of-christianity": "Historical Perspective on Christianity and other Ancient Texts",
     "faith-conflation": "Conflating Faith with Non-Faith Concepts",
     "fine-tuning": "The Fine Tuning Argument is Dog Shit",
     "free-will-defense": "The Free-Will-Defense Is Incoherent",
@@ -32,12 +25,20 @@
     "moral-argument": "The Moral Argument is not a 'Slam Dunk'",
     "motivated-skepticism": "Argument from Motivated Skepticism",
     "metaphysical-cherrypicking": "Metaphysical Cherrypicking: How Philosophical Arguments for God are Mutually Incompatbile",
+    "naturalism-against-religion": {
+        "self-reinforcing-beliefs": "A Naturalist Case Against Religious Belief, Part 1: Belief Preservation, Cognitive Inertia, and Self-Sealing Belief Systems",
+        "christian-lifecycle": "A Naturalist Case Against Religious Belief, Part 2: How to Create a Christian",
+        "apologetics": "A Naturalist Case Against Religious Belief, Part 3: The Social Epistemology of Apologetics",
+        "apologetics-appendix": "A Naturalist Case Against Religious Belief, Part 4: The Social Epistemology of Apologetics: Appendix",
+        "evolution-of-christianity": "A Naturalist Case Against Religious Belief, Part 5: Historical Perspective on Christianity and other Ancient Texts",
+        "syncretism": "A Naturalist Case Against Religious Belief, Part 6: Religious Parallels, Syncretism, and the Problem of Special Pleading",
+        "distribution-argument": "A Naturalist Case Against Religious Belief, Part 7: Distributional Arguments Against Theism"
+    },
     "natural-desire":"The Argument from Natural Desire",
     "nomological-harmony": "The Argument from Nomological Harmony",
     "pagan-bible": "The Pagan Bible",
     "psycho-physical-harmony": "The Psycho-Physical Harmony Argument is Incredibly Confused",
     "resurrection": "Arguments for the Resurrection of Jesus",
     "rooted-in-therefore-arguments": "Arguments Following the Pattern 'Rooted in Therefore...'",
-    "syncretism": "Religious Parallels, Syncretism, and the Problem of Special Pleading",
     "kalam": "Analyzing Cosmological Arguments Through a Quasi-Logical Frame"
 }
