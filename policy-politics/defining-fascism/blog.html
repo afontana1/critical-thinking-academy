@@ -649,15 +649,6 @@
 
 .ep-post .ep-standalone-formula { margin: 0.8em 0; padding: 0.85em 0.75em; border: 1px solid color-mix(in srgb, currentColor 18%, transparent); border-radius: 0.45rem; background: color-mix(in srgb, currentColor 5%, transparent); font-family: ui-serif, Georgia, serif; font-size: 1.03rem; font-weight: 550; text-align: center; overflow-wrap: anywhere; line-height: 1.6; }
 @media (max-width: 720px) { .ep-post .ep-standalone-formula { font-size:0.94rem; } }
-
-.ep-post .ep-editorial-note {border-left:3px solid color-mix(in srgb, currentColor 26%, transparent);padding:.75em .95em;margin:1em 0 1.2em;background:color-mix(in srgb,currentColor 3%,transparent);border-radius:.35rem;line-height:1.55;}
-.ep-post .ep-original-source-links {font-size:.86em;opacity:.84;line-height:1.6;overflow-wrap:anywhere;margin:.3em 0 1.2em;}
-.ep-post .ep-original-source-links a {display:inline;}
-
-.ep-post .ep-source-details { margin:.3em 0 1.1em; padding:.4em .65em; font-size:.84em; border:1px solid color-mix(in srgb,currentColor 13%,transparent); border-radius:.4rem; }
-.ep-post .ep-source-details summary {cursor:pointer;opacity:.8;}
-.ep-post .ep-source-details div {line-height:1.65;padding:.5em .15em;overflow-wrap:anywhere;}
-.ep-post li .ep-source-details {margin-top:.4em;}
 </style>
 <script>
       window.MathJax = {
@@ -3066,29 +3057,77 @@
 <p>It also helps separate two disputes that are often conflated. People may agree on the observations but disagree about the appropriate definition, or accept the same definition but disagree about what the evidence establishes. The first is primarily a conceptual dispute; the second is primarily an empirical or inferential one. In practice, both can occur at once. Naming the point of disagreement can make a politically charged discussion more rigorous.</p>
 <h4 class="ep-analysis-subsection" id="implications-decision-theory">Decision Theory, Uncertainty, and the Costs of Inaction</h4>
 <p>Finally, the consequences of a classification are not restricted to the semantics of political labeling. Once a diagnosis has possible consequences for public action, there is a further question about uncertainty, potential harm, and individual or collective responsibility.</p>
-<p>Classifying a political leader or movement as fascist raises a practical question that is distinct from the definitional one: what, if anything, does that judgment warrant us doing? Historical fascist regimes committed severe violations of political and civil rights, so a credible warning about emerging authoritarian practices may have substantial consequences. Yet an individual considering a response faces uncertainty about both the diagnosis and the effectiveness of any particular action.</p><p>The asymmetry is significant. Inaction may contribute to collective harm if a threat is real, but action may impose immediate costs—time, reputation, employment risk, or personal safety—even where the actor’s marginal effect is small. A person can therefore reasonably recognize a political danger while hesitating to respond. In group settings, this difficulty may be reinforced by <em>pluralistic ignorance</em> and <em>diffusion of responsibility</em>: individuals interpret other people’s inaction as evidence that the situation is unimportant, even when many privately share the concern.</p><p>These are explanations of hesitation, not a proof that every individual has a duty to take a particular risk. A defensible practical judgment must weigh the quality of the evidence, the severity of the possible harm, the proportionality and legality of the action, and the person’s actual capacity to contribute. The formal model below makes that trade-off visible without pretending to calculate an obligation from the label alone.</p><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://en.wikipedia.org/wiki/Pluralistic_ignorance">pluralistic ignorance</a> · <a href="https://en.wikipedia.org/wiki/Bystander_effect">the bystander effect</a> · <a href="https://en.wikipedia.org/wiki/Echo_chamber_(media)">echo chambers</a></div></details>
+<p>
+      Ultimately, if we assign the label “fascist” to someone holding a powerful
+      position, this almost certainly implies we must take action. We know
+      historically that fascists and fascist adjacent regimes are brutal,
+      increasing the probability of oppression and suffering for out group
+      members and “traitors” speaking against the regime . This seems
+      intrinsically connected to decision theory. Suppose with high probability
+      we conclude trump is a fascist, and his form of fascism is closely related
+      to historically violent fascist movements, then it seems there is a cost
+      of not acting. However, the immediate cost of acting is very high. You
+      take on many risks, potentially at the expense of being wrong about your
+      diagnosis. It seems like this factors into the analysis very deeply. So
+      it’s interesting, many people conclude he’s a fascist but do nothing about
+      it. But simultaneously it makes sense why someone wouldn’t act, because
+      the individual cost is very high while the marginal impact of regime
+      change seems low. Likewise, maybe some people don’t think it’s a problem,
+      because in their mind “if it’s a problem, someone will alarm the bell” so
+      to speak, but with group think, echo chambers, and risk of social
+      ostracism, many people won’t speak out so there won’t be any social proof
+      more broadly. Labeling a leader as “fascist” is not a morally neutral act.
+      It implies that we have crossed a threshold of evidence, that the threat
+      is not just theoretical but imminent, and that some form of resistance or
+      defensive action may be necessary, One might argue that a serious diagnosis raises a prima facie responsibility to consider protective action, but whether inaction is culpable depends on what an individual can reasonably do, the risks involved, and the likely consequences. Of course, people
+      often act as if they don't believe what they say, not because they are
+      lying but because belief is often partitioned from motivation when the
+      expected utility of action is low, the personal cost is high, and there's
+      an ambiguity or deferral or responsibility. There is a social
+      epistemological aspect of inaction as well. People often wait for external
+      validation but this can cause <a href="https://en.wikipedia.org/wiki/Pluralistic_ignorance">pluralistic ignorance</a>, <a href="https://en.wikipedia.org/wiki/Bystander_effect">the bystander effect</a>, and <a href="https://en.wikipedia.org/wiki/Echo_chamber_(media)">echo chambers</a>. So even if many people independently diagnose fascism, the absence of
+      visible collective action feeds the illusion that it’s not urgent, or that
+      others don’t see it. This is why social proof becomes a bottleneck: if no
+      one else is acting, people doubt their own assessment, or wait for
+      institutional actors (courts, media, elites) to validate it, often after
+      it’s too late.
+    </p>
 <div aria-label="Illustrative decision-theoretic model" class="ep-theory-model" id="implications-decision-model" role="group">
 <h5>A minimal expected-utility model</h5>
 <p>Let <em>F</em> denote the hypothesis that an emerging political threat is sufficiently grave to warrant precaution, <em>p = P(F | E)</em> our current credence given evidence <em>E</em>, and <em>A</em> a specified, lawful protective action, as compared with inaction <em>N</em>. The expected difference is:</p>
 <div aria-label="Expected utility of action versus inaction" class="ep-standalone-formula" role="math">ΔEU(A,N) = p[U(A,F) − U(N,F)] + (1 − p)[U(A,¬F) − U(N,¬F)]</div>
 <p>Assume, only for illustration, that acting has an expected net benefit <em>b &gt; 0</em> if the threat is real, but an expected net cost <em>c &gt; 0</em> if it is not. Then the model gives a simple action threshold:</p>
 <div aria-label="Action threshold under uncertainty" class="ep-standalone-formula" role="math">ΔEU = p·b − (1 − p)·c;  favor A when p &gt; c/(b + c)</div>
-<p>These letters are <strong>illustrative variables, not measured probabilities or payoffs</strong>. The threshold depends on the precise action: documenting possible abuses, joining peaceful civic organizing, making a public accusation, and engaging in risky confrontation have very different expected costs and effects. This model cannot derive a moral duty from utility alone; ethical constraints and rights still apply. Nor can a person's individual payoff capture the collective-action problem: when benefits are dispersed and personal costs concentrated, individually rational hesitation can coexist with a collectively damaging outcome. The model also assumes the relevant payoff differences can be summarized by two quantities; in practice, effectiveness, reversibility, strategic interaction, and the possibility of multiple outcomes would require a richer model.</p>
+<p>These letters are <strong>illustrative variables, not measured probabilities or payoffs</strong>. The threshold depends on the precise action: documenting possible abuses, joining peaceful civic organizing, making a public accusation, and engaging in risky confrontation have very different expected costs and effects. This model cannot derive a moral duty from utility alone; ethical constraints and rights still apply. Nor can a person's individual payoff capture the collective-action problem: when benefits are dispersed and personal costs concentrated, individually rational hesitation can coexist with a collectively damaging outcome.</p>
 </div>
 <p>We should nevertheless distinguish the <em>threshold for using a political label</em> from the <em>threshold for taking any particular action</em>. A precautionary action with low costs may require less confidence than a grave accusation or an intervention with high risks. Belief by itself does not formally entail a specified obligation without additional ethical premises about responsibility, proportionality, and the capacity to affect outcomes. A diagnosis can inform practical judgment without replacing it.</p>
 <p class="chapter-transition">These implications suggest a more precise next question: how should historical comparison, relational evidence, and contemporary observations be assembled into a defensible diagnosis?</p>
 </section>
 <section aria-labelledby="methodology-diagnosing-fascism" class="ep-revised-section">
 <h3 id="methodology-diagnosing-fascism">A Methodology for Diagnosing Contemporary Fascism</h3>
-<p class="chapter-lead">The goal here is not to invent a mechanical test that forces every case into a binary category, but to make the steps of comparison and inference visible. The procedure is provisional, defeasible, and intended to be revisable when new evidence or stronger alternative explanations become available.</p><p class="ep-editorial-note"><strong>How to read the assessment:</strong> This is an interpretive comparison of documented public rhetoric, historical scholarship, political organizations, and policy proposals; it is not a quantitative classification, a proof of personal motives, or a claim that the diverse actors considered here share a common command structure. Wherever possible, distinguish primary statements and official records from journalists’ interpretations, and distinguish proposals from implemented government actions.</p>
+<p class="chapter-lead">The goal here is not to invent a mechanical test that forces every case into a binary category, but to make the steps of comparison and inference visible. The procedure is provisional, defeasible, and intended to be revisable when new evidence or stronger alternative explanations become available.</p>
 <h4 class="ep-analysis-subsection" id="methodology-object-of-analysis">Defining the Object of Analysis</h4>
 <p>There is an immediate ambiguity in the question “Is Trump a fascist?” It might concern <strong>Trump as an individual</strong>, <strong>MAGA as a coalition and mass movement</strong>, <strong>ideological networks around the movement</strong>, or <strong>the exercise of governmental power</strong>. These are connected objects, but findings about one cannot simply be attributed to all the others. For example, the presence of an extremist faction in a coalition is evidence about the coalition's composition; further evidence would be required to establish that the faction controls its leadership or defines the movement as a whole.</p>
 <h4 class="ep-analysis-subsection" id="methodology-analogical-mapping">Analogical Mapping and Relevance</h4>
-<p>My proposed approach begins with <strong>defeasible comparison</strong>: I would compare the leader, the movement, and relevant practices with historical cases and scholarly models, attending to both similarities and dissimilarities. Mussolini’s movement, Nazism, and the Romanian Iron Guard serve as relatively clear reference cases of fascism. Francoist Spain and Salazar’s Portugal are useful but contested comparators for conservative authoritarianism; resemblance to them cannot settle Griffin’s narrower ideological test.</p><p>Simple similarity is insufficient. The features being compared must be relevant under an explicitly chosen framework: a myth of revolutionary national rebirth matters considerably under Griffin, while repression alone occurs in other authoritarian political systems. A second, relational comparison can examine who advises political leaders, which ideas are publicly endorsed, which institutions cooperate, and whether these connections lead to identifiable decisions. An indirect chain of acquaintances or influence, on its own, is not evidence that an ideology was transmitted intact.</p><p>The comparative procedure therefore has four parts:</p>
+<p>
+      To me the question “is trump a fascist” is best approached by comparing
+      his actions to self identified fascists in history, prototypical fascists,
+      or fascist adjacent figures. Based on relative similarities, we can
+      defeasibly assign the label: it seems to me like the best we can do is use
+      defeasible analogical arguments, comparing him to a broader set of
+      fascists like Franco or Salazar, noting whether the similarities and
+      dissimilarities are relevant according to some criteria. Or maybe we can
+      do some sort of network analysis, looking at his local connections and
+      their relative importance on his outlook. For example, suppose trump is
+      influenced by JD Vance who is influenced by highly suspected fascists, we
+      could infer trump has fascist tendencies based on this peer group. This is
+      obviously problematic but it seems like these approaches could be
+      practical. Here are the key components of the analogical approach:
+    </p>
 <ul>
 <li>
 <b>Reference class</b>: Who counts as a paradigm case of fascism?
-        Mussolini, Hitler, and Codreanu as comparatively clear historical fascist reference cases; Franco and Salazar as more contested authoritarian comparators.
+        Mussolini, Hitler, Codreanu, Franco, etc.
       </li>
 <li>
 <b>Relevant features</b>: Cult of personality, palingenetic myth,
@@ -3109,7 +3148,19 @@
 <div aria-label="Weighted similarity expression" class="math-block ep-method-equation" role="note">\[S(x;D)=\frac{\sum_{i=1}^{n} w_i \, m_i(x,D)}{\sum_{i=1}^{n} w_i}, \qquad 0\le m_i\le 1,\quad w_i\ge 0.\]</div>
 <p>This is a <strong>formal illustration of a comparative heuristic</strong>, not a measured score for Trump or a probability of fascism. Different definitions imply different weights; features may also overlap or depend on one another. A high similarity score would still require analysis of whether the shared features distinguish fascism from other forms of authoritarian or nationalist politics.</p>
 <h4 class="ep-analysis-subsection" id="methodology-relational-mapping">Relational Mapping and Influence Networks</h4>
-<p>The second approach looks at <strong>organizational and intellectual relationships</strong>. Rather than treat fascism itself as an automatically inherited property of a social network, we can investigate how doctrines circulate through publications, appointments, funding, advocacy organizations, and documented collaboration. Sociological field theory and actor–network approaches offer potentially useful heuristics for this investigation, but neither supplies a shortcut from association to ideological identity.</p><p>Suppose an adviser has publicly praised an anti-democratic thinker and later recommends a policy resembling that thinker’s proposals. That may justify closer examination of the adviser’s stated reasons and decision-making authority. It does not, without further evidence, establish that the president has embraced the entire philosophy. A valid network argument must identify the direction, content, and credibility of each claimed link.</p><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://en.wikipedia.org/wiki/Field_theory_(sociology)">field theory</a> · <a href="https://en.wikipedia.org/wiki/Actor%E2%80%93network_theory">actor-network theory</a> · <a href="https://en.wikipedia.org/wiki/Curtis_Yarvin">Curtis Yarvin</a></div></details>
+<p>
+      We could leverage features of the definitional strategies we have covered
+      thus far to make an inference. For the network analysis and peer group
+      inference, I'm essentially treating fascism not just as an ideology, but
+      as a relational property detectable through influence patterns, discourse
+      networks, and affiliation with fascist adjacent thinkers or movements. We
+      could approach this using <a href="https://en.wikipedia.org/wiki/Field_theory_(sociology)">field theory</a> or <a href="https://en.wikipedia.org/wiki/Actor%E2%80%93network_theory">actor-network theory</a>. Many actors dont explicitly identify as fascist, but their discursive
+      ecosystem can still signal fascist tendencies. Influence is often mediated
+      through multiple paths on a social network; for example Yarvin -&gt; Vance
+      -&gt; Trump (<a href="https://en.wikipedia.org/wiki/Curtis_Yarvin">Curtis Yarvin</a> being the known fascist). We could also ask whether Trump is enabling or
+      empowered by fascist networks. Perhaps we could even combine the
+      analogical and network approach into a practical heuristic:
+    </p>
 <p>A network representation can organize these claims as a directed graph, <span class="ep-inline-math">\(G=(V,E)\)</span>, where <em>V</em> represents people, organizations, and institutions, while each link in <em>E</em> must be identified by its <em>type</em>—for example, appointment, funding, quotation, endorsement, direct collaboration, or documented intellectual influence. Those link types are not interchangeable. In particular, an indirect path between two figures does not establish that beliefs traveled along that path, much less that both figures share a political ideology.</p>
 <p>Combining these two approaches produces the following practical sequence, which the later diagnosis will attempt to follow:</p>
 <ul>
@@ -3130,7 +3181,7 @@
 <h4 class="ep-analysis-subsection" id="methodology-evidential-legitimation">Evidential Legitimation and Competing Explanations</h4>
 <p>
       I think an approach like this avoids definitional reductionism and concept
-      creep. Before doing this, it seems that when we marshal
+      creep. But prior to doing any of this, It seems that when we marshal
       evidence for the conclusion , we need to first establish whether that
       evidence is relevant. In Evidential Foundations of Probabilistic
       Reasoning, David Schum explains that evidence must be established as such
@@ -3187,7 +3238,7 @@
 <p>The eventual assessment should therefore record: (1) <strong>which object</strong> is being classified; (2) <strong>which conceptual framework</strong> makes each feature relevant; (3) the <strong>quality and independence</strong> of the evidence; (4) <strong>historical and relational mechanisms</strong> that connect observations; (5) <strong>plausible alternatives and counterevidence</strong>; and (6) the <strong>strength and limits</strong> of the resulting judgment. A conclusion can be reasoned and provisional without being either arbitrary or mathematically calibrated.</p>
 <p class="chapter-transition">With the procedure identified, the next section moves from the abstract question of definition to the observable composition, history, rhetoric, and institutional behavior of Trump and the MAGA movement.</p>
 </section>
-<h3 id="is-trump-a-fascist">Is Trump a Fascist</h3><p class="ep-editorial-note"><strong>Evidentiary scope:</strong> The categories below describe selected currents within a heterogeneous political coalition, not the beliefs of every participant. Contemporary policy claims should be read with attention to date, institutional status, and whether a measure was merely proposed, formally adopted, blocked, or implemented.</p>
+<h3 id="is-trump-a-fascist">Is Trump a Fascist</h3>
 <p>
     So, given all this preamble, is Trump fascist? This question should be
     rephrased: "to what extent does Trump and his political movement resemble
@@ -3212,10 +3263,13 @@
 <ul>
 <li>
 <p>
-            MAGA / America-First populist core - This is the core mass constituency of the
-            movement: Trump-centered, anti-immigration, often focused on grievances
+            MAGA / America-First populist core - This is core mass of the
+            movement: Trump-centered, anti-immigration, permanently aggrieved
             about 2020, and convinced the federal government is captured by
-            enemies. It supplies the audience and emotional energy. Several other factions seek to reach this constituency. The slogan has a restorative message, but the more demanding palingenetic test requires evidence of a revolutionary national-rebirth program.
+            enemies. It supplies the audience and emotional energy. Almost every
+            other faction tries to speak to this base. MAGA itself symbolizes
+            palingenetic rhetoric; we must "go back" to a time where things were
+            ideal.
           </p>
 </li>
 <li>
@@ -3238,7 +3292,8 @@
             producing a 900-page plan to centralize the executive, purge
             disloyal bureaucracy (Schedule-F style), kill off DEI, and advance
             Christian-right social priorities. It’s a way to make MAGA’s
-            instincts administratively real. (<a href="https://www.aclu.org/project-2025-explained?" title="Project 2025, Explained | American Civil Liberties ...">American Civil Liberties Union</a>) This raises concerns about the concentration of executive power and political polarization.
+            instincts administratively real. (<a href="https://www.aclu.org/project-2025-explained?" title="Project 2025, Explained | American Civil Liberties ...">American Civil Liberties Union</a>) This maps cleanly onto power consolidation and creating an "us
+            vs. them" culture.
           </p>
 </li>
 <li>
@@ -3255,7 +3310,7 @@
 <p>
             Nativist–security hardliners - Border, “invasion,” mass-deportation
             planning — all of this hooks directly into the Great Replacement
-            paranoia and makes it legible to a broader Republican audience (“we’re being
+            paranoia and makes it legible to normie GOP voters (“we’re being
             replaced → close the border”). It offers a “lawful” outlet for
             demographic fear. (<a href="https://www.pbs.org/newshour/politics/what-is-great-replacement-theory-and-how-does-it-fuel-racist-violence?" title="What is 'great replacement theory' and how does it fuel ...">PBS</a>) This ties into the long historical tradition within the right to
             create a pure "True American" based on their culture war rhetoric.
@@ -3265,7 +3320,7 @@
 <p>
             Paramilitary / militia / Jan-6-adjacent layer - Oath Keepers, Proud
             Boys, and likeminded militia networks acted as the
-            <em>action wing</em> of Trumpist politics — as illustrated by DOJ prosecutions and convictions
+            <em>action wing</em> of Trumpist politics — exactly what DOJ proved
             in the seditious-conspiracy cases against Stewart Rhodes and the
             Proud Boys leadership. This shows how a political narrative (“stop
             the steal,” “save the country”) slid into organized force. And
@@ -3279,7 +3334,7 @@
             orbit) - These aren’t mass movements but they’ve given the right an
             idea that democracy is slow and captured, so smarter, more CEO-like
             rulers — even monarchic or city-state models — should run things.
-            Their proposals overlap with arguments for concentrated executive authority, but they are not equivalent to the aims of all MAGA voters.
+            That harmonizes with MAGA’s desire for a super-presidency.
           </p>
 </li>
 </ul>
@@ -3299,7 +3354,7 @@
             levels of government. Then there is
             <strong>Christian Zionism</strong>. This is a longstanding GOP
             current that assigns theological meaning to supporting Israel and
-            folds it into the civilizational battle frame. (<a href="https://www.pbs.org/newshour/show/what-is-christian-nationalism-and-why-it-raises-concerns-about-threats-to-democracy?" title="What is Christian nationalism and why it raises concerns ...">PBS</a>) Critics have identified antisemitic implications in some apocalyptic variants, but Christian Zionists have diverse theological and political motivations.
+            folds it into the civilizational battle frame. (<a href="https://www.pbs.org/newshour/show/what-is-christian-nationalism-and-why-it-raises-concerns-about-threats-to-democracy?" title="What is Christian nationalism and why it raises concerns ...">PBS</a>) It is also described as anti-semetic by critics.
           </p>
 </li>
 <li>
@@ -3399,7 +3454,7 @@
             emergency that justifies extreme border, deportation, or even
             violent responses, and extremist organizations explicitly name it.
             (<a href="https://www.pbs.org/newshour/politics/what-is-great-replacement-theory-and-how-does-it-fuel-racist-violence?" title="What is 'great replacement theory' and how does it fuel ...">PBS</a>) These stories are modular; Christian nationalists can plug them
-            in; militias can plug them in; National Conservative staffers can borrow the “deep
+            in; militias can plug them in; NatCon staffers can borrow the “deep
             state” part to argue for Schedule F.
           </p>
 </li>
@@ -3442,7 +3497,7 @@
 </li>
 </ul>
 </li>
-</ol><p><strong>Chronology matters for January 6.</strong> In 2022–23, federal juries convicted leaders of the Oath Keepers and Proud Boys of seditious conspiracy in connection with the 2021 Capitol attack. In January 2025, President Trump issued broad clemency covering January 6 defendants, including commutations for Stewart Rhodes and several other convicted group members. The convictions, presidential clemency, and political significance of clemency are distinct facts; the latter does not establish who directed the earlier violence. <a href="https://www.justice.gov/usao-dc/pr/court-sentences-two-oath-keepers-leaders-18-years-prison-seditious-conspiracy-and-other">(DOJ trial record)</a> <a href="https://www.whitehouse.gov/Presidential-actions/2025/01/granting-pardons-and-commutation-of-sentences-for-certain-offenses-relating-to-the-events-at-or-near-the-united-states-capitol-on-january-6-2021/">(January 2025 presidential proclamation)</a></p>
+</ol>
 <p><strong>What holds these factions together?</strong> This inventory is more explanatory if we separate their <em>end states</em> from their <em>coalitional incentives</em>. A market libertarian and a religious integralist may disagree fundamentally over the proper relationship between the economy, the church, and the state; they may nevertheless cooperate in opposition to liberal institutions, immigration policies, or particular administrative practices. Such cooperation is a strategic fact, not proof of doctrinal unity. Conversely, shared voters, donors, media audiences, or organizational platforms can permit ideas to circulate even when no single faction commands the rest.</p>
 <p>For purposes of diagnosis, I would distinguish four levels of integration: <strong>audience overlap</strong> (people consuming the same discourse), <strong>organizational coordination</strong> (shared campaigns and institutions), <strong>programmatic convergence</strong> (common policy projects), and <strong>ideological endorsement</strong> (explicit agreement with the underlying worldview). A finding at one level does not automatically establish the next. This also explains why the movement's internal contradictions matter: they are possible evidence against the claim that MAGA is one coherent, uniformly fascist ideology, even when specific sectors display features associated with fascist politics.</p>
 <p>
@@ -3463,7 +3518,19 @@
   </p>
 <h4 class="ep-analysis-subsection" id="maga-historical-trajectories">Historical Trajectories and Path Dependency</h4>
 <p>The historical argument requires more than noting resemblance across decades. The relevant question is how older political institutions, mobilizing strategies, rhetorical vocabularies, and constituencies provided resources for later movements, and where these connections are demonstrable rather than merely analogous. This is a selective account of historical trajectories, not a claim that MAGA's emergence was inevitable.</p>
-<p>The historical comparison is necessarily selective. Rather than proposing a single continuous genealogy of the contemporary right, I want to identify several partially independent traditions—segregationist backlash, institutionalized culture-war conservatism, evangelical voter mobilization, paleoconservative nationalism, and attempts by explicitly white-supremacist figures to enter electoral politics. These histories supply possible precedents and organizational resources, but their influence on MAGA must be shown rather than assumed.</p>
+<p>
+    I think this is a fair description of the current state of conservative
+    politics. But we should also consider some of the types of events that led
+    to this moment and figures that spearheaded this radicalism. Next we will
+    look at lineage map showing how various figures fed
+    momentum—organizationally, rhetorically, and ideologically—into today’s
+    MAGA/right-wing constellation we outlined above. This is obviously something
+    that is open to serious historical investigation; I wouldn't possibly be
+    able to give a comprehensive view of the history leading to this moment. But
+    I think you can generally bucket various historical trends into one of these
+    few categories listed below, along with figures within each bucket that were
+    vocal.
+  </p>
 <ol>
 <li>
 <p>
@@ -3496,9 +3563,10 @@
 <p>
 <strong>“America First” nationalism:</strong> Pat Buchanan (with Sam
         Francis as theorist) fused immigration restriction, protectionism, and a
-        religiously coded culture war—potential antecedents of later nationalist-populist programs. (<a href="https://voicesofdemocracy.umd.edu/buchanan-culture-war-speech-speech-text/?" title='Buchanan, \"Culture War Speech,\" Speech Text'>Voices of Democracy</a>) In a separate, organizational trajectory, Pat Robertson helped develop the mobilization infrastructure of the Christian right. Robertson built<strong>CBN</strong>, ran for the Republican presidential nomination (1988), and founded the<strong>Christian Coalition</strong> (1989) that perfected church-based
+        religiously coded culture war—direct precursors of Trumpist MAGA and
+        NatCon programs. (<a href="https://voicesofdemocracy.umd.edu/buchanan-culture-war-speech-speech-text/?" title='Buchanan, \"Culture War Speech,\" Speech Text'>Voices of Democracy</a>) In a separate, organizational trajectory, Pat Robertson helped develop the mobilization infrastructure of the Christian right. Robertson built<strong>CBN</strong>, ran for the Republican presidential nomination (1988), and founded the<strong>Christian Coalition</strong> (1989) that perfected church-based
         voter registration, voter guides, and school-board/state-house capture
-        strategies. (<a href="https://www.ebsco.com/research-starters/history/robertson-founds-christian-coalition?" title="Robertson Founds the Christian Coalition | Research Starters">EBSCO</a>) This helped institutionalize evangelical political participation and made
+        strategies. (<a href="https://www.ebsco.com/research-starters/history/robertson-founds-christian-coalition?" title="Robertson Founds the Christian Coalition | Research Starters">EBSCO</a>) This normalized evangelical direct entry into GOP politics and made
         “religious war for the soul of America” a mainstream posture—precisely
         the soil where Christian nationalism and Seven Mountains organizing
         flourished. (<a href="https://www.csmonitor.com/USA/Politics/2023/0608/Pat-Robertson-moved-seamlessly-between-religion-and-politics?" title="Pat Robertson moved seamlessly between religion and ...">Christian Science Monitor</a>) Buchanan, by contrast, developed programmatic “America First” rhetoric and
@@ -3526,7 +3594,7 @@
         regime/managerial elites,” zero-sum identity conflict, and the case for
         a tough executive to crush the hostile bureaucracy—all central to
         Project 2025 style arguments. (Even critics trace a direct intellectual
-        line from Francis to Trumpism.) (<a href="https://www.theunpopulist.net/p/sam-francis-the-dangerous-apostle?" title="Sam Francis: The Dangerous Apostle of Right-Wing ...">theunpopulist.net</a>) Sam Francis helped popularize vocabulary and strategy (“Middle American
+        line from Francis to Trumpism.) (<a href="https://www.theunpopulist.net/p/sam-francis-the-dangerous-apostle?" title="Sam Francis: The Dangerous Apostle of Right-Wing ...">theunpopulist.net</a>) Sam Francis gave the vocabulary and strategy (“Middle American
         Radicals,” “anarcho-tyranny”) now echoed across MAGA media and policy
         talk. (<a href="https://firstthings.com/the-outsider/?" title="The Outsider">First Things</a>)
       </p>
@@ -3559,7 +3627,27 @@
 <p>What makes this a <em>path-dependent</em> account rather than a list of precursors is that prior organizations and available political vocabularies can lower the cost of subsequent mobilization. They do not mechanically determine later outcomes. Events such as partisan realignment, changing media technology, leadership choices, and the contingent formation of coalitions still matter. The claim should therefore be about <strong>constrained opportunities and inherited repertoires</strong>, not historical inevitability.</p>
 <p>As one concrete organizational anchor, a <a href="https://www.govinfo.gov/content/pkg/CRPT-105srpt167/html/CRPT-105srpt167-pt5.htm">U.S. Senate committee report</a> identifies Robertson as founder of the Christian Coalition in 1989 and Ralph Reed as its executive director. That supports a narrow claim about movement infrastructure, not a direct causal claim about every later Christian-nationalist group.</p>
 </div>
-<p>Buchanan and Francis helped articulate an earlier vocabulary of nationalist economics, immigration restriction, and cultural counter-revolution. Thurmond and Helms offer examples of earlier battles over civil rights and cultural institutions, while Robertson’s Christian Coalition illustrates a separate infrastructure for conservative voter mobilization. These precedents help make some later political developments intelligible, but they do not amount to proof that Project 2025, the unitary-executive theory, or every present-day campaign descended from those specific individuals. Establishing a direct influence requires documentary bridges—citations, staff networks, organizational histories, or demonstrable reuse of particular strategies.</p><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://en.wikipedia.org/wiki/Christian_right?" title="Christian right">Wikipedia</a> · <a href="https://voicesofdemocracy.umd.edu/buchanan-culture-war-speech-speech-text/?" title='Buchanan, \"Culture War Speech,\" Speech Text'>Voices of Democracy</a> · <a href="https://en.wikipedia.org/wiki/1991_Louisiana_gubernatorial_election?" title="1991 Louisiana gubernatorial election">Wikipedia</a> · <a href="https://nymag.com/intelligencer/2023/07/anarcho-tyranny-is-a-rationale-for-right-wing-lawlessness.html?" title="'Anarcho-Tyranny' Is a Rationale for Right-Wing Lawlessness">New York Magazine</a> · <a href="https://www.ebsco.com/research-starters/history/robertson-founds-christian-coalition?" title="Robertson Founds the Christian Coalition | Research Starters">EBSCO</a></div></details>
+<p>
+    Buchanan/Francis provided the agenda (nationalist economics + immigration
+    restriction + cultural counter-revolution) for modern conservatism. The
+    Helms/Thurmond model justify hardball use of institutions to enforce it.
+    Robertson supplies the mobilization infrastructure. That package maps
+    straight onto contemporary unitary-executive/“Schedule F” efforts and the
+    Project 2025 governance blueprint. (<a href="https://en.wikipedia.org/wiki/Christian_right?" title="Christian right">Wikipedia</a>) Buchanan’s prime-time “religious war” rhetoric + Helms’s anti-NEA
+    crusades created the template for governing through culture war—now visible
+    in DEI bans, school wars, and arts/education defunding pushes. (<a href="https://voicesofdemocracy.umd.edu/buchanan-culture-war-speech-speech-text/?" title='Buchanan, \"Culture War Speech,\" Speech Text'>Voices of Democracy</a>) Duke’s electoral bids showed the overlap between grievance populism and
+    explicit white supremacy. Today’s militia/groyper/accelerationist layer
+    exploits the same grievances; meanwhile, mainstream actors adopt sanitized
+    versions (e.g., “invasion” rhetoric), keeping the ecosystem connected while
+    formally disavowing its extremes (while simultaneously dog whisteling to the
+    radical elements). (<a href="https://en.wikipedia.org/wiki/1991_Louisiana_gubernatorial_election?" title="1991 Louisiana gubernatorial election">Wikipedia</a>) Francis’s “anarcho-tyranny” and “managerial elite” frames became today’s
+    “deep state/Cathedral” meme-plex—perfectly compatible with Q-style cabal
+    stories and with bureaucratic purge proposals from NatCon/Heritage circles.
+    (<a href="https://nymag.com/intelligencer/2023/07/anarcho-tyranny-is-a-rationale-for-right-wing-lawlessness.html?" title="'Anarcho-Tyranny' Is a Rationale for Right-Wing Lawlessness">New York Magazine</a>) Robertson’s church-based politics marries seamlessly to Christian
+    nationalism’s Seven Mountains goals, giving the social base and
+    scripture-coded justification for wielding state power in the culture war
+    (book bans, anti-LGBTQ policy, university purges). (<a href="https://www.ebsco.com/research-starters/history/robertson-founds-christian-coalition?" title="Robertson Founds the Christian Coalition | Research Starters">EBSCO</a>)
+  </p>
 <p>
     If you picture today’s right as a network, these figures are its
     <strong>roots</strong>:
@@ -3585,9 +3673,11 @@
     </li>
 </ul>
 <p>
-    These earlier actors and organizations contributed to a wider political repertoire from which distinct contemporary groups may draw, sometimes selectively and sometimes in conflicting ways. There are many books that go into depth on
+    Together they built the repertoire—ideas, emotions, and tactics—that MAGA,
+    NatCon, Christian nationalists, tech-reactionaries, and the militia/online
+    radical fringes now leverage. There are many books that go into depth on
     this topic, I am merely scratching the surface. I just wanted to demonstrate
-    that this Trump phenomena did not emerge out of a vacuum. There is a path
+    that this Trump phenomena did not emerge out of a vaccum. There is a path
     dependency from multiple movements dating back to the 1950's that began to
     converge under the same banner around 2016 with the Trump presidency. An
     interesting book that elaborates in more detail is
@@ -3598,9 +3688,12 @@
 <p>These examples are analyzed as claims and narratives circulating in parts of the right-wing ecosystem. Their circulation, partial rhetorical uptake, and explicit endorsement by a particular political actor are different kinds of evidence; the distinction matters to the final diagnosis.</p>
 <p>
     Now that I have covered the current composition and historical trends
-    leading to our current moment, I want to briefly discuss some recurrent narratives in parts of the contemporary American right. There is a distinctive
+    leading to our current moment, I want to briefly discuss the type of
+    rhetoric that is used by the current right wing. There is a distinctive
     rhetorical tone and distinct content used by fascist movements; something
-    that Stanley discusses in depth. One such tool is the conspiracy theory. Conspiracy narratives have a documented role in many extremist movements, including historical fascism, but they are not exclusive to fascism.
+    that Stanley discusses in depth. One such tool is the conspiracy theory. The
+    Nazis were obsessed with conspiracies actually; and more often than not
+    conspiracies are created and leveraged for political mobilization purposes.
     <a href="https://philpapers.org/rec/CASCT-4">Quassim Cassam elaborates</a>
     on this political aspect of conspiracy theory. So now, I want to discuss a
     few conspiracy theories that have become normal political discussion within
@@ -3689,7 +3782,7 @@
         feminism, and liberalism to a Jewish-Marxist plot. Post-1990s U.S.
         conservatives (e.g., William S. Lind/Paul Weyrich) popularized the
         modern label “cultural Marxism,” explicitly targeting the Frankfurt
-        School. (<a href="https://en.wikipedia.org/wiki/Cultural_Bolshevism?" title="Cultural Bolshevism">Wikipedia</a>) The Frankfurt School was actually diverse scholarly project in
+        School. (<a href="https://en.wikipedia.org/wiki/Cultural_Bolshevism?" title="Cultural Bolshevism">Wikipedia</a>) Tthe Frankfurt School was actually diverse scholarly project in
         critical social theory, not a covert plan to control institutions.
         (Useful overview from the Stanford Encyclopedia of Philosophy.) (<a href="https://plato.stanford.edu/entries/critical-theory/?" title="Critical Theory (Frankfurt School)">Stanford Encyclopedia of Philosophy</a>) But you'll often hear moral panics about "critical theory" teaching
         our kids to "hate America" (a justification for "patriotic education"
@@ -3703,7 +3796,7 @@
 <li>
           Invoking a <strong>“long march through the institutions”</strong> (a
           1960s radical slogan) as proof of infiltration—usually stripped of
-          context (This is an argument that requires independent evidence of institutional strategy). (<a href="https://en.wikipedia.org/wiki/Long_march_through_the_institutions?" title="Long march through the institutions">Wikipedia</a>)
+          context (Ironically, this is precisely what they have been doing). (<a href="https://en.wikipedia.org/wiki/Long_march_through_the_institutions?" title="Long march through the institutions">Wikipedia</a>)
         </li>
 <li>
           Casting <strong>academia, media, and the arts</strong> as occupied
@@ -3800,7 +3893,55 @@
 <p>A rigorous account should ask whether <em>authoritarian populism</em> explains leader-centered anti-elite rhetoric without a distinct fascist myth, whether <em>Christian nationalism</em> better explains some religious-legal projects, and whether <em>reactionary or competitive authoritarianism</em> better describes particular institutional maneuvers. Relevant counterevidence would include durable institutional checks, pluralism within the coalition, genuine policy disagreements among factions, and behavior inconsistent with a revolutionary national-rebirth program. Such evidence would not erase documented abuses; it would refine the category used to describe them.</p>
 <p><strong>Historical comparator caveat:</strong> Franco's Spain and Salazar's Portugal are illuminating for elite-led, clerical, and corporatist authoritarian characteristics, but their exact relationship to generic fascism remains disputed in scholarship. A comparison that identifies resemblance to Francoism or Salazarism therefore cannot, by itself, settle the narrower question of fascism. See <a href="https://research.ulusofona.pt/en/publications/elites-single-parties-and-political-decision-making-in-southern-e-2/">António Costa Pinto's comparative analysis</a> and his discussion of <a href="https://researchportal.ulisboa.pt/en/publications/looking-for-a-third-way-salazars-dictatorship-and-the-diffusion-o/">Salazarism as a distinctive authoritarian model</a>.</p>
 </div>
-<p>The central question now is how to classify the pattern established above. The evidence is heterogeneous. Some of it consists of Trump’s and Vance’s public rhetoric; some concerns organized political projects such as Heritage’s policy planning; some concerns influence networks involving political donors, legal advocacy organizations, media figures, and anti-democratic intellectuals. These are not interchangeable indicators and cannot simply be added up as independent confirmations.</p><p>My strongest claim is that important parts of this political constellation exhibit <strong>fascistic rhetorical and anti-pluralist features</strong>, and that certain institutional projects raise concerns about concentrated executive power. A more specific claim—that Trump or the coalition fully instantiates Griffin’s revolutionary fascist ideology—requires additional evidence about explicit commitments, policy implementation, and the ideological unity of the governing project. Comparing the movement with Francoism or Salazarism can illuminate elite-centered and religiously conservative authoritarianism, but does not resolve the scholarly dispute about whether those historical regimes should themselves be classified as fascist.</p><p>Several individual cases illuminate the problem of attribution. Michael Knowles, for example, praised Franco’s leadership in a 2023 broadcast <em>while explicitly denying</em> that Franco was fascist. Russell Vought’s arguments for an expansive executive, and Michael Anton’s engagements with political theory, should be evaluated through their own writings and actual policy influence rather than used as unqualified evidence of a single coordinated ideology. The individuals considered below therefore serve as illustrations of different kinds of evidence, not as a roster of people presumed to have identical politics.</p><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://en.wikipedia.org/wiki/Peter_Thiel" title="Peter Thiel">Peter Thiel</a> · <a href="https://en.wikipedia.org/wiki/Kevin_Roberts_(political_strategist)" title="Kevin Roberts">Kevin Roberts</a> · <a href="https://en.wikipedia.org/wiki/The_Heritage_Foundation" title="The Heritage Foundation">Heritage Foundation</a> · <a href="https://www.project2025.observer/" title="project 2025">project 2025</a> · <a href="https://en.wikipedia.org/wiki/Leonard_Leo" title="Leonard Leo">Leonard Leo</a> · <a href="https://en.wikipedia.org/wiki/Opus_Dei" title="Opus Dei">Opus Dei</a> · <a href="https://rationalwiki.org/wiki/Radical_traditionalism" title="Radical traditionalism">Radical Traditionalism</a> · <a href="https://en.wikipedia.org/wiki/Stephen_Miller_(advisor)" title="Stephen Miller">Stephen Miller</a> · <a href="https://en.wikipedia.org/wiki/Charles_Koch" title="Charles Koch">Charles Koch</a> · <a href="https://en.wikipedia.org/wiki/Tyler_Cowen" title="Tyler Cowen">Tyler Cowen</a> · <a href="https://en.wikipedia.org/wiki/Curtis_Yarvin" title="Curtis Yarvin">Curtis Yarvin</a> · <a href="https://en.wikipedia.org/wiki/Richard_Hanania" title="Richard Hanania">Richard Hanania</a> · <a href="https://en.wikipedia.org/wiki/Simone_and_Malcolm_Collins" title="Simone and Malcolm Collins">Simone and Malcolm Collins</a> · <a href="https://en.wikipedia.org/wiki/PayPal_Mafia" title="PayPal Mafia">PayPal mafia</a> · <a href="https://en.wikipedia.org/wiki/Manosphere" title="Manosphere">red pill movement</a> · <a href="https://en.wikipedia.org/wiki/Francoist_Spain" title="Francoist Spain">Francoist</a> · <a href="https://en.wikipedia.org/wiki/Michael_Anton" title="Michael Anton">Michael Anton</a> · <a href="https://en.wikipedia.org/wiki/Carl_Schmitt" title="Carl Schmitt">Carl Schmitt</a> · <a href="https://en.wikipedia.org/wiki/Russell_Vought" title="Russell Vought">Russell Vought</a> · <a href="https://en.wikipedia.org/wiki/Unitary_executive_theory" title="Unitary executive theory">Unitary Executive Theory</a> · <a href="https://en.wikipedia.org/wiki/Market_fundamentalism" title="Market fundamentalism">market fundamentalists</a> · <a href="https://www.mediamatters.org/michael-knowles/daily-wires-michael-knowles-praises-spanish-dictator-francisco-franco-franco-was">(Knowles transcript)</a></div></details>
+<p>
+    A quick recap on what we have done so far. We have shown the current
+    composition of the modern right and its rhetorical tactics, plus a partial
+    historical trajectory, leading to what many people are calling fascist. So
+    given this background, let's reask the question: to what degree is Trump or
+    this movement Fascist, according to definitions and characterizations given
+    by scholars, and actual facts of the current movement? I want to make a case
+    that Trump/Vance and their close network of people like
+    <a href="https://en.wikipedia.org/wiki/Peter_Thiel" title="Peter Thiel">Peter Thiel</a>,
+    <a href="https://en.wikipedia.org/wiki/Kevin_Roberts_(political_strategist)" title="Kevin Roberts">Kevin Roberts</a>
+    of the
+    <a href="https://en.wikipedia.org/wiki/The_Heritage_Foundation" title="The Heritage Foundation">Heritage Foundation</a>
+    (Heritage president who wrote the foreword to
+    <a href="https://www.project2025.observer/" title="project 2025">project 2025</a>),
+    <a href="https://en.wikipedia.org/wiki/Leonard_Leo" title="Leonard Leo">Leonard Leo</a>
+    and his connections with
+    <a href="https://en.wikipedia.org/wiki/Opus_Dei" title="Opus Dei">Opus Dei</a>, the growing
+    <a href="https://rationalwiki.org/wiki/Radical_traditionalism" title="Radical traditionalism">Radical Traditionalism</a>
+    (Rad Trad) elements of the right,
+    <a href="https://en.wikipedia.org/wiki/Stephen_Miller_(advisor)" title="Stephen Miller">Stephen Miller</a>,
+    <a href="https://en.wikipedia.org/wiki/Charles_Koch" title="Charles Koch">Charles Koch</a>,
+    <a href="https://en.wikipedia.org/wiki/Tyler_Cowen" title="Tyler Cowen">Tyler Cowen</a>,
+    <a href="https://en.wikipedia.org/wiki/Curtis_Yarvin" title="Curtis Yarvin">Curtis Yarvin</a>,
+    <a href="https://en.wikipedia.org/wiki/Richard_Hanania" title="Richard Hanania">Richard Hanania</a>, and
+    <a href="https://en.wikipedia.org/wiki/Simone_and_Malcolm_Collins" title="Simone and Malcolm Collins">Simone and Malcolm Collins</a>, the
+    <a href="https://en.wikipedia.org/wiki/PayPal_Mafia" title="PayPal Mafia">PayPal mafia</a>, and generally the
+    <a href="https://en.wikipedia.org/wiki/Manosphere" title="Manosphere">red pill movement</a>
+    who’s interwoven with this entire thing, resemble fascism to an alarming
+    degree, specifically
+    <a href="https://en.wikipedia.org/wiki/Francoist_Spain" title="Francoist Spain">Francoist</a>
+    fascism. Michael Knowles, a massive Trump loyalist and influencer in the
+    alt-right, outright praised the Spanish fascist dictator Francisco Franco.
+    Leaders in the White House like
+    <a href="https://en.wikipedia.org/wiki/Michael_Anton" title="Michael Anton">Michael Anton</a>
+    openly claim to have studied the writings of the fascist intellectual
+    <a href="https://en.wikipedia.org/wiki/Carl_Schmitt" title="Carl Schmitt">Carl Schmitt</a>.
+    <a href="https://en.wikipedia.org/wiki/Russell_Vought" title="Russell Vought">Russell Vought</a>, a very influential person within the Trump regime, is a staunch proponent
+    of the deeply authoritarian
+    <a href="https://en.wikipedia.org/wiki/Unitary_executive_theory" title="Unitary executive theory">Unitary Executive Theory</a>
+    and is arguably a Christian Nationalist. Given Trumps proximity to this
+    network of people, his palingenetic myth rhetoric, and the fervor among
+    radical parts of his core voter base (the revolutionary aspect of fascism),
+    I think this constellation warrants serious consideration of fascistic tendencies, while the stronger claim about Trump's personal commitments requires further evidence. Some extremists may also find him instrumentally useful without his sharing their entire program. Some of the names
+    I've listed provide the intellectual justification for their movement. Some
+    of them are
+    <a href="https://en.wikipedia.org/wiki/Market_fundamentalism" title="Market fundamentalism">market fundamentalists</a>, representing the economic policy aspect of the movement, some of them are
+    cultural commentators, some of them are legal professionals with massive
+    influence, and some are polemicists whose influence should be assessed rather than assumed.
+  </p>
 <style>
     table.authoritarian-traits-compare {
       width: 100%;
@@ -3837,8 +3978,14 @@
 </thead>
 <tbody>
 <tr>
-<td data-label="Feature of Francoism">Conservative authoritarianism and church–state collaboration</td>
-<td data-label="Resonance in the Trump/Vance extended ecosystem">Conservative Catholic legal networks and disputed reports of Opus Dei-connected influence; distinguish association from direct control</td>
+<td data-label="Feature of Francoism">
+<strong>Clerical-fascist</strong> alliance with Catholicism (Opus Dei,
+          Falangism)
+        </td>
+<td data-label="Resonance in the Trump/Vance extended ecosystem">
+<strong>Leonard Leo</strong>, <strong>Opus Dei</strong> connections,
+          traditionalist Catholic intellectuals
+        </td>
 </tr>
 <tr>
 <td data-label="Feature of Francoism">
@@ -3850,7 +3997,7 @@
         </td>
 </tr>
 <tr>
-<td data-label="Feature of Francoism"><strong>Concentration of executive and administrative authority</strong></td>
+<td data-label="Feature of Francoism"><strong>Authoritarian, anti-liberal state-building</strong></td>
 <td data-label="Resonance in the Trump/Vance extended ecosystem">
 <strong>Project 2025</strong>, administrative state overhaul, Heritage
           Foundation plans
@@ -3858,26 +4005,79 @@
 </tr>
 <tr>
 <td data-label="Feature of Francoism"><strong>Technocratic authoritarianism</strong></td>
-<td data-label="Resonance in the Trump/Vance extended ecosystem">Yarvin has advocated neo-monarchism; Thiel published explicit doubts about democracy in 2009; Cowen should not be assigned those views by association</td>
+<td data-label="Resonance in the Trump/Vance extended ecosystem">
+<strong>Peter Thiel</strong>, <strong>Tyler Cowen</strong>,
+          <strong>Curtis Yarvin</strong> embrace of post-democratic governance
+          models
+        </td>
 </tr>
 <tr>
-<td data-label="Feature of Francoism"><strong>Institutional strategies using courts and law</strong></td>
-<td data-label="Resonance in the Trump/Vance extended ecosystem">Conservative legal organizing and Leo’s documented judicial-selection influence; ordinary litigation is not in itself anti-pluralist</td>
+<td data-label="Feature of Francoism"><strong>Suppression of pluralism via legalism</strong></td>
+<td data-label="Resonance in the Trump/Vance extended ecosystem">
+          Judicial strategies from the Federalist Society,
+          <strong>Leonard Leo’s</strong> court-packing network
+        </td>
 </tr>
 <tr>
-<td data-label="Feature of Francoism">Institution-centered political change contrasted with fascist mass-party mobilization</td>
-<td data-label="Resonance in the Trump/Vance extended ecosystem">Influence through think tanks, courts, donors, and personnel networks; coordination must be documented</td>
+<td data-label="Feature of Francoism">
+<strong>No mass party like Nazism</strong> but elite control via
+          institutions
+        </td>
+<td data-label="Resonance in the Trump/Vance extended ecosystem">
+          This network is <strong>elite-driven</strong>, institutionally focused
+          (courts, think tanks, capital)
+        </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>The comparison is better framed as a hypothesis about <em>elite-centered, clerical, and technocratic strands of authoritarian politics</em> than as a settled designation of a new fascist subtype. The figures below illustrate different types of evidence—direct political statements, organizational roles, intellectual affinities, and financial networks. They should not be treated as ideologically interchangeable.</p>
+<p>
+    This is not Nazi-style fascism; it is corporate-clerical-technocratic
+    authoritarianism, what some call “managerial fascism.” Here is a bit more
+    about the key figures in this movement:
+  </p>
 <ul>
-<li><strong>J. D. Vance:</strong> Vance combines cultural conservatism, anti-elite rhetoric, and support for a stronger political challenge to universities and other institutions. In his 2021 National Conservatism address, he invoked Richard Nixon’s line that “the professors are the enemy”; attributing it to Nixon is important even though Vance presented it approvingly. His public praise for or engagement with heterodox political thinkers should be distinguished from a fully articulated commitment to their preferred systems of government. <a href="https://www.latimes.com/opinion/story/2021-11-05/jd-vance-professors-are-the-enemy-politics">(Speech context)</a><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://www.cbc.ca/radio/frontburner/professors-are-the-enemy-trump-s-war-on-higher-education-transcript-1.7493843" title="Professors are the enemy (CBC transcript)">Professors are the enemy</a></div></details></li>
-<li><strong>Peter Thiel:</strong> Thiel’s technology investments, political donations, and support for J. D. Vance make him relevant to the political-economic side of this analysis. In his 2009 essay <em>The Education of a Libertarian</em>, Thiel wrote that he no longer believed freedom and democracy were compatible. That is direct evidence of his stated skepticism about democratic politics at that time; it is not evidence that everyone he has funded holds the same position. His criticism of competitive markets in business strategy is a separate issue and should not be presented as proof of fascism. <a href="https://www.cato-unbound.org/2009/04/13/peter-thiel/education-libertarian/">(Thiel’s essay)</a><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://vasilishynkarenka.com/competition-is-for-losers/" title="Competition is for losers">Competition is for losers</a></div></details></li>
-<li><strong>Leonard Leo and conservative legal networks:</strong> Leo is a longtime Federalist Society leader, described by the organization as its co-chairman and former executive vice president. His role in judicial-selection politics is well documented. Investigative reporting has examined connections between conservative Catholic circles, including Opus Dei-associated institutions, and American legal politics, but this should not be confused with proof of Leo’s personal membership in Opus Dei, direct control of a government program, or authorship of Project 2025. Heritage lists Paul Dans and Steven Groves as editors of the Project 2025 policy volume and Kevin Roberts as its foreword author. <a href="https://fedsoc.org/bio/leonard-leo">(Federalist Society biography)</a> <a href="https://static.project2025.org/2025_MandateForLeadership_FULL.pdf">(Project 2025 front matter)</a><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://fedsoc.org/" title="Federalist Society">Federalist Society</a> · <a href="https://www.heritage.org/press/project-2025-publishes-comprehensive-policy-guide-mandate-leadership-the-conservative-promise">(Heritage authorship statement)</a></div></details></li>
-<li><strong>Curtis Yarvin (Mencius Moldbug):</strong> Yarvin openly argues for a form of neo-monarchist, CEO-style governance and rejects core premises of mass electoral democracy. Those positions make his writings particularly relevant as examples of explicit anti-democratic political theory. His 2011 essay on Anders Behring Breivik offers a disturbing discussion of political violence and ideological responsibility. However, the essay does <em>not</em> contain the claim, attributed to him in an earlier draft, that he called Breivik “a hero.” That attribution has therefore been withdrawn. What matters here is the text of his political theory and any demonstrable influence on public officials—not guilt by association or an inaccurate quotation. <a href="https://www.unqualified-reservations.org/2011/07/indisputable-humanity-of-anders-behring/">(Yarvin’s original essay)</a> <a href="https://www.newyorker.com/magazine/2025/06/09/curtis-yarvin-profile">(Profile and political context)</a></li>
-<li><strong>Other commentators, pronatalists, and technology networks:</strong> Richard Hanania, Tyler Cowen, Simone and Malcolm Collins, and people sometimes described collectively as the “PayPal mafia” are not a coherent organization and should not be assigned a single doctrine. Their specific published views, funding relationships, institutional roles, and direct influence on policy must be assessed separately. The mere fact of appearing in the same media or technology ecosystem is weak evidence of ideological agreement. The stronger inquiry is whether a particular argument was explicitly adopted and translated into a particular governmental decision.</li>
+<li>
+<strong>J.D. Vance</strong>: Positions himself as a post-liberal populist
+      and “realist” about class and culture. Spews Anti-elitist rhetoric, but
+      aligned with elite authoritarian capital. He is open to Curtis Yarvin's
+      monarchist/accelerationist thought and is Red pill-adjacent, sympathetic
+      to manosphere and traditionalist gender politics. Oh, and he outright
+      claimed that “<a href="https://www.cbc.ca/radio/frontburner/professors-are-the-enemy-trump-s-war-on-higher-education-transcript-1.7493843" title="Professors are the enemy (CBC transcript)">Professors are the enemy</a>”, and is accelerating Trumps war on higher education.
+    </li>
+<li>
+<strong>Peter Thiel</strong>: Funds both libertarian
+      techno-authoritarianism and Catholic integralism. He is a backer of Vance,
+      Blake Masters, and “startup government” ideologies and advocates for a
+      post-democratic elite rule, suggesting “freedom and democracy are not
+      compatible”. He also wrote an article titled “<a href="https://vasilishynkarenka.com/competition-is-for-losers/" title="Competition is for losers">Competition is for losers</a>”, in which he advocates for monopoly control, while simultaneously
+      gaslighting everyone into thinking he is pro-market,
+    </li>
+<li>
+<strong>Leonard Leo / Opus Dei</strong>: Leader of the
+      <a href="https://fedsoc.org/" title="Federalist Society">Federalist Society</a>, an institution that has had an incredible influence on the Supreme
+      Court. He has deep ties to reactionary Catholicism, including Opus Dei and
+      seeks to impose moral-authoritarian governance through the courts. His conservative legal-network influence deserves examination, but it should not be conflated with formal authorship of Project 2025. The Heritage Foundation identifies Paul Dans and Steven Groves as the editors of its policy volume.
+     <a href="https://www.heritage.org/press/project-2025-publishes-comprehensive-policy-guide-mandate-leadership-the-conservative-promise">(Heritage authorship statement)</a></li>
+<li>
+<strong>Curtis Yarvin (Mencius Moldbug)</strong>: Advocate for
+      neocameralist monarchy, i.e. replacing democracy with corporate CEO-rule.
+      He is deeply anti-egalitarian, anti-Enlightenment, hierarchical in his
+      thinking. He serves as a thought-leader for a reactionary elite
+      renaissance. Not only that, during his blogging days Yarvin praised the
+      Norweigen mass shooter Anders Behring Breivik, a right wing extremist who
+      killed 77 people; 8 in a bombing in Oslo and 69 in a mass shooting at a
+      Labour Party youth camp. Yarvin wrote “The indisputable humanity of Anders
+      Behring Breivik,” in which he praises the shooter’s actions and ideology.
+      He called him a hero.
+    </li>
+<li>
+<strong>Hanania / Cowen / Collinses / PayPal Mafia</strong>: Embrace or
+      enable racial realism, eugenics, market absolutism, or anti-democratic
+      governance. They use intellectualized framing to sanitize dangerous social
+      engineering ideas and are connected by networks of funding and podcast
+      circuits (e.g., Thiel money, Substack echo chambers)
+    </li>
 </ul>
 <p>
     In terms of selected features, this resembles some elements of Francoism or Salazarism: elite-led, religiously
@@ -3894,53 +4094,105 @@
 <tbody>
 <tr>
 <td data-label="Trait"><strong>Traditionalist gender roles and patriarchy</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Traditionalist-gender and pronatalist currents within parts of the wider coalition; not a common view held by all members</td>
+<td data-label="Evidence in Trump/Vance circle">
+          Red pill ideology, pronatalism, Simone and Malcolm Collins’ movement
+        </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>National rebirth through cultural purification</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Public campaigns against DEI and particular education policies; these are not by themselves proof of fascist cultural purification</td>
+<td data-label="Evidence in Trump/Vance circle">
+          Anti-woke crusades, educational takeovers, "de-wokify the military"
+        </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Anti-egalitarianism and hierarchical order</strong></td>
 <td data-label="Evidence in Trump/Vance circle">
-          Yarvin’s published case for monarchy; other writers must be evaluated independently by their own documented claims
+          Yarvin’s monarchy, Hanania’s racial realism, Cowen’s “talentism”
         </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Clerical-reactionary moral vision</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Selected religious-nationalist arguments and conservative judicial activism; distinguish their different institutional aims</td>
+<td data-label="Evidence in Trump/Vance circle">Opus Dei, Leo's judicial agenda, defense of “Christian America”</td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Anti-democratic populism</strong></td>
 <td data-label="Evidence in Trump/Vance circle">
-          Documented election-denial claims, Vance’s institutional rhetoric, and Thiel’s 2009 argument about democracy
+          Electoral distrust, Vance's attacks on pluralism, Thiel's rejection of
+          democracy
         </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Technocratic illiberalism</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Demonstrated overlap among some technological elites and anti-democratic thinkers, not a uniform tech-sector doctrine</td>
+<td data-label="Evidence in Trump/Vance circle">Fusion of tech libertarianism with autocratic state vision</td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Administrative revolution</strong></td>
 <td data-label="Evidence in Trump/Vance circle">
-          Project 2025’s civil-service restructuring proposals; implementation and legality require separate verification
+          Project 2025’s plan to fire civil servants and impose loyalty tests
         </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Conspiracy Theory</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Circulation of conspiracy narratives in some allied media and political constituencies; precise political uptake remains to be shown</td>
+<td data-label="Evidence in Trump/Vance circle">
+          Deliberate use of far right conspiracy theories for mass mobilization
+        </td>
 </tr>
 <tr>
 <td data-label="Trait"><strong>Scapegoating and Othering</strong></td>
-<td data-label="Evidence in Trump/Vance circle">Exclusionary belonging and immigration rhetoric; claims about citizenship revocation need a specified proposal or action</td>
+<td data-label="Evidence in Trump/Vance circle">
+          Rhetoric about "True American", anti-immigration, revoking citizenship
+        </td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>Christian-nationalist currents deserve a separate inference.</strong> The Seven Mountain Mandate, associated especially with charismatic dominionist networks, proposes Christian influence or control across major social institutions. Douglas Wilson’s Reformed Christian-nationalist program and Joel Webbon’s political theology share some concerns about secular governance but differ from the charismatic Seven Mountains tradition; they should not be described as identical. The diagnosis should focus on explicit arguments about religious privilege, legal equality, political authority, and democratic pluralism, as well as documented organizational ties to elected officials. Apocalyptic or “spiritual warfare” rhetoric in some congregations can sharpen friend–enemy divisions, but it cannot be imputed to all evangelical conservatives or Trump voters. Sweeping claims that this entire bloc rejects civil rights or supports slavery require survey evidence or specific, attributed statements and should not be asserted as a collective fact. <a href="https://projects.propublica.org/christian-nationalism-origins/">(ProPublica on the Seven Mountains movement)</a> <a href="https://doi.org/10.1017/S1755048325000069">(Academic typology of Christian-nationalist currents)</a></p><details class="ep-source-details"><summary>Original linked references </summary><div><a href="https://en.wikipedia.org/wiki/Christian_nationalism#United_States" title="Christian nationalism (United States)">Christian Nationalist</a> · <a href="https://en.wikipedia.org/wiki/Seven_Mountain_Mandate" title="Seven Mountain Mandate">Seven Mountains Mandate</a> · <a href="https://en.wikipedia.org/wiki/Douglas_Wilson_(theologian)" title="Douglas Wilson">Douglas Wilson</a> · <a href="https://rightresponseministries.com/about/" title="Joel Webbon / Right Response Ministries">Joel Webbon</a> · <a href="https://en.wikipedia.org/wiki/Dominion_theology" title="Dominion theology">Dominion theology</a></div></details>
-<p>I therefore regard the parallels as substantial but not exact. A defensible interpretation is that portions of the Trump/Vance political coalition exhibit an elite-mediated form of authoritarian politics with <em>fascistic characteristics</em>—especially where exclusionary national restoration, organized hostility to pluralism, and projects of executive centralization reinforce one another. The comparability of some features to Francoist and Salazarist rule is illuminating, but not itself decisive. Specific claims about a clerical, technocratic, or market-authoritarian configuration still need case-by-case evidence linking ideas to implemented policies.</p>
+<p>
+    And lets not forget to mention the massive
+    <a href="https://en.wikipedia.org/wiki/Christian_nationalism#United_States" title="Christian nationalism (United States)">Christian Nationalist</a>
+    movement at the core of this. Influential pastors who more or less adhere to
+    the
+    <a href="https://en.wikipedia.org/wiki/Seven_Mountain_Mandate" title="Seven Mountain Mandate">Seven Mountains Mandate</a>, like
+    <a href="https://en.wikipedia.org/wiki/Douglas_Wilson_(theologian)" title="Douglas Wilson">Douglas Wilson</a>
+    and
+    <a href="https://rightresponseministries.com/about/" title="Joel Webbon / Right Response Ministries">Joel Webbon</a>, are theocratic and authoritarian to their very core, have a growing
+    network of supporters, and are fervent supporters of Trump; quite frankly
+    committing the sin of have a false idol. Among their congregations, and many
+    other conservative evangelical denominations, it's common to hear political
+    discourse framed as a "spiritual battle". Many, quite literally, believe
+    anyone left of them is demonic, or influenced by Satan. This level of
+    "othering" and dehumanization is obviously a common feature of Fascism.
+    <a href="https://en.wikipedia.org/wiki/Dominion_theology" title="Dominion theology">Dominion theology</a>
+    is inherently authoritarian; and this makes up the most significant voting
+    block of the Trump regime. There is a growing number of people in this
+    cluster that claim "slavery was not that bad" and that "MLK was actually a
+    bad person". Many are fervently anti-civil rights and would very much prefer
+    to redact the 14th and 19th amendments.
+  </p>
+<p>
+    So I acknowledge this is not a perfect match, but a defeasible, cumulative
+    case. Given what we have discussed thus far when defining and
+    conceptualizing fascism, I think the parallels are quite striking.
+    A plausible reading is that portions of the Trump/Vance political network exhibit a contemporary, elite-driven, clerical-technocratic form of authoritarianism with fascistic characteristics. The comparison with Francoist or Salazarist authoritarianism is suggestive rather than decisive, precisely because the classification of those regimes is itself contested. It is
+    an ideology of “cultural restoration,” fused with market authoritarianism
+    and religious traditionalism, operating through courts, think tanks,
+    capital, and digital media rather than street violence like the Black Shirts
+    in the 20th century. This maps on to many of the aspects uncovered from the
+    scholars above. The market authoritarianism seems to perfectly map on to
+    Mattei's analysis of capitalist reaction.
+  </p>
 <p>My resulting judgment is therefore layered rather than simply binary. The evidence reviewed supports a substantial concern about fascistic practices and a family resemblance between parts of the contemporary movement and historical fascist politics. Whether that warrants the unqualified noun <em>fascist</em> for Trump as an individual is more sensitive to which definition one privileges and to evidence about institutional practice and underlying ideological commitments. That is a stronger argumentative position than treating each affiliation as another independent confirmation: it specifies both what is established and what remains disputed.</p>
-<p class="ep-editorial-note"><strong>Assessment and limits.</strong> The strongest conclusions supported by this discussion concern recurrent exclusionary narratives, leader-centered and anti-pluralist rhetoric, and identifiable institutional projects seeking greater executive control. The extent to which these amount to fascism under Griffin, rather than another kind of authoritarian populism or Christian nationalism, remains an argued classification rather than a verified fact. The historical, network, and economic comparisons add context only where specific transmission or implementation is documented. This judgment is intentionally defeasible.</p><p>Readers can reasonably disagree with this diagnosis in at least three ways: by adopting a different defensible definition of fascism, by disputing the relevance or quality of the evidence, or by concluding that a competing category—such as authoritarian populism or Christian nationalism—better explains the observed practices. Such disagreement is the reason to state the methodology openly, not a reason to abandon conceptual analysis. The point of the essay has been that applying complex political concepts demands more care than checking for one historical atrocity or one defining slogan.</p>
+<p>
+    Someone can read this and disagree with me, because they reject the
+    definitions advanced by Griffin, Stanley, Eco, Mattei, Paxton etc. They
+    could also disagree with my hypothetical methodology for identifying a
+    fascist. But that's the point of this entire post: defining political
+    terminology like fascism is necessarily complex. A triangle, by definition,
+    is a mathematical structure with three angles. Take away one angle, you do
+    not have a triangle. It's embedded into the term itself: tri(three)-angle.
+    Fascism will never be amenable to an "objective" definition like this; it is
+    a patterned phenomena intimately connected to moral condemnation. That does
+    not mean the term is vacuous; it means we need to be critical thinkers.
+  </p>
 <h3 id="conclusion" style="text-align: left;">Conclusion</h3>
 <div>
 <p>
