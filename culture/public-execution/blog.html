@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A philosophical and historical analysis of proposed public executions as political spectacle and sovereign power.">
+<title>The Spectacle of Sovereignty</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+</head>
+<body>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<article class="ep-post" id="top">
+<h1 id="the-spectacle-of-sovereignty">The Spectacle of Sovereignty</h1>
+<p class="article-subtitle"><em>Public Execution and the Aestheticization of State Power</em></p>
+<h2 id="contents">Contents</h2>
+<nav aria-label="Table of contents" class="ep-toc"><ol>
+<li><a href="#introduction-when-punishment-becomes-spectacle">Introduction: When Punishment Becomes Spectacle</a></li>
+<li><a href="#the-deterrence-argument-a-theory-without-demonstrated-efficacy">The Deterrence Argument: A Theory Without Demonstrated Efficacy</a></li>
+<li><a href="#the-choreography-of-execution-why-this-way-why-now">The Choreography of Execution: Why This Way, Why Now?</a></li>
+<li><a href="#religious-symbolism-christian-nationalism-retribution-and-the-politics-of-identity">Religious Symbolism: Christian Nationalism, Retribution, and the Politics of Identity</a></li>
+<li><a href="#the-historical-spectacle-public-execution-as-political-communication">The Historical Spectacle: Public Execution as Political Communication</a></li>
+<li><a href="#the-aestheticization-of-state-power-benjamin-foucault-and-debord">The Aestheticization of State Power: Benjamin, Foucault, and Debord</a></li>
+<li><a href="#the-paradox-of-punishment-is-execution-really-the-ultimate-penalty">The Paradox of Punishment: Is Execution Really the Ultimate Penalty?</a></li>
+<li><a href="#the-strongman-state-sovereign-power-and-the-performance-of-authority">The Strongman State: Sovereign Power and the Performance of Authority</a></li>
+<li><a href="#conclusion-justice-or-political-theater">Conclusion: Justice or Political Theater?</a></li>
+<li><a href="#references">References</a></li>
+</ol></nav>
+<hr/>
+<h2 id="introduction-when-punishment-becomes-spectacle">Introduction: When Punishment Becomes Spectacle</h2>
+<p class="chapter-lead">On December 3, 2026, the United States military intends to execute Nidal Malik Hasan by firing squad at Fort Hood, Texas. Hasan, a former Army psychiatrist, was convicted of murdering thirteen people and wounding thirty-two others in a 2009 mass shooting at the same military installation. Sentenced to death in 2013, Hasan now faces an execution whose circumstances are anything but ordinary. Defense Secretary Pete Hegseth has advocated broadcasting the execution live to the American public, ostensibly to demonstrate the consequences of terrorism and deter future acts of violence. President Donald Trump has yet to make a final decision on the broadcast.</p>
+<p>The execution's proposed choreography is striking. It is scheduled for the same location, the same day of the week, and approximately the same hour as the original attack. These deliberate correspondences transform what might otherwise be presented as the routine administration of a criminal sentence into something resembling a carefully staged political ritual.</p>
+<p>The gravity of Hasan's crimes is not in dispute, nor does criticism of the proposed spectacle diminish the suffering of his victims. But the punishment of a convicted murderer and the public exhibition of that punishment are fundamentally different undertakings. The latter introduces an audience and, with it, an entirely new dimension of political meaning.</p>
+<p>Public executions have historically done more than punish offenders. They have dramatized who holds power, who may exercise force, and what an audience is expected to recognize as legitimate. The proposed broadcast belongs in that history of punishment as political communication.</p>
+<p>If publicly displaying an execution offers no demonstrated additional deterrent benefit, why invite the public to witness it? This essay argues that the proposal is better understood not simply as an instrument of punishment, but as a politically charged performance of sovereign power—one whose symbolic consequences begin with its announcement, whether or not the execution is ever broadcast.</p>
+<h2 id="the-deterrence-argument-a-theory-without-demonstrated-efficacy">The Deterrence Argument: A Theory Without Demonstrated Efficacy</h2>
+<p class="chapter-lead">The administration's stated justification for publicly broadcasting Hasan's execution rests largely on deterrence: the idea that witnessing the consequences of terrorism will discourage others from committing similar acts. Yet this reasoning presupposes a causal relationship for which convincing evidence has not been established. In 2012, the National Research Council conducted an extensive review of research on capital punishment and concluded that existing studies could not reliably establish whether the death penalty increases, decreases, or has no effect on homicide rates. If the deterrent efficacy of capital punishment itself remains scientifically unresolved, the claim that publicly broadcasting an execution would produce an additional deterrent effect is even more tenuous.</p>
+<p>The argument becomes especially questionable when applied to ideologically motivated terrorism. Deterrence assumes that potential offenders rationally weigh the anticipated consequences of their actions and modify their behavior accordingly. Yet many forms of terrorism operate through a fundamentally different strategic logic. Individuals willing to perpetrate mass violence in service of ideological or religious commitments may already anticipate imprisonment, execution, or death during the attack itself. For some, the willingness to die is not an unfortunate consequence of their actions but an integral component of their ideological convictions. The assumption that witnessing a firing squad would meaningfully alter such calculations warrants considerably more scrutiny than the administration has offered.</p>
+<p>Indeed, the proposed spectacle could conceivably produce the opposite effect. Political scientists Andrew Kydd and Barbara Walter, in their 2006 study <em>The Strategies of Terrorism</em>, identify <strong>provocation</strong> as a strategy through which terrorist organizations deliberately elicit harsh government responses to generate grievances, polarize communities, and encourage recruitment. A publicly broadcast military execution could provide precisely the sort of imagery that extremist organizations might appropriate to reinforce narratives of persecution, religious conflict, or martyrdom. This possibility does not establish that such a broadcast would increase terrorism, but it exposes a plausible countervailing mechanism that the simplistic deterrence rationale fails to address.</p>
+<p>Ultimately, the burden of evidence belongs to those proposing the spectacle. A lack of demonstrated deterrent efficacy does not prove that a broadcast would have no behavioral consequences, but it does undermine confident claims about its preventive benefits. If deterrence cannot explain the added value of public spectatorship, attention turns to the features officials have chosen to emphasize: the setting, the timing, the method, and the audience.</p>
+<h2 id="the-choreography-of-execution-why-this-way-why-now">The Choreography of Execution: Why This Way, Why Now?</h2>
+<p class="chapter-lead">The circumstances surrounding Hasan's scheduled execution suggest a deliberate construction of political symbolism beyond the requirements of criminal punishment. The execution is set for December 3, 2026, at 1:00 p.m., on a Thursday, at Fort Hood—the same military installation, weekday, and approximate hour of the original attack. Defense Secretary Pete Hegseth described this arrangement as a “no-brainer.” Yet none of these correspondences is necessary to administer a death sentence. Their significance is symbolic: they establish a deliberate relationship between the original violence and the state's retaliatory response, transforming punishment into a choreographed demonstration of authority.</p>
+<p>The timing also deserves scrutiny. Hasan was sentenced to death in 2013, but his case remained subject to military appellate review throughout Trump's first administration. The Supreme Court did not deny his petition for review until March 31, 2025, and Trump formally approved the sentence on October 2, 2026. Consequently, attributing the thirteen-year delay exclusively to political calculation would disregard substantial legal constraints. Nevertheless, the conclusion of appellate proceedings explains neither the decision to employ a military firing squad nor the proposal to broadcast the execution to a national audience. Those are additional choices, carrying political meanings independent of the legal necessity of punishment.</p>
+<p>These decisions are also being made in a political environment different from that of the original 2009 attack or the 2013 sentencing. Public meaning depends partly on context: the same penal act may signify routine legal process in one setting and a conspicuous assertion of authority in another. The political significance of the proposal therefore lies not only in what the state plans to do, but in how the act is framed for those who are asked to witness it.</p>
+<p>The question, then, is not simply why the sentence is being carried out now, but why it is being presented in this form. The appeals history helps explain the timing of possible punishment; it does not, on its own, explain the choice of spectacle. Nor does the choreography exhaust the meanings viewers may attach to it. The religious identities and political associations surrounding the proposed execution introduce another set of signals, some of which may exceed the intentions of the officials involved.</p>
+<h2 id="religious-symbolism-christian-nationalism-retribution-and-the-politics-of-identity">Religious Symbolism: Christian Nationalism, Retribution, and the Politics of Identity</h2>
+<h3 id="christian-nationalism-and-institutional-influence">Christian nationalism and institutional influence</h3>
+<p>The religious dimensions of the proposed execution introduce another layer of political symbolism, particularly when considered alongside Defense Secretary Pete Hegseth's documented associations with Christian nationalist movements. Hegseth belongs to a congregation affiliated with the Communion of Reformed Evangelical Churches (CREC), a network co-founded by pastor Doug Wilson, an outspoken advocate of Christian nationalism. In February 2026, Hegseth invited Wilson to lead a worship service at the Pentagon, illustrating the growing proximity between this religious movement and institutions of federal authority. Wilson's political theology envisions a society in which Christian principles explicitly shape civil government, challenging conventional understandings of religious pluralism and the separation of church and state.</p>
+<p>Although distinct in their theological origins, Wilson's Reformed Christian nationalism shares certain political aspirations with other movements seeking to establish Christian influence over American institutions. The New Apostolic Reformation (NAR), for instance, is associated with the Seven Mountains Mandate, which promotes Christian influence across seven spheres of society, including government, education, media, and business. These movements should not be conflated, nor does Hegseth's association with Wilson establish membership in the NAR. Nevertheless, their overlapping emphasis on Christian political authority provides important context for understanding the religious currents within the contemporary American right.</p>
+<h3 id="religious-identity-and-the-intended-audience">Religious identity and the intended audience</h3>
+<p>Against this backdrop, the religious identity of the condemned becomes symbolically significant. Hasan is Muslim, and his attack was explicitly associated with violent Islamist extremism. His conviction for mass murder provides a clear legal basis for punishment; there is no established evidence that he was selected for execution because of his religion. Yet the spectacle of a Christian nationalist defense secretary publicly advocating a military firing squad against a Muslim convicted of terrorism inevitably invites interpretations extending beyond criminal justice. Within a political environment already saturated with rhetoric about religious identity, national belonging, and civilizational conflict, such imagery risks communicating a broader confrontation between religiously defined communities.</p>
+<h3 id="a-competing-christian-understanding-of-punishment">A competing Christian understanding of punishment</h3>
+<p>The contrast with Catholic teaching is particularly striking. Pope Leo XIV has reaffirmed the Catholic Church's position that capital punishment is incompatible with human dignity, while Vatican Secretary of State Cardinal Pietro Parolin specifically condemned the proposed broadcast as an unacceptable transformation of death into spectacle. Archbishop Timothy Broglio, responsible for Catholic pastoral care within the American military, went further, urging Catholic service members not to participate in the firing squad. These objections reflect a Christian ethical tradition emphasizing mercy, redemption, and the irreducible dignity of human life, even following the gravest offenses.</p>
+<p>The contrast recalls the tension between the retaliatory principle of <em>an eye for an eye</em> and Christ's injunction to <em>turn the other cheek</em>. Christian traditions differ over whether the latter applies to state-administered punishment or principally to personal retaliation. Yet even accepting the legitimacy of capital punishment does not resolve the morality of transforming it into public entertainment. The dispute reveals competing interpretations of Christian justice, one emphasizing the state's authority to punish and another insisting upon the moral limits of that authority.</p>
+<p>The significance of these associations does not depend on proving that officials designed the execution as a religious statement. Symbols acquire meanings through the people, institutions, and histories around them; audiences may see a display of punishment, a religiously charged confrontation, or both. That plurality of meanings is not unique to this case. It has long been part of the politics of public execution.</p>
+<h2 id="the-historical-spectacle-public-execution-as-political-communication">The Historical Spectacle: Public Execution as Political Communication</h2>
+<p class="chapter-lead">Throughout history, public executions have served purposes extending far beyond the punishment of individual offenders. They have functioned as political rituals through which governments communicate authority, reinforce social hierarchies, intimidate opponents, and establish the legitimacy of prevailing political orders. Their significance cannot be reduced to the suffering inflicted upon the condemned, because the audience itself constitutes an essential component of the event. The execution becomes a symbolic exchange between the state and its spectators, one in which the condemned person's death serves as the medium through which political messages are communicated.</p>
+<h3 id="revolutionary-france-the-execution-of-a-sovereign">Revolutionary France: the execution of a sovereign</h3>
+<p>The execution of King Louis XVI during the French Revolution provides a particularly revealing example. On January 21, 1793, the former French monarch was publicly guillotined in Paris following his conviction for treason. Although the monarchy had already been abolished months earlier, the execution symbolized something considerably more consequential than the punishment of an alleged traitor. It demonstrated the irreversibility of the revolutionary break with hereditary sovereignty. The man who once embodied the state's supreme authority had been subjected to the authority of the revolutionary republic. To supporters of the Revolution, the event could signify the triumph of popular sovereignty over monarchy; to royalists and Europe's remaining monarchies, it represented a threatening assault upon the legitimacy of the established political order. The same execution thus communicated radically different meanings to different audiences, illustrating that the political significance of public punishment extends beyond the intentions of those administering it.</p>
+<h3 id="ancient-rome-punishment-and-political-patronage">Ancient Rome: punishment and political patronage</h3>
+<p>Ancient Rome provides another instructive historical parallel. Public executions were frequently incorporated into spectacles staged in amphitheaters, alongside gladiatorial combat and animal hunts. Condemned criminals, enslaved people, and prisoners of war could be publicly killed in events that combined punishment, entertainment, and the demonstration of Roman authority. These spectacles also operated within systems of political patronage: magistrates, aristocrats, and emperors sponsored public entertainments that could cultivate popularity, reinforce social distinctions, and associate political leadership with the grandeur and power of Rome. As historian Geoffrey Sumi demonstrates in <em>Ceremony and Power</em>, public ceremonies were integral to the construction of political legitimacy and the relationship between Roman leaders and the populations they governed.</p>
+<p>The comparison is not intended to equate contemporary American institutions with revolutionary France or imperial Rome. Rather, these examples demonstrate a recurring political mechanism: the transformation of punishment into a collective experience through which the exercise of sovereign power becomes visible, emotionally resonant, and publicly interpretable. The condemned person is the immediate object of punishment, but the spectators are also participants in its political meaning.</p>
+<h3 id="from-the-public-square-to-the-livestream">From the public square to the livestream</h3>
+<p>What distinguishes the proposed execution of Hasan is not the invention of this mechanism, but its adaptation to contemporary communications technology. Where revolutionary crowds assembled around a guillotine and Roman spectators gathered in amphitheaters, a livestream would allow a geographically dispersed population to witness the same exercise of lethal state authority. The medium changes, but the underlying symbolic relationship remains recognizable.</p>
+<p>The historical lesson is not that contemporary America is equivalent to either society. It is that <strong>the public exhibition of death has repeatedly served as a means of representing political authority.</strong> History establishes that audiences matter; modern political theory helps explain how seeing power exercised can become a political experience in its own right.</p>
+<h2 id="the-aestheticization-of-state-power-benjamin-foucault-and-debord">The Aestheticization of State Power: Benjamin, Foucault, and Debord</h2>
+<p class="chapter-lead">The political significance of a publicly broadcast execution becomes clearer when examined through the work of three influential twentieth-century thinkers: Walter Benjamin, Michel Foucault, and Guy Debord. Although their theoretical projects differ considerably, each provides a framework for understanding how political authority operates through spectacle, symbolism, and the relationship between power and its spectators. Taken together, their work suggests that the proposed execution is not merely an act of punishment made visible, but a transformation of state violence into a collective political experience.</p>
+<h3 id="walter-benjamin-politics-as-aesthetic-experience">Walter Benjamin: politics as aesthetic experience</h3>
+<p>In his influential essay <em>The Work of Art in the Age of Mechanical Reproduction</em>, Walter Benjamin describes the <strong>aestheticization of politics</strong> as a defining characteristic of fascist political movements. Benjamin argues that such movements offer the masses opportunities for political expression and collective identification without necessarily granting them substantive control over the political and economic structures governing their lives. Political authority becomes something to be experienced aesthetically, through dramatic imagery, mass ceremonies, emotional identification, and the glorification of collective power. His analysis culminates in a warning about the capacity of modern societies to experience even their own destruction as an object of aesthetic gratification.</p>
+<p>The proposed livestream bears a disturbing resemblance to this mechanism. By transforming an execution into a nationally accessible visual event, the government would invite citizens to experience the exercise of lethal authority as a shared political spectacle. The public would not participate in determining the sentence, administering justice, or exercising meaningful control over the state's coercive powers. Rather, it would be offered the opportunity to witness, emotionally identify with, and potentially celebrate their exercise. The distinction is significant: <strong>the experience of political power is substituted for participation in political power.</strong> Benjamin's analysis does not establish that the proposal is fascist, but it illuminates how state violence can become an aesthetic instrument of political identification.</p>
+<h3 id="michel-foucault-the-spectacle-of-the-scaffold">Michel Foucault: the spectacle of the scaffold</h3>
+<p>Michel Foucault's <em>Discipline and Punish</em> provides an equally revealing perspective. In his analysis of the historical <em>spectacle of the scaffold</em>, Foucault argues that public executions were rituals through which sovereign authority was dramatically restored following violations of the law. The condemned person's body became the site upon which the sovereign visibly demonstrated the power to punish, destroy, and ultimately determine the boundaries of legitimate violence. Public execution was therefore not simply directed at the offender; it communicated to the assembled population the extraordinary authority possessed by the ruler.</p>
+<p>Foucault contrasts these spectacles with the emergence of modern disciplinary institutions, in which punishment increasingly operates through confinement, surveillance, regulation, and the continuous management of individuals. The proposed return of execution to public view is therefore symbolically significant. Rather than allowing punishment to remain largely concealed within the institutions of the modern penal system, the state would deliberately restore its spectacular dimension. The central message is not merely that the law has been enforced, but that the government possesses—and is willing to exhibit—the ultimate power over human life. Importantly, Foucault also recognized that public spectacles could generate sympathy for the condemned or hostility toward the authorities, demonstrating that such performances are never entirely under sovereign control.</p>
+<h3 id="guy-debord-power-mediated-through-images">Guy Debord: power mediated through images</h3>
+<p>Guy Debord's <em>The Society of the Spectacle</em> extends this analysis into the realm of modern mass communication. For Debord, spectacle is not simply an accumulation of dramatic images, but a form of social relationship mediated through images. Spectatorship structures how individuals perceive political authority, collective identity, and their own relationship to society. The proposed broadcast would therefore do more than transmit footage of an execution. It would mediate a relationship between the American public and the state's capacity for violence, encouraging citizens to encounter sovereign authority primarily as spectators of its exercise.</p>
+<h3 id="from-viewing-power-to-identifying-with-it">From viewing power to identifying with it</h3>
+<p>Together, Benjamin, Foucault, and Debord illuminate three different facets of the same event: the aesthetic experience of political authority, the ritual demonstration of sovereign power, and the mediation of social relationships through spectacle. <strong>The proposed execution may have political utility as a demonstration of power even if it has no established utility as a deterrent to violence.</strong> It offers the public not merely information that a sentence has been enforced, but an experience of the state's authority to take life.</p>
+<p>That raises a related paradox. If execution is meant to be the ultimate punishment, why might its public display matter more politically than the degree of suffering it imposes on the condemned?</p>
+<h2 id="the-paradox-of-punishment-is-execution-really-the-ultimate-penalty">The Paradox of Punishment: Is Execution Really the Ultimate Penalty?</h2>
+<p class="chapter-lead">The death penalty is conventionally understood as the ultimate punishment, the most severe consequence a state can impose upon an individual. Yet this characterization becomes considerably less straightforward when we distinguish between punishment as the deprivation of something valuable and punishment as the conscious experience of suffering. Execution permanently extinguishes a person's future, eliminating every possibility of freedom, human connection, personal transformation, or redemption. But it also terminates the individual's capacity to experience punishment itself. A comparatively swift execution may involve less cumulative suffering than decades of imprisonment, particularly under conditions of extreme isolation.</p>
+<p>Consider the psychological consequences of prolonged solitary confinement. The deprivation of meaningful social interaction, autonomy, stimulation, and any realistic prospect of release can produce profound psychological deterioration. Indeed, the United Nations' Mandela Rules prohibit prolonged solitary confinement, defined as exceeding fifteen consecutive days, in recognition of its potential to inflict severe harm. Although life imprisonment does not necessarily entail solitary confinement, the comparison exposes an important paradox: <strong>a punishment that preserves life may impose greater sustained suffering than one that extinguishes it.</strong> For someone who experiences lifelong confinement as intolerable, execution might even appear to offer an escape from an otherwise unending condition of deprivation.</p>
+<p>This observation does not establish that execution is objectively less severe, nor does it justify subjecting prisoners to deliberately cruel conditions. Death remains an absolute and irreversible deprivation, while imprisonment, however restrictive, preserves the possibility of continued experience, relationships, and meaning. Rather, the comparison demonstrates that the severity of punishment cannot be measured along a single dimension. What appears ultimate from the perspective of the state or the public need not correspond to what is experienced as most punishing by the condemned.</p>
+<p>This distinction is especially revealing when considered alongside the political symbolism of public execution. If the objective were simply to maximize the offender's experienced suffering, a swift execution would be a peculiar instrument. Yet if punishment also serves to communicate sovereign authority, its significance becomes more intelligible. <strong>The symbolic force of execution lies not necessarily in the suffering it produces, but in the finality of the power it demonstrates.</strong> The state does not merely deprive an individual of freedom; it publicly asserts its authority to determine whether that individual may continue to exist.</p>
+<p>The condemned person is the subject of punishment, but the audience receives its political message. Execution's extraordinary symbolic status may tell us as much about the representation of state authority as about the severity of the penalty. The question becomes sharper still when that representation is placed beside a political style built around decisive leadership and the visible use of power.</p>
+<h2 id="the-strongman-state-sovereign-power-and-the-performance-of-authority">The Strongman State: Sovereign Power and the Performance of Authority</h2>
+<h3 id="executive-strength-as-political-image">Executive strength as political image</h3>
+<p>The proposed public execution acquires additional political significance when situated within the Trump administration's broader rhetoric of strength, law and order, and expansive executive authority. Throughout his political career, Trump has cultivated an image of decisive leadership, frequently presenting the exercise of governmental power as a demonstration of personal resolve. This political identity has been accompanied by arguments favoring broad presidential discretion and diminished constraints on executive action. The Supreme Court's 2024 decision in <em>Trump v. United States</em>, which recognized absolute criminal immunity for presidential conduct within exclusive constitutional authority and presumptive immunity for other official acts, further intensified public debate over the relationship between executive power and legal accountability. Although the ruling did not establish unlimited presidential authority, its political significance cannot be separated from the administration's broader presentation of executive strength.</p>
+<p>Within this environment, the proposed execution can be understood as another symbolic assertion of state power. The relationship between strongman politics and public punishment is not necessarily one of explicit coordination, but of ideological and aesthetic consistency. Political authority is presented through decisiveness, the capacity to impose consequences, and the public demonstration of force. A military firing squad, assembled to execute a condemned prisoner before a potentially national audience, offers an unusually literal representation of these qualities. The state does not merely claim the authority to punish; it invites the population to witness the ultimate exercise of that authority.</p>
+<p>As the Roman comparison suggests, the audience matters not merely as an observer but as a constituency. A public execution can ask spectators to identify with the authority exercising punishment, rather than merely assess whether a lawful sentence has been carried out.</p>
+<h3 id="the-distance-between-ordering-and-carrying-out-violence">The distance between ordering and carrying out violence</h3>
+<p>There is, however, a deeper moral contradiction embedded in the spectacle: <strong>the distance between those who publicly advocate state violence and those who must physically carry it out.</strong> Hegseth can promote the execution as a demonstration of justice, but the soldiers assigned to the firing squad would bear the immediate psychological and moral burden of taking a human life. The political official who celebrates the punishment remains insulated from the physical act itself. This separation raises an uncomfortable question: if those who command and publicly champion an execution consider it a necessary demonstration of moral authority, should they not also be willing to confront personally the gravity of what they are demanding of others? The point is not that political leaders should literally become executioners, but that the enthusiastic celebration of violence becomes considerably easier when its human consequences are delegated to subordinates.</p>
+<p>Indeed, the spectacle may work precisely because of this separation. Political leaders receive the symbolic benefits of demonstrated strength, while the condemned bears the ultimate consequence and the executioners bear the burden of administering it. The audience, meanwhile, is invited to experience the exercise of lethal authority without confronting its immediate responsibilities. The arrangement distributes the costs and rewards of state violence unequally, allowing sovereign power to appear simultaneously extraordinary, decisive, and personally distant.</p>
+<h3 id="the-announcement-as-a-political-event">The announcement as a political event</h3>
+<p>Perhaps most significantly, none of these political effects requires the execution to be broadcast. The announcement itself has already introduced the public display of state-administered death into contemporary political discourse. Citizens, institutions, and religious authorities have been compelled to debate whether such a spectacle represents legitimate justice or an unacceptable exercise of governmental power. Even if the broadcast is ultimately abandoned, the proposal has expanded the boundaries of what the federal government is willing to contemplate publicly.</p>
+<p>This is where the concern about authoritarian political culture becomes particularly consequential. Authoritarian tendencies need not manifest exclusively through the formal dismantling of democratic institutions; they can also emerge through changes in political expectations, public identification with coercive authority, and the normalization of extraordinary demonstrations of state power. A single proposed execution cannot establish the existence of authoritarian consolidation. Nevertheless, its symbolism is consistent with a political aesthetic that emphasizes the strength of the executive, the visibility of punishment, and the public performance of sovereign authority.</p>
+<p>The question is not only what officials intend to accomplish, but what relationship between state and citizen the proposal makes imaginable. <strong>Inviting the population to witness the state's power over life and death communicates something different from administering a sentence as a constrained, impersonal obligation of law.</strong> That difference persists even if the invitation is withdrawn.</p>
+<h2 id="conclusion-justice-or-political-theater">Conclusion: Justice or Political Theater?</h2>
+<p class="chapter-lead">The proposed public execution of Nidal Hasan raises questions extending far beyond the legitimacy of capital punishment or the gravity of his crimes. The administration's stated justification of deterrence rests upon an uncertain empirical foundation, while the possibility of reinforcing extremist narratives complicates its purported preventive purpose. Yet understanding the proposal exclusively through its practical consequences risks overlooking its most consequential dimension: the transformation of criminal punishment into a public demonstration of sovereign authority.</p>
+<p>From revolutionary France to imperial Rome, public punishment has operated as a language of political authority. Benjamin, Foucault, and Debord clarify how that language can work through modern media, spectatorship, and identification with power. The carefully selected circumstances, religious associations, and administration's rhetoric of strength add layers of meaning that cannot be reduced to a single provable motive. Political symbols communicate beyond the intentions of those who deploy them.</p>
+<p>Most importantly, <strong>the spectacle has already begun</strong>. The proposal has invited Americans to anticipate, debate, and potentially identify with the state's ultimate power over human life. Even if the broadcast never occurs, that invitation remains a political act. A constitutional government may possess legal authority to impose a death sentence, but turning its execution into a national event is a further choice—not an inevitable consequence of the sentence.</p>
+<p><strong>The question, therefore, is not merely whether the state possesses the power to take a life, but why it wishes to make an audience of its citizens when exercising that power. When punishment becomes spectacle, the condemned may cease to be its only intended subject. The public itself becomes the object of a political performance—one designed, or at least capable, of teaching citizens how to understand, experience, and identify with sovereign authority.</strong></p>
+<hr/>
+<h2 class="ep-source-section" id="references">References</h2>
+<p>Beacham, R. C. (1999). <em>Spectacle entertainments of early imperial Rome</em>. Yale University Press. <a href="https://yalebooks.yale.edu/book/9780300176995/spectacle-entertainments-of-early-imperial-rome/">https://yalebooks.yale.edu/book/9780300176995/spectacle-entertainments-of-early-imperial-rome/</a></p>
+<p>Benjamin, W. (2002). The work of art in the age of its technological reproducibility (E. Jephcott &amp; H. Zohn, Trans.). In H. Eiland &amp; M. W. Jennings (Eds.), <em>Selected writings: Volume 3, 1935–1938</em> (pp. 101–133). Belknap Press of Harvard University Press. (Original work written 1935–1936).</p>
+<p>Bond, E. (2018, January). The execution of Louis XVI. <em>Origins: Current Events in Historical Perspective</em>, Ohio State University. <a href="https://origins.osu.edu/milestones/january-2018-execution-louis-xvi">https://origins.osu.edu/milestones/january-2018-execution-louis-xvi</a></p>
+<p>Coleman, K. M. (1990). Fatal charades: Roman executions staged as mythological enactments. <em>The Journal of Roman Studies, 80</em>, 44–73. <a href="https://doi.org/10.2307/300280">https://doi.org/10.2307/300280</a></p>
+<p>Congregation for the Doctrine of the Faith. (2018, August 1). <em>New revision of number 2267 of the Catechism of the Catholic Church on the death penalty</em>. The Holy See. <a href="https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_catechismo-penadimorte_en.html">https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20180801_catechismo-penadimorte_en.html</a></p>
+<p>Debord, G. (1994). <em>The society of the spectacle</em> (D. Nicholson-Smith, Trans.). Zone Books. (Original work published 1967). <a href="https://www.zonebooks.org/books/3-the-society-of-the-spectacle">https://www.zonebooks.org/books/3-the-society-of-the-spectacle</a></p>
+<p>Diamond, D., &amp; Doyle, K. (2026, October 10). Trump says he will 'make a decision' on Hegseth plan to live-stream execution. <em>The Washington Post</em>. <a href="https://www.washingtonpost.com/politics/2026/10/10/trump-make-decision-hegseth-plan-live-streamed-public-execution/">https://www.washingtonpost.com/politics/2026/10/10/trump-make-decision-hegseth-plan-live-streamed-public-execution/</a></p>
+<p>Foucault, M. (1977). <em>Discipline and punish: The birth of the prison</em> (A. Sheridan, Trans.). Pantheon Books. (Original work published 1975).</p>
+<p>Kydd, A. H., &amp; Walter, B. F. (2006). The strategies of terrorism. <em>International Security, 31</em>(1), 49–80. <a href="https://doi.org/10.1162/isec.2006.31.1.49">https://doi.org/10.1162/isec.2006.31.1.49</a></p>
+<p>Luigi, M., Dellazizzo, L., Giguère, C.-É., Goulet, M.-H., &amp; Dumais, A. (2020). Shedding light on “the hole”: A systematic review and meta-analysis on adverse psychological effects and mortality following solitary confinement in correctional settings. <em>Frontiers in Psychiatry, 11</em>, Article 840. <a href="https://doi.org/10.3389/fpsyt.2020.00840">https://doi.org/10.3389/fpsyt.2020.00840</a></p>
+<p>National Research Council. (2012). <em>Deterrence and the death penalty</em>. National Academies Press. <a href="https://doi.org/10.17226/13363">https://doi.org/10.17226/13363</a></p>
+<p>Reuters. (2026, October 12). Catholics in US Army must not participate in firing squad, prominent archbishop says. <a href="https://www.reuters.com/world/catholics-us-army-must-not-participate-firing-squad-prominent-archbishop-says-2026-10-12/">https://www.reuters.com/world/catholics-us-army-must-not-participate-firing-squad-prominent-archbishop-says-2026-10-12/</a></p>
+<p>Stanley, T., &amp; Smith, P. (2025). Defense Secretary Pete Hegseth belongs to an archconservative church network. Here's what to know. <em>Associated Press</em>. <a href="https://apnews.com/article/e71c3ea072fa959b5bee09a4d2093f1a">https://apnews.com/article/e71c3ea072fa959b5bee09a4d2093f1a</a></p>
+<p>Stewart, P. (2026, October 8). US to livestream Army firing squad execution of Fort Hood shooter, Pentagon says. <em>Reuters</em>. <a href="https://www.reuters.com/world/us-livestream-army-execution-fort-hood-shooter-pentagon-official-says-2026-10-08/">https://www.reuters.com/world/us-livestream-army-execution-fort-hood-shooter-pentagon-official-says-2026-10-08/</a></p>
+<p>Sumi, G. S. (2005). <em>Ceremony and power: Performing politics in Rome between Republic and Empire</em>. University of Michigan Press. <a href="https://doi.org/10.3998/mpub.97634">https://doi.org/10.3998/mpub.97634</a></p>
+<p>Trangerud, H. A. (2026). Our man at the top: How the Seven Mountains Mandate and Paul Weyrich's Last Testament have shaped the presidency of Donald Trump. <em>Studies in Religion/Sciences Religieuses, 55</em>(2), 117–144. <a href="https://doi.org/10.1177/00084298251392087">https://doi.org/10.1177/00084298251392087</a></p>
+<p>United Nations General Assembly. (2015). <em>United Nations Standard Minimum Rules for the Treatment of Prisoners (the Nelson Mandela Rules)</em> (Resolution A/RES/70/175). <a href="https://digitallibrary.un.org/record/816764">https://digitallibrary.un.org/record/816764</a></p>
+<p>U.S. Army Public Affairs. (2026, October 7). <em>Army sets execution date for convicted murderer Nidal Hasan</em>. U.S. Army. <a href="https://www.army.mil/article/295989/army_sets_execution_date_for_convicted_murderer_nidal_hasan">https://www.army.mil/article/295989/army_sets_execution_date_for_convicted_murderer_nidal_hasan</a></p>
+<p>U.S. Supreme Court. (2024). <em>Trump v. United States</em>, 603 U.S. 593. <a href="https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf">https://www.supremecourt.gov/opinions/23pdf/23-939_e2pg.pdf</a></p>
+<p>Vatican News. (2026, October 9). Cardinal Parolin on US public execution: Death must not be turned into a spectacle. <a href="https://www.vaticannews.va/en/vatican-city/news/2026-10/cardinal-parolin-comments-usa-public-execution-announcement.html">https://www.vaticannews.va/en/vatican-city/news/2026-10/cardinal-parolin-comments-usa-public-execution-announcement.html</a></p>
+<p>Vatican News. (2026, October 10). Pope Leo XIV rejects death penalty as attack on dignity of human person. <a href="https://www.vaticannews.va/en/pope/news/2026-10/pope-leo-xiv-tweet-death-penalty-inadmissible-dignity-person.html">https://www.vaticannews.va/en/pope/news/2026-10/pope-leo-xiv-tweet-death-penalty-inadmissible-dignity-person.html</a></p>
+<p>Wang, A. B. (2026, February 18). Hegseth invited Christian nationalist Doug Wilson to preach at Pentagon. <em>The Washington Post</em>. <a href="https://www.washingtonpost.com/politics/2026/02/18/doug-wilson-pentagon-hegseth-christian-nationalist/">https://www.washingtonpost.com/politics/2026/02/18/doug-wilson-pentagon-hegseth-christian-nationalist/</a></p>
+
+</article>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
+</body>
+</html>
