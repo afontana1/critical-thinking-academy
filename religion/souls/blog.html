@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An examination of why atheism does not entail determinism, and whether invoking an immaterial soul actually explains free will.">
+<title>The Explanatory Emptiness of &quot;Souls&quot;</title>
+<style>
+      /* Scoped styles for Blogger dark themes. No white table backgrounds. */
+      .ep-post {
+        color: inherit;
+        background: transparent;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        line-height: 1.65;
+        font-size: 1rem;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .ep-post * {
+        box-sizing: border-box;
+      }
+
+      
+      .ep-post {
+        box-sizing: border-box;
+        width: min(100%, 980px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        overflow-wrap: break-word;
+      }
+
+      .ep-post img,
+      .ep-post video,
+      .ep-post canvas,
+      .ep-post svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .ep-post figure {
+        margin: 1.15em 0;
+        max-width: 100%;
+      }
+
+      .ep-post .mermaid {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      .ep-post .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+.ep-post h1,
+      .ep-post h2,
+      .ep-post h3,
+      .ep-post h4 {
+        line-height: 1.25;
+        margin: 1.8em 0 0.65em;
+        color: inherit;
+      }
+
+      .ep-post h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 24%, transparent);
+        padding-bottom: 0.35em;
+      }
+
+      .ep-post h2 {
+        font-size: 1.45rem;
+        border-bottom: 1px solid
+          color-mix(in srgb, currentColor 16%, transparent);
+        padding-bottom: 0.25em;
+      }
+
+      .ep-post h3 {
+        font-size: 1.15rem;
+      }
+
+      .ep-post p {
+        margin: 0.75em 0;
+      }
+
+      .ep-post ul,
+      .ep-post ol {
+        margin: 0.65em 0 0.9em 1.35em;
+        padding: 0;
+      }
+
+      .ep-post li {
+        margin: 0.22em 0;
+      }
+
+      .ep-post a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.16em;
+      }
+
+      .ep-post strong {
+        font-weight: 700;
+      }
+
+      .ep-post code {
+        background: color-mix(in srgb, currentColor 10%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.25rem;
+        padding: 0.08em 0.28em;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+          monospace;
+        font-size: 0.92em;
+      }
+
+      .ep-post pre {
+        background: color-mix(in srgb, currentColor 7%, transparent);
+        color: inherit;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.6rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+
+      .ep-post pre code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+      }
+
+      .ep-post blockquote {
+        margin: 1em 0;
+        padding: 0.2em 0 0.2em 1em;
+        border-left: 3px solid color-mix(in srgb, currentColor 32%, transparent);
+        color: color-mix(in srgb, currentColor 88%, transparent);
+      }
+
+      /* =========================================================
+   Readable Blogger tables
+   ========================================================= */
+
+      .ep-post .table-wrap {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        margin: 1.15em 0;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.65rem;
+        background: transparent !important;
+      }
+
+      .ep-post table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin: 1.15em 0;
+        font-size: 0.9em;
+        line-height: 1.45;
+        color: inherit;
+        background: transparent !important;
+      }
+
+      .ep-post .table-wrap table {
+        margin: 0;
+      }
+
+      /* Wider tables can scroll, but text still wraps instead of becoming giant. */
+      .ep-post table.wide-table {
+        min-width: 760px;
+      }
+
+      .ep-post table.extra-wide-table {
+        min-width: 920px;
+      }
+
+      /* Long tables should feel more like a reference sheet. */
+      .ep-post table.long-table {
+        font-size: 0.86em;
+      }
+
+      .ep-post thead,
+      .ep-post tbody,
+      .ep-post tr,
+      .ep-post th,
+      .ep-post td {
+        background: transparent !important;
+        color: inherit;
+      }
+
+      .ep-post th,
+      .ep-post td {
+        border: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+        padding: 0.48em 0.6em;
+        vertical-align: top;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+      }
+
+      .ep-post th {
+        font-weight: 700;
+        text-align: left;
+        background: color-mix(in srgb, currentColor 9%, transparent) !important;
+      }
+
+      .ep-post tr:nth-child(even) td {
+        background: color-mix(in srgb, currentColor 4%, transparent) !important;
+      }
+
+      /* First columns are usually labels/terms. Keep them compact but readable. */
+      .ep-post table:not(.extra-wide-table) th:first-child,
+      .ep-post table:not(.extra-wide-table) td:first-child {
+        width: 22%;
+      }
+
+      /* Two-column explanatory tables: give the explanation more room. */
+      .ep-post table.two-col th:first-child,
+      .ep-post table.two-col td:first-child {
+        width: 28%;
+      }
+
+      .ep-post table.two-col th:nth-child(2),
+      .ep-post table.two-col td:nth-child(2) {
+        width: 72%;
+      }
+
+      /* Three-column reference tables. */
+      .ep-post table.three-col th:first-child,
+      .ep-post table.three-col td:first-child {
+        width: 22%;
+      }
+
+      .ep-post table.three-col th:nth-child(2),
+      .ep-post table.three-col td:nth-child(2) {
+        width: 43%;
+      }
+
+      .ep-post table.three-col th:nth-child(3),
+      .ep-post table.three-col td:nth-child(3) {
+        width: 35%;
+      }
+
+      /* Keep short utility columns compact when manually applied. */
+      .ep-post th.short,
+      .ep-post td.short,
+      .ep-post th.date,
+      .ep-post td.date,
+      .ep-post th.number,
+      .ep-post td.number {
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      /* Use on text-heavy columns when editing by hand later. */
+      .ep-post th.long,
+      .ep-post td.long,
+      .ep-post th.description,
+      .ep-post td.description,
+      .ep-post th.notes,
+      .ep-post td.notes {
+        min-width: 14rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow-wrap: break-word;
+      }
+
+      /* Dense option for especially long tables. */
+      .ep-post table.dense th,
+      .ep-post table.dense td {
+        padding: 0.38em 0.5em;
+        font-size: 0.96em;
+        line-height: 1.42;
+      }
+
+      /* Math support */
+      .ep-post .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-width: 100%;
+      }
+
+      .ep-post .math-block {
+        margin: 1em 0;
+        overflow-x: auto;
+      }
+
+      @supports not (color: color-mix(in srgb, white 50%, black)) {
+        .ep-post h1,
+        .ep-post h2 {
+          border-bottom-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th,
+        .ep-post td {
+          border-color: rgba(128, 128, 128, 0.35);
+        }
+
+        .ep-post th {
+          background: rgba(128, 128, 128, 0.12) !important;
+        }
+
+        .ep-post tr:nth-child(even) td {
+          background: rgba(128, 128, 128, 0.06) !important;
+        }
+
+        .ep-post code,
+        .ep-post pre {
+          background: rgba(128, 128, 128, 0.12);
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+
+        .ep-post .table-wrap {
+          border-color: rgba(128, 128, 128, 0.25);
+        }
+      }
+
+      /* Mobile: convert tables into readable cards instead of squeezed grids. */
+      @media (max-width: 720px) {
+        .ep-post {
+          font-size: 0.98rem;
+        }
+
+        .ep-post h1 {
+          font-size: 1.65rem;
+        }
+
+        .ep-post h2 {
+          font-size: 1.28rem;
+        }
+
+        .ep-post .table-wrap {
+          overflow-x: visible;
+          border: 0;
+          border-radius: 0;
+          margin: 1.1em 0;
+        }
+
+        .ep-post table,
+        .ep-post table.wide-table,
+        .ep-post table.extra-wide-table,
+        .ep-post table.long-table {
+          display: block;
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.92em;
+          border: 0;
+        }
+
+        .ep-post thead {
+          display: none;
+        }
+
+        .ep-post tbody,
+        .ep-post tr,
+        .ep-post td {
+          display: block;
+          width: 100% !important;
+        }
+
+        .ep-post tr {
+          margin: 0 0 0.9em;
+          border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+          border-radius: 0.65rem;
+          overflow: hidden;
+          background: color-mix(
+            in srgb,
+            currentColor 3%,
+            transparent
+          ) !important;
+        }
+
+        .ep-post td {
+          border: 0;
+          border-bottom: 1px solid
+            color-mix(in srgb, currentColor 14%, transparent);
+          padding: 0.55em 0.7em;
+          line-height: 1.5;
+        }
+
+        .ep-post td:last-child {
+          border-bottom: 0;
+        }
+
+        .ep-post td::before {
+          content: attr(data-label);
+          display: block;
+          margin-bottom: 0.18em;
+          font-size: 0.78em;
+          line-height: 1.25;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
+          color: color-mix(in srgb, currentColor 72%, transparent);
+        }
+      }
+    
+
+      /* Phase 2 structural hierarchy */
+      .ep-post .ep-part-banner {
+        margin: 3.2em 0 1.1em;
+        padding: 0.9em 1em;
+        border-top: 2px solid color-mix(in srgb, currentColor 34%, transparent);
+        border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        background: color-mix(in srgb, currentColor 4%, transparent);
+      }
+      .ep-post .ep-part-banner .ep-part-kicker {
+        display: block;
+        font-size: 0.78em;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.72;
+        margin-bottom: 0.18em;
+      }
+      .ep-post .ep-part-banner .ep-part-title {
+        display: block;
+        margin: 0.08em 0 0.24em;
+        padding: 0;
+        border: 0;
+        font-size: 1.72rem;
+        line-height: 1.2;
+        font-weight: 750;
+      }
+      .ep-post h2.ep-source-section {
+        margin-top: 2.2em;
+        padding-top: 0.35em;
+        border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+      .ep-post .ep-toc {
+        margin: 0.8em 0 2.2em;
+      }
+      .ep-post .ep-toc-part {
+        margin: 1.15em 0;
+      }
+      .ep-post .ep-toc-part > p {
+        margin-bottom: 0.25em;
+        font-weight: 700;
+      }
+      .ep-post .ep-toc-part ul ul {
+        margin-top: 0.25em;
+        margin-bottom: 0.4em;
+      }
+
+
+      /* =========================================================
+         Phase 4: editorial presentation system
+         ========================================================= */
+      .ep-post .chapter-lead {
+        font-size: 1.04em;
+        line-height: 1.68;
+        margin: 0.9em 0 1.2em;
+      }
+
+      .ep-post .concept-callout,
+      .ep-post .formula-callout,
+      .ep-post .core-claim {
+        margin: 1.05em 0;
+        padding: 0.78em 0.95em;
+        border-left: 4px solid color-mix(in srgb, currentColor 34%, transparent);
+        background: color-mix(in srgb, currentColor 5%, transparent);
+        border-radius: 0.35rem;
+      }
+
+      .ep-post .formula-callout {
+        text-align: center;
+        font-weight: 650;
+        letter-spacing: 0.01em;
+      }
+
+      .ep-post ul.compact-grid,
+      .ep-post ul.question-grid {
+        list-style-position: outside;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.28em 1.6em;
+        margin: 0.8em 0 1.05em 1.25em;
+      }
+
+      .ep-post ul.compact-grid li,
+      .ep-post ul.question-grid li {
+        break-inside: avoid;
+        padding-right: 0.4em;
+      }
+
+      .ep-post .checkpoint-block,
+      .ep-post .learning-insight-block {
+        margin: 1.6em 0;
+        padding: 0.35em 1em 0.85em;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.7rem;
+        background: color-mix(in srgb, currentColor 3%, transparent);
+      }
+
+      .ep-post .checkpoint-block > h2,
+      .ep-post .checkpoint-block > h3,
+      .ep-post .learning-insight-block > h3 {
+        margin-top: 0.65em;
+      }
+
+      .ep-post table.comparison-table th:first-child,
+      .ep-post table.comparison-table td:first-child {
+        width: 32%;
+      }
+
+      .ep-post table.worksheet-table th:first-child,
+      .ep-post table.worksheet-table td:first-child {
+        width: 24%;
+      }
+
+      .ep-post table.glossary-table th:first-child,
+      .ep-post table.glossary-table td:first-child {
+        width: 18%;
+      }
+
+      .ep-post table.lens-table th:first-child,
+      .ep-post table.lens-table td:first-child {
+        width: 24%;
+      }
+
+      @media (max-width: 720px) {
+        .ep-post ul.compact-grid,
+        .ep-post ul.question-grid {
+          grid-template-columns: 1fr;
+          gap: 0.2em;
+        }
+
+        .ep-post .concept-callout,
+        .ep-post .formula-callout,
+        .ep-post .core-claim {
+          padding: 0.7em 0.8em;
+        }
+      }
+
+
+      /* =========================================================
+         Phase 6: section-level coherence and navigation
+         ========================================================= */
+      .ep-post .chapter-guide {
+        margin: 0.8em 0 1.25em;
+        padding: 0.72em 0.9em;
+        border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        border-radius: 0.55rem;
+        background: color-mix(in srgb, currentColor 2.5%, transparent);
+      }
+      .ep-post .chapter-guide p {
+        margin: 0.18em 0;
+      }
+      .ep-post .chapter-guide .chapter-path {
+        font-size: 0.94em;
+        opacity: 0.88;
+      }
+      .ep-post .chapter-transition {
+        margin: 1.45em 0 0.4em;
+        padding-top: 0.85em;
+        border-top: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+        font-style: italic;
+      }
+      .ep-post .ep-part-banner .ep-part-summary {
+        display: block;
+        margin-top: 0.42em;
+        max-width: 72rem;
+        font-size: 0.92em;
+        line-height: 1.5;
+        font-weight: 400;
+        opacity: 0.82;
+      }
+
+      .ep-post header.ep-part-banner {
+        clear: both;
+        position: relative;
+      }
+      .ep-post .checkpoint-block + header.ep-part-banner {
+        margin-top: 3.8em;
+      }
+</style>
+<style id="cta-theme-toggle-styles">
+  :root { color-scheme: light dark; }
+  .cta-theme-toggle-wrap {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 0.75rem 1rem 0.25rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  .cta-theme-toggle {
+    appearance: none;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 650;
+    line-height: 1;
+    padding: 0.6rem 0.85rem;
+  }
+  .cta-theme-toggle:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+  .cta-theme-toggle:focus-visible { outline: 3px solid #60a5fa; outline-offset: 3px; }
+  html[data-cta-theme="light"] { color-scheme: light; background: #ffffff; }
+  html[data-cta-theme="light"] body,
+  html[data-cta-theme="light"] .ep-post,
+  html[data-cta-theme="light"] article { background-color: #ffffff; color: #1f2937; }
+  html[data-cta-theme="dark"] { color-scheme: dark; background: #111827; }
+  html[data-cta-theme="dark"] body,
+  html[data-cta-theme="dark"] .ep-post,
+  html[data-cta-theme="dark"] article { background-color: #111827; color: #e5e7eb; }
+  html[data-cta-theme="dark"] a { color: #93c5fd; }
+  html[data-cta-theme="dark"] :where(table, th, td, pre, code, blockquote) {
+    border-color: #4b5563;
+  }
+  html[data-cta-theme="dark"] :where(th, td, pre, blockquote) { background-color: #1f2937; }
+  @media (max-width: 720px) {
+    .cta-theme-toggle-wrap { width: 100%; padding: 0.6rem 0.85rem 0.15rem; }
+    .cta-theme-toggle { min-height: 44px; }
+  }
+</style>
+<style>
+.ep-post .ep-subtitle { font-size: 1.08em; opacity: 0.84; margin-top: 0.5em; }
+.ep-post .ep-toc > h2 { margin-top: 0; }
+.ep-post [id] { scroll-margin-top: 1.2rem; }
+.ep-post .ep-part-banner h2.ep-part-title { border: 0; }
+</style>
+</head>
+<body>
+<div class="cta-theme-toggle-wrap" data-cta-theme-toggle>
+  <button class="cta-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">Dark mode</button>
+</div>
+<article class="ep-post" id="post-top"><h1 id="the-explanatory-emptiness-of-souls">The Explanatory Emptiness of "Souls"</h1>
+<p class="ep-subtitle"><em>Why atheism doesn't entail determinism—and why invoking a soul doesn't explain free will.</em></p>
+<p>"Without God, you're just matter obeying physical laws. So how could you possibly have free will?" I've heard versions of this objection often enough that its assumptions can start to seem obvious. Atheism supposedly commits us to materialism; materialism commits us to determinism; and determinism leaves no room for genuine choice. A soul, by contrast, is presumed to escape the problem simply by being immaterial. There is a certain rhetorical neatness to this argument, but that neatness depends on several philosophical steps being treated as though they need no defense.</p>
+<p>Rejecting God does not commit someone to a particular theory of matter, causation, or freedom. And introducing a soul does not, by itself, explain how a decision becomes free; it may only move the problem from the brain to an entity whose powers we have yet to account for. I want to examine both sides of this move: first, why atheism—or even physicalism—does not entail determinism, and second, why immaterial agency should not be regarded as more intelligible than physical agency simply because it is immaterial.</p>
+<nav aria-labelledby="ep-toc-heading" class="ep-toc" id="contents"><h2 id="ep-toc-heading">Table of Contents</h2><div class="ep-toc-part"><p><a href="#part-i-does-atheistic-materialism-entail-determinism">Part I: Does "Atheistic Materialism" Entail Determinism?</a></p><ul><li><a href="#reconstructing-the-argument">Reconstructing the argument</a></li><li><a href="#atheism-is-not-a-complete-metaphysics">Atheism is not a complete metaphysics</a></li><li><a href="#physical-laws-need-not-be-deterministic">Physical laws need not be deterministic</a></li><li><a href="#laws-causation-and-necessity-are-not-the-same-thing">Laws, causation, and necessity are not the same thing</a></li><li><a href="#a-physical-decision-can-still-be-my-decision">A physical decision can still be my decision</a></li><li><a href="#even-determinism-would-not-settle-the-free-will-question">Even determinism would not settle the free-will question</a></li></ul></div><div class="ep-toc-part"><p><a href="#part-ii-does-a-soul-actually-explain-agency">Part II: Does a Soul Actually Explain Agency?</a></p><ul><li><a href="#the-problem-of-reasons-and-arbitrariness">The problem of reasons and arbitrariness</a></li><li><a href="#the-interaction-problem-why-this-body">The interaction problem: why this body?</a></li><li><a href="#a-created-soul-and-the-problem-of-self-authorship">A created soul and the problem of self-authorship</a></li><li><a href="#why-not-begin-with-the-embodied-person">Why not begin with the embodied person?</a></li><li><a href="#not-every-theory-of-the-soul-is-a-ghost-in-the-machine">Not every theory of the soul is a ghost in the machine</a></li><li><a href="#the-double-standard">The double standard</a></li></ul></div><div class="ep-toc-part"><p><a href="#final-thoughts">Final Thoughts</a></p></div></nav><header class="ep-part-banner"><span class="ep-part-kicker">Part I</span><h2 class="ep-part-title" id="part-i-does-atheistic-materialism-entail-determinism">Does "Atheistic Materialism" Entail Determinism?</h2></header>
+<h3 id="reconstructing-the-argument">Reconstructing the argument</h3>
+<p>The objection often relies on a chain of reasoning something like this:</p>
+<ol>
+<li>Without God, there is no immaterial soul directing human action.</li>
+<li>Without a soul, human decisions are entirely physical processes.</li>
+<li>Physical processes are subject to laws of nature.</li>
+<li>Those laws uniquely determine every event from prior physical conditions.</li>
+<li>Therefore, human decisions are determined by prior physical conditions.</li>
+<li>Therefore, human beings lack free will.</li>
+</ol>
+<p>I don't think this argument succeeds, but the problem is not merely that its conclusion might be false. Several of its premises are doing substantial philosophical work without acknowledgment: they move from disbelief in God to a particular ontology, from physical laws to deterministic necessity, and finally from determinism to the absence of free will. Each transition requires a defense, yet the argument often presents them as obvious consequences of one another.</p>
+<h3 id="atheism-is-not-a-complete-metaphysics">Atheism is not a complete metaphysics</h3>
+<p>The first inference fails immediately. Atheism, in its minimal sense, is the absence or rejection of belief in gods. It does not automatically settle whether minds are physical, whether souls exist, or how causation works; someone can reject theism without endorsing reductive physicalism. But let's grant the stronger position for the sake of argument. Suppose a person is both an atheist and a physicalist, holding that human minds and decisions are fully part of the physical world. Even then, determinism does not follow, because <strong>physicalism concerns what exists, whereas determinism concerns how the states of what exists are related across time</strong>. They are different claims, and treating them as interchangeable is the first major weakness in the objection.</p>
+<h3 id="physical-laws-need-not-be-deterministic">Physical laws need not be deterministic</h3>
+<p>The argument's decisive leap occurs between premises 3 and 4. From the claim that physical events are subject to laws, it infers that those laws fix exactly one possible outcome. This resembles classical Laplacian determinism: given a complete physical state and the laws, there is only one physically possible future. But that is a particular conception of nature, not the definition of physicalism, and it cannot simply be assumed whenever someone appeals to physical explanation.</p>
+<p>A physical theory might instead assign probabilities to multiple outcomes without uniquely fixing which will occur. Contemporary interpretations of quantum mechanics differ on precisely these issues; some are deterministic, others indeterministic. I am not claiming that quantum mechanics establishes free will, or even that neural decision-making is fundamentally indeterministic. The narrower point is enough: <strong>the existence of physical laws does not logically entail that the laws are deterministic.</strong></p>
+<p>For background, see the <a href="https://plato.stanford.edu/entries/determinism-causal/">Stanford Encyclopedia of Philosophy's entry on causal determinism</a>.</p>
+<h3 id="laws-causation-and-necessity-are-not-the-same-thing">Laws, causation, and necessity are not the same thing</h3>
+<p>There is an even deeper assumption here about what a <em>law of nature</em> is. On a <strong>governing</strong> conception, laws constrain how the world unfolds; on a <strong>descriptive</strong>, broadly Humean conception, laws summarize the regularities of the world—on some accounts, as part of the simplest and most informative description of its history. Neither conception, by itself, tells us whether the world is deterministic. A Humean can describe a deterministic universe, and someone who thinks laws govern can take those laws to be probabilistic. The distinction matters because it exposes how casually we talk as though physical laws must be external commands forcing matter along a single trajectory.</p>
+<p>Similarly, <em>caused</em> does not always mean <em>necessitated</em>. We can coherently imagine a neural state that influences the likelihood of several possible decisions without guaranteeing any one of them. The resulting decision would not be wholly disconnected from earlier conditions, but neither would it be uniquely fixed by them. Whether that is the right account of human decision-making is a further question, but the example makes clear why the inference from <em>physical causes</em> to <em>deterministic outcomes</em> requires an argument. Philosophers have developed <a href="https://plato.stanford.edu/entries/incompatibilism-theories/">accounts of indeterministic event causation</a> to explore precisely this possibility.</p>
+<h3 id="a-physical-decision-can-still-be-my-decision">A physical decision can still be <em>my</em> decision</h3>
+<p>The objection sometimes shifts from determinism to something else: "If your brain makes the decision, then <em>you</em> aren't really making it." But why assume that the person and the brain are competing decision-makers? On a physicalist account, I am not a spectator observing a brain that acts on my behalf. My capacity to deliberate is realized through the organized activity of the embodied person, including the brain. The fact that agency has a physical basis does not, without further argument, make the agent disappear.</p>
+<p>Evaluating reasons, remembering commitments, imagining alternatives, forming intentions, and adjusting behavior are things people do. Explaining their physical realization does not automatically explain them away, although a physicalist still owes an account of how these capacities work. <strong>Realization is not elimination</strong>, and the original objection quietly assumes the very thing it needs to establish: that genuine agency must stand outside the physical processes that make agency possible.</p>
+<h3 id="even-determinism-would-not-settle-the-free-will-question">Even determinism would not settle the free-will question</h3>
+<p>Finally, premise 6 assumes that determinism is incompatible with free will. That is a substantial philosophical position, not an uncontested definition. <a href="https://plato.stanford.edu/entries/compatibilism/">Compatibilists</a> hold that a person can act freely when they act through their own reasons, intentions, and capacities without the relevant kinds of coercion, even if those processes are causally determined. Incompatibilists disagree, often arguing that genuine freedom requires the possibility of acting otherwise or a stronger kind of ultimate control. The disagreement cannot be resolved simply by defining a physically determined decision as unfree.</p>
+<p>Nor does indeterminism automatically rescue free will. If a choice is merely a matter of chance, why would that make it <em>mine</em> in the sense that matters? Naturalistic libertarian accounts, including those associated with Robert Kane, attempt to explain how indeterminism could contribute to agency rather than simply add randomness. Whether they succeed is a separate debate, and not one I intend to resolve here. For now, it is worth keeping the distinct assumptions in view:</p>
+<div aria-label="Comparison table" class="table-wrap" role="region" tabindex="0"><table class="two-col">
+<thead>
+<tr>
+<th>Assumption in the objection</th>
+<th>What actually follows?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Assumption in the objection">Atheism entails physicalism.</td>
+<td data-label="What actually follows?">No. Atheism alone is not a comprehensive ontology.</td>
+</tr>
+<tr>
+<td data-label="Assumption in the objection">Physicalism entails determinism.</td>
+<td data-label="What actually follows?">No. A wholly physical world could, in principle, be indeterministic.</td>
+</tr>
+<tr>
+<td data-label="Assumption in the objection">Physical laws must necessitate every outcome.</td>
+<td data-label="What actually follows?">No. Laws may be understood in different ways and may be probabilistic.</td>
+</tr>
+<tr>
+<td data-label="Assumption in the objection">Having physical causes rules out agency.</td>
+<td data-label="What actually follows?">No. Deliberation and intention might be physically realized capacities.</td>
+</tr>
+<tr>
+<td data-label="Assumption in the objection">Determinism rules out free will.</td>
+<td data-label="What actually follows?">Disputed by compatibilists.</td>
+</tr>
+<tr>
+<td data-label="Assumption in the objection">Indeterminism establishes free will.</td>
+<td data-label="What actually follows?">No. Unpredictability or chance is not yet meaningful control.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The familiar argument, then, is not just missing one step. It moves between distinct questions—ontology, laws, causation, and freedom—as though they were interchangeable. But recognizing these gaps raises a further question, one that shifts the burden back onto the critic of physical agency: if a physical account is rejected because it allegedly cannot make sense of free choice, what exactly does invoking a soul add to the explanation?</p>
+<header class="ep-part-banner"><span class="ep-part-kicker">Part II</span><h2 class="ep-part-title" id="part-ii-does-a-soul-actually-explain-agency">Does a Soul Actually Explain Agency?</h2></header>
+<p>A common response is that a brain cannot genuinely choose because it is matter subject to physical laws, while an immaterial soul can choose because it is not. Yet <strong>why should immateriality confer freedom?</strong> What makes a soul's decisions its own, and what accounts for its powers, preferences, or relation to the body? These questions matter because simply describing the soul as the thing that chooses risks giving agency a new metaphysical address without explaining it. An additional substance is not automatically an additional explanation.</p>
+<h3 id="the-problem-of-reasons-and-arbitrariness">The problem of reasons and arbitrariness</h3>
+<p>Suppose an immaterial soul makes decisions. Does it have beliefs, desires, dispositions, and reasons? Presumably so; otherwise, its choices would be difficult to connect to the person's character. But once we grant that the soul has these characteristics, we have to ask how they relate to what it chooses. The possibilities generate familiar problems rather than bypassing them.</p>
+<p><strong>If the soul's prior characteristics determine its decisions</strong>, determinism has reappeared at the level of the soul: we have changed the substance doing the deciding, not escaped the problem. <strong>If those characteristics influence but do not determine its decisions</strong>, we need an account of how the soul settles on an outcome and what makes that outcome an exercise of control rather than a matter of luck. <strong>If its decisions are entirely independent of those characteristics</strong>, we risk severing its choices from the very reasons and commitments that would make them intelligible as <em>its</em> choices.</p>
+<p>These are pressures, not a proof that soul-based freedom is impossible. Agent-causal libertarians, for example, have developed substantive responses, and those responses deserve evaluation. But the problems resemble those faced by naturalistic theories of indeterministic agency, which is precisely the point: invoking a soul has not made the questions about reasons, causation, and control disappear.</p>
+<h3 id="the-interaction-problem-why-this-body">The interaction problem: why this body?</h3>
+<p>If a soul is an immaterial substance distinct from the body yet directs bodily action, another question arises: how are the two causally connected? When I decide to raise my hand, my nervous system and muscles are involved. On an interactionist dualist account, the soul must somehow make a difference to those physical processes. How does that influence work? Why is this soul systematically connected to this body and not some other body? And how does the proposal fit with the extensive causal explanations neuroscience already gives us?</p>
+<p>A dualist could propose fundamental <em>psychophysical laws</em> connecting mental and physical events, and there is no immediate logical contradiction in that move. But the account now contains additional entities and relations, and we need a reason to think they are doing explanatory work rather than merely being stipulated to preserve the theory. The difficulty is not simply that an immaterial cause would be unfamiliar; it is that <strong>adding a new causal agent should improve the explanation, not merely add another unexplained connection</strong>.</p>
+<h3 id="a-created-soul-and-the-problem-of-self-authorship">A created soul and the problem of self-authorship</h3>
+<p>The difficulty becomes sharper when the soul is said to be <em>created</em>. Suppose a creator gives a soul a particular set of capacities, tendencies, and limitations. Why does this soul have these dispositions instead of others? If those dispositions shape what the soul finds persuasive or desirable, its choices are conditioned by features it did not choose for itself. Consider two souls, one inclined toward compassion and another toward aggression. If their dispositions bear on their decisions, where did those differences come from? If the creator designed them, the soul is not the ultimate author of its own starting point; if they arise some other way, we still owe an account of that origin.</p>
+<p>This does not prove that a created soul cannot act freely. A created being might possess an indeterministic capacity to choose, and being caused to exist is not the same as having every action causally determined. But <strong>being immaterial does not make a soul self-originating or explain how it exercises ultimate control</strong>. The explanation has to be supplied rather than placed inside the definition of a soul.</p>
+<h3 id="why-not-begin-with-the-embodied-person">Why not begin with the embodied person?</h3>
+<p>A physicalist can start with the agent we already encounter: the living, embodied person. Instead of proposing a second substance that operates the brain, we can investigate how neural and bodily processes realize reasoning, memory, motivation, intention, and voluntary action. This approach connects the theory of agency to things we can study, including how cognition changes with brain development, injury, disease, or intervention. That empirical connection does not establish physicalism or settle the free-will debate, but it gives the account explanatory traction. The contrast is especially clear when we compare physicalism with an <em>interactionist</em> version of substance dualism:</p>
+<div aria-label="Comparison table" class="table-wrap" role="region" tabindex="0"><table class="three-col">
+<thead>
+<tr>
+<th>Question</th>
+<th>Interactionist substance dualism</th>
+<th>Physicalist account</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Question">Who exercises agency?</td>
+<td data-label="Interactionist substance dualism">An immaterial soul, acting through a person or body</td>
+<td data-label="Physicalist account">The embodied person</td>
+</tr>
+<tr>
+<td data-label="Question">What role does the brain play?</td>
+<td data-label="Interactionist substance dualism">Informs or implements the soul's choices</td>
+<td data-label="Physicalist account">Physically realizes deliberation and action</td>
+</tr>
+<tr>
+<td data-label="Question">What must be explained?</td>
+<td data-label="Interactionist substance dualism">Why the soul has agency and how it interacts with this body</td>
+<td data-label="Physicalist account">How organized physical processes constitute agency</td>
+</tr>
+<tr>
+<td data-label="Question">What does the account add?</td>
+<td data-label="Interactionist substance dualism">A distinct substance and a soul–body relation</td>
+<td data-label="Physicalist account">No separate decision-making substance</td>
+</tr>
+</tbody>
+</table></div>
+<p>The physicalist's problem remains real: <em>How do physical systems realize agency?</em> But the dualist has not answered the corresponding question merely by relocating the decision to a soul. The dualist must explain both the soul's supposed power to choose and its relation to physical activity, so it is not clear that the additional ontology makes the original problem any easier.</p>
+<h3 id="not-every-theory-of-the-soul-is-a-ghost-in-the-machine">Not every theory of the soul is a ghost in the machine</h3>
+<p>There are more sophisticated views than the picture of a disembodied operator issuing commands to a body. In the Aristotelian–Thomistic tradition, associated with Thomas Aquinas, the soul is understood as the <em>form</em> of a living organism: a principle of its organization and capacities, not simply a second, complete person trapped inside it. Embodiment is central to that picture, so it would be unfair to direct every objection to Cartesian-style interactionism at this view without qualification.</p>
+<p>Yet a related explanatory question remains: what does the notion of a soul, so understood, explain that could not be accounted for in terms of the organization and capacities of the living organism? A Thomist has answers involving substantial form and intellect, and assessing those arguments requires more than dismissing the word <em>soul</em>. Still, invoking that word alone does not establish libertarian freedom. Similarly, agent-causal theories can attribute irreducible causal powers to agents without requiring those agents to be immaterial; a theory of agent causation is not automatically a theory of souls. These distinctions matter because I am not arguing that every account of souls is incoherent. I am challenging the assumption that the existence of a soul, <em>without further argument</em>, explains freedom better than an embodied account of agency.</p>
+<h3 id="the-double-standard">The double standard</h3>
+<p>Here is the asymmetry that troubles me most. The physicalist says, "Agency is a capacity of appropriately organized physical beings," and the critic responds, "But how can matter have that capacity? You haven't explained it." That is a fair question, and the physicalist should be expected to answer it. Yet when the dualist says, "A soul possesses an irreducible power to originate choices," the same question is often treated as though it has already been resolved. Why should that declaration count as an explanation rather than the beginning of one? How does the soul acquire or exercise that power, and why should it be unavailable to physical beings?</p>
+<p>All metaphysical accounts eventually reach some basic commitments, and it is not automatically illegitimate to posit irreducible powers. <strong>The issue is whether both sides are being held to the same explanatory standard.</strong> If the physicalist must explain how agency is possible, the dualist cannot simply build agency into the definition of an immaterial substance and declare victory. A soul might be metaphysically possible, and it might even play a role in some defensible theory of personhood. But possibility is not explanatory necessity, and naming a bearer of free will is not the same as explaining free will.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>The two arguments developed here reinforce each other. First, atheism does not entail determinism, and even physicalism does not entail it. To get from "human beings are physical" to "human choices are not free," one must defend additional claims about natural laws, causation, and the meaning of freedom. Those claims cannot simply be read off the absence of belief in God. Second, the soul does not receive a free pass on those same questions. If its choices follow necessarily from its nature, determinism threatens to return; if they are not necessitated, the relationship between reasons, chance, and control still needs explaining. And if the soul directs the body, its causal connection to that body needs an account. Calling it immaterial does not settle any of this.</p>
+<p>None of this proves physicalism, refutes every theory of souls, or resolves the free-will debate. My claim is narrower: <strong>the bare appeal to a soul explains far less than its defenders sometimes assume, especially when it is contrasted with an artificially restrictive picture of matter.</strong> There may be compelling arguments for some form of dualism, but they have to do more than stipulate that the nonphysical possesses whatever freedom the physical allegedly lacks.</p>
+<p>The interesting question, then, is not simply, "How could <em>mere matter</em> have agency?" It is: <strong>What independent reason do we have to think that agency requires something other than matter—and how, exactly, does that something explain it?</strong> Until that question is answered, an immaterial substance is not yet an explanation of free will. At most, it is a proposed place to look for one.</p>
+</article>
+<script data-cta-theme-toggle-script>
+  (() => {
+    const root = document.documentElement;
+    const key = "cta-color-theme";
+    let saved = null;
+    try { saved = localStorage.getItem(key); } catch (_) {}
+    const preferred = saved === "dark" || saved === "light"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    root.dataset.ctaTheme = preferred;
+
+    const updateButtons = () => {
+      const dark = root.dataset.ctaTheme === "dark";
+      document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+        button.textContent = dark ? "Light mode" : "Dark mode";
+        button.setAttribute("aria-pressed", String(dark));
+      });
+    };
+
+    document.querySelectorAll(".cta-theme-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const next = root.dataset.ctaTheme === "dark" ? "light" : "dark";
+        root.dataset.ctaTheme = next;
+        try { localStorage.setItem(key, next); } catch (_) {}
+        updateButtons();
+      });
+    });
+    updateButtons();
+  })();
+</script>
+</body>
+</html>
